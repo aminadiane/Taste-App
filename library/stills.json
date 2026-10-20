@@ -1,7 +1,7 @@
 {
   "version": 1,
   "updated": "2026-10-20",
-  "notes": "Taste cinematography library. One record per still; films keyed by slug so the file scales to hundreds of films with several stills each. rights.status is one of: cleared (public domain or Creative Commons, documented), studio-release (the rights holder publishes the image for free use under stated terms), fair-use (used without permission under a US fair-use claim; reduced resolution, credited, removable on request), permission-pending, hold. imdbRank is null for films not on the IMDb Top 250 as checked on 2026-10-18.",
+  "notes": "Taste cinematography library. One record per still; films keyed by slug so the file scales to hundreds of films with several stills each. rights.status is one of: cleared (public domain or Creative Commons, documented), studio-release (the rights holder publishes the image for free use under stated terms), fair-use (used without permission under a US fair-use claim; reduced resolution, credited, removable on request), permission-pending, hold. imdbRank is null for films not on the IMDb Top 250 as checked on 2026-10-20.",
   "films": {
     "2001-a-space-odyssey": {
       "title": "2001: A Space Odyssey",
@@ -222,6 +222,106 @@
       "aspectRatio": "16:9",
       "format": "2D digital animation",
       "imdbRank": null
+    },
+    "psycho": {
+      "title": "Psycho",
+      "year": 1960,
+      "director": "Alfred Hitchcock",
+      "cinematographer": "John L. Russell",
+      "country": "US",
+      "aspectRatio": "1.85:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 39
+    },
+    "the-great-dictator": {
+      "title": "The Great Dictator",
+      "year": 1940,
+      "director": "Charlie Chaplin",
+      "cinematographer": "Karl Struss, Roland Totheroh",
+      "country": "US",
+      "aspectRatio": "1.37:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 70
+    },
+    "mr-smith-goes-to-washington": {
+      "title": "Mr. Smith Goes to Washington",
+      "year": 1939,
+      "director": "Frank Capra",
+      "cinematographer": "Joseph Walker",
+      "country": "US",
+      "aspectRatio": "1.37:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 220
+    },
+    "on-the-waterfront": {
+      "title": "On the Waterfront",
+      "year": 1954,
+      "director": "Elia Kazan",
+      "cinematographer": "Boris Kaufman",
+      "country": "US",
+      "aspectRatio": "1.66:1 (also shown 1.37:1 and 1.85:1)",
+      "format": "35 mm, black and white",
+      "imdbRank": 229
+    },
+    "its-a-wonderful-life": {
+      "title": "It's a Wonderful Life",
+      "year": 1946,
+      "director": "Frank Capra",
+      "cinematographer": "Joseph Walker, Joseph Biroc",
+      "country": "US",
+      "aspectRatio": "1.37:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 21
+    },
+    "north-by-northwest": {
+      "title": "North by Northwest",
+      "year": 1959,
+      "director": "Alfred Hitchcock",
+      "cinematographer": "Robert Burks",
+      "country": "US",
+      "aspectRatio": "1.85:1",
+      "format": "35 mm, VistaVision, Technicolor",
+      "imdbRank": 110
+    },
+    "vertigo": {
+      "title": "Vertigo",
+      "year": 1958,
+      "director": "Alfred Hitchcock",
+      "cinematographer": "Robert Burks",
+      "country": "US",
+      "aspectRatio": "1.85:1",
+      "format": "35 mm, VistaVision, Technicolor",
+      "imdbRank": 119
+    },
+    "double-indemnity": {
+      "title": "Double Indemnity",
+      "year": 1944,
+      "director": "Billy Wilder",
+      "cinematographer": "John F. Seitz",
+      "country": "US",
+      "aspectRatio": "1.37:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 108
+    },
+    "metropolis": {
+      "title": "Metropolis",
+      "year": 1927,
+      "director": "Fritz Lang",
+      "cinematographer": "Karl Freund, Günther Rittau",
+      "country": "Germany",
+      "aspectRatio": "1.33:1",
+      "format": "35 mm, silent",
+      "imdbRank": 123
+    },
+    "the-passion-of-joan-of-arc": {
+      "title": "The Passion of Joan of Arc",
+      "year": 1928,
+      "director": "Carl Theodor Dreyer",
+      "cinematographer": "Rudolph Maté",
+      "country": "France",
+      "aspectRatio": "1.33:1",
+      "format": "35 mm, silent",
+      "imdbRank": 247
     }
   },
   "stills": [
@@ -2119,6 +2219,1159 @@
         "texture",
         "widescreen"
       ]
+    },
+    {
+      "id": "psycho-01",
+      "film": "psycho",
+      "file": "stills/psycho/01.jpg",
+      "original": "originals/psycho-hitchcock-bathroom-door-trailer-18s.jpg",
+      "width": 1280,
+      "height": 965,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:18 of the Commons upload of the trailer, 1420×1070; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Hitchcock at the open bathroom door beside the shower curtain, his shadow thrown hard against the door (footage shot on the set for the trailer)",
+      "lighting": "single hard key from screen left; a crisp shadow doubles the figure on the white door; white tiles and curtain blow out",
+      "composition": "figure on the right third, shadow on the left third; the door frame and curtain divide the frame into three vertical panels",
+      "framing": "medium wide shot, eye level",
+      "camera": "static",
+      "palette": [
+        "#adadad",
+        "#707070",
+        "#1a1a1a"
+      ],
+      "paletteNotes": "white tile and door, charcoal suit, mid greys of the shadow",
+      "tags": [
+        "bathroom",
+        "shadow",
+        "hard light",
+        "high key",
+        "monochrome",
+        "trailer footage"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Psycho (1960) 1969 re-release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Psycho_Re-Release_Trailer_(1960).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (1969 re-release trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video. The upload is the 1969 re-release trailer, not the 1960 theatrical trailer; its on-set footage of Hitchcock was shot for the trailer."
+      }
+    },
+    {
+      "id": "psycho-02",
+      "film": "psycho",
+      "file": "stills/psycho/02.jpg",
+      "original": "originals/psycho-eye-closeup-trailer-85s.jpg",
+      "width": 1280,
+      "height": 965,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 1:25 of the Commons upload of the trailer, 1420×1070; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "An extreme close-up of an eye, lit from one side, with a flare of light at right",
+      "lighting": "low key; one source rakes across the eye and brow, the rest falls to black",
+      "composition": "eye centred on the left half, the highlight at far right balances it; everything else black",
+      "framing": "extreme close-up",
+      "camera": "static",
+      "palette": [
+        "#bcbcbc",
+        "#575757",
+        "#0c0c0c"
+      ],
+      "paletteNotes": "black, skin greys, one white highlight",
+      "tags": [
+        "eye",
+        "close-up",
+        "low key",
+        "black",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Psycho (1960) 1969 re-release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Psycho_Re-Release_Trailer_(1960).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (1969 re-release trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video. The upload is the 1969 re-release trailer, not the 1960 theatrical trailer; its on-set footage of Hitchcock was shot for the trailer."
+      }
+    },
+    {
+      "id": "the-great-dictator-01",
+      "film": "the-great-dictator",
+      "file": "stills/the-great-dictator/01.jpg",
+      "original": "originals/the-great-dictator-hynkel-microphones-trailer-31s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:31 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Hynkel at the rally, flanked by two microphones, mid-harangue",
+      "lighting": "frontal key with a strong fill; the cap badge and mic grilles catch highlights",
+      "composition": "head centred between two symmetrical microphones; the cap's peak and the double-cross badge make a strong central axis",
+      "framing": "close-up, slightly low angle",
+      "camera": "static",
+      "palette": [
+        "#9a9a9a",
+        "#5d5d5d",
+        "#242424"
+      ],
+      "paletteNotes": "mid greys of uniform and cap, near-white face and mic chrome",
+      "tags": [
+        "microphone",
+        "speech",
+        "symmetry",
+        "close-up",
+        "satire",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, The Great Dictator (1940) re-release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Great_Dictator_trailer_(1940).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Charles Chaplin Productions / United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video. Commons describes the upload as a re-release trailer. Chaplin's films are not public domain in the EU until 2048."
+      }
+    },
+    {
+      "id": "the-great-dictator-02",
+      "film": "the-great-dictator",
+      "file": "stills/the-great-dictator/02.jpg",
+      "original": "originals/the-great-dictator-soldier-in-smoke-trailer-17s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:17 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The barber as a soldier in the smoke of the First World War, rifle and bayonet in hand",
+      "lighting": "flat, diffuse light through smoke; the figure is a soft silhouette with almost no contrast",
+      "composition": "single figure just right of centre, swallowed by an even field of grey smoke; the bayonet is the only hard line",
+      "framing": "medium wide shot",
+      "camera": "static",
+      "palette": [
+        "#a1a1a1",
+        "#7e7e7e",
+        "#4d4d4d"
+      ],
+      "paletteNotes": "pale greys only, one dark silhouette",
+      "tags": [
+        "smoke",
+        "silhouette",
+        "war",
+        "fog",
+        "high key",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, The Great Dictator (1940) re-release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Great_Dictator_trailer_(1940).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Charles Chaplin Productions / United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video. Commons describes the upload as a re-release trailer. Chaplin's films are not public domain in the EU until 2048."
+      }
+    },
+    {
+      "id": "the-great-dictator-03",
+      "film": "the-great-dictator",
+      "file": "stills/the-great-dictator/03.jpg",
+      "original": "originals/the-great-dictator-ghetto-street-trailer-23s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:23 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The ghetto street set: the barber walks past the boarded shopfront",
+      "lighting": "even studio daylight with soft shadows under the awnings",
+      "composition": "receding shopfronts along the left half, the street empties to the right; a lamp post at left edge frames the row",
+      "framing": "wide shot, slight high angle",
+      "camera": "static",
+      "palette": [
+        "#888888",
+        "#5e5e5e",
+        "#2d2d2d"
+      ],
+      "paletteNotes": "mid-grey facades, darker doorways, light paving",
+      "tags": [
+        "street",
+        "set",
+        "shopfront",
+        "wide shot",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, The Great Dictator (1940) re-release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Great_Dictator_trailer_(1940).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Charles Chaplin Productions / United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video. Commons describes the upload as a re-release trailer. Chaplin's films are not public domain in the EU until 2048."
+      }
+    },
+    {
+      "id": "mr-smith-goes-to-washington-01",
+      "film": "mr-smith-goes-to-washington",
+      "file": "stills/mr-smith-goes-to-washington/01.jpg",
+      "original": "originals/mr-smith-goes-to-washington-senate-wide-trailer-50s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:50 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The Senate chamber: Smith on his feet mid-filibuster, senators at their desks around him",
+      "lighting": "high, even stage light over the whole chamber; the dais in the background slightly brighter",
+      "composition": "curved rows of desks lead to the standing figure left of centre; the chamber walls close the top",
+      "framing": "wide shot, slight high angle",
+      "camera": "static",
+      "palette": [
+        "#797979",
+        "#484848",
+        "#141414"
+      ],
+      "paletteNotes": "warm mid greys, dark suits, pale walls",
+      "tags": [
+        "senate",
+        "chamber",
+        "ensemble",
+        "wide shot",
+        "politics",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Mr. Smith Goes to Washington (1939) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Mr._Smith_Goes_to_Washington_trailer_(1939).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "mr-smith-goes-to-washington-02",
+      "film": "mr-smith-goes-to-washington",
+      "file": "stills/mr-smith-goes-to-washington/02.jpg",
+      "original": "originals/mr-smith-goes-to-washington-smith-at-desk-trailer-42s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:42 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Smith at his Senate desk, shirt collar open, hand to his mouth, exhausted",
+      "lighting": "soft key from upper left, gentle fill; the white shirt holds the eye",
+      "composition": "figure centred, desk edge along the bottom, dark panelling behind",
+      "framing": "medium shot, eye level",
+      "camera": "static",
+      "palette": [
+        "#9b9b9b",
+        "#646464",
+        "#1e1e1e"
+      ],
+      "paletteNotes": "white shirt, dark wood, grey walls",
+      "tags": [
+        "desk",
+        "portrait",
+        "fatigue",
+        "senate",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Mr. Smith Goes to Washington (1939) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Mr._Smith_Goes_to_Washington_trailer_(1939).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "mr-smith-goes-to-washington-03",
+      "film": "mr-smith-goes-to-washington",
+      "file": "stills/mr-smith-goes-to-washington/03.jpg",
+      "original": "originals/mr-smith-goes-to-washington-office-doorway-trailer-61s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 1:01 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Smith enters the office where Saunders waits at her desk, a shaft of light across the room",
+      "lighting": "a hard beam from a high window crosses the room; the rest is soft fill",
+      "composition": "two figures at the left and centre, the window light cuts a diagonal through the middle",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "palette": [
+        "#888888",
+        "#585858",
+        "#121212"
+      ],
+      "paletteNotes": "bright window shaft, mid-grey office, dark figures",
+      "tags": [
+        "office",
+        "window light",
+        "diagonal",
+        "two-shot",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Mr. Smith Goes to Washington (1939) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Mr._Smith_Goes_to_Washington_trailer_(1939).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "on-the-waterfront-01",
+      "film": "on-the-waterfront",
+      "file": "stills/on-the-waterfront/01.jpg",
+      "original": "originals/on-the-waterfront-terry-closeup-trailer-41s.jpg",
+      "width": 1280,
+      "height": 769,
+      "aspectRatio": "1.66:1",
+      "frameType": "film frame (timestamp 0:41 of the Commons upload of the trailer, 1798×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Terry Malloy in close-up at the pigeon coop, in his checked jacket",
+      "lighting": "soft overcast daylight; a gentle key from the right and open shade on the left of the face",
+      "composition": "head on the left third, the coop wire and sky fill the right",
+      "framing": "close-up, eye level",
+      "camera": "static",
+      "palette": [
+        "#747474",
+        "#3c3c3c",
+        "#121212"
+      ],
+      "paletteNotes": "skin greys, dark checked wool, pale sky",
+      "tags": [
+        "close-up",
+        "portrait",
+        "daylight",
+        "rooftop",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, On the Waterfront (1954) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:On_the_Waterfront_trailer_(1954).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Columbia Pictures / Horizon Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "on-the-waterfront-02",
+      "film": "on-the-waterfront",
+      "file": "stills/on-the-waterfront/02.jpg",
+      "original": "originals/on-the-waterfront-crane-crate-trailer-103s.jpg",
+      "width": 1280,
+      "height": 769,
+      "aspectRatio": "1.66:1",
+      "frameType": "film frame (timestamp 1:43 of the Commons upload of the trailer, 1798×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "A cargo crate swings from the crane above the dock, seen from below",
+      "lighting": "bright overcast; the crate is a silhouette against the white sky",
+      "composition": "the crate hangs upper right, the cables and derrick make diagonals from the lower left corner",
+      "framing": "wide shot, low angle",
+      "camera": "static",
+      "palette": [
+        "#868686",
+        "#4b4b4b",
+        "#0f0f0f"
+      ],
+      "paletteNotes": "white sky, black crate and rigging",
+      "tags": [
+        "dock",
+        "crane",
+        "low angle",
+        "silhouette",
+        "industrial",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, On the Waterfront (1954) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:On_the_Waterfront_trailer_(1954).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Columbia Pictures / Horizon Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "on-the-waterfront-03",
+      "film": "on-the-waterfront",
+      "file": "stills/on-the-waterfront/03.jpg",
+      "original": "originals/on-the-waterfront-doorway-night-trailer-111s.jpg",
+      "width": 1280,
+      "height": 769,
+      "aspectRatio": "1.66:1",
+      "frameType": "film frame (timestamp 1:51 of the Commons upload of the trailer, 1798×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "A figure in the doorway of the tenement at night, the lit room beyond",
+      "lighting": "low key; a practical inside the room and a hard edge light on the door frame",
+      "composition": "the doorway as a bright vertical slot in a dark frame; the figure half in, half out",
+      "framing": "medium wide shot",
+      "camera": "static",
+      "palette": [
+        "#6e6e6e",
+        "#383838",
+        "#0c0c0c"
+      ],
+      "paletteNotes": "black, one warm-grey lit room, pale wall",
+      "tags": [
+        "doorway",
+        "night",
+        "low key",
+        "interior",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, On the Waterfront (1954) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:On_the_Waterfront_trailer_(1954).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Columbia Pictures / Horizon Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "its-a-wonderful-life-01",
+      "film": "its-a-wonderful-life",
+      "file": "stills/its-a-wonderful-life/01.jpg",
+      "original": "originals/its-a-wonderful-life-george-mary-gate-trailer-74s.jpg",
+      "width": 1280,
+      "height": 953,
+      "aspectRatio": "1.34:1",
+      "frameType": "film frame (timestamp 1:14 of the Commons upload of the trailer, 1295×964; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "George and Mary at the gate of the old house at night, after the dance",
+      "lighting": "night exterior with a soft key on the faces and a rim on the hat brim and hair",
+      "composition": "two heads fill the frame, George at left in profile, Mary's face turned toward him",
+      "framing": "medium close-up, two-shot",
+      "camera": "static",
+      "palette": [
+        "#9b9b9b",
+        "#4f4f4f",
+        "#1b1b1b"
+      ],
+      "paletteNotes": "dark greys, soft skin tones, black background",
+      "tags": [
+        "night",
+        "two-shot",
+        "romance",
+        "soft light",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, It's a Wonderful Life (1946) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:It%27s_A_Wonderful_Life_trailer_(1946).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Liberty Films / RKO Radio Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "its-a-wonderful-life-02",
+      "film": "its-a-wonderful-life",
+      "file": "stills/its-a-wonderful-life/02.jpg",
+      "original": "originals/its-a-wonderful-life-bedford-falls-street-trailer-61s.jpg",
+      "width": 1280,
+      "height": 953,
+      "aspectRatio": "1.34:1",
+      "frameType": "film frame (timestamp 1:01 of the Commons upload of the trailer, 1295×964; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Mary runs across the Bedford Falls main street past the parked cars and awnings",
+      "lighting": "hard afternoon sun, deep shadows under the awnings",
+      "composition": "figure centre, the street recedes to the right; shop awnings and a tree frame the left",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "palette": [
+        "#d7d7d7",
+        "#686868",
+        "#0e0e0e"
+      ],
+      "paletteNotes": "bright pavement, dark shop interiors, mid-grey cars",
+      "tags": [
+        "street",
+        "town",
+        "daylight",
+        "wide shot",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, It's a Wonderful Life (1946) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:It%27s_A_Wonderful_Life_trailer_(1946).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Liberty Films / RKO Radio Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "its-a-wonderful-life-03",
+      "film": "its-a-wonderful-life",
+      "file": "stills/its-a-wonderful-life/03.jpg",
+      "original": "originals/its-a-wonderful-life-gym-floor-opening-trailer-55s.jpg",
+      "width": 1280,
+      "height": 953,
+      "aspectRatio": "1.34:1",
+      "frameType": "film frame (timestamp 0:55 of the Commons upload of the trailer, 1295×964; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The high-school gym floor opens over the swimming pool during the Charleston contest",
+      "lighting": "even hall lighting from above; the pool below falls into shadow",
+      "composition": "the floor splits diagonally from lower left to upper right; the crowd lines the far edge",
+      "framing": "wide shot, high angle",
+      "camera": "static",
+      "palette": [
+        "#7e7e7e",
+        "#3e3e3e",
+        "#101010"
+      ],
+      "paletteNotes": "pale floorboards, dark pool, grey crowd",
+      "tags": [
+        "gym",
+        "high angle",
+        "diagonal",
+        "crowd",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, It's a Wonderful Life (1946) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:It%27s_A_Wonderful_Life_trailer_(1946).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Liberty Films / RKO Radio Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video."
+      }
+    },
+    {
+      "id": "its-a-wonderful-life-04",
+      "film": "its-a-wonderful-life",
+      "file": "stills/its-a-wonderful-life/04.jpg",
+      "original": "originals/its-a-wonderful-life-parlour-feature-4s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:04 of the Commons upload of the feature excerpt, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Mary in the parlour of the Hatch house, the gramophone and lamps around her",
+      "lighting": "soft studio light with practicals (the table lamps) as motivated sources",
+      "composition": "figure right of centre, the room's furniture staggers into depth at left",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "palette": [
+        "#797979",
+        "#3d3d3d",
+        "#151515"
+      ],
+      "paletteNotes": "warm mid greys, bright lamp shades, dark wood",
+      "tags": [
+        "parlour",
+        "interior",
+        "practicals",
+        "1940s",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, It's a Wonderful Life (1946) feature excerpt (insert shots)",
+        "url": "https://commons.wikimedia.org/wiki/File:It%27s_a_Wonderful_Life_(1946)_inserts.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1963 and the copyright was not renewed (Commons: PD-US-not renewed)",
+        "attribution": "Liberty Films / RKO Radio Pictures",
+        "notes": "Feature frame, not a trailer frame. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400 or a smaller default), so 1280 px is the largest frame available without re-encoding the video. This is a frame of the feature itself (an 18-second excerpt uploaded to illustrate insert shots). The feature's US copyright lapsed in 1974 when it was not renewed; Republic Pictures asserts rights through the underlying story and the score, and the film remains protected outside the US."
+      }
+    },
+    {
+      "id": "north-by-northwest-01",
+      "film": "north-by-northwest",
+      "file": "stills/north-by-northwest/01.jpg",
+      "original": "originals/north-by-northwest-prairie-highway-trailer-98s.jpg",
+      "width": 852,
+      "height": 480,
+      "aspectRatio": "1.77:1",
+      "frameType": "film frame (timestamp 1:38 of the Commons upload of the trailer, 852×480; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "The empty prairie highway where Thornhill waits for the crop-duster",
+      "lighting": "flat midday sun, no shadows to speak of; the sky bleached",
+      "composition": "the road runs dead centre into the vanishing point; horizon on the lower third",
+      "framing": "extreme wide shot, one-point perspective",
+      "camera": "static",
+      "palette": [
+        "#a3a4a6",
+        "#725a4e",
+        "#4b3e38"
+      ],
+      "paletteNotes": "ochre fields, grey tarmac, pale sky",
+      "tags": [
+        "highway",
+        "prairie",
+        "perspective",
+        "emptiness",
+        "colour"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, North by Northwest (1959) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:North_by_Northwest_trailer_(1959).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Metro-Goldwyn-Mayer (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 852×480 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists."
+      }
+    },
+    {
+      "id": "north-by-northwest-02",
+      "film": "north-by-northwest",
+      "file": "stills/north-by-northwest/02.jpg",
+      "original": "originals/north-by-northwest-train-dusk-trailer-69s.jpg",
+      "width": 852,
+      "height": 480,
+      "aspectRatio": "1.77:1",
+      "frameType": "film frame (timestamp 1:09 of the Commons upload of the trailer, 852×480; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "The Twentieth Century Limited runs along the Hudson at dusk",
+      "lighting": "dusk sky, the train in silhouette, water reflecting the last light",
+      "composition": "the track curves in from the lower right, hills close the right half, sky and water on the left",
+      "framing": "extreme wide shot",
+      "camera": "static",
+      "palette": [
+        "#d1ab91",
+        "#3d4f67",
+        "#131311"
+      ],
+      "paletteNotes": "dark blue-grey, pale lemon sky, black hills",
+      "tags": [
+        "train",
+        "dusk",
+        "landscape",
+        "silhouette",
+        "colour"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, North by Northwest (1959) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:North_by_Northwest_trailer_(1959).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Metro-Goldwyn-Mayer (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 852×480 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists."
+      }
+    },
+    {
+      "id": "north-by-northwest-03",
+      "film": "north-by-northwest",
+      "file": "stills/north-by-northwest/03.jpg",
+      "original": "originals/north-by-northwest-rushmore-night-trailer-108s.jpg",
+      "width": 852,
+      "height": 480,
+      "aspectRatio": "1.77:1",
+      "frameType": "film frame (timestamp 1:48 of the Commons upload of the trailer, 852×480; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "Thornhill and Eve on the rocks of Mount Rushmore at night",
+      "lighting": "blue night light, a warm practical glow on the figures at lower right",
+      "composition": "great grey rock faces fill the frame, the two small figures tucked into the lower right corner",
+      "framing": "wide shot, high angle",
+      "camera": "static",
+      "palette": [
+        "#2c3340",
+        "#181f32",
+        "#0e1015"
+      ],
+      "paletteNotes": "slate blue rock, black shadows, warm skin",
+      "tags": [
+        "night",
+        "rocks",
+        "scale",
+        "blue",
+        "colour"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, North by Northwest (1959) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:North_by_Northwest_trailer_(1959).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Metro-Goldwyn-Mayer (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 852×480 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists."
+      }
+    },
+    {
+      "id": "vertigo-01",
+      "film": "vertigo",
+      "file": "stills/vertigo/01.jpg",
+      "original": "originals/vertigo-golden-gate-trailer-73s.jpg",
+      "width": 757,
+      "height": 436,
+      "aspectRatio": "1.74:1",
+      "frameType": "film frame (timestamp 1:13 of the Commons upload of the trailer, 757×436; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "Fort Point under the Golden Gate Bridge, Madeleine a small figure by the water",
+      "lighting": "overcast afternoon; the bridge's red reads strongly against a grey sky",
+      "composition": "the bridge deck cuts the frame diagonally from upper left; the figure stands on the lower edge beneath it",
+      "framing": "extreme wide shot",
+      "camera": "static",
+      "palette": [
+        "#a2b8de",
+        "#5f6673",
+        "#141814"
+      ],
+      "paletteNotes": "international orange, grey-blue water, grey sky",
+      "tags": [
+        "bridge",
+        "san francisco",
+        "diagonal",
+        "scale",
+        "colour"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Vertigo (1958) theatrical trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Vertigo_theatrical_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 757×436 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists. Commons sourced the upload from the Internet Archive (public domain mark) and licence-reviewed it in 2018."
+      }
+    },
+    {
+      "id": "vertigo-02",
+      "film": "vertigo",
+      "file": "stills/vertigo/02.jpg",
+      "original": "originals/vertigo-florist-trailer-79s.jpg",
+      "width": 757,
+      "height": 436,
+      "aspectRatio": "1.74:1",
+      "frameType": "film frame (timestamp 1:19 of the Commons upload of the trailer, 757×436; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "The florist's window at Podesta Baldocchi, massed flowers in the glass",
+      "lighting": "bright shop light from above, soft reflections in the glass",
+      "composition": "a dense field of blooms with no single subject; the glass edge at left anchors it",
+      "framing": "medium shot",
+      "camera": "static",
+      "palette": [
+        "#8d8fa5",
+        "#5a504d",
+        "#2a2017"
+      ],
+      "paletteNotes": "pinks, whites and greens, dark glass",
+      "tags": [
+        "flowers",
+        "shop",
+        "colour field",
+        "reflection",
+        "colour"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Vertigo (1958) theatrical trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Vertigo_theatrical_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 757×436 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists. Commons sourced the upload from the Internet Archive (public domain mark) and licence-reviewed it in 2018."
+      }
+    },
+    {
+      "id": "vertigo-03",
+      "film": "vertigo",
+      "file": "stills/vertigo/03.jpg",
+      "original": "originals/vertigo-rooftop-dusk-trailer-127s.jpg",
+      "width": 757,
+      "height": 436,
+      "aspectRatio": "1.74:1",
+      "frameType": "film frame (timestamp 2:07 of the Commons upload of the trailer, 757×436; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "The rooftop chase: the pitched roof and the city beyond at dusk",
+      "lighting": "dusk, the sky still pale, the roof tiles catching a cool side light",
+      "composition": "the roof rises as a diagonal from lower left; the city grid and sky fill the upper right",
+      "framing": "wide shot, high angle",
+      "camera": "static",
+      "palette": [
+        "#6983a5",
+        "#4b4c3f",
+        "#0d120e"
+      ],
+      "paletteNotes": "terracotta roof, grey-blue city, pale sky",
+      "tags": [
+        "rooftop",
+        "dusk",
+        "city",
+        "diagonal",
+        "colour"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Vertigo (1958) theatrical trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Vertigo_theatrical_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 757×436 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists. Commons sourced the upload from the Internet Archive (public domain mark) and licence-reviewed it in 2018."
+      }
+    },
+    {
+      "id": "double-indemnity-01",
+      "film": "double-indemnity",
+      "file": "stills/double-indemnity/01.jpg",
+      "original": "originals/double-indemnity-phyllis-stairs-trailer-28s.jpg",
+      "width": 744,
+      "height": 568,
+      "aspectRatio": "1.31:1",
+      "frameType": "film frame (timestamp 0:28 of the Commons upload of the trailer, 744×568; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "Phyllis Dietrichson at the top of the stairs, wrapped in a towel, looking down at Neff",
+      "lighting": "soft key from the upper left; the banister throws a faint shadow",
+      "composition": "figure on the left half behind the balustrade, the blank wall and curtain on the right",
+      "framing": "medium shot, low angle",
+      "camera": "static",
+      "palette": [
+        "#a1a1a1",
+        "#616161",
+        "#1b1b1b"
+      ],
+      "paletteNotes": "white towel, pale wall, dark balustrade",
+      "tags": [
+        "staircase",
+        "low angle",
+        "femme fatale",
+        "noir",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Double Indemnity (1944) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Double_Indemnity_(1944)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 744×568 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists."
+      }
+    },
+    {
+      "id": "double-indemnity-02",
+      "film": "double-indemnity",
+      "file": "stills/double-indemnity/02.jpg",
+      "original": "originals/double-indemnity-venetian-blinds-trailer-59s.jpg",
+      "width": 744,
+      "height": 568,
+      "aspectRatio": "1.31:1",
+      "frameType": "film frame (timestamp 0:59 of the Commons upload of the trailer, 744×568; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "Keyes at his office door, Neff with his back to us, venetian-blind shadows striping the room",
+      "lighting": "hard light through the blinds lays bars across the walls and figures; low fill",
+      "composition": "two figures at the edges, the frosted door panel with reversed lettering in the centre",
+      "framing": "medium wide shot",
+      "camera": "static",
+      "palette": [
+        "#919191",
+        "#515151",
+        "#232323"
+      ],
+      "paletteNotes": "striped greys, black suit, bright door glass",
+      "tags": [
+        "venetian blinds",
+        "office",
+        "noir",
+        "stripes",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Double Indemnity (1944) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Double_Indemnity_(1944)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 744×568 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists."
+      }
+    },
+    {
+      "id": "double-indemnity-03",
+      "film": "double-indemnity",
+      "file": "stills/double-indemnity/03.jpg",
+      "original": "originals/double-indemnity-corridor-trailer-89s.jpg",
+      "width": 744,
+      "height": 568,
+      "aspectRatio": "1.31:1",
+      "frameType": "film frame (timestamp 1:29 of the Commons upload of the trailer, 744×568; decoded in the browser from the webm at the upload's native size, not upscaled)",
+      "scene": "The office corridor: Neff and Phyllis by the door, Keyes further down the hall",
+      "lighting": "even corridor light, a dark foreground and a bright far end",
+      "composition": "the corridor runs into depth on the right; the couple at left is pressed into the door recess",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "palette": [
+        "#6f6f6f",
+        "#404040",
+        "#1b1b1b"
+      ],
+      "paletteNotes": "pale corridor walls, dark figures, grey floor",
+      "tags": [
+        "corridor",
+        "depth",
+        "noir",
+        "wide shot",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Wikimedia Commons, Double Indemnity (1944) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Double_Indemnity_(1944)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US-no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload itself is only 744×568 and Commons' frame service returns at most 500 px for it, so the frame was decoded from the webm at its native size; kept below the library's usual size because the shot is essential and no larger clearly public-domain copy exists."
+      }
+    },
+    {
+      "id": "metropolis-01",
+      "film": "metropolis",
+      "file": "stills/metropolis/01.jpg",
+      "original": "originals/metropolis-city-towers-1140s.jpg",
+      "width": 1440,
+      "height": 1080,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:19:00 of the Internet Archive copy, 1440×1080; decoded in the browser from the MP4 and saved at native size, not upscaled)",
+      "scene": "The city of Metropolis: skyscrapers, elevated roads and the New Tower of Babel in the gap between the towers (miniature)",
+      "lighting": "hazy daylight from above; the far tower dissolves into haze while the near towers hold full detail",
+      "composition": "two dark towers frame the edges; bridges and roads cross at mid-height; the tower sits in the central gap, aeroplanes as dots",
+      "framing": "extreme wide shot, high angle, miniature",
+      "camera": "static",
+      "palette": [
+        "#ababab",
+        "#5d5d5d",
+        "#171717"
+      ],
+      "paletteNotes": "dark tower faces, mid-grey haze, pale sky",
+      "tags": [
+        "city",
+        "skyscraper",
+        "miniature",
+        "haze",
+        "expressionism",
+        "silent",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Internet Archive, Metropolis (1927), English-titles copy (item metropolis-1927-english-titles, file Metropolis-1927-EnglishTitles.mp4)",
+        "url": "https://archive.org/details/metropolis-1927-english-titles"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1927, so the US term of 95 years from publication expired on 1 January 2023; the Internet Archive item carries the Creative Commons Public Domain Mark 1.0",
+        "attribution": "UFA (Universum Film AG), 1927; Internet Archive copy",
+        "notes": "Country of origin is Germany, where the film is protected until 2046 (Fritz Lang died in 1976), so Wikimedia Commons does not host it and this copy is US-only. The transfer is derived from the restored version with English intertitles; the Friedrich-Wilhelm-Murnau-Stiftung claims rights in its 2010 restoration, which US law does not recognise for a mere restoration but which applies in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded."
+      }
+    },
+    {
+      "id": "metropolis-02",
+      "film": "metropolis",
+      "file": "stills/metropolis/02.jpg",
+      "original": "originals/metropolis-babel-stairs-3300s.jpg",
+      "width": 1440,
+      "height": 1080,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:55:00 of the Internet Archive copy, 1440×1080; decoded in the browser from the MP4 and saved at native size, not upscaled)",
+      "scene": "The Tower of Babel parable: shaven-headed slaves climb the great staircase toward the lone figure at the top",
+      "lighting": "backlit; the sky blows out to white and the stairs read as a bright plane, the figures in half-light",
+      "composition": "the staircase fills the frame as one bright plane; five foreground figures climb from the lower left; a single figure at top centre",
+      "framing": "wide shot, low angle",
+      "camera": "static",
+      "palette": [
+        "#b4b4b4",
+        "#5a5a5a",
+        "#2c2c2c"
+      ],
+      "paletteNotes": "white sky, pale stone, dark figures",
+      "tags": [
+        "staircase",
+        "crowd",
+        "backlight",
+        "scale",
+        "silent",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Internet Archive, Metropolis (1927), English-titles copy (item metropolis-1927-english-titles, file Metropolis-1927-EnglishTitles.mp4)",
+        "url": "https://archive.org/details/metropolis-1927-english-titles"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1927, so the US term of 95 years from publication expired on 1 January 2023; the Internet Archive item carries the Creative Commons Public Domain Mark 1.0",
+        "attribution": "UFA (Universum Film AG), 1927; Internet Archive copy",
+        "notes": "Country of origin is Germany, where the film is protected until 2046 (Fritz Lang died in 1976), so Wikimedia Commons does not host it and this copy is US-only. The transfer is derived from the restored version with English intertitles; the Friedrich-Wilhelm-Murnau-Stiftung claims rights in its 2010 restoration, which US law does not recognise for a mere restoration but which applies in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded."
+      }
+    },
+    {
+      "id": "metropolis-03",
+      "film": "metropolis",
+      "file": "stills/metropolis/03.jpg",
+      "original": "originals/metropolis-city-night-7170s.jpg",
+      "width": 1440,
+      "height": 1080,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 1:59:30 of the Internet Archive copy, 1440×1080; decoded in the browser from the MP4 and saved at native size, not upscaled)",
+      "scene": "The city at night: the New Tower of Babel lit by searchlights among the towers (miniature)",
+      "lighting": "night; lit windows and searchlight beams are the only sources, the beams converging on the tower",
+      "composition": "the tower rises at centre, surrounded by stepped lit towers; beams fan out from the lower left",
+      "framing": "extreme wide shot, low angle, miniature",
+      "camera": "static",
+      "palette": [
+        "#a0a0a0",
+        "#616161",
+        "#272727"
+      ],
+      "paletteNotes": "black, bright window grids, grey beams",
+      "tags": [
+        "night",
+        "city",
+        "searchlight",
+        "miniature",
+        "silent",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Internet Archive, Metropolis (1927), English-titles copy (item metropolis-1927-english-titles, file Metropolis-1927-EnglishTitles.mp4)",
+        "url": "https://archive.org/details/metropolis-1927-english-titles"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1927, so the US term of 95 years from publication expired on 1 January 2023; the Internet Archive item carries the Creative Commons Public Domain Mark 1.0",
+        "attribution": "UFA (Universum Film AG), 1927; Internet Archive copy",
+        "notes": "Country of origin is Germany, where the film is protected until 2046 (Fritz Lang died in 1976), so Wikimedia Commons does not host it and this copy is US-only. The transfer is derived from the restored version with English intertitles; the Friedrich-Wilhelm-Murnau-Stiftung claims rights in its 2010 restoration, which US law does not recognise for a mere restoration but which applies in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded."
+      }
+    },
+    {
+      "id": "the-passion-of-joan-of-arc-01",
+      "film": "the-passion-of-joan-of-arc",
+      "file": "stills/the-passion-of-joan-of-arc/01.jpg",
+      "original": "originals/the-passion-of-joan-of-arc-joan-face-640s.jpg",
+      "width": 1440,
+      "height": 1072,
+      "aspectRatio": "1.34:1",
+      "frameType": "film frame (timestamp 0:10:40 of the Internet Archive copy, 1440×1072; decoded in the browser from the MP4 and saved at native size, not upscaled)",
+      "scene": "Joan (Renée Falconetti) looks up during the interrogation, bare-faced against the white wall",
+      "lighting": "soft frontal light with no modelling shadows; the white wall takes the light evenly",
+      "composition": "the face fills the centre of the frame with empty white space around it; nothing else",
+      "framing": "close-up, slightly low angle",
+      "camera": "static",
+      "palette": [
+        "#a1a1a1",
+        "#6a6a6a",
+        "#222222"
+      ],
+      "paletteNotes": "white wall, pale skin, dark hair and eyes",
+      "tags": [
+        "close-up",
+        "face",
+        "white",
+        "minimal",
+        "silent",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Internet Archive, The Passion of Joan of Arc (1928) (item the-passion-of-joan-of-arc-1928-by-carl-theodor-dreyer, 1080p MP4)",
+        "url": "https://archive.org/details/the-passion-of-joan-of-arc-1928-by-carl-theodor-dreyer"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1928, so the US term of 95 years from publication expired on 1 January 2024; the Internet Archive item carries the Creative Commons Public Domain Mark 1.0 and states 'PD in USA'",
+        "attribution": "Société Générale des Films, 1928; Internet Archive copy",
+        "notes": "Country of origin is France, where the film is protected until 2039 (Carl Theodor Dreyer died in 1968), so Wikimedia Commons does not host it and this copy is US-only. The transfer is a Blu-ray-derived copy of the restoration made from the 1981 Oslo print (Gaumont / Cinémathèque française); rights in that restoration may be claimed in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded. The rounded frame corners are part of the restored print."
+      }
+    },
+    {
+      "id": "the-passion-of-joan-of-arc-02",
+      "film": "the-passion-of-joan-of-arc",
+      "file": "stills/the-passion-of-joan-of-arc/02.jpg",
+      "original": "originals/the-passion-of-joan-of-arc-judges-window-1065s.jpg",
+      "width": 1440,
+      "height": 1072,
+      "aspectRatio": "1.34:1",
+      "frameType": "film frame (timestamp 0:17:45 of the Internet Archive copy, 1440×1072; decoded in the browser from the MP4 and saved at native size, not upscaled)",
+      "scene": "Bishop Cauchon seated between two clerics beneath the leaded windows of the hall",
+      "lighting": "daylight from the windows above; the faces below in soft, even light",
+      "composition": "two diamond-leaded windows across the upper third of a white wall; the three robed figures clustered in the lower right",
+      "framing": "medium wide shot, low angle",
+      "camera": "static",
+      "palette": [
+        "#878787",
+        "#4d4d4d",
+        "#111111"
+      ],
+      "paletteNotes": "white wall, dark robes, grey window bars",
+      "tags": [
+        "window",
+        "judges",
+        "white wall",
+        "architecture",
+        "silent",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Internet Archive, The Passion of Joan of Arc (1928) (item the-passion-of-joan-of-arc-1928-by-carl-theodor-dreyer, 1080p MP4)",
+        "url": "https://archive.org/details/the-passion-of-joan-of-arc-1928-by-carl-theodor-dreyer"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1928, so the US term of 95 years from publication expired on 1 January 2024; the Internet Archive item carries the Creative Commons Public Domain Mark 1.0 and states 'PD in USA'",
+        "attribution": "Société Générale des Films, 1928; Internet Archive copy",
+        "notes": "Country of origin is France, where the film is protected until 2039 (Carl Theodor Dreyer died in 1968), so Wikimedia Commons does not host it and this copy is US-only. The transfer is a Blu-ray-derived copy of the restoration made from the 1981 Oslo print (Gaumont / Cinémathèque française); rights in that restoration may be claimed in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded. The rounded frame corners are part of the restored print."
+      }
+    },
+    {
+      "id": "the-passion-of-joan-of-arc-03",
+      "film": "the-passion-of-joan-of-arc",
+      "file": "stills/the-passion-of-joan-of-arc/03.jpg",
+      "original": "originals/the-passion-of-joan-of-arc-soldiers-pikes-4245s.jpg",
+      "width": 1440,
+      "height": 1072,
+      "aspectRatio": "1.34:1",
+      "frameType": "film frame (timestamp 1:10:45 of the Internet Archive copy, 1440×1072; decoded in the browser from the MP4 and saved at native size, not upscaled)",
+      "scene": "Helmeted soldiers with pikes flank the low arched doorway from which Joan is led out to the stake",
+      "lighting": "bright flat daylight on the white wall; the helmets and pike shafts read as dark shapes",
+      "composition": "vertical pikes on both sides frame the small dark arch at bottom centre; the white wall fills the upper two thirds",
+      "framing": "medium wide shot, low angle",
+      "camera": "static",
+      "palette": [
+        "#a4a4a4",
+        "#6e6e6e",
+        "#212121"
+      ],
+      "paletteNotes": "white sky, black pikes and helmets",
+      "tags": [
+        "soldiers",
+        "pikes",
+        "doorway",
+        "white wall",
+        "graphic",
+        "silent",
+        "monochrome"
+      ],
+      "source": {
+        "name": "Internet Archive, The Passion of Joan of Arc (1928) (item the-passion-of-joan-of-arc-1928-by-carl-theodor-dreyer, 1080p MP4)",
+        "url": "https://archive.org/details/the-passion-of-joan-of-arc-1928-by-carl-theodor-dreyer"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1928, so the US term of 95 years from publication expired on 1 January 2024; the Internet Archive item carries the Creative Commons Public Domain Mark 1.0 and states 'PD in USA'",
+        "attribution": "Société Générale des Films, 1928; Internet Archive copy",
+        "notes": "Country of origin is France, where the film is protected until 2039 (Carl Theodor Dreyer died in 1968), so Wikimedia Commons does not host it and this copy is US-only. The transfer is a Blu-ray-derived copy of the restoration made from the 1981 Oslo print (Gaumont / Cinémathèque française); rights in that restoration may be claimed in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded. The rounded frame corners are part of the restored print."
+      }
     }
   ]
 }
