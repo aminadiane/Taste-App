@@ -273,7 +273,7 @@ window.Pallas = window.Pallas || {};
 
     // the leaf exists only while a page turns
     if (S.bLeaf) { if (leafFor !== S.bLeaf) { leafFor = S.bLeaf; buildLeaf(S.bLeaf.front, S.bLeaf.back); } }
-    else if (leafFor) { leafFor = null; el.leaf.hidden = true; el.leaf.innerHTML = ''; }
+    else if (leafFor) { leafFor = null; el.leaf.getAnimations({ subtree: true }).forEach((a) => a.cancel()); el.leaf.hidden = true; el.leaf.innerHTML = ''; }   // the prototype rebuilt the leaf each turn; drop finished fill-forward animations
 
     // the torn stack beside the book: the last four torn pages
     const torn = tornAll.slice(-4);
