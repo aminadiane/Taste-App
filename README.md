@@ -24,3 +24,7 @@ PORT=8799 node .claude/serve.js
 ```
 
 The television cycles through the library in order; the book cycles through the excerpts. Votes drive the shelf, liked/disliked and dog-eared/torn-out tabs of the quick view.
+
+## Design status (20 October 2026)
+
+Signed off by the director: home, film screen, quick-view drawer, book cover, and the photographic book with its dog-ear and tear interactions, as built from the Pallas handoff. The black band in the like swipe stays. Still open, by the director's decision: touch behaviour, reduced motion, higher-resolution book photography, and the television photo rights.
