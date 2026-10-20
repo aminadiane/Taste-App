@@ -1,0 +1,2124 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "notes": "Taste cinematography library. One record per still; films keyed by slug so the file scales to hundreds of films with several stills each. rights.status is one of: cleared (public domain or Creative Commons, documented), studio-release (the rights holder publishes the image for free use under stated terms), fair-use (used without permission under a US fair-use claim; reduced resolution, credited, removable on request), permission-pending, hold. imdbRank is null for films not on the IMDb Top 250 as checked on 2026-10-18.",
+  "films": {
+    "2001-a-space-odyssey": {
+      "title": "2001: A Space Odyssey",
+      "year": 1968,
+      "director": "Stanley Kubrick",
+      "cinematographer": "Geoffrey Unsworth",
+      "country": "UK / US",
+      "aspectRatio": "2.20:1",
+      "format": "Super Panavision 70",
+      "imdbRank": 107
+    },
+    "lawrence-of-arabia": {
+      "title": "Lawrence of Arabia",
+      "year": 1962,
+      "director": "David Lean",
+      "cinematographer": "Freddie Young",
+      "country": "UK",
+      "aspectRatio": "2.20:1",
+      "format": "Super Panavision 70",
+      "imdbRank": 102
+    },
+    "the-general": {
+      "title": "The General",
+      "year": 1926,
+      "director": "Buster Keaton, Clyde Bruckman",
+      "cinematographer": "Bert Haines, Devereaux Jennings",
+      "country": "US",
+      "aspectRatio": "1.33:1",
+      "format": "35 mm, silent",
+      "imdbRank": 219
+    },
+    "the-kid": {
+      "title": "The Kid",
+      "year": 1921,
+      "director": "Charlie Chaplin",
+      "cinematographer": "Roland Totheroh",
+      "country": "US",
+      "aspectRatio": "1.33:1",
+      "format": "35 mm, silent",
+      "imdbRank": 146
+    },
+    "dr-strangelove": {
+      "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+      "year": 1964,
+      "director": "Stanley Kubrick",
+      "cinematographer": "Gilbert Taylor",
+      "country": "UK / US",
+      "aspectRatio": "1.66:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 86
+    },
+    "12-angry-men": {
+      "title": "12 Angry Men",
+      "year": 1957,
+      "director": "Sidney Lumet",
+      "cinematographer": "Boris Kaufman",
+      "country": "US",
+      "aspectRatio": "1.66:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 6
+    },
+    "rear-window": {
+      "title": "Rear Window",
+      "year": 1954,
+      "director": "Alfred Hitchcock",
+      "cinematographer": "Robert Burks",
+      "country": "US",
+      "aspectRatio": "1.66:1",
+      "format": "35 mm, Technicolor",
+      "imdbRank": 52
+    },
+    "sunset-boulevard": {
+      "title": "Sunset Boulevard",
+      "year": 1950,
+      "director": "Billy Wilder",
+      "cinematographer": "John F. Seitz",
+      "country": "US",
+      "aspectRatio": "1.37:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 65
+    },
+    "some-like-it-hot": {
+      "title": "Some Like It Hot",
+      "year": 1959,
+      "director": "Billy Wilder",
+      "cinematographer": "Charles Lang",
+      "country": "US",
+      "aspectRatio": "1.66:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 142
+    },
+    "paths-of-glory": {
+      "title": "Paths of Glory",
+      "year": 1957,
+      "director": "Stanley Kubrick",
+      "cinematographer": "Georg Krause",
+      "country": "US",
+      "aspectRatio": "1.66:1",
+      "format": "35 mm, black and white",
+      "imdbRank": 67
+    },
+    "the-apartment": {
+      "title": "The Apartment",
+      "year": 1960,
+      "director": "Billy Wilder",
+      "cinematographer": "Joseph LaShelle",
+      "country": "US",
+      "aspectRatio": "2.35:1",
+      "format": "35 mm, Panavision anamorphic, black and white",
+      "imdbRank": 101
+    },
+    "bridge-on-the-river-kwai": {
+      "title": "The Bridge on the River Kwai",
+      "year": 1957,
+      "director": "David Lean",
+      "cinematographer": "Jack Hildyard",
+      "country": "UK / US",
+      "aspectRatio": "2.35:1",
+      "format": "35 mm, CinemaScope, Technicolor",
+      "imdbRank": 181
+    },
+    "sherlock-jr": {
+      "title": "Sherlock Jr.",
+      "year": 1924,
+      "director": "Buster Keaton",
+      "cinematographer": "Elgin Lessley, Byron Houck",
+      "country": "US",
+      "aspectRatio": "1.33:1",
+      "format": "35 mm, silent",
+      "imdbRank": 213
+    },
+    "the-gold-rush": {
+      "title": "The Gold Rush",
+      "year": 1925,
+      "director": "Charlie Chaplin",
+      "cinematographer": "Roland Totheroh",
+      "country": "US",
+      "aspectRatio": "1.33:1",
+      "format": "35 mm, silent",
+      "imdbRank": 211
+    },
+    "spirited-away": {
+      "title": "Spirited Away",
+      "year": 2001,
+      "director": "Hayao Miyazaki",
+      "cinematographer": "Atsushi Okui (director of photography)",
+      "country": "Japan",
+      "aspectRatio": "1.85:1",
+      "format": "hand-drawn animation, digital ink and paint",
+      "imdbRank": 31
+    },
+    "parasite": {
+      "title": "Parasite",
+      "year": 2019,
+      "director": "Bong Joon Ho",
+      "cinematographer": "Hong Kyung-pyo",
+      "country": "South Korea",
+      "aspectRatio": "2.39:1",
+      "format": "digital (ARRI Alexa 65)",
+      "imdbRank": 35
+    },
+    "the-grand-budapest-hotel": {
+      "title": "The Grand Budapest Hotel",
+      "year": 2014,
+      "director": "Wes Anderson",
+      "cinematographer": "Robert Yeoman",
+      "country": "US / Germany",
+      "aspectRatio": "1.37:1 (1930s sections)",
+      "format": "35 mm",
+      "imdbRank": 199
+    },
+    "amelie": {
+      "title": "Amélie",
+      "year": 2001,
+      "director": "Jean-Pierre Jeunet",
+      "cinematographer": "Bruno Delbonnel",
+      "country": "France",
+      "aspectRatio": "2.39:1",
+      "format": "Super 35, digital intermediate",
+      "imdbRank": 116
+    },
+    "in-the-mood-for-love": {
+      "title": "In the Mood for Love",
+      "year": 2000,
+      "director": "Wong Kar-wai",
+      "cinematographer": "Christopher Doyle, Mark Lee Ping-bing",
+      "country": "Hong Kong",
+      "aspectRatio": "1.66:1",
+      "format": "35 mm",
+      "imdbRank": null
+    },
+    "mad-max-fury-road": {
+      "title": "Mad Max: Fury Road",
+      "year": 2015,
+      "director": "George Miller",
+      "cinematographer": "John Seale",
+      "country": "Australia / US",
+      "aspectRatio": "2.39:1",
+      "format": "digital (ARRI Alexa)",
+      "imdbRank": 189
+    },
+    "oldboy": {
+      "title": "Oldboy",
+      "year": 2003,
+      "director": "Park Chan-wook",
+      "cinematographer": "Chung Chung-hoon",
+      "country": "South Korea",
+      "aspectRatio": "2.35:1",
+      "format": "Super 35",
+      "imdbRank": 85
+    },
+    "sita-sings-the-blues": {
+      "title": "Sita Sings the Blues",
+      "year": 2008,
+      "director": "Nina Paley",
+      "cinematographer": null,
+      "country": "US",
+      "aspectRatio": "16:9",
+      "format": "2D digital animation",
+      "imdbRank": null
+    }
+  },
+  "stills": [
+    {
+      "id": "2001-a-space-odyssey-01",
+      "film": "2001-a-space-odyssey",
+      "file": "stills/2001-a-space-odyssey/01.jpg",
+      "original": "originals/2001-poole-adrift-tci.jpg",
+      "width": 1600,
+      "height": 756,
+      "aspectRatio": "2.12:1",
+      "frameType": "scene still, photographic print (gelatin silver) of the shot",
+      "scene": "Frank Poole adrift in space beside the EVA pod, Discovery One at left",
+      "source": {
+        "name": "Wikimedia Commons, Archivio Storico del Touring Club Italiano (04_0826)",
+        "url": "https://commons.wikimedia.org/wiki/File:Photo_A_scene_from_2001._A_Space_Odyssey,_a_1968_film_directed_by_Stanley_Kubrick_1968_-_Touring_Club_Italiano_04_0826.jpg"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "CC BY-SA 4.0",
+        "attribution": "Touring Club Italiano",
+        "notes": "Released by TCI under CC BY-SA 4.0 (Wikimedia VRT ticket 2022090510003181). Attribution required; share-alike applies to derivatives."
+      },
+      "palette": [
+        "#f2f2f2",
+        "#8a8a8a",
+        "#0a0a0a"
+      ],
+      "paletteNotes": "monochrome print: hard white, mid greys, absolute black",
+      "lighting": "single hard key (sunlight) from upper left, no fill; deep black space as negative space",
+      "composition": "figure small and off-centre right, pod and ship mass at left; strong diagonal of the tether",
+      "framing": "extreme wide shot",
+      "camera": "static, eye level, long lens flattening depth",
+      "tags": [
+        "space",
+        "isolation",
+        "scale",
+        "negative space",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "lawrence-of-arabia-01",
+      "film": "lawrence-of-arabia",
+      "file": "stills/lawrence-of-arabia/01.jpg",
+      "original": "originals/lawrence-train-attack-1.jpg",
+      "width": 1600,
+      "height": 670,
+      "aspectRatio": "2.39:1",
+      "frameType": "film frame (from the original theatrical trailer)",
+      "scene": "The attack on the Turkish train, wide across the desert",
+      "source": {
+        "name": "Wikimedia Commons, extracted from the 1962 trailer (Columbia Pictures)",
+        "url": "https://commons.wikimedia.org/wiki/File:Lawrence_of_Arabia_train_attack_(from_trailer)_1.jpg"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): trailer published 1962 without copyright notice",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer and applies in the United States; may remain protected elsewhere. Trailer frames can differ in grading from the feature."
+      },
+      "palette": [
+        "#c9a66b",
+        "#e8d9b8",
+        "#8fb0c8"
+      ],
+      "paletteNotes": "sand ochre, bleached highlights, pale sky blue",
+      "lighting": "hard high sun, minimal shadow, haze on the horizon",
+      "composition": "horizon low in frame; train and riders as a thin horizontal band; vast empty sand above and below",
+      "framing": "extreme wide shot",
+      "camera": "static high angle, long lens",
+      "tags": [
+        "desert",
+        "scale",
+        "horizontal",
+        "widescreen",
+        "epic"
+      ]
+    },
+    {
+      "id": "lawrence-of-arabia-02",
+      "film": "lawrence-of-arabia",
+      "file": "stills/lawrence-of-arabia/02.jpg",
+      "original": "originals/lawrence-train-attack-2.jpg",
+      "width": 1600,
+      "height": 669,
+      "aspectRatio": "2.39:1",
+      "frameType": "film frame (from the original theatrical trailer)",
+      "scene": "The train attack, riders closing on the derailed cars",
+      "source": {
+        "name": "Wikimedia Commons, extracted from the 1962 trailer (Columbia Pictures)",
+        "url": "https://commons.wikimedia.org/wiki/File:Lawrence_of_Arabia_train_attack_(from_trailer)_2.jpg"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): trailer published 1962 without copyright notice",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "As above."
+      },
+      "palette": [
+        "#b8925a",
+        "#5a4a3a",
+        "#d9d2c4"
+      ],
+      "paletteNotes": "warm sand, dark smoke and metal, dusty highlights",
+      "lighting": "hard sun, dust and smoke diffusing the background",
+      "composition": "action spread across the width; movement left to right",
+      "framing": "wide shot",
+      "camera": "static, long lens compressing the riders",
+      "tags": [
+        "desert",
+        "action",
+        "dust",
+        "widescreen",
+        "movement"
+      ]
+    },
+    {
+      "id": "lawrence-of-arabia-03",
+      "film": "lawrence-of-arabia",
+      "file": "stills/lawrence-of-arabia/03.jpg",
+      "original": "originals/lawrence-sun-silhouette-trailer-130s.jpg",
+      "width": 1600,
+      "height": 666,
+      "aspectRatio": "2.40:1",
+      "frameType": "film frame (timestamp 2:10 of the Commons upload of the trailer, 1920×800; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "Lawrence on the roof of the wrecked train, robes blowing, silhouetted against the sun",
+      "source": {
+        "name": "Wikimedia Commons, Lawrence of Arabia (1962) original theatrical trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Lawrence_Of_Arabia_(1962)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): trailer published 1962 without copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#d8e6ee",
+        "#7fa0b4",
+        "#0a0a0a"
+      ],
+      "paletteNotes": "pale sky white, cool blue halo, black silhouette",
+      "lighting": "contre-jour: the sun directly behind the figure, the robe translucent at the edges; everything else black",
+      "composition": "figure on the upper centre line standing on the black mass of the train roof; the scarf streams to the right; empty sky all round",
+      "framing": "wide shot, low angle",
+      "camera": "static, low angle from the ground",
+      "tags": [
+        "silhouette",
+        "sun",
+        "backlight",
+        "widescreen",
+        "epic",
+        "negative space"
+      ]
+    },
+    {
+      "id": "lawrence-of-arabia-04",
+      "film": "lawrence-of-arabia",
+      "file": "stills/lawrence-of-arabia/04.jpg",
+      "original": "originals/lawrence-desert-runner-trailer-150s.jpg",
+      "width": 1600,
+      "height": 666,
+      "aspectRatio": "2.40:1",
+      "frameType": "film frame (timestamp 2:30 of the Commons upload of the trailer, 1920×800; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "A lone figure in white robes running across the desert floor beneath a red dune",
+      "source": {
+        "name": "Wikimedia Commons, Lawrence of Arabia (1962) original theatrical trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Lawrence_Of_Arabia_(1962)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): trailer published 1962 without copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#c98d6a",
+        "#e9dfcf",
+        "#f4f4f4"
+      ],
+      "paletteNotes": "rose-red dune, pale sand floor, white robe",
+      "lighting": "hard high sun; the figure's shadow a sharp black patch on the sand",
+      "composition": "the dune edge forms the horizon in the upper third; the figure tiny in the lower right third; scrub dots the slope as texture",
+      "framing": "extreme wide shot",
+      "camera": "static, long lens, eye level",
+      "tags": [
+        "desert",
+        "scale",
+        "figure in landscape",
+        "red dune",
+        "widescreen",
+        "epic"
+      ]
+    },
+    {
+      "id": "lawrence-of-arabia-05",
+      "film": "lawrence-of-arabia",
+      "file": "stills/lawrence-of-arabia/05.jpg",
+      "original": "originals/lawrence-charge-trailer-71s.jpg",
+      "width": 1600,
+      "height": 666,
+      "aspectRatio": "2.40:1",
+      "frameType": "film frame (timestamp 1:11 of the Commons upload of the trailer, 1920×800; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "Lawrence leads the charge down the dune at Aqaba, the riders and runners spilling past",
+      "source": {
+        "name": "Wikimedia Commons, Lawrence of Arabia (1962) original theatrical trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Lawrence_Of_Arabia_(1962)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): trailer published 1962 without copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#d9c7a8",
+        "#b89670",
+        "#e6e6e6"
+      ],
+      "paletteNotes": "pale sand, tan robes, white sky",
+      "lighting": "hard sun from the right; dust in the air flattens the distance",
+      "composition": "the figure in white at the left third, the mass of the charge pouring right and down; the dune edge cuts the frame on a diagonal",
+      "framing": "wide shot",
+      "camera": "tracking alongside the charge, low angle",
+      "tags": [
+        "charge",
+        "movement",
+        "dust",
+        "crowd",
+        "widescreen",
+        "epic"
+      ]
+    },
+    {
+      "id": "dr-strangelove-01",
+      "film": "dr-strangelove",
+      "file": "stills/dr-strangelove/01.jpg",
+      "original": "originals/dr-strangelove-war-room-trailer-110s.jpg",
+      "width": 1280,
+      "height": 771,
+      "aspectRatio": "1.66:1",
+      "frameType": "film frame (timestamp 1:50 of the Commons upload of the trailer, 1792×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The War Room: the conference table under the ring of light, Dr. Strangelove and the advisers along the far side",
+      "source": {
+        "name": "Wikimedia Commons, Dr. Strangelove (1964) original trailer by Pablo Ferro, from the Criterion Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Dr._Strangelove_(1964)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#e6e6e6",
+        "#5a5a5a",
+        "#050505"
+      ],
+      "paletteNotes": "black and white: the light ring as the only bright mass, mid-grey faces, black void above",
+      "lighting": "practical ring light above the table as the sole source, falling top-down on heads and shoulders; the ceiling disappears into black",
+      "composition": "seated figures in a shallow arc across the lower half; the circular lamp sweeps across the top of frame; foreground silhouettes bracket the group",
+      "framing": "medium wide shot",
+      "camera": "static, low eye level, wide lens",
+      "tags": [
+        "war room",
+        "table",
+        "ring light",
+        "low key",
+        "ensemble",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "dr-strangelove-02",
+      "film": "dr-strangelove",
+      "file": "stills/dr-strangelove/02.jpg",
+      "original": "originals/dr-strangelove-kong-cockpit-trailer-97s.jpg",
+      "width": 1280,
+      "height": 771,
+      "aspectRatio": "1.66:1",
+      "frameType": "film frame (timestamp 1:37 of the Commons upload of the trailer, 1792×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Major Kong settles his Stetson on in the B-52 cockpit, the instrument panel at left",
+      "source": {
+        "name": "Wikimedia Commons, Dr. Strangelove (1964) original trailer by Pablo Ferro, from the Criterion Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Dr._Strangelove_(1964)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#d9d9d9",
+        "#4a4a4a",
+        "#080808"
+      ],
+      "paletteNotes": "near-black cabin, pinpoints of instrument light, one grey face",
+      "lighting": "dim practical glow from the instrument panel; a soft key on the face from the left; everything else falls to black",
+      "composition": "figure centred against a black field; the dial panel fills the lower left as texture; the raised arms make a triangle around the head",
+      "framing": "medium shot",
+      "camera": "static, eye level",
+      "tags": [
+        "cockpit",
+        "low key",
+        "instruments",
+        "gesture",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "dr-strangelove-03",
+      "film": "dr-strangelove",
+      "file": "stills/dr-strangelove/03.jpg",
+      "original": "originals/dr-strangelove-b52-mountains-trailer-135s.jpg",
+      "width": 1280,
+      "height": 771,
+      "aspectRatio": "1.66:1",
+      "frameType": "film frame (timestamp 2:15 of the Commons upload of the trailer, 1792×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The B-52 (a model) banking over snow-covered mountains",
+      "source": {
+        "name": "Wikimedia Commons, Dr. Strangelove (1964) original trailer by Pablo Ferro, from the Criterion Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Dr._Strangelove_(1964)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#f0f0f0",
+        "#6a6a6a",
+        "#101010"
+      ],
+      "paletteNotes": "white snowfields and cloud, dark aircraft, grey rock",
+      "lighting": "overcast daylight on the landscape plate; the model lit from above with a rim along the leading edges of the wings",
+      "composition": "aircraft on a diagonal from lower left to upper right, the tail fin crossing the ridge line; mountains fill the frame behind",
+      "framing": "wide shot",
+      "camera": "static, high angle looking down past the aircraft",
+      "tags": [
+        "aircraft",
+        "model shot",
+        "aerial",
+        "mountains",
+        "diagonal",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "12-angry-men-01",
+      "film": "12-angry-men",
+      "file": "stills/12-angry-men/01.jpg",
+      "original": "originals/12-angry-men-jury-table-trailer-0s.jpg",
+      "width": 1280,
+      "height": 768,
+      "aspectRatio": "1.67:1",
+      "frameType": "film frame (timestamp 0:00 of the Commons upload of the trailer, 1800×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The jurors around the table, Juror 3 standing at right, the others seated in depth",
+      "source": {
+        "name": "Wikimedia Commons, 12 Angry Men (1957) original release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:12_Angry_Men_(1957)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#f2f2f2",
+        "#7a7a7a",
+        "#151515"
+      ],
+      "paletteNotes": "white shirts against grey walls, dark table",
+      "lighting": "even overhead room light with a soft key from the windows; the ceiling lamp in frame as a practical",
+      "composition": "deep-focus staging: faces recede along the table from lower left to the standing figure at right; the dark door panels close the frame",
+      "framing": "medium wide shot, slight high angle",
+      "camera": "static, slightly above eye level, wide lens",
+      "tags": [
+        "jury room",
+        "table",
+        "deep focus",
+        "ensemble",
+        "high angle",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "12-angry-men-02",
+      "film": "12-angry-men",
+      "file": "stills/12-angry-men/02.jpg",
+      "original": "originals/12-angry-men-juror-3-closeup-trailer-95s.jpg",
+      "width": 1280,
+      "height": 768,
+      "aspectRatio": "1.67:1",
+      "frameType": "film frame (timestamp 1:35 of the Commons upload of the trailer, 1800×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Juror 3 (Lee J. Cobb), sweating, in close-up",
+      "source": {
+        "name": "Wikimedia Commons, 12 Angry Men (1957) original release trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:12_Angry_Men_(1957)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#ededed",
+        "#8c8c8c",
+        "#1a1a1a"
+      ],
+      "paletteNotes": "pale skin and shirt, grey background, dark eyes",
+      "lighting": "hard key from upper left raking the forehead and cheek, the sheen of sweat as highlight; soft fill from the right; background out of focus",
+      "composition": "the head fills the right two thirds of the frame, eyes on the upper third line; shallow depth of field isolates the face",
+      "framing": "close-up",
+      "camera": "static, eye level, long lens",
+      "tags": [
+        "close-up",
+        "sweat",
+        "portrait",
+        "shallow focus",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "rear-window-01",
+      "film": "rear-window",
+      "file": "stills/rear-window/01.jpg",
+      "original": "originals/rear-window-courtyard-trailer-48s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 0:48 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The Greenwich Village courtyard: fire escapes, the songwriter's studio and the skyline beyond",
+      "source": {
+        "name": "Wikimedia Commons, Rear Window trailer for the 1968 re-release, using footage shot for the 1954 release",
+        "url": "https://commons.wikimedia.org/wiki/File:Rear_Window_(1954)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload is an open-matte 4:3 transfer of a film composed for 1.66:1. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#9a6b3c",
+        "#7f8aa0",
+        "#d8c8a8"
+      ],
+      "paletteNotes": "warm brick and ochre, slate-blue sky, cream rails",
+      "lighting": "flat afternoon daylight, slightly hazy, no hard shadows; brick warmth against a cool sky",
+      "composition": "symmetrical stack of balconies and fire escapes framing the central studio window; the skyline sits in the top gap",
+      "framing": "wide shot",
+      "camera": "static, eye level, from Jefferies' window",
+      "tags": [
+        "courtyard",
+        "architecture",
+        "symmetry",
+        "voyeurism",
+        "Technicolor",
+        "4:3"
+      ]
+    },
+    {
+      "id": "rear-window-02",
+      "film": "rear-window",
+      "file": "stills/rear-window/02.jpg",
+      "original": "originals/rear-window-songwriter-window-trailer-78s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 1:18 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "The songwriter at his piano at night, seen across the courtyard through the blinds of Jefferies' window",
+      "source": {
+        "name": "Wikimedia Commons, Rear Window trailer for the 1968 re-release, using footage shot for the 1954 release",
+        "url": "https://commons.wikimedia.org/wiki/File:Rear_Window_(1954)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. The upload is an open-matte 4:3 transfer of a film composed for 1.66:1. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#c89a5a",
+        "#4b3a2a",
+        "#0b0b0b"
+      ],
+      "paletteNotes": "a single warm-lit room inside black; amber lamplight",
+      "lighting": "interior practicals (lamp, candles) light the room like a stage; the surrounding night is black; the foreground blinds read as dark bars",
+      "composition": "a lit rectangle inside the dark frame; the window mullions and blinds cut the image into panels; the figure small at centre",
+      "framing": "wide shot through a window",
+      "camera": "static, eye level, long lens from across the courtyard",
+      "tags": [
+        "window",
+        "night",
+        "frame within frame",
+        "voyeurism",
+        "warm light",
+        "4:3"
+      ]
+    },
+    {
+      "id": "sunset-boulevard-01",
+      "film": "sunset-boulevard",
+      "file": "stills/sunset-boulevard/01.jpg",
+      "original": "originals/sunset-boulevard-norma-paramount-gate-trailer-129s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 2:09 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Norma Desmond in the back of the Isotta Fraschini at the studio, veiled, an arc lamp blazing behind her",
+      "source": {
+        "name": "Wikimedia Commons, Sunset Boulevard (1950) trailer, from the Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Sunset_Boulevard_(1950)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States before 1978 without a copyright notice (Commons: PD-Pre1978)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#f5f5f5",
+        "#6f6f6f",
+        "#0a0a0a"
+      ],
+      "paletteNotes": "white fur and feather, mid-grey veil, black coat and background",
+      "lighting": "hard backlight from an arc lamp at right rimming the profile and veil; soft frontal fill; the lamp flares in frame",
+      "composition": "profile at left, the feather sweeping to the top corner; the lamp and studio rigging crowd the right half",
+      "framing": "medium close-up, profile",
+      "camera": "static, low angle",
+      "tags": [
+        "profile",
+        "veil",
+        "backlight",
+        "studio",
+        "glamour",
+        "monochrome",
+        "4:3"
+      ]
+    },
+    {
+      "id": "sunset-boulevard-02",
+      "film": "sunset-boulevard",
+      "file": "stills/sunset-boulevard/02.jpg",
+      "original": "originals/sunset-boulevard-dawn-street-trailer-155s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 2:35 of the Commons upload of the trailer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Sunset Boulevard at dawn, the street empty, the police motorcycles far down the road (the opening)",
+      "source": {
+        "name": "Wikimedia Commons, Sunset Boulevard (1950) trailer, from the Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Sunset_Boulevard_(1950)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States before 1978 without a copyright notice (Commons: PD-Pre1978)",
+        "attribution": "Paramount Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#dcdcdc",
+        "#8a8a8a",
+        "#2a2a2a"
+      ],
+      "paletteNotes": "pale sky, grey asphalt, dark trees",
+      "lighting": "flat pre-dawn light; the headlamps are the only bright points; no shadows",
+      "composition": "the road runs from the bottom edge to a vanishing point under the hills; street lamps and trees form the left margin; the right half is open sky",
+      "framing": "extreme wide shot",
+      "camera": "static, low angle on the road surface",
+      "tags": [
+        "street",
+        "dawn",
+        "vanishing point",
+        "emptiness",
+        "opening shot",
+        "monochrome",
+        "4:3"
+      ]
+    },
+    {
+      "id": "some-like-it-hot-01",
+      "film": "some-like-it-hot",
+      "file": "stills/some-like-it-hot/01.jpg",
+      "original": "originals/some-like-it-hot-platform-trailer-31s.jpg",
+      "width": 1280,
+      "height": 767,
+      "aspectRatio": "1.67:1",
+      "frameType": "film frame (timestamp 0:31 of the Commons upload of the trailer, 1802×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Josephine and Daphne on the station platform beside the train, steam behind them",
+      "source": {
+        "name": "Wikimedia Commons, Some Like It Hot (1959) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Some_Like_it_Hot_(1959)_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#f0f0f0",
+        "#7a7a7a",
+        "#111111"
+      ],
+      "paletteNotes": "white fur collar, grey steam, black coats",
+      "lighting": "high-key studio light with a hard back light picking out the fur and feathers; the steam catches the light at right",
+      "composition": "two figures fill the frame side by side; the carriage runs on a diagonal behind them; station lamps string across the top",
+      "framing": "medium two-shot",
+      "camera": "tracking backwards ahead of the pair, eye level",
+      "tags": [
+        "platform",
+        "train",
+        "two-shot",
+        "steam",
+        "costume",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "some-like-it-hot-02",
+      "film": "some-like-it-hot",
+      "file": "stills/some-like-it-hot/02.jpg",
+      "original": "originals/some-like-it-hot-sugar-stage-trailer-113s.jpg",
+      "width": 1280,
+      "height": 767,
+      "aspectRatio": "1.67:1",
+      "frameType": "film frame (timestamp 1:53 of the Commons upload of the trailer, 1802×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Sugar (Marilyn Monroe) singing with the band, the all-girl orchestra behind her",
+      "source": {
+        "name": "Wikimedia Commons, Some Like It Hot (1959) trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:Some_Like_it_Hot_(1959)_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#f7f7f7",
+        "#8a8a8a",
+        "#141414"
+      ],
+      "paletteNotes": "glowing white skin and hair, grey band, black velvet dress",
+      "lighting": "soft frontal key with heavy diffusion on the face, hair rimmed from behind; the band a stop darker",
+      "composition": "figure centred and forward of the band, ringed by musicians and instruments; shallow focus separates her from them",
+      "framing": "medium shot",
+      "camera": "static, eye level",
+      "tags": [
+        "performance",
+        "soft focus",
+        "glamour",
+        "band",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "paths-of-glory-01",
+      "film": "paths-of-glory",
+      "file": "stills/paths-of-glory/01.jpg",
+      "original": "originals/paths-of-glory-trench-night-trailer-60s.jpg",
+      "width": 1280,
+      "height": 767,
+      "aspectRatio": "1.67:1",
+      "frameType": "film frame (timestamp 1:00 of the Commons upload of the trailer, 1802×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Colonel Dax, helmeted and armed, in the trench on the night patrol",
+      "source": {
+        "name": "Wikimedia Commons, Paths of Glory (1957) original trailer, from the Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Paths_of_Glory_(1957)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#cfcfcf",
+        "#4d4d4d",
+        "#050505"
+      ],
+      "paletteNotes": "near-black night, grey helmet and greatcoat, a lit face",
+      "lighting": "single hard key from the upper left on the face and helmet rim; no fill; the trench wall falls to black",
+      "composition": "figure low in frame leaning into the lower left; a barbed-wire post as the only vertical; black negative space above",
+      "framing": "medium close-up",
+      "camera": "static, low angle",
+      "tags": [
+        "trench",
+        "night",
+        "low key",
+        "helmet",
+        "war",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "paths-of-glory-02",
+      "film": "paths-of-glory",
+      "file": "stills/paths-of-glory/02.jpg",
+      "original": "originals/paths-of-glory-over-the-top-trailer-135s.jpg",
+      "width": 1280,
+      "height": 767,
+      "aspectRatio": "1.67:1",
+      "frameType": "film frame (timestamp 2:15 of the Commons upload of the trailer, 1802×1080; Commons server-side frame thumbnail, served at 1280 px maximum for this upload)",
+      "scene": "Dax goes over the top, pistol in hand, against the smoke-filled sky",
+      "source": {
+        "name": "Wikimedia Commons, Paths of Glory (1957) original trailer, from the Blu-ray",
+        "url": "https://commons.wikimedia.org/wiki/File:Paths_of_Glory_(1957)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#d6d6d6",
+        "#8a8a8a",
+        "#1e1e1e"
+      ],
+      "paletteNotes": "white smoke-sky, grey sandbags, black figure",
+      "lighting": "overcast daylight; the figure backlit into near-silhouette against the bright smoke",
+      "composition": "figure silhouetted on the parapet, arms spread on a diagonal; the sandbag wall forms the base; the sky takes three quarters of the frame",
+      "framing": "wide shot",
+      "camera": "static, low angle from inside the trench",
+      "tags": [
+        "silhouette",
+        "attack",
+        "low angle",
+        "smoke",
+        "war",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "the-apartment-01",
+      "film": "the-apartment",
+      "file": "stills/the-apartment/01.jpg",
+      "original": "originals/the-apartment-office-trailer-40s.jpg",
+      "width": 1600,
+      "height": 683,
+      "aspectRatio": "2.34:1",
+      "frameType": "film frame (timestamp 0:40 of the Commons upload of the trailer, 1920×820; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "C.C. Baxter at his desk on the insurance floor, the grid of fluorescent lights and desks receding behind him",
+      "source": {
+        "name": "Wikimedia Commons, The Apartment (1960) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Apartment_(1960)_-_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#f2f2f2",
+        "#6b6b6b",
+        "#101010"
+      ],
+      "paletteNotes": "white ceiling panels, mid-grey office, black suit",
+      "lighting": "the fluorescent ceiling grid is both the light source and the subject; even and shadowless",
+      "composition": "the ceiling grid converges to a vanishing point behind the head; the figure in profile at left, the adding machine in the foreground right",
+      "framing": "medium shot, profile",
+      "camera": "static, eye level, wide lens",
+      "tags": [
+        "office",
+        "grid",
+        "perspective",
+        "fluorescent",
+        "widescreen",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "the-apartment-02",
+      "film": "the-apartment",
+      "file": "stills/the-apartment/02.jpg",
+      "original": "originals/the-apartment-kitchen-trailer-74s.jpg",
+      "width": 1600,
+      "height": 683,
+      "aspectRatio": "2.34:1",
+      "frameType": "film frame (timestamp 1:14 of the Commons upload of the trailer, 1920×820; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "Baxter in his kitchen straining spaghetti through a tennis racket",
+      "source": {
+        "name": "Wikimedia Commons, The Apartment (1960) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Apartment_(1960)_-_trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "United Artists (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#ebebeb",
+        "#5c5c5c",
+        "#0f0f0f"
+      ],
+      "paletteNotes": "white shirt, grey kitchen, black shadows",
+      "lighting": "low-key interior: a single key from the left; deep shadows in the cupboards and doorway",
+      "composition": "figure centred between the dark cupboard block at left and the cluttered counter at right; the racket makes the diagonal",
+      "framing": "medium shot",
+      "camera": "static, eye level",
+      "tags": [
+        "kitchen",
+        "interior",
+        "comedy",
+        "low key",
+        "widescreen",
+        "monochrome"
+      ]
+    },
+    {
+      "id": "bridge-on-the-river-kwai-01",
+      "film": "bridge-on-the-river-kwai",
+      "file": "stills/bridge-on-the-river-kwai/01.jpg",
+      "original": "originals/bridge-on-the-river-kwai-nicholson-trailer-60s.jpg",
+      "width": 1600,
+      "height": 678,
+      "aspectRatio": "2.36:1",
+      "frameType": "film frame (timestamp 1:00 of the Commons upload of the trailer, 1920×814; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "Colonel Nicholson (Alec Guinness) under the midday sun, the ranks of prisoners behind him",
+      "source": {
+        "name": "Wikimedia Commons, The Bridge on the River Kwai (1957) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Bridge_On_The_River_Kwai_(1957)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#c9a26a",
+        "#8a6a45",
+        "#e8dcc4"
+      ],
+      "paletteNotes": "khaki, sun-browned skin, bleached sand",
+      "lighting": "hard overhead sun, the cap peak throwing a shadow across the eyes; bright bounce from the sand fills from below",
+      "composition": "head and shoulders in the right third; the parade of men recedes in rows to the left; shallow focus holds only the face",
+      "framing": "medium close-up",
+      "camera": "static, slightly low angle, long lens",
+      "tags": [
+        "portrait",
+        "sun",
+        "ranks",
+        "khaki",
+        "CinemaScope",
+        "Technicolor"
+      ]
+    },
+    {
+      "id": "bridge-on-the-river-kwai-02",
+      "film": "bridge-on-the-river-kwai",
+      "file": "stills/bridge-on-the-river-kwai/02.jpg",
+      "original": "originals/bridge-on-the-river-kwai-bridge-dawn-trailer-190s.jpg",
+      "width": 1600,
+      "height": 678,
+      "aspectRatio": "2.36:1",
+      "frameType": "film frame (timestamp 3:10 of the Commons upload of the trailer, 1920×814; Commons server-side frame thumbnail, at the upload's full width, downscaled to 1600 px for display)",
+      "scene": "The bridge over the river at dawn, mist on the hills, framed by the jungle",
+      "source": {
+        "name": "Wikimedia Commons, The Bridge on the River Kwai (1957) original trailer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Bridge_On_The_River_Kwai_(1957)_-_Trailer.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published in the United States between 1929 and 1977 without a copyright notice (Commons: PD-US no notice)",
+        "attribution": "Columbia Pictures (trailer)",
+        "notes": "PD status covers the trailer, not the feature, and applies in the United States; the footage may remain protected elsewhere. Trailer frames can differ in grading and take from the feature."
+      },
+      "palette": [
+        "#5a5870",
+        "#8a7a8a",
+        "#1e1e2a"
+      ],
+      "paletteNotes": "lavender dawn sky, violet mist, blue-black foliage",
+      "lighting": "pre-dawn ambient light, no direct sun; the sky the brightest value, the bridge in silhouette",
+      "composition": "the bridge spans the middle of the frame between two walls of jungle; the river leads in from the bottom; the mountain fills the upper left",
+      "framing": "extreme wide shot",
+      "camera": "static, eye level from the river bank",
+      "tags": [
+        "bridge",
+        "dawn",
+        "landscape",
+        "silhouette",
+        "CinemaScope",
+        "Technicolor"
+      ]
+    },
+    {
+      "id": "the-general-01",
+      "film": "the-general",
+      "file": "stills/the-general/01.jpg",
+      "original": "originals/the-general-valley-track-1680s.jpg",
+      "width": 960,
+      "height": 720,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 28:00 of the Commons 720p transfer, sepia-tinted print)",
+      "scene": "The locomotive on the single track through the valley, mountains behind",
+      "source": {
+        "name": "Wikimedia Commons, The General (1926) 720p transfer",
+        "url": "https://commons.wikimedia.org/wiki/File:The_General_1926_720p.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1926 (US, pre-1931)",
+        "attribution": "Buster Keaton Productions",
+        "notes": "Transfer is sepia-tinted; a neutral black-and-white restoration would be preferable if a clearly public-domain copy is found. Resolution limited to 960x720."
+      },
+      "palette": [
+        "#3b2f23",
+        "#a08a6a",
+        "#e2d6c0"
+      ],
+      "paletteNotes": "sepia: dark umber, mid tan, pale cream",
+      "lighting": "daylight, soft overcast; even exposure across the valley",
+      "composition": "track leads from bottom centre into depth; locomotive as a small mass on the vanishing line; mountain ridge closes the top",
+      "framing": "extreme wide shot, one-point perspective",
+      "camera": "static, slightly high angle",
+      "tags": [
+        "landscape",
+        "perspective",
+        "silent",
+        "railway",
+        "4:3"
+      ]
+    },
+    {
+      "id": "the-general-02",
+      "film": "the-general",
+      "file": "stills/the-general/02.jpg",
+      "original": "originals/the-general-cowcatcher-1516s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 25:16 of the Commons 1080p transfer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum)",
+      "scene": "Johnnie Gray sits on the cowcatcher of the Texas with a railway tie across his lap as the locomotive bears down on another",
+      "source": {
+        "name": "Wikimedia Commons, The General (1926) 1080p transfer (sepia-tinted print)",
+        "url": "https://commons.wikimedia.org/wiki/File:The_General_(1926).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1926 (US, pre-1931); Commons template PD-old-auto-expired (author death year 1968 as recorded on the file page)",
+        "attribution": "Buster Keaton Productions / United Artists",
+        "notes": "Transfer is sepia-tinted, as is the 720p copy used for still 01. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#d2b48c",
+        "#8b6f47",
+        "#2b1d10"
+      ],
+      "paletteNotes": "sepia tint: cream highlights, tan midtones, dark brown blacks",
+      "lighting": "daylight from behind the camera, soft and even; the locomotive front in shadow with a lit face",
+      "composition": "the locomotive fills the frame head-on, the number plate centred above the figure; the rails converge toward the camera; the tie makes a diagonal",
+      "framing": "medium wide shot, head-on",
+      "camera": "mounted on a platform ahead of the moving locomotive",
+      "tags": [
+        "locomotive",
+        "head-on",
+        "symmetry",
+        "silent",
+        "4:3",
+        "sepia"
+      ]
+    },
+    {
+      "id": "the-general-03",
+      "film": "the-general",
+      "file": "stills/the-general/03.jpg",
+      "original": "originals/the-general-bridge-collapse-3978s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 1:06:18 of the Commons 1080p transfer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum)",
+      "scene": "The Rock River bridge gives way under the Texas: the locomotive drops into the river as the Union troops fire from the bank",
+      "source": {
+        "name": "Wikimedia Commons, The General (1926) 1080p transfer (sepia-tinted print)",
+        "url": "https://commons.wikimedia.org/wiki/File:The_General_(1926).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1926 (US, pre-1931); Commons template PD-old-auto-expired (author death year 1968 as recorded on the file page)",
+        "attribution": "Buster Keaton Productions / United Artists",
+        "notes": "Transfer is sepia-tinted, as is the 720p copy used for still 01. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#d9c3a0",
+        "#9c7f5a",
+        "#3a2a18"
+      ],
+      "paletteNotes": "sepia tint: pale sky and smoke, tan hillside, dark pines",
+      "lighting": "flat daylight through smoke; the smoke is the brightest mass",
+      "composition": "the broken bridge spans the left half, the falling train at right under its own smoke; riders in the river fill the foreground; pine ridges close the top",
+      "framing": "extreme wide shot",
+      "camera": "static, high angle from the opposite bank",
+      "tags": [
+        "bridge",
+        "collapse",
+        "spectacle",
+        "landscape",
+        "silent",
+        "4:3",
+        "sepia"
+      ]
+    },
+    {
+      "id": "the-kid-01",
+      "film": "the-kid",
+      "file": "stills/the-kid/01.jpg",
+      "original": "originals/the-kid-rooftops-3140s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 52:20 of the Commons 1080p transfer of the 1921 cut)",
+      "scene": "The Tramp running across the rooftops to reach the Kid",
+      "source": {
+        "name": "Wikimedia Commons, The Kid (1921) original cut",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Kid_(1921).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1921 (US, pre-1931)",
+        "attribution": "Charles Chaplin Productions",
+        "notes": "Not public domain in the EU until 2048 (Chaplin died 1977); US status is clear."
+      },
+      "palette": [
+        "#111111",
+        "#777777",
+        "#dedede"
+      ],
+      "paletteNotes": "black and white: dense blacks, soft greys, blown sky",
+      "lighting": "daylight, overcast; even soft light on the roof planes, figure slightly darker than the roofs",
+      "composition": "small moving figure amid receding roof planes; shingled surfaces fill the frame as a pattern; chimneys as vertical accents",
+      "framing": "wide shot, high angle",
+      "camera": "static, high angle from a neighbouring roof",
+      "tags": [
+        "rooftop",
+        "chase",
+        "pattern",
+        "silent",
+        "4:3",
+        "scale"
+      ]
+    },
+    {
+      "id": "the-kid-02",
+      "film": "the-kid",
+      "file": "stills/the-kid/02.jpg",
+      "original": "originals/the-kid-kerb-doorway-1230s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 20:30 of the Commons 1080p transfer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum)",
+      "scene": "The Kid crouches at the kerb outside the tenement door, the boarded door and bollards behind him",
+      "source": {
+        "name": "Wikimedia Commons, The Kid (1921) original cut, 1080p",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Kid_(1921).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1921 (US, pre-1931); Commons templates PD-US-expired and PD-in",
+        "attribution": "Charles Chaplin Productions",
+        "notes": "Not public domain in the EU until 2048 (Chaplin died 1977); US status is clear. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#dedede",
+        "#8c8c8c",
+        "#1c1c1c"
+      ],
+      "paletteNotes": "black and white: grey plaster, mid-grey brick, dark door",
+      "lighting": "flat overcast daylight; no cast shadows; the textures of plaster and brick carry the tone",
+      "composition": "small figure low in the frame against the vertical slab of the door; the kerb line runs the width of the frame; bollards and brick in the right third",
+      "framing": "wide shot",
+      "camera": "static, eye level",
+      "tags": [
+        "child",
+        "doorway",
+        "street",
+        "texture",
+        "silent",
+        "4:3"
+      ]
+    },
+    {
+      "id": "sherlock-jr-01",
+      "film": "sherlock-jr",
+      "file": "stills/sherlock-jr/01.jpg",
+      "original": "originals/sherlock-jr-projection-booth-1040s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 17:20 of the Commons 1080p transfer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum)",
+      "scene": "The projectionist asleep on his stool between the two projectors in the booth",
+      "source": {
+        "name": "Wikimedia Commons, Sherlock Jr. (1924) 1080p transfer",
+        "url": "https://commons.wikimedia.org/wiki/File:Sherlock_Jr._(1924).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1924 (US, pre-1931); Commons template PD-old-auto-expired (Keaton died 1966)",
+        "attribution": "Buster Keaton Productions / Metro Pictures",
+        "notes": "Upload sourced from YouTube; the transfer is neutral black and white. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#e8e8e8",
+        "#7d7d7d",
+        "#161616"
+      ],
+      "paletteNotes": "black and white: grey walls, dark machines, white shirt",
+      "lighting": "even frontal light on the set; the projector lamp glows as a practical",
+      "composition": "the two projectors bracket the sleeping figure; cables loop across the floor; the booth wall is a flat backdrop",
+      "framing": "wide shot",
+      "camera": "static, eye level",
+      "tags": [
+        "projection booth",
+        "cinema",
+        "sleep",
+        "machines",
+        "silent",
+        "4:3"
+      ]
+    },
+    {
+      "id": "sherlock-jr-02",
+      "film": "sherlock-jr",
+      "file": "stills/sherlock-jr/02.jpg",
+      "original": "originals/sherlock-jr-screen-in-theatre-1140s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 19:00 of the Commons 1080p transfer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum)",
+      "scene": "The dream-projectionist walks down the aisle toward the screen, the audience's backs in the foreground, the film playing above",
+      "source": {
+        "name": "Wikimedia Commons, Sherlock Jr. (1924) 1080p transfer",
+        "url": "https://commons.wikimedia.org/wiki/File:Sherlock_Jr._(1924).webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain: published 1924 (US, pre-1931); Commons template PD-old-auto-expired (Keaton died 1966)",
+        "attribution": "Buster Keaton Productions / Metro Pictures",
+        "notes": "Upload sourced from YouTube; the transfer is neutral black and white. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#e4e4e4",
+        "#848484",
+        "#121212"
+      ],
+      "paletteNotes": "black and white: bright screen, grey auditorium, dark heads",
+      "lighting": "the screen is the light source; the auditorium is dim; the proscenium ornament picks up spill",
+      "composition": "frame within a frame: the lit screen centred inside the proscenium, the standing figure on the centre line below it, a sea of heads at the bottom",
+      "framing": "wide shot",
+      "camera": "static, eye level from the back of the auditorium",
+      "tags": [
+        "frame within frame",
+        "cinema",
+        "audience",
+        "screen",
+        "silent",
+        "4:3"
+      ]
+    },
+    {
+      "id": "the-gold-rush-01",
+      "film": "the-gold-rush",
+      "file": "stills/the-gold-rush/01.jpg",
+      "original": "originals/the-gold-rush-dance-of-the-rolls-3430s.jpg",
+      "width": 1280,
+      "height": 960,
+      "aspectRatio": "1.33:1",
+      "frameType": "film frame (timestamp 57:10 of the Commons 1080p transfer, 1440×1080; Commons server-side frame thumbnail, served at 1280 px maximum)",
+      "scene": "The Lone Prospector performs the dance of the rolls at the New Year's Eve table",
+      "source": {
+        "name": "Wikimedia Commons, The Gold Rush (1925) restored silent version, 1080p",
+        "url": "https://commons.wikimedia.org/wiki/File:The_Gold_Rush.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "Public domain (US): published 1925, pre-1931 (Commons templates PD-US-expired and PD-in for the 1925 version)",
+        "attribution": "Charles Chaplin Productions / United Artists",
+        "notes": "The Commons copy is the restored 1925 silent version from an Internet Archive 1080p upload; the uploader removed the Roy Export S.A.S. copyright notice and the restoration and music credits. Chaplin died 1977, so the film is not public domain in the EU until 2048 (the file page carries the 'Urheberrechtlich geschützt' warning). Roy Export may assert rights in the restoration itself; the US status of the underlying 1925 film is clear. Commons serves frame thumbnails of this upload at 1280 px maximum (a wider request returns HTTP 400), so 1280 px is the largest frame available without re-encoding the video."
+      },
+      "palette": [
+        "#e6e6e6",
+        "#808080",
+        "#121212"
+      ],
+      "paletteNotes": "black and white: pale face and hands, grey cabin logs, dark coat",
+      "lighting": "soft frontal key; the face and hands brightest; the log wall falls back a stop",
+      "composition": "figure centred and symmetrical, the two forks with rolls at the bottom centre; the table edge closes the frame",
+      "framing": "medium shot",
+      "camera": "static, eye level",
+      "tags": [
+        "pantomime",
+        "symmetry",
+        "hands",
+        "cabin",
+        "silent",
+        "4:3"
+      ]
+    },
+    {
+      "id": "spirited-away-01",
+      "film": "spirited-away",
+      "file": "stills/spirited-away/01.jpg",
+      "original": "originals/spirited-away-ghibli-chihiro043.jpg",
+      "width": 1600,
+      "height": 865,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file chihiro043.jpg, 1920×1038)",
+      "scene": "The sea railway: the train runs across the flooded plain under towering sunset clouds",
+      "source": {
+        "name": "Studio Ghibli official website, Spirited Away still gallery",
+        "url": "https://www.ghibli.jp/gallery/chihiro043.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/chihiro",
+        "attribution": "© 2001 Studio Ghibli – NDDTM",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#5d7fc7",
+        "#f2c8a0",
+        "#9a6a7a"
+      ],
+      "paletteNotes": "cobalt sky, peach cloud light, mauve reflections",
+      "lighting": "low warm sun from the left lighting the cloud tops; the water mirrors the sky",
+      "composition": "train as a thin horizontal band on the lower third, its reflection beneath; clouds fill two thirds of the frame",
+      "framing": "extreme wide shot",
+      "camera": "static, eye level at the water line",
+      "tags": [
+        "train",
+        "water",
+        "reflection",
+        "clouds",
+        "horizontal",
+        "animation"
+      ]
+    },
+    {
+      "id": "spirited-away-02",
+      "film": "spirited-away",
+      "file": "stills/spirited-away/02.jpg",
+      "original": "originals/spirited-away-ghibli-chihiro020.jpg",
+      "width": 1600,
+      "height": 865,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file chihiro020.jpg, 1920×1038)",
+      "scene": "No-Face stands translucent at the red bridge to the bathhouse",
+      "source": {
+        "name": "Studio Ghibli official website, Spirited Away still gallery",
+        "url": "https://www.ghibli.jp/gallery/chihiro020.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/chihiro",
+        "attribution": "© 2001 Studio Ghibli – NDDTM",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#d9434b",
+        "#7fc7d6",
+        "#141414"
+      ],
+      "paletteNotes": "lacquer red rail, pale turquoise sky, black figure",
+      "lighting": "flat daylight, no cast shadow; the figure is semi-transparent against the sky",
+      "composition": "the curving red rail sweeps across the frame on a diagonal; the black vertical figure breaks it at centre",
+      "framing": "medium wide shot",
+      "camera": "static, slightly low angle",
+      "tags": [
+        "bridge",
+        "red",
+        "spirit",
+        "diagonal",
+        "negative space",
+        "animation"
+      ]
+    },
+    {
+      "id": "spirited-away-03",
+      "film": "spirited-away",
+      "file": "stills/spirited-away/03.jpg",
+      "original": "originals/spirited-away-ghibli-chihiro011.jpg",
+      "width": 1600,
+      "height": 865,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file chihiro011.jpg, 1920×1038)",
+      "scene": "The bathhouse at night, every window lit, a banner with the character 油 at left",
+      "source": {
+        "name": "Studio Ghibli official website, Spirited Away still gallery",
+        "url": "https://www.ghibli.jp/gallery/chihiro011.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/chihiro",
+        "attribution": "© 2001 Studio Ghibli – NDDTM",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#f2c66a",
+        "#7a1f2e",
+        "#2a2a2e"
+      ],
+      "paletteNotes": "amber window light, oxblood timber, charcoal night",
+      "lighting": "warm interior light from hundreds of windows; the building glows against a dark sky",
+      "composition": "the facade fills the frame in stacked tiers; the banner and the pine frame the left and right edges",
+      "framing": "wide shot",
+      "camera": "static, low angle looking up at the facade",
+      "tags": [
+        "architecture",
+        "night",
+        "glow",
+        "pattern",
+        "warm light",
+        "animation"
+      ]
+    },
+    {
+      "id": "spirited-away-04",
+      "film": "spirited-away",
+      "file": "stills/spirited-away/04.jpg",
+      "original": "originals/spirited-away-ghibli-chihiro042.jpg",
+      "width": 1600,
+      "height": 865,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file chihiro042.jpg, 1920×1038)",
+      "scene": "Chihiro and No-Face sit side by side on the train, translucent passengers around them, the sea beyond the windows",
+      "source": {
+        "name": "Studio Ghibli official website, Spirited Away still gallery",
+        "url": "https://www.ghibli.jp/gallery/chihiro042.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/chihiro",
+        "attribution": "© 2001 Studio Ghibli – NDDTM",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#c23b3b",
+        "#3fa2d9",
+        "#f2f2f2"
+      ],
+      "paletteNotes": "red bench, sea blue, white clouds",
+      "lighting": "flat daylight from the windows; the shadow passengers are rendered as dark translucent shapes",
+      "composition": "strict horizontal bands: hand straps, windows, bench; the two figures centred between ghostly passengers at each edge",
+      "framing": "wide shot",
+      "camera": "static, eye level, head-on",
+      "tags": [
+        "train",
+        "symmetry",
+        "stillness",
+        "spirit",
+        "horizontal",
+        "animation"
+      ]
+    },
+    {
+      "id": "sita-sings-the-blues-01",
+      "film": "sita-sings-the-blues",
+      "file": "stills/sita-sings-the-blues/01.jpg",
+      "original": "originals/sita-sings-the-blues-sita-90s.jpg",
+      "width": 1280,
+      "height": 720,
+      "aspectRatio": "1.78:1",
+      "frameType": "film frame (timestamp 1:30 of the Commons upload, 1280×720; Commons server-side frame thumbnail at full width, downscaled to 1600 px for display)",
+      "scene": "Sita in the style of Indian painting, eyes closed, adorned with jewels",
+      "source": {
+        "name": "Wikimedia Commons, Sita Sings the Blues (2008), full film",
+        "url": "https://commons.wikimedia.org/wiki/File:Sita_Sings_the_Blues.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "CC0 1.0 (public domain dedication)",
+        "attribution": "Nina Paley",
+        "notes": "Open movie released under a Creative Commons licence by its makers. No attribution required."
+      },
+      "palette": [
+        "#1a1a1a",
+        "#c87a5a",
+        "#8aa8c8"
+      ],
+      "paletteNotes": "black hair, terracotta skin, grey-blue sea",
+      "lighting": "flat graphic colour, no modelled light",
+      "composition": "symmetrical frontal face framed by hair; jewellery as pattern",
+      "framing": "close-up",
+      "camera": "static, frontal",
+      "tags": [
+        "portrait",
+        "graphic",
+        "symmetry",
+        "pattern",
+        "animation",
+        "16:9"
+      ]
+    },
+    {
+      "id": "sita-sings-the-blues-02",
+      "film": "sita-sings-the-blues",
+      "file": "stills/sita-sings-the-blues/02.jpg",
+      "original": "originals/sita-sings-the-blues-forest-750s.jpg",
+      "width": 1280,
+      "height": 720,
+      "aspectRatio": "1.78:1",
+      "frameType": "film frame (timestamp 12:30 of the Commons upload, 1280×720; Commons server-side frame thumbnail at full width, downscaled to 1600 px for display)",
+      "scene": "Rama and Sita play hide and seek in the bright green forest of exile",
+      "source": {
+        "name": "Wikimedia Commons, Sita Sings the Blues (2008), full film",
+        "url": "https://commons.wikimedia.org/wiki/File:Sita_Sings_the_Blues.webm"
+      },
+      "rights": {
+        "status": "cleared",
+        "license": "CC0 1.0 (public domain dedication)",
+        "attribution": "Nina Paley",
+        "notes": "Open movie released under a Creative Commons licence by its makers. No attribution required."
+      },
+      "palette": [
+        "#8ad84a",
+        "#3a8a2a",
+        "#e85a8a"
+      ],
+      "paletteNotes": "lime green, forest green, pink accents",
+      "lighting": "flat graphic colour",
+      "composition": "vertical tree trunks form a screen across the frame; the figures small between them",
+      "framing": "wide shot",
+      "camera": "static, frontal",
+      "tags": [
+        "forest",
+        "graphic",
+        "pattern",
+        "verticals",
+        "animation",
+        "16:9"
+      ]
+    },
+    {
+      "id": "parasite-01",
+      "film": "parasite",
+      "file": "stills/parasite/01.jpg",
+      "original": "originals/parasite-garden-glass-trailer-37s.jpg",
+      "width": 1280,
+      "height": 530,
+      "aspectRatio": "2.42:1",
+      "frameType": "film frame from the international trailer (Cannes 2019) (timestamp 0:37 of a 1280×720 copy), letterbox bars cropped",
+      "scene": "Ki-woo looks through the glass wall at the Park garden, where the housekeeper and Mrs Park sit at a table",
+      "source": {
+        "name": "Internet Archive, Parasite international trailer (Cannes 2019), Internet Archive copy",
+        "url": "https://archive.org/details/Parasite2019"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2019 CJ ENM Corporation, Barunson E&A",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1280×720). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#5a9a3a",
+        "#c9a272",
+        "#1a1a1a"
+      ],
+      "paletteNotes": "lawn green, warm decking, dark silhouette",
+      "lighting": "soft daylight on the garden; the interior and the foreground figure in shadow",
+      "composition": "frame within a frame: the glass wall divides the image; the dark head in the foreground, the bright garden beyond",
+      "framing": "wide shot over the shoulder",
+      "camera": "static, slightly high angle from inside the house",
+      "tags": [
+        "garden",
+        "glass",
+        "class",
+        "frame within frame",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "parasite-02",
+      "film": "parasite",
+      "file": "stills/parasite/02.jpg",
+      "original": "originals/parasite-semi-basement-window-trailer-13s.jpg",
+      "width": 1280,
+      "height": 529,
+      "aspectRatio": "2.42:1",
+      "frameType": "film frame from the international trailer (Cannes 2019) (timestamp 0:13 of a 1280×720 copy), letterbox bars cropped",
+      "scene": "The semi-basement window at street level, socks drying on a hanger, fumigation smoke in the alley",
+      "source": {
+        "name": "Internet Archive, Parasite international trailer (Cannes 2019), Internet Archive copy",
+        "url": "https://archive.org/details/Parasite2019"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2019 CJ ENM Corporation, Barunson E&A",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1280×720). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#8a8a7a",
+        "#3a3a2e",
+        "#e6e6e0"
+      ],
+      "paletteNotes": "smoky grey, olive-brown sill, white haze",
+      "lighting": "flat overcast daylight from outside; the interior dark",
+      "composition": "window grid across the frame; the socks hang in the upper left; the alley seen at eye level with the street",
+      "framing": "medium wide shot",
+      "camera": "static, eye level from inside the flat",
+      "tags": [
+        "window",
+        "grid",
+        "poverty",
+        "smoke",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "the-grand-budapest-hotel-01",
+      "film": "the-grand-budapest-hotel",
+      "file": "stills/the-grand-budapest-hotel/01.jpg",
+      "original": "originals/grand-budapest-lift-trailer-5s.jpg",
+      "width": 447,
+      "height": 342,
+      "aspectRatio": "1.31:1",
+      "frameType": "film frame from the official worldwide trailer (Fox Searchlight) (timestamp 0:05 of a 640×360 copy), letterbox bars cropped",
+      "scene": "Gustave H. sits between two lift attendants in the red lift",
+      "source": {
+        "name": "Internet Archive, The Grand Budapest Hotel official worldwide trailer (Fox Searchlight), Internet Archive copy",
+        "url": "https://archive.org/details/thegrandbudapesthotelofficialwolrdwidetrailerhd_202002"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2014 Twentieth Century Fox Film Corporation",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (640×360). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#d93a2a",
+        "#5a3a7a",
+        "#f2e6d2"
+      ],
+      "paletteNotes": "lift red, bellhop purple, ivory shirt",
+      "lighting": "flat, frontal, even light; no shadows on the walls",
+      "composition": "rigorous symmetry: the seated figure centred, a standing attendant on each side",
+      "framing": "medium wide shot",
+      "camera": "static, eye level, head-on",
+      "tags": [
+        "symmetry",
+        "red",
+        "purple",
+        "uniforms",
+        "Academy ratio"
+      ]
+    },
+    {
+      "id": "the-grand-budapest-hotel-02",
+      "film": "the-grand-budapest-hotel",
+      "file": "stills/the-grand-budapest-hotel/02.jpg",
+      "original": "originals/grand-budapest-facade-trailer-105s.jpg",
+      "width": 448,
+      "height": 343,
+      "aspectRatio": "1.31:1",
+      "frameType": "film frame from the official worldwide trailer (Fox Searchlight) (timestamp 1:45 of a 640×360 copy), letterbox bars cropped",
+      "scene": "Soldiers march past the pink hotel facade hung with ZZ banners; a Mendl's van in the foreground",
+      "source": {
+        "name": "Internet Archive, The Grand Budapest Hotel official worldwide trailer (Fox Searchlight), Internet Archive copy",
+        "url": "https://archive.org/details/thegrandbudapesthotelofficialwolrdwidetrailerhd_202002"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2014 Twentieth Century Fox Film Corporation",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (640×360). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#e8b4b4",
+        "#2a2a2a",
+        "#f2f2f2"
+      ],
+      "paletteNotes": "confectionery pink, black banners, snow white",
+      "lighting": "flat overcast winter light",
+      "composition": "the facade fills the frame head-on; vertical banners repeat across it; the van cuts in at the bottom",
+      "framing": "wide shot",
+      "camera": "static, eye level, head-on",
+      "tags": [
+        "facade",
+        "symmetry",
+        "pink",
+        "repetition",
+        "Academy ratio"
+      ]
+    },
+    {
+      "id": "amelie-01",
+      "film": "amelie",
+      "file": "stills/amelie/01.jpg",
+      "original": "originals/amelie-cafe-trailer-33s.jpg",
+      "width": 854,
+      "height": 480,
+      "aspectRatio": "1.78:1",
+      "frameType": "film frame from the US theatrical trailer (Miramax) (timestamp 0:33 of a 854×480 copy), letterbox bars cropped",
+      "scene": "Amélie in the café, polka-dot dress, an art deco lamp behind her",
+      "source": {
+        "name": "Internet Archive, Amélie US theatrical trailer (Miramax), Internet Archive copy",
+        "url": "https://archive.org/details/amelie-2001-official-trailer-1-audrey-tautou-movie"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2001 UGC Images / Victoires Productions / Tapioca Films / France 3 Cinéma / MMC Independent",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (854×480). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#e8a040",
+        "#b03030",
+        "#3a6a3a"
+      ],
+      "paletteNotes": "amber, cherry red, bottle green",
+      "lighting": "warm tungsten key and the saturated green-gold grade the film is known for",
+      "composition": "figure at centre-left, the lamp and the door frame either side",
+      "framing": "medium shot",
+      "camera": "static, eye level",
+      "tags": [
+        "café",
+        "warm grade",
+        "red and green",
+        "portrait",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "amelie-02",
+      "film": "amelie",
+      "file": "stills/amelie/02.jpg",
+      "original": "originals/amelie-window-smile-trailer-23s.jpg",
+      "width": 851,
+      "height": 480,
+      "aspectRatio": "1.77:1",
+      "frameType": "film frame from the US theatrical trailer (Miramax) (timestamp 0:23 of a 854×480 copy), letterbox bars cropped",
+      "scene": "Amélie leans in close, smiling, framed by the strings of a bead curtain",
+      "source": {
+        "name": "Internet Archive, Amélie US theatrical trailer (Miramax), Internet Archive copy",
+        "url": "https://archive.org/details/amelie-2001-official-trailer-1-audrey-tautou-movie"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2001 UGC Images / Victoires Productions / Tapioca Films / France 3 Cinéma / MMC Independent",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (854×480). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#e8b07a",
+        "#2a1a10",
+        "#6a8a3a"
+      ],
+      "paletteNotes": "warm skin, dark hair, green background",
+      "lighting": "soft warm key from the front; background in green blur",
+      "composition": "face fills the frame, slightly off-centre; vertical strings cross the foreground",
+      "framing": "close-up",
+      "camera": "static, slightly high angle",
+      "tags": [
+        "close-up",
+        "warm grade",
+        "smile",
+        "foreground layer",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "in-the-mood-for-love-01",
+      "film": "in-the-mood-for-love",
+      "file": "stills/in-the-mood-for-love/01.jpg",
+      "original": "originals/in-the-mood-for-love-red-booth-trailer-121s.jpg",
+      "width": 1256,
+      "height": 720,
+      "aspectRatio": "1.74:1",
+      "frameType": "film frame from the original trailer (Block 2 Pictures / Paradis Films / Jet Tone) (timestamp 2:01 of a 1280×720 copy), letterbox bars cropped",
+      "scene": "Mrs Chan sips from a green teacup in the red restaurant booth",
+      "source": {
+        "name": "Internet Archive, In the Mood for Love original trailer (Block 2 Pictures / Paradis Films / Jet Tone), Internet Archive copy",
+        "url": "https://archive.org/details/in-the-mood-for-love-2000-original-trailer-hd"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2000 Block 2 Pictures Inc.",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1280×720). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#9a1a1a",
+        "#5aa0a0",
+        "#e8c8a8"
+      ],
+      "paletteNotes": "oxblood booth, celadon cup, warm skin",
+      "lighting": "soft warm key from the left, deep shadow on the far side of the face",
+      "composition": "profile in the left two thirds; the red wall fills the rest; the cup and hand at the centre",
+      "framing": "close-up",
+      "camera": "static, eye level, long lens",
+      "tags": [
+        "red",
+        "cheongsam",
+        "profile",
+        "restaurant",
+        "1.66:1"
+      ]
+    },
+    {
+      "id": "in-the-mood-for-love-02",
+      "film": "in-the-mood-for-love",
+      "file": "stills/in-the-mood-for-love/02.jpg",
+      "original": "originals/in-the-mood-for-love-smoke-trailer-65s.jpg",
+      "width": 1256,
+      "height": 720,
+      "aspectRatio": "1.74:1",
+      "frameType": "film frame from the original trailer (Block 2 Pictures / Paradis Films / Jet Tone) (timestamp 1:05 of a 1280×720 copy), letterbox bars cropped",
+      "scene": "Chow, seen from behind at the newspaper office, cigarette smoke curling above his head",
+      "source": {
+        "name": "Internet Archive, In the Mood for Love original trailer (Block 2 Pictures / Paradis Films / Jet Tone), Internet Archive copy",
+        "url": "https://archive.org/details/in-the-mood-for-love-2000-original-trailer-hd"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2000 Block 2 Pictures Inc.",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1280×720). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#e8e8e8",
+        "#c88a3a",
+        "#0a0a0a"
+      ],
+      "paletteNotes": "white shirt and smoke, amber wood, black room",
+      "lighting": "a single top-back light catches the smoke and the shirt; the room falls to black",
+      "composition": "the figure centred from behind; smoke rises into the dark upper half",
+      "framing": "medium shot from behind",
+      "camera": "static, slightly high angle",
+      "tags": [
+        "smoke",
+        "low key",
+        "back view",
+        "office",
+        "1.66:1"
+      ]
+    },
+    {
+      "id": "mad-max-fury-road-01",
+      "film": "mad-max-fury-road",
+      "file": "stills/mad-max-fury-road/01.jpg",
+      "original": "originals/mad-max-fury-road-desert-road-trailer-35s.jpg",
+      "width": 1280,
+      "height": 529,
+      "aspectRatio": "2.42:1",
+      "frameType": "film frame from the official main trailer (Warner Bros.) (timestamp 0:35 of a 1920×1080 copy), letterbox bars cropped",
+      "scene": "The War Rig on the straight road across the orange desert",
+      "source": {
+        "name": "Internet Archive, Mad Max: Fury Road official main trailer (Warner Bros.), Internet Archive copy",
+        "url": "https://archive.org/details/mad-max-fury-road-official-main-trailer-hd"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2015 Warner Bros. Entertainment Inc., Village Roadshow Films",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1920×1080). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#d88a3a",
+        "#f2d8c0",
+        "#5a9ab0"
+      ],
+      "paletteNotes": "orange sand, pale haze, teal sky",
+      "lighting": "hard sun, heavy orange-teal grade",
+      "composition": "one-point perspective: the road from the bottom edge to the vehicle on the horizon at centre",
+      "framing": "extreme wide shot",
+      "camera": "tracking low behind the vehicle",
+      "tags": [
+        "desert",
+        "road",
+        "vanishing point",
+        "orange and teal",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "mad-max-fury-road-02",
+      "film": "mad-max-fury-road",
+      "file": "stills/mad-max-fury-road/02.jpg",
+      "original": "originals/mad-max-fury-road-blue-night-trailer-127s.jpg",
+      "width": 1280,
+      "height": 529,
+      "aspectRatio": "2.42:1",
+      "frameType": "film frame from the official main trailer (Warner Bros.) (timestamp 2:07 of a 1920×1080 copy), letterbox bars cropped",
+      "scene": "Night on the salt flats: a car's headlamps and a vehicle exploding in fire",
+      "source": {
+        "name": "Internet Archive, Mad Max: Fury Road official main trailer (Warner Bros.), Internet Archive copy",
+        "url": "https://archive.org/details/mad-max-fury-road-official-main-trailer-hd"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2015 Warner Bros. Entertainment Inc., Village Roadshow Films",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1920×1080). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#1a3a8a",
+        "#f2a040",
+        "#0a0a1a"
+      ],
+      "paletteNotes": "deep blue night, fire orange, black",
+      "lighting": "day-for-night blue grade; the fire and headlamps are the only warm sources",
+      "composition": "the car at left third, the fireball at right; a low horizon under a vast blue sky",
+      "framing": "wide shot",
+      "camera": "low, tracking alongside",
+      "tags": [
+        "night",
+        "fire",
+        "blue",
+        "complementary colour",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "oldboy-01",
+      "film": "oldboy",
+      "file": "stills/oldboy/01.jpg",
+      "original": "originals/oldboy-corridor-elevator-trailer-49s.jpg",
+      "width": 1280,
+      "height": 542,
+      "aspectRatio": "2.36:1",
+      "frameType": "film frame from the 4K restoration trailer (Arrow Films) (timestamp 0:49 of a 1280×720 copy), letterbox bars cropped",
+      "scene": "Dae-su's beaten opponents on the floor by the open lift, a yellow-and-black hazard pillar at left",
+      "source": {
+        "name": "Internet Archive, Oldboy 4K restoration trailer (Arrow Films), Internet Archive copy",
+        "url": "https://archive.org/details/oldboy-2003-720p-trailer"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2003 Show East Co., Ltd. / Egg Films",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1280×720). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#d8b020",
+        "#5a8a7a",
+        "#101010"
+      ],
+      "paletteNotes": "hazard yellow, sickly green, black",
+      "lighting": "green fluorescent ambient light; the lift interior brightest",
+      "composition": "the striped pillar fills the left third; the lit lift door a frame within the frame at right",
+      "framing": "wide shot",
+      "camera": "static, eye level",
+      "tags": [
+        "corridor",
+        "green",
+        "hazard stripes",
+        "frame within frame",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "oldboy-02",
+      "film": "oldboy",
+      "file": "stills/oldboy/02.jpg",
+      "original": "originals/oldboy-eye-trailer-31s.jpg",
+      "width": 1280,
+      "height": 542,
+      "aspectRatio": "2.36:1",
+      "frameType": "film frame from the 4K restoration trailer (Arrow Films) (timestamp 0:31 of a 1280×720 copy), letterbox bars cropped",
+      "scene": "Extreme close-up of an eye, the iris filling the frame",
+      "source": {
+        "name": "Internet Archive, Oldboy 4K restoration trailer (Arrow Films), Internet Archive copy",
+        "url": "https://archive.org/details/oldboy-2003-720p-trailer"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 2003 Show East Co., Ltd. / Egg Films",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive; quality is limited to that copy (1280×720). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#b06a2a",
+        "#f0e0d8",
+        "#1a0a0a"
+      ],
+      "paletteNotes": "amber iris, pale sclera, black pupil",
+      "lighting": "soft frontal light with a single specular highlight in the iris",
+      "composition": "the iris centred; lashes and lid as a frame",
+      "framing": "extreme close-up",
+      "camera": "static, macro lens",
+      "tags": [
+        "eye",
+        "macro",
+        "detail",
+        "texture",
+        "widescreen"
+      ]
+    }
+  ]
+}

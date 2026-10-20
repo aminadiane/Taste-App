@@ -1,0 +1,35 @@
+:root{
+--space-1:4px;
+--space-2:8px;
+--space-3:12px;
+--space-4:16px;
+--space-5:24px;
+--space-6:32px;
+--space-7:48px;
+--space-8:72px;
+--space-9:120px;
+
+/* Page frame */
+--edge:clamp(14px,2.2vw,28px);      /* distance from viewport edge to corner labels */
+--header-h:56px;
+--measure:34ch;                       /* max line length for the few paragraphs that exist */
+
+/* Image layout — edge-to-edge (bleed) is the approved default. Inset kept as an opt-in alternate. */
+--gutter-inset:clamp(8px,1.4vw,20px);  /* soft margins: warmer, quieter */
+--gutter-bleed:0px;                    /* edge-to-edge: colder, more editorial */
+--gutter:var(--gutter-bleed);
+--frame:0px;                           /* outer page margin around images */
+
+/* Aspect ratios */
+--ratio-portrait:4/5;
+--ratio-tall:2/3;
+--ratio-square:1/1;
+--ratio-screen:16/9;
+
+/* Shape — everything is square. */
+--radius-0:0px;
+--radius-pill:999px;  /* only for the tiny cart-count dot */
+--hairline:1px;
+}
+[data-layout="bleed"]{--gutter:var(--gutter-bleed);--frame:0px}
+[data-layout="inset"]{--gutter:var(--gutter-inset);--frame:var(--gutter-inset)}

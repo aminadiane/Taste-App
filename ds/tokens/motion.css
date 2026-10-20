@@ -1,0 +1,10 @@
+:root{
+--ease-out:cubic-bezier(.2,.7,.1,1);     /* default: quick start, long settle */
+--ease-inout:cubic-bezier(.65,0,.35,1);
+--dur-fast:160ms;     /* hover opacity, underline */
+--dur-base:320ms;     /* image swaps, drawers */
+--dur-slow:700ms;     /* image fade-in on load */
+--dur-hero:6000ms;    /* hero crossfade cadence */
+--hover-dim:.72;      /* opacity used for hover on text/links */
+}
+@media (prefers-reduced-motion:reduce){:root{--dur-fast:0ms;--dur-base:0ms;--dur-slow:0ms}}

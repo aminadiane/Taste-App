@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>taste</title>
+<meta name="description" content="Cultural Capital presents taste — an exploration of what moves you, and why.">
+<meta name="color-scheme" content="light">
+<link rel="stylesheet" href="ds/styles.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- 01 Home -->
+<main id="home" class="home">
+  <div class="home__stack">
+    <div class="home__kicker">
+      <p class="home__studio">CULTURAL CAPITAL</p>
+      <p class="home__presents">presents</p>
+    </div>
+    <h1 class="home__title">taste</h1>
+    <p class="home__tagline">an exploration of what moves you, and why</p>
+    <nav class="home__nav" aria-label="Disciplines">
+      <p class="home__lead">develop your taste in</p>
+      <div class="home__links">
+        <a class="textlink textlink--big" href="#cinema">cinema</a>
+        <a class="textlink textlink--big" href="#literature">literature</a>
+      </div>
+    </nav>
+  </div>
+</main>
+
+<!-- 02 Cinema -->
+<main id="cinema" class="cinema" hidden>
+  <div class="cinema__back">
+    <a class="textlink textlink--brand" href="#">taste</a>
+  </div>
+
+  <div class="tv">
+    <img class="tv__photo" src="assets/tv.webp" alt="Silver CRT television" draggable="false">
+
+    <div class="tv__shadow tv__shadow--soft"></div>
+    <div class="tv__shadow tv__shadow--contact"></div>
+
+    <div class="tv__screen">
+      <div class="tv__picture" id="picture"></div>
+      <canvas class="tv__noise" id="noise" width="200" height="146" aria-hidden="true"></canvas>
+      <div class="tv__dot" id="dot"></div>
+      <div class="tv__vignette"></div>
+      <div class="tv__glare"></div>
+      <div class="tv__osd" id="osd" aria-live="polite" hidden></div>
+    </div>
+
+    <div class="tv__badge">cultural capital</div>
+
+    <button class="tv__button tv__button--dislike" id="dislike" type="button"><span class="tv__label">dislike</span></button>
+    <button class="tv__button tv__button--like" id="like" type="button"><span class="tv__label">like</span></button>
+  </div>
+
+  <div class="cinema__caption" id="caption"></div>
+  <div class="cinema__counter" id="counter"></div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Library review</title>
+<style>
+  :root{--bg:#111214;--panel:#1b1c1f;--line:#2c2e33;--ink:#e9e9ea;--dim:#9a9ca2;--mark:#ff4a3d;--ok:#3ccf6e}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.4 -apple-system,BlinkMacSystemFont,"Helvetica Neue",sans-serif}
+  header{position:sticky;top:0;z-index:2;display:flex;flex-wrap:wrap;gap:12px;align-items:center;padding:14px 20px;background:rgba(17,18,20,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line)}
+  h1{font-size:16px;margin:0 12px 0 0;font-weight:600}
+  .count{color:var(--dim)}
+  .spacer{flex:1}
+  button,select{font:inherit;color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:6px;padding:7px 12px;cursor:pointer}
+  button:disabled{opacity:.4;cursor:default}
+  button.danger{background:var(--mark);border-color:var(--mark);color:#fff}
+  main{padding:8px 20px 60px}
+  .film{margin-top:22px}
+  .film h2{font-size:15px;font-weight:600;margin:0 0 2px}
+  .film .meta{color:var(--dim);font-size:12px;margin-bottom:10px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+  .card{background:var(--panel);border:2px solid transparent;border-radius:8px;overflow:hidden;cursor:pointer;transition:border-color .12s}
+  .card:hover{border-color:var(--line)}
+  .card.marked{border-color:var(--mark)}
+  .card.marked .pic{opacity:.45}
+  .pic{aspect-ratio:16/10;background:#000;display:grid;place-items:center}
+  .pic img{width:100%;height:100%;object-fit:contain;display:block}
+  .info{padding:8px 10px 10px;font-size:12px}
+  .scene{color:var(--ink);margin-bottom:4px}
+  .tags{color:var(--dim);display:flex;gap:8px;flex-wrap:wrap}
+  .badge{padding:1px 6px;border-radius:4px;background:#2a2b30}
+  .badge.fair-use{background:#4a2a20}.badge.studio-release{background:#20304a}
+  .flag{display:none;color:var(--mark);font-weight:600}
+  .card.marked .flag{display:inline}
+  .removed{margin-top:40px;border-top:1px solid var(--line);padding-top:10px}
+  .removed .card{cursor:default}
+  .removed button{margin-top:6px}
+  .toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:var(--panel);border:1px solid var(--line);padding:10px 16px;border-radius:8px;display:none}
+  @media (max-width:600px){header{padding:12px 16px}main{padding:8px 16px 60px}.grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Library review</h1>
+  <span class="count" id="count"></span>
+  <span class="spacer"></span>
+  <select id="filter" aria-label="Filter">
+    <option value="all">All films</option>
+    <option value="modern">2000 and later</option>
+    <option value="classic">Before 2000</option>
+    <option value="multi">Films with several stills</option>
+  </select>
+  <button id="clear" disabled>Clear marks</button>
+  <button id="remove" class="danger" disabled>Remove marked</button>
+</header>
+<main id="main"></main>
+<div class="toast" id="toast"></div>
+<script>
+// Click stills to mark them, then "Remove marked". Removed stills move to library/removed/ and can be restored at the bottom.
+const marked = new Set();
+let lib = { films: {}, stills: [] }, bin = { films: {}, stills: [] };
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+
+async function load() {
+  lib = await fetch('stills.json', { cache: 'no-store' }).then((r) => r.json());
+  bin = await fetch('removed/removed.json', { cache: 'no-store' }).then((r) => (r.ok ? r.json() : { films: {}, stills: [] })).catch(() => ({ films: {}, stills: [] }));
+  render();
+}
+
+function card(s, removed) {
+  const r = s.rights || {};
+  const src = (removed ? 'removed/' : '') + s.file + '?v=' + encodeURIComponent(s.id);
+  return `<div class="card${marked.has(s.id) ? ' marked' : ''}" data-id="${esc(s.id)}">
+    <div class="pic"><img src="${esc(src)}" alt="" loading="lazy"></div>
+    <div class="info"><div class="scene">${esc(s.scene)}</div>
+      <div class="tags"><span>${esc(s.id)}</span><span>${s.width}×${s.height}</span><span class="badge ${esc(r.status)}">${esc(r.status)}</span><span class="flag">will be removed</span></div>
+      ${removed ? `<button data-restore="${esc(s.id)}">Restore</button>` : ''}
+    </div></div>`;
+}
+
+function render() {
+  const f = $('filter').value;
+  const byFilm = {};
+  for (const s of lib.stills) (byFilm[s.film] ||= []).push(s);
+  const films = Object.keys(byFilm).sort((a, b) => (lib.films[a]?.year ?? 0) - (lib.films[b]?.year ?? 0) || a.localeCompare(b));
+  const shown = films.filter((k) => {
+    const y = lib.films[k]?.year ?? 0;
+    return f === 'all' || (f === 'modern' && y >= 2000) || (f === 'classic' && y < 2000) || (f === 'multi' && byFilm[k].length > 1);
+  });
+  let html = shown.map((k) => {
+    const m = lib.films[k] || {}, list = byFilm[k].sort((a, b) => a.id.localeCompare(b.id));
+    return `<section class="film"><h2>${esc(m.title || k)} <span class="count">${esc(m.year)}</span></h2>
+      <div class="meta">${esc(m.director || '')} · ${list.length} still${list.length > 1 ? 's' : ''}</div>
+      <div class="grid">${list.map((s) => card(s, false)).join('')}</div></section>`;
+  }).join('');
+  if (bin.stills.length) html += `<section class="removed"><h2>Removed (${bin.stills.length})</h2><div class="meta">Kept in library/removed/. Restore puts a still back in the set.</div>
+    <div class="grid">${bin.stills.map((s) => card(s, true)).join('')}</div></section>`;
+  $('main').innerHTML = html;
+  $('count').textContent = `${lib.stills.length} stills · ${Object.keys(byFilm).length} films${marked.size ? ` · ${marked.size} marked` : ''}`;
+  $('remove').disabled = $('clear').disabled = !marked.size;
+  $('remove').textContent = marked.size ? `Remove ${marked.size} marked` : 'Remove marked';
+}
+
+$('main').addEventListener('click', async (e) => {
+  const rb = e.target.closest('[data-restore]');
+  if (rb) { await post('/library/restore', [rb.dataset.restore], 'Restored'); return; }
+  const c = e.target.closest('.card');
+  if (!c || c.closest('.removed')) return;
+  marked.has(c.dataset.id) ? marked.delete(c.dataset.id) : marked.add(c.dataset.id);
+  render();
+});
+$('filter').addEventListener('change', render);
+$('clear').addEventListener('click', () => { marked.clear(); render(); });
+$('remove').addEventListener('click', async () => {
+  if (!marked.size || !confirm(`Remove ${marked.size} still${marked.size > 1 ? 's' : ''} from the TV? They can be restored from the bottom of this page.`)) return;
+  await post('/library/remove', [...marked], 'Removed');
+  marked.clear(); render();
+});
+
+async function post(url, ids, word) {
+  try {
+    const r = await fetch(url, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ ids }) });
+    const out = await r.json();
+    if (!r.ok) throw new Error(out.error || r.status);
+    toast(`${word} ${ids.length} · ${out.remaining} stills in the set`);
+  } catch (err) { toast('Could not save: ' + err.message + '. Is the preview server running?'); }
+  await load();
+}
+function toast(t) { const el = $('toast'); el.textContent = t; el.style.display = 'block'; clearTimeout(toast.t); toast.t = setTimeout(() => (el.style.display = 'none'), 3500); }
+
+load().catch((e) => { $('main').textContent = 'Could not load the library: ' + e.message; });
+</script>
+</body>
+</html>
