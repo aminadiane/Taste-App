@@ -213,16 +213,6 @@
       "format": "Super 35",
       "imdbRank": 85
     },
-    "sita-sings-the-blues": {
-      "title": "Sita Sings the Blues",
-      "year": 2008,
-      "director": "Nina Paley",
-      "cinematographer": null,
-      "country": "US",
-      "aspectRatio": "16:9",
-      "format": "2D digital animation",
-      "imdbRank": null
-    },
     "psycho": {
       "title": "Psycho",
       "year": 1960,
@@ -1684,84 +1674,6 @@
         "spirit",
         "horizontal",
         "animation"
-      ]
-    },
-    {
-      "id": "sita-sings-the-blues-01",
-      "film": "sita-sings-the-blues",
-      "file": "stills/sita-sings-the-blues/01.jpg",
-      "original": "originals/sita-sings-the-blues-sita-90s.jpg",
-      "width": 1280,
-      "height": 720,
-      "aspectRatio": "1.78:1",
-      "frameType": "film frame (timestamp 1:30 of the Commons upload, 1280×720; Commons server-side frame thumbnail at full width, downscaled to 1600 px for display)",
-      "scene": "Sita in the style of Indian painting, eyes closed, adorned with jewels",
-      "source": {
-        "name": "Wikimedia Commons, Sita Sings the Blues (2008), full film",
-        "url": "https://commons.wikimedia.org/wiki/File:Sita_Sings_the_Blues.webm"
-      },
-      "rights": {
-        "status": "cleared",
-        "license": "CC0 1.0 (public domain dedication)",
-        "attribution": "Nina Paley",
-        "notes": "Open movie released under a Creative Commons licence by its makers. No attribution required."
-      },
-      "palette": [
-        "#1a1a1a",
-        "#c87a5a",
-        "#8aa8c8"
-      ],
-      "paletteNotes": "black hair, terracotta skin, grey-blue sea",
-      "lighting": "flat graphic colour, no modelled light",
-      "composition": "symmetrical frontal face framed by hair; jewellery as pattern",
-      "framing": "close-up",
-      "camera": "static, frontal",
-      "tags": [
-        "portrait",
-        "graphic",
-        "symmetry",
-        "pattern",
-        "animation",
-        "16:9"
-      ]
-    },
-    {
-      "id": "sita-sings-the-blues-02",
-      "film": "sita-sings-the-blues",
-      "file": "stills/sita-sings-the-blues/02.jpg",
-      "original": "originals/sita-sings-the-blues-forest-750s.jpg",
-      "width": 1280,
-      "height": 720,
-      "aspectRatio": "1.78:1",
-      "frameType": "film frame (timestamp 12:30 of the Commons upload, 1280×720; Commons server-side frame thumbnail at full width, downscaled to 1600 px for display)",
-      "scene": "Rama and Sita play hide and seek in the bright green forest of exile",
-      "source": {
-        "name": "Wikimedia Commons, Sita Sings the Blues (2008), full film",
-        "url": "https://commons.wikimedia.org/wiki/File:Sita_Sings_the_Blues.webm"
-      },
-      "rights": {
-        "status": "cleared",
-        "license": "CC0 1.0 (public domain dedication)",
-        "attribution": "Nina Paley",
-        "notes": "Open movie released under a Creative Commons licence by its makers. No attribution required."
-      },
-      "palette": [
-        "#8ad84a",
-        "#3a8a2a",
-        "#e85a8a"
-      ],
-      "paletteNotes": "lime green, forest green, pink accents",
-      "lighting": "flat graphic colour",
-      "composition": "vertical tree trunks form a screen across the frame; the figures small between them",
-      "framing": "wide shot",
-      "camera": "static, frontal",
-      "tags": [
-        "forest",
-        "graphic",
-        "pattern",
-        "verticals",
-        "animation",
-        "16:9"
       ]
     },
     {
