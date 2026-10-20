@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "updated": "2026-10-20",
+  "notes": "Stand-in literature entries from the Pallas handoff (public-domain excerpts). Replace with the real content library; keep ids stable because votes are keyed by them. spines are the paperback presets cycled by entry index on the shelf.",
+  "entries": [
+    {
+      "id": "the-great-gatsby",
+      "num": "1",
+      "title": "The Great Gatsby",
+      "byline": "F. Scott Fitzgerald — 1925",
+      "excerpt": [
+        "Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that’s no matter—tomorrow we will run faster, stretch out our arms farther. . . . And one fine morning——",
+        "So we beat on, boats against the current, borne back ceaselessly into the past."
+      ],
+      "author": "F. Scott Fitzgerald (1896–1940) was an American novelist and short-story writer who named and chronicled the Jazz Age.",
+      "work": "The novel follows the self-made millionaire Jay Gatsby and his pursuit of Daisy Buchanan, as told by her cousin Nick Carraway. These are its final lines.",
+      "techniques": [
+        {
+          "name": "Retrospective narration",
+          "text": "Nick tells the story after it has ended, so loss colours every scene. Here he widens from Gatsby to “us”."
+        },
+        {
+          "name": "Symbol",
+          "text": "The green light at the end of Daisy’s dock stands for a future that recedes as it is pursued."
+        }
+      ]
+    },
+    {
+      "id": "mrs-dalloway",
+      "num": "2",
+      "title": "Mrs Dalloway",
+      "byline": "Virginia Woolf — 1925",
+      "excerpt": [
+        "Mrs Dalloway said she would buy the flowers herself.",
+        "For Lucy had her work cut out for her. The doors would be taken off their hinges; Rumpelmayer’s men were coming. And then, thought Clarissa Dalloway, what a morning—fresh as if issued to children on a beach.",
+        "What a lark! What a plunge! For so it had always seemed to her, when, with a little squeak of the hinges, which she could hear now, she had burst open the French windows and plunged at Bourton into the open air."
+      ],
+      "author": "Virginia Woolf (1882–1941) was an English novelist and essayist, and a central figure of literary modernism and the Bloomsbury Group.",
+      "work": "The novel takes place over a single June day in London in 1923, as Clarissa Dalloway prepares for a party she is giving that evening. This is its opening.",
+      "techniques": [
+        {
+          "name": "Free indirect discourse",
+          "text": "The narration moves into Clarissa’s thoughts mid-sentence, without quotation marks."
+        },
+        {
+          "name": "Time shift",
+          "text": "The squeak of a hinge in the present carries her back to Bourton at eighteen within one sentence."
+        }
+      ]
+    },
+    {
+      "id": "the-dead",
+      "num": "3",
+      "title": "The Dead",
+      "byline": "James Joyce — 1914",
+      "excerpt": [
+        "Yes, the newspapers were right: snow was general all over Ireland. It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves. . . .",
+        "His soul swooned slowly as he heard the snow falling faintly through the universe and faintly falling, like the descent of their last end, upon all the living and the dead."
+      ],
+      "author": "James Joyce (1882–1941) was an Irish writer whose work moved from the realism of Dubliners to the experiments of Ulysses and Finnegans Wake.",
+      "work": "The last story in Dubliners. After a Christmas party, Gabriel Conroy learns of his wife’s first love and watches the snow. These are its closing lines.",
+      "techniques": [
+        {
+          "name": "Chiasmus",
+          "text": "“Falling faintly” returns as “faintly falling”, so the sentence repeats and settles the way the snow does."
+        },
+        {
+          "name": "Epiphany",
+          "text": "Joyce’s term for a sudden moment of insight. Gabriel’s arrives through an image, not a statement."
+        }
+      ]
+    },
+    {
+      "id": "the-awakening",
+      "num": "4",
+      "title": "The Awakening",
+      "byline": "Kate Chopin — 1899",
+      "excerpt": [
+        "The voice of the sea is seductive; never ceasing, whispering, clamoring, murmuring, inviting the soul to wander for a spell in abysses of solitude; to lose itself in mazes of inward contemplation.",
+        "The voice of the sea speaks to the soul. The touch of the sea is sensuous, enfolding the body in its soft, close embrace."
+      ],
+      "author": "Kate Chopin (1850–1904) was an American writer whose stories of Louisiana life often centred on the inner lives of women.",
+      "work": "Edna Pontellier, a wife and mother on holiday at Grand Isle, begins to want a life of her own. The novel was poorly received in 1899 and rediscovered decades later.",
+      "techniques": [
+        {
+          "name": "Anaphora",
+          "text": "“The voice of the sea” opens two sentences, giving the passage the rhythm of waves."
+        },
+        {
+          "name": "Personification",
+          "text": "The sea whispers, invites and embraces, becoming a presence that speaks to Edna directly."
+        }
+      ]
+    },
+    {
+      "id": "the-sun-also-rises",
+      "num": "5",
+      "title": "The Sun Also Rises",
+      "byline": "Ernest Hemingway — 1926",
+      "excerpt": [
+        "“Oh, Jake,” Brett said, “we could have had such a damned good time together.”",
+        "Ahead was a mounted policeman in khaki directing traffic. He raised his baton. The car slowed suddenly pressing Brett against me.",
+        "“Yes,” I said. “Isn’t it pretty to think so?”"
+      ],
+      "author": "Ernest Hemingway (1899–1961) was an American novelist known for spare, understated prose. He received the Nobel Prize in Literature in 1954.",
+      "work": "A group of expatriates travels from Paris to the fiesta in Pamplona. Jake Barnes loves Brett Ashley, but a war wound keeps them apart. These are its last lines.",
+      "techniques": [
+        {
+          "name": "Omission",
+          "text": "Hemingway’s “iceberg” method leaves the strongest feeling unstated, for the reader to supply."
+        },
+        {
+          "name": "Irony",
+          "text": "Jake’s last line agrees with Brett while quietly refusing her fantasy."
+        }
+      ]
+    }
+  ],
+  "spines": [
+    {
+      "bg": "#2f5a4a",
+      "fg": "#f3ecdc",
+      "w": 26,
+      "h": 296
+    },
+    {
+      "bg": "#e2d4b2",
+      "fg": "#1d1915",
+      "w": 20,
+      "h": 282
+    },
+    {
+      "bg": "#6B1420",
+      "fg": "#f3ecdc",
+      "w": 31,
+      "h": 304
+    },
+    {
+      "bg": "#c98a2b",
+      "fg": "#1d1915",
+      "w": 23,
+      "h": 290
+    },
+    {
+      "bg": "#4A3E9E",
+      "fg": "#f3ecdc",
+      "w": 28,
+      "h": 300
+    }
+  ]
+}

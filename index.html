@@ -3,10 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>taste</title>
-<meta name="description" content="Cultural Capital presents taste — an exploration of what moves you, and why.">
+<title>pallas</title>
+<meta name="description" content="Cultural Capital presents pallas — an exploration of what moves you, and why.">
 <meta name="color-scheme" content="light">
 <link rel="stylesheet" href="ds/styles.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&family=Ultra&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -18,33 +19,32 @@
       <p class="home__studio">CULTURAL CAPITAL</p>
       <p class="home__presents">presents</p>
     </div>
-    <h1 class="home__title">taste</h1>
+    <h1 class="home__title">pallas</h1>
     <p class="home__tagline">an exploration of what moves you, and why</p>
     <nav class="home__nav" aria-label="Disciplines">
       <p class="home__lead">develop your taste in</p>
       <div class="home__links">
-        <a class="textlink textlink--big" href="#cinema">cinema</a>
+        <a class="textlink textlink--big" href="#cinema">film</a>
         <a class="textlink textlink--big" href="#literature">literature</a>
       </div>
     </nav>
   </div>
 </main>
 
-<!-- 02 Cinema -->
+<!-- 02 Film -->
 <main id="cinema" class="cinema" hidden>
-  <div class="cinema__back">
-    <a class="textlink textlink--brand" href="#">taste</a>
-  </div>
+  <div class="corner corner--tl"><a class="textlink textlink--brand" href="#">pallas</a></div>
 
   <div class="tv">
-    <img class="tv__photo" src="assets/tv.webp" alt="Silver CRT television" draggable="false">
-
+    <img class="tv__photo" src="assets/tv.jpg" alt="Silver CRT television" draggable="false">
     <div class="tv__shadow tv__shadow--soft"></div>
     <div class="tv__shadow tv__shadow--contact"></div>
 
     <div class="tv__screen">
-      <div class="tv__picture" id="picture"></div>
-      <canvas class="tv__noise" id="noise" width="200" height="146" aria-hidden="true"></canvas>
+      <div class="tv__picture" id="picture">
+        <div class="tv__stills" id="stills"></div>
+        <canvas class="tv__noise" id="noise" width="200" height="146" aria-hidden="true"></canvas>
+      </div>
       <div class="tv__dot" id="dot"></div>
       <div class="tv__vignette"></div>
       <div class="tv__glare"></div>
@@ -53,14 +53,123 @@
 
     <div class="tv__badge">cultural capital</div>
 
-    <button class="tv__button tv__button--dislike" id="dislike" type="button"><span class="tv__label">dislike</span></button>
-    <button class="tv__button tv__button--like" id="like" type="button"><span class="tv__label">like</span></button>
+    <div class="tv__label tv__label--dislike">dislike</div>
+    <button class="tv__button tv__button--dislike" id="dislike" type="button" aria-label="dislike"></button>
+    <button class="tv__button tv__button--like" id="like" type="button" aria-label="like"></button>
+    <div class="tv__label tv__label--like">like</div>
   </div>
 
-  <div class="cinema__caption" id="caption"></div>
-  <div class="cinema__counter" id="counter"></div>
+  <div class="corner corner--br" id="counter"></div>
+  <div class="corner corner--bl corner--links">
+    <a class="qlink" id="cq-shelf" href="#cinema">shelf</a><span>—</span>
+    <a class="qlink" id="cq-like" href="#cinema">liked (0)</a><span>—</span>
+    <a class="qlink" id="cq-dislike" href="#cinema">disliked (0)</a>
+  </div>
 </main>
 
+<!-- 03 Literature -->
+<main id="literature" class="lit" hidden>
+  <div class="corner corner--tl"><a class="textlink textlink--brand" href="#">pallas</a></div>
+
+  <div class="stage" id="stage">
+    <div class="stage__inner" id="stage-inner">
+      <div class="book" id="book">
+        <div class="book__base" id="bk-base"></div>
+        <div class="book__spread" id="bk-spread"></div>
+
+        <div class="book__spine">
+          <div class="book__spine-text">
+            <div class="book__spine-title">Pallas</div>
+            <div class="book__spine-imprint">Cultural Capital</div>
+          </div>
+          <div class="book__spine-shade"></div>
+        </div>
+
+        <div class="book__right" id="bk-right">
+          <div class="book__right-in">
+            <div class="book__right-tex"></div>
+            <div class="book__right-clip" id="rp-clip"><div id="R-page"></div></div>
+            <div class="book__rshadow" id="r-shadow"></div>
+          </div>
+          <div class="flap" id="flap" hidden>
+            <div class="flap__front">
+              <div class="flap__front-page" id="flap-page"></div>
+              <div class="flap__front-shade" id="flap-shade"></div>
+            </div>
+            <div class="flap__back" id="flap-back"><div class="flap__paper"></div></div>
+          </div>
+        </div>
+
+        <div class="book__left" id="bk-left">
+          <div class="book__left-in" id="left-page"></div>
+          <div class="ears" id="ears" hidden></div>
+        </div>
+
+        <div class="book__fore" id="bk-fore"></div>
+
+        <div class="book__stub" id="bk-stub">
+          <div class="book__stub-mask"><div id="stub-page"></div><div class="book__stub-core"></div></div>
+        </div>
+
+        <div class="book__torn" id="bk-torn">
+          <div class="book__piece"><div class="book__piece-mask"><div id="piece-page"></div><div class="book__piece-core"></div></div></div>
+          <div class="book__below"><div id="below-page"></div></div>
+          <div class="book__lshadow" id="l-shadow"></div>
+        </div>
+
+        <div class="book__cover" id="bk-cover">
+          <div class="cover__front">
+            <div class="cover__photo"></div>
+            <div class="cover__ink">
+              <div class="cover__imprint">A Cultural Capital Publication</div>
+              <div class="cover__block">
+                <div class="cover__title">Pallas</div>
+                <div class="cover__rule"></div>
+                <div class="cover__sub">Build your taste<br>in literature</div>
+              </div>
+            </div>
+            <div class="cover__sheen"></div>
+          </div>
+          <div class="cover__back" id="cover-back"><div id="inside-page"></div></div>
+        </div>
+
+        <div class="leaf" id="leaf" hidden></div>
+      </div>
+      <div class="stack" id="stack" hidden></div>
+    </div>
+  </div>
+
+  <div class="lit__controls" id="lit-controls">
+    <div class="lit__controls-l"><a class="textlink textlink--nav" id="bk-prev" href="#literature" hidden>Previous</a></div>
+    <div class="lit__controls-c">
+      <a class="textlink textlink--act" id="bk-open" href="#literature">open</a>
+      <a class="textlink textlink--act" id="bk-tear" href="#literature" hidden>tear out</a>
+      <a class="textlink textlink--act" id="bk-fold" href="#literature" hidden>dog-ear</a>
+    </div>
+    <div class="lit__controls-r"><a class="textlink textlink--nav" id="bk-next" href="#literature" hidden>Next</a></div>
+  </div>
+
+  <div class="corner corner--tr" id="lit-close" hidden><a class="textlink textlink--nav" id="bk-close" href="#literature">Close</a></div>
+  <div class="corner corner--br" id="lit-counter" hidden></div>
+  <div class="corner corner--bl corner--links">
+    <a class="qlink" id="lq-shelf" href="#literature">shelf</a><span>—</span>
+    <a class="qlink" id="lq-like" href="#literature">dog-eared (0)</a><span>—</span>
+    <a class="qlink" id="lq-dislike" href="#literature">torn out (0)</a>
+  </div>
+</main>
+
+<!-- Quick view -->
+<div class="drawer" id="drawer" aria-hidden="true">
+  <div class="drawer__scrim"></div>
+  <aside class="drawer__panel" role="dialog" aria-label="Quick view">
+    <div class="drawer__head"><span class="drawer__title"></span><a class="textlink drawer__close" href="#">Close</a></div>
+    <div class="drawer__body"></div>
+  </aside>
+</div>
+
+<script src="js/votes.js"></script>
+<script src="js/drawer.js"></script>
 <script src="app.js"></script>
+<script src="js/book.js"></script>
 </body>
 </html>
