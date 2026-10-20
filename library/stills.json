@@ -312,6 +312,46 @@
       "aspectRatio": "1.33:1",
       "format": "35 mm, silent",
       "imdbRank": 247
+    },
+    "howls-moving-castle": {
+      "title": "Howl's Moving Castle",
+      "year": 2004,
+      "director": "Hayao Miyazaki",
+      "cinematographer": "Atsushi Okui (director of photography)",
+      "country": "Japan",
+      "aspectRatio": "1.85:1",
+      "format": "hand-drawn animation, digital ink and paint",
+      "imdbRank": 158
+    },
+    "my-neighbor-totoro": {
+      "title": "My Neighbor Totoro",
+      "year": 1988,
+      "director": "Hayao Miyazaki",
+      "cinematographer": "Hisao Shirai (director of photography)",
+      "country": "Japan",
+      "aspectRatio": "1.85:1",
+      "format": "hand-drawn animation, cel",
+      "imdbRank": 193
+    },
+    "princess-mononoke": {
+      "title": "Princess Mononoke",
+      "year": 1997,
+      "director": "Hayao Miyazaki",
+      "cinematographer": "Atsushi Okui (director of photography)",
+      "country": "Japan",
+      "aspectRatio": "1.85:1",
+      "format": "hand-drawn animation, cel with digital ink and paint",
+      "imdbRank": 84
+    },
+    "the-godfather": {
+      "title": "The Godfather",
+      "year": 1972,
+      "director": "Francis Ford Coppola",
+      "cinematographer": "Gordon Willis",
+      "country": "US",
+      "aspectRatio": "1.85:1",
+      "format": "35 mm, Technicolor",
+      "imdbRank": 2
     }
   },
   "stills": [
@@ -3284,6 +3324,475 @@
         "attribution": "Société Générale des Films, 1928; Internet Archive copy",
         "notes": "Country of origin is France, where the film is protected until 2039 (Carl Theodor Dreyer died in 1968), so Wikimedia Commons does not host it and this copy is US-only. The transfer is a Blu-ray-derived copy of the restoration made from the 1981 Oslo print (Gaumont / Cinémathèque française); rights in that restoration may be claimed in Europe. Frame decoded in the browser pane from the archive.org MP4 through a local range proxy; nothing beyond the needed byte ranges was downloaded. The rounded frame corners are part of the restored print."
       }
+    },
+    {
+      "id": "howls-moving-castle-01",
+      "film": "howls-moving-castle",
+      "file": "stills/howls-moving-castle/01.jpg",
+      "original": "originals/howls-moving-castle-ghibli-howl011.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file howl011.jpg, 1920×1038)",
+      "scene": "Howl's castle stalks across the moor under storm clouds, smoke pouring from its chimneys",
+      "source": {
+        "name": "Studio Ghibli official website, Howl's Moving Castle still gallery",
+        "url": "https://www.ghibli.jp/gallery/howl011.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/howl",
+        "attribution": "© 2004 Studio Ghibli – NDDMT",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#7b8386",
+        "#50565a",
+        "#292d31"
+      ],
+      "paletteNotes": "rust, slate cloud, teal sky, pink horizon",
+      "lighting": "stormy late light; a warm glow under the clouds, the castle in mixed rust and shadow",
+      "composition": "the castle fills the left two thirds, legs on the ridge line; a mountain closes the lower right",
+      "framing": "wide shot, low angle",
+      "camera": "static",
+      "tags": [
+        "castle",
+        "machine",
+        "storm",
+        "clouds",
+        "scale",
+        "animation"
+      ]
+    },
+    {
+      "id": "howls-moving-castle-02",
+      "film": "howls-moving-castle",
+      "file": "stills/howls-moving-castle/02.jpg",
+      "original": "originals/howls-moving-castle-ghibli-howl038.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file howl038.jpg, 1920×1038)",
+      "scene": "Sophie on the outside stair looks down the street as the town burns at night after an air raid",
+      "source": {
+        "name": "Studio Ghibli official website, Howl's Moving Castle still gallery",
+        "url": "https://www.ghibli.jp/gallery/howl038.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/howl",
+        "attribution": "© 2004 Studio Ghibli – NDDMT",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#bf4c28",
+        "#61382d",
+        "#272023"
+      ],
+      "paletteNotes": "fire orange, night blue, ochre facades",
+      "lighting": "night; the fire is the key light, throwing red-orange onto the half-timbered facades",
+      "composition": "the figure and stair rail fill the left; the street recedes to the right into a wall of flame and floating embers",
+      "framing": "wide shot, high angle",
+      "camera": "static",
+      "tags": [
+        "fire",
+        "night",
+        "street",
+        "perspective",
+        "war",
+        "animation"
+      ]
+    },
+    {
+      "id": "howls-moving-castle-03",
+      "film": "howls-moving-castle",
+      "file": "stills/howls-moving-castle/03.jpg",
+      "original": "originals/howls-moving-castle-ghibli-howl009.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file howl009.jpg, 1920×1038)",
+      "scene": "Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains",
+      "source": {
+        "name": "Studio Ghibli official website, Howl's Moving Castle still gallery",
+        "url": "https://www.ghibli.jp/gallery/howl009.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/howl",
+        "attribution": "© 2004 Studio Ghibli – NDDMT",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#c5d4d3",
+        "#69a8c5",
+        "#8f8a54"
+      ],
+      "paletteNotes": "hay yellow, valley green, snow white, sky blue",
+      "lighting": "clear midday light; soft cloud bank along the peaks",
+      "composition": "the stacked hay bales form a block dead centre, the small figure at its base; mountains and valley spread symmetrically behind",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "tags": [
+        "landscape",
+        "mountains",
+        "symmetry",
+        "cart",
+        "daylight",
+        "animation"
+      ]
+    },
+    {
+      "id": "my-neighbor-totoro-01",
+      "film": "my-neighbor-totoro",
+      "file": "stills/my-neighbor-totoro/01.jpg",
+      "original": "originals/my-neighbor-totoro-ghibli-totoro029.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file totoro029.jpg, 1920×1038)",
+      "scene": "Satsuki waits at the rainy bus stop at night with Mei on her back; Totoro stands beside her with a leaf on his head",
+      "source": {
+        "name": "Studio Ghibli official website, My Neighbor Totoro still gallery",
+        "url": "https://www.ghibli.jp/gallery/totoro029.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/totoro",
+        "attribution": "© 1988 Hayao Miyazaki / Studio Ghibli",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#857f76",
+        "#464c4d",
+        "#232b2c"
+      ],
+      "paletteNotes": "dark forest green, rain grey, a red umbrella, Totoro's cream belly",
+      "lighting": "night rain; the only light falls on the two figures and the umbrella, the forest behind sinks into dark green",
+      "composition": "small girl and bus-stop sign at left, the huge grey Totoro filling the right half; vertical rain streaks over the whole frame",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "tags": [
+        "rain",
+        "night",
+        "bus stop",
+        "scale",
+        "umbrella",
+        "animation"
+      ]
+    },
+    {
+      "id": "my-neighbor-totoro-02",
+      "film": "my-neighbor-totoro",
+      "file": "stills/my-neighbor-totoro/02.jpg",
+      "original": "originals/my-neighbor-totoro-ghibli-totoro001.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file totoro001.jpg, 1920×1038)",
+      "scene": "Mei and Satsuki run toward the old country house on the day they move in",
+      "source": {
+        "name": "Studio Ghibli official website, My Neighbor Totoro still gallery",
+        "url": "https://www.ghibli.jp/gallery/totoro001.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/totoro",
+        "attribution": "© 1988 Hayao Miyazaki / Studio Ghibli",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#90a38f",
+        "#1383a4",
+        "#496753"
+      ],
+      "paletteNotes": "sky blue, red roof, grass green, yellow flowers",
+      "lighting": "bright summer daylight, cumulus clouds, crisp shadows under the eaves",
+      "composition": "the house sits across the middle, its red gabled roof at centre right; tall grass and yellow flowers frame the foreground; the children small at centre",
+      "framing": "wide shot, eye level",
+      "camera": "static",
+      "tags": [
+        "house",
+        "summer",
+        "countryside",
+        "clouds",
+        "daylight",
+        "animation"
+      ]
+    },
+    {
+      "id": "my-neighbor-totoro-03",
+      "film": "my-neighbor-totoro",
+      "file": "stills/my-neighbor-totoro/03.jpg",
+      "original": "originals/my-neighbor-totoro-ghibli-totoro047.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file totoro047.jpg, 1920×1038)",
+      "scene": "Mei, lost, sits by the road under a row of stone jizo statues at dusk, a power pylon behind",
+      "source": {
+        "name": "Studio Ghibli official website, My Neighbor Totoro still gallery",
+        "url": "https://www.ghibli.jp/gallery/totoro047.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/totoro",
+        "attribution": "© 1988 Hayao Miyazaki / Studio Ghibli",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#5c7698",
+        "#33414b",
+        "#18252b"
+      ],
+      "paletteNotes": "dusk blue, slate statues, a pink horizon",
+      "lighting": "blue dusk after sunset; a last pink glow on the horizon, the statues as dark silhouettes",
+      "composition": "the statues step down in size from right to left across the upper half; the small figure sits at lower centre; the pylon and wires cut the right",
+      "framing": "wide shot, low angle",
+      "camera": "static",
+      "tags": [
+        "dusk",
+        "statues",
+        "silhouette",
+        "pylon",
+        "loneliness",
+        "animation"
+      ]
+    },
+    {
+      "id": "princess-mononoke-01",
+      "film": "princess-mononoke",
+      "file": "stills/princess-mononoke/01.jpg",
+      "original": "originals/princess-mononoke-ghibli-mononoke010.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file mononoke010.jpg, 1920×1038)",
+      "scene": "The Forest Spirit, a stag with a crown of branches, stands on mossy roots in a glade of light",
+      "source": {
+        "name": "Studio Ghibli official website, Princess Mononoke still gallery",
+        "url": "https://www.ghibli.jp/gallery/mononoke010.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/mononoke",
+        "attribution": "© 1997 Studio Ghibli – ND",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#d3cc7d",
+        "#886f24",
+        "#3e3425"
+      ],
+      "paletteNotes": "glowing yellow-green, moss green, dark bark",
+      "lighting": "hazy golden light floods the gap between two giant trunks; motes of light hang in the air; the trunks stay in deep green shade",
+      "composition": "two vast mossy trunks frame a bright central gap; the silhouetted stag stands on the roots in that gap",
+      "framing": "wide shot, low angle",
+      "camera": "static",
+      "tags": [
+        "forest",
+        "glade",
+        "backlight",
+        "silhouette",
+        "haze",
+        "animation"
+      ]
+    },
+    {
+      "id": "princess-mononoke-02",
+      "film": "princess-mononoke",
+      "file": "stills/princess-mononoke/02.jpg",
+      "original": "originals/princess-mononoke-ghibli-mononoke023.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file mononoke023.jpg, 1920×1038)",
+      "scene": "Kodama tree spirits perch among the roots and branches of the night forest, blue spirit lights drifting",
+      "source": {
+        "name": "Studio Ghibli official website, Princess Mononoke still gallery",
+        "url": "https://www.ghibli.jp/gallery/mononoke023.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/mononoke",
+        "attribution": "© 1997 Studio Ghibli – ND",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#6b9896",
+        "#2c5359",
+        "#212e34"
+      ],
+      "paletteNotes": "teal, deep green, cyan glows, white figures",
+      "lighting": "cool night; small cyan glows are the only sources, the white kodama read as bright points",
+      "composition": "an all-over field of roots and vines with the kodama scattered across it; no single focal point",
+      "framing": "wide shot",
+      "camera": "static",
+      "tags": [
+        "forest",
+        "night",
+        "spirits",
+        "glow",
+        "pattern",
+        "animation"
+      ]
+    },
+    {
+      "id": "princess-mononoke-03",
+      "film": "princess-mononoke",
+      "file": "stills/princess-mononoke/03.jpg",
+      "original": "originals/princess-mononoke-ghibli-mononoke025.jpg",
+      "width": 1600,
+      "height": 866,
+      "aspectRatio": "1.85:1",
+      "frameType": "official production still (Studio Ghibli gallery file mononoke025.jpg, 1920×1038)",
+      "scene": "The Nightwalker, the Forest Spirit's translucent night form, rises over the forest against a blue sky",
+      "source": {
+        "name": "Studio Ghibli official website, Princess Mononoke still gallery",
+        "url": "https://www.ghibli.jp/gallery/mononoke025.jpg"
+      },
+      "rights": {
+        "status": "studio-release",
+        "license": "Studio Ghibli release: 常識の範囲でご自由にお使いください (\"please use freely within the bounds of common sense\"), stated on ghibli.jp/works/mononoke",
+        "attribution": "© 1997 Studio Ghibli – ND",
+        "notes": "Published by the rights holder for free use; not a formal licence. Press coverage reads the statement as non-commercial use. Image is an official still, not a frame grab, so it matches the film exactly."
+      },
+      "palette": [
+        "#40a8c8",
+        "#2c81b6",
+        "#225778"
+      ],
+      "paletteNotes": "cyan, cobalt sky, white speckles",
+      "lighting": "the figure is self-luminous, speckled with points of light; the sky an even blue",
+      "composition": "the giant translucent body fills the frame diagonally from lower left to the crested head at upper right",
+      "framing": "wide shot, low angle",
+      "camera": "static",
+      "tags": [
+        "giant",
+        "translucent",
+        "night",
+        "sky",
+        "monochromatic blue",
+        "animation"
+      ]
+    },
+    {
+      "id": "the-godfather-01",
+      "film": "the-godfather",
+      "file": "stills/the-godfather/01.jpg",
+      "original": "originals/the-godfather-commission-table-trailer-15s.jpg",
+      "width": 1280,
+      "height": 694,
+      "aspectRatio": "1.84:1",
+      "frameType": "film frame from a trailer: The Godfather 50th anniversary official trailer (Paramount, 2022) (timestamp 0:15 of a 1920×1080 copy), letterbox bars cropped, reduced to 1280 px wide",
+      "scene": "The heads of the Five Families around the long boardroom table, a landscape mural and candle sconces behind",
+      "source": {
+        "name": "Internet Archive, The Godfather 50th anniversary official trailer (Paramount, 2022), Internet Archive copy",
+        "url": "https://archive.org/details/youtube-H0UFDMiQWzA"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 1972 Paramount Pictures; trailer © 2022 Paramount Pictures",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive (file H0UFDMiQWzA.mkv); quality is limited to that copy (1920×1080). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#81674f",
+        "#40311c",
+        "#0d0e08"
+      ],
+      "paletteNotes": "amber candlelight, dark wood, olive mural",
+      "lighting": "low-key, warm practicals (chandelier and wall sconces) with deep shadow pooling around the figures; Willis's top-light on the table",
+      "composition": "the table recedes from the lower right into depth; seated men line both sides; the bright mural fills the upper left",
+      "framing": "wide shot, slightly high angle",
+      "camera": "static",
+      "tags": [
+        "boardroom",
+        "table",
+        "ensemble",
+        "low key",
+        "practicals",
+        "amber",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "the-godfather-02",
+      "film": "the-godfather",
+      "file": "stills/the-godfather/02.jpg",
+      "original": "originals/the-godfather-hand-kiss-study-trailer-24s.jpg",
+      "width": 1280,
+      "height": 694,
+      "aspectRatio": "1.84:1",
+      "frameType": "film frame from a trailer: The Godfather 50th anniversary official trailer (Paramount, 2022) (timestamp 0:24 of a 1920×1080 copy), letterbox bars cropped, reduced to 1280 px wide",
+      "scene": "A supplicant bows to kiss Vito Corleone's hand in the darkened study, Tom Hagen beyond by the blinds",
+      "source": {
+        "name": "Internet Archive, The Godfather 50th anniversary official trailer (Paramount, 2022), Internet Archive copy",
+        "url": "https://archive.org/details/youtube-H0UFDMiQWzA"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 1972 Paramount Pictures; trailer © 2022 Paramount Pictures",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive (file H0UFDMiQWzA.mkv); quality is limited to that copy (1920×1080). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#726e61",
+        "#35291d",
+        "#040503"
+      ],
+      "paletteNotes": "near black, warm skin, a red rose, pale slats",
+      "lighting": "top light only; faces and hands fall in and out of darkness, slats of daylight behind the venetian blinds",
+      "composition": "the bowed bald head at centre, Vito's shoulder a dark mass at right, the bright blind slats frame the standing figure",
+      "framing": "medium shot",
+      "camera": "static",
+      "tags": [
+        "study",
+        "venetian blinds",
+        "top light",
+        "low key",
+        "ritual",
+        "widescreen"
+      ]
+    },
+    {
+      "id": "the-godfather-03",
+      "film": "the-godfather",
+      "file": "stills/the-godfather/03.jpg",
+      "original": "originals/the-godfather-reeds-clemenza-trailer-101s.jpg",
+      "width": 1280,
+      "height": 694,
+      "aspectRatio": "1.84:1",
+      "frameType": "film frame from a trailer: The Godfather 50th anniversary official trailer (Paramount, 2022) (timestamp 1:41 of a 1920×1080 copy), letterbox bars cropped, reduced to 1280 px wide",
+      "scene": "Clemenza and Rocco beside the car in the tall reeds on the causeway",
+      "source": {
+        "name": "Internet Archive, The Godfather 50th anniversary official trailer (Paramount, 2022), Internet Archive copy",
+        "url": "https://archive.org/details/youtube-H0UFDMiQWzA"
+      },
+      "rights": {
+        "status": "fair-use",
+        "license": "Fair use claimed (US, 17 U.S.C. § 107): a single reduced-resolution frame from the official trailer, used to study its cinematography. Not licensed.",
+        "attribution": "© 1972 Paramount Pictures; trailer © 2022 Paramount Pictures",
+        "notes": "Frame taken from a third-party copy of the trailer on the Internet Archive (file H0UFDMiQWzA.mkv); quality is limited to that copy (1920×1080). The rights holder has not granted permission. Remove on request; a takedown contact must be published in the app before it goes public."
+      },
+      "palette": [
+        "#8a6a51",
+        "#594a3e",
+        "#171718"
+      ],
+      "paletteNotes": "golden reeds, black car, camel coat",
+      "lighting": "low winter sun; the reeds glow gold behind the figures, faces in soft side light",
+      "composition": "the black car roof cuts the lower left corner; two figures stand against a wall of reeds that fills the frame",
+      "framing": "medium wide shot",
+      "camera": "static",
+      "tags": [
+        "reeds",
+        "exterior",
+        "golden hour",
+        "car",
+        "texture",
+        "widescreen"
+      ]
     }
   ]
 }
