@@ -67,16 +67,15 @@ window.Pallas = window.Pallas || {};
   const later = (ms, fn) => timers.push(setTimeout(fn, ms));
   const clearTimers = () => { timers.forEach(clearTimeout); timers = []; };
 
-  function picStyle(p) {
-    switch (p) {
-      case 'static': return { transform: 'none', filter: 'none', transition: 'none' };
-      case 'off1':   return { transform: 'scale(1,.006)', filter: 'brightness(2.6)', transition: 'transform 170ms cubic-bezier(.6,0,.9,.3), filter 170ms' };
-      case 'off2':   return { transform: 'scale(0,.006)', filter: 'brightness(2.6)', transition: 'transform 170ms cubic-bezier(.6,0,.9,.3)' };
-      case 'black':  return { transform: 'scale(0,.006)', filter: 'brightness(2.6)', transition: 'none' };
-      case 'on':     return { transform: 'none', filter: 'none', transition: `transform 520ms ${EASE}, filter 700ms ${EASE}` };
-      default:       return { transform: 'none', filter: 'none', transition: `transform 420ms ${EASE}, filter 420ms ${EASE}` };
-    }
+  // Picture-layer style outside the power-off: the like swipe and idle use this.
+  function picStyle() {
+    return { transform: 'none', filter: 'none', transition: `transform 420ms ${EASE}, filter 420ms ${EASE}` };
   }
+  // Phases of the power-off, during which the sequence owns the picture layer and the dot.
+  const POWER = new Set(['static', 'off', 'black', 'on']);
+  let anims = [];                 // Web Animations handles of the running power-off
+  const track = (a) => { anims.push(a); return a; };
+  const cancelAnims = () => { anims.forEach((a) => { try { a.cancel(); } catch { /* already gone */ } }); anims = []; };
 
   function drawNoise() {
     if (!noiseOn) return;
@@ -97,16 +96,15 @@ window.Pallas = window.Pallas || {};
 
   function render() {
     const { idx, phase, osd: osdText, prevIdx } = state;
-    const pic = picStyle(phase);
-    picture.style.transform = pic.transform;
-    picture.style.filter = pic.filter;
-    picture.style.transition = pic.transition;
+    if (!POWER.has(phase)) {
+      const pic = picStyle();
+      picture.style.transform = pic.transform;
+      picture.style.filter = pic.filter;
+      picture.style.transition = pic.transition;
+    }
 
-    noise.style.opacity = (phase === 'static' || phase === 'off1' || phase === 'off2') ? .95 : 0;
+    noise.style.opacity = (phase === 'static' || phase === 'off') ? .95 : 0;
     noise.style.transition = 'opacity 90ms';
-
-    dot.style.opacity = phase === 'off2' ? 1 : 0;
-    dot.style.transition = phase === 'black' ? 'opacity 560ms ease-out' : 'opacity 90ms';
 
     osd.hidden = !osdText;
     osd.textContent = osdText;
@@ -141,15 +139,49 @@ window.Pallas = window.Pallas || {};
       later(940, () => set({ phase: 'swipe' }));
       later(1400, () => set({ phase: 'idle', prevIdx: null }));
     } else {
-      // power off: static, then the picture collapses to a line, a dot, black; the next still comes on
-      set({ osd: 'disliked', phase: 'hold' });
-      later(900, () => { startNoise(); set({ phase: 'static', osd: '' }); });
-      later(1450, () => set({ phase: 'off1' }));
-      later(1620, () => set({ phase: 'off2' }));
-      later(1790, () => { noiseOn = false; set({ phase: 'black' }); });
-      later(2400, () => set({ idx: (state.idx + 1) % N, phase: 'on' }));
-      later(3000, () => set({ phase: 'idle' }));
+      powerOff();
     }
+  }
+
+  // Power off: "disliked", static, the picture collapses to a bright line then a dot, black, and the next still fades on.
+  function powerOff() {
+    const EASE_ON = 'cubic-bezier(.2,.7,.1,1)';
+    let collapse = null;
+    anims.forEach((a) => { if (a.playState === 'running') a.finish(); }); anims = [];   // a previous power-on still settling jumps to its end state; cancelled ones stay cancelled
+    set({ osd: 'disliked', phase: 'hold' });
+    later(900, () => { startNoise(); set({ phase: 'static', osd: '' }); });
+    later(1450, () => {
+      // one animation: first half to a full-width line, second half the line to a point
+      collapse = track(picture.animate([
+        { offset: 0, transform: 'scale(1,1)', filter: 'brightness(1)', easing: 'cubic-bezier(.6,0,.9,.3)' },
+        { offset: .5, transform: 'scale(1,.006)', filter: 'brightness(2.6)', easing: 'cubic-bezier(.6,0,.9,.3)' },
+        { offset: 1, transform: 'scale(0,.006)', filter: 'brightness(2.6)' },
+      ], { duration: 340, fill: 'forwards' }));
+      set({ phase: 'off' });
+    });
+    later(1620, () => { dot.style.transition = 'opacity 90ms'; dot.style.opacity = 1; });
+    later(1790, () => {
+      noiseOn = false;
+      set({ phase: 'black' });
+      picture.style.visibility = 'hidden';          // hide first, so cancelling cannot flash a full-size image
+      if (collapse) { collapse.cancel(); anims = anims.filter((x) => x !== collapse); collapse = null; }
+      picture.style.transition = 'none';
+      picture.style.transform = 'none';
+      picture.style.opacity = 0;
+      picture.style.filter = 'brightness(1.8)';
+      dot.style.transition = 'opacity 560ms ease-out';
+      dot.style.opacity = 0;
+    });
+    later(2400, () => {
+      set({ idx: (state.idx + 1) % N, phase: 'on' });   // advance while hidden
+      // The end state is written inline first; the animations (no fill) play over it and leave nothing behind when they end.
+      picture.style.opacity = 1;
+      picture.style.filter = 'none';
+      picture.style.visibility = 'visible';
+      track(picture.animate([{ opacity: 0 }, { opacity: 1 }], { duration: 520, easing: EASE_ON }));
+      track(picture.animate([{ filter: 'brightness(1.8)' }, { filter: 'none' }], { duration: 700, easing: EASE_ON }));
+    });
+    later(3000, () => set({ phase: 'idle' }));
   }
   $('like').addEventListener('click', () => react('like'));
   $('dislike').addEventListener('click', () => react('dislike'));
@@ -218,7 +250,12 @@ window.Pallas = window.Pallas || {};
     home.hidden = isCinema || isLit;
     cinema.hidden = !isCinema;
     lit.hidden = !isLit;
-    if (!isCinema) { clearTimers(); noiseOn = false; state.phase = 'idle'; state.osd = ''; state.prevIdx = null; }
+    if (!isCinema) {
+      clearTimers(); noiseOn = false; cancelAnims();
+      state.phase = 'idle'; state.osd = ''; state.prevIdx = null;
+      picture.style.visibility = ''; picture.style.opacity = ''; picture.style.filter = ''; picture.style.transform = ''; picture.style.transition = '';
+      dot.style.transition = ''; dot.style.opacity = 0;
+    }
     D.close();
     render();
     dispatchEvent(new CustomEvent('pallas:route', { detail: { isLit } }));
