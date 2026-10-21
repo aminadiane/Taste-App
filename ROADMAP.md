@@ -106,12 +106,15 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 
 *Accept when:* ~~the 5 passages above are `ready` and load in the book~~ (done 2026-10-21); then 20 passages; the stand-ins retired once list passages are live; ranks beyond the top ten checked against the NYT list.
 
-### 3. Cinema metadata
+### 3. Cinema metadata — built 2026-10-21 on `feature/pallas-overnight`
 
-- A controlled vocabulary with two blocks per still: `observed` (colour palette as hex plus hue / value / saturation relationships; key-light direction and quality; contrast range; shot scale; apparent camera height and angle; depth and spatial layers; texture and grain; composition devices) and `interpretation` (atmosphere, mood), the latter marked subjective.
-- Each still analysed individually, never from a general description of the film. Existing free-text notes kept as notes.
-- *Accept when:* all 89 stills validate against the schema, observed fields use only vocabulary terms, no interpretive term appears in `observed`, and a validator script reports zero errors.
-- Batch analysis with a vision model only after the owner approves a provider and a cost cap.
+- **Vocabulary:** `library/vocab/cinema.json` defines every term with a definition (it doubles as the glossary). Each dimension has a basis: `measured` (computed from pixels), `observed` (seen in the image) or `interpretation` (subjective). Thresholds for measured terms live in the same file.
+- **Measured** (`node tools/measure-stills.js`, free and deterministic with macOS `sips`): tonal key, contrast, saturation, toned print, colour temperature, dominant hues, tonal symmetry, surface detail, plus raw metrics and a five-colour palette. Letterbox bars are trimmed first. Re-run any time; it never touches observations.
+- **Observed:** all 89 stills viewed one by one and recorded in `library/import/cinema-observed.txt` (light quality, key-light direction, apparent source, shot scale, angle, composition devices, depth of field, spatial layers, figures, setting). Applied with `node tools/apply-observations.js`, which rejects any term not in the vocabulary. "-" means the image does not show enough.
+- **Interpretation:** atmosphere terms, marked `subjective: true`, stored apart from observation.
+- Output: `library/cinema-metadata.json`, keyed by still id; the free-text notes in `stills.json` are unchanged.
+- *Accept when:* ~~all 89 stills validate, observed fields use only vocabulary terms, no interpretive term in observed, validator reports zero errors~~ done: `node tools/validate-cinema.js` reports 89 observed, 0 errors; `tests/cinema-metadata.test.js`.
+- Limitations: tonal symmetry measures mirrored brightness, not mirrored shapes, so dark, even frames can score high; the composition term "symmetrical" is the viewer's judgment. Observations were made from a 560-pixel copy, by Claude, in one pass; the owner may want to review a sample.
 
 ### 4. Skip and undo
 
