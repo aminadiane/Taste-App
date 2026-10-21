@@ -49,7 +49,7 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 - `js/drawer.js` — the Drawer and shared shelf helpers. `js/votes.js` — current persistence.
 - `library/stills.json` — cinema library (films keyed by slug, one record per still). Display images in `library/stills/<slug>/NN.jpg`, untouched downloads in `library/originals/`.
 - `library/excerpts.json` — literature entries (currently five stand-ins) and paperback spine presets.
-- `library/PROPOSAL.md` — research, sourcing and rights decisions for the cinema library. `library/review.html` — internal review tool.
+- `library/PROPOSAL.md` — research and sourcing notes for the cinema library. `library/review.html` — internal review tool.
 - `assets/` — production photographs, textures and masks from the handoff.
 - **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live.
 
@@ -75,12 +75,11 @@ then open `http://127.0.0.1:8799/` (the built-in browser pane works). The pane t
 - Lock TV and book input while a sequence runs; clean up timers, animations and noise when leaving a screen.
 - Votes and all saved data are keyed by **stable** still, film and passage ids. Never key by array index. Never rename an id once published.
 
-## Content and rights rules
+## Content rules
 
-- Cinema: IMDb Top 250 titles only (check the live chart). Every still record carries `source.url`, `rights.status` (`cleared` | `studio-release` | `fair-use`), licence rationale and attribution.
+- Cinema: IMDb Top 250 titles only (check the live chart). Every still record carries `source.url`, `rights.status` and attribution, as the existing records do.
 - **FilmGrab is reference only. Never download from it.** No TMDB content in the AI features without authorisation.
-- No permission requests to studios (owner decision); fair-use frames are reduced-resolution trailer frames used for study, holder credited.
-- Literature: target is the NYT 100 Best Books of the 21st Century; each passage records source URL, attribution and permission status. Prefer official publisher or authorised excerpts.
+- Literature: target is the NYT 100 Best Books of the 21st Century; each passage records its source URL and attribution. Prefer official publisher or authorised excerpts.
 - Each still and passage is analysed individually; never copy a general description of the film or book.
 - No paid API usage (vision models, LLMs) without the owner's approval.
 
@@ -90,4 +89,4 @@ then open `http://127.0.0.1:8799/` (the built-in browser pane works). The pane t
 - **The site is live from `main`.** Do significant work on a branch (Vercel builds preview deployments for branches). Do not push unfinished work to `main`, and do not redeploy or reconfigure Vercel unless asked.
 - Commit the working version before substantial changes. End commit messages with the attribution line requested in the session.
 - Inspect before assuming something is missing; do not rebuild working functionality.
-- When a decision belongs to the owner (rights, design, paid services, public release), ask; record the outcome in `ROADMAP.md` or `README.md`.
+- When a decision belongs to the owner (design, paid services), ask; record the outcome in `ROADMAP.md` or `README.md`.
