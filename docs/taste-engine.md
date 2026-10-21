@@ -47,9 +47,9 @@ Anything that would be emerging or well supported but whose supporting examples 
 
 **Consistency.** The analysis lists works whose judgment was later reversed (undone votes excluded), and films or books where some works were liked and others disliked. The second is common and expected, since works are judged one still or passage at a time.
 
-**Evidence level of a profile.** `insufficient` (fewer than 8 judgments), `one-sided` (all liked or all disliked), `no-pattern`, `early` (tentative findings only), `developing` (at least one emerging or well-supported finding), or `established` (two or more well-supported findings not explained by others).
+**Evidence level of a profile.** `insufficient` (fewer than 8 judgments), `one-sided` (all liked or all disliked), `no-pattern`, `early` (tentative findings only), `developing` (at least one emerging or well-supported finding), or `established` (at least one well-supported finding not explained by another, after at least 30 judgments).
 
-**Signature.** Up to three liked and two disliked characteristics, one per dimension, strongest first. Observed and measured characteristics come before interpreted ones, and explained findings are left out. The wording comes from fixed templates: "Early signs of a leaning towards …" when everything is tentative, "A developing leaning towards …" or "A clear leaning towards …" otherwise, and "Less drawn to …". The single strongest combination may be added. Nothing implies that a dislike is a mistake.
+**Signature.** Up to three liked characteristics and two disliked ones, strongest first. A disliked value is left out when a liked value of the same dimension is at least as strong, because it is then usually the mirror image: low-key liked, mid-key disliked. Observed and measured characteristics come before interpreted ones, and explained findings are left out. The wording comes from fixed templates: "Early signs of a leaning towards …" when everything is tentative, "A developing leaning towards …" or "A clear leaning towards …" otherwise, and "Less drawn to …". The single strongest combination may be added. Nothing implies that a dislike is a mistake.
 
 All thresholds are in `DEFAULTS` in `js/taste/analyse.js`. Any of them can be overridden per call (`options`), and each result records the values it used.
 

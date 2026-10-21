@@ -1,0 +1,235 @@
+{
+  "simulatedUser": {
+    "name": "eclectic",
+    "area": "cinema",
+    "description": "Eclectic: likes about half of everything, with no relation to any characteristic.",
+    "seed": 13,
+    "library": "real cinema library (89 stills)"
+  },
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.0.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 89,
+      "likes": 51,
+      "dislikes": 38,
+      "likeRate": 0.573,
+      "works": 35,
+      "notInLibrary": 0,
+      "eventCount": 89,
+      "lastEventAt": "2026-10-21T09:01:29.000Z",
+      "judgmentsDigest": "ea155131"
+    },
+    "evidenceLevel": "no-pattern",
+    "signature": {
+      "summary": "No characteristic stands out yet across 89 judged stills. Likes are spread as widely as everything judged.",
+      "terms": [],
+      "statements": []
+    },
+    "preferred": [],
+    "disliked": [],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "setting:vehicle",
+        "label": "vehicle",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "shotScale:extreme-close-up",
+        "label": "extreme close-up",
+        "exposed": 2,
+        "liked": 1
+      }
+    ],
+    "spread": {
+      "overall": 0.984,
+      "reading": "broad",
+      "byDimension": {
+        "key": {
+          "label": "tonal key",
+          "ratio": 0.925,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "contrast": {
+          "label": "contrast",
+          "ratio": 0.966,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "saturation": {
+          "label": "saturation",
+          "ratio": 1.054,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "temperature": {
+          "label": "colour temperature",
+          "ratio": 0.965,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "hue": {
+          "label": "dominant hues",
+          "ratio": 0.988,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 6
+        },
+        "symmetry": {
+          "label": "bilateral symmetry",
+          "ratio": 1.049,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "detail": {
+          "label": "surface detail",
+          "ratio": 1.025,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "lightQuality": {
+          "label": "light quality",
+          "ratio": 0.958,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "lightDirection": {
+          "label": "key-light direction",
+          "ratio": 0.979,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "lightSource": {
+          "label": "apparent light source",
+          "ratio": 0.974,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "shotScale": {
+          "label": "shot scale",
+          "ratio": 0.957,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 7
+        },
+        "angle": {
+          "label": "camera angle",
+          "ratio": 1.023,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "composition": {
+          "label": "composition",
+          "ratio": 1.007,
+          "reading": "broad",
+          "valuesJudged": 11,
+          "valuesLiked": 11
+        },
+        "focus": {
+          "label": "depth of field",
+          "ratio": 0.996,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "layers": {
+          "label": "spatial layers",
+          "ratio": 0.962,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "figures": {
+          "label": "figures",
+          "ratio": 1.019,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "setting": {
+          "label": "setting",
+          "ratio": 0.859,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
+        },
+        "atmosphere": {
+          "label": "atmosphere",
+          "ratio": 1.008,
+          "reading": "broad",
+          "valuesJudged": 14,
+          "valuesLiked": 14
+        }
+      }
+    },
+    "consistency": {
+      "changedJudgments": [],
+      "worksWithMixedJudgments": [
+        "12-angry-men",
+        "double-indemnity",
+        "dr-strangelove",
+        "howls-moving-castle",
+        "its-a-wonderful-life",
+        "lawrence-of-arabia",
+        "metropolis",
+        "mr-smith-goes-to-washington",
+        "my-neighbor-totoro",
+        "north-by-northwest",
+        "parasite",
+        "paths-of-glory",
+        "rear-window",
+        "some-like-it-hot",
+        "spirited-away",
+        "sunset-boulevard",
+        "the-apartment",
+        "the-great-dictator",
+        "the-kid",
+        "vertigo"
+      ]
+    },
+    "terminology": [],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+    ]
+  }
+}

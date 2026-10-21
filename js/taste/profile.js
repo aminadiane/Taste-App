@@ -11,6 +11,7 @@
 
   const SCHEMA = 'pallas.taste-profile/1';
   const RANK = { 'well supported': 3, emerging: 2, tentative: 1 };
+  const ESTABLISHED_AFTER = 30;   // judgments needed before a profile with a well-supported finding is called established
 
   // Deterministic digest of the judgments a profile was based on (FNV-1a, 32-bit), so snapshots can be matched to input.
   function digest(judgments) {
@@ -30,7 +31,7 @@
   function evidenceLevel(result) {
     if (result.status !== 'ok') return result.status;
     const s = result.findings.filter((f) => !f.explainedBy).map((f) => RANK[f.strength]);
-    if (s.filter((x) => x === 3).length >= 2) return 'established';
+    if (s.includes(3) && result.counts.judged >= ESTABLISHED_AFTER) return 'established';
     if (s.some((x) => x >= 2)) return 'developing';
     if (s.length) return 'early';
     return 'no-pattern';
@@ -38,12 +39,13 @@
 
   // Up to three leanings and two aversions for the signature, one per dimension, observed or measured before interpreted.
   function pickSignature(findings) {
-    const used = new Set(), pick = (dir, max) => findings
-      .filter((f) => f.direction === dir && !f.explainedBy)
-      .sort((a, b) => RANK[b.strength] - RANK[a.strength] || (a.basis === 'interpretation') - (b.basis === 'interpretation') || a.stats.p - b.stats.p)
-      .filter((f) => (used.has(f.dimension) ? false : (used.add(f.dimension), true)))
-      .slice(0, max);
-    const liked = pick('liked', 3), disliked = pick('disliked', 2);
+    // Several liked values may share a dimension (lyrical and experimental prose); a disliked value is left out
+    // when its dimension already appears among the likes, since it is usually the mirror image (low-key liked, mid-key disliked).
+    const sorted = (dir) => findings.filter((f) => f.direction === dir && !f.explainedBy)
+      .sort((a, b) => RANK[b.strength] - RANK[a.strength] || (a.basis === 'interpretation') - (b.basis === 'interpretation') || a.stats.p - b.stats.p);
+    const liked = sorted('liked').slice(0, 3), seen = new Set();
+    const mirror = (f) => liked.some((l) => l.dimension === f.dimension && RANK[l.strength] >= RANK[f.strength]);
+    const disliked = sorted('disliked').filter((f) => !mirror(f) && !seen.has(f.dimension) && seen.add(f.dimension)).slice(0, 2);
     return { liked, disliked };
   }
 

@@ -1,0 +1,150 @@
+{
+  "simulatedUser": {
+    "name": "inconsistent-few",
+    "area": "cinema",
+    "description": "Insufficient and inconsistent evidence: only six judgments, two of which were later reversed.",
+    "seed": 31,
+    "library": "real cinema library (89 stills)"
+  },
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.0.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 6,
+      "likes": 3,
+      "dislikes": 3,
+      "likeRate": 0.5,
+      "works": 4,
+      "notInLibrary": 0,
+      "eventCount": 10,
+      "lastEventAt": "2026-10-21T09:00:10.000Z",
+      "judgmentsDigest": "fbeb4b2c"
+    },
+    "evidenceLevel": "insufficient",
+    "signature": {
+      "summary": "Not enough judgments yet to describe a taste: 6 so far, 8 needed before any pattern is reported.",
+      "terms": [],
+      "statements": []
+    },
+    "preferred": [],
+    "disliked": [],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "angle:eye-level",
+        "label": "eye level",
+        "exposed": 5,
+        "liked": 3
+      },
+      {
+        "feature": "contrast:medium",
+        "label": "medium contrast",
+        "exposed": 5,
+        "liked": 3
+      },
+      {
+        "feature": "symmetry:weak",
+        "label": "asymmetrical",
+        "exposed": 5,
+        "liked": 2
+      },
+      {
+        "feature": "composition:off-centre",
+        "label": "off-centre subject",
+        "exposed": 4,
+        "liked": 3
+      },
+      {
+        "feature": "detail:moderate",
+        "label": "moderate detail",
+        "exposed": 4,
+        "liked": 1
+      },
+      {
+        "feature": "figures:single",
+        "label": "single figure",
+        "exposed": 4,
+        "liked": 2
+      },
+      {
+        "feature": "lightQuality:soft",
+        "label": "soft light",
+        "exposed": 4,
+        "liked": 2
+      },
+      {
+        "feature": "atmosphere:tense",
+        "label": "tense",
+        "exposed": 3,
+        "liked": 1
+      },
+      {
+        "feature": "focus:deep",
+        "label": "deep focus",
+        "exposed": 3,
+        "liked": 1
+      },
+      {
+        "feature": "focus:shallow",
+        "label": "shallow focus",
+        "exposed": 3,
+        "liked": 2
+      },
+      {
+        "feature": "hue:orange",
+        "label": "orange",
+        "exposed": 3,
+        "liked": 3
+      },
+      {
+        "feature": "key:low",
+        "label": "low-key",
+        "exposed": 3,
+        "liked": 1
+      }
+    ],
+    "spread": {
+      "overall": null,
+      "reading": null,
+      "byDimension": {}
+    },
+    "consistency": {
+      "changedJudgments": [
+        "12-angry-men-01",
+        "12-angry-men-02"
+      ],
+      "worksWithMixedJudgments": []
+    },
+    "terminology": [],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+    ]
+  }
+}
