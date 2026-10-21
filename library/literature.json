@@ -115,7 +115,7 @@
       "book": "my-brilliant-friend",
       "status": "ready",
       "text": [
-        "My friendship with Lila began the day we decided to go up the dark stairs that led, step after step, flight after flight, to the door of Don Achille’s apartment. I remember the violet light of the courtyard, the smells of a warm spring evening. The mothers were making dinner, it was time to go home, but we delayed, challenging each other, without ever saying a word, testing our courage. For some time, in school and outside of it, that was what we had been doing. Lila would thrust her hand and then her whole arm into the black mouth of a manhole, and I, in turn, immediately did the same, my heart pounding, hoping that the cockroaches wouldn’t run over my skin, that the rats wouldn’t bite me."
+        "I remember the violet light of the courtyard, the smells of a warm spring evening. The mothers were making dinner, it was time to go home, but we delayed, challenging each other, without ever saying a word, testing our courage. For some time, in school and outside of it, that was what we had been doing. Lila would thrust her hand and then her whole arm into the black mouth of a manhole, and I, in turn, immediately did the same, my heart pounding, hoping that the cockroaches wouldn’t run over my skin, that the rats wouldn’t bite me."
       ],
       "source": {
         "name": "Diane Rehm Show, Readers' Review: My Brilliant Friend (Scribd excerpt embedded on the page)",
@@ -129,7 +129,7 @@
       "attribution": "Excerpt from My Brilliant Friend by Elena Ferrante. Translation by Ann Goldstein. Copyright © 2012 by Edizioni E/O. First publication 2012 by Europa Editions. Used with permission.",
       "notes": {
         "author": "Elena Ferrante is the pseudonym of an Italian novelist who has never appeared in public. My Brilliant Friend is the first of the four Neapolitan novels, translated by Ann Goldstein.",
-        "work": "The narrator, Elena, now in her sixties, recalls her childhood friendship with Lila in a poor neighbourhood of Naples in the 1950s. This is the opening of the first chapter."
+        "work": "The narrator, Elena, now in her sixties, recalls her childhood friendship with Lila in a poor neighbourhood of Naples in the 1950s. This passage comes from the first page."
       },
       "metadata": {
         "observed": {
@@ -138,8 +138,8 @@
           "tense": "past, with habitual past (\"would thrust\")",
           "proseStyle": "plain, concrete diction in long cumulative sentences joined by commas",
           "rhythm": "long sentences that accumulate clauses; a repeated pattern of Lila acting and the narrator copying",
-          "pacing": "compresses a habit of many days into a summary before narrowing to one evening",
-          "imagery": "the dark stairs, the violet light of the courtyard, the black mouth of a manhole, cockroaches and rats",
+          "pacing": "moves from one remembered evening back to a habit of many days",
+          "imagery": "the violet light of the courtyard, the black mouth of a manhole, cockroaches and rats",
           "techniques": [
             {
               "name": "Mirroring",
@@ -150,8 +150,8 @@
               "text": "\"I remember\" places a distant adult voice over the child's fear."
             },
             {
-              "name": "Repetition",
-              "text": "\"step after step, flight after flight\" makes the climb feel long before it begins."
+              "name": "Unspoken contest",
+              "text": "the girls challenge each other \"without ever saying a word\", so the rivalry is shown only through what they do."
             }
           ]
         },
@@ -160,9 +160,9 @@
         }
       },
       "locator": {
-        "start": "My friendship with Lila began",
+        "start": "I remember the violet light",
         "end": "that the rats wouldn't bite me.",
-        "where": "Childhood, The Story of Don Achille, chapter 1, opening"
+        "where": "Childhood, The Story of Don Achille, chapter 1, first page"
       }
     },
     {
@@ -172,7 +172,7 @@
       "text": [
         "“So now get up.”",
         "Felled, dazed, silent, he has fallen; knocked full length on the cobbles of the yard. His head turns sideways; his eyes are turned toward the gate, as if someone might arrive to help him out. One blow, properly placed, could kill him now.",
-        "Blood from the gash on his head—which was his father’s first effort—is trickling across his face. Add to this, his left eye is blinded; but if he squints sideways, with his right eye he can see that the stitching of his father’s boot is unraveling. The twine has sprung clear of the leather, and a hard knot in it has caught his eyebrow and opened another cut."
+        "Blood from the gash on his head—which was his father’s first effort—is trickling across his face. Add to this, his left eye is blinded; but if he squints sideways, with his right eye he can see that the stitching of his father’s boot is unraveling."
       ],
       "source": {
         "name": "Macmillan, Wolf Hall book page (Read Excerpt)",
@@ -208,7 +208,7 @@
             },
             {
               "name": "Close detail",
-              "text": "the injured eye notices the twine coming loose from the boot, a small exact detail amid the violence."
+              "text": "the injured eye notices the stitching of the boot coming loose, a small exact detail amid the violence."
             }
           ]
         },
@@ -218,7 +218,7 @@
       },
       "locator": {
         "start": "“So now get up.”",
-        "end": "and opened another cut.",
+        "end": "is unraveling.",
         "where": "Part One, I, Across the Narrow Sea, Putney, 1500, opening"
       }
     },
@@ -227,7 +227,7 @@
       "book": "austerlitz",
       "status": "ready",
       "text": [
-        "In the second half of the 1960s I traveled repeatedly from England to Belgium, partly for study purposes, partly for other reasons which were never entirely clear to me, staying sometimes for just one or two days, sometimes for several weeks. On one of these Belgian excursions which, as it seemed to me, always took me further and further abroad, I came on a glorious early summer's day to the city of Antwerp, known to me previously only by name. Even on my arrival, as the train rolled slowly over the viaduct with its curious pointed turrets on both sides and into the dark station concourse, I had begun to feel unwell, and this sense of indisposition persisted for the whole of my visit to Belgium on that occasion."
+        "In the second half of the 1960s I traveled repeatedly from England to Belgium, partly for study purposes, partly for other reasons which were never entirely clear to me, staying sometimes for just one or two days, sometimes for several weeks. On one of these Belgian excursions which, as it seemed to me, always took me further and further abroad, I came on a glorious early summer's day to the city of Antwerp, known to me previously only by name."
       ],
       "source": {
         "name": "Penguin Random House Canada, Austerlitz excerpt",
@@ -251,7 +251,7 @@
           "proseStyle": "long, formal sentences with many subordinate clauses; measured, slightly old-fashioned diction",
           "rhythm": "extended periodic sentences that defer their main point",
           "pacing": "unhurried and digressive; travel described as drift",
-          "imagery": "a train crossing a viaduct with pointed turrets into a dark station concourse",
+          "imagery": "few images; a glorious early summer's day and a city \"known to me previously only by name\"",
           "techniques": [
             {
               "name": "Admitted uncertainty",
@@ -259,11 +259,11 @@
             },
             {
               "name": "Cumulative sentence",
-              "text": "clauses pile up over a single sentence, so the reading itself feels like the slow arrival of the train."
+              "text": "clauses pile up within each sentence and defer its point, so the journey reads as drift."
             },
             {
-              "name": "Foreshadowing through malaise",
-              "text": "the narrator feels unwell from the moment he arrives, before anything has happened."
+              "name": "Hedged perception",
+              "text": "\"as it seemed to me\" qualifies even the direction of his travels."
             }
           ]
         },
@@ -273,7 +273,7 @@
       },
       "locator": {
         "start": "In the second half of the 1960s",
-        "end": "for the whole of my visit to Belgium on that occasion.",
+        "end": "known to me previously only by name.",
         "where": "Chapter 1, opening"
       }
     },
@@ -282,7 +282,7 @@
       "book": "never-let-me-go",
       "status": "ready",
       "text": [
-        "My name is Kathy H. I'm thirty-one years old, and I've been a carer now for over eleven years. That sounds long enough, I know, but actually they want me to go on for another eight months, until the end of this year. That'll make it almost exactly twelve years. Now I know my being a carer so long isn't necessarily because they think I'm fantastic at what I do. There are some really good carers who've been told to stop after just two or three years. And I can think of one carer at least who went on for all of fourteen years despite being a complete waste of space. So I'm not trying to boast. But then I do know for a fact they've been pleased with my work, and by and large, I have too. My donors have always tended to do much better than expected. Their recovery times have been impressive, and hardly any of them have been classified as \"agitated,\" even before fourth donation."
+        "My name is Kathy H. I'm thirty-one years old, and I've been a carer now for over eleven years. That sounds long enough, I know, but actually they want me to go on for another eight months, until the end of this year. That'll make it almost exactly twelve years. Now I know my being a carer so long isn't necessarily because they think I'm fantastic at what I do. There are some really good carers who've been told to stop after just two or three years. And I can think of one carer at least who went on for all of fourteen years despite being a complete waste of space."
       ],
       "source": {
         "name": "KCRW, Excerpt from Never Let Me Go",
@@ -310,11 +310,11 @@
           "techniques": [
             {
               "name": "Unexplained terminology",
-              "text": "carer, donors, \"agitated\", fourth donation are used as ordinary words, so the reader must infer the world."
+              "text": "\"carer\", and being \"told to stop\" after a set number of years, are stated as ordinary facts, so the reader must infer the world."
             },
             {
               "name": "Self-correction",
-              "text": "Kathy qualifies her own claims (\"So I'm not trying to boast\"), building an anxious, modest voice."
+              "text": "Kathy qualifies her own claims (\"That sounds long enough, I know, but actually\"), building an anxious, modest voice."
             },
             {
               "name": "Direct address",
@@ -328,7 +328,7 @@
       },
       "locator": {
         "start": "My name is Kathy H.",
-        "end": "even before fourth donation.",
+        "end": "a complete waste of space.",
         "where": "Chapter One, opening"
       }
     },
