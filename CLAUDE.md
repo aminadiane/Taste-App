@@ -69,7 +69,7 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 
 ### Checks
 
-- `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, and the journal.
+- `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, the journal, the interpretation layer, and the guard that mobile CSS never reaches desktop.
 - `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass.
 - `node tools/stress-engine.js --seeds 100`: the engine stress test (`docs/engine-stress-report.md`). Re-run it after any change to `js/taste/analyse.js`, and change thresholds only when its results support it.
 - `node tools/example-profiles.js` and `node tools/example-interpretations.js`: regenerate the examples in `docs/examples/`. The simulated people are in `tests/fixtures/personas.js`.
@@ -83,6 +83,10 @@ PORT=8799 node .claude/serve.js
 ```
 
 then open `http://127.0.0.1:8799/` (the built-in browser pane works). The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
+
+### Mobile
+
+Mobile styles live at the end of `styles.css`, each inside an `@media` or `@supports` block that desktop does not match. Touch behaviour in `js/book.js` depends on the pointer type: a mouse click on a page dogs-ears or tears it, as approved, while a finger needs a second tap (dog-ear) or a deliberate drag (tear). Keep both rules when changing either screen. The proposal for reading on phones is in `docs/proposals/mobile-book.md` and is not implemented.
 
 ## Fixed technical rules
 

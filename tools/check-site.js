@@ -10,7 +10,7 @@ const errors = [];
 const ok = (msg) => console.log('  ok     ' + msg);
 
 const html = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-const refs = [...html.matchAll(/(?:src|href)="([^"#?]+)(?:\?[^"]*)?"/g)].map((m) => m[1]).filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith('mailto:'));
+const refs = [...html.matchAll(/(?:src|href)="([^"#?]+)(?:\?[^"]*)?"/g)].map((m) => m[1]).filter((u) => !/^(https?:)?\/\//.test(u) && !u.startsWith('mailto:') && !u.startsWith('/_vercel/'));   // /_vercel/* is served by Vercel itself
 for (const r of new Set(refs)) if (!fs.existsSync(path.join(ROOT, r))) errors.push(`index.html references missing file ${r}`);
 ok(`${new Set(refs).size} files referenced by index.html`);
 

@@ -244,3 +244,56 @@ a:hover{color:var(--ink);opacity:1}
 .pg__sec p{margin:0}
 .pg__sec-h{font-family:var(--font-sans);font-size:10px;font-weight:600;line-height:1.3;color:var(--ref-cobalt)}
 .pg__tech{margin:0 0 4px !important}
+
+/* ---------- Mobile and touch (2026-10-21). Every rule below is gated by a media or feature query that desktop
+   browsers with a mouse do not match, or produces the same value on desktop (dvh equals vh there). ---------- */
+
+/* Mobile browsers' toolbars make 100vh taller than the visible screen; dvh is the visible height. */
+@supports (height:100dvh) {
+  .home,.cinema,.lit{min-height:100dvh}
+  .tv{width:min(92vw,calc((100dvh - 160px) * 1.107),880px)}
+}
+
+/* Touch: no double-tap zoom delay on controls; hover effects that would stick after a tap stay off. */
+@media (pointer:coarse) {
+  html{touch-action:manipulation}
+  /* The TV's cap buttons are 6 px tall on a phone: an invisible hit area of about 44 px makes them usable, each
+     extending outwards over its own label, so the two never overlap. */
+  .tv__button::before{content:'';position:absolute;top:-19px;bottom:-19px}
+  .tv__button--dislike::before{left:-26px;right:-2px}
+  .tv__button--like::before{left:-2px;right:-26px}
+  /* text controls get room for a fingertip without changing how they look */
+  .lit__controls .textlink{padding-top:12px;padding-bottom:12px;margin-top:-12px;margin-bottom:-12px;background-position:0 calc(100% - 10px)}
+  .corner .qlink{padding-top:10px;padding-bottom:10px;margin-top:-10px;margin-bottom:-10px;background-position:0 calc(100% - 8px)}
+  .drawer__head .textlink,.corner--tr .textlink,.qv__tabs .qlink{padding-top:14px;padding-bottom:14px;margin-top:-14px;margin-bottom:-14px;background-position:0 calc(100% - 12px)}
+}
+@media (hover:none) {
+  .spine:hover{transform:none}
+  .spine.is-selected{transform:translateY(-16px)}
+}
+
+/* Narrow screens: the title scales with the width below 420 px (identical to the approved 112 px at 375 px), and the
+   counter sits above the bottom links instead of colliding with them. */
+@media (max-width:420px) {
+  .home__title{font-size:29.8vw}
+}
+@media (max-width:560px) {
+  .corner--br{bottom:calc(var(--edge) + 26px)}
+}
+
+/* Phones in landscape: less vertical padding so the TV and the book use the height that is there. */
+@media (max-height:520px) and (orientation:landscape) {
+  .home{padding:40px var(--edge)}
+  .home__stack{transform:none}
+  .home__title{font-size:min(21vw,25vh)}
+  .home__tagline{margin-top:3vh}
+  .home__nav{margin-top:6vh}
+  .cinema{padding:46px var(--edge) 46px}
+  .tv{width:min(92vw,calc((100vh - 92px) * 1.107),880px)}
+  .lit{padding:44px var(--edge) 40px;gap:12px}
+}
+@supports (height:100dvh) {
+  @media (max-height:520px) and (orientation:landscape) {
+    .tv{width:min(92vw,calc((100dvh - 92px) * 1.107),880px)}
+  }
+}

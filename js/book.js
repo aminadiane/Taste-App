@@ -15,6 +15,11 @@ window.Pallas = window.Pallas || {};
   const S = { bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
     bCoverHover: false, bFlapHover: false, bFlapAnim: 'none', bFolded: false, bTearing: false, bTorn: false, bDragging: false, bPageHover: false };
   let ty = 0, sk = 0, scale = 1, tearRaf = 0, timers = [], active = false, leafFor = null, stackKey = '';
+  // Touch: a finger has no hover, and a tap must never register a preference by accident. The last pointer type decides
+  // how the pages respond (mouse behaviour is unchanged): see pageDown and rightTap below.
+  let lastPointer = 'mouse', armTimer = 0, tearTimer = 0, rendered = false;
+  addEventListener('pointerdown', (e) => { lastPointer = e.pointerType || 'mouse'; }, true);
+  const touchy = () => lastPointer === 'touch' || lastPointer === 'pen';
   const qv = { tab: 'like', sel: null };
 
   const el = {
@@ -224,20 +229,44 @@ window.Pallas = window.Pallas || {};
 
   function pageDown(e) {
     if (!canAct()) return;
-    const sx = e.clientX, sc = scale || 1;
-    let dx = 0, moved = false;
+    const sx = e.clientX, sy = e.clientY, sc = scale || 1;
+    let dx = 0, dy = 0, moved = false;
     set({ bDragging: true });
     const move = (ev) => {
-      dx = (ev.clientX - sx) / sc;
+      dx = (ev.clientX - sx) / sc; dy = (ev.clientY - sy) / sc;
       if (Math.abs(dx) > 6) moved = true;
       if (moved) { cancelAnimationFrame(tearRaf); const p = Math.max(0, Math.min(1, -dx / 160)); setTear(250 + 230 * p, 2.2 + 1 * p); }
     };
-    const up = () => {
-      removeEventListener('pointermove', move); removeEventListener('pointerup', up);
-      if (!moved || dx < -60) tearOut();
-      else { set({ bDragging: false }); tearTo(S.bPageHover ? 250 : 0, S.bPageHover ? 2.2 : 0, 320); }
+    const touch = e.pointerType === 'touch' || e.pointerType === 'pen';
+    // A finger must pull the page clearly sideways (100 book px, about 47 screen px on a phone), not slip.
+    const tore = () => (touch ? dx < -100 && Math.abs(dy) < Math.abs(dx) : dx < -60);
+    const up = (ev) => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
+      const cancelled = ev && ev.type === 'pointercancel';
+      if (!cancelled && (tore() || (!moved && !touch))) tearOut();   // a mouse click tears, as approved; a finger must drag
+      else if (touch && !moved && !cancelled) {
+        // A tap on the page previews the tear (as hovering does with a mouse); dragging the page to the left tears it.
+        set({ bDragging: false, bPageHover: true }); tearTo(250, 2.2, 560);
+        clearTimeout(tearTimer);
+        tearTimer = setTimeout(() => { if (!S.bDragging && !S.bTearing) { set({ bPageHover: false }); tearTo(0, 0, 380); } }, 2200);
+      } else { set({ bDragging: false }); tearTo(S.bPageHover && !touch ? 250 : 0, S.bPageHover && !touch ? 2.2 : 0, 320); }
     };
-    addEventListener('pointermove', move); addEventListener('pointerup', up);
+    addEventListener('pointermove', move); addEventListener('pointerup', up); addEventListener('pointercancel', up);
+  }
+
+  // The right page: a mouse click dog-ears it, as approved. A first tap with a finger lifts the corner (the preview a
+  // mouse gets on hover); a second tap within a few seconds folds it. A tap anywhere else lowers the corner again.
+  function rightTap() {
+    if (!touchy()) return dogEar();
+    if (!canAct()) return;
+    if (S.bFlapHover && armTimer) { clearTimeout(armTimer); armTimer = 0; return dogEar(); }
+    set({ bFlapHover: true, bFlapAnim: 'hover' });
+    clearTimeout(armTimer);
+    armTimer = setTimeout(disarmRight, 3200);
+  }
+  function disarmRight() {
+    armTimer = 0;
+    if (!S.bFolded && S.bFlapHover) set({ bFlapHover: false, bFlapAnim: 'hover' });
   }
 
   /* ---------- render: state → the DOM ---------- */
@@ -248,7 +277,11 @@ window.Pallas = window.Pallas || {};
     const tornAll = listL('dislike'), lLike = listL('like');
     const narrow = vw < 1100;
     const extra = tornAll.length && narrow ? 190 : 0;
-    scale = Math.max(.42, Math.min(1.3, (vw - 48) / (narrow ? 700 + extra : 1000), (vh - 230) / 540));
+    // Phones in landscape have little height: the corner bars and controls then need about 110 px rather than 230.
+    const chrome = vh < 520 && vw > vh ? 110 : 230;
+    // The floor keeps the book from shrinking without limit; on the smallest phones it may go below .42 so that the
+    // spread (and the torn stack beside it) is never wider than the screen.
+    scale = Math.max(vw < 420 ? .3 : .42, Math.min(1.3, (vw - 48) / (narrow ? 700 + extra : 1000), (vh - chrome) / 540));
     el.stage.style.width = (660 + extra) * scale + 'px';
     el.stage.style.height = 520 * scale + 'px';
     el.inner.style.transform = `scale(${scale})`;
@@ -256,10 +289,13 @@ window.Pallas = window.Pallas || {};
     el.controls.style.marginRight = extra * scale + 'px';
 
     const open = S.bOpen;
+    // The first render places the book without animating it, so it does not slide into place when the page loads.
+    if (!rendered) { el.book.style.transition = 'none'; el.base.style.transition = 'none'; }
     el.book.style.transform = open ? 'translateX(0px) rotateY(0deg)' : 'translateX(-165px) rotateY(22deg)';
     el.base.style.left = open ? '0px' : '330px';
     el.base.style.width = open ? '660px' : '330px';
     el.base.style.opacity = open ? 0 : 1;
+    if (!rendered) { void el.book.offsetWidth; el.book.style.transition = ''; el.base.style.transition = ''; rendered = true; }
     el.spread.style.opacity = open ? 1 : 0;
     el.spread.style.transition = open ? 'opacity 500ms ease 650ms' : 'opacity 200ms ease';
 
@@ -392,12 +428,14 @@ window.Pallas = window.Pallas || {};
   el.cover.addEventListener('click', openBook);
   el.cover.addEventListener('mouseenter', () => { if (!S.bOpen) set({ bCoverHover: true }); });
   el.cover.addEventListener('mouseleave', () => set({ bCoverHover: false }));
-  el.right.addEventListener('click', dogEar);
-  el.right.addEventListener('mouseenter', () => { if (canAct()) set({ bFlapHover: true, bFlapAnim: 'hover' }); });
-  el.right.addEventListener('mouseleave', () => { if (!S.bFolded) set({ bFlapHover: false, bFlapAnim: 'hover' }); });
+  el.right.addEventListener('click', rightTap);
+  // Hover previews are for a mouse; touch browsers also fire emulated mouse events after a tap, which would leave them stuck.
+  el.right.addEventListener('mouseenter', () => { if (!touchy() && canAct()) set({ bFlapHover: true, bFlapAnim: 'hover' }); });
+  el.right.addEventListener('mouseleave', () => { if (!touchy() && !S.bFolded) set({ bFlapHover: false, bFlapAnim: 'hover' }); });
   el.torn.addEventListener('pointerdown', pageDown);
-  el.torn.addEventListener('mouseenter', () => { if (canAct()) { set({ bPageHover: true }); tearTo(250, 2.2, 560); } });
-  el.torn.addEventListener('mouseleave', () => { if (!S.bDragging && !S.bTearing) { set({ bPageHover: false }); tearTo(0, 0, 380); } });
+  el.torn.addEventListener('mouseenter', () => { if (!touchy() && canAct()) { set({ bPageHover: true }); tearTo(250, 2.2, 560); } });
+  el.torn.addEventListener('mouseleave', () => { if (!touchy() && !S.bDragging && !S.bTearing) { set({ bPageHover: false }); tearTo(0, 0, 380); } });
+  addEventListener('pointerdown', (e) => { if (armTimer && touchy() && !el.right.contains(e.target)) { clearTimeout(armTimer); disarmRight(); } });
   el.ears.addEventListener('click', () => openQV('like'));
   el.stack.addEventListener('click', () => openQV('dislike'));
   const link = (a, fn) => a.addEventListener('click', (e) => { e.preventDefault(); fn(); });

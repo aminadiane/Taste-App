@@ -191,11 +191,11 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 
 ### Deferred technical work
 
-- [ ] Literature touch interactions for mobile.
+- [x] Literature touch interactions for mobile (2026-10-21): with a finger, a tap on the passage page previews the tear and only a deliberate leftward drag tears it; a first tap on the info page lifts the corner and a second tap within about three seconds folds it. Mouse behaviour is unchanged.
 - [ ] Reduced-motion accessibility for the TV and the book.
 - [ ] Higher-resolution book photography per the photography brief.
 - [ ] Safari and Firefox testing, especially CSS 3D and `-webkit-mask-composite`.
-- [ ] Responsive behaviour of the TV and the paperback on phones and tablets.
+- [~] Responsive behaviour of the TV and the paperback on phones and tablets (2026-10-21): tested at 320, 375, 390, 430 and 768 px and in landscape, with no horizontal scrolling and nothing clipped. TV buttons have 44 px touch areas. **Reading the open book on a phone needs a design decision:** see `docs/proposals/mobile-book.md`.
 - [x] Lazy-load stills (2026-10-21): the current still, its neighbours and the next one load at once, and the rest load when the browser is idle. Tested in the pane: 3 requests at start instead of 89, both images of the like swipe fully loaded, all 89 loaded in the background.
 
 ## Known bugs and limitations
@@ -266,6 +266,26 @@ All work is committed and pushed to the branch behind draft PR #1. Nothing is me
 13. **Quality names and explanations** in `library/vocab/qualities.json` (chiaroscuro, closeness, scale and space, designed colour, and so on). Are these the words Pallas should use?
 14. **Voice of the interpretation.** It is direct and specific: "The stills you liked consistently share … You can see it in … By contrast, you did not like …". Should it be warmer, more essayistic, or briefer?
 15. **Later AI writer.** A reviewed model could rewrite the prose under the same contract and checks. Is that wanted, given it is a paid service?
+
+## Mobile optimisation (2026-10-21, `feature/pallas-overnight`)
+
+Desktop is unchanged: every new style is gated by a media or feature query a desktop browser with a mouse does not match (`tests/mobile-css.test.js`), and touch-specific behaviour depends on the pointer type.
+
+- **Home:** the title scales with the width below 420 px (the same 112 px at 375 px), and short landscape screens size it by height so the film and literature links stay on screen.
+- **Cinema:** the TV keeps its proportions at every width. Its cap buttons, 6 px tall on a phone, get invisible 44 px touch areas that extend over their own labels and never overlap. Double-tap zoom is off on controls. The counter moves above the bottom links on narrow screens, where they collided. Landscape gives the TV more height.
+- **Literature:**
+  - Touch-safe dog-ear and tear-out (above).
+  - The book is placed without sliding on first load.
+  - On the smallest phones the spread, including the torn stack, always fits the width.
+  - Landscape uses the available height.
+  - Larger touch areas for previous, next, tear out, dog-ear, close and the drawer tabs.
+- **Drawer:** full-width on phones; the shelf scrolls by touch; the book's drawer shows pages at a readable size.
+- **Viewport height:** `dvh` is used where supported, so mobile toolbars no longer push content below the fold.
+- **Not tested:** Safari or WebKit. The environment has no Xcode or simulator, and every test ran in Chromium with phone emulation. Physical devices were not tested.
+
+**Questions for review (mobile):**
+16. **Reading on phones** (`docs/proposals/mobile-book.md`). Should the open book be framed one page at a time in portrait, and should a swipe, a tap on the visible edge, or both move between pages?
+17. **TV button labels.** "like" and "dislike" are printed on the photographed TV at about 4 px on a phone. They match the object but can't be read. Is that acceptable, given the "liked" or "disliked" message on the screen after each press, or should phones get a separate label?
 
 ## Decisions pending
 
