@@ -1,0 +1,148 @@
+{
+  "simulatedPerson": {
+    "name": "landscapes",
+    "area": "cinema",
+    "hiddenRule": "Likes distant exterior shots (85%); dislikes close shots (5%); otherwise 30%.",
+    "seed": 43
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 70,
+      "likes": 32,
+      "status": "ok"
+    },
+    "summary": "Across 70 stills from 30 films, the clearest threads are scale and space and wide shot; you were less drawn to gaze out of frame.",
+    "sections": [
+      {
+        "id": "theme-epic-scale",
+        "kind": "theme",
+        "title": "Scale and space",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share distant shots (23 of 31 liked), and more loosely exterior (21 of 34 liked) and no figures (10 of 12 liked). Wide frames with figures small against land, sky or architecture put the weight on place and scale; empty space carries as much of the image as the subject. You can see it in Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains, Mad Max: Fury Road: The War Rig on the straight road across the orange desert and Metropolis: The city of Metropolis. By contrast, you did not like The Bridge on the River Kwai: Colonel Nicholson under the midday sun (exterior, but not the others) or It's a Wonderful Life: George and Mary at the gate of the old house at night (exterior, but not the others).",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share distant shots (23 of 31 liked), and more loosely exterior (21 of 34 liked) and no figures (10 of 12 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "shotScale:distant",
+                  "liked": 23,
+                  "exposed": 31
+                },
+                {
+                  "feature": "setting:exterior",
+                  "liked": 21,
+                  "exposed": 34
+                },
+                {
+                  "feature": "figures:none",
+                  "liked": 10,
+                  "exposed": 12
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "dr-strangelove-03",
+                "mad-max-fury-road-01",
+                "metropolis-01"
+              ],
+              "disliked": [
+                "bridge-on-the-river-kwai-01",
+                "its-a-wonderful-life-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "finding-shotScale:wide",
+        "kind": "finding",
+        "title": "Wide shot",
+        "strength": "emerging",
+        "text": "You tend to like stills with wide shot (whole figures with substantial surroundings): 17 of 23, against 32% of the others. For example 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod, Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains and Lawrence of Arabia: The train attack.",
+        "claims": [
+          {
+            "statement": "wide shot: 17 of 23 liked.",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "shotScale:wide",
+                  "liked": 17,
+                  "exposed": 23
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "dr-strangelove-03",
+                "lawrence-of-arabia-02"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "aversion",
+        "kind": "aversion",
+        "title": "Less drawn to",
+        "strength": "well supported",
+        "text": "You were less drawn to gaze out of frame (2 of 19 liked), as in 12 Angry Men: Juror 3 and Amélie: Amélie in the café. A dislike is as informative as a like; it describes your eye, not a gap in it.",
+        "claims": [
+          {
+            "statement": "Less drawn to gaze out of frame.",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "gaze:off-frame",
+                  "liked": 2,
+                  "exposed": 19
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [],
+              "disliked": [
+                "12-angry-men-02",
+                "amelie-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same stills: deep focus with distant shots, face not visible with distant shots and leading lines with distant shots. There are too few examples to say anything about patterned shadow (2 judged), motion blur (2 judged) and extreme close-up (2 judged). All of this compares your own likes with your own dislikes among 70 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 3,
+    "examples": 10,
+    "failures": []
+  }
+}

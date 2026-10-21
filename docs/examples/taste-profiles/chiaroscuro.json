@@ -11,7 +11,7 @@
     "Clearly, low-key (most of the frame is dark; light is selective and shadows dominate): you liked 20 of 25 (80%), against 20% of the rest, across 15 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Amélie: Amélie leans in close; Double Indemnity: The office corridor.",
     "Clearly, side light (light from one side, modelling form with shadow): you liked 16 of 22 (73%), against 26% of the rest, across 14 films. For example: 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor.",
     "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: hard light with ambient light, soft light with ambient light and daylight with low-key.",
-    "Too few examples to say anything yet about vehicle (2 judged) and extreme close-up (2 judged)."
+    "Too few examples to say anything yet about patterned shadow (2 judged), motion blur (2 judged) and vehicle (2 judged)."
   ],
   "profile": {
     "schema": "pallas.taste-profile/1",
@@ -54,7 +54,7 @@
       "eventCount": 87,
       "lastEventAt": "2026-10-08T19:27:23.608Z",
       "judgmentsDigest": "4c0a17f2",
-      "vocabularyVersion": 2
+      "vocabularyVersion": 3
     },
     "evidenceLevel": "established",
     "signature": {
@@ -162,7 +162,7 @@
             0.868
           ],
           "p": 0.0003,
-          "q": 0.0069,
+          "q": 0.0085,
           "leaveOneWorkOutP": 0.0012,
           "workLevelP": 0.0023
         },
@@ -220,7 +220,7 @@
             0.828
           ],
           "p": 0.0044,
-          "q": 0.0545,
+          "q": 0.0676,
           "leaveOneWorkOutP": 0.0146,
           "workLevelP": 0.0048
         },
@@ -279,7 +279,7 @@
             0.974
           ],
           "p": 0.0145,
-          "q": 0.1576,
+          "q": 0.1956,
           "leaveOneWorkOutP": 0.0679
         },
         "explanation": "Liked 6 of 7 works with saturated colour (86%), against 24 of 68 without it (35%).",
@@ -324,7 +324,7 @@
             0.766
           ],
           "p": 0.0233,
-          "q": 0.2257
+          "q": 0.2801
         },
         "explanation": "Liked 15 of 25 works with artificial light (60%), against 15 of 50 without it (30%).",
         "notes": [
@@ -385,7 +385,7 @@
             0.97
           ],
           "p": 0.0348,
-          "q": 0.3027
+          "q": 0.3667
         },
         "explanation": "Liked 5 of 6 works with intimate (83%), against 25 of 69 without it (36%).",
         "notes": [
@@ -403,6 +403,114 @@
             "amelie-01"
           ],
           "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "gaze:off-frame",
+        "dimension": "gaze",
+        "value": "off-frame",
+        "label": "gaze out of frame",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "key:low",
+        "stats": {
+          "exposed": 18,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.611,
+          "rateWhenAbsent": 0.333,
+          "difference": 0.278,
+          "interval": [
+            0.386,
+            0.797
+          ],
+          "p": 0.053,
+          "q": 0.3722
+        },
+        "explanation": "Liked 11 of 18 works with gaze out of frame (61%), against 19 of 57 without it (33%).",
+        "notes": [
+          "goes together with low-key in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-02",
+            "dr-strangelove-01",
+            "dr-strangelove-02",
+            "in-the-mood-for-love-01",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "psycho-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-grand-budapest-hotel-01"
+          ],
+          "contradicting": [
+            "amelie-01",
+            "bridge-on-the-river-kwai-01",
+            "mr-smith-goes-to-washington-02",
+            "paths-of-glory-02",
+            "some-like-it-hot-01",
+            "the-great-dictator-02",
+            "the-passion-of-joan-of-arc-01"
+          ],
+          "supportingWorks": 9
+        }
+      },
+      {
+        "feature": "lightPattern:shaped",
+        "dimension": "lightPattern",
+        "value": "shaped",
+        "label": "shaped light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "key:low",
+        "stats": {
+          "exposed": 18,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.611,
+          "rateWhenAbsent": 0.333,
+          "difference": 0.278,
+          "interval": [
+            0.386,
+            0.797
+          ],
+          "p": 0.053,
+          "q": 0.3722
+        },
+        "explanation": "Liked 11 of 18 works with shaped light (61%), against 19 of 57 without it (33%).",
+        "notes": [
+          "goes together with low-key in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-01",
+            "dr-strangelove-02",
+            "howls-moving-castle-01",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "metropolis-03",
+            "on-the-waterfront-03",
+            "psycho-02",
+            "rear-window-02",
+            "sunset-boulevard-01",
+            "the-apartment-02"
+          ],
+          "contradicting": [
+            "amelie-01",
+            "double-indemnity-02",
+            "lawrence-of-arabia-03",
+            "metropolis-02",
+            "mr-smith-goes-to-washington-03",
+            "sherlock-jr-02",
+            "spirited-away-03"
+          ],
+          "supportingWorks": 10
         }
       },
       {
@@ -427,7 +535,7 @@
             0.862
           ],
           "p": 0.0551,
-          "q": 0.3998
+          "q": 0.3722
         },
         "explanation": "Liked 8 of 12 works with top light (67%), against 22 of 63 without it (35%).",
         "notes": [
@@ -451,6 +559,52 @@
             "the-apartment-01"
           ],
           "supportingWorks": 6
+        }
+      },
+      {
+        "feature": "lightPattern:pools",
+        "dimension": "lightPattern",
+        "value": "pools",
+        "label": "pools of light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "key:low",
+        "stats": {
+          "exposed": 10,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.7,
+          "rateWhenAbsent": 0.354,
+          "difference": 0.346,
+          "interval": [
+            0.397,
+            0.892
+          ],
+          "p": 0.0786,
+          "q": 0.4466
+        },
+        "explanation": "Liked 7 of 10 works with pools of light (70%), against 23 of 65 without it (35%).",
+        "notes": [
+          "goes together with low-key in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "metropolis-03",
+            "on-the-waterfront-03",
+            "rear-window-02",
+            "the-apartment-02"
+          ],
+          "contradicting": [
+            "mr-smith-goes-to-washington-03",
+            "sherlock-jr-02",
+            "spirited-away-03"
+          ],
+          "supportingWorks": 7
         }
       }
     ],
@@ -535,7 +689,7 @@
             0.381
           ],
           "p": 0.0004,
-          "q": 0.0069,
+          "q": 0.0085,
           "leaveOneWorkOutP": 0.001,
           "workLevelP": 0.0024
         },
@@ -622,7 +776,7 @@
             0.37
           ],
           "p": 0.0004,
-          "q": 0.0069,
+          "q": 0.0085,
           "leaveOneWorkOutP": 0.0008,
           "workLevelP": 0.0046
         },
@@ -702,7 +856,7 @@
             0.372
           ],
           "p": 0.002,
-          "q": 0.0295,
+          "q": 0.0366,
           "leaveOneWorkOutP": 0.0073,
           "workLevelP": 0.0448
         },
@@ -756,6 +910,141 @@
         }
       },
       {
+        "feature": "gaze:camera",
+        "dimension": "gaze",
+        "value": "camera",
+        "label": "gaze at the camera",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "key:low",
+        "stats": {
+          "exposed": 7,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.441,
+          "difference": -0.441,
+          "interval": [
+            0,
+            0.354
+          ],
+          "p": 0.0374,
+          "q": 0.3667
+        },
+        "explanation": "Liked 0 of 7 works with gaze at the camera (0%), against 30 of 68 without it (44%).",
+        "notes": [
+          "goes together with low-key in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "my-neighbor-totoro-01",
+            "oldboy-02",
+            "psycho-01",
+            "spirited-away-02",
+            "the-general-02",
+            "the-great-dictator-01",
+            "the-passion-of-joan-of-arc-02"
+          ],
+          "contradicting": [],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "lightPattern:even",
+        "dimension": "lightPattern",
+        "value": "even",
+        "label": "even light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "key:low",
+        "stats": {
+          "exposed": 57,
+          "likedWhenPresent": 19,
+          "rateWhenPresent": 0.333,
+          "rateWhenAbsent": 0.611,
+          "difference": -0.278,
+          "interval": [
+            0.225,
+            0.463
+          ],
+          "p": 0.053,
+          "q": 0.3722
+        },
+        "explanation": "Liked 19 of 57 works with even light (33%), against 11 of 18 without it (61%).",
+        "notes": [
+          "goes together with low-key in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-01",
+            "bridge-on-the-river-kwai-02",
+            "howls-moving-castle-03",
+            "lawrence-of-arabia-01",
+            "lawrence-of-arabia-04",
+            "metropolis-01",
+            "mr-smith-goes-to-washington-02",
+            "my-neighbor-totoro-01",
+            "my-neighbor-totoro-02",
+            "north-by-northwest-01",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "parasite-01",
+            "parasite-02",
+            "paths-of-glory-02",
+            "psycho-01",
+            "rear-window-01",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "spirited-away-01",
+            "spirited-away-02",
+            "spirited-away-04",
+            "sunset-boulevard-02",
+            "the-apartment-01",
+            "the-general-01",
+            "the-general-02",
+            "the-general-03",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01",
+            "vertigo-02",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "12-angry-men-02",
+            "2001-a-space-odyssey-01",
+            "amelie-02",
+            "double-indemnity-01",
+            "double-indemnity-03",
+            "dr-strangelove-03",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "mr-smith-goes-to-washington-01",
+            "north-by-northwest-02",
+            "oldboy-01",
+            "on-the-waterfront-01",
+            "the-grand-budapest-hotel-01",
+            "the-great-dictator-03"
+          ],
+          "supportingWorks": 23
+        }
+      },
+      {
         "feature": "composition:symmetrical",
         "dimension": "composition",
         "value": "symmetrical",
@@ -777,7 +1066,7 @@
             0.422
           ],
           "p": 0.0629,
-          "q": 0.4212
+          "q": 0.3998
         },
         "explanation": "Liked 2 of 13 works with symmetrical composition (15%), against 28 of 62 without it (45%).",
         "notes": [
@@ -826,7 +1115,7 @@
             0.39
           ],
           "p": 0.0752,
-          "q": 0.4676
+          "q": 0.4466
         },
         "explanation": "Liked 0 of 6 works with high-key (0%), against 30 of 69 without it (43%).",
         "notes": [
@@ -849,6 +1138,18 @@
     "combinations": [],
     "notYetClear": [
       {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
         "feature": "setting:vehicle",
         "label": "vehicle",
         "exposed": 2,
@@ -859,10 +1160,22 @@
         "label": "extreme close-up",
         "exposed": 2,
         "liked": 1
+      },
+      {
+        "feature": "atmospherics:rain",
+        "label": "rain",
+        "exposed": 1,
+        "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 1,
+        "liked": 0
       }
     ],
     "spread": {
-      "overall": 0.946,
+      "overall": 0.948,
       "reading": "broad",
       "byDimension": {
         "key": {
@@ -899,6 +1212,13 @@
           "reading": "broad",
           "valuesJudged": 6,
           "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 0.816,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "symmetry": {
           "label": "tonal symmetry",
@@ -962,6 +1282,34 @@
           "reading": "broad",
           "valuesJudged": 11,
           "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 1.142,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 6
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 0.953,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 5
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 0.774,
+          "reading": "mixed",
+          "valuesJudged": 5,
+          "valuesLiked": 4
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 1.107,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "focus": {
           "label": "depth of field",
@@ -1041,6 +1389,20 @@
         "basis": "observed"
       },
       {
+        "term": "gaze:camera",
+        "label": "gaze at the camera",
+        "definition": "The main figure looks into or very near the lens.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:off-frame",
+        "label": "gaze out of frame",
+        "definition": "The main figure looks at something outside the frame.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
         "term": "key:high",
         "label": "high-key",
         "definition": "Most of the frame is bright; shadows are few and light.",
@@ -1080,6 +1442,27 @@
         "label": "top light",
         "definition": "Light from above, shadowing eyes and lower forms.",
         "dimension": "key-light direction",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:even",
+        "label": "even light",
+        "definition": "None of these: the light falls without distinct shapes.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:pools",
+        "label": "pools of light",
+        "definition": "Isolated areas of light surrounded by darkness.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:shaped",
+        "label": "shaped light",
+        "definition": "Light that makes visible shapes: pools, beams, rim light, glare or patterned shadow.",
+        "dimension": "light pattern",
         "basis": "observed"
       },
       {

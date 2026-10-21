@@ -22,30 +22,7 @@ const synthTitle = (id) => { const p = synth.passages.find((x) => x.id === id); 
 const realLitDoc = require(path.join(ROOT, 'library', 'literature.json'));
 const realLit = F.literature(realLitDoc, require(path.join(ROOT, 'library', 'vocab', 'literature.json')));
 const realTitle = (id) => { const p = realLitDoc.passages.find((x) => x.id === id); return realLitDoc.books[p.book].title; };
-const has = (fs, k) => fs.has(k);
-
-const PEOPLE = [
-  { name: 'chiaroscuro', area: 'cinema', seed: 41, count: 75, title: 'Chiaroscuro', hidden: 'Likes hard light in low-key frames (90%); low key or hard light alone sometimes (50%); anything else rarely (12%).', truth: ['lightQuality:hard', 'key:low'],
-    rule: (fs) => (has(fs, 'lightQuality:hard') && has(fs, 'key:low') ? 0.9 : has(fs, 'lightQuality:hard') || has(fs, 'key:low') ? 0.5 : 0.12) },
-  { name: 'colour-and-design', area: 'cinema', seed: 42, count: 80, title: 'Colour and design', hidden: 'Likes saturated colour or symmetrical composition in colour images (85%); dislikes black and white (10%); otherwise 35%.', truth: ['saturation:saturated', 'composition:symmetrical', 'saturation:monochrome'],
-    rule: (fs) => (has(fs, 'saturation:monochrome') ? 0.1 : has(fs, 'saturation:saturated') || has(fs, 'composition:symmetrical') ? 0.85 : 0.35) },
-  { name: 'landscapes', area: 'cinema', seed: 43, count: 70, title: 'Landscapes', hidden: 'Likes distant exterior shots (85%); dislikes close shots (5%); otherwise 30%.', truth: ['shotScale:distant', 'setting:exterior', 'shotScale:close-range'],
-    rule: (fs) => (has(fs, 'shotScale:distant') && has(fs, 'setting:exterior') ? 0.85 : has(fs, 'shotScale:close-range') ? 0.05 : 0.3) },
-  { name: 'faces', area: 'cinema', seed: 44, count: 85, title: 'Faces', hidden: 'Likes close shots or shallow focus (85%); dislikes extreme wide shots (10%); otherwise 25%.', truth: ['shotScale:close-range', 'focus:shallow', 'shotScale:extreme-wide'],
-    rule: (fs) => (has(fs, 'shotScale:close-range') || has(fs, 'focus:shallow') ? 0.85 : has(fs, 'shotScale:extreme-wide') ? 0.1 : 0.25) },
-  { name: 'animation', area: 'cinema', seed: 45, count: 89, title: 'Animation', hidden: 'Likes hand-drawn animation (95%); anything else 30%.', truth: ['medium:animation'],
-    rule: (fs) => (has(fs, 'medium:animation') ? 0.95 : 0.3) },
-  { name: 'eclectic', area: 'cinema', seed: 46, count: 70, title: 'Eclectic', hidden: 'Likes about 55% of everything, unrelated to any characteristic.', truth: [],
-    rule: () => 0.55 },
-  { name: 'just-started', area: 'cinema', seed: 47, count: 11, title: 'Just started', hidden: 'Same taste as Chiaroscuro, but has judged only 11 stills.', truth: ['lightQuality:hard', 'key:low'],
-    rule: (fs) => (has(fs, 'lightQuality:hard') && has(fs, 'key:low') ? 0.9 : has(fs, 'lightQuality:hard') || has(fs, 'key:low') ? 0.5 : 0.12) },
-  { name: 'restrained-reader', area: 'literature', synthetic: true, seed: 51, count: 50, title: 'Restrained reader', hidden: 'Likes restrained prose (90%); sparse figuration elsewhere 40%; otherwise 10%.', truth: ['register:restrained'],
-    rule: (fs) => (has(fs, 'register:restrained') ? 0.9 : has(fs, 'figuration:sparse') ? 0.4 : 0.1) },
-  { name: 'lyrical-reader', area: 'literature', synthetic: true, seed: 52, count: 50, title: 'Lyrical and experimental reader', hidden: 'Likes lyrical or experimental prose (90%); rich figuration elsewhere 35%; otherwise 8%.', truth: ['register:lyrical', 'register:experimental'],
-    rule: (fs) => (has(fs, 'register:lyrical') || has(fs, 'register:experimental') ? 0.9 : has(fs, 'figuration:rich') ? 0.35 : 0.08) },
-  { name: 'real-literature-today', area: 'literature', real: true, seed: 53, count: 5, title: 'Literature today (real library)', hidden: 'Has judged the five passages that are live today; likes the three narrated in the first person in the past tense.', truth: [],
-    rule: (fs) => (has(fs, 'person:first') && has(fs, 'tense:past') ? 1 : 0) },
-];
+const { PEOPLE } = require(path.join(ROOT, 'tests', 'fixtures', 'personas.js'));
 
 fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(OUT)) if (f.endsWith('.json')) fs.unlinkSync(path.join(OUT, f));   // regenerate cleanly

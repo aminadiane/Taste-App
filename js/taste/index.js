@@ -56,5 +56,14 @@
     return T.profiles.staleness(P.store.latestProfile(area), { engineVersion: T.analysis.VERSION, vocabularyVersion: lib.vocabularyVersion, judgments: judgments(area) });
   }
 
-  Object.assign(T, { library, judgments, profile, snapshot, regenerate, lastChange, staleness });
+  // A readable interpretation of the current judgments (js/taste/interpret.js), kept separate from the profile.
+  let knowledge = null;
+  async function interpretation(area, titleOf) {
+    if (!knowledge) knowledge = await fetch('library/vocab/qualities.json', { cache: 'no-cache' }).then((r) => r.json()).catch(() => null);
+    const lib = await library(area), j = judgments(area);
+    const result = T.analyse({ judgments: j, library: lib, history: P.store.history(area) });
+    return T.interpret.interpret({ result, library: lib, judgments: j, knowledge, titleOf });
+  }
+
+  Object.assign(T, { library, judgments, profile, snapshot, regenerate, lastChange, staleness, interpretation });
 })(typeof self !== 'undefined' ? self : this);

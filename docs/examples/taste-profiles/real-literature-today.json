@@ -2,7 +2,7 @@
   "simulatedPerson": {
     "name": "real-literature-today",
     "area": "literature",
-    "hiddenRule": "Has judged the five passages that are live today; likes the three narrated in the first person in the past tense.",
+    "hiddenRule": "Has judged the five live passages; likes the three narrated in the first person in the past tense.",
     "seed": 53,
     "library": "real literature library (5 live passages)"
   },

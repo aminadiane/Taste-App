@@ -1,0 +1,105 @@
+{
+  "simulatedPerson": {
+    "name": "animation",
+    "area": "cinema",
+    "hiddenRule": "Likes hand-drawn animation (95%); anything else 30%.",
+    "seed": 45
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 85,
+      "likes": 36,
+      "status": "ok"
+    },
+    "summary": "Across 85 stills from 34 films, the clearest threads are drawn worlds and red.",
+    "sections": [
+      {
+        "id": "theme-drawn-worlds",
+        "kind": "theme",
+        "title": "Drawn worlds",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share hand-drawn animation (11 of 13 liked). In hand-drawn animation light, colour and texture are painted rather than captured: skies, water and interiors can be shaped entirely to the mood of the scene. You can see it in Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds, My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back and Princess Mononoke: The Forest Spirit.",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share hand-drawn animation (11 of 13 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "medium:animation",
+                  "liked": 11,
+                  "exposed": 13
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "howls-moving-castle-01",
+                "my-neighbor-totoro-01",
+                "princess-mononoke-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "finding-hue:red",
+        "kind": "finding",
+        "title": "Red",
+        "strength": "well supported",
+        "text": "You consistently like stills with red (reds and crimsons): 10 of 11, against 35% of the others. For example The Bridge on the River Kwai: Colonel Nicholson under the midday sun, Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid and In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth.",
+        "claims": [
+          {
+            "statement": "red: 10 of 11 liked.",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "hue:red",
+                  "liked": 10,
+                  "exposed": 11
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "bridge-on-the-river-kwai-01",
+                "howls-moving-castle-02",
+                "in-the-mood-for-love-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "There are too few examples to say anything about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged). All of this compares your own likes with your own dislikes among 85 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 2,
+    "examples": 6,
+    "failures": []
+  }
+}

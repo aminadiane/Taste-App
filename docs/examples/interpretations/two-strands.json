@@ -1,0 +1,152 @@
+{
+  "simulatedPerson": {
+    "name": "two-strands",
+    "area": "cinema",
+    "hiddenRule": "Two unrelated tastes: hard light in low-key frames (90%) and hand-drawn animation (90%); everything else 15%.",
+    "seed": 49
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 82,
+      "likes": 26,
+      "status": "ok"
+    },
+    "summary": "Across 82 stills from 35 films, the clearest threads are chiaroscuro and drawn worlds, in two separate strands.",
+    "sections": [
+      {
+        "id": "theme-chiaroscuro",
+        "kind": "theme",
+        "title": "Chiaroscuro",
+        "strength": "emerging",
+        "text": "What you responded to is the meeting of low-key and hard light: 8 of 9 stills with both were liked, against 37% for low-key and 48% for hard light overall. Neither works alone. Hard, directional light in a mostly dark frame sculpts form: faces and objects emerge from shadow, and the darkness becomes part of the composition rather than an absence of light. You can see it in 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod, Double Indemnity: The office corridor and Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit. By contrast, you did not like 12 Angry Men: The jurors around the table (low-key only) or Amélie: Amélie leans in close (low-key only).",
+        "claims": [
+          {
+            "statement": "low-key with hard light: 8/9 liked.",
+            "check": {
+              "type": "joint",
+              "a": "key:low",
+              "b": "lightQuality:hard",
+              "liked": 8,
+              "exposed": 9
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "double-indemnity-03",
+                "dr-strangelove-02"
+              ],
+              "disliked": [
+                "12-angry-men-01",
+                "amelie-02"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "theme-drawn-worlds",
+        "kind": "theme",
+        "title": "Drawn worlds",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share hand-drawn animation (10 of 12 liked). In hand-drawn animation light, colour and texture are painted rather than captured: skies, water and interiors can be shaped entirely to the mood of the scene. You can see it in Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds, My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back and Princess Mononoke: The Forest Spirit.",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share hand-drawn animation (10 of 12 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "medium:animation",
+                  "liked": 10,
+                  "exposed": 12
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "howls-moving-castle-01",
+                "my-neighbor-totoro-01",
+                "princess-mononoke-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "strands",
+        "kind": "strands",
+        "title": "Two separate strands",
+        "strength": "emerging",
+        "text": "Your likes follow two lines that rarely meet: low-key with hard light (8 liked, for example 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod and Double Indemnity: The office corridor) and hand-drawn animation (10 liked, for example Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds and My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back). Only 0 liked stills have both, so these read as two tastes rather than one.",
+        "claims": [
+          {
+            "statement": "low-key with hard light and hand-drawn animation overlap in 0 of 18 liked stills.",
+            "check": {
+              "type": "overlap",
+              "a": [
+                "2001-a-space-odyssey-01",
+                "double-indemnity-03",
+                "dr-strangelove-02",
+                "mad-max-fury-road-02",
+                "oldboy-01",
+                "paths-of-glory-01",
+                "sunset-boulevard-01",
+                "the-apartment-02"
+              ],
+              "b": [
+                "howls-moving-castle-01",
+                "howls-moving-castle-02",
+                "howls-moving-castle-03",
+                "my-neighbor-totoro-01",
+                "my-neighbor-totoro-02",
+                "princess-mononoke-01",
+                "princess-mononoke-02",
+                "princess-mononoke-03",
+                "spirited-away-03",
+                "spirited-away-04"
+              ],
+              "both": 0,
+              "union": 18
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "double-indemnity-03",
+                "howls-moving-castle-01",
+                "my-neighbor-totoro-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same stills: teal with hand-drawn animation and analogous palette with hand-drawn animation. There are too few examples to say anything about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged). All of this compares your own likes with your own dislikes among 82 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 3,
+    "examples": 12,
+    "failures": []
+  }
+}

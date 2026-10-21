@@ -9,7 +9,7 @@
   "draftInterpretation": [
     "Across 11 stills from 5 films you liked 4 (36%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
     "No characteristic separates your likes from your dislikes clearly yet.",
-    "Too few examples to say anything yet about live action (11 judged), lonely (2 judged) and ominous (2 judged)."
+    "Too few examples to say anything yet about live action (11 judged), colour accent (2 judged) and lonely (2 judged)."
   ],
   "profile": {
     "schema": "pallas.taste-profile/1",
@@ -52,7 +52,7 @@
       "eventCount": 12,
       "lastEventAt": "2026-10-01T19:03:32.996Z",
       "judgmentsDigest": "b48accb0",
-      "vocabularyVersion": 2
+      "vocabularyVersion": 3
     },
     "evidenceLevel": "no-pattern",
     "signature": {
@@ -71,6 +71,12 @@
         "liked": 4
       },
       {
+        "feature": "accent:yes",
+        "label": "colour accent",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
         "feature": "atmosphere:lonely",
         "label": "lonely",
         "exposed": 2,
@@ -79,6 +85,12 @@
       {
         "feature": "atmosphere:ominous",
         "label": "ominous",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "atmospherics:smoke",
+        "label": "smoke",
         "exposed": 2,
         "liked": 0
       },
@@ -123,18 +135,6 @@
         "label": "artificial light",
         "exposed": 2,
         "liked": 1
-      },
-      {
-        "feature": "saturation:moderate",
-        "label": "moderate colour",
-        "exposed": 2,
-        "liked": 0
-      },
-      {
-        "feature": "setting:interior",
-        "label": "interior",
-        "exposed": 2,
-        "liked": 0
       }
     ],
     "spread": {

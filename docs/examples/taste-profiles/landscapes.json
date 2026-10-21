@@ -10,9 +10,10 @@
     "Across 70 stills from 30 films you liked 32 (46%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
     "Clearly, distant shots (wide and extreme wide shots: the setting dominates the figures): you liked 23 of 31 (74%), against 23% of the rest, across 16 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Lawrence of Arabia: The train attack.",
     "Possibly, wide shot (whole figures with substantial surroundings): you liked 17 of 23 (74%), against 32% of the rest, across 15 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Lawrence of Arabia: The train attack.",
-    "You were less drawn to monochrome (12 of 40 liked). That is a description of your judgments, not a gap to correct.",
-    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: deep focus with distant shots, leading lines with distant shots and no figures with distant shots.",
-    "Too few examples to say anything yet about vehicle (2 judged) and extreme close-up (2 judged)."
+    "You were less drawn to gaze out of frame (2 of 19 liked). That is a description of your judgments, not a gap to correct.",
+    "Some characteristics only appear to matter because they travel with the ones above: monochrome (accounted for by distant shots).",
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: deep focus with distant shots, face not visible with distant shots and leading lines with distant shots.",
+    "Too few examples to say anything yet about patterned shadow (2 judged), motion blur (2 judged) and vehicle (2 judged)."
   ],
   "profile": {
     "schema": "pallas.taste-profile/1",
@@ -55,15 +56,15 @@
       "eventCount": 74,
       "lastEventAt": "2026-10-08T19:24:57.322Z",
       "judgmentsDigest": "a12805eb",
-      "vocabularyVersion": 2
+      "vocabularyVersion": 3
     },
     "evidenceLevel": "established",
     "signature": {
-      "summary": "A clear leaning towards distant shots. Early signs of a leaning towards wide shot. Possibly less drawn to monochrome.",
+      "summary": "A clear leaning towards distant shots. Early signs of a leaning towards wide shot. Less drawn to gaze out of frame.",
       "terms": [
         "shotScale:distant",
         "shotScale:wide",
-        "saturation:monochrome"
+        "gaze:off-frame"
       ],
       "statements": [
         {
@@ -79,9 +80,9 @@
           "subjective": false
         },
         {
-          "text": "Liked 12 of 40 works with monochrome (30%), against 20 of 30 without it (67%).",
-          "feature": "saturation:monochrome",
-          "strength": "emerging",
+          "text": "Liked 2 of 19 works with gaze out of frame (11%), against 30 of 51 without it (59%).",
+          "feature": "gaze:off-frame",
+          "strength": "well supported",
           "subjective": false
         }
       ]
@@ -109,7 +110,7 @@
             0.863
           ],
           "p": 0,
-          "q": 0.0026,
+          "q": 0.0032,
           "leaveOneWorkOutP": 0.0002,
           "workLevelP": 0.0003
         },
@@ -176,7 +177,7 @@
             0.875
           ],
           "p": 0.0018,
-          "q": 0.0582,
+          "q": 0.0537,
           "leaveOneWorkOutP": 0.0038,
           "workLevelP": 0.0031
         },
@@ -235,7 +236,7 @@
             0.712
           ],
           "p": 0.002,
-          "q": 0.0582,
+          "q": 0.0537,
           "leaveOneWorkOutP": 0.0073,
           "workLevelP": 0.0051
         },
@@ -300,6 +301,66 @@
         }
       },
       {
+        "feature": "gaze:hidden",
+        "dimension": "gaze",
+        "value": "hidden",
+        "label": "face not visible",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 22,
+          "likedWhenPresent": 16,
+          "rateWhenPresent": 0.727,
+          "rateWhenAbsent": 0.333,
+          "difference": 0.394,
+          "interval": [
+            0.518,
+            0.868
+          ],
+          "p": 0.0039,
+          "q": 0.054,
+          "leaveOneWorkOutP": 0.0084,
+          "workLevelP": 0.0014
+        },
+        "explanation": "Liked 16 of 22 works with face not visible (73%), against 16 of 48 without it (33%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "oldboy-01",
+            "the-general-01",
+            "the-general-03",
+            "the-great-dictator-03"
+          ],
+          "supportingWorks": 12
+        }
+      },
+      {
         "feature": "composition:leading-lines",
         "dimension": "composition",
         "value": "leading-lines",
@@ -321,7 +382,7 @@
             0.982
           ],
           "p": 0.004,
-          "q": 0.0586,
+          "q": 0.054,
           "leaveOneWorkOutP": 0.0172,
           "workLevelP": 0.0155
         },
@@ -369,7 +430,7 @@
             0.953
           ],
           "p": 0.0086,
-          "q": 0.0878,
+          "q": 0.0884,
           "leaveOneWorkOutP": 0.0178,
           "workLevelP": 0.0418
         },
@@ -419,7 +480,7 @@
             0.98
           ],
           "p": 0.0091,
-          "q": 0.0878,
+          "q": 0.0884,
           "leaveOneWorkOutP": 0.0394,
           "workLevelP": 0.0768
         },
@@ -466,7 +527,7 @@
             0.771
           ],
           "p": 0.0156,
-          "q": 0.1113,
+          "q": 0.1187,
           "leaveOneWorkOutP": 0.0285,
           "workLevelP": 0.0184
         },
@@ -536,7 +597,7 @@
             0.761
           ],
           "p": 0.0158,
-          "q": 0.1113,
+          "q": 0.1187,
           "leaveOneWorkOutP": 0.0285,
           "workLevelP": 0.0038
         },
@@ -596,7 +657,7 @@
         "aliases": [],
         "strength": "tentative",
         "explainedBy": null,
-        "inseparableFrom": null,
+        "inseparableFrom": "gaze:off-frame",
         "stats": {
           "exposed": 5,
           "likedWhenPresent": 5,
@@ -608,12 +669,13 @@
             1
           ],
           "p": 0.0166,
-          "q": 0.1113,
+          "q": 0.1187,
           "leaveOneWorkOutP": 0.0799
         },
         "explanation": "Liked 5 of 5 works with muted colour (100%), against 27 of 65 without it (42%).",
         "notes": [
-          "depends on one film (lawrence-of-arabia): without it the association is not clear"
+          "depends on one film (lawrence-of-arabia): without it the association is not clear",
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
         ],
         "evidence": {
           "supporting": [
@@ -649,12 +711,10 @@
             0.943
           ],
           "p": 0.0358,
-          "q": 0.1834,
-          "leaveOneWorkOutP": 0.0684
+          "q": 0.2018
         },
         "explanation": "Liked 8 of 10 works with blue (80%), against 24 of 60 without it (40%).",
         "notes": [
-          "depends on one film (north-by-northwest): without it the association is not clear",
           "goes together with distant shots in these judgments; the two cannot be separated yet"
         ],
         "evidence": {
@@ -697,7 +757,7 @@
             0.837
           ],
           "p": 0.0549,
-          "q": 0.2359
+          "q": 0.2566
         },
         "explanation": "Liked 12 of 18 works with moderate colour (67%), against 20 of 52 without it (38%).",
         "notes": [
@@ -739,7 +799,7 @@
         "aliases": [],
         "strength": "tentative",
         "explainedBy": null,
-        "inseparableFrom": "shotScale:wide",
+        "inseparableFrom": "gaze:off-frame",
         "stats": {
           "exposed": 20,
           "likedWhenPresent": 13,
@@ -751,11 +811,11 @@
             0.819
           ],
           "p": 0.0624,
-          "q": 0.2359
+          "q": 0.2566
         },
         "explanation": "Liked 13 of 20 works with dense composition (65%), against 19 of 50 without it (38%).",
         "notes": [
-          "goes together with wide shot in these judgments; the two cannot be separated yet"
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
         ],
         "evidence": {
           "supporting": [
@@ -807,7 +867,7 @@
             0.819
           ],
           "p": 0.0624,
-          "q": 0.2359
+          "q": 0.2566
         },
         "explanation": "Liked 13 of 20 works with ambient light (65%), against 19 of 50 without it (38%).",
         "notes": [
@@ -840,9 +900,144 @@
           ],
           "supportingWorks": 10
         }
+      },
+      {
+        "feature": "accent:yes",
+        "dimension": "accent",
+        "value": "yes",
+        "label": "colour accent",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 6,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.422,
+          "difference": 0.411,
+          "interval": [
+            0.436,
+            0.97
+          ],
+          "p": 0.0863,
+          "q": 0.3188
+        },
+        "explanation": "Liked 5 of 6 works with colour accent (83%), against 27 of 64 without it (42%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "in-the-mood-for-love-02",
+            "north-by-northwest-01",
+            "rear-window-01",
+            "the-grand-budapest-hotel-02",
+            "vertigo-01"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-01"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "atmospherics:dust",
+        "dimension": "atmospherics",
+        "value": "dust",
+        "label": "dust",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 3,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.433,
+          "difference": 0.567,
+          "interval": [
+            0.439,
+            1
+          ],
+          "p": 0.0906,
+          "q": 0.3188
+        },
+        "explanation": "Liked 3 of 3 works with dust (100%), against 29 of 67 without it (43%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 2
+        }
       }
     ],
     "disliked": [
+      {
+        "feature": "gaze:off-frame",
+        "dimension": "gaze",
+        "value": "off-frame",
+        "label": "gaze out of frame",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 19,
+          "likedWhenPresent": 2,
+          "rateWhenPresent": 0.105,
+          "rateWhenAbsent": 0.588,
+          "difference": -0.483,
+          "interval": [
+            0.029,
+            0.314
+          ],
+          "p": 0.0003,
+          "q": 0.0176,
+          "leaveOneWorkOutP": 0.0015,
+          "workLevelP": 0.0002
+        },
+        "explanation": "Liked 2 of 19 works with gaze out of frame (11%), against 30 of 51 without it (59%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-01",
+            "bridge-on-the-river-kwai-01",
+            "dr-strangelove-01",
+            "in-the-mood-for-love-01",
+            "mr-smith-goes-to-washington-02",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "paths-of-glory-02",
+            "psycho-02",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-grand-budapest-hotel-01",
+            "the-great-dictator-02"
+          ],
+          "contradicting": [
+            "amelie-02",
+            "dr-strangelove-02"
+          ],
+          "supportingWorks": 14
+        }
+      },
       {
         "feature": "focus:shallow",
         "dimension": "focus",
@@ -865,7 +1060,7 @@
             0.36
           ],
           "p": 0.0035,
-          "q": 0.0586,
+          "q": 0.054,
           "leaveOneWorkOutP": 0.0072,
           "workLevelP": 0.0016
         },
@@ -906,7 +1101,7 @@
         "subjective": false,
         "aliases": [],
         "strength": "emerging",
-        "explainedBy": null,
+        "explainedBy": "shotScale:distant",
         "inseparableFrom": null,
         "stats": {
           "exposed": 40,
@@ -919,12 +1114,14 @@
             0.454
           ],
           "p": 0.0035,
-          "q": 0.0586,
+          "q": 0.054,
           "leaveOneWorkOutP": 0.0125,
           "workLevelP": 0.0131
         },
         "explanation": "Liked 12 of 40 works with monochrome (30%), against 20 of 30 without it (67%).",
-        "notes": [],
+        "notes": [
+          "accounted for by distant shots and gaze out of frame together"
+        ],
         "evidence": {
           "supporting": [
             "12-angry-men-01",
@@ -983,7 +1180,7 @@
         "aliases": [],
         "strength": "emerging",
         "explainedBy": null,
-        "inseparableFrom": null,
+        "inseparableFrom": "gaze:off-frame",
         "stats": {
           "exposed": 11,
           "likedWhenPresent": 1,
@@ -995,12 +1192,14 @@
             0.377
           ],
           "p": 0.0087,
-          "q": 0.0878,
+          "q": 0.0884,
           "leaveOneWorkOutP": 0.0172,
           "workLevelP": 0.005
         },
         "explanation": "Liked 1 of 11 works with close shots (9%), against 31 of 59 without it (53%).",
-        "notes": [],
+        "notes": [
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
+        ],
         "evidence": {
           "supporting": [
             "12-angry-men-02",
@@ -1042,7 +1241,7 @@
             0.48
           ],
           "p": 0.0153,
-          "q": 0.1113,
+          "q": 0.1187,
           "leaveOneWorkOutP": 0.0463,
           "workLevelP": 0.0872
         },
@@ -1120,7 +1319,7 @@
             0.461
           ],
           "p": 0.0247,
-          "q": 0.1537,
+          "q": 0.1654,
           "leaveOneWorkOutP": 0.0713
         },
         "explanation": "Liked 7 of 26 works with artificial light (27%), against 25 of 44 without it (57%).",
@@ -1184,7 +1383,7 @@
             0.479
           ],
           "p": 0.0299,
-          "q": 0.1732,
+          "q": 0.1879,
           "leaveOneWorkOutP": 0.0818
         },
         "explanation": "Liked 9 of 30 works with interior (30%), against 23 of 40 without it (57%).",
@@ -1252,12 +1451,10 @@
             0.492
           ],
           "p": 0.0341,
-          "q": 0.1834,
-          "leaveOneWorkOutP": 0.1361
+          "q": 0.2018
         },
         "explanation": "Liked 11 of 34 works with single figure (32%), against 21 of 36 without it (58%).",
         "notes": [
-          "depends on one film (spirited-away): without it the association is not clear",
           "goes together with distant shots in these judgments; the two cannot be separated yet"
         ],
         "evidence": {
@@ -1324,7 +1521,7 @@
             0.482
           ],
           "p": 0.0425,
-          "q": 0.2053
+          "q": 0.2273
         },
         "explanation": "Liked 6 of 22 works with off-centre subject (27%), against 26 of 48 without it (54%).",
         "notes": [
@@ -1364,13 +1561,13 @@
         "feature": "detail:moderate",
         "dimension": "detail",
         "value": "moderate",
-        "label": "moderate detail",
+        "label": "moderate surface detail",
         "basis": "measured",
         "subjective": false,
         "aliases": [],
         "strength": "tentative",
         "explainedBy": null,
-        "inseparableFrom": "saturation:monochrome",
+        "inseparableFrom": null,
         "stats": {
           "exposed": 38,
           "likedWhenPresent": 13,
@@ -1382,12 +1579,10 @@
             0.501
           ],
           "p": 0.0537,
-          "q": 0.2359
+          "q": 0.2566
         },
-        "explanation": "Liked 13 of 38 works with moderate detail (34%), against 19 of 32 without it (59%).",
-        "notes": [
-          "goes together with monochrome in these judgments; the two cannot be separated yet"
-        ],
+        "explanation": "Liked 13 of 38 works with moderate surface detail (34%), against 19 of 32 without it (59%).",
+        "notes": [],
         "evidence": {
           "supporting": [
             "12-angry-men-01",
@@ -1435,16 +1630,16 @@
         }
       },
       {
-        "feature": "shotScale:medium-close",
-        "dimension": "shotScale",
-        "value": "medium-close",
-        "label": "medium close-up",
+        "feature": "gaze:camera",
+        "dimension": "gaze",
+        "value": "camera",
+        "label": "gaze at the camera",
         "basis": "observed",
         "subjective": false,
         "aliases": [],
         "strength": "tentative",
         "explainedBy": null,
-        "inseparableFrom": "saturation:monochrome",
+        "inseparableFrom": "shotScale:distant",
         "stats": {
           "exposed": 5,
           "likedWhenPresent": 0,
@@ -1456,11 +1651,51 @@
             0.434
           ],
           "p": 0.0581,
-          "q": 0.2359
+          "q": 0.2566
+        },
+        "explanation": "Liked 0 of 5 works with gaze at the camera (0%), against 32 of 65 without it (49%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "oldboy-02",
+            "psycho-01",
+            "spirited-away-02",
+            "the-general-02",
+            "the-great-dictator-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "shotScale:medium-close",
+        "dimension": "shotScale",
+        "value": "medium-close",
+        "label": "medium close-up",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "gaze:off-frame",
+        "stats": {
+          "exposed": 5,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.492,
+          "difference": -0.492,
+          "interval": [
+            0,
+            0.434
+          ],
+          "p": 0.0581,
+          "q": 0.2566
         },
         "explanation": "Liked 0 of 5 works with medium close-up (0%), against 32 of 65 without it (49%).",
         "notes": [
-          "goes together with monochrome in these judgments; the two cannot be separated yet"
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
         ],
         "evidence": {
           "supporting": [
@@ -1478,6 +1713,18 @@
     "combinations": [],
     "notYetClear": [
       {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
         "feature": "setting:vehicle",
         "label": "vehicle",
         "exposed": 2,
@@ -1488,10 +1735,16 @@
         "label": "extreme close-up",
         "exposed": 2,
         "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 1,
+        "liked": 1
       }
     ],
     "spread": {
-      "overall": 0.998,
+      "overall": 0.986,
       "reading": "broad",
       "byDimension": {
         "key": {
@@ -1528,6 +1781,13 @@
           "reading": "broad",
           "valuesJudged": 6,
           "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 1,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "symmetry": {
           "label": "tonal symmetry",
@@ -1592,6 +1852,34 @@
           "valuesJudged": 11,
           "valuesLiked": 11
         },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 0.886,
+          "reading": "mixed",
+          "valuesJudged": 6,
+          "valuesLiked": 5
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 1.09,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 0.611,
+          "reading": "mixed",
+          "valuesJudged": 5,
+          "valuesLiked": 4
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 1.112,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
         "focus": {
           "label": "depth of field",
           "ratio": 0.436,
@@ -1654,6 +1942,20 @@
     },
     "terminology": [
       {
+        "term": "accent:yes",
+        "label": "colour accent",
+        "definition": "A small vivid area (between half a percent and 8% of the frame) stands out against a muted or dark image.",
+        "dimension": "colour accent",
+        "basis": "measured"
+      },
+      {
+        "term": "atmospherics:dust",
+        "label": "dust",
+        "definition": "Blowing dust or sand.",
+        "dimension": "atmospherics",
+        "basis": "observed"
+      },
+      {
         "term": "composition:dense",
         "label": "dense composition",
         "definition": "The frame is filled with many figures or objects.",
@@ -1676,7 +1978,7 @@
       },
       {
         "term": "detail:moderate",
-        "label": "moderate detail",
+        "label": "moderate surface detail",
         "definition": "A mix of even areas and textured ones.",
         "dimension": "surface detail",
         "basis": "measured"
@@ -1707,6 +2009,27 @@
         "label": "shallow focus",
         "definition": "Only one plane is sharp; the rest is soft.",
         "dimension": "depth of field",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:camera",
+        "label": "gaze at the camera",
+        "definition": "The main figure looks into or very near the lens.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:hidden",
+        "label": "face not visible",
+        "definition": "The main figure's face is turned away, hidden or too small to read.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:off-frame",
+        "label": "gaze out of frame",
+        "definition": "The main figure looks at something outside the frame.",
+        "dimension": "gaze",
         "basis": "observed"
       },
       {

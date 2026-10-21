@@ -1,0 +1,43 @@
+{
+  "simulatedPerson": {
+    "name": "eclectic",
+    "area": "cinema",
+    "hiddenRule": "Likes about 55% of everything, unrelated to any characteristic.",
+    "seed": 46
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 70,
+      "likes": 39,
+      "status": "ok"
+    },
+    "summary": "Across 70 stills no characteristic separates your likes from your dislikes clearly.",
+    "sections": [
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "What can be said so far",
+        "strength": null,
+        "text": "Across 70 stills no characteristic separates your likes from your dislikes clearly. Your likes range as widely as everything you judged, which is itself a description: an eclectic eye, or one that responds to something these terms do not capture.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 0,
+    "examples": 0,
+    "failures": []
+  }
+}

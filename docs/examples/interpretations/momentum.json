@@ -1,0 +1,210 @@
+{
+  "simulatedPerson": {
+    "name": "momentum",
+    "area": "cinema",
+    "hiddenRule": "Likes movement: implied motion, blur or diagonal compositions (80%); otherwise 20%.",
+    "seed": 52
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 74,
+      "likes": 43,
+      "status": "ok"
+    },
+    "summary": "Across 74 stills from 35 films, the clearest threads are momentum and hard light, in two separate strands; you were less drawn to frames within frames.",
+    "sections": [
+      {
+        "id": "theme-momentum",
+        "kind": "theme",
+        "title": "Momentum",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share implied motion (27 of 30 liked), and more loosely diagonal composition (14 of 15 liked). Diagonals and movement caught mid-action give a frame forward energy; the image feels like a moment taken from a continuous action. You can see it in 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod, Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains and Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds. By contrast, you did not like Princess Mononoke: The Nightwalker (implied motion, but not diagonal composition) or The General: The locomotive on the single track through the valley (implied motion, but not diagonal composition).",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share implied motion (27 of 30 liked), and more loosely diagonal composition (14 of 15 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "motion:implied",
+                  "liked": 27,
+                  "exposed": 30
+                },
+                {
+                  "feature": "composition:diagonal",
+                  "liked": 14,
+                  "exposed": 15
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "dr-strangelove-03",
+                "howls-moving-castle-01"
+              ],
+              "disliked": [
+                "princess-mononoke-03",
+                "the-general-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "finding-lightQuality:hard",
+        "kind": "finding",
+        "title": "Hard light",
+        "strength": "emerging",
+        "text": "You tend to like stills with hard light (crisp, sharp-edged shadows from a small or distant source): 14 of 16, against 50% of the others. For example 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod, The Bridge on the River Kwai: Colonel Nicholson under the midday sun and Double Indemnity: The office corridor.",
+        "claims": [
+          {
+            "statement": "hard light: 14 of 16 liked.",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "lightQuality:hard",
+                  "liked": 14,
+                  "exposed": 16
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "bridge-on-the-river-kwai-01",
+                "double-indemnity-03"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "strands",
+        "kind": "strands",
+        "title": "Two separate strands",
+        "strength": "emerging",
+        "text": "Your likes follow two lines that rarely meet: diagonal composition (14 liked, for example 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod and Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains) and hard light (14 liked, for example 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod and The Bridge on the River Kwai: Colonel Nicholson under the midday sun). Only 3 liked stills have both, so these read as two tastes rather than one.",
+        "claims": [
+          {
+            "statement": "diagonal composition and hard light overlap in 3 of 25 liked stills.",
+            "check": {
+              "type": "overlap",
+              "a": [
+                "2001-a-space-odyssey-01",
+                "dr-strangelove-03",
+                "howls-moving-castle-01",
+                "its-a-wonderful-life-03",
+                "lawrence-of-arabia-01",
+                "metropolis-03",
+                "my-neighbor-totoro-03",
+                "north-by-northwest-02",
+                "on-the-waterfront-02",
+                "paths-of-glory-02",
+                "spirited-away-02",
+                "the-general-03",
+                "the-kid-01",
+                "vertigo-03"
+              ],
+              "b": [
+                "2001-a-space-odyssey-01",
+                "bridge-on-the-river-kwai-01",
+                "double-indemnity-03",
+                "dr-strangelove-02",
+                "its-a-wonderful-life-02",
+                "lawrence-of-arabia-01",
+                "lawrence-of-arabia-03",
+                "lawrence-of-arabia-04",
+                "mad-max-fury-road-01",
+                "mad-max-fury-road-02",
+                "metropolis-03",
+                "psycho-01",
+                "psycho-02",
+                "the-apartment-02"
+              ],
+              "both": 3,
+              "union": 25
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "dr-strangelove-03",
+                "2001-a-space-odyssey-01",
+                "bridge-on-the-river-kwai-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "aversion-frames-within",
+        "kind": "aversion",
+        "title": "Frames within frames",
+        "strength": "well supported",
+        "text": "The stills you passed over consistently share foreground framing (5 of 20 liked), and more loosely frame within a frame (2 of 11 liked). Doorways, windows and foreground objects frame the subject a second time, which makes looking itself part of the image and often suggests separation or watching. For instance Double Indemnity: Keyes at his office door, Oldboy: Dae-su's beaten opponents on the floor by the open lift and Parasite: Ki-woo looks through the glass wall at the Park garden. Yet you did like Double Indemnity: The office corridor (foreground framing, but not frame within a frame) and It's a Wonderful Life: Mary in the parlour of the Hatch house (frame within a frame, but not foreground framing).",
+        "claims": [
+          {
+            "statement": "The stills you passed over consistently share foreground framing (5 of 20 liked), and more loosely frame within a frame (2 of 11 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "composition:frame-within-frame",
+                  "liked": 2,
+                  "exposed": 11
+                },
+                {
+                  "feature": "composition:foreground-framing",
+                  "liked": 5,
+                  "exposed": 20
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "double-indemnity-03",
+                "its-a-wonderful-life-04"
+              ],
+              "disliked": [
+                "double-indemnity-02",
+                "oldboy-01",
+                "parasite-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same stills: gaze within the frame with stillness. There are too few examples to say anything about dust (2 judged), rim light (2 judged) and extreme close-up (2 judged). All of this compares your own likes with your own dislikes among 74 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 4,
+    "examples": 17,
+    "failures": []
+  }
+}

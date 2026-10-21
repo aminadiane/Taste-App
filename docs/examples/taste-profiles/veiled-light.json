@@ -1,0 +1,1708 @@
+{
+  "simulatedPerson": {
+    "name": "veiled-light",
+    "area": "cinema",
+    "hiddenRule": "Likes frames with smoke, mist, dust or rain, or with shaped light such as beams, pools or glare (85%); otherwise 20%.",
+    "seed": 48,
+    "library": "real cinema library (89 stills)"
+  },
+  "draftInterpretation": [
+    "Across 85 stills from 35 films you liked 41 (48%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "Clearly, shaped light (light that makes visible shapes: pools, beams, rim light, glare or patterned shadow): you liked 22 of 25 (88%), against 32% of the rest, across 17 films. For example: 12 Angry Men: The jurors around the table; Amélie: Amélie in the café; Double Indemnity: Keyes at his office door.",
+    "Clearly, veiled air (something in the air between camera and subject: mist, smoke, rain or dust): you liked 17 of 19 (90%), against 36% of the rest, across 13 films. For example: The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room; Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds.",
+    "Clearly, glare (a light source shines towards the lens: flare, bloom or a blazing lamp): you liked 9 of 9 (100%), against 42% of the rest, across 9 films. For example: 12 Angry Men: The jurors around the table; Amélie: Amélie in the café; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room.",
+    "Clearly, hard light (crisp, sharp-edged shadows from a small or distant source): you liked 15 of 19 (79%), against 39% of the rest, across 11 films. For example: The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Double Indemnity: Phyllis Dietrichson at the top of the stairs; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit.",
+    "Possibly, mist or haze (fog, mist or haze softens distance): you liked 7 of 7 (100%), against 44% of the rest, across 6 films. For example: The Bridge on the River Kwai: The bridge over the river at dawn; Metropolis: The city of Metropolis; Princess Mononoke: The Forest Spirit.",
+    "Some characteristics only appear to matter because they travel with the ones above: top light (accounted for by even light).",
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: practical light with even light, smoke with even light and low-key with even light.",
+    "Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged)."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 85,
+      "likes": 41,
+      "dislikes": 44,
+      "likeRate": 0.482,
+      "works": 35,
+      "notInLibrary": 0,
+      "eventCount": 92,
+      "lastEventAt": "2026-10-10T19:27:42.709Z",
+      "judgmentsDigest": "17326066",
+      "vocabularyVersion": 3
+    },
+    "evidenceLevel": "established",
+    "signature": {
+      "summary": "A clear leaning towards shaped light, veiled air and glare. Less drawn to soft light.",
+      "terms": [
+        "lightPattern:shaped",
+        "atmospherics:veiled",
+        "lightPattern:glare",
+        "lightQuality:soft"
+      ],
+      "statements": [
+        {
+          "text": "Liked 22 of 25 works with shaped light (88%), against 19 of 60 without it (32%).",
+          "feature": "lightPattern:shaped",
+          "strength": "well supported",
+          "subjective": false
+        },
+        {
+          "text": "Liked 17 of 19 works with veiled air (89%), against 24 of 66 without it (36%).",
+          "feature": "atmospherics:veiled",
+          "strength": "well supported",
+          "subjective": false
+        },
+        {
+          "text": "Liked 9 of 9 works with glare (100%), against 32 of 76 without it (42%).",
+          "feature": "lightPattern:glare",
+          "strength": "well supported",
+          "subjective": false
+        },
+        {
+          "text": "Liked 22 of 61 works with soft light (36%), against 19 of 24 without it (79%).",
+          "feature": "lightQuality:soft",
+          "strength": "well supported",
+          "subjective": false
+        }
+      ]
+    },
+    "preferred": [
+      {
+        "feature": "lightPattern:shaped",
+        "dimension": "lightPattern",
+        "value": "shaped",
+        "label": "shaped light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 25,
+          "likedWhenPresent": 22,
+          "rateWhenPresent": 0.88,
+          "rateWhenAbsent": 0.317,
+          "difference": 0.563,
+          "interval": [
+            0.7,
+            0.958
+          ],
+          "p": 0,
+          "q": 0.0001,
+          "leaveOneWorkOutP": 0,
+          "workLevelP": 0.0004
+        },
+        "explanation": "Liked 22 of 25 works with shaped light (88%), against 19 of 60 without it (32%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "amelie-01",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "dr-strangelove-02",
+            "howls-moving-castle-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-02",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "metropolis-02",
+            "metropolis-03",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "princess-mononoke-01",
+            "princess-mononoke-02",
+            "psycho-02",
+            "spirited-away-03",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-godfather-01",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "mr-smith-goes-to-washington-03",
+            "rear-window-02",
+            "sherlock-jr-02"
+          ],
+          "supportingWorks": 17
+        }
+      },
+      {
+        "feature": "atmospherics:veiled",
+        "dimension": "atmospherics",
+        "value": "veiled",
+        "label": "veiled air",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 19,
+          "likedWhenPresent": 17,
+          "rateWhenPresent": 0.895,
+          "rateWhenAbsent": 0.364,
+          "difference": 0.531,
+          "interval": [
+            0.686,
+            0.971
+          ],
+          "p": 0,
+          "q": 0.0017,
+          "leaveOneWorkOutP": 0.0002,
+          "workLevelP": 0.0038
+        },
+        "explanation": "Liked 17 of 19 works with veiled air (89%), against 24 of 66 without it (36%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-02",
+            "dr-strangelove-01",
+            "howls-moving-castle-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-02",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-01",
+            "paths-of-glory-02",
+            "princess-mononoke-01",
+            "sunset-boulevard-02",
+            "the-general-01",
+            "the-general-03",
+            "the-great-dictator-02",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "my-neighbor-totoro-01",
+            "some-like-it-hot-01"
+          ],
+          "supportingWorks": 13
+        }
+      },
+      {
+        "feature": "lightPattern:glare",
+        "dimension": "lightPattern",
+        "value": "glare",
+        "label": "glare",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 9,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.421,
+          "difference": 0.579,
+          "interval": [
+            0.701,
+            1
+          ],
+          "p": 0.0009,
+          "q": 0.0153,
+          "leaveOneWorkOutP": 0.0019,
+          "workLevelP": 0.002
+        },
+        "explanation": "Liked 9 of 9 works with glare (100%), against 32 of 76 without it (42%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "amelie-01",
+            "dr-strangelove-01",
+            "howls-moving-castle-02",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "psycho-02",
+            "sunset-boulevard-01",
+            "the-godfather-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 9
+        }
+      },
+      {
+        "feature": "lightSource:practical",
+        "dimension": "lightSource",
+        "value": "practical",
+        "label": "practical light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 15,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.867,
+          "rateWhenAbsent": 0.4,
+          "difference": 0.467,
+          "interval": [
+            0.621,
+            0.963
+          ],
+          "p": 0.0013,
+          "q": 0.0199,
+          "leaveOneWorkOutP": 0.0032,
+          "workLevelP": 0.0048
+        },
+        "explanation": "Liked 13 of 15 works with practical light (87%), against 28 of 70 without it (40%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "amelie-01",
+            "dr-strangelove-01",
+            "howls-moving-castle-02",
+            "its-a-wonderful-life-04",
+            "mad-max-fury-road-02",
+            "metropolis-03",
+            "on-the-waterfront-03",
+            "princess-mononoke-02",
+            "spirited-away-03",
+            "sunset-boulevard-01",
+            "the-apartment-01",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "rear-window-02",
+            "sherlock-jr-02"
+          ],
+          "supportingWorks": 13
+        }
+      },
+      {
+        "feature": "lightQuality:hard",
+        "dimension": "lightQuality",
+        "value": "hard",
+        "label": "hard light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 19,
+          "likedWhenPresent": 15,
+          "rateWhenPresent": 0.789,
+          "rateWhenAbsent": 0.394,
+          "difference": 0.396,
+          "interval": [
+            0.567,
+            0.915
+          ],
+          "p": 0.0036,
+          "q": 0.0482,
+          "leaveOneWorkOutP": 0.0129,
+          "workLevelP": 0.0365
+        },
+        "explanation": "Liked 15 of 19 works with hard light (79%), against 26 of 66 without it (39%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-01",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-02",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-03",
+            "oldboy-01",
+            "paths-of-glory-01",
+            "psycho-02",
+            "sunset-boulevard-01",
+            "the-apartment-02"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "north-by-northwest-03",
+            "psycho-01"
+          ],
+          "supportingWorks": 11
+        }
+      },
+      {
+        "feature": "atmospherics:mist",
+        "dimension": "atmospherics",
+        "value": "mist",
+        "label": "mist or haze",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 7,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.436,
+          "difference": 0.564,
+          "interval": [
+            0.646,
+            1
+          ],
+          "p": 0.0046,
+          "q": 0.0547,
+          "leaveOneWorkOutP": 0.0211,
+          "workLevelP": 0.0216
+        },
+        "explanation": "Liked 7 of 7 works with mist or haze (100%), against 34 of 78 without it (44%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-02",
+            "metropolis-01",
+            "princess-mononoke-01",
+            "sunset-boulevard-02",
+            "the-general-01",
+            "the-general-03",
+            "vertigo-03"
+          ],
+          "contradicting": [],
+          "supportingWorks": 6
+        }
+      },
+      {
+        "feature": "lightDirection:top",
+        "dimension": "lightDirection",
+        "value": "top",
+        "label": "top light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": "lightPattern:even",
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.425,
+          "difference": 0.409,
+          "interval": [
+            0.552,
+            0.953
+          ],
+          "p": 0.0117,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.0417,
+          "workLevelP": 0.0648
+        },
+        "explanation": "Liked 10 of 12 works with top light (83%), against 31 of 73 without it (42%).",
+        "notes": [
+          "accounted for by even light and soft light together"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "bridge-on-the-river-kwai-01",
+            "double-indemnity-01",
+            "dr-strangelove-01",
+            "dr-strangelove-02",
+            "lawrence-of-arabia-02",
+            "oldboy-01",
+            "the-apartment-01",
+            "the-godfather-01",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-01"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "atmospherics:smoke",
+        "dimension": "atmospherics",
+        "value": "smoke",
+        "label": "smoke",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 0.889,
+          "rateWhenAbsent": 0.434,
+          "difference": 0.455,
+          "interval": [
+            0.565,
+            0.98
+          ],
+          "p": 0.0128,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.0494,
+          "workLevelP": 0.0481
+        },
+        "explanation": "Liked 8 of 9 works with smoke (89%), against 33 of 76 without it (43%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-01",
+            "howls-moving-castle-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "paths-of-glory-02",
+            "the-general-03",
+            "the-great-dictator-02"
+          ],
+          "contradicting": [
+            "some-like-it-hot-01"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "key:low",
+        "dimension": "key",
+        "value": "low",
+        "label": "low-key",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 32,
+          "likedWhenPresent": 21,
+          "rateWhenPresent": 0.656,
+          "rateWhenAbsent": 0.377,
+          "difference": 0.279,
+          "interval": [
+            0.483,
+            0.796
+          ],
+          "p": 0.015,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.0398,
+          "workLevelP": 0.0465
+        },
+        "explanation": "Liked 21 of 32 works with low-key (66%), against 20 of 53 without it (38%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "bridge-on-the-river-kwai-02",
+            "dr-strangelove-01",
+            "dr-strangelove-02",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-04",
+            "mad-max-fury-road-02",
+            "oldboy-01",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "princess-mononoke-02",
+            "psycho-02",
+            "sunset-boulevard-01",
+            "the-apartment-01",
+            "the-apartment-02",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-gold-rush-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "amelie-02",
+            "double-indemnity-03",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "on-the-waterfront-01",
+            "rear-window-02",
+            "some-like-it-hot-01",
+            "the-grand-budapest-hotel-01"
+          ],
+          "supportingWorks": 17
+        }
+      },
+      {
+        "feature": "atmosphere:grand",
+        "dimension": "atmosphere",
+        "value": "grand",
+        "label": "grand",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "atmospherics:veiled",
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.425,
+          "difference": 0.409,
+          "interval": [
+            0.552,
+            0.953
+          ],
+          "p": 0.0117,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.074
+        },
+        "explanation": "Liked 10 of 12 works with grand (83%), against 31 of 73 without it (42%).",
+        "notes": [
+          "depends on one film (metropolis): without it the association is not clear",
+          "goes together with veiled air in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "howls-moving-castle-01",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "metropolis-02",
+            "metropolis-03",
+            "paths-of-glory-02",
+            "spirited-away-03",
+            "the-general-03"
+          ],
+          "contradicting": [
+            "mr-smith-goes-to-washington-01",
+            "princess-mononoke-03"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "lightDirection:back",
+        "dimension": "lightDirection",
+        "value": "back",
+        "label": "backlight",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.786,
+          "rateWhenAbsent": 0.423,
+          "difference": 0.363,
+          "interval": [
+            0.524,
+            0.924
+          ],
+          "p": 0.0183,
+          "q": 0.11,
+          "leaveOneWorkOutP": 0.057
+        },
+        "explanation": "Liked 11 of 14 works with backlight (79%), against 30 of 71 without it (42%).",
+        "notes": [
+          "depends on one film (metropolis): without it the association is not clear",
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-02",
+            "lawrence-of-arabia-03",
+            "metropolis-02",
+            "metropolis-03",
+            "paths-of-glory-02",
+            "princess-mononoke-01",
+            "sunset-boulevard-01",
+            "the-general-03",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "north-by-northwest-02",
+            "on-the-waterfront-02",
+            "parasite-02"
+          ],
+          "supportingWorks": 10
+        }
+      },
+      {
+        "feature": "lightPattern:pools",
+        "dimension": "lightPattern",
+        "value": "pools",
+        "label": "pools of light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "lightQuality:soft",
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.786,
+          "rateWhenAbsent": 0.423,
+          "difference": 0.363,
+          "interval": [
+            0.524,
+            0.924
+          ],
+          "p": 0.0183,
+          "q": 0.11,
+          "leaveOneWorkOutP": 0.0595
+        },
+        "explanation": "Liked 11 of 14 works with pools of light (79%), against 30 of 71 without it (42%).",
+        "notes": [
+          "depends on one film (the-godfather): without it the association is not clear",
+          "goes together with soft light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "metropolis-03",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "princess-mononoke-02",
+            "spirited-away-03",
+            "the-apartment-02",
+            "the-godfather-01",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "mr-smith-goes-to-washington-03",
+            "rear-window-02",
+            "sherlock-jr-02"
+          ],
+          "supportingWorks": 10
+        }
+      },
+      {
+        "feature": "lightPattern:beams",
+        "dimension": "lightPattern",
+        "value": "beams",
+        "label": "visible beams",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "atmospherics:veiled",
+        "stats": {
+          "exposed": 4,
+          "likedWhenPresent": 4,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.457,
+          "difference": 0.543,
+          "interval": [
+            0.51,
+            1
+          ],
+          "p": 0.05,
+          "q": 0.2764
+        },
+        "explanation": "Liked 4 of 4 works with visible beams (100%), against 37 of 81 without it (46%).",
+        "notes": [
+          "goes together with veiled air in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "howls-moving-castle-01",
+            "metropolis-02",
+            "metropolis-03",
+            "princess-mononoke-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 3
+        }
+      },
+      {
+        "feature": "angle:low",
+        "dimension": "angle",
+        "value": "low",
+        "label": "low angle",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 16,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.688,
+          "rateWhenAbsent": 0.435,
+          "difference": 0.253,
+          "interval": [
+            0.444,
+            0.858
+          ],
+          "p": 0.0962,
+          "q": 0.44
+        },
+        "explanation": "Liked 11 of 16 works with low angle (69%), against 30 of 69 without it (43%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "double-indemnity-01",
+            "howls-moving-castle-01",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-02",
+            "metropolis-03",
+            "paths-of-glory-02",
+            "princess-mononoke-01",
+            "spirited-away-03",
+            "sunset-boulevard-01"
+          ],
+          "contradicting": [
+            "on-the-waterfront-02",
+            "princess-mononoke-03",
+            "the-great-dictator-01",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01"
+          ],
+          "supportingWorks": 9
+        }
+      }
+    ],
+    "disliked": [
+      {
+        "feature": "lightPattern:even",
+        "dimension": "lightPattern",
+        "value": "even",
+        "label": "even light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 60,
+          "likedWhenPresent": 19,
+          "rateWhenPresent": 0.317,
+          "rateWhenAbsent": 0.88,
+          "difference": -0.563,
+          "interval": [
+            0.213,
+            0.442
+          ],
+          "p": 0,
+          "q": 0.0001,
+          "leaveOneWorkOutP": 0,
+          "workLevelP": 0.0004
+        },
+        "explanation": "Liked 19 of 60 works with even light (32%), against 22 of 25 without it (88%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "2001-a-space-odyssey-01",
+            "amelie-02",
+            "double-indemnity-03",
+            "howls-moving-castle-03",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-01",
+            "mr-smith-goes-to-washington-02",
+            "my-neighbor-totoro-01",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "on-the-waterfront-02",
+            "parasite-02",
+            "princess-mononoke-03",
+            "psycho-01",
+            "rear-window-01",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "spirited-away-01",
+            "spirited-away-02",
+            "spirited-away-04",
+            "the-general-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-great-dictator-03",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-01",
+            "bridge-on-the-river-kwai-02",
+            "double-indemnity-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "oldboy-01",
+            "parasite-01",
+            "paths-of-glory-02",
+            "sunset-boulevard-02",
+            "the-apartment-01",
+            "the-general-01",
+            "the-general-03",
+            "the-gold-rush-01",
+            "the-great-dictator-02",
+            "vertigo-03"
+          ],
+          "supportingWorks": 25
+        }
+      },
+      {
+        "feature": "atmospherics:clear",
+        "dimension": "atmospherics",
+        "value": "clear",
+        "label": "clear air",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 65,
+          "likedWhenPresent": 24,
+          "rateWhenPresent": 0.369,
+          "rateWhenAbsent": 0.85,
+          "difference": -0.481,
+          "interval": [
+            0.262,
+            0.491
+          ],
+          "p": 0.0002,
+          "q": 0.006,
+          "leaveOneWorkOutP": 0.001,
+          "workLevelP": 0.0133
+        },
+        "explanation": "Liked 24 of 65 works with clear air (37%), against 17 of 20 without it (85%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "2001-a-space-odyssey-01",
+            "amelie-02",
+            "double-indemnity-03",
+            "howls-moving-castle-03",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-01",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "on-the-waterfront-02",
+            "princess-mononoke-03",
+            "psycho-01",
+            "rear-window-01",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "some-like-it-hot-02",
+            "spirited-away-01",
+            "spirited-away-02",
+            "spirited-away-04",
+            "the-general-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-great-dictator-03",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "12-angry-men-01",
+            "amelie-01",
+            "bridge-on-the-river-kwai-01",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-02",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-03",
+            "metropolis-02",
+            "metropolis-03",
+            "oldboy-01",
+            "on-the-waterfront-03",
+            "parasite-01",
+            "paths-of-glory-01",
+            "princess-mononoke-02",
+            "psycho-02",
+            "spirited-away-03",
+            "sunset-boulevard-01",
+            "the-apartment-01",
+            "the-apartment-02",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 24
+        }
+      },
+      {
+        "feature": "lightQuality:soft",
+        "dimension": "lightQuality",
+        "value": "soft",
+        "label": "soft light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 61,
+          "likedWhenPresent": 22,
+          "rateWhenPresent": 0.361,
+          "rateWhenAbsent": 0.792,
+          "difference": -0.431,
+          "interval": [
+            0.252,
+            0.486
+          ],
+          "p": 0.0006,
+          "q": 0.0123,
+          "leaveOneWorkOutP": 0.0013,
+          "workLevelP": 0.0121
+        },
+        "explanation": "Liked 22 of 61 works with soft light (36%), against 19 of 24 without it (79%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-02",
+            "howls-moving-castle-03",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-01",
+            "mr-smith-goes-to-washington-02",
+            "my-neighbor-totoro-01",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "on-the-waterfront-02",
+            "parasite-02",
+            "princess-mononoke-03",
+            "rear-window-01",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "spirited-away-01",
+            "spirited-away-02",
+            "spirited-away-04",
+            "the-general-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-great-dictator-03",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "12-angry-men-01",
+            "amelie-01",
+            "bridge-on-the-river-kwai-02",
+            "howls-moving-castle-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-04",
+            "metropolis-01",
+            "metropolis-02",
+            "parasite-01",
+            "paths-of-glory-02",
+            "princess-mononoke-01",
+            "princess-mononoke-02",
+            "spirited-away-03",
+            "sunset-boulevard-02",
+            "the-apartment-01",
+            "the-general-01",
+            "the-general-03",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-gold-rush-01",
+            "the-great-dictator-02",
+            "vertigo-03"
+          ],
+          "supportingWorks": 22
+        }
+      },
+      {
+        "feature": "gaze:camera",
+        "dimension": "gaze",
+        "value": "camera",
+        "label": "gaze at the camera",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 7,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.526,
+          "difference": -0.526,
+          "interval": [
+            0,
+            0.354
+          ],
+          "p": 0.0123,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.0267,
+          "workLevelP": 0.0108
+        },
+        "explanation": "Liked 0 of 7 works with gaze at the camera (0%), against 41 of 78 without it (53%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "my-neighbor-totoro-01",
+            "oldboy-02",
+            "psycho-01",
+            "spirited-away-02",
+            "the-general-02",
+            "the-great-dictator-01",
+            "the-passion-of-joan-of-arc-02"
+          ],
+          "contradicting": [],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "atmosphere:playful",
+        "dimension": "atmosphere",
+        "value": "playful",
+        "label": "playful",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 13,
+          "likedWhenPresent": 2,
+          "rateWhenPresent": 0.154,
+          "rateWhenAbsent": 0.542,
+          "difference": -0.388,
+          "interval": [
+            0.043,
+            0.422
+          ],
+          "p": 0.0143,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.0485,
+          "workLevelP": 0.0375
+        },
+        "explanation": "Liked 2 of 13 works with playful (15%), against 39 of 72 without it (54%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-02",
+            "howls-moving-castle-03",
+            "its-a-wonderful-life-01",
+            "my-neighbor-totoro-01",
+            "psycho-01",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "the-general-02",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "the-apartment-02",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 9
+        }
+      },
+      {
+        "feature": "lightDirection:front",
+        "dimension": "lightDirection",
+        "value": "front",
+        "label": "frontal light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 13,
+          "likedWhenPresent": 2,
+          "rateWhenPresent": 0.154,
+          "rateWhenAbsent": 0.542,
+          "difference": -0.388,
+          "interval": [
+            0.043,
+            0.422
+          ],
+          "p": 0.0143,
+          "q": 0.1012,
+          "leaveOneWorkOutP": 0.0485,
+          "workLevelP": 0.0673
+        },
+        "explanation": "Liked 2 of 13 works with frontal light (15%), against 39 of 72 without it (54%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-02",
+            "oldboy-02",
+            "psycho-01",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02"
+          ],
+          "contradicting": [
+            "double-indemnity-01",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "composition:symmetrical",
+        "dimension": "composition",
+        "value": "symmetrical",
+        "label": "symmetrical composition",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "lightPattern:even",
+        "stats": {
+          "exposed": 13,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 0.231,
+          "rateWhenAbsent": 0.528,
+          "difference": -0.297,
+          "interval": [
+            0.082,
+            0.503
+          ],
+          "p": 0.0702,
+          "q": 0.361
+        },
+        "explanation": "Liked 3 of 13 works with symmetrical composition (23%), against 38 of 72 without it (53%).",
+        "notes": [
+          "goes together with even light in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "howls-moving-castle-03",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "spirited-away-04",
+            "the-general-02",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-passion-of-joan-of-arc-02",
+            "the-passion-of-joan-of-arc-03"
+          ],
+          "contradicting": [
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "metropolis-02"
+          ],
+          "supportingWorks": 7
+        }
+      }
+    ],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "setting:vehicle",
+        "label": "vehicle",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "shotScale:extreme-close-up",
+        "label": "extreme close-up",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "atmospherics:rain",
+        "label": "rain",
+        "exposed": 1,
+        "liked": 0
+      }
+    ],
+    "spread": {
+      "overall": 1.002,
+      "reading": "broad",
+      "byDimension": {
+        "key": {
+          "label": "tonal key",
+          "ratio": 0.965,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "contrast": {
+          "label": "contrast",
+          "ratio": 1.119,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "saturation": {
+          "label": "saturation",
+          "ratio": 0.999,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "temperature": {
+          "label": "colour temperature",
+          "ratio": 0.997,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "hue": {
+          "label": "dominant hues",
+          "ratio": 0.995,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 0.738,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "symmetry": {
+          "label": "tonal symmetry",
+          "ratio": 1.009,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "detail": {
+          "label": "surface detail",
+          "ratio": 0.931,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "medium": {
+          "label": "medium",
+          "ratio": 0.867,
+          "reading": "mixed",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "lightQuality": {
+          "label": "light quality",
+          "ratio": 1.256,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "lightDirection": {
+          "label": "key-light direction",
+          "ratio": 0.97,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "lightSource": {
+          "label": "apparent light source",
+          "ratio": 1.043,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "shotScale": {
+          "label": "shot scale",
+          "ratio": 0.985,
+          "reading": "broad",
+          "valuesJudged": 9,
+          "valuesLiked": 9
+        },
+        "angle": {
+          "label": "camera angle",
+          "ratio": 1.072,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "composition": {
+          "label": "composition",
+          "ratio": 0.994,
+          "reading": "broad",
+          "valuesJudged": 11,
+          "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 1.193,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 7
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 1.223,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 5
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 0.825,
+          "reading": "mixed",
+          "valuesJudged": 5,
+          "valuesLiked": 4
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 1.087,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "focus": {
+          "label": "depth of field",
+          "ratio": 0.868,
+          "reading": "mixed",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "layers": {
+          "label": "spatial layers",
+          "ratio": 0.939,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "figures": {
+          "label": "figures",
+          "ratio": 1.015,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "setting": {
+          "label": "setting",
+          "ratio": 1.002,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "atmosphere": {
+          "label": "atmosphere",
+          "ratio": 0.951,
+          "reading": "broad",
+          "valuesJudged": 13,
+          "valuesLiked": 13
+        }
+      }
+    },
+    "consistency": {
+      "changedJudgments": [
+        "its-a-wonderful-life-04",
+        "parasite-01",
+        "parasite-02"
+      ],
+      "worksWithMixedJudgments": [
+        "12-angry-men",
+        "amelie",
+        "double-indemnity",
+        "howls-moving-castle",
+        "its-a-wonderful-life",
+        "oldboy",
+        "on-the-waterfront",
+        "parasite",
+        "princess-mononoke",
+        "psycho",
+        "spirited-away",
+        "the-general",
+        "the-godfather",
+        "the-great-dictator",
+        "vertigo"
+      ]
+    },
+    "terminology": [
+      {
+        "term": "angle:low",
+        "label": "low angle",
+        "definition": "The camera looks up at the subject.",
+        "dimension": "camera angle",
+        "basis": "observed"
+      },
+      {
+        "term": "atmosphere:grand",
+        "label": "grand",
+        "definition": "Epic in scale.",
+        "dimension": "atmosphere",
+        "basis": "interpretation"
+      },
+      {
+        "term": "atmosphere:playful",
+        "label": "playful",
+        "definition": "Light and whimsical.",
+        "dimension": "atmosphere",
+        "basis": "interpretation"
+      },
+      {
+        "term": "atmospherics:clear",
+        "label": "clear air",
+        "definition": "Nothing visible in the air.",
+        "dimension": "atmospherics",
+        "basis": "observed"
+      },
+      {
+        "term": "atmospherics:mist",
+        "label": "mist or haze",
+        "definition": "Fog, mist or haze softens distance.",
+        "dimension": "atmospherics",
+        "basis": "observed"
+      },
+      {
+        "term": "atmospherics:smoke",
+        "label": "smoke",
+        "definition": "Smoke or steam drifts in the frame.",
+        "dimension": "atmospherics",
+        "basis": "observed"
+      },
+      {
+        "term": "atmospherics:veiled",
+        "label": "veiled air",
+        "definition": "Something in the air between camera and subject: mist, smoke, rain or dust.",
+        "dimension": "atmospherics",
+        "basis": "observed"
+      },
+      {
+        "term": "composition:symmetrical",
+        "label": "symmetrical composition",
+        "definition": "The frame is arranged to mirror around its centre.",
+        "dimension": "composition",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:camera",
+        "label": "gaze at the camera",
+        "definition": "The main figure looks into or very near the lens.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "key:low",
+        "label": "low-key",
+        "definition": "Most of the frame is dark; light is selective and shadows dominate.",
+        "dimension": "tonal key",
+        "basis": "measured"
+      },
+      {
+        "term": "lightDirection:back",
+        "label": "backlight",
+        "definition": "Light from behind the subject, rimming or silhouetting it.",
+        "dimension": "key-light direction",
+        "basis": "observed"
+      },
+      {
+        "term": "lightDirection:front",
+        "label": "frontal light",
+        "definition": "Light from near the camera, flattening form.",
+        "dimension": "key-light direction",
+        "basis": "observed"
+      },
+      {
+        "term": "lightDirection:top",
+        "label": "top light",
+        "definition": "Light from above, shadowing eyes and lower forms.",
+        "dimension": "key-light direction",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:beams",
+        "label": "visible beams",
+        "definition": "Shafts or beams of light are visible in the air.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:even",
+        "label": "even light",
+        "definition": "None of these: the light falls without distinct shapes.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:glare",
+        "label": "glare",
+        "definition": "A light source shines towards the lens: flare, bloom or a blazing lamp.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:pools",
+        "label": "pools of light",
+        "definition": "Isolated areas of light surrounded by darkness.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:shaped",
+        "label": "shaped light",
+        "definition": "Light that makes visible shapes: pools, beams, rim light, glare or patterned shadow.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightQuality:hard",
+        "label": "hard light",
+        "definition": "Crisp, sharp-edged shadows from a small or distant source.",
+        "dimension": "light quality",
+        "basis": "observed"
+      },
+      {
+        "term": "lightQuality:soft",
+        "label": "soft light",
+        "definition": "Gradual shadow edges from a large or diffused source.",
+        "dimension": "light quality",
+        "basis": "observed"
+      },
+      {
+        "term": "lightSource:practical",
+        "label": "practical light",
+        "definition": "Visible lamps, fire, candles, screens or signs within the frame.",
+        "dimension": "apparent light source",
+        "basis": "observed"
+      }
+    ],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments.",
+      "Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations."
+    ]
+  }
+}

@@ -12,7 +12,7 @@
     "Clearly, hand-drawn animation (drawn or painted animation): you liked 11 of 13 (85%), against 35% of the rest, across 4 films. For example: Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds; My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back; Princess Mononoke: The Forest Spirit.",
     "Some characteristics only appear to matter because they travel with the ones above: moderate colour (accounted for by red).",
     "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: monochrome with red and neutral with red.",
-    "Too few examples to say anything yet about vehicle (2 judged) and extreme close-up (2 judged)."
+    "Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged)."
   ],
   "profile": {
     "schema": "pallas.taste-profile/1",
@@ -55,7 +55,7 @@
       "eventCount": 92,
       "lastEventAt": "2026-10-10T19:29:23.375Z",
       "judgmentsDigest": "bfb71b72",
-      "vocabularyVersion": 2
+      "vocabularyVersion": 3
     },
     "evidenceLevel": "established",
     "signature": {
@@ -102,7 +102,7 @@
             0.984
           ],
           "p": 0.0006,
-          "q": 0.036,
+          "q": 0.0447,
           "leaveOneWorkOutP": 0.0137,
           "workLevelP": 0.0023
         },
@@ -149,7 +149,7 @@
             0.957
           ],
           "p": 0.0014,
-          "q": 0.036,
+          "q": 0.0447,
           "leaveOneWorkOutP": 0.0251,
           "workLevelP": 0.0062
         },
@@ -198,7 +198,7 @@
             0.835
           ],
           "p": 0.0017,
-          "q": 0.036,
+          "q": 0.0447,
           "leaveOneWorkOutP": 0.0102,
           "workLevelP": 0.0115
         },
@@ -262,7 +262,7 @@
             0.803
           ],
           "p": 0.0249,
-          "q": 0.3092
+          "q": 0.3839
         },
         "explanation": "Liked 14 of 22 works with orange (64%), against 22 of 63 without it (35%).",
         "notes": [],
@@ -318,7 +318,7 @@
             0.937
           ],
           "p": 0.0327,
-          "q": 0.3552
+          "q": 0.4409
         },
         "explanation": "Liked 7 of 9 works with teal (78%), against 29 of 76 without it (38%).",
         "notes": [
@@ -365,7 +365,7 @@
             0.462
           ],
           "p": 0.0014,
-          "q": 0.036,
+          "q": 0.0447,
           "leaveOneWorkOutP": 0.0018,
           "workLevelP": 0.0062
         },
@@ -473,7 +473,7 @@
             0.418
           ],
           "p": 0.0045,
-          "q": 0.0654,
+          "q": 0.0812,
           "leaveOneWorkOutP": 0.0139,
           "workLevelP": 0.0033
         },
@@ -555,7 +555,7 @@
             0.418
           ],
           "p": 0.0045,
-          "q": 0.0654,
+          "q": 0.0812,
           "leaveOneWorkOutP": 0.0139,
           "workLevelP": 0.0069
         },
@@ -619,6 +619,24 @@
     "combinations": [],
     "notYetClear": [
       {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
         "feature": "setting:vehicle",
         "label": "vehicle",
         "exposed": 2,
@@ -629,10 +647,16 @@
         "label": "extreme close-up",
         "exposed": 2,
         "liked": 1
+      },
+      {
+        "feature": "atmospherics:rain",
+        "label": "rain",
+        "exposed": 1,
+        "liked": 1
       }
     ],
     "spread": {
-      "overall": 0.99,
+      "overall": 0.984,
       "reading": "broad",
       "byDimension": {
         "key": {
@@ -669,6 +693,13 @@
           "reading": "broad",
           "valuesJudged": 6,
           "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 1.024,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "symmetry": {
           "label": "tonal symmetry",
@@ -732,6 +763,34 @@
           "reading": "broad",
           "valuesJudged": 11,
           "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 1.003,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 6
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 0.962,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 6
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 1.009,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 0.807,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
         },
         "focus": {
           "label": "depth of field",

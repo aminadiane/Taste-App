@@ -1,0 +1,135 @@
+{
+  "simulatedPerson": {
+    "name": "restrained-reader",
+    "area": "literature",
+    "hiddenRule": "Likes restrained prose (90%); sparse figuration elsewhere 40%; otherwise 10%.",
+    "seed": 51
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "literature",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 50,
+      "likes": 16,
+      "status": "ok"
+    },
+    "summary": "Across 50 passages from 28 books, the clearest thread is restraint; you were less drawn to lyrical prose.",
+    "sections": [
+      {
+        "id": "theme-restraint",
+        "kind": "theme",
+        "title": "Restraint",
+        "strength": "well supported",
+        "text": "The passages you liked consistently share restrained prose (13 of 14 liked), sparse figuration (8 of 8 liked) and short sentences (7 of 8 liked). Plain words and few figures of speech leave feeling unstated; the reader infers what the prose declines to say, so small details carry a great deal. You can see it in synthetic-05 (restrained), synthetic-21 (restrained) and synthetic-37 (restrained). Part of this rests on subjective readings of mood.",
+        "claims": [
+          {
+            "statement": "The passages you liked consistently share restrained prose (13 of 14 liked), sparse figuration (8 of 8 liked) and short sentences (7 of 8 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "register:restrained",
+                  "liked": 13,
+                  "exposed": 14
+                },
+                {
+                  "feature": "figuration:sparse",
+                  "liked": 8,
+                  "exposed": 8
+                },
+                {
+                  "feature": "sentenceLength:short",
+                  "liked": 7,
+                  "exposed": 8
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "synthetic-05",
+                "synthetic-21",
+                "synthetic-37"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "aversion-lyric-prose",
+        "kind": "aversion",
+        "title": "Lyrical prose",
+        "strength": "well supported",
+        "text": "The passages you passed over consistently share lyrical prose (0 of 13 liked), rich figuration (3 of 24 liked) and long sentences (3 of 30 liked), and more loosely cumulative sentences (0 of 9 liked) and repetition (2 of 19 liked). Long, cadenced sentences, repetition and dense imagery let rhythm and sound carry feeling; the prose is meant to be heard as much as followed. For instance synthetic-10 (lyrical), synthetic-02 (lyrical) and synthetic-14 (lyrical). Part of this rests on subjective readings of mood.",
+        "claims": [
+          {
+            "statement": "The passages you passed over consistently share lyrical prose (0 of 13 liked), rich figuration (3 of 24 liked) and long sentences (3 of 30 liked), and more loosely cumulative sentences (0 of 9 liked) and repetition (2 of 19 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "register:lyrical",
+                  "liked": 0,
+                  "exposed": 13
+                },
+                {
+                  "feature": "figuration:rich",
+                  "liked": 3,
+                  "exposed": 24
+                },
+                {
+                  "feature": "sentenceLength:long",
+                  "liked": 3,
+                  "exposed": 30
+                },
+                {
+                  "feature": "syntax:cumulative",
+                  "liked": 0,
+                  "exposed": 9
+                },
+                {
+                  "feature": "device:repetition",
+                  "liked": 2,
+                  "exposed": 19
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [],
+              "disliked": [
+                "synthetic-10",
+                "synthetic-02",
+                "synthetic-14"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Experimental prose is an early sign that more judgments could confirm or dissolve. Some characteristics cannot yet be told apart because they occur in nearly the same passages: sparse figuration with restrained prose, withheld identity with restrained prose and close detail with restrained prose. All of this compares your own likes with your own dislikes among 50 passages; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 2,
+    "examples": 6,
+    "failures": []
+  }
+}

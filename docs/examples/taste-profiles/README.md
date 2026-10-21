@@ -11,10 +11,14 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 | [Landscapes](#landscapes) | cinema | 70 | established | 3 of 3 |
 | [Faces](#faces) | cinema | 83 | established | 2 of 3 |
 | [Animation](#animation) | cinema | 85 | established | 1 of 1 |
+| [Light in the air](#veiled-light) | cinema | 85 | established | 2 of 2 |
+| [Two strands](#two-strands) | cinema | 82 | established | 1 of 2 |
+| [Stillness and space](#stillness) | cinema | 82 | established | 2 of 4 |
+| [Momentum](#momentum) | cinema | 74 | established | 2 of 3 |
 | [Eclectic](#eclectic) | cinema | 70 | early | nothing to recover |
 | [Just started](#just-started) | cinema | 11 | no-pattern | 0 of 2 |
 | [Restrained reader](#restrained-reader) | literature (synthetic) | 50 | established | 1 of 1 |
-| [Lyrical and experimental reader](#lyrical-reader) | literature (synthetic) | 50 | established | 0 of 2 |
+| [Lyrical and experimental reader](#lyrical-reader) | literature (synthetic) | 50 | established | 1 of 3 |
 | [Literature today (real library)](#real-literature-today) | literature | 5 | insufficient | nothing to recover |
 
 ## Chiaroscuro
@@ -36,30 +40,33 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: hard light with ambient light, soft light with ambient light and daylight with low-key.
 >
-> Too few examples to say anything yet about vehicle (2 judged) and extreme close-up (2 judged).
+> Too few examples to say anything yet about patterned shadow (2 judged), motion blur (2 judged) and vehicle (2 judged).
 
 **Liked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
 | low-key | measured | well supported | 20/25 (80%) | 20% | 0 | 0 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Amélie: Amélie leans in close |
-| side light | observed | well supported | 16/22 (73%) | 26% | 0.0069 | 0.0023 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
-| hard light (goes together with ambient light) | observed | emerging | 14/21 (67%) | 30% | 0.0545 | 0.0048 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor |
-| saturated colour (goes together with low-key) | measured | tentative | 6/7 (86%) | 35% | 0.1576 | — | Amélie: Amélie leans in close; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth |
-| artificial light (goes together with low-key) | observed | tentative | 15/25 (60%) | 30% | 0.2257 | — | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
-| intimate (goes together with low-key) | interpretation, subjective | tentative | 5/6 (83%) | 36% | 0.3027 | — | Amélie: Amélie leans in close; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
-| top light (goes together with low-key) | observed | tentative | 8/12 (67%) | 35% | 0.3998 | — | Double Indemnity: Phyllis Dietrichson at the top of the stairs; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit |
+| side light | observed | well supported | 16/22 (73%) | 26% | 0.0085 | 0.0023 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
+| hard light (goes together with ambient light) | observed | emerging | 14/21 (67%) | 30% | 0.0676 | 0.0048 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor |
+| saturated colour (goes together with low-key) | measured | tentative | 6/7 (86%) | 35% | 0.1956 | — | Amélie: Amélie leans in close; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth |
+| artificial light (goes together with low-key) | observed | tentative | 15/25 (60%) | 30% | 0.2801 | — | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| intimate (goes together with low-key) | interpretation, subjective | tentative | 5/6 (83%) | 36% | 0.3667 | — | Amélie: Amélie leans in close; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
+| gaze out of frame (goes together with low-key) | observed | tentative | 11/18 (61%) | 33% | 0.3722 | — | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| shaped light (goes together with low-key) | observed | tentative | 11/18 (61%) | 33% | 0.3722 | — | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit; Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds |
 
 **Disliked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
 | ambient light | observed | well supported | 0/23 (0%) | 58% | 0 | 0.0005 | The Bridge on the River Kwai: The bridge over the river at dawn; Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains |
-| soft light (goes together with ambient light) | observed | well supported | 12/49 (25%) | 69% | 0.0069 | 0.0024 | Amélie: Amélie in the café; The Bridge on the River Kwai: The bridge over the river at dawn |
-| mid-key | measured | well supported | 10/44 (23%) | 65% | 0.0069 | 0.0046 | Amélie: Amélie in the café; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
-| daylight (goes together with low-key) | observed | well supported | 8/37 (22%) | 58% | 0.0295 | 0.0448 | The Bridge on the River Kwai: The bridge over the river at dawn; Double Indemnity: Keyes at his office door |
-| symmetrical composition (goes together with low-key) | observed | tentative | 2/13 (15%) | 45% | 0.4212 | — | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; Metropolis: The Tower of Babel parable |
-| high-key (goes together with ambient light) | measured | tentative | 0/6 (0%) | 44% | 0.4676 | — | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; Paths of Glory: Dax goes over the top |
+| soft light (goes together with ambient light) | observed | well supported | 12/49 (25%) | 69% | 0.0085 | 0.0024 | Amélie: Amélie in the café; The Bridge on the River Kwai: The bridge over the river at dawn |
+| mid-key | measured | well supported | 10/44 (23%) | 65% | 0.0085 | 0.0046 | Amélie: Amélie in the café; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| daylight (goes together with low-key) | observed | well supported | 8/37 (22%) | 58% | 0.0366 | 0.0448 | The Bridge on the River Kwai: The bridge over the river at dawn; Double Indemnity: Keyes at his office door |
+| gaze at the camera (goes together with low-key) | observed | tentative | 0/7 (0%) | 44% | 0.3667 | — | My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back; Oldboy: Extreme close-up of an eye |
+| even light (goes together with low-key) | observed | tentative | 19/57 (33%) | 61% | 0.3722 | — | The Bridge on the River Kwai: The bridge over the river at dawn; Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains |
+| symmetrical composition (goes together with low-key) | observed | tentative | 2/13 (15%) | 45% | 0.3998 | — | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; Metropolis: The Tower of Babel parable |
+| high-key (goes together with ambient light) | measured | tentative | 0/6 (0%) | 44% | 0.4466 | — | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; Paths of Glory: Dax goes over the top |
 
 *Combinations: none.*
 
@@ -75,7 +82,7 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 
 **Judged:** 78 stills from 35 films, 26 liked. 11 skipped, and 1 judgment(s) changed later. **Evidence level:** established.
 
-**Signature:** A clear leaning towards saturated colour. Notably, low-key with moderate colour (6 of 6 liked).
+**Signature:** A clear leaning towards saturated colour.
 
 **Draft interpretation:**
 
@@ -83,37 +90,33 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > Clearly, saturated colour (intense, vivid colour): you liked 9 of 10 (90%), against 25% of the rest, across 7 films. For example: Amélie: Amélie in the café; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth; Mad Max: Fury Road: Night on the salt flats.
 >
-> Together, low-key with moderate colour stands out: 6 of 6 liked, more than either alone (54% and 52%). For example: Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid; In the Mood for Love: Chow.
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: single-hue palette with monochrome, orange with monochrome and warm with monochrome.
 >
-> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: orange with monochrome, warm with monochrome and yellow with monochrome.
->
-> Too few examples to say anything yet about vehicle (2 judged), extreme close-up (2 judged) and toned print (2 judged).
+> Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged).
 
 **Liked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| saturated colour | measured | well supported | 9/10 (90%) | 25% | 0.0038 | 0.0013 | Amélie: Amélie leans in close; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth |
-| orange (goes together with monochrome) | measured | emerging | 13/22 (59%) | 23% | 0.0752 | 0.1468 | Amélie: Amélie leans in close; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
-| warm (goes together with monochrome) | measured | emerging | 14/25 (56%) | 23% | 0.0752 | 0.084 | Amélie: Amélie leans in close; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
-| yellow (goes together with monochrome) | measured | emerging | 7/9 (78%) | 28% | 0.0752 | 0.0289 | Amélie: Amélie leans in close; In the Mood for Love: Chow |
-| low-key (goes together with saturated colour) | measured | emerging | 14/26 (54%) | 23% | 0.112 | 0.032 | Amélie: Amélie leans in close; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit |
-| low contrast | measured | tentative | 10/16 (63%) | 26% | 0.101 | — | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
-| moderate colour | measured | tentative | 12/23 (52%) | 26% | 0.25 | — | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
-| red (goes together with monochrome) | measured | tentative | 7/11 (64%) | 28% | 0.25 | — | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
+| saturated colour | measured | well supported | 9/10 (90%) | 25% | 0.0048 | 0.0013 | Amélie: Amélie leans in close; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth |
+| single-hue palette (goes together with monochrome) | measured | well supported | 10/14 (71%) | 25% | 0.0424 | 0.042 | Lawrence of Arabia: Lawrence on the roof of the wrecked train; Mad Max: Fury Road: Night on the salt flats |
+| orange (goes together with monochrome) | measured | emerging | 13/22 (59%) | 23% | 0.0784 | 0.1468 | Amélie: Amélie leans in close; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| warm (goes together with monochrome) | measured | emerging | 14/25 (56%) | 23% | 0.0802 | 0.084 | Amélie: Amélie leans in close; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| yellow (goes together with monochrome) | measured | emerging | 7/9 (78%) | 28% | 0.0802 | 0.0289 | Amélie: Amélie leans in close; In the Mood for Love: Chow |
+| low-key (goes together with saturated colour) | measured | emerging | 14/26 (54%) | 23% | 0.1238 | 0.032 | Amélie: Amélie leans in close; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit |
+| glare (goes together with monochrome) | observed | emerging | 5/6 (83%) | 29% | 0.1521 | 0.0236 | Amélie: Amélie in the café; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
+| low contrast | measured | tentative | 10/16 (63%) | 26% | 0.11 | — | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
 
 **Disliked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| monochrome | measured | well supported | 3/38 (8%) | 57% | 0.0002 | 0.0006 | 12 Angry Men: Juror 3; Double Indemnity: The office corridor |
-| neutral (goes together with monochrome) | measured | well supported | 5/41 (12%) | 57% | 0.0015 | 0.0048 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
-| mid-key (goes together with saturated colour) | measured | tentative | 11/48 (23%) | 50% | 0.2186 | — | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
-| lonely (goes together with saturated colour) | interpretation, subjective | tentative | 0/9 (0%) | 38% | 0.2186 | — | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Lawrence of Arabia: A lone figure in white robes running across the desert floor beneath a red dune |
+| monochrome | measured | well supported | 3/38 (8%) | 57% | 0.0003 | 0.0006 | 12 Angry Men: Juror 3; Double Indemnity: The office corridor |
+| neutral (goes together with monochrome) | measured | well supported | 5/41 (12%) | 57% | 0.0019 | 0.0048 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
+| mid-key (goes together with saturated colour) | measured | tentative | 11/48 (23%) | 50% | 0.2215 | — | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
+| lonely (goes together with saturated colour) | interpretation, subjective | tentative | 0/9 (0%) | 38% | 0.2215 | — | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Lawrence of Arabia: A lone figure in white robes running across the desert floor beneath a red dune |
 
-**Combinations**
-
-- low-key + moderate colour: 6/6 liked (emerging; alone 54% and 52%). Examples: Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid; In the Mood for Love: Chow.
+*Combinations: none.*
 
 **Compared with the hidden rule:** found saturated colour, monochrome; not found: symmetrical composition.
 
@@ -127,7 +130,7 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 
 **Judged:** 70 stills from 30 films, 32 liked. 2 skipped, and 2 judgment(s) changed later. **Evidence level:** established.
 
-**Signature:** A clear leaning towards distant shots. Early signs of a leaning towards wide shot. Possibly less drawn to monochrome.
+**Signature:** A clear leaning towards distant shots. Early signs of a leaning towards wide shot. Less drawn to gaze out of frame.
 
 **Draft interpretation:**
 
@@ -137,37 +140,39 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > Possibly, wide shot (whole figures with substantial surroundings): you liked 17 of 23 (74%), against 32% of the rest, across 15 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Lawrence of Arabia: The train attack.
 >
-> You were less drawn to monochrome (12 of 40 liked). That is a description of your judgments, not a gap to correct.
+> You were less drawn to gaze out of frame (2 of 19 liked). That is a description of your judgments, not a gap to correct.
 >
-> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: deep focus with distant shots, leading lines with distant shots and no figures with distant shots.
+> Some characteristics only appear to matter because they travel with the ones above: monochrome (accounted for by distant shots).
 >
-> Too few examples to say anything yet about vehicle (2 judged) and extreme close-up (2 judged).
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: deep focus with distant shots, face not visible with distant shots and leading lines with distant shots.
+>
+> Too few examples to say anything yet about patterned shadow (2 judged), motion blur (2 judged) and vehicle (2 judged).
 
 **Liked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| distant shots | observed | well supported | 23/31 (74%) | 23% | 0.0026 | 0.0003 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
-| wide shot | observed | emerging | 17/23 (74%) | 32% | 0.0582 | 0.0031 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
-| deep focus (goes together with distant shots) | observed | emerging | 28/48 (58%) | 18% | 0.0582 | 0.0051 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor |
-| leading lines (goes together with distant shots) | observed | emerging | 9/10 (90%) | 38% | 0.0586 | 0.0155 | Double Indemnity: The office corridor; Lawrence of Arabia: The train attack |
-| no figures (goes together with distant shots) | observed | emerging | 10/12 (83%) | 38% | 0.0878 | 0.0418 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Mad Max: Fury Road: Night on the salt flats |
-| cool (goes together with distant shots) | measured | emerging | 8/9 (89%) | 39% | 0.0878 | 0.0768 | Lawrence of Arabia: Lawrence on the roof of the wrecked train; Mad Max: Fury Road: Night on the salt flats |
-| daylight (goes together with distant shots) | observed | emerging | 20/32 (63%) | 32% | 0.1113 | 0.0184 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; It's a Wonderful Life: Mary runs across the Bedford Falls main street past the parked cars and awnings |
-| exterior (goes together with distant shots) | observed | emerging | 21/34 (62%) | 31% | 0.1113 | 0.0038 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| distant shots | observed | well supported | 23/31 (74%) | 23% | 0.0032 | 0.0003 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| wide shot | observed | emerging | 17/23 (74%) | 32% | 0.0537 | 0.0031 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| deep focus (goes together with distant shots) | observed | emerging | 28/48 (58%) | 18% | 0.0537 | 0.0051 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor |
+| face not visible (goes together with distant shots) | observed | emerging | 16/22 (73%) | 33% | 0.054 | 0.0014 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor |
+| leading lines (goes together with distant shots) | observed | emerging | 9/10 (90%) | 38% | 0.054 | 0.0155 | Double Indemnity: The office corridor; Lawrence of Arabia: The train attack |
+| no figures (goes together with distant shots) | observed | emerging | 10/12 (83%) | 38% | 0.0884 | 0.0418 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Mad Max: Fury Road: Night on the salt flats |
+| cool (goes together with distant shots) | measured | emerging | 8/9 (89%) | 39% | 0.0884 | 0.0768 | Lawrence of Arabia: Lawrence on the roof of the wrecked train; Mad Max: Fury Road: Night on the salt flats |
+| daylight (goes together with distant shots) | observed | emerging | 20/32 (63%) | 32% | 0.1187 | 0.0184 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; It's a Wonderful Life: Mary runs across the Bedford Falls main street past the parked cars and awnings |
 
 **Disliked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| shallow focus (goes together with distant shots) | observed | emerging | 2/16 (13%) | 56% | 0.0586 | 0.0016 | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
-| monochrome | measured | emerging | 12/40 (30%) | 67% | 0.0586 | 0.0131 | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
-| close shots | observed | emerging | 1/11 (9%) | 53% | 0.0878 | 0.005 | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
-| neutral (goes together with distant shots) | measured | emerging | 13/40 (33%) | 63% | 0.1113 | 0.0872 | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
-| artificial light (goes together with distant shots) | observed | tentative | 7/26 (27%) | 57% | 0.1537 | — | 12 Angry Men: Juror 3; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
-| interior (goes together with distant shots) | observed | tentative | 9/30 (30%) | 57% | 0.1732 | — | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
-| single figure (goes together with distant shots) | observed | tentative | 11/34 (32%) | 58% | 0.1834 | — | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
-| off-centre subject (goes together with distant shots) | observed | tentative | 6/22 (27%) | 54% | 0.2053 | — | Amélie: Amélie in the café; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| gaze out of frame | observed | well supported | 2/19 (11%) | 59% | 0.0176 | 0.0002 | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
+| shallow focus (goes together with distant shots) | observed | emerging | 2/16 (13%) | 56% | 0.054 | 0.0016 | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
+| monochrome (accounted for by distant shots) | measured | emerging | 12/40 (30%) | 67% | 0.054 | 0.0131 | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
+| close shots (goes together with gaze out of frame) | observed | emerging | 1/11 (9%) | 53% | 0.0884 | 0.005 | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
+| neutral (goes together with distant shots) | measured | emerging | 13/40 (33%) | 63% | 0.1187 | 0.0872 | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
+| artificial light (goes together with distant shots) | observed | tentative | 7/26 (27%) | 57% | 0.1654 | — | 12 Angry Men: Juror 3; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
+| interior (goes together with distant shots) | observed | tentative | 9/30 (30%) | 57% | 0.1879 | — | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
+| single figure (goes together with distant shots) | observed | tentative | 11/34 (32%) | 58% | 0.2018 | — | 12 Angry Men: Juror 3; Amélie: Amélie in the café |
 
 *Combinations: none.*
 
@@ -183,7 +188,7 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 
 **Judged:** 83 stills from 35 films, 36 liked. 6 skipped, and 6 judgment(s) changed later. **Evidence level:** established.
 
-**Signature:** A clear leaning towards shallow focus and interior.
+**Signature:** A clear leaning towards shallow focus. Early signs of a leaning towards clear air. Less drawn to veiled air.
 
 **Draft interpretation:**
 
@@ -191,37 +196,41 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > Clearly, shallow focus (only one plane is sharp; the rest is soft): you liked 16 of 17 (94%), against 30% of the rest, across 12 films. For example: 12 Angry Men: Juror 3; Amélie: Amélie in the café; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth.
 >
-> Clearly, interior (indoors): you liked 21 of 33 (64%), against 30% of the rest, across 16 films. For example: 12 Angry Men: Juror 3; Amélie: Amélie in the café; Double Indemnity: Keyes at his office door.
+> Possibly, clear air (nothing visible in the air): you liked 33 of 63 (52%), against 15% of the rest, across 25 films. For example: 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Amélie: Amélie in the café.
 >
-> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: close shots with shallow focus, artificial light with shallow focus and side light with shallow focus.
+> You were less drawn to veiled air (2 of 19 liked). That is a description of your judgments, not a gap to correct.
 >
-> Too few examples to say anything yet about vehicle (2 judged).
+> Some characteristics only appear to matter because they travel with the ones above: interior (accounted for by shallow focus).
+>
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: close shots with shallow focus, artificial light with shallow focus and gaze out of frame with shallow focus.
+>
+> Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and vehicle (2 judged).
 
 **Liked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
 | shallow focus | observed | well supported | 16/17 (94%) | 30% | 0.0002 | 0.0001 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
-| close shots (goes together with shallow focus) | observed | well supported | 11/12 (92%) | 35% | 0.0088 | 0.0014 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
-| interior | observed | well supported | 21/33 (64%) | 30% | 0.048 | 0.0322 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
-| artificial light (goes together with shallow focus) | observed | emerging | 17/26 (65%) | 33% | 0.0895 | 0.0666 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
-| side light (goes together with shallow focus) | observed | emerging | 15/22 (68%) | 34% | 0.0895 | 0.0212 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
-| eye level (goes together with shallow focus) | observed | emerging | 29/54 (54%) | 24% | 0.0895 | 0.0116 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
-| close-up (goes together with shallow focus) | observed | emerging | 5/5 (100%) | 40% | 0.0941 | 0.0197 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
-| off-centre subject (goes together with shallow focus) | observed | tentative | 17/28 (61%) | 35% | 0.2003 | — | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Amélie: Amélie leans in close |
+| close shots (goes together with shallow focus) | observed | well supported | 11/12 (92%) | 35% | 0.011 | 0.0014 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| interior (accounted for by shallow focus) | observed | well supported | 21/33 (64%) | 30% | 0.048 | 0.0322 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| clear air | observed | emerging | 33/63 (52%) | 15% | 0.048 | 0.0521 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
+| artificial light (goes together with shallow focus) | observed | emerging | 17/26 (65%) | 33% | 0.0873 | 0.0666 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| gaze out of frame (goes together with shallow focus) | observed | emerging | 14/20 (70%) | 35% | 0.0873 | 0.0167 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| side light (goes together with shallow focus) | observed | emerging | 15/22 (68%) | 34% | 0.0873 | 0.0212 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
+| eye level (goes together with shallow focus) | observed | emerging | 29/54 (54%) | 24% | 0.0873 | 0.0116 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
 
 **Disliked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| deep focus | observed | well supported | 14/54 (26%) | 76% | 0.0008 | 0.0003 | 12 Angry Men: The jurors around the table; The Bridge on the River Kwai: The bridge over the river at dawn |
-| distant shots (goes together with shallow focus) | observed | well supported | 10/40 (25%) | 61% | 0.0358 | 0.0134 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
-| exterior (goes together with shallow focus) | observed | well supported | 12/44 (27%) | 62% | 0.0358 | 0.022 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| deep focus | observed | well supported | 14/54 (26%) | 76% | 0.001 | 0.0003 | 12 Angry Men: The jurors around the table; The Bridge on the River Kwai: The bridge over the river at dawn |
+| veiled air | observed | well supported | 2/19 (11%) | 53% | 0.0319 | 0.0183 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| distant shots (goes together with shallow focus) | observed | well supported | 10/40 (25%) | 61% | 0.0371 | 0.0134 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| exterior (goes together with shallow focus) | observed | well supported | 12/44 (27%) | 62% | 0.0371 | 0.022 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
 | daylight (goes together with shallow focus) | observed | well supported | 11/41 (27%) | 60% | 0.048 | 0.0045 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
-| high or low camera (goes together with shallow focus) | observed | emerging | 7/29 (24%) | 54% | 0.0895 | 0.0116 | 12 Angry Men: The jurors around the table; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
-| leading lines (goes together with shallow focus) | observed | tentative | 2/14 (14%) | 49% | 0.1253 | — | Double Indemnity: The office corridor; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
-| silhouette (goes together with shallow focus) | observed | tentative | 0/6 (0%) | 47% | 0.2003 | — | Lawrence of Arabia: Lawrence on the roof of the wrecked train; Metropolis: The Tower of Babel parable |
-| top light (goes together with shallow focus) | observed | tentative | 3/15 (20%) | 49% | 0.2544 | — | 12 Angry Men: The jurors around the table; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| high or low camera (goes together with shallow focus) | observed | emerging | 7/29 (24%) | 54% | 0.0873 | 0.0116 | 12 Angry Men: The jurors around the table; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
+| mist or haze (goes together with shallow focus) | observed | tentative | 0/7 (0%) | 47% | 0.1158 | — | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| leading lines (goes together with shallow focus) | observed | tentative | 2/14 (14%) | 49% | 0.119 | — | Double Indemnity: The office corridor; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
 
 *Combinations: none.*
 
@@ -251,31 +260,245 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: monochrome with red and neutral with red.
 >
-> Too few examples to say anything yet about vehicle (2 judged) and extreme close-up (2 judged).
+> Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged).
 
 **Liked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| red | measured | well supported | 10/11 (91%) | 35% | 0.036 | 0.0023 | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
-| hand-drawn animation | observed | well supported | 11/13 (85%) | 35% | 0.036 | 0.0062 | Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid; My Neighbor Totoro: Mei |
-| moderate colour (accounted for by red) | measured | well supported | 18/26 (69%) | 31% | 0.036 | 0.0115 | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
-| orange | measured | tentative | 14/22 (64%) | 35% | 0.3092 | — | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
-| teal (goes together with hand-drawn animation) | measured | tentative | 7/9 (78%) | 38% | 0.3552 | — | Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds; My Neighbor Totoro: Mei |
+| red | measured | well supported | 10/11 (91%) | 35% | 0.0447 | 0.0023 | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
+| hand-drawn animation | observed | well supported | 11/13 (85%) | 35% | 0.0447 | 0.0062 | Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid; My Neighbor Totoro: Mei |
+| moderate colour (accounted for by red) | measured | well supported | 18/26 (69%) | 31% | 0.0447 | 0.0115 | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
+| orange | measured | tentative | 14/22 (64%) | 35% | 0.3839 | — | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
+| teal (goes together with hand-drawn animation) | measured | tentative | 7/9 (78%) | 38% | 0.4409 | — | Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds; My Neighbor Totoro: Mei |
 
 **Disliked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| live action | observed | well supported | 25/72 (35%) | 85% | 0.036 | 0.0062 | Amélie: Amélie leans in close; The Bridge on the River Kwai: The bridge over the river at dawn |
-| monochrome (goes together with red) | measured | emerging | 12/44 (27%) | 59% | 0.0654 | 0.0033 | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
-| neutral (goes together with red) | measured | emerging | 12/44 (27%) | 59% | 0.0654 | 0.0069 | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| live action | observed | well supported | 25/72 (35%) | 85% | 0.0447 | 0.0062 | Amélie: Amélie leans in close; The Bridge on the River Kwai: The bridge over the river at dawn |
+| monochrome (goes together with red) | measured | emerging | 12/44 (27%) | 59% | 0.0812 | 0.0033 | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| neutral (goes together with red) | measured | emerging | 12/44 (27%) | 59% | 0.0812 | 0.0069 | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
 
 *Combinations: none.*
 
 **Compared with the hidden rule:** found hand-drawn animation.
 
 **Limitations stated in the profile:** Associations describe this person's judgments of this library only; they are not a comparison with other people. Characteristics that always appear together in the works judged cannot be separated and are reported together. Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments.
+
+
+## Light in the air
+<a id="veiled-light"></a>
+
+**Hidden rule:** Likes frames with smoke, mist, dust or rain, or with shaped light such as beams, pools or glare (85%); otherwise 20%.
+
+**Judged:** 85 stills from 35 films, 41 liked. 4 skipped, and 3 judgment(s) changed later. **Evidence level:** established.
+
+**Signature:** A clear leaning towards shaped light, veiled air and glare. Less drawn to soft light.
+
+**Draft interpretation:**
+
+> Across 85 stills from 35 films you liked 41 (48%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.
+>
+> Clearly, shaped light (light that makes visible shapes: pools, beams, rim light, glare or patterned shadow): you liked 22 of 25 (88%), against 32% of the rest, across 17 films. For example: 12 Angry Men: The jurors around the table; Amélie: Amélie in the café; Double Indemnity: Keyes at his office door.
+>
+> Clearly, veiled air (something in the air between camera and subject: mist, smoke, rain or dust): you liked 17 of 19 (90%), against 36% of the rest, across 13 films. For example: The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room; Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds.
+>
+> Clearly, glare (a light source shines towards the lens: flare, bloom or a blazing lamp): you liked 9 of 9 (100%), against 42% of the rest, across 9 films. For example: 12 Angry Men: The jurors around the table; Amélie: Amélie in the café; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room.
+>
+> Clearly, hard light (crisp, sharp-edged shadows from a small or distant source): you liked 15 of 19 (79%), against 39% of the rest, across 11 films. For example: The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Double Indemnity: Phyllis Dietrichson at the top of the stairs; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit.
+>
+> Possibly, mist or haze (fog, mist or haze softens distance): you liked 7 of 7 (100%), against 44% of the rest, across 6 films. For example: The Bridge on the River Kwai: The bridge over the river at dawn; Metropolis: The city of Metropolis; Princess Mononoke: The Forest Spirit.
+>
+> Some characteristics only appear to matter because they travel with the ones above: top light (accounted for by even light).
+>
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: practical light with even light, smoke with even light and low-key with even light.
+>
+> Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged).
+
+**Liked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| shaped light | observed | well supported | 22/25 (88%) | 32% | 0.0001 | 0.0004 | 12 Angry Men: The jurors around the table; Amélie: Amélie in the café |
+| veiled air | observed | well supported | 17/19 (90%) | 36% | 0.0017 | 0.0038 | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room |
+| glare | observed | well supported | 9/9 (100%) | 42% | 0.0153 | 0.002 | 12 Angry Men: The jurors around the table; Amélie: Amélie in the café |
+| practical light (goes together with even light) | observed | well supported | 13/15 (87%) | 40% | 0.0199 | 0.0048 | 12 Angry Men: The jurors around the table; Amélie: Amélie in the café |
+| hard light | observed | well supported | 15/19 (79%) | 39% | 0.0482 | 0.0365 | The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Double Indemnity: Keyes at his office door |
+| mist or haze | observed | emerging | 7/7 (100%) | 44% | 0.0547 | 0.0216 | The Bridge on the River Kwai: The bridge over the river at dawn; Metropolis: The city of Metropolis |
+| top light (accounted for by even light) | observed | emerging | 10/12 (83%) | 43% | 0.1012 | 0.0648 | 12 Angry Men: The jurors around the table; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| smoke (goes together with even light) | observed | emerging | 8/9 (89%) | 43% | 0.1012 | 0.0481 | Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room; Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid |
+
+**Disliked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| even light | observed | well supported | 19/60 (32%) | 88% | 0.0001 | 0.0004 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
+| clear air | observed | well supported | 24/65 (37%) | 85% | 0.006 | 0.0133 | 12 Angry Men: Juror 3; 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod |
+| soft light | observed | well supported | 22/61 (36%) | 79% | 0.0123 | 0.0121 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| gaze at the camera (goes together with even light) | observed | emerging | 0/7 (0%) | 53% | 0.1012 | 0.0108 | My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back; Oldboy: Extreme close-up of an eye |
+| playful (goes together with even light) | interpretation, subjective | emerging | 2/13 (15%) | 54% | 0.1012 | 0.0375 | Amélie: Amélie leans in close; Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains |
+| frontal light (goes together with even light) | observed | emerging | 2/13 (15%) | 54% | 0.1012 | 0.0673 | Amélie: Amélie leans in close; Oldboy: Extreme close-up of an eye |
+| symmetrical composition (goes together with even light) | observed | tentative | 3/13 (23%) | 53% | 0.361 | — | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; Sherlock Jr.: The dream-projectionist walks down the aisle toward the screen |
+
+*Combinations: none.*
+
+**Compared with the hidden rule:** found veiled air, shaped light.
+
+**Limitations stated in the profile:** Associations describe this person's judgments of this library only; they are not a comparison with other people. Characteristics that always appear together in the works judged cannot be separated and are reported together. Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments. Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations.
+
+
+## Two strands
+<a id="two-strands"></a>
+
+**Hidden rule:** Two unrelated tastes: hard light in low-key frames (90%) and hand-drawn animation (90%); everything else 15%.
+
+**Judged:** 82 stills from 35 films, 26 liked. 7 skipped, and 2 judgment(s) changed later. **Evidence level:** established.
+
+**Signature:** A clear leaning towards hand-drawn animation. Notably, low-key with hard light (8 of 9 liked).
+
+**Draft interpretation:**
+
+> Across 82 stills from 35 films you liked 26 (32%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.
+>
+> Clearly, hand-drawn animation (drawn or painted animation): you liked 10 of 12 (83%), against 23% of the rest, across 4 films. For example: Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds; My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back; Princess Mononoke: The Forest Spirit.
+>
+> Together, low-key with hard light stands out: 8 of 9 liked, more than either alone (37% and 48%). For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor.
+>
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: teal with hand-drawn animation and analogous palette with hand-drawn animation.
+>
+> Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged).
+
+**Liked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| hand-drawn animation | observed | well supported | 10/12 (83%) | 23% | 0.0056 | 0.0107 | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; My Neighbor Totoro: Mei and Satsuki run toward the old country house on the day they move in |
+| teal (goes together with hand-drawn animation) | measured | emerging | 7/9 (78%) | 26% | 0.109 | 0.0171 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds |
+| analogous palette (goes together with hand-drawn animation) | measured | emerging | 11/18 (61%) | 23% | 0.109 | 0.0183 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+
+**Disliked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| live action | observed | well supported | 16/70 (23%) | 83% | 0.0056 | 0.0107 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+
+**Combinations**
+
+- low-key + hard light: 8/9 liked (emerging; alone 37% and 48%). Examples: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor.
+
+**Compared with the hidden rule:** found hand-drawn animation; not found: hard light.
+
+**Limitations stated in the profile:** Associations describe this person's judgments of this library only; they are not a comparison with other people. Characteristics that always appear together in the works judged cannot be separated and are reported together. Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments.
+
+
+## Stillness and space
+<a id="stillness"></a>
+
+**Hidden rule:** Likes still frames with empty space or a single figure (85%); dislikes implied motion and dense frames (10%); otherwise 35%.
+
+**Judged:** 82 stills from 35 films, 30 liked. 7 skipped, and 4 judgment(s) changed later. **Evidence level:** established.
+
+**Signature:** A clear leaning towards single figure. Early signs of a leaning towards stillness. Less drawn to implied motion. Notably, single figure with stillness (19 of 22 liked).
+
+**Draft interpretation:**
+
+> Across 82 stills from 35 films you liked 30 (37%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.
+>
+> Clearly, single figure (one person): you liked 22 of 37 (60%), against 18% of the rest, across 16 films. For example: 12 Angry Men: Juror 3; Amélie: Amélie in the café; Double Indemnity: Phyllis Dietrichson at the top of the stairs.
+>
+> Possibly, stillness (figures and objects are at rest): you liked 25 of 50 (50%), against 16% of the rest, across 18 films. For example: 12 Angry Men: Juror 3; Amélie: Amélie in the café; Double Indemnity: Phyllis Dietrichson at the top of the stairs.
+>
+> Together, single figure with stillness stands out: 19 of 22 liked, more than either alone (60% and 50%). For example: 12 Angry Men: Juror 3; Amélie: Amélie in the café.
+>
+> You were less drawn to implied motion (4 of 31 liked). That is a description of your judgments, not a gap to correct.
+>
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: close-up with single figure and intimate with single figure.
+>
+> Too few examples to say anything yet about dust (2 judged), rim light (2 judged) and vehicle (2 judged).
+
+**Liked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| single figure | observed | well supported | 22/37 (60%) | 18% | 0.0185 | 0.0113 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| stillness | observed | emerging | 25/50 (50%) | 16% | 0.0733 | 0.0133 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| close-up (goes together with single figure) | observed | emerging | 5/5 (100%) | 33% | 0.1384 | 0.0046 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| intimate (goes together with single figure) | interpretation, subjective | emerging | 6/7 (86%) | 32% | 0.1835 | 0.0161 | Amélie: Amélie leans in close; Double Indemnity: Phyllis Dietrichson at the top of the stairs |
+| close shots (goes together with single figure) | observed | tentative | 9/13 (69%) | 30% | 0.2079 | — | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+
+**Disliked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| implied motion | observed | well supported | 4/31 (13%) | 51% | 0.0403 | 0.0065 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| mist or haze (goes together with single figure) | observed | tentative | 0/8 (0%) | 41% | 0.3672 | — | The Bridge on the River Kwai: The bridge over the river at dawn; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+
+**Combinations**
+
+- single figure + stillness: 19/22 liked (well supported; alone 60% and 50%). Examples: 12 Angry Men: Juror 3; Amélie: Amélie in the café.
+
+**Compared with the hidden rule:** found stillness, implied motion; not found: negative space, dense composition.
+
+**Limitations stated in the profile:** Associations describe this person's judgments of this library only; they are not a comparison with other people. Characteristics that always appear together in the works judged cannot be separated and are reported together. Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments. Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations.
+
+
+## Momentum
+<a id="momentum"></a>
+
+**Hidden rule:** Likes movement: implied motion, blur or diagonal compositions (80%); otherwise 20%.
+
+**Judged:** 74 stills from 35 films, 43 liked. 15 skipped, and 1 judgment(s) changed later. **Evidence level:** established.
+
+**Signature:** A clear leaning towards implied motion. Early signs of a leaning towards diagonal composition and hard light. Less drawn to foreground framing.
+
+**Draft interpretation:**
+
+> Across 74 stills from 35 films you liked 43 (58%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.
+>
+> Clearly, implied motion (a figure or object is caught mid-movement): you liked 27 of 30 (90%), against 36% of the rest, across 19 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit; Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds.
+>
+> Possibly, diagonal composition (strong diagonal lines or placements organise the frame): you liked 14 of 15 (93%), against 49% of the rest, across 14 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds.
+>
+> Possibly, hard light (crisp, sharp-edged shadows from a small or distant source): you liked 14 of 16 (88%), against 50% of the rest, across 10 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; The Bridge on the River Kwai: Colonel Nicholson under the midday sun; Double Indemnity: The office corridor.
+>
+> You were less drawn to foreground framing (5 of 20 liked). That is a description of your judgments, not a gap to correct.
+>
+> These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: gaze within the frame with stillness.
+>
+> Too few examples to say anything yet about dust (2 judged), rim light (2 judged) and vehicle (2 judged).
+
+**Liked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| implied motion | observed | well supported | 27/30 (90%) | 36% | 0.0002 | 0.0001 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| diagonal composition | observed | emerging | 14/15 (93%) | 49% | 0.0663 | 0.0011 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| hard light | observed | emerging | 14/16 (88%) | 50% | 0.1612 | 0.0548 | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| negative space (goes together with stillness) | observed | tentative | 12/14 (86%) | 52% | 0.3036 | — | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Lawrence of Arabia: A lone figure in white robes running across the desert floor beneath a red dune |
+| exterior (goes together with stillness) | observed | tentative | 29/42 (69%) | 44% | 0.3036 | — | 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; The Bridge on the River Kwai: Colonel Nicholson under the midday sun |
+| high-key (goes together with stillness) | measured | tentative | 6/6 (100%) | 54% | 0.3036 | — | Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains; Paths of Glory: Dax goes over the top |
+| smooth surfaces (goes together with hard light) | measured | tentative | 19/25 (76%) | 49% | 0.345 | — | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| joyful (goes together with stillness) | interpretation, subjective | tentative | 5/5 (100%) | 55% | 0.4179 | — | It's a Wonderful Life: Mary in the parlour of the Hatch house; My Neighbor Totoro: Mei and Satsuki run toward the old country house on the day they move in |
+
+**Disliked characteristics**
+
+| Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
+|---|---|---|---|---|---|---|---|
+| stillness | observed | well supported | 15/43 (35%) | 90% | 0.0001 | 0 | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+| foreground framing | observed | well supported | 5/20 (25%) | 70% | 0.0387 | 0.0007 | Amélie: Amélie leans in close; The Bridge on the River Kwai: The bridge over the river at dawn |
+| frame within a frame | observed | emerging | 2/11 (18%) | 65% | 0.1329 | 0.0232 | Double Indemnity: Keyes at his office door; Oldboy: Dae-su's beaten opponents on the floor by the open lift |
+| gaze within the frame (goes together with stillness) | observed | emerging | 0/5 (0%) | 62% | 0.1612 | 0.0149 | 12 Angry Men: The jurors around the table; Double Indemnity: Keyes at his office door |
+| melancholy (goes together with stillness) | interpretation, subjective | tentative | 3/12 (25%) | 65% | 0.2964 | — | The Bridge on the River Kwai: The bridge over the river at dawn; In the Mood for Love: Chow |
+| yellow (goes together with stillness) | measured | tentative | 2/9 (22%) | 63% | 0.3036 | — | Amélie: Amélie leans in close; In the Mood for Love: Chow |
+| moderate surface detail (goes together with foreground framing) | measured | tentative | 19/41 (46%) | 73% | 0.3036 | — | 12 Angry Men: Juror 3; Double Indemnity: Keyes at his office door |
+| soft light (goes together with stillness) | observed | tentative | 28/55 (51%) | 79% | 0.3833 | — | 12 Angry Men: Juror 3; Amélie: Amélie leans in close |
+
+*Combinations: none.*
+
+**Compared with the hidden rule:** found implied motion, diagonal composition; not found: motion blur.
+
+**Limitations stated in the profile:** Associations describe this person's judgments of this library only; they are not a comparison with other people. Characteristics that always appear together in the works judged cannot be separated and are reported together. Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments. Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations.
 
 
 ## Eclectic
@@ -293,21 +516,21 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > No characteristic separates your likes from your dislikes clearly yet; your likes range as widely as everything you judged.
 >
-> Too few examples to say anything yet about vehicle (2 judged).
+> Too few examples to say anything yet about visible beams (2 judged), patterned shadow (2 judged) and motion blur (2 judged).
 
 **Liked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| ominous | interpretation, subjective | tentative | 13/15 (87%) | 47% | 0.3359 | — | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
-| small group | observed | tentative | 11/12 (92%) | 48% | 0.3359 | — | 12 Angry Men: The jurors around the table; Double Indemnity: The office corridor |
-| strong tonal symmetry | measured | tentative | 7/7 (100%) | 51% | 0.3359 | — | The Bridge on the River Kwai: The bridge over the river at dawn; Mad Max: Fury Road: Night on the salt flats |
+| ominous | interpretation, subjective | tentative | 13/15 (87%) | 47% | 0.4132 | — | Double Indemnity: The office corridor; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains |
+| small group | observed | tentative | 11/12 (92%) | 48% | 0.4132 | — | 12 Angry Men: The jurors around the table; Double Indemnity: The office corridor |
+| strong tonal symmetry | measured | tentative | 7/7 (100%) | 51% | 0.4132 | — | The Bridge on the River Kwai: The bridge over the river at dawn; Mad Max: Fury Road: Night on the salt flats |
 
 **Disliked characteristics**
 
 | Characteristic | Basis | Strength | Liked when present | Rest | q | Across films/books (p) | Examples |
 |---|---|---|---|---|---|---|---|
-| single figure | observed | tentative | 12/31 (39%) | 69% | 0.3359 | — | 12 Angry Men: Juror 3; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit |
+| single figure | observed | tentative | 12/31 (39%) | 69% | 0.4132 | — | 12 Angry Men: Juror 3; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit |
 
 *Combinations: none.*
 
@@ -331,7 +554,7 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 >
 > No characteristic separates your likes from your dislikes clearly yet.
 >
-> Too few examples to say anything yet about live action (11 judged), lonely (2 judged) and ominous (2 judged).
+> Too few examples to say anything yet about live action (11 judged), colour accent (2 judged) and lonely (2 judged).
 
 *Liked characteristics: none.*
 
@@ -434,7 +657,7 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 
 *Combinations: none.*
 
-**Compared with the hidden rule:** none found; not found: lyrical prose, experimental prose.
+**Compared with the hidden rule:** found restrained prose; not found: lyrical prose, experimental prose.
 
 **Limitations stated in the profile:** Associations describe this person's judgments of this library only; they are not a comparison with other people. Characteristics that always appear together in the works judged cannot be separated and are reported together. Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments. Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations.
 
@@ -442,7 +665,7 @@ The **draft interpretation** is the engine's templated reading (`profile.narrati
 ## Literature today (real library)
 <a id="real-literature-today"></a>
 
-**Hidden rule:** Has judged the five passages that are live today; likes the three narrated in the first person in the past tense.
+**Hidden rule:** Has judged the five live passages; likes the three narrated in the first person in the past tense.
 
 **Judged:** 5 passages from 5 books, 3 liked. 0 skipped, and 0 judgment(s) changed later. **Evidence level:** insufficient.
 

@@ -9,9 +9,8 @@
   "draftInterpretation": [
     "Across 78 stills from 35 films you liked 26 (33%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
     "Clearly, saturated colour (intense, vivid colour): you liked 9 of 10 (90%), against 25% of the rest, across 7 films. For example: Amélie: Amélie in the café; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth; Mad Max: Fury Road: Night on the salt flats.",
-    "Together, low-key with moderate colour stands out: 6 of 6 liked, more than either alone (54% and 52%). For example: Howl's Moving Castle: Sophie on the outside stair looks down the street as the town burns at night after an air raid; In the Mood for Love: Chow.",
-    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: orange with monochrome, warm with monochrome and yellow with monochrome.",
-    "Too few examples to say anything yet about vehicle (2 judged), extreme close-up (2 judged) and toned print (2 judged)."
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: single-hue palette with monochrome, orange with monochrome and warm with monochrome.",
+    "Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged)."
   ],
   "profile": {
     "schema": "pallas.taste-profile/1",
@@ -54,11 +53,11 @@
       "eventCount": 90,
       "lastEventAt": "2026-10-10T19:29:18.768Z",
       "judgmentsDigest": "e1958fc8",
-      "vocabularyVersion": 2
+      "vocabularyVersion": 3
     },
     "evidenceLevel": "established",
     "signature": {
-      "summary": "A clear leaning towards saturated colour. Notably, low-key with moderate colour (6 of 6 liked).",
+      "summary": "A clear leaning towards saturated colour.",
       "terms": [
         "saturation:saturated"
       ],
@@ -94,7 +93,7 @@
             0.982
           ],
           "p": 0.0001,
-          "q": 0.0038,
+          "q": 0.0048,
           "leaveOneWorkOutP": 0.001,
           "workLevelP": 0.0013
         },
@@ -114,6 +113,58 @@
           ],
           "contradicting": [
             "mad-max-fury-road-01"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "harmony:single-hue",
+        "dimension": "harmony",
+        "value": "single-hue",
+        "label": "single-hue palette",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.714,
+          "rateWhenAbsent": 0.25,
+          "difference": 0.464,
+          "interval": [
+            0.454,
+            0.883
+          ],
+          "p": 0.0016,
+          "q": 0.0424,
+          "leaveOneWorkOutP": 0.0149,
+          "workLevelP": 0.042
+        },
+        "explanation": "Liked 10 of 14 works with single-hue palette (71%), against 16 of 64 without it (25%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "lawrence-of-arabia-01",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "rear-window-02",
+            "the-godfather-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "mad-max-fury-road-01",
+            "north-by-northwest-01",
+            "rear-window-01",
+            "vertigo-01"
           ],
           "supportingWorks": 7
         }
@@ -140,7 +191,7 @@
             0.767
           ],
           "p": 0.0037,
-          "q": 0.0752,
+          "q": 0.0784,
           "leaveOneWorkOutP": 0.0226,
           "workLevelP": 0.1468
         },
@@ -200,7 +251,7 @@
             0.733
           ],
           "p": 0.005,
-          "q": 0.0752,
+          "q": 0.0802,
           "leaveOneWorkOutP": 0.028,
           "workLevelP": 0.084
         },
@@ -263,7 +314,7 @@
             0.937
           ],
           "p": 0.0052,
-          "q": 0.0752,
+          "q": 0.0802,
           "leaveOneWorkOutP": 0.0291,
           "workLevelP": 0.0289
         },
@@ -310,7 +361,7 @@
             0.712
           ],
           "p": 0.0104,
-          "q": 0.112,
+          "q": 0.1238,
           "leaveOneWorkOutP": 0.0333,
           "workLevelP": 0.032
         },
@@ -353,6 +404,50 @@
         }
       },
       {
+        "feature": "lightPattern:glare",
+        "dimension": "lightPattern",
+        "value": "glare",
+        "label": "glare",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 6,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.292,
+          "difference": 0.542,
+          "interval": [
+            0.436,
+            0.97
+          ],
+          "p": 0.0142,
+          "q": 0.1521,
+          "leaveOneWorkOutP": 0.0378,
+          "workLevelP": 0.0236
+        },
+        "explanation": "Liked 5 of 6 works with glare (83%), against 21 of 72 without it (29%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "howls-moving-castle-02",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "psycho-02"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
         "feature": "contrast:low",
         "dimension": "contrast",
         "value": "low",
@@ -374,7 +469,7 @@
             0.815
           ],
           "p": 0.0082,
-          "q": 0.101,
+          "q": 0.11,
           "leaveOneWorkOutP": 0.0528
         },
         "explanation": "Liked 10 of 16 works with low contrast (63%), against 16 of 62 without it (26%).",
@@ -406,6 +501,62 @@
         }
       },
       {
+        "feature": "harmony:analogous",
+        "dimension": "harmony",
+        "value": "analogous",
+        "label": "analogous palette",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 20,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.55,
+          "rateWhenAbsent": 0.259,
+          "difference": 0.291,
+          "interval": [
+            0.342,
+            0.742
+          ],
+          "p": 0.0269,
+          "q": 0.2215
+        },
+        "explanation": "Liked 11 of 20 works with analogous palette (55%), against 15 of 58 without it (26%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "oldboy-01",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-03",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "howls-moving-castle-01",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "parasite-01",
+            "parasite-02",
+            "princess-mononoke-01"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
         "feature": "saturation:moderate",
         "dimension": "saturation",
         "value": "moderate",
@@ -427,7 +578,7 @@
             0.708
           ],
           "p": 0.0344,
-          "q": 0.25
+          "q": 0.2528
         },
         "explanation": "Liked 12 of 23 works with moderate colour (52%), against 14 of 55 without it (25%).",
         "notes": [],
@@ -484,7 +635,7 @@
             0.848
           ],
           "p": 0.0357,
-          "q": 0.25
+          "q": 0.2528
         },
         "explanation": "Liked 7 of 11 works with red (64%), against 19 of 67 without it (28%).",
         "notes": [
@@ -531,7 +682,7 @@
             0.918
           ],
           "p": 0.0378,
-          "q": 0.25
+          "q": 0.2528
         },
         "explanation": "Liked 5 of 7 works with intimate (71%), against 21 of 71 without it (30%).",
         "notes": [
@@ -574,7 +725,7 @@
             0.727
           ],
           "p": 0.0524,
-          "q": 0.3222
+          "q": 0.3301
         },
         "explanation": "Liked 10 of 19 works with ominous (53%), against 16 of 59 without it (27%).",
         "notes": [
@@ -608,6 +759,56 @@
         }
       },
       {
+        "feature": "lightPattern:pools",
+        "dimension": "lightPattern",
+        "value": "pools",
+        "label": "pools of light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:saturated",
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 0.571,
+          "rateWhenAbsent": 0.281,
+          "difference": 0.29,
+          "interval": [
+            0.326,
+            0.786
+          ],
+          "p": 0.0584,
+          "q": 0.3439
+        },
+        "explanation": "Liked 8 of 14 works with pools of light (57%), against 18 of 64 without it (28%).",
+        "notes": [
+          "goes together with saturated colour in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "princess-mononoke-02",
+            "rear-window-02",
+            "spirited-away-03",
+            "the-godfather-01",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "metropolis-03",
+            "mr-smith-goes-to-washington-03",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "sherlock-jr-02",
+            "the-apartment-02"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
         "feature": "lightSource:practical",
         "dimension": "lightSource",
         "value": "practical",
@@ -629,7 +830,7 @@
             0.807
           ],
           "p": 0.0918,
-          "q": 0.4643
+          "q": 0.427
         },
         "explanation": "Liked 7 of 12 works with practical light (58%), against 19 of 66 without it (29%).",
         "notes": [
@@ -677,7 +878,7 @@
             0.807
           ],
           "p": 0.0918,
-          "q": 0.4643
+          "q": 0.427
         },
         "explanation": "Liked 7 of 12 works with cool (58%), against 19 of 66 without it (29%).",
         "notes": [
@@ -727,7 +928,7 @@
             0.208
           ],
           "p": 0,
-          "q": 0.0002,
+          "q": 0.0003,
           "leaveOneWorkOutP": 0,
           "workLevelP": 0.0006
         },
@@ -801,7 +1002,7 @@
             0.255
           ],
           "p": 0,
-          "q": 0.0015,
+          "q": 0.0019,
           "leaveOneWorkOutP": 0.0001,
           "workLevelP": 0.0048
         },
@@ -880,7 +1081,7 @@
             0.365
           ],
           "p": 0.0252,
-          "q": 0.2186
+          "q": 0.2215
         },
         "explanation": "Liked 11 of 48 works with mid-key (23%), against 15 of 30 without it (50%).",
         "notes": [
@@ -964,7 +1165,7 @@
             0.299
           ],
           "p": 0.0254,
-          "q": 0.2186
+          "q": 0.2215
         },
         "explanation": "Liked 0 of 9 works with lonely (0%), against 26 of 69 without it (38%).",
         "notes": [
@@ -987,43 +1188,26 @@
         }
       }
     ],
-    "combinations": [
-      {
-        "features": [
-          "key:low",
-          "saturation:moderate"
-        ],
-        "labels": [
-          "low-key",
-          "moderate colour"
-        ],
-        "direction": "liked",
-        "strength": "emerging",
-        "stats": {
-          "exposed": 6,
-          "likedWhenPresent": 6,
-          "rateTogether": 1,
-          "rateFirstAlone": 0.538,
-          "rateSecondAlone": 0.522,
-          "p": 0.0009,
-          "pBeyondFindings": 0.0009,
-          "q": 0.0979
-        },
-        "explanation": "low-key with moderate colour: liked 6 of 6 (100%), against 54% for low-key overall and 52% for moderate colour overall.",
-        "evidence": {
-          "supporting": [
-            "howls-moving-castle-02",
-            "in-the-mood-for-love-02",
-            "north-by-northwest-02",
-            "north-by-northwest-03",
-            "princess-mononoke-02",
-            "rear-window-02"
-          ],
-          "contradicting": []
-        }
-      }
-    ],
+    "combinations": [],
     "notYetClear": [
+      {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 0
+      },
       {
         "feature": "setting:vehicle",
         "label": "vehicle",
@@ -1041,10 +1225,16 @@
         "label": "toned print",
         "exposed": 2,
         "liked": 0
+      },
+      {
+        "feature": "atmospherics:rain",
+        "label": "rain",
+        "exposed": 1,
+        "liked": 0
       }
     ],
     "spread": {
-      "overall": 1.021,
+      "overall": 1.001,
       "reading": "broad",
       "byDimension": {
         "key": {
@@ -1081,6 +1271,13 @@
           "reading": "broad",
           "valuesJudged": 6,
           "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 0.929,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "symmetry": {
           "label": "tonal symmetry",
@@ -1144,6 +1341,34 @@
           "reading": "broad",
           "valuesJudged": 11,
           "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 1.022,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 5
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 0.782,
+          "reading": "mixed",
+          "valuesJudged": 6,
+          "valuesLiked": 4
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 1.076,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 0.805,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
         },
         "focus": {
           "label": "depth of field",
@@ -1228,6 +1453,20 @@
         "basis": "measured"
       },
       {
+        "term": "harmony:analogous",
+        "label": "analogous palette",
+        "definition": "Neighbouring hues, such as red, orange and yellow, share the frame.",
+        "dimension": "colour harmony",
+        "basis": "measured"
+      },
+      {
+        "term": "harmony:single-hue",
+        "label": "single-hue palette",
+        "definition": "One hue family dominates the coloured areas (three quarters or more).",
+        "dimension": "colour harmony",
+        "basis": "measured"
+      },
+      {
         "term": "hue:orange",
         "label": "orange",
         "definition": "Oranges, ambers and skin tones.",
@@ -1261,6 +1500,20 @@
         "definition": "Tones are spread around the middle greys; neither shadow nor light dominates.",
         "dimension": "tonal key",
         "basis": "measured"
+      },
+      {
+        "term": "lightPattern:glare",
+        "label": "glare",
+        "definition": "A light source shines towards the lens: flare, bloom or a blazing lamp.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:pools",
+        "label": "pools of light",
+        "definition": "Isolated areas of light surrounded by darkness.",
+        "dimension": "light pattern",
+        "basis": "observed"
       },
       {
         "term": "lightSource:practical",

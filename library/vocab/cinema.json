@@ -189,15 +189,15 @@
       "definition": "How much fine edge detail and texture the image carries, measured as average local gradient.",
       "values": {
         "smooth": {
-          "label": "smooth",
+          "label": "smooth surfaces",
           "definition": "Large even areas with few edges."
         },
         "moderate": {
-          "label": "moderate detail",
+          "label": "moderate surface detail",
           "definition": "A mix of even areas and textured ones."
         },
         "dense": {
-          "label": "dense detail",
+          "label": "dense surface detail",
           "definition": "Busy surfaces, many edges and fine texture across the frame."
         }
       }

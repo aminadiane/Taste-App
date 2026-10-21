@@ -9,7 +9,7 @@
   "draftInterpretation": [
     "Across 70 stills from 30 films you liked 39 (56%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
     "No characteristic separates your likes from your dislikes clearly yet; your likes range as widely as everything you judged.",
-    "Too few examples to say anything yet about vehicle (2 judged)."
+    "Too few examples to say anything yet about visible beams (2 judged), patterned shadow (2 judged) and motion blur (2 judged)."
   ],
   "profile": {
     "schema": "pallas.taste-profile/1",
@@ -52,7 +52,7 @@
       "eventCount": 77,
       "lastEventAt": "2026-10-08T19:25:26.794Z",
       "judgmentsDigest": "2ac1068e",
-      "vocabularyVersion": 2
+      "vocabularyVersion": 3
     },
     "evidenceLevel": "early",
     "signature": {
@@ -83,7 +83,7 @@
             0.963
           ],
           "p": 0.0079,
-          "q": 0.3359
+          "q": 0.4132
         },
         "explanation": "Liked 13 of 15 works with ominous (87%), against 26 of 55 without it (47%).",
         "notes": [],
@@ -132,7 +132,7 @@
             0.985
           ],
           "p": 0.0087,
-          "q": 0.3359
+          "q": 0.4132
         },
         "explanation": "Liked 11 of 12 works with small group (92%), against 28 of 58 without it (48%).",
         "notes": [],
@@ -178,7 +178,7 @@
             1
           ],
           "p": 0.015,
-          "q": 0.3359
+          "q": 0.4132
         },
         "explanation": "Liked 7 of 7 works with strong tonal symmetry (100%), against 32 of 63 without it (51%).",
         "notes": [],
@@ -194,68 +194,6 @@
           ],
           "contradicting": [],
           "supportingWorks": 6
-        }
-      },
-      {
-        "feature": "lightSource:artificial",
-        "dimension": "lightSource",
-        "value": "artificial",
-        "label": "artificial light",
-        "basis": "observed",
-        "subjective": false,
-        "aliases": [],
-        "strength": "tentative",
-        "explainedBy": "atmosphere:ominous",
-        "inseparableFrom": null,
-        "stats": {
-          "exposed": 26,
-          "likedWhenPresent": 19,
-          "rateWhenPresent": 0.731,
-          "rateWhenAbsent": 0.455,
-          "difference": 0.276,
-          "interval": [
-            0.539,
-            0.863
-          ],
-          "p": 0.0283,
-          "q": 0.4917
-        },
-        "explanation": "Liked 19 of 26 works with artificial light (73%), against 20 of 44 without it (45%).",
-        "notes": [
-          "accounted for by ominous and small group together"
-        ],
-        "evidence": {
-          "supporting": [
-            "amelie-02",
-            "double-indemnity-01",
-            "double-indemnity-03",
-            "in-the-mood-for-love-01",
-            "in-the-mood-for-love-02",
-            "its-a-wonderful-life-03",
-            "metropolis-02",
-            "mr-smith-goes-to-washington-01",
-            "mr-smith-goes-to-washington-02",
-            "mr-smith-goes-to-washington-03",
-            "north-by-northwest-03",
-            "oldboy-01",
-            "paths-of-glory-01",
-            "psycho-01",
-            "sherlock-jr-01",
-            "some-like-it-hot-02",
-            "the-grand-budapest-hotel-01",
-            "the-great-dictator-01",
-            "the-passion-of-joan-of-arc-01"
-          ],
-          "contradicting": [
-            "12-angry-men-02",
-            "dr-strangelove-02",
-            "its-a-wonderful-life-01",
-            "on-the-waterfront-01",
-            "psycho-02",
-            "some-like-it-hot-01",
-            "the-gold-rush-01"
-          ],
-          "supportingWorks": 15
         }
       }
     ],
@@ -282,7 +220,7 @@
             0.562
           ],
           "p": 0.0154,
-          "q": 0.3359
+          "q": 0.4132
         },
         "explanation": "Liked 12 of 31 works with single figure (39%), against 27 of 39 without it (69%).",
         "notes": [],
@@ -329,10 +267,34 @@
     "combinations": [],
     "notYetClear": [
       {
+        "feature": "lightPattern:beams",
+        "label": "visible beams",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
         "feature": "setting:vehicle",
         "label": "vehicle",
         "exposed": 2,
         "liked": 1
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 1,
+        "liked": 0
       },
       {
         "feature": "shotScale:extreme-close-up",
@@ -342,7 +304,7 @@
       }
     ],
     "spread": {
-      "overall": 1.005,
+      "overall": 0.997,
       "reading": "broad",
       "byDimension": {
         "key": {
@@ -379,6 +341,13 @@
           "reading": "broad",
           "valuesJudged": 6,
           "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 1.003,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "symmetry": {
           "label": "tonal symmetry",
@@ -442,6 +411,34 @@
           "reading": "broad",
           "valuesJudged": 11,
           "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 0.883,
+          "reading": "mixed",
+          "valuesJudged": 7,
+          "valuesLiked": 5
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 0.99,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 1.01,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 0.937,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
         },
         "focus": {
           "label": "depth of field",
@@ -523,13 +520,6 @@
         "label": "single figure",
         "definition": "One person.",
         "dimension": "figures",
-        "basis": "observed"
-      },
-      {
-        "term": "lightSource:artificial",
-        "label": "artificial light",
-        "definition": "Electric light from sources outside the frame.",
-        "dimension": "apparent light source",
         "basis": "observed"
       },
       {
