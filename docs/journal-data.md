@@ -16,7 +16,7 @@ For each area (`cinema`, `literature`):
 | `preferenceChanges` | Each reversed judgment: from, to, when | Events |
 | `timeline.byMonth`, `timeline.bySession` | Likes, dislikes, skips and undos per month and per session | Events and sessions |
 | `techniques` | Craft characteristics of the works responded to (lighting, composition, shot scale, and so on for cinema; narration, syntax, diction, devices and so on for literature), with how many were liked, disliked or skipped, first encounter and definition | Events plus metadata and vocabulary |
-| `profiles`, `profileChanges` | Saved Taste Profile snapshots in order, and what changed between consecutive ones | `store.profiles` and `Pallas.taste.profiles.compare` |
+| `profiles`, `profileChanges` | Saved Taste Profile snapshots in order, each with its saved reading (summary and theme titles), and what changed between consecutive ones | `store.profiles` and `Pallas.taste.profiles.compare` |
 | `reflections` | The person's optional notes, with edit history | `store.reflections` |
 
 The document also holds `owner` (anonymous id; `accountId` reserved), `reflectionsWithoutArea`, and `learning.encountered`, which is reserved for explicit educational content.

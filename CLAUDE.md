@@ -48,6 +48,7 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 - `js/book.js` — the Literature screen (660×520 book space, one scale transform, CSS 3D, WAAPI page turns, dog-ear, tear).
 - `js/drawer.js` — the Drawer and shared shelf helpers. `js/store.js` — persistence (see below).
 - `js/taste/` — the taste-analysis engine: `stats.js`, `features.js`, `analyse.js`, `profile.js`, and `index.js` (the browser facade, `Pallas.taste`). Pure and deterministic; see `docs/taste-engine.md`. No visible interface.
+- `js/taste/interpret.js` — the interpretation layer: readable, grounded prose from findings, separate from the statistics, using craft knowledge in `library/vocab/qualities.json`. Every claim carries a check (`tests/fixtures/verify-interpretation.js`). See `docs/interpretation-layer.md`.
 - `js/journal.js` — assembles Taste Journal data from the store (`Pallas.journal`). No visible interface. See `docs/journal-data.md`.
 - Skip and undo handlers without controls: `Pallas.cinema` and `Pallas.literature` (`skip`, `undo`, `canUndo`, `busy`).
 - `library/stills.json` — cinema library (films keyed by slug, one record per still). Display images in `library/stills/<slug>/NN.jpg`, untouched downloads in `library/originals/`.
@@ -71,7 +72,7 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 - `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, and the journal.
 - `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass.
 - `node tools/stress-engine.js --seeds 100`: the engine stress test (`docs/engine-stress-report.md`). Re-run it after any change to `js/taste/analyse.js`, and change thresholds only when its results support it.
-- `node tools/example-profiles.js`: regenerates the example Taste Profiles in `docs/examples/taste-profiles/`.
+- `node tools/example-profiles.js` and `node tools/example-interpretations.js`: regenerate the examples in `docs/examples/`. The simulated people are in `tests/fixtures/personas.js`.
 
 ### Local preview
 

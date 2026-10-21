@@ -74,7 +74,8 @@
 
     // Saved profiles and how each differs from the one before.
     const profiles = (doc.profiles || []).filter((p) => p.area === area);
-    const profileHistory = profiles.map((p) => ({ id: p.id, generatedAt: p.generatedAt || p.createdAt, engine: p.engine || null, evidenceLevel: p.evidenceLevel || null, summary: (p.signature && p.signature.summary) || null, judged: p.basedOn ? p.basedOn.judged : null }));
+    const profileHistory = profiles.map((p) => ({ id: p.id, generatedAt: p.generatedAt || p.createdAt, engine: p.engine || null, evidenceLevel: p.evidenceLevel || null, summary: (p.signature && p.signature.summary) || null, judged: p.basedOn ? p.basedOn.judged : null,
+      reading: p.reading ? { summary: p.reading.summary, generator: p.reading.generator, themes: (p.reading.sections || []).filter((s) => s.kind === 'theme').map((s) => s.title) } : null }));
     const profileChanges = compare && profiles.length > 1 ? profiles.slice(1).map((p, i) => compare(profiles[i], p)) : [];
 
     const reflections = (doc.reflections || []).filter((r) => r.area === area);

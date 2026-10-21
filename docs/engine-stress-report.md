@@ -49,6 +49,10 @@
 - The work-level check is stricter. In one simulated profile, warmth that holds across stills but only marginally across films (work-level *p* = 0.056) is now *emerging* rather than *well supported*. Recovery of strong rules fell by about one point, and the restrained-prose rule from 100% to 95%.
 - Thresholds were not tuned to these results. The new checks use the existing conventional levels (0.05 and 0.2).
 
+## Re-run with vocabulary version 3
+
+After the vocabulary grew by six dimensions (more characteristics tested per person), the 100-user run stayed within three points of the table above. Random likes: 2–3% any well-supported finding. Likes for whole films: 9%. Strong rules recovered: 86–100%. Moderate rule (hard light): 58%.
+
 ## Remaining limitations
 
 - People who like whole films still get a well-supported finding 10% of the time (4% when they like only three films). Some of these are genuine: the films they chose do share a look. The engine cannot tell taste in a film's look from loyalty to the film, and profiles say which works support each finding.

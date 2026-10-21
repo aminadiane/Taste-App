@@ -160,7 +160,16 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
   - profiles record the vocabulary version, and `Pallas.taste.staleness(area)` says when to regenerate
 - *Remaining:* real-user calibration once there is real data. Literature findings wait on more passages, since five cannot support any.
 
-### 6. Personalized Taste Profiles — data foundation built 2026-10-21; screen waits on design
+### 6. Personalized Taste Profiles — data foundation and interpretation layer built 2026-10-21; screen waits on design
+
+- **Interpretation layer** (`js/taste/interpret.js`, `docs/interpretation-layer.md`) turns findings into grounded prose, separately from the statistics:
+  - themes named from craft qualities in `library/vocab/qualities.json`
+  - combinations, and conditions within a liked characteristic
+  - separate strands, aversions, and stated uncertainty
+  - specific liked and disliked works for each claim
+  - a verifiable `check` on every claim
+- Fourteen simulated people's interpretations, with their hidden rules and verification: `docs/examples/interpretations/README.md`. Tests: `tests/interpret.test.js`.
+- Snapshots save the reading beside the statistics (`reading`), and the Journal shows it.
 
 - Profile snapshot format `pallas.taste-profile/1` (`docs/taste-profile-format.md`): signature, preferred and disliked characteristics with evidence and statistics, combinations, confidence (`evidenceLevel` and per-finding strength), glossary terminology, limitations, an empty `interpretations` slot for later AI commentary, and `regeneratedFrom`.
 - Store: `profiles(area)`, `latestProfile`, `deleteProfile`. Browser: `Pallas.taste.profile / snapshot / regenerate / lastChange`.
@@ -240,6 +249,23 @@ All work is committed and pushed to the branch behind draft PR #1. Nothing is me
 10. **Combinations are now conservative.** A real two-characteristic taste is reported less often (28% in one test) in exchange for almost no spurious ones. Keep this balance?
 11. **Info-page notes for the 20 pending passages** (author, work, technique notes). Should Claude draft them from the research for your approval, or will you supply them?
 12. **Permission to display the 20 new passages.** Work's report says reuse permission was not established for any of them, so a decision is needed before their text is entered.
+
+## Interpretation work (2026-10-21, `feature/pallas-overnight`)
+
+| Task | Status |
+|---|---|
+| Audit stills against images | Done. All 89 re-viewed (no further corrections beyond the first audit's 6). |
+| Vocabulary richness | Version 3 adds light pattern, atmospherics, gaze, motion (observed), colour harmony and accent (measured), and groups for shaped light and veiled air. |
+| Interpretation layer | Built, separate from the statistics, and replaceable under the same contract and checks. |
+| Combinations explained | Themes and combination sections explain how techniques work together, with counter-examples that have one technique but not the other. |
+| Grounding and uncertainty | Every claim cites liked and disliked works and carries a re-derivable check; an uncertainty section always closes. |
+| 10+ simulated people | 14, including eclectic, two-strands, too-short and real-literature cases. |
+| Tests | Supported, specific, different between people (average overlap below 25%), silent without evidence, no judging language: 74 tests pass. |
+
+**Questions for review (interpretation):**
+13. **Quality names and explanations** in `library/vocab/qualities.json` (chiaroscuro, closeness, scale and space, designed colour, and so on). Are these the words Pallas should use?
+14. **Voice of the interpretation.** It is direct and specific: "The stills you liked consistently share … You can see it in … By contrast, you did not like …". Should it be warmer, more essayistic, or briefer?
+15. **Later AI writer.** A reviewed model could rewrite the prose under the same contract and checks. Is that wanted, given it is a paid service?
 
 ## Decisions pending
 

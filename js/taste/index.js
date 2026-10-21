@@ -33,15 +33,21 @@
     return T.profiles.build(result, { judgments: j, history, generatedAt: new Date().toISOString() });
   }
 
+  // Saves the profile with the interpretation of the same judgments beside it (tagged with its generator version),
+  // so the Journal can show how the reading of a taste changed. The statistics and the prose stay in separate fields.
   async function snapshot(area, options) {
     const p = await profile(area, options);
-    return P.store.addProfile(p);
+    let reading = null;
+    try { reading = await interpretation(area); } catch { /* interpretation is optional; the profile stands alone */ }
+    return P.store.addProfile({ ...p, reading });
   }
 
   // A new snapshot from the same events, for when the engine or the metadata has improved. Earlier snapshots stay.
   async function regenerate(area, options) {
     const prev = P.store.latestProfile(area), p = await profile(area, options);
-    return P.store.addProfile({ ...p, regeneratedFrom: prev ? { id: prev.id, engine: prev.engine, generatedAt: prev.generatedAt } : null });
+    let reading = null;
+    try { reading = await interpretation(area); } catch { /* optional */ }
+    return P.store.addProfile({ ...p, reading, regeneratedFrom: prev ? { id: prev.id, engine: prev.engine, generatedAt: prev.generatedAt } : null });
   }
 
   // How the latest snapshot differs from the one before it, or null.

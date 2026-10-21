@@ -21,6 +21,7 @@ A Taste Profile is a snapshot computed from a person's judgments by the taste en
 | `terminology` | Glossary entries for every characteristic mentioned: `term`, `label`, `definition`, `dimension`, `basis` |
 | `interpretations` | Empty. Reserved for later AI-written commentary; each entry must cite finding keys and the model used |
 | `limitations` | Plain statements of what the profile cannot say |
+| `reading` | The interpretation of the same judgments (`pallas.interpretation/1`, see `interpretation-layer.md`), saved by `snapshot()` and `regenerate()`. It is kept apart from the statistics and tagged with its generator version. |
 | `regeneratedFrom` | Set by `Pallas.taste.regenerate()`: the previous snapshot's id, engine and date |
 
 **Browser API (no interface yet):** `await Pallas.taste.profile(area)` (compute only), `snapshot(area)` (compute and save), `regenerate(area)` (save a new snapshot after an engine or metadata change), `lastChange(area)` (what changed between the last two snapshots). For storage, use `Pallas.store.profiles(area)`, `latestProfile(area)` and `deleteProfile(id)`.
