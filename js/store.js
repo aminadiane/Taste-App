@@ -186,10 +186,32 @@ window.Pallas = window.Pallas || {};
     sessions(a) { a = area(a); return doc.sessions.filter((x) => x.area === a).map((x) => ({ ...x })); },
 
     // Reserved for Taste Profiles, taste development and the Journal.
-    addProfile(p) { const s = { id: uuid(), createdAt: now(), basedOnEventCount: doc.events.length, ...p }; doc.profiles.push(s); save(); return s; },
-    profiles() { return doc.profiles.map((p) => ({ ...p })); },
-    encounter(techniqueId) { const e = doc.encountered[techniqueId]; if (e) e.count++; else doc.encountered[techniqueId] = { first: now(), count: 1 }; save(); },
-    addReflection(r) { const x = { id: uuid(), t: now(), ...r }; doc.reflections.push(x); save(); return x; },
+    // Taste Profile snapshots are never overwritten; a regenerated profile is a new snapshot.
+    addProfile(p) { const s = { id: uuid(), createdAt: now(), basedOnEventCount: doc.events.length, ...p }; doc.profiles.push(s); save(); return JSON.parse(JSON.stringify(s)); },
+    profiles(a) { const list = a ? doc.profiles.filter((p) => p.area === area(a)) : doc.profiles; return JSON.parse(JSON.stringify(list)); },
+    latestProfile(a) { const l = this.profiles(a); return l.length ? l[l.length - 1] : null; },
+    deleteProfile(id) { const n = doc.profiles.length; doc.profiles = doc.profiles.filter((p) => p.id !== id); if (doc.profiles.length !== n) save(); return doc.profiles.length !== n; },
+    // Explicit learning encounters (reserved for educational content). Works responded to are derived from events instead.
+    encounter(techniqueId) { const e = doc.encountered[techniqueId]; if (e) { e.count++; e.last = now(); } else doc.encountered[techniqueId] = { first: now(), last: now(), count: 1 }; save(); },
+    encountered() { return JSON.parse(JSON.stringify(doc.encountered)); },
+    // Optional personal reflections, attached to an area and optionally to a work or a profile snapshot.
+    // Edits keep earlier wording in `revisions`; deleting removes the reflection entirely (the user's own text).
+    addReflection(r) {
+      const text = String((r && r.text) || '').trim();
+      if (!text) throw new Error('addReflection: text required');
+      const x = { id: uuid(), t: now(), area: r.area ? area(r.area) : null, item: r.item || null, profileId: r.profileId || null, text, revisions: [] };
+      doc.reflections.push(x); save(); return { ...x };
+    },
+    editReflection(id, text) {
+      const x = doc.reflections.find((r) => r.id === id);
+      if (!x) return null;
+      x.revisions = x.revisions || []; x.revisions.push({ t: x.editedAt || x.t, text: x.text });
+      x.text = String(text).trim(); x.editedAt = now(); save(); return JSON.parse(JSON.stringify(x));
+    },
+    deleteReflection(id) { const n = doc.reflections.length; doc.reflections = doc.reflections.filter((r) => r.id !== id); if (doc.reflections.length !== n) save(); return doc.reflections.length !== n; },
+    reflections(filter = {}) {
+      return JSON.parse(JSON.stringify(doc.reflections.filter((r) => (!filter.area || r.area === area(filter.area)) && (!filter.item || r.item === filter.item) && (!filter.profileId || r.profileId === filter.profileId))));
+    },
 
     // User control
     exportData() { return JSON.parse(JSON.stringify(doc)); },
@@ -197,6 +219,8 @@ window.Pallas = window.Pallas || {};
       a = area(a);
       doc.events = doc.events.filter((e) => e.area !== a);
       doc.sessions = doc.sessions.filter((s) => s.area !== a);
+      doc.profiles = doc.profiles.filter((p) => p.area !== a);           // profiles derived from the area's judgments
+      doc.reflections = doc.reflections.filter((r) => r.area !== a);
       doc.cursors[a] = null; doc.lastActive[a] = null;
       save();
     },

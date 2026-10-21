@@ -38,5 +38,17 @@
     return P.store.addProfile(p);
   }
 
-  Object.assign(T, { library, judgments, profile, snapshot });
+  // A new snapshot from the same events, for when the engine or the metadata has improved. Earlier snapshots stay.
+  async function regenerate(area, options) {
+    const prev = P.store.latestProfile(area), p = await profile(area, options);
+    return P.store.addProfile({ ...p, regeneratedFrom: prev ? { id: prev.id, engine: prev.engine, generatedAt: prev.generatedAt } : null });
+  }
+
+  // How the latest snapshot differs from the one before it, or null.
+  function lastChange(area) {
+    const list = P.store.profiles(area);
+    return list.length > 1 ? T.profiles.compare(list[list.length - 2], list[list.length - 1]) : null;
+  }
+
+  Object.assign(T, { library, judgments, profile, snapshot, regenerate, lastChange });
 })(typeof self !== 'undefined' ? self : this);

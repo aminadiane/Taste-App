@@ -211,3 +211,40 @@ test('undo and skip survive a refresh and keep every timestamped event', () => {
   assert.equal(P.votes.get('l', 'b1'), 'like');
   assert.equal(P.store.nextOpen('literature', BOOKS, 1), 1, 'the undone skip no longer hides b2');
 });
+
+test('profile snapshots accumulate per area and are never overwritten', () => {
+  const ls = storage();
+  let P = boot(ls);
+  const a = P.store.addProfile({ area: 'cinema', engine: { version: '1.0.0' } });
+  P.store.addProfile({ area: 'literature', engine: { version: '1.0.0' } });
+  const b = P.store.addProfile({ area: 'cinema', engine: { version: '1.1.0' } });
+  P = boot(ls);
+  assert.deepEqual(P.store.profiles('cinema').map((p) => p.id), [a.id, b.id]);
+  assert.equal(P.store.latestProfile('cinema').engine.version, '1.1.0');
+  assert.equal(P.store.profiles().length, 3);
+  const copy = P.store.profiles('cinema')[0]; copy.engine.version = 'tampered';
+  assert.equal(P.store.profiles('cinema')[0].engine.version, '1.0.0', 'callers get copies');
+});
+
+test('reflections can be added, edited with history, filtered and deleted', () => {
+  const P = boot(storage());
+  const r = P.store.addReflection({ area: 'c', item: 's1', text: '  the light on the wall  ' });
+  assert.equal(r.text, 'the light on the wall');
+  assert.throws(() => P.store.addReflection({ area: 'c', text: '   ' }));
+  const e = P.store.editReflection(r.id, 'the hard light on the wall');
+  assert.equal(e.revisions[0].text, 'the light on the wall');
+  P.store.addReflection({ area: 'literature', text: 'restraint' });
+  assert.equal(P.store.reflections({ area: 'cinema' }).length, 1);
+  assert.equal(P.store.reflections({ item: 's1' })[0].text, 'the hard light on the wall');
+  assert.ok(P.store.deleteReflection(r.id));
+  assert.equal(P.store.reflections({ area: 'cinema' }).length, 0);
+});
+
+test('resetting an area also clears the profiles and reflections derived from it', () => {
+  const P = boot(storage());
+  P.store.addProfile({ area: 'cinema' }); P.store.addProfile({ area: 'literature' });
+  P.store.addReflection({ area: 'cinema', text: 'x' }); P.store.addReflection({ area: 'literature', text: 'y' });
+  P.store.resetArea('cinema');
+  assert.equal(P.store.profiles('cinema').length, 0); assert.equal(P.store.profiles('literature').length, 1);
+  assert.equal(P.store.reflections({ area: 'literature' }).length, 1); assert.equal(P.store.reflections().length, 1);
+});
