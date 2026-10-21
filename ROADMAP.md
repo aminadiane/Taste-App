@@ -93,9 +93,14 @@ First batch: excerpts verified 2026-10-21 at their official or authorised source
 | Never Let Me Go — Kazuo Ishiguro | 9 | KCRW, excerpt supplied by Dial-A-Book | metadata done, needs text |
 | Gilead — Marilynne Robinson | 10 | Macmillan, Read Excerpt | metadata done, needs text |
 
-**Remaining for each passage:** the owner enters the text verbatim from the source, from the locator's first words to its last (Claude does not transcribe copyrighted text). Then set `status: ready` and run `node tools/validate-literature.js`, which checks every field and that the text starts and ends at the locator.
+**Remaining:** the owner pastes the five texts into `library/import/passages.txt` (or into a chat message in the same format) and runs `node tools/import-passages.js`. Claude does not transcribe copyrighted text.
 
-Scaling to 100 books: add a book record and passages with the same fields; the validator enforces the schema; the book shows every ready passage automatically.
+**Batch import workflow** (built and tested 2026-10-21 with throwaway text, then reverted):
+- `library/import/passages.txt` has one `=== <passage id> | <title> — <author> ===` block per passage, with the expected first and last words and the source as `#` comments.
+- `node tools/import-passages.js [file]` matches each block by passage id or book title, checks that the text starts and ends at the locator (straight or curly quotes and dashes both accepted), and imports nothing if any block fails, printing the exact error. On success it writes the text, sets `status: ready`, keeps a `.bak`, and runs the validator.
+- Empty blocks are skipped, so batches can be partial.
+
+Scaling to 100 books: (1) add each book to `books` and its passages to `passages` with source, attribution, locator and metadata (status `needs-text`); (2) regenerate the template so it lists every `needs-text` passage; (3) paste texts in batches of any size and run the importer; (4) the validator enforces the schema and the book shows every ready passage. Several passages per book use ids `<book>-01`, `<book>-02`…; titles then no longer identify a single passage, so blocks must use the id.
 
 *Accept when:* the 5 passages above are `ready` and load in the book; then 20 passages; the stand-ins retired once list passages are live; ranks beyond the top ten checked against the NYT list.
 

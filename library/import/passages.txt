@@ -1,0 +1,35 @@
+# Pallas — passage import
+# Paste each excerpt under its heading, exactly as published, from the first words to the last words shown.
+# Separate paragraphs with a blank line. Leave a block empty to skip it. Lines starting with # are ignored.
+# Then run:  node tools/import-passages.js
+
+=== my-brilliant-friend-01 | My Brilliant Friend — Elena Ferrante ===
+# starts: My friendship with Lila began
+# ends:   that the rats wouldn't bite me.
+# source: https://dianerehm.org/shows/2015-11-25/readers-review-my-brilliant-friend-by-elena-ferrante/
+
+
+=== wolf-hall-01 | Wolf Hall — Hilary Mantel ===
+# starts: “So now get up.”
+# ends:   and opened another cut.
+# source: https://us.macmillan.com/books/9780805080681/wolfhall/
+
+
+=== austerlitz-01 | Austerlitz — W. G. Sebald ===
+# starts: In the second half of the 1960s
+# ends:   for the whole of my visit to Belgium on that occasion.
+# source: https://www.penguinrandomhouse.ca/books/163503/austerlitz-by-w-g-sebald-translated-by-anthea-bell/9780307365828/excerpt
+
+
+=== never-let-me-go-01 | Never Let Me Go — Kazuo Ishiguro ===
+# starts: My name is Kathy H.
+# ends:   even before fourth donation.
+# source: https://www.kcrw.com/pages/excerpt-from-never-let-me-go
+
+
+=== gilead-01 | Gilead — Marilynne Robinson ===
+# starts: I told you last night that I might be gone sometime
+# ends:   because you thought I was laughing at you.
+# source: https://us.macmillan.com/books/9780374602109/gileadoprahsbookclub/
+
+

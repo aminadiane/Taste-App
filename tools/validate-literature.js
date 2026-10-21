@@ -1,5 +1,6 @@
 // Checks library/literature.json. Run: node tools/validate-literature.js
-const lib = require('../library/literature.json');
+const lib = JSON.parse(require('node:fs').readFileSync(require('node:path').join(__dirname, '..', 'library', 'literature.json'), 'utf8'));
+const norm = (s) => s.replace(/[‘’ʼ]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-').replace(/\s+/g, ' ').trim().toLowerCase();
 const errors = [], warn = [];
 const ids = new Set();
 const need = (cond, msg) => { if (!cond) errors.push(msg); };
@@ -20,9 +21,9 @@ for (const p of lib.passages) {
   need(['needs-text', 'ready'].includes(p.status), `passage ${p.id}: status must be needs-text or ready`);
   if (p.status === 'ready') {
     need(Array.isArray(p.text) && p.text.length, `passage ${p.id}: ready but no text`);
-    const all = (p.text || []).join(' ');
-    need(all.startsWith(p.locator.start), `passage ${p.id}: text does not start with the locator`);
-    need(all.endsWith(p.locator.end), `passage ${p.id}: text does not end with the locator`);
+    const all = norm((p.text || []).join(' '));
+    need(all.startsWith(norm(p.locator.start)), `passage ${p.id}: text does not start with the locator`);
+    need(all.endsWith(norm(p.locator.end)), `passage ${p.id}: text does not end with the locator`);
   } else warn.push(`${p.id}: needs text`);
 }
 const ready = lib.passages.filter((p) => p.status === 'ready').length;
