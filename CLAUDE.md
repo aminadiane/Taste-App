@@ -86,7 +86,7 @@ then open `http://127.0.0.1:8799/` (the built-in browser pane works). The pane t
 
 ### Mobile
 
-Mobile styles live at the end of `styles.css`, each inside an `@media` or `@supports` block that desktop does not match. Touch behaviour in `js/book.js` depends on the pointer type: a mouse click on a page dogs-ears or tears it, as approved, while a finger needs a second tap (dog-ear) or a deliberate drag (tear). Keep both rules when changing either screen. The proposal for reading on phones is in `docs/proposals/mobile-book.md` and is not implemented.
+Mobile styles live at the end of `styles.css`, each inside an `@media` or `@supports` block that desktop does not match. Touch behaviour in `js/book.js` depends on the pointer type: a mouse click on a page dog-ears or tears it, as approved, while a finger needs a second tap (dog-ear) or a deliberate drag (tear). Keep both rules when changing either screen. The proposal for reading on phones is in `docs/proposals/mobile-book.md` and is not implemented.
 
 ## Fixed technical rules
 
