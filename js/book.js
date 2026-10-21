@@ -36,9 +36,9 @@ window.Pallas = window.Pallas || {};
     if (kind === 'title') {
       inner = '<div class="pg__title"><div class="pg__title-name">Pallas</div><div class="pg__title-rule"></div><div class="pg__title-sub">Build your taste in literature</div></div><div class="pg__title-imprint">Cultural Capital</div>';
     } else if (kind === 'excerpt' && entry) {
-      inner = `<div class="pg__ex"><div class="pg__num">${esc(entry.num)}</div><div class="pg__body">${(entry.excerpt || []).map((t, i) => `<p style="text-indent:${i ? '1.3em' : '0'}">${esc(t)}</p>`).join('')}</div></div><div class="pg__folio pg__folio--ex">${esc(folio)}</div>`;
+      inner = `<div class="pg__ex"><div class="pg__num">${esc(entry.num)}</div><div class="pg__body"${entry.fs ? ` style="font-size:${entry.fs}px"` : ''}>${(entry.excerpt || []).map((t, i) => `<p style="text-indent:${i ? '1.3em' : '0'}">${esc(t)}</p>`).join('')}</div></div><div class="pg__folio pg__folio--ex">${esc(folio)}</div>`;
     } else if (kind === 'info' && entry) {
-      inner = `<div class="pg__info"><div class="pg__info-title">${esc(entry.title)}</div><div class="pg__info-byline">${esc(entry.byline)}</div><div class="pg__info-rule"></div><div class="pg__info-sections">` +
+      inner = `<div class="pg__info"><div class="pg__info-title">${esc(entry.title)}</div><div class="pg__info-byline">${esc(entry.byline)}</div><div class="pg__info-rule"></div><div class="pg__info-sections"${entry.infoFs ? ` style="--fit:${entry.infoFs}"` : ''}>` +
         `<div class="pg__sec"><div class="pg__sec-h">the author</div><p>${esc(entry.author)}</p></div>` +
         `<div class="pg__sec"><div class="pg__sec-h">the work</div><p>${esc(entry.work)}</p></div>` +
         `<div class="pg__sec"><div class="pg__sec-h">techniques</div>${(entry.techniques || []).map((t) => `<p class="pg__tech"><em>${esc(t.name)}.</em> ${esc(t.text)}</p>`).join('')}</div>` +
@@ -396,6 +396,34 @@ window.Pallas = window.Pallas || {};
         excerpt: p.text, author: (p.notes && p.notes.author) || '', work: (p.notes && p.notes.work) || '', techniques: m.techniques || [] };
     });
   }
+  // A passage longer than the page was designed for keeps the approved layout: its type steps down just enough
+  // to end above the folio. Every page lives in the same 330×520 space, so one measurement serves every view.
+  async function fitExcerpts() {
+    try { await document.fonts.ready; } catch { /* measure with whatever font is loaded */ }
+    const box = document.createElement('div');
+    box.style.cssText = 'position:fixed;left:-4000px;top:0;visibility:hidden;pointer-events:none';
+    document.body.appendChild(box);
+    const over = (el, folio) => el.lastElementChild.getBoundingClientRect().bottom > folio.getBoundingClientRect().top - 8;
+    for (const entry of ENTRIES) {
+      delete entry.fs; delete entry.infoFs;
+      box.innerHTML = pageHTML('excerpt', 'left', entry, '00');
+      const body = box.querySelector('.pg__body'), folio = box.querySelector('.pg__folio');
+      if (body && folio && body.lastElementChild) {
+        let fs = parseFloat(getComputedStyle(body).fontSize);
+        while (over(body, folio) && fs > 10) { fs -= 0.25; body.style.fontSize = fs + 'px'; }
+        if (body.style.fontSize) entry.fs = fs;
+      }
+      // the facing info page: notes scale together, as a fraction of their designed sizes
+      box.innerHTML = pageHTML('info', 'right', entry, '00');
+      const secs = box.querySelector('.pg__info-sections'), f2 = box.querySelector('.pg__folio');
+      if (secs && f2 && secs.lastElementChild) {
+        let k = 1;
+        while (over(secs, f2) && k > 0.7) { k = Math.round((k - 0.02) * 100) / 100; secs.style.setProperty('--fit', k); }
+        if (k < 1) entry.infoFs = k;
+      }
+    }
+    box.remove();
+  }
   (async () => {
     try {
       const lib = await (await fetch(LIBRARY_URL, { cache: 'no-cache' })).json();
@@ -408,6 +436,7 @@ window.Pallas = window.Pallas || {};
       } catch { /* no content: the book stays closed with nothing to show */ }
     }
     NB = ENTRIES.length;
+    await fitExcerpts();
     setTear(0, 0);
     render();
   })();

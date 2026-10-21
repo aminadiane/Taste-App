@@ -87,13 +87,15 @@ First batch: excerpts verified 2026-10-21 at their official or authorised source
 
 | Book | NYT rank | Source | Status |
 |---|---|---|---|
-| My Brilliant Friend — Elena Ferrante, tr. Ann Goldstein | 1 | Diane Rehm Show, Scribd excerpt used with Europa's permission, p. 27 | metadata done, needs text |
-| Wolf Hall — Hilary Mantel | 3 | Macmillan, Read Excerpt | metadata done, needs text |
-| Austerlitz — W. G. Sebald, tr. Anthea Bell | 8 | Penguin Random House Canada excerpt | metadata done, needs text |
-| Never Let Me Go — Kazuo Ishiguro | 9 | KCRW, excerpt supplied by Dial-A-Book | metadata done, needs text |
-| Gilead — Marilynne Robinson | 10 | Macmillan, Read Excerpt | metadata done, needs text |
+| My Brilliant Friend — Elena Ferrante, tr. Ann Goldstein | 1 | Diane Rehm Show, Scribd excerpt used with Europa's permission, p. 27 | ready |
+| Wolf Hall — Hilary Mantel | 3 | Macmillan, Read Excerpt | ready |
+| Austerlitz — W. G. Sebald, tr. Anthea Bell | 8 | Penguin Random House Canada excerpt | ready |
+| Never Let Me Go — Kazuo Ishiguro | 9 | KCRW, excerpt supplied by Dial-A-Book | ready |
+| Gilead — Marilynne Robinson | 10 | Macmillan, Read Excerpt | ready |
 
-**Remaining:** the owner pastes the five texts into `library/import/passages.txt` (or into a chat message in the same format) and runs `node tools/import-passages.js`. Claude does not transcribe copyrighted text.
+**Imported 2026-10-21:** the owner supplied the five texts; each was imported at its locator range (the pasted excerpts ran longer), with line-break artefacts in the My Brilliant Friend paste restored ("togo" to "to go" and similar). The validator reports 5 ready. Tested in the book: every excerpt and info page ends clear of its folio, Next cycles all five, a dog-ear vote saves by passage id, and the book resumes at the saved passage. The import file is reset to its blank template after each import.
+
+**Fit to page:** the approved page was sized for the 44–88-word stand-ins; these passages run 114–169 words. `fitExcerpts()` in `js/book.js` measures each passage once at load and steps the excerpt type down from 14.5 px only as far as needed (floor 10 px), and scales the info notes the same way (floor 70%). Current sizes: Gilead 14.5, Wolf Hall 14, My Brilliant Friend 13, Austerlitz 12.25, Never Let Me Go 11.25. Future passages should aim for about 110 words to keep the designed size.
 
 **Batch import workflow** (built and tested 2026-10-21 with throwaway text, then reverted):
 - `library/import/passages.txt` has one `=== <passage id> | <title> — <author> ===` block per passage, with the expected first and last words and the source as `#` comments.
@@ -102,7 +104,7 @@ First batch: excerpts verified 2026-10-21 at their official or authorised source
 
 Scaling to 100 books: (1) add each book to `books` and its passages to `passages` with source, attribution, locator and metadata (status `needs-text`); (2) regenerate the template so it lists every `needs-text` passage; (3) paste texts in batches of any size and run the importer; (4) the validator enforces the schema and the book shows every ready passage. Several passages per book use ids `<book>-01`, `<book>-02`…; titles then no longer identify a single passage, so blocks must use the id.
 
-*Accept when:* the 5 passages above are `ready` and load in the book; then 20 passages; the stand-ins retired once list passages are live; ranks beyond the top ten checked against the NYT list.
+*Accept when:* ~~the 5 passages above are `ready` and load in the book~~ (done 2026-10-21); then 20 passages; the stand-ins retired once list passages are live; ranks beyond the top ten checked against the NYT list.
 
 ### 3. Cinema metadata
 
@@ -160,7 +162,7 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 | 2 | No skip or undo | Priority 4 |
 | 3 | All stills load eagerly on the film screen | Deferred |
 | 4 | Only tested in Chromium | Deferred |
-| 5 | Literature content is stand-in until list passages are supplied | Priority 2 |
+| 5 | Literature content is stand-in until list passages are supplied | Fixed on `feature/literature`: five NYT passages live |
 | 6 | No reduced-motion support, no designed touch behaviour | Deferred |
 
 ## Decisions pending

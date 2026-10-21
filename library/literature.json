@@ -113,8 +113,10 @@
     {
       "id": "my-brilliant-friend-01",
       "book": "my-brilliant-friend",
-      "status": "needs-text",
-      "text": [],
+      "status": "ready",
+      "text": [
+        "My friendship with Lila began the day we decided to go up the dark stairs that led, step after step, flight after flight, to the door of Don Achille’s apartment. I remember the violet light of the courtyard, the smells of a warm spring evening. The mothers were making dinner, it was time to go home, but we delayed, challenging each other, without ever saying a word, testing our courage. For some time, in school and outside of it, that was what we had been doing. Lila would thrust her hand and then her whole arm into the black mouth of a manhole, and I, in turn, immediately did the same, my heart pounding, hoping that the cockroaches wouldn’t run over my skin, that the rats wouldn’t bite me."
+      ],
       "source": {
         "name": "Diane Rehm Show, Readers' Review: My Brilliant Friend (Scribd excerpt embedded on the page)",
         "url": "https://dianerehm.org/shows/2015-11-25/readers-review-my-brilliant-friend-by-elena-ferrante/",
@@ -166,8 +168,12 @@
     {
       "id": "wolf-hall-01",
       "book": "wolf-hall",
-      "status": "needs-text",
-      "text": [],
+      "status": "ready",
+      "text": [
+        "“So now get up.”",
+        "Felled, dazed, silent, he has fallen; knocked full length on the cobbles of the yard. His head turns sideways; his eyes are turned toward the gate, as if someone might arrive to help him out. One blow, properly placed, could kill him now.",
+        "Blood from the gash on his head—which was his father’s first effort—is trickling across his face. Add to this, his left eye is blinded; but if he squints sideways, with his right eye he can see that the stitching of his father’s boot is unraveling. The twine has sprung clear of the leather, and a hard knot in it has caught his eyebrow and opened another cut."
+      ],
       "source": {
         "name": "Macmillan, Wolf Hall book page (Read Excerpt)",
         "url": "https://us.macmillan.com/books/9780805080681/wolfhall/",
@@ -219,8 +225,10 @@
     {
       "id": "austerlitz-01",
       "book": "austerlitz",
-      "status": "needs-text",
-      "text": [],
+      "status": "ready",
+      "text": [
+        "In the second half of the 1960s I traveled repeatedly from England to Belgium, partly for study purposes, partly for other reasons which were never entirely clear to me, staying sometimes for just one or two days, sometimes for several weeks. On one of these Belgian excursions which, as it seemed to me, always took me further and further abroad, I came on a glorious early summer's day to the city of Antwerp, known to me previously only by name. Even on my arrival, as the train rolled slowly over the viaduct with its curious pointed turrets on both sides and into the dark station concourse, I had begun to feel unwell, and this sense of indisposition persisted for the whole of my visit to Belgium on that occasion."
+      ],
       "source": {
         "name": "Penguin Random House Canada, Austerlitz excerpt",
         "url": "https://www.penguinrandomhouse.ca/books/163503/austerlitz-by-w-g-sebald-translated-by-anthea-bell/9780307365828/excerpt",
@@ -272,8 +280,10 @@
     {
       "id": "never-let-me-go-01",
       "book": "never-let-me-go",
-      "status": "needs-text",
-      "text": [],
+      "status": "ready",
+      "text": [
+        "My name is Kathy H. I'm thirty-one years old, and I've been a carer now for over eleven years. That sounds long enough, I know, but actually they want me to go on for another eight months, until the end of this year. That'll make it almost exactly twelve years. Now I know my being a carer so long isn't necessarily because they think I'm fantastic at what I do. There are some really good carers who've been told to stop after just two or three years. And I can think of one carer at least who went on for all of fourteen years despite being a complete waste of space. So I'm not trying to boast. But then I do know for a fact they've been pleased with my work, and by and large, I have too. My donors have always tended to do much better than expected. Their recovery times have been impressive, and hardly any of them have been classified as \"agitated,\" even before fourth donation."
+      ],
       "source": {
         "name": "KCRW, Excerpt from Never Let Me Go",
         "url": "https://www.kcrw.com/pages/excerpt-from-never-let-me-go",
@@ -325,8 +335,10 @@
     {
       "id": "gilead-01",
       "book": "gilead",
-      "status": "needs-text",
-      "text": [],
+      "status": "ready",
+      "text": [
+        "I told you last night that I might be gone sometime, and you said, Where, and I said, To be with the Good Lord, and you said, Why, and I said, Because I’m old, and you said, I don’t think you’re old. And you put your hand in my hand and you said, You aren’t very old, as if that settled it. I told you you might have a very different life from mine, and from the life you’ve had with me, and that would be a wonderful thing, there are many ways to live a good life. And you said, Mama already told me that. And then you said, Don’t laugh! because you thought I was laughing at you."
+      ],
       "source": {
         "name": "Macmillan, Gilead (Oprah's Book Club) book page (Read Excerpt)",
         "url": "https://us.macmillan.com/books/9780374602109/gileadoprahsbookclub/",
