@@ -114,4 +114,25 @@ function run(name) {
   return { user: u, library: lib, judgments: j, history: historyFor(lib.area, j, flips) };
 }
 
-module.exports = { rng, cinemaLibrary, syntheticLiterature, judge, historyFor, USERS, run };
+/* A realistic history: the person works through the library in its own order (as the screens present it), judges the
+   first `count` works, skips some, and changes their mind on a few. Returns the latest judgments and store-shaped events. */
+function realistic(library, order, rule, seed, { count = 60, skipRate = 0.08, changeRate = 0.04 } = {}) {
+  const R = rng(seed), events = [], judgments = {};
+  let t = Date.UTC(2026, 9, 1, 19, 0, 0), session = 1;
+  const ev = (item, kind) => events.push({ id: `e${events.length + 1}`, t: new Date((t += 9000 + Math.floor(R() * 20000))).toISOString(), area: library.area, item, work: library.items[item].work, kind, session: `s${session}` });
+  let judgedCount = 0;
+  for (const id of order) {
+    if (judgedCount >= count) break;
+    if (!library.items[id]) continue;
+    if (judgedCount && judgedCount % 25 === 0) { session++; t += 86400000 * 2; }
+    if (R() < skipRate) { ev(id, 'skip'); continue; }
+    const kind = R() < rule(new Set(library.items[id].features), library.items[id], id) ? 'like' : 'dislike';
+    ev(id, kind); judgments[id] = kind; judgedCount++;
+  }
+  // Second thoughts: a few earlier judgments reversed in a later session.
+  session++; t += 86400000 * 3;
+  for (const id of Object.keys(judgments).sort()) if (R() < changeRate) { const k = judgments[id] === 'like' ? 'dislike' : 'like'; ev(id, k); judgments[id] = k; }
+  return { judgments, history: events };
+}
+
+module.exports = { rng, cinemaLibrary, syntheticLiterature, judge, historyFor, realistic, USERS, run };

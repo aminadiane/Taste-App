@@ -47,7 +47,7 @@ const SCENARIOS = [
   },
 ];
 
-const unexplained = (res, lvls) => res.findings.filter((f) => !f.explainedBy && lvls.includes(f.strength));
+const unexplained = (res, lvls) => res.findings.filter((f) => !f.explainedBy && !f.inseparableFrom && lvls.includes(f.strength));
 function runScenario(sc) {
   const out = { name: sc.name, kind: sc.kind, users: 0, anyWell: 0, anyEmerging: 0, recovered: 0, falseWell: 0, reportedWell: 0, combosWell: 0, ms: 0 };
   for (let s = 1; s <= SEEDS; s++) {
@@ -84,7 +84,7 @@ function runScenario(sc) {
 const rows = SCENARIOS.map(runScenario);
 const pc = (a, b) => (b ? Math.round((100 * a) / b) + '%' : '—');
 console.log(`taste engine ${A.VERSION}: ${SEEDS} simulated users per scenario\n`);
-console.log('scenario'.padEnd(36), 'kind'.padEnd(11), 'any well'.padStart(9), 'any emerg'.padStart(10), 'recovered'.padStart(10), 'false/well'.padStart(11), 'ms/user'.padStart(8));
-for (const r of rows) console.log(r.name.padEnd(36), r.kind.padEnd(11), pc(r.anyWell, r.users).padStart(9), pc(r.anyEmerging, r.users).padStart(10), (r.kind === 'true' ? pc(r.recovered, r.users) : '').padStart(10), `${r.falseWell}/${r.reportedWell}`.padStart(11), (r.ms / r.users).toFixed(0).padStart(8));
+console.log('scenario'.padEnd(36), 'kind'.padEnd(11), 'any well'.padStart(9), 'any emerg'.padStart(10), 'recovered'.padStart(10), 'false/well'.padStart(11), 'combo'.padStart(7), 'ms/user'.padStart(8));
+for (const r of rows) console.log(r.name.padEnd(36), r.kind.padEnd(11), pc(r.anyWell, r.users).padStart(9), pc(r.anyEmerging, r.users).padStart(10), (r.kind === 'true' ? pc(r.recovered, r.users) : '').padStart(10), `${r.falseWell}/${r.reportedWell}`.padStart(11), pc(r.combosWell, r.users).padStart(7), (r.ms / r.users).toFixed(0).padStart(8));
 const out = arg('--json');
 if (out) fs.writeFileSync(out, JSON.stringify({ engine: A.VERSION, seeds: SEEDS, rows }, null, 2) + '\n');

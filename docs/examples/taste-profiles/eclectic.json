@@ -1,11 +1,16 @@
 {
-  "simulatedUser": {
+  "simulatedPerson": {
     "name": "eclectic",
     "area": "cinema",
-    "description": "Eclectic: likes about half of everything, with no relation to any characteristic.",
-    "seed": 13,
+    "hiddenRule": "Likes about 55% of everything, unrelated to any characteristic.",
+    "seed": 46,
     "library": "real cinema library (89 stills)"
   },
+  "draftInterpretation": [
+    "Across 70 stills from 30 films you liked 39 (56%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "No characteristic separates your likes from your dislikes clearly yet; your likes range as widely as everything you judged.",
+    "Too few examples to say anything yet about vehicle (2 judged)."
+  ],
   "profile": {
     "schema": "pallas.taste-profile/1",
     "kind": "taste-profile",
@@ -13,7 +18,7 @@
     "generatedAt": "2026-10-21T00:00:00.000Z",
     "engine": {
       "name": "pallas-taste",
-      "version": "1.0.0"
+      "version": "1.1.0"
     },
     "options": {
       "minJudgments": 8,
@@ -29,114 +34,389 @@
       "pairMinItems": 4,
       "pairQ": 0.1,
       "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
       "explainedP": 0.1,
       "focusedBelow": 0.6,
       "broadAbove": 0.9
     },
     "basedOn": {
-      "judged": 89,
-      "likes": 51,
-      "dislikes": 38,
-      "likeRate": 0.573,
-      "works": 35,
+      "judged": 70,
+      "likes": 39,
+      "dislikes": 31,
+      "likeRate": 0.557,
+      "works": 30,
       "notInLibrary": 0,
-      "eventCount": 89,
-      "lastEventAt": "2026-10-21T09:01:29.000Z",
-      "judgmentsDigest": "ea155131"
+      "eventCount": 77,
+      "lastEventAt": "2026-10-08T19:25:26.794Z",
+      "judgmentsDigest": "2ac1068e"
     },
-    "evidenceLevel": "no-pattern",
+    "evidenceLevel": "early",
     "signature": {
-      "summary": "No characteristic stands out yet across 89 judged stills. Likes are spread as widely as everything judged.",
+      "summary": "Some characteristics may matter, but nothing is clear yet across 70 judged stills.",
       "terms": [],
       "statements": []
     },
-    "preferred": [],
-    "disliked": [],
+    "preferred": [
+      {
+        "feature": "atmosphere:ominous",
+        "dimension": "atmosphere",
+        "value": "ominous",
+        "label": "ominous",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 15,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.867,
+          "rateWhenAbsent": 0.473,
+          "difference": 0.394,
+          "interval": [
+            0.621,
+            0.963
+          ],
+          "p": 0.0079,
+          "q": 0.3359
+        },
+        "explanation": "Liked 13 of 15 works with ominous (87%), against 26 of 55 without it (47%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "double-indemnity-01",
+            "double-indemnity-03",
+            "dr-strangelove-01",
+            "dr-strangelove-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-03",
+            "oldboy-01",
+            "on-the-waterfront-02",
+            "paths-of-glory-01",
+            "psycho-01",
+            "sunset-boulevard-02",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-02"
+          ],
+          "contradicting": [
+            "metropolis-03",
+            "psycho-02"
+          ],
+          "supportingWorks": 11
+        }
+      },
+      {
+        "feature": "figures:group",
+        "dimension": "figures",
+        "value": "group",
+        "label": "small group",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.917,
+          "rateWhenAbsent": 0.483,
+          "difference": 0.434,
+          "interval": [
+            0.646,
+            0.985
+          ],
+          "p": 0.0087,
+          "q": 0.3359
+        },
+        "explanation": "Liked 11 of 12 works with small group (92%), against 28 of 58 without it (48%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "double-indemnity-03",
+            "dr-strangelove-01",
+            "metropolis-02",
+            "mr-smith-goes-to-washington-03",
+            "oldboy-01",
+            "on-the-waterfront-02",
+            "some-like-it-hot-02",
+            "spirited-away-04",
+            "the-grand-budapest-hotel-01",
+            "the-passion-of-joan-of-arc-02"
+          ],
+          "contradicting": [
+            "parasite-01"
+          ],
+          "supportingWorks": 11
+        }
+      },
+      {
+        "feature": "symmetry:strong",
+        "dimension": "symmetry",
+        "value": "strong",
+        "label": "strong tonal symmetry",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 7,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.508,
+          "difference": 0.492,
+          "interval": [
+            0.646,
+            1
+          ],
+          "p": 0.015,
+          "q": 0.3359
+        },
+        "explanation": "Liked 7 of 7 works with strong tonal symmetry (100%), against 32 of 63 without it (51%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-02",
+            "mad-max-fury-road-02",
+            "metropolis-01",
+            "sherlock-jr-02",
+            "the-grand-budapest-hotel-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02"
+          ],
+          "contradicting": [],
+          "supportingWorks": 6
+        }
+      },
+      {
+        "feature": "lightSource:artificial",
+        "dimension": "lightSource",
+        "value": "artificial",
+        "label": "artificial light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": "atmosphere:ominous",
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 26,
+          "likedWhenPresent": 19,
+          "rateWhenPresent": 0.731,
+          "rateWhenAbsent": 0.455,
+          "difference": 0.276,
+          "interval": [
+            0.539,
+            0.863
+          ],
+          "p": 0.0283,
+          "q": 0.4917
+        },
+        "explanation": "Liked 19 of 26 works with artificial light (73%), against 20 of 44 without it (45%).",
+        "notes": [
+          "accounted for by ominous and small group together"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-02",
+            "double-indemnity-01",
+            "double-indemnity-03",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-03",
+            "metropolis-02",
+            "mr-smith-goes-to-washington-01",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "north-by-northwest-03",
+            "oldboy-01",
+            "paths-of-glory-01",
+            "psycho-01",
+            "sherlock-jr-01",
+            "some-like-it-hot-02",
+            "the-grand-budapest-hotel-01",
+            "the-great-dictator-01",
+            "the-passion-of-joan-of-arc-01"
+          ],
+          "contradicting": [
+            "12-angry-men-02",
+            "dr-strangelove-02",
+            "its-a-wonderful-life-01",
+            "on-the-waterfront-01",
+            "psycho-02",
+            "some-like-it-hot-01",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 15
+        }
+      }
+    ],
+    "disliked": [
+      {
+        "feature": "figures:single",
+        "dimension": "figures",
+        "value": "single",
+        "label": "single figure",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 31,
+          "likedWhenPresent": 12,
+          "rateWhenPresent": 0.387,
+          "rateWhenAbsent": 0.692,
+          "difference": -0.305,
+          "interval": [
+            0.237,
+            0.562
+          ],
+          "p": 0.0154,
+          "q": 0.3359
+        },
+        "explanation": "Liked 12 of 31 works with single figure (39%), against 27 of 39 without it (69%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "dr-strangelove-02",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-04",
+            "on-the-waterfront-01",
+            "paths-of-glory-02",
+            "psycho-02",
+            "rear-window-01",
+            "rear-window-02",
+            "spirited-away-02",
+            "the-general-01",
+            "the-general-02",
+            "the-gold-rush-01",
+            "the-kid-01",
+            "the-kid-02",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "amelie-02",
+            "double-indemnity-01",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "mr-smith-goes-to-washington-02",
+            "paths-of-glory-01",
+            "psycho-01",
+            "sherlock-jr-01",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-passion-of-joan-of-arc-01"
+          ],
+          "supportingWorks": 13
+        }
+      }
+    ],
     "combinations": [],
     "notYetClear": [
       {
         "feature": "setting:vehicle",
         "label": "vehicle",
         "exposed": 2,
-        "liked": 0
+        "liked": 1
       },
       {
         "feature": "shotScale:extreme-close-up",
         "label": "extreme close-up",
-        "exposed": 2,
-        "liked": 1
+        "exposed": 1,
+        "liked": 0
       }
     ],
     "spread": {
-      "overall": 0.984,
+      "overall": 1.005,
       "reading": "broad",
       "byDimension": {
         "key": {
           "label": "tonal key",
-          "ratio": 0.925,
+          "ratio": 0.984,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
         "contrast": {
           "label": "contrast",
-          "ratio": 0.966,
+          "ratio": 0.908,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
         "saturation": {
           "label": "saturation",
-          "ratio": 1.054,
+          "ratio": 0.96,
           "reading": "broad",
           "valuesJudged": 4,
           "valuesLiked": 4
         },
         "temperature": {
           "label": "colour temperature",
-          "ratio": 0.965,
+          "ratio": 0.984,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
         "hue": {
           "label": "dominant hues",
-          "ratio": 0.988,
+          "ratio": 0.985,
           "reading": "broad",
           "valuesJudged": 6,
           "valuesLiked": 6
         },
         "symmetry": {
-          "label": "bilateral symmetry",
-          "ratio": 1.049,
+          "label": "tonal symmetry",
+          "ratio": 1.096,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
         "detail": {
           "label": "surface detail",
-          "ratio": 1.025,
+          "ratio": 1.054,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
+        "medium": {
+          "label": "medium",
+          "ratio": 1.143,
+          "reading": "broad",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
         "lightQuality": {
           "label": "light quality",
-          "ratio": 0.958,
+          "ratio": 1.029,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
         "lightDirection": {
           "label": "key-light direction",
-          "ratio": 0.979,
+          "ratio": 1.004,
           "reading": "broad",
           "valuesJudged": 5,
           "valuesLiked": 5
         },
         "lightSource": {
           "label": "apparent light source",
-          "ratio": 0.974,
+          "ratio": 0.965,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
@@ -145,91 +425,126 @@
           "label": "shot scale",
           "ratio": 0.957,
           "reading": "broad",
-          "valuesJudged": 7,
-          "valuesLiked": 7
+          "valuesJudged": 9,
+          "valuesLiked": 8
         },
         "angle": {
           "label": "camera angle",
-          "ratio": 1.023,
+          "ratio": 0.979,
           "reading": "broad",
-          "valuesJudged": 3,
-          "valuesLiked": 3
+          "valuesJudged": 4,
+          "valuesLiked": 4
         },
         "composition": {
           "label": "composition",
-          "ratio": 1.007,
+          "ratio": 0.982,
           "reading": "broad",
           "valuesJudged": 11,
           "valuesLiked": 11
         },
         "focus": {
           "label": "depth of field",
-          "ratio": 0.996,
+          "ratio": 1.021,
           "reading": "broad",
-          "valuesJudged": 3,
-          "valuesLiked": 3
+          "valuesJudged": 2,
+          "valuesLiked": 2
         },
         "layers": {
           "label": "spatial layers",
-          "ratio": 0.962,
+          "ratio": 1.046,
           "reading": "broad",
           "valuesJudged": 3,
           "valuesLiked": 3
         },
         "figures": {
           "label": "figures",
-          "ratio": 1.019,
+          "ratio": 1.021,
           "reading": "broad",
           "valuesJudged": 5,
           "valuesLiked": 5
         },
         "setting": {
           "label": "setting",
-          "ratio": 0.859,
-          "reading": "mixed",
+          "ratio": 0.987,
+          "reading": "broad",
           "valuesJudged": 3,
-          "valuesLiked": 2
+          "valuesLiked": 3
         },
         "atmosphere": {
           "label": "atmosphere",
-          "ratio": 1.008,
+          "ratio": 0.997,
           "reading": "broad",
-          "valuesJudged": 14,
-          "valuesLiked": 14
+          "valuesJudged": 13,
+          "valuesLiked": 13
         }
       }
     },
     "consistency": {
-      "changedJudgments": [],
+      "changedJudgments": [
+        "lawrence-of-arabia-05"
+      ],
       "worksWithMixedJudgments": [
         "12-angry-men",
         "double-indemnity",
         "dr-strangelove",
-        "howls-moving-castle",
         "its-a-wonderful-life",
         "lawrence-of-arabia",
+        "mad-max-fury-road",
         "metropolis",
-        "mr-smith-goes-to-washington",
-        "my-neighbor-totoro",
         "north-by-northwest",
-        "parasite",
+        "on-the-waterfront",
         "paths-of-glory",
-        "rear-window",
+        "psycho",
         "some-like-it-hot",
         "spirited-away",
         "sunset-boulevard",
-        "the-apartment",
-        "the-great-dictator",
-        "the-kid",
+        "the-general",
         "vertigo"
       ]
     },
-    "terminology": [],
+    "terminology": [
+      {
+        "term": "atmosphere:ominous",
+        "label": "ominous",
+        "definition": "Threatening or foreboding.",
+        "dimension": "atmosphere",
+        "basis": "interpretation"
+      },
+      {
+        "term": "figures:group",
+        "label": "small group",
+        "definition": "Three to about eight people.",
+        "dimension": "figures",
+        "basis": "observed"
+      },
+      {
+        "term": "figures:single",
+        "label": "single figure",
+        "definition": "One person.",
+        "dimension": "figures",
+        "basis": "observed"
+      },
+      {
+        "term": "lightSource:artificial",
+        "label": "artificial light",
+        "definition": "Electric light from sources outside the frame.",
+        "dimension": "apparent light source",
+        "basis": "observed"
+      },
+      {
+        "term": "symmetry:strong",
+        "label": "strong tonal symmetry",
+        "definition": "The brightness of the two halves nearly mirrors.",
+        "dimension": "tonal symmetry",
+        "basis": "measured"
+      }
+    ],
     "interpretations": [],
     "limitations": [
       "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
       "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
-      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments.",
+      "Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations."
     ]
   }
 }

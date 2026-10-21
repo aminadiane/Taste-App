@@ -79,7 +79,7 @@ test('warm, low-key cinematography: low key and warm colour are found, and their
   // Warmth holds across stills; across films it is marginal for this seed, so the work-level check grades it emerging.
   const warm = result.findings.find((f) => f.feature === 'temperature:warm');
   assert.ok(warm && warm.direction === 'liked' && ['well supported', 'emerging'].includes(warm.strength));
-  assert.ok(result.combinations.some((c) => c.features.map((f) => f.feature).sort().join() === 'key:low,temperature:warm' && c.direction === 'liked'));
+  // Combinations are conservative since 1.1.0 (they must hold beyond the single findings); see the pure-interaction test.
   assert.equal(profile.evidenceLevel, 'established');
   assert.match(profile.signature.summary, /low-key/); assert.match(profile.signature.summary, /warm/);
 });
@@ -250,4 +250,29 @@ test('tentative findings never reach the signature', () => {
     const tentative = new Set(res.findings.filter((f) => f.strength === 'tentative').map((f) => f.feature));
     for (const t of p.signature.terms) assert.ok(!tentative.has(t), `${seed}: ${t}`);
   }
+});
+
+test('a pure two-characteristic taste is captured, by the pair or by the characteristic that stands for it in this library', () => {
+  // Only 8 stills are both low-key and warm, and most are orange: orange can account for them as well as the pair does.
+  const lib = U.cinemaLibrary();
+  const truth = Object.keys(lib.items).filter((id) => lib.items[id].features.includes('key:low') && lib.items[id].features.includes('temperature:warm'));
+  for (const seed of [3, 4, 5, 6, 7]) {
+    const j = U.judge(lib, (fs) => (fs.has('key:low') && fs.has('temperature:warm') ? 0.95 : 0.1), seed);
+    const res = A.analyse({ judgments: j, library: lib });
+    const likedTruth = truth.filter((id) => j[id] === 'like');
+    const top = [...res.combinations.filter((c) => c.direction === 'liked'), ...res.findings.filter((f) => f.direction === 'liked' && !f.explainedBy && !f.inseparableFrom && f.strength !== 'tentative')];
+    assert.ok(top.length, `seed ${seed}: nothing found`);
+    const covered = Math.max(...top.map((x) => likedTruth.filter((id) => x.evidence.supporting.some((e) => e.item === id)).length / likedTruth.length));
+    assert.ok(covered >= 0.6, `seed ${seed}: best finding covers ${covered}`);
+  }
+});
+
+test('a taste resting on one characteristic does not produce combinations with unrelated ones', () => {
+  const lib = U.cinemaLibrary();
+  let withCombo = 0;
+  for (let seed = 300; seed < 330; seed++) {
+    const res = A.analyse({ judgments: U.judge(lib, (fs) => (fs.has('saturation:monochrome') ? 0.85 : 0.15), seed), library: lib });
+    if (res.combinations.some((c) => c.strength === 'well supported')) withCombo++;
+  }
+  assert.ok(withCombo <= 3, `${withCombo} of 30`);
 });

@@ -26,6 +26,7 @@
     pairMinItems: 4,          // a combination must cover at least this many judged works
     pairQ: 0.1,               // combinations are reported only below this q (they are many tests)
     pairMinLift: 0.2,         // and must differ from each single characteristic's like rate by at least this
+    pairInteractionP: 0.05,   // and each member must matter among the works that have the other (Fisher p below this)
     leaveOneOutP: 0.05,       // emerging or better must keep p below this with any single film or book left out
     workWellP: 0.05,          // well supported must also hold at the level of works (see workLevel below) with p below this
     workEmergingP: 0.2,       // … and emerging with p below this
@@ -164,17 +165,25 @@
       }
       return out;
     };
+    // Two-way test (1.1.0): B is 'explained by' A only if B's association disappears with A held constant while A's
+    // survives with B held constant. If neither survives the other, they cannot be separated in these judgments and B is
+    // marked 'inseparableFrom' A. A one-way test let whichever came first absorb the other even when the data simply
+    // lacked the power to separate them (found when reviewing example profiles).
     findings.forEach((B, i) => {
-      const stronger = findings.slice(0, i).filter((A) => !A.explainedBy && A.dimension !== B.dimension);
+      const stronger = findings.slice(0, i).filter((A) => !A.explainedBy && !A.inseparableFrom && A.dimension !== B.dimension);
       for (const A of stronger) {
-        const t = S.cmh(strata(B, A));
-        if (t.p > O.explainedP) {
-          B.explainedBy = { feature: A.feature, label: A.label, p: r(t.p, 4) };
+        const bGivenA = S.cmh(strata(B, A));
+        if (bGivenA.p <= O.explainedP) continue;
+        const aGivenB = S.cmh(strata(A, B));
+        if (aGivenB.p < O.emergingP) {
+          B.explainedBy = { feature: A.feature, label: A.label, p: r(bGivenA.p, 4) };
           B.notes.push(`accounted for by ${A.label}: among works with and without it, ${B.label} makes no clear difference`);
-          return;
+        } else {
+          B.inseparableFrom = { feature: A.feature, label: A.label, p: r(bGivenA.p, 4) };
+          B.notes.push(`goes together with ${A.label} in these judgments; the two cannot be separated yet`);
         }
+        return;
       }
-      // Two stronger findings together can account for a third that neither explains alone (e.g. a rule on low key AND warm colour).
       for (let x = 0; x < stronger.length; x++) for (let y = x + 1; y < stronger.length; y++) {
         const t = S.cmh(strata2(B, stronger[x], stronger[y]));
         if (t.p > O.explainedP) {
@@ -184,12 +193,12 @@
         }
       }
     });
-    findings.forEach((f) => delete f.ids);
 
     // Combinations of two characteristics from different dimensions whose joint like rate stands apart from each alone.
     const combos = [];
     if (status === 'ok') {
       const single = tested.map((t) => t).filter((t) => t.nf >= O.minExposure);
+      const leads = findings.filter((f) => !f.explainedBy && !f.inseparableFrom && f.strength !== 'tentative');
       const cands = [];
       for (let i = 0; i < single.length; i++) for (let j = i + 1; j < single.length; j++) {
         const A = single[i], B = single[j], fa = A.g.feature, fb = B.g.feature;
@@ -197,26 +206,44 @@
         const setB = new Set(B.g.ids), both = A.g.ids.filter((id) => setB.has(id));
         if (both.length < O.pairMinItems || both.length === A.nf || both.length === B.nf || n - both.length < O.minAbsent) continue;
         const k = both.filter((id) => liked.has(id)).length;
-        const p = S.fisherExact(k, both.length - k, L - k, Dn - (both.length - k));
-        cands.push({ A, B, both, k, p, rate: k / both.length });
+        const p0 = S.fisherExact(k, both.length - k, L - k, Dn - (both.length - k));
+        // A pair must be associated beyond what the established single findings already explain: its p is the largest of
+        // the plain test and the CMH tests holding constant each established finding from another dimension (a finding in a
+        // member's own dimension is that member or its mirror image). The false-discovery
+        // correction is then applied to these values.
+        let p = p0;
+        if (p0 < O.pairQ) for (const Lf of leads) if (Lf.dimension !== terms[fa].dimension && Lf.dimension !== terms[fb].dimension) p = Math.max(p, S.cmh(strata({ ids: both }, Lf)).p);
+        cands.push({ A, B, both, k, p, pPlain: p0, rate: k / both.length });
       }
       const pq = S.benjaminiHochberg(cands.map((c) => c.p));
+      // Interaction: within the works that have one member, the other must still make a clear difference (Fisher p < 0.05),
+      // and the other way round. Without this, a single strong characteristic paired with almost anything looked like a
+      // combination (68% of simulated people whose taste rested on black and white alone got one; see the stress report).
+      const within = (inner, outer) => {
+        const o = new Set(outer.g.ids), n2 = new Set(inner.g.ids), grp = judged.filter((id) => o.has(id));
+        const a = grp.filter((id) => n2.has(id) && liked.has(id)).length, b = grp.filter((id) => n2.has(id) && !liked.has(id)).length;
+        const c2 = grp.filter((id) => !n2.has(id) && liked.has(id)).length, d = grp.filter((id) => !n2.has(id) && !liked.has(id)).length;
+        return a + b && c2 + d ? S.fisherExact(a, b, c2, d) : 1;
+      };
       cands.forEach((c, i) => {
         const dirA = c.rate - c.A.rateIn, dirB = c.rate - c.B.rateIn;
         if (pq[i] >= O.pairQ || Math.sign(dirA) !== Math.sign(dirB) || Math.min(Math.abs(dirA), Math.abs(dirB)) < O.pairMinLift) return;
+        if (within(c.B, c.A) >= O.pairInteractionP || within(c.A, c.B) >= O.pairInteractionP) return;
         const dir = c.rate >= L / n ? 1 : -1, ev = evidence(c.both, dir);
         const strong = pq[i] < O.wellQ && c.both.length >= O.wellExposure && ev.supportingWorks >= O.wellWorks;
         const la = (terms[c.A.g.feature] || {}).label, lb = (terms[c.B.g.feature] || {}).label;
         combos.push({
           features: [describe(c.A.g.feature), describe(c.B.g.feature)], direction: dir > 0 ? 'liked' : 'disliked',
           strength: strong ? 'well supported' : ev.supportingWorks >= O.wellWorks ? 'emerging' : 'tentative',
-          stats: { exposed: c.both.length, likedWhenPresent: c.k, rateTogether: r(c.rate), rateFirstAlone: r(c.A.rateIn), rateSecondAlone: r(c.B.rateIn), p: r(c.p, 4), q: r(pq[i], 4) },
+          stats: { exposed: c.both.length, likedWhenPresent: c.k, rateTogether: r(c.rate), rateFirstAlone: r(c.A.rateIn), rateSecondAlone: r(c.B.rateIn), p: r(c.pPlain, 4), pBeyondFindings: r(c.p, 4), q: r(pq[i], 4) },
           evidence: ev,
           explanation: `${la} with ${lb}: liked ${c.k} of ${c.both.length} (${pct(c.rate)}), against ${pct(c.A.rateIn)} for ${la} overall and ${pct(c.B.rateIn)} for ${lb} overall.`,
         });
       });
       combos.sort((a, b) => a.stats.q - b.stats.q || (a.features[0].feature + a.features[1].feature < b.features[0].feature + b.features[1].feature ? -1 : 1));
     }
+
+    findings.forEach((f) => delete f.ids);
 
     // Spread: are likes concentrated in a few values of each dimension, or spread as widely as everything judged?
     const spread = {};

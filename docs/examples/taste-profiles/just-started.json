@@ -1,0 +1,159 @@
+{
+  "simulatedPerson": {
+    "name": "just-started",
+    "area": "cinema",
+    "hiddenRule": "Same taste as Chiaroscuro, but has judged only 11 stills.",
+    "seed": 47,
+    "library": "real cinema library (89 stills)"
+  },
+  "draftInterpretation": [
+    "Across 11 stills from 5 films you liked 4 (36%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "No characteristic separates your likes from your dislikes clearly yet.",
+    "Too few examples to say anything yet about live action (11 judged), lonely (2 judged) and ominous (2 judged)."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 11,
+      "likes": 4,
+      "dislikes": 7,
+      "likeRate": 0.364,
+      "works": 5,
+      "notInLibrary": 0,
+      "eventCount": 12,
+      "lastEventAt": "2026-10-01T19:03:32.996Z",
+      "judgmentsDigest": "b48accb0"
+    },
+    "evidenceLevel": "no-pattern",
+    "signature": {
+      "summary": "No characteristic stands out yet across 11 judged stills.",
+      "terms": [],
+      "statements": []
+    },
+    "preferred": [],
+    "disliked": [],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "medium:live-action",
+        "label": "live action",
+        "exposed": 11,
+        "liked": 4
+      },
+      {
+        "feature": "atmosphere:lonely",
+        "label": "lonely",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "atmosphere:ominous",
+        "label": "ominous",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "composition:leading-lines",
+        "label": "leading lines",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "figures:crowd",
+        "label": "crowd",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "figures:none",
+        "label": "no figures",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "hue:teal",
+        "label": "teal",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "lightDirection:back",
+        "label": "backlight",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "lightQuality:soft",
+        "label": "soft light",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "lightSource:artificial",
+        "label": "artificial light",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "saturation:moderate",
+        "label": "moderate colour",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "setting:interior",
+        "label": "interior",
+        "exposed": 2,
+        "liked": 0
+      }
+    ],
+    "spread": {
+      "overall": null,
+      "reading": null,
+      "byDimension": {}
+    },
+    "consistency": {
+      "changedJudgments": [],
+      "worksWithMixedJudgments": [
+        "dr-strangelove",
+        "lawrence-of-arabia"
+      ]
+    },
+    "terminology": [],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+    ]
+  }
+}

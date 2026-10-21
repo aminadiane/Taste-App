@@ -24,13 +24,13 @@
   const list = (xs) => (xs.length <= 1 ? xs.join('') : xs.slice(0, -1).join(', ') + ' and ' + xs[xs.length - 1]);
   const trimFinding = (f) => ({
     feature: f.feature, dimension: f.dimension, value: f.value, label: f.label, basis: f.basis, subjective: f.basis === 'interpretation',
-    aliases: (f.aliases || []).map((a) => a.feature), strength: f.strength, explainedBy: f.explainedBy ? f.explainedBy.feature : null, stats: f.stats, explanation: f.explanation, notes: f.notes || [],
+    aliases: (f.aliases || []).map((a) => a.feature), strength: f.strength, explainedBy: f.explainedBy ? f.explainedBy.feature : null, inseparableFrom: f.inseparableFrom ? f.inseparableFrom.feature : null, stats: f.stats, explanation: f.explanation, notes: f.notes || [],
     evidence: { supporting: f.evidence.supporting.map((e) => e.item), contradicting: f.evidence.contradicting.map((e) => e.item), supportingWorks: f.evidence.supportingWorks },
   });
 
   function evidenceLevel(result) {
     if (result.status !== 'ok') return result.status;
-    const s = result.findings.filter((f) => !f.explainedBy).map((f) => RANK[f.strength]);
+    const s = result.findings.filter((f) => !f.explainedBy && !f.inseparableFrom).map((f) => RANK[f.strength]);
     if (s.includes(3) && result.counts.judged >= ESTABLISHED_AFTER) return 'established';
     if (s.some((x) => x >= 2)) return 'developing';
     if (s.length) return 'early';
@@ -41,7 +41,7 @@
   function pickSignature(findings) {
     // Several liked values may share a dimension (lyrical and experimental prose); a disliked value is left out
     // when its dimension already appears among the likes, since it is usually the mirror image (low-key liked, mid-key disliked).
-    const sorted = (dir) => findings.filter((f) => f.direction === dir && !f.explainedBy)
+    const sorted = (dir) => findings.filter((f) => f.direction === dir && !f.explainedBy && !f.inseparableFrom)
       .sort((a, b) => RANK[b.strength] - RANK[a.strength] || (a.basis === 'interpretation') - (b.basis === 'interpretation') || a.stats.p - b.stats.p);
     const liked = sorted('liked').slice(0, 3), seen = new Set();
     const mirror = (f) => liked.some((l) => l.dimension === f.dimension && RANK[l.strength] >= RANK[f.strength]);
@@ -123,5 +123,47 @@
     return { from: older.generatedAt, to: newer.generatedAt, evidenceLevel: [older.evidenceLevel, newer.evidenceLevel], ...out };
   }
 
-  return { SCHEMA, build, compare, digest };
+  /* A draft natural-language reading of a profile, for review before any screen is designed. Deterministic: every
+     sentence is a template filled from a finding's counts, definition and evidence. It never adds a claim the statistics
+     do not make, never ranks tastes, and never suggests a dislike is mistaken. titleOf(itemId) → display name. */
+  function narrative(profile, { titleOf = (id) => id, workOf = () => null } = {}) {
+    const noun = profile.area === 'cinema' ? 'still' : 'passage', unit = profile.area === 'cinema' ? 'film' : 'book';
+    const b = profile.basedOn, out = [];
+    const pc = (x) => Math.round(x * 100) + '%';
+    const lower = (s) => (s ? s.charAt(0).toLowerCase() + s.slice(1).replace(/\.$/, '') : '');
+    // Examples from different works where possible, so one film does not stand for the whole pattern.
+    const examples = (ids, k = 3) => {
+      const seen = new Set(), pick = [];
+      for (const id of ids) { const w = workOf(id) || id; if (!seen.has(w)) { seen.add(w); pick.push(id); } if (pick.length === k) break; }
+      return pick.map(titleOf).join('; ');
+    };
+    const def = (f) => (profile.terminology.find((t) => t.term === f.feature) || {}).definition;
+    if (profile.evidenceLevel === 'insufficient' || profile.evidenceLevel === 'one-sided') return [profile.signature.summary];
+    out.push(`Across ${b.judged} ${noun}s from ${b.works} ${unit}s you liked ${b.likes} (${pc(b.likeRate)}). What follows compares the ${noun}s you liked with the ones you did not; it describes your choices in this collection, not a fixed type.`);
+    const main = (list) => list.filter((f) => !f.explainedBy && !f.inseparableFrom && f.strength !== 'tentative');
+    const liked = main(profile.preferred);
+    // As in the signature: a disliked value whose dimension already has an equally strong liked value is its mirror image.
+    const disliked = main(profile.disliked).filter((f) => !liked.some((l) => l.dimension === f.dimension && RANK[l.strength] >= RANK[f.strength]));
+    if (!liked.length && !disliked.length) {
+      out.push(`No characteristic separates your likes from your dislikes clearly yet${profile.spread.reading === 'broad' ? '; your likes range as widely as everything you judged' : ''}.`);
+    }
+    for (const f of liked) {
+      const s = f.stats, d = def(f);
+      out.push(`${f.strength === 'well supported' ? 'Clearly' : 'Possibly'}, ${f.label}${d ? ` (${lower(d)})` : ''}: you liked ${s.likedWhenPresent} of ${s.exposed} (${pc(s.rateWhenPresent)}), against ${pc(s.rateWhenAbsent)} of the rest, across ${f.evidence.supportingWorks} ${unit}s. For example: ${examples(f.evidence.supporting)}.${f.subjective ? ' This rests on a subjective reading of mood or tone.' : ''}`);
+    }
+    for (const c of profile.combinations.filter((x) => x.strength !== 'tentative').slice(0, 2)) {
+      out.push(`Together, ${c.labels[0]} with ${c.labels[1]} stands out: ${c.stats.likedWhenPresent} of ${c.stats.exposed} liked, more than either alone (${pc(c.stats.rateFirstAlone)} and ${pc(c.stats.rateSecondAlone)}). For example: ${examples(c.evidence.supporting, 2)}.`);
+    }
+    if (disliked.length) out.push(`You were less drawn to ${list(disliked.map((f) => `${f.label} (${f.stats.likedWhenPresent} of ${f.stats.exposed} liked)`))}. That is a description of your judgments, not a gap to correct.`);
+    const lbl = (k) => (profile.terminology.find((t) => t.term === k) || {}).label || k;
+    const related = [...profile.preferred, ...profile.disliked].filter((f) => f.explainedBy && f.strength !== 'tentative').slice(0, 3);
+    if (related.length) out.push(`Some characteristics only appear to matter because they travel with the ones above: ${list(related.map((f) => `${f.label} (accounted for by ${lbl(f.explainedBy)})`))}.`);
+    const together = [...profile.preferred, ...profile.disliked].filter((f) => f.inseparableFrom && f.strength !== 'tentative').slice(0, 3);
+    if (together.length) out.push(`These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: ${list(together.map((f) => `${f.label} with ${lbl(f.inseparableFrom)}`))}.`);
+    const open = (profile.notYetClear || []).filter((x) => x.exposed >= 2).slice(0, 3);
+    if (open.length) out.push(`Too few examples to say anything yet about ${list(open.map((x) => `${x.label} (${x.exposed} judged)`))}.`);
+    return out;
+  }
+
+  return { SCHEMA, build, compare, digest, narrative };
 });
