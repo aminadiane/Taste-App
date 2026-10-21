@@ -195,7 +195,7 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - [ ] Reduced-motion accessibility for the TV and the book.
 - [ ] Higher-resolution book photography per the photography brief.
 - [ ] Safari and Firefox testing, especially CSS 3D and `-webkit-mask-composite`.
-- [~] Responsive behaviour of the TV and the paperback on phones and tablets (2026-10-21): tested at 320, 375, 390, 430 and 768 px and in landscape, with no horizontal scrolling and nothing clipped. TV buttons have 44 px touch areas. **Reading the open book on a phone needs a design decision:** see `docs/proposals/mobile-book.md`.
+- [~] Responsive behaviour of the TV and the paperback on phones and tablets (2026-10-21): tested at 320, 375, 390, 430 and 768 px and in landscape, with no horizontal scrolling and nothing clipped. TV buttons have 44 px touch areas. Reading on phones in portrait: one page at a time, approved and built 2026-10-21 (`docs/proposals/mobile-book.md`).
 - [x] Lazy-load stills (2026-10-21): the current still, its neighbours and the next one load at once, and the rest load when the browser is idle. Tested in the pane: 3 requests at start instead of 89, both images of the like swipe fully loaded, all 89 loaded in the background.
 
 ## Known bugs and limitations
@@ -284,7 +284,7 @@ Desktop is unchanged: every new style is gated by a media or feature query a des
 - **Not tested:** Safari or WebKit. The environment has no Xcode or simulator, and every test ran in Chromium with phone emulation. Physical devices were not tested.
 
 **Questions for review (mobile):**
-16. **Reading on phones** (`docs/proposals/mobile-book.md`). Should the open book be framed one page at a time in portrait, and should a swipe, a tap on the visible edge, or both move between pages?
+16. ~~Reading on phones~~ approved 2026-10-21 (one page at a time; swipe and tap-on-edge) and built. On the passage page in this framing, tearing is now a downward pull, because sideways swipes move the view. Please confirm that gesture on a real phone.
 17. **TV button labels.** "like" and "dislike" are printed on the photographed TV at about 4 px on a phone. They match the object but can't be read. Is that acceptable, given the "liked" or "disliked" message on the screen after each press, or should phones get a separate label?
 
 ## Decisions pending

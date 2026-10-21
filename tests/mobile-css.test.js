@@ -30,6 +30,6 @@ test('every rule in the mobile section is gated by a media or feature query', ()
 test('the gating queries are ones desktop browsers do not match', () => {
   const start = css.indexOf('Mobile and touch (2026-10-21)');
   const queries = [...css.slice(start).matchAll(/@media\s*([^{]+)\{/g)].map((m) => m[1].trim());
-  const allowed = [/^\(pointer:coarse\)$/, /^\(hover:none\)$/, /^\(max-width:\d+px\)$/, /^\(max-height:\d+px\) and \(orientation:landscape\)$/];
+  const allowed = [/^\(max-width:\d+px\) and \(orientation:portrait\)$/, /^\(pointer:coarse\)$/, /^\(hover:none\)$/, /^\(max-width:\d+px\)$/, /^\(max-height:\d+px\) and \(orientation:landscape\)$/];
   for (const q of queries) assert.ok(allowed.some((r) => r.test(q)), `unexpected query ${q}`);
 });

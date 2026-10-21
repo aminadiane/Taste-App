@@ -1,6 +1,16 @@
 # Proposal: reading the paperback on a phone
 
-**Status:** awaiting the owner's decision. Nothing in this proposal is implemented; the screenshots were made by adjusting the view in the browser, not by changing code.
+**Status:** approved by the owner on 2026-10-21 (one page at a time on phones in portrait; both swipe and tap-on-edge) and implemented the same day in `js/book.js` and `styles.css`. The screenshots below were made before implementation.
+
+**As built:**
+- **When it applies:** screens narrower than 600 px and taller than they are wide. The page fills the width less 20 px on each side; on short phones, height is the limit instead (10.5 px text at 320 × 568, 13.3 px at 375 × 667, 14.7 px at 375 × 812).
+- **Closed cover:** shown larger and centred. When the book opens, the view eases in to the passage page over the same 1.15 s as the cover. Closing eases back out.
+- **Moving between pages:** swipe left or right, or tap the strip of the other page at the screen edge.
+- **Tear-out in this framing:** **pull the passage page downward** (about 120 book px), following the tear from top to bottom. A sideways drag on that page now moves the view, so it can no longer also tear. A short pull springs back; a tap previews the tear. The "tear out" control still works.
+- **Dog-ear:** first tap lifts the corner, second tap folds it. The "dog-ear" control first slides to the info page, so the fold is seen.
+- **After a vote or Next / Previous:** the view returns to the new passage page during the page turn.
+- **Torn stack:** not drawn beside the book in this framing. Torn pages stay available under "torn out" in the drawer.
+- **Everything else unchanged:** landscape, tablets and desktop keep the full spread with exactly the previous code path.
 
 ## The problem
 

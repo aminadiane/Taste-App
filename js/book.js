@@ -12,12 +12,21 @@ window.Pallas = window.Pallas || {};
   const EXCERPTS_URL = 'library/excerpts.json';   // handoff stand-ins, used until library passages are ready
 
   let ENTRIES = [], SPINES = [], NB = 0;
-  const S = { bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
+  const S = { bFocus: 0, bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
     bCoverHover: false, bFlapHover: false, bFlapAnim: 'none', bFolded: false, bTearing: false, bTorn: false, bDragging: false, bPageHover: false };
   let ty = 0, sk = 0, scale = 1, tearRaf = 0, timers = [], active = false, leafFor = null, stackKey = '';
   // Touch: a finger has no hover, and a tap must never register a preference by accident. The last pointer type decides
   // how the pages respond (mouse behaviour is unchanged): see pageDown and rightTap below.
   let lastPointer = 'mouse', armTimer = 0, tearTimer = 0, rendered = false;
+  /* Phones in portrait: one page at a time (docs/proposals/mobile-book.md, approved 2026-10-21). The book is unchanged;
+     a camera (translate + scale on the stage) frames the passage page (focus 0) or the info page (focus 1). A horizontal
+     swipe or a tap on the strip of the other page at the screen edge moves between them; on the passage page a
+     downward pull tears the page out, since sideways swipes now move the view. Tablets, landscape and desktop keep the
+     full spread exactly as before. */
+  const FOCUS_MARGIN = 20;   // px of the other page left visible at the screen edge, which is also its tap target
+  const focusMode = () => innerWidth < 600 && innerHeight > innerWidth;
+  let camKey = null, suppressClick = false;
+  function setFocus(f) { if (!focusMode() || !S.bOpen || S.bFocus === f) return; set({ bFocus: f }); }
   addEventListener('pointerdown', (e) => { lastPointer = e.pointerType || 'mouse'; }, true);
   const touchy = () => lastPointer === 'touch' || lastPointer === 'pen';
   const qv = { tab: 'like', sel: null };
@@ -138,7 +147,7 @@ window.Pallas = window.Pallas || {};
   async function openBook() {
     if (S.bOpen || S.bBusy) return;
     const start = store.resumeIndex('literature', entryIds());   // the next passage not yet evaluated, from where the reader left off
-    await set({ bBusy: true, bOpen: true, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', start) }, bRight: { kind: 'info', idx: start } });
+    await set({ bBusy: true, bOpen: true, bFocus: 0, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', start) }, bRight: { kind: 'info', idx: start } });
     await wait(380);
     await animateLeaf();
     await set({ bLeaf: null, bLeftShown: true, bLeftIdx: start, bIdx: start, bBusy: false });
@@ -146,7 +155,7 @@ window.Pallas = window.Pallas || {};
   async function closeBook() {
     if (!S.bOpen || S.bBusy) return;
     const cur = S.bIdx;
-    await set({ bBusy: true, bFlapHover: false, bFolded: false, bFlapAnim: 'none', bPageHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', cur) }, bLeftShown: false });
+    await set({ bBusy: true, bFocus: 0, bFlapHover: false, bFolded: false, bFlapAnim: 'none', bPageHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', cur) }, bLeftShown: false });
     await animateLeaf(true);
     await set({ bLeaf: null, bRight: { kind: 'title', idx: 0 } });
     await wait(120);
@@ -158,7 +167,7 @@ window.Pallas = window.Pallas || {};
   // After a vote the book turns to the next passage not yet evaluated; Next / Previous browse in order.
   async function turn(afterVote) {
     const cur = S.bIdx, next = afterVote ? store.nextOpen('literature', entryIds(), (cur + 1) % NB) : (cur + 1) % NB;
-    await set({ bLeaf: { front: page('info', cur), back: page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
+    await set({ bFocus: 0, bLeaf: { front: page('info', cur), back: page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
     await animateLeaf();
     setTear(0, 0);
     await set({ bLeaf: null, bLeftIdx: next, bIdx: next, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bTearing: false, bTorn: false, bPageHover: false });
@@ -169,15 +178,18 @@ window.Pallas = window.Pallas || {};
     await set({ bBusy: true, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bPageHover: false });
     if (dir > 0) await turn();
     else {
-      await set({ bLeaf: { front: page('info', next), back: page('excerpt', cur) }, bLeftIdx: next, bRight: { kind: 'info', idx: next } });
+      await set({ bFocus: 0, bLeaf: { front: page('info', next), back: page('excerpt', cur) }, bLeftIdx: next, bRight: { kind: 'info', idx: next } });
       await animateLeaf(true);
       await set({ bLeaf: null, bIdx: next });
     }
     set({ bBusy: false });
   }
+  // On phones the view first slides to the page being acted on, so the fold or the tear is seen.
+  const showPage = async (f) => { if (focusMode() && S.bFocus !== f) { await set({ bFocus: f }); await wait(500); } };
   async function dogEar() {
     if (!canAct()) return;
     V.set('l', ENTRIES[S.bIdx].id, 'like', workOf(S.bIdx));
+    await set({ bBusy: true }); await showPage(1);
     await set({ bBusy: true, bFlapHover: false, bFlapAnim: 'fold', bFolded: true });
     await wait(1250);
     await turn(true);
@@ -186,6 +198,7 @@ window.Pallas = window.Pallas || {};
   async function tearOut() {
     if (!canAct()) return;
     V.set('l', ENTRIES[S.bIdx].id, 'dislike', workOf(S.bIdx));
+    await set({ bBusy: true }); await showPage(0);
     await set({ bBusy: true, bFlapHover: false, bTearing: true, bDragging: false });
     if (ty < 200) await tearTo(250, 2.2, 420);
     await wait(140);
@@ -227,7 +240,53 @@ window.Pallas = window.Pallas || {};
   }
   Pallas.literature = { skip: skipPassage, undo: undoLast, canUndo: () => !!store.lastUndoable('literature'), get busy() { return S.bOpen && !canAct(); } };
 
+  // Phones in portrait (focusMode): the passage page. A sideways swipe moves the view; a tap on the visible strip while
+  // the info page is in view returns to the passage; a downward pull tears the page out (the tear runs top to bottom).
+  function phonePageDown(e) {
+    if (!canAct()) return;
+    const sx = e.clientX, sy = e.clientY, sc = scale || 1;
+    let rx = 0, ry = 0, axis = null;
+    set({ bDragging: true });
+    const move = (ev) => {
+      rx = ev.clientX - sx; ry = ev.clientY - sy;
+      if (!axis && Math.hypot(rx, ry) > 10) axis = Math.abs(rx) > Math.abs(ry) ? 'x' : 'y';
+      if (axis === 'y' && S.bFocus === 0 && ry > 0) { cancelAnimationFrame(tearRaf); const p = Math.min(1, ry / sc / 200); setTear(250 + 230 * p, 2.2 + 1 * p); }
+    };
+    const up = (ev) => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
+      const cancelled = ev && ev.type === 'pointercancel';
+      set({ bDragging: false });
+      if (cancelled) { tearTo(0, 0, 320); return; }
+      if (S.bFocus === 1) { if (!axis || (axis === 'x' && rx > 40)) setFocus(0); return; }
+      if (axis === 'x') { if (rx < -40) setFocus(1); return; }
+      if (axis === 'y' && ry / sc > 120) return tearOut();
+      if (!axis) {   // a tap previews the tear, as on other touch screens
+        set({ bPageHover: true }); tearTo(250, 2.2, 560);
+        clearTimeout(tearTimer);
+        tearTimer = setTimeout(() => { if (!S.bDragging && !S.bTearing) { set({ bPageHover: false }); tearTo(0, 0, 380); } }, 2200);
+        return;
+      }
+      tearTo(0, 0, 320);
+    };
+    addEventListener('pointermove', move); addEventListener('pointerup', up); addEventListener('pointercancel', up);
+  }
+  // The info page on phones: a swipe to the right returns to the passage page.
+  function phoneRightDown(e) {
+    if (!focusMode() || !S.bOpen) return;
+    const sx = e.clientX, sy = e.clientY;
+    const up = (ev) => {
+      removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
+      const rx = ev.clientX - sx, ry = ev.clientY - sy;
+      if (ev.type !== 'pointercancel' && Math.abs(rx) > 40 && Math.abs(rx) > Math.abs(ry)) {
+        suppressClick = true; setTimeout(() => { suppressClick = false; }, 450);
+        if (rx > 0) setFocus(0);
+      }
+    };
+    addEventListener('pointerup', up); addEventListener('pointercancel', up);
+  }
+
   function pageDown(e) {
+    if (focusMode()) return phonePageDown(e);
     if (!canAct()) return;
     const sx = e.clientX, sy = e.clientY, sc = scale || 1;
     let dx = 0, dy = 0, moved = false;
@@ -257,6 +316,8 @@ window.Pallas = window.Pallas || {};
   // The right page: a mouse click dog-ears it, as approved. A first tap with a finger lifts the corner (the preview a
   // mouse gets on hover); a second tap within a few seconds folds it. A tap anywhere else lowers the corner again.
   function rightTap() {
+    if (suppressClick) return;                                         // the end of a swipe, not a tap
+    if (focusMode() && S.bOpen && S.bFocus === 0) return setFocus(1);  // the strip at the screen edge: go to the info page
     if (!touchy()) return dogEar();
     if (!canAct()) return;
     if (S.bFlapHover && armTimer) { clearTimeout(armTimer); armTimer = 0; return dogEar(); }
@@ -276,17 +337,40 @@ window.Pallas = window.Pallas || {};
     const vw = innerWidth, vh = innerHeight;
     const tornAll = listL('dislike'), lLike = listL('like');
     const narrow = vw < 1100;
-    const extra = tornAll.length && narrow ? 190 : 0;
+    const phone = focusMode();
+    const extra = !phone && tornAll.length && narrow ? 190 : 0;
     // Phones in landscape have little height: the corner bars and controls then need about 110 px rather than 230.
     const chrome = vh < 520 && vw > vh ? 110 : 230;
-    // The floor keeps the book from shrinking without limit; on the smallest phones it may go below .42 so that the
-    // spread (and the torn stack beside it) is never wider than the screen.
-    scale = Math.max(vw < 420 ? .3 : .42, Math.min(1.3, (vw - 48) / (narrow ? 700 + extra : 1000), (vh - chrome) / 540));
-    el.stage.style.width = (660 + extra) * scale + 'px';
-    el.stage.style.height = 520 * scale + 'px';
-    el.inner.style.transform = `scale(${scale})`;
-    el.controls.style.width = 660 * scale + 'px';
-    el.controls.style.marginRight = extra * scale + 'px';
+    if (phone) {
+      // the page fills the width, unless the height (corner bars, controls: about 190 px) is the limit
+      const sOpen = Math.min(1.3, (vw - 2 * FOCUS_MARGIN) / 330, (vh - 190) / 520);
+      const sClosed = Math.min(sOpen * .82, (vw * .64) / 330);
+      const isOpen = S.bOpen;
+      scale = isOpen ? sOpen : sClosed;
+      // book space → stage: open, the focused page's left edge sits at the stage's left; closed, the cover is centred
+      const tx = isOpen ? -330 * sOpen * S.bFocus : 165 * sOpen - 330 * sClosed;
+      const ty0 = isOpen ? 0 : (520 * sOpen - 520 * sClosed) / 2;
+      const key = (isOpen ? 'open' : 'closed') + S.bFocus;
+      const opening = camKey !== null && camKey.startsWith('open') !== isOpen;
+      el.inner.style.transition = camKey !== null && camKey !== key ? `transform ${opening ? 1150 : 480}ms ${EASE}` : 'none';
+      camKey = key;
+      el.stage.style.width = 330 * sOpen + 'px';
+      el.stage.style.height = 520 * sOpen + 'px';
+      el.inner.style.transform = `translate(${tx}px,${ty0}px) scale(${scale})`;
+      el.controls.style.width = Math.max(330 * sOpen, vw - 32) + 'px';   // the controls use the screen width, not the page's
+      el.controls.style.marginRight = '0px';
+    } else {
+      camKey = null;
+      el.inner.style.transition = '';
+      // The floor keeps the book from shrinking without limit; on the smallest phones it may go below .42 so that the
+      // spread (and the torn stack beside it) is never wider than the screen.
+      scale = Math.max(vw < 420 ? .3 : .42, Math.min(1.3, (vw - 48) / (narrow ? 700 + extra : 1000), (vh - chrome) / 540));
+      el.stage.style.width = (660 + extra) * scale + 'px';
+      el.stage.style.height = 520 * scale + 'px';
+      el.inner.style.transform = `scale(${scale})`;
+      el.controls.style.width = 660 * scale + 'px';
+      el.controls.style.marginRight = extra * scale + 'px';
+    }
 
     const open = S.bOpen;
     // The first render places the book without animating it, so it does not slide into place when the page loads.
@@ -347,7 +431,7 @@ window.Pallas = window.Pallas || {};
 
     // the torn stack beside the book: the last four torn pages
     const torn = tornAll.slice(-4);
-    el.stack.hidden = !torn.length;
+    el.stack.hidden = !torn.length || phone;   // on phones in portrait the torn pages stay in the drawer ("torn out")
     const key = torn.join(',');
     if (key !== stackKey) {
       stackKey = key;
@@ -429,6 +513,10 @@ window.Pallas = window.Pallas || {};
   el.cover.addEventListener('mouseenter', () => { if (!S.bOpen) set({ bCoverHover: true }); });
   el.cover.addEventListener('mouseleave', () => set({ bCoverHover: false }));
   el.right.addEventListener('click', rightTap);
+  el.right.addEventListener('pointerdown', phoneRightDown);
+  // Browsers without overflow:clip can still scroll an overflow:hidden box (for example while the view slides); undo it.
+  const litScreen = el.stage.closest('.lit');
+  litScreen.addEventListener('scroll', () => { if (litScreen.scrollLeft) litScreen.scrollLeft = 0; });
   // Hover previews are for a mouse; touch browsers also fire emulated mouse events after a tap, which would leave them stuck.
   el.right.addEventListener('mouseenter', () => { if (!touchy() && canAct()) set({ bFlapHover: true, bFlapAnim: 'hover' }); });
   el.right.addEventListener('mouseleave', () => { if (!touchy() && !S.bFolded) set({ bFlapHover: false, bFlapAnim: 'hover' }); });

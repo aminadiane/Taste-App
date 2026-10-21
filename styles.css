@@ -297,3 +297,11 @@ a:hover{color:var(--ink);opacity:1}
     .tv{width:min(92vw,calc((100dvh - 92px) * 1.107),880px)}
   }
 }
+
+/* Phones in portrait: the book is framed one page at a time (js/book.js, focusMode). Horizontal swipes on the pages move
+   the view, so the browser must not treat them as scrolling or history gestures. */
+@media (max-width:599px) and (orientation:portrait) {
+  .book__right{touch-action:none}
+  /* the framed book reaches past the screen edges; clip (not hidden) so the browser can never scroll it sideways */
+  .lit{overflow:clip;gap:20px;padding:52px var(--edge) 90px}
+}
