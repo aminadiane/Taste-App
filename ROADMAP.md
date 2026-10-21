@@ -116,10 +116,14 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - *Accept when:* ~~all 89 stills validate, observed fields use only vocabulary terms, no interpretive term in observed, validator reports zero errors~~ done: `node tools/validate-cinema.js` reports 89 observed, 0 errors; `tests/cinema-metadata.test.js`.
 - Limitations: tonal symmetry measures mirrored brightness, not mirrored shapes, so dark, even frames can score high; the composition term "symmetrical" is the viewer's judgment. Observations were made from a 560-pixel copy, by Claude, in one pass; the owner may want to review a sample.
 
-### 4. Skip and undo
+### 4. Skip and undo — data handling built 2026-10-21; controls wait on designs
 
-- Store support lands with priority 1. Controls on the TV and the book are designed in Claude Design first, then built with the approved interactions.
-- *Accept when:* skip and undo work in both areas, undo reverses the most recent action without deleting history, and skipped works return in a later session.
+- Store: `skip`, `undo` (steps back one judgment at a time, never deletes; an undone re-vote restores the earlier vote; an undone skip reopens the work) and `lastUndoable(area)` to tell a future control whether undo is available.
+- Screens: `Pallas.cinema.skip() / .undo() / .canUndo() / .busy` and `Pallas.literature.skip() / .undo() / .canUndo() / .busy`. Both refuse while a sequence runs. Skip in the book turns the page like Next; undo returns to the restored still or passage, and the drawer counts, shelf and torn stack update from the votes.
+- No visible controls were added. Undo and cinema skip cut directly, because no transition is designed for them.
+- Book votes now record the book slug as the work; earlier events recorded the passage id, and the engine reads works from the library, so nothing breaks.
+- Tested: store tests (skip, undo, re-vote, persistence across reloads) and in the pane: cinema skip and undo, undo after a like (refused while the like sequence ran), book skip with page turn, undo after a tear-out (passage restored, torn stack emptied). The pane's saved progress was backed up and restored.
+- *Remaining:* designs for the controls and their transitions (Claude Design), then wire them to the functions above.
 
 ### 5. Taste-analysis engine
 

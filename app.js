@@ -191,6 +191,28 @@ window.Pallas = window.Pallas || {};
     });
     later(3000, () => set({ phase: 'idle' }));
   }
+  /* ---------- skip and undo: data handling only. Controls wait for approved designs; connect them to
+     Pallas.cinema.skip() and .undo(). Skip records that the still was passed over (it returns in a later session) and
+     shows the next open still; undo reverses the latest like, dislike or skip and returns to that still. No transition
+     is designed for either yet, so both cut directly. Both are refused while a sequence runs. */
+  function skip() {
+    if (state.phase !== 'idle' || !N) return null;
+    const s = library.stills[state.idx];
+    const e = store.skip('cinema', s.id, s.film);
+    set({ idx: nextIdx() });
+    return e;
+  }
+  function undo() {
+    if (state.phase !== 'idle' || !N) return null;
+    const e = store.undo('cinema');
+    if (!e) return null;
+    const i = stillIds().indexOf(e.item);
+    if (i >= 0) set({ idx: i }); else render();
+    if (D.isOpen() && !cinema.hidden) D.render();
+    return e;
+  }
+  Pallas.cinema = { skip, undo, canUndo: () => !!store.lastUndoable('cinema'), get busy() { return state.phase !== 'idle'; } };
+
   $('like').addEventListener('click', () => react('like'));
   $('dislike').addEventListener('click', () => react('dislike'));
 

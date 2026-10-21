@@ -121,13 +121,19 @@ window.Pallas = window.Pallas || {};
       return record(a, item, kind, work);
     },
     skip(a, item, work) { return record(a, item, 'skip', work); },
-    // Reverse the most recent effective judgment in an area. Returns the undone event, or null.
-    undo(a) {
+    // The event undo(a) would reverse next: the most recent like, dislike or skip in the area not already undone.
+    lastUndoable(a) {
       a = area(a);
       const undone = new Set(doc.events.filter((e) => e.kind === 'undo').map((e) => e.undoes));
-      const last = doc.events.filter((e) => e.area === a && JUDGMENTS.has(e.kind) && !undone.has(e.id)).pop();
+      return doc.events.filter((e) => e.area === a && JUDGMENTS.has(e.kind) && !undone.has(e.id)).pop() || null;
+    },
+    // Reverse the most recent effective judgment in an area. Returns the undone event, or null. Repeated calls step
+    // further back. The reversed event stays in the log; an 'undo' event marks it. The item's judgment falls back to its
+    // previous effective event, if any (a re-vote undone restores the earlier vote).
+    undo(a) {
+      const last = this.lastUndoable(a);
       if (!last) return null;
-      record(a, last.item, 'undo', last.work, { undoes: last.id });
+      record(area(a), last.item, 'undo', last.work, { undoes: last.id });
       return last;
     },
 

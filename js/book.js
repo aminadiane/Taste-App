@@ -70,6 +70,7 @@ window.Pallas = window.Pallas || {};
   const wait = (ms) => new Promise((res) => timers.push(setTimeout(res, ms)));
   const frame = () => new Promise((res) => requestAnimationFrame(() => requestAnimationFrame(res)));
   const canAct = () => S.bOpen && S.bLeftShown && !S.bBusy;
+  const workOf = (i) => ENTRIES[i].book || ENTRIES[i].id;   // the book a passage comes from (stand-ins: the passage itself)
 
   /* ---------- the turning leaf: two hinged segments over the right page ---------- */
   function buildLeaf(front, back) {
@@ -171,7 +172,7 @@ window.Pallas = window.Pallas || {};
   }
   async function dogEar() {
     if (!canAct()) return;
-    V.set('l', ENTRIES[S.bIdx].id, 'like', ENTRIES[S.bIdx].id);
+    V.set('l', ENTRIES[S.bIdx].id, 'like', workOf(S.bIdx));
     await set({ bBusy: true, bFlapHover: false, bFlapAnim: 'fold', bFolded: true });
     await wait(1250);
     await turn(true);
@@ -179,7 +180,7 @@ window.Pallas = window.Pallas || {};
   }
   async function tearOut() {
     if (!canAct()) return;
-    V.set('l', ENTRIES[S.bIdx].id, 'dislike', ENTRIES[S.bIdx].id);
+    V.set('l', ENTRIES[S.bIdx].id, 'dislike', workOf(S.bIdx));
     await set({ bBusy: true, bFlapHover: false, bTearing: true, bDragging: false });
     if (ty < 200) await tearTo(250, 2.2, 420);
     await wait(140);
@@ -197,6 +198,30 @@ window.Pallas = window.Pallas || {};
     await turn(true);
     set({ bBusy: false });
   }
+  /* ---------- skip and undo: data handling only. Controls wait for approved designs; connect them to
+     Pallas.literature.skip() and .undo(). Skip turns the page like Next, recording that the passage was passed over
+     (it returns in a later session). Undo reverses the latest dog-ear, tear-out or skip and opens that passage again;
+     no undo transition is designed yet, so it cuts straight to the spread. Both are refused while a sequence runs. */
+  async function skipPassage() {
+    if (!canAct() || !NB) return null;
+    const e = store.skip('literature', ENTRIES[S.bIdx].id, workOf(S.bIdx));
+    await set({ bBusy: true, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bPageHover: false });
+    await turn(true);
+    set({ bBusy: false });
+    return e;
+  }
+  async function undoLast() {
+    if ((S.bOpen && !canAct()) || !NB) return null;
+    const e = store.undo('literature');
+    if (!e) return null;
+    const i = idxOf(e.item);
+    if (S.bOpen && i >= 0) { setTear(0, 0); await set({ bLeaf: null, bIdx: i, bLeftIdx: i, bRight: { kind: 'info', idx: i }, bFolded: false, bTorn: false, bTearing: false }); }
+    else render();
+    if (D.isOpen() && active) D.render();
+    return e;
+  }
+  Pallas.literature = { skip: skipPassage, undo: undoLast, canUndo: () => !!store.lastUndoable('literature'), get busy() { return S.bOpen && !canAct(); } };
+
   function pageDown(e) {
     if (!canAct()) return;
     const sx = e.clientX, sc = scale || 1;

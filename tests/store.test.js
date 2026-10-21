@@ -177,3 +177,37 @@ test('export, reset one area and delete everything', () => {
   P = boot(ls);
   assert.deepEqual(P.votes.all('l'), {});
 });
+
+test('lastUndoable previews undo without changing anything', () => {
+  const P = boot(storage());
+  assert.equal(P.store.lastUndoable('cinema'), null);
+  P.votes.set('c', 's1', 'like');
+  const before = P.store.history('cinema').length;
+  assert.equal(P.store.lastUndoable('cinema').item, 's1');
+  assert.equal(P.store.history('cinema').length, before);
+});
+
+test('undoing a re-vote restores the earlier vote; undoing a skip makes the work open again', () => {
+  const P = boot(storage());
+  P.votes.set('c', 's1', 'like');
+  P.votes.set('c', 's1', 'dislike');
+  P.store.undo('cinema');
+  assert.equal(P.votes.get('c', 's1'), 'like');
+  P.store.skip('cinema', 's2');
+  assert.equal(P.store.nextOpen('cinema', FILMS, 1), 2);
+  P.store.undo('cinema');
+  assert.equal(P.store.nextOpen('cinema', FILMS, 1), 1);
+});
+
+test('undo and skip survive a refresh and keep every timestamped event', () => {
+  const ls = storage();
+  let P = boot(ls);
+  P.votes.set('l', 'b1', 'like'); P.store.skip('literature', 'b2', 'book-b'); P.store.undo('literature');
+  P = boot(ls);
+  const h = P.store.history('literature');
+  assert.deepEqual(h.map((e) => e.kind), ['like', 'skip', 'undo']);
+  assert.ok(h.every((e) => typeof e.t === 'string' && e.session));
+  assert.equal(h[2].undoes, h[1].id);
+  assert.equal(P.votes.get('l', 'b1'), 'like');
+  assert.equal(P.store.nextOpen('literature', BOOKS, 1), 1, 'the undone skip no longer hides b2');
+});
