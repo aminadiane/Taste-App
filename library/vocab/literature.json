@@ -1,0 +1,427 @@
+{
+  "version": 1,
+  "updated": "2026-10-21",
+  "notes": "Controlled vocabulary for literary passages. Values are stored per passage in library/literature.json under metadata.features (observed) and metadata.interpretation.features (interpretation). The existing prose descriptions and technique notes stay as they are; these terms are what the taste engine counts. 'basis' is observed (visible in the text) or interpretation (a reader's judgment). Add terms freely; never rename a published one.",
+  "dimensions": {
+    "person": {
+      "basis": "observed",
+      "label": "narrative person",
+      "definition": "Who tells the passage.",
+      "values": {
+        "first": {
+          "label": "first-person narration",
+          "definition": "Told by an \"I\"."
+        },
+        "second": {
+          "label": "second-person narration",
+          "definition": "Told to a \"you\" who is the protagonist."
+        },
+        "third": {
+          "label": "third-person narration",
+          "definition": "Told about \"he\", \"she\" or \"they\"."
+        }
+      }
+    },
+    "form": {
+      "basis": "observed",
+      "label": "form",
+      "definition": "The kind of book the passage comes from (bibliographic, not a judgment of style).",
+      "values": {
+        "novel": {
+          "label": "novel",
+          "definition": "Long-form fiction."
+        },
+        "short-story": {
+          "label": "short story",
+          "definition": "Short fiction, from a collection."
+        },
+        "nonfiction": {
+          "label": "literary nonfiction",
+          "definition": "Narrative history, reportage or memoir."
+        },
+        "testimony": {
+          "label": "documentary testimony",
+          "definition": "Edited oral history."
+        },
+        "poetry": {
+          "label": "poetry or hybrid lyric",
+          "definition": "Poetry, prose poetry or lyric essay."
+        }
+      }
+    },
+    "tense": {
+      "basis": "observed",
+      "label": "tense",
+      "definition": "The main tense of the narration.",
+      "values": {
+        "past": {
+          "label": "past tense",
+          "definition": "Events are narrated as having happened."
+        },
+        "present": {
+          "label": "present tense",
+          "definition": "Events are narrated as they happen."
+        },
+        "mixed": {
+          "label": "mixed tense",
+          "definition": "The narration moves between present and past."
+        }
+      }
+    },
+    "narration": {
+      "basis": "observed",
+      "label": "narrative stance",
+      "definition": "The narrator's position in time relative to the events.",
+      "values": {
+        "immediate": {
+          "label": "immediate narration",
+          "definition": "The telling stays inside the moment of the events."
+        },
+        "retrospective": {
+          "label": "retrospective narration",
+          "definition": "An older narrator looks back on the events."
+        },
+        "epistolary": {
+          "label": "epistolary narration",
+          "definition": "The passage is a letter, diary or document addressed to someone."
+        },
+        "testimony": {
+          "label": "testimony",
+          "definition": "Recorded or edited first-person speech presented as the words of a real witness."
+        }
+      }
+    },
+    "sentenceLength": {
+      "basis": "observed",
+      "label": "sentence length",
+      "definition": "The typical length of the sentences.",
+      "values": {
+        "short": {
+          "label": "short sentences",
+          "definition": "Most sentences are brief."
+        },
+        "long": {
+          "label": "long sentences",
+          "definition": "Most sentences run long, with many clauses."
+        },
+        "varied": {
+          "label": "varied sentence length",
+          "definition": "Short and long sentences alternate noticeably."
+        }
+      }
+    },
+    "syntax": {
+      "basis": "observed",
+      "label": "syntax",
+      "definition": "How clauses are joined.",
+      "values": {
+        "paratactic": {
+          "label": "parataxis",
+          "definition": "Clauses are set side by side, joined by \"and\", commas or semicolons, with little subordination."
+        },
+        "hypotactic": {
+          "label": "hypotaxis",
+          "definition": "Main clauses carry many subordinate clauses that qualify them."
+        },
+        "cumulative": {
+          "label": "cumulative sentences",
+          "definition": "A main clause comes first and modifying phrases accumulate after it."
+        },
+        "fragmented": {
+          "label": "fragmented syntax",
+          "definition": "Sentence fragments and broken syntax are used deliberately."
+        }
+      }
+    },
+    "diction": {
+      "basis": "observed",
+      "label": "diction",
+      "definition": "The kind of words chosen.",
+      "values": {
+        "plain": {
+          "label": "plain diction",
+          "definition": "Common, concrete words."
+        },
+        "colloquial": {
+          "label": "colloquial diction",
+          "definition": "Spoken, informal phrasing and idiom."
+        },
+        "formal": {
+          "label": "formal diction",
+          "definition": "Measured, elevated or old-fashioned vocabulary."
+        },
+        "ornate": {
+          "label": "ornate diction",
+          "definition": "Rich, rare or highly decorative vocabulary."
+        }
+      }
+    },
+    "figuration": {
+      "basis": "observed",
+      "label": "figurative density",
+      "definition": "How much metaphor, simile and vivid imagery the passage uses.",
+      "values": {
+        "sparse": {
+          "label": "sparse figuration",
+          "definition": "Little or no metaphor; mostly literal statement."
+        },
+        "moderate": {
+          "label": "moderate figuration",
+          "definition": "Occasional images or metaphors."
+        },
+        "rich": {
+          "label": "rich figuration",
+          "definition": "Dense metaphor, simile or sensory imagery throughout."
+        }
+      }
+    },
+    "dialogue": {
+      "basis": "observed",
+      "label": "dialogue",
+      "definition": "Whether and how speech appears.",
+      "values": {
+        "none": {
+          "label": "no dialogue",
+          "definition": "No speech is quoted or reported."
+        },
+        "marked": {
+          "label": "marked dialogue",
+          "definition": "Speech in quotation marks."
+        },
+        "unmarked": {
+          "label": "unmarked dialogue",
+          "definition": "Speech reported without quotation marks."
+        }
+      }
+    },
+    "focus": {
+      "basis": "observed",
+      "label": "focus",
+      "definition": "What the passage mainly attends to.",
+      "values": {
+        "action": {
+          "label": "physical action",
+          "definition": "Bodies, movement and events."
+        },
+        "interior": {
+          "label": "interior life",
+          "definition": "Thoughts, feelings and self-assessment."
+        },
+        "reflection": {
+          "label": "reflection",
+          "definition": "Essayistic thought about memory, ideas or the world."
+        },
+        "description": {
+          "label": "description",
+          "definition": "Places, objects or people described at rest."
+        }
+      }
+    },
+    "pace": {
+      "basis": "observed",
+      "label": "pace",
+      "definition": "How narrative time relates to reading time.",
+      "values": {
+        "scene": {
+          "label": "scene",
+          "definition": "A single moment told at about the speed it happens, or slower."
+        },
+        "summary": {
+          "label": "summary",
+          "definition": "A stretch of time or a habit compressed into a few sentences."
+        },
+        "digressive": {
+          "label": "digression",
+          "definition": "The narration wanders from its course into association."
+        }
+      }
+    },
+    "device": {
+      "basis": "observed",
+      "multi": true,
+      "label": "devices",
+      "definition": "Named techniques visible in the passage.",
+      "values": {
+        "repetition": {
+          "label": "repetition",
+          "definition": "Words or structures repeated for effect."
+        },
+        "polysyndeton": {
+          "label": "polysyndeton",
+          "definition": "Many conjunctions (\"and … and … and\") in close succession."
+        },
+        "in-medias-res": {
+          "label": "in medias res",
+          "definition": "The passage begins in the middle of the action."
+        },
+        "direct-address": {
+          "label": "direct address",
+          "definition": "The narrator speaks to a \"you\"."
+        },
+        "withheld-identity": {
+          "label": "withheld identity",
+          "definition": "A central figure is not named or explained."
+        },
+        "unexplained-terms": {
+          "label": "unexplained terminology",
+          "definition": "Words particular to the story's world are used without explanation."
+        },
+        "close-detail": {
+          "label": "close detail",
+          "definition": "A small, exact physical detail is singled out."
+        },
+        "mirroring": {
+          "label": "mirroring",
+          "definition": "Actions or phrases echo one another across the passage."
+        },
+        "self-correction": {
+          "label": "self-correction",
+          "definition": "The narrator qualifies or revises their own statements."
+        },
+        "hedging": {
+          "label": "hedging",
+          "definition": "Uncertainty is admitted (\"as it seemed to me\")."
+        },
+        "retrospective-frame": {
+          "label": "retrospective frame",
+          "definition": "An explicit act of remembering frames the events (\"I remember\")."
+        },
+        "unmarked-speech": {
+          "label": "unmarked speech",
+          "definition": "Speech blended into narration without quotation marks."
+        },
+        "stream-of-consciousness": {
+          "label": "stream of consciousness",
+          "definition": "Thought rendered as an unbroken flow."
+        },
+        "free-indirect": {
+          "label": "free indirect discourse",
+          "definition": "Third-person narration takes on a character's thoughts and idiom."
+        },
+        "list": {
+          "label": "catalogue",
+          "definition": "A list of things, names or places."
+        },
+        "prolepsis": {
+          "label": "prolepsis",
+          "definition": "A flash-forward: the narration tells of something that will happen later."
+        },
+        "analepsis": {
+          "label": "analepsis",
+          "definition": "A flashback: the narration turns to earlier events."
+        },
+        "anaphora": {
+          "label": "anaphora",
+          "definition": "Successive clauses or sentences begin with the same words."
+        },
+        "simile": {
+          "label": "simile",
+          "definition": "An explicit comparison using \"like\" or \"as\"."
+        },
+        "personification": {
+          "label": "personification",
+          "definition": "Human qualities given to things or forces."
+        },
+        "irony": {
+          "label": "irony",
+          "definition": "A gap between what is said and what is meant, or between expectation and outcome."
+        },
+        "understatement": {
+          "label": "understatement",
+          "definition": "Deliberately saying less than the situation warrants."
+        },
+        "pastiche": {
+          "label": "pastiche",
+          "definition": "Imitation of the style of another period or writer."
+        },
+        "montage": {
+          "label": "montage",
+          "definition": "Separate images or moments set side by side without linking narration."
+        },
+        "ekphrasis": {
+          "label": "ekphrasis",
+          "definition": "Description of a work of visual art."
+        },
+        "delayed-disclosure": {
+          "label": "delayed disclosure",
+          "definition": "A key fact is withheld until late in the passage."
+        }
+      }
+    },
+    "register": {
+      "basis": "interpretation",
+      "label": "register",
+      "definition": "A reader's overall judgment of the prose's manner. Subjective.",
+      "values": {
+        "restrained": {
+          "label": "restrained prose",
+          "definition": "Understated and economical; feeling held back."
+        },
+        "lyrical": {
+          "label": "lyrical prose",
+          "definition": "Cadenced and musical; feeling carried by sound and rhythm."
+        },
+        "experimental": {
+          "label": "experimental prose",
+          "definition": "Conventional form is broken or rearranged."
+        },
+        "ornamental": {
+          "label": "ornamental prose",
+          "definition": "Elaborate and decorative."
+        }
+      }
+    },
+    "tone": {
+      "basis": "interpretation",
+      "multi": true,
+      "label": "tone",
+      "definition": "A reader's sense of the passage's emotional colour. Subjective.",
+      "values": {
+        "tense": {
+          "label": "tense",
+          "definition": "Charged with anxiety or threat."
+        },
+        "tender": {
+          "label": "tender",
+          "definition": "Affectionate and gentle."
+        },
+        "melancholy": {
+          "label": "melancholy",
+          "definition": "Sad or wistful."
+        },
+        "brutal": {
+          "label": "brutal",
+          "definition": "Harsh and violent."
+        },
+        "calm": {
+          "label": "calm",
+          "definition": "Even and composed."
+        },
+        "unsettling": {
+          "label": "unsettling",
+          "definition": "Quietly disturbing."
+        },
+        "intimate": {
+          "label": "intimate",
+          "definition": "Close and private."
+        },
+        "reflective": {
+          "label": "reflective",
+          "definition": "Thoughtful and contemplative."
+        },
+        "uneasy": {
+          "label": "uneasy",
+          "definition": "Troubled, without a clear cause."
+        },
+        "comic": {
+          "label": "comic",
+          "definition": "Funny or wry."
+        },
+        "exuberant": {
+          "label": "exuberant",
+          "definition": "Energetic and high-spirited."
+        }
+      }
+    }
+  }
+}

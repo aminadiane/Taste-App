@@ -1,0 +1,10029 @@
+{
+ "version": 1,
+ "notes": "Per-still cinematography metadata, keyed by still id. measured: computed from the pixels by tools/measure-stills.js (regenerable). observed: what is visible in the image, in controlled vocabulary terms, recorded by a viewer of the image. interpretation: subjective readings, kept apart. Existing free-text notes in stills.json are supplementary and unchanged.",
+ "vocabulary": "library/vocab/cinema.json",
+ "stills": {
+  "2001-a-space-odyssey-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     121
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.232,
+     "medianLuminance": 0.039,
+     "p5": 0.003,
+     "p95": 0.992,
+     "contrastRange": 0.989,
+     "saturation": 0.131,
+     "warmth": -0.023,
+     "colouredShare": 0.018,
+     "vividShare": 0,
+     "hueSpread": 7,
+     "symmetry": -0.15,
+     "detail": 0.082
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0.65,
+     "blue": 0.35,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#010406",
+      "share": 0.531
+     },
+     {
+      "hex": "#f8f8f7",
+      "share": 0.176
+     },
+     {
+      "hex": "#12181b",
+      "share": 0.167
+     },
+     {
+      "hex": "#32383a",
+      "share": 0.093
+     },
+     {
+      "hex": "#919393",
+      "share": 0.033
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "high",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [
+      "teal",
+      "blue"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": null,
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "negative-space",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [
+     "lightSource"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "lonely",
+     "austere"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "lawrence-of-arabia-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     107
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.479,
+     "medianLuminance": 0.503,
+     "p5": 0.223,
+     "p95": 0.623,
+     "contrastRange": 0.4,
+     "saturation": 0.194,
+     "warmth": -0.027,
+     "colouredShare": 0.399,
+     "vividShare": 0.017,
+     "hueSpread": 91.4,
+     "symmetry": 0.087,
+     "detail": 0.033
+    },
+    "hueShares": {
+     "red": 0.155,
+     "orange": 0.073,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.77,
+     "purple": 0,
+     "magenta": 0.002
+    },
+    "palette": [
+     {
+      "hex": "#8b7c7b",
+      "share": 0.277
+     },
+     {
+      "hex": "#736563",
+      "share": 0.249
+     },
+     {
+      "hex": "#879db8",
+      "share": 0.238
+     },
+     {
+      "hex": "#7c8aa3",
+      "share": 0.141
+     },
+     {
+      "hex": "#453431",
+      "share": 0.096
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "low",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [
+      "blue"
+     ],
+     "harmony": "single-hue",
+     "accent": true,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "high",
+    "composition": [
+     "negative-space",
+     "leading-lines",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke",
+     "dust"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "lawrence-of-arabia-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     107
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.421,
+     "medianLuminance": 0.458,
+     "p5": 0.03,
+     "p95": 0.65,
+     "contrastRange": 0.62,
+     "saturation": 0.265,
+     "warmth": 0.117,
+     "colouredShare": 0.646,
+     "vividShare": 0.001,
+     "hueSpread": 22.1,
+     "symmetry": 0.037,
+     "detail": 0.052
+    },
+    "hueShares": {
+     "red": 0.357,
+     "orange": 0.635,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.004,
+     "purple": 0,
+     "magenta": 0.003
+    },
+    "palette": [
+     {
+      "hex": "#998178",
+      "share": 0.25
+     },
+     {
+      "hex": "#aa9d97",
+      "share": 0.223
+     },
+     {
+      "hex": "#80665c",
+      "share": 0.221
+     },
+     {
+      "hex": "#5f4740",
+      "share": 0.17
+     },
+     {
+      "hex": "#1b0e0c",
+      "share": 0.136
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "red"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "diagonal",
+     "leading-lines",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "dust"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "lawrence-of-arabia-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.419,
+     "medianLuminance": 0.441,
+     "p5": 0,
+     "p95": 0.743,
+     "contrastRange": 0.743,
+     "saturation": 0.146,
+     "warmth": -0.045,
+     "colouredShare": 0.23,
+     "vividShare": 0,
+     "hueSpread": 32.6,
+     "symmetry": 0.048,
+     "detail": 0.032
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0.77,
+     "blue": 0.23,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#626f73",
+      "share": 0.295
+     },
+     {
+      "hex": "#898e8d",
+      "share": 0.267
+     },
+     {
+      "hex": "#3b4d53",
+      "share": 0.18
+     },
+     {
+      "hex": "#0a0d0e",
+      "share": 0.14
+     },
+     {
+      "hex": "#c0bdb8",
+      "share": 0.118
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "teal",
+      "blue"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "low",
+    "composition": [
+     "silhouette",
+     "off-centre",
+     "negative-space"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "rim",
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "lawrence-of-arabia-04": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.485,
+     "medianLuminance": 0.467,
+     "p5": 0.401,
+     "p95": 0.6,
+     "contrastRange": 0.199,
+     "saturation": 0.101,
+     "warmth": 0.036,
+     "colouredShare": 0.007,
+     "vividShare": 0,
+     "hueSpread": 44.3,
+     "symmetry": 0.167,
+     "detail": 0.024
+    },
+    "hueShares": {
+     "red": 0.006,
+     "orange": 0.6,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.394,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#807771",
+      "share": 0.351
+     },
+     {
+      "hex": "#766c69",
+      "share": 0.309
+     },
+     {
+      "hex": "#929a96",
+      "share": 0.153
+     },
+     {
+      "hex": "#888c89",
+      "share": 0.15
+     },
+     {
+      "hex": "#615957",
+      "share": 0.037
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "negative-space",
+     "off-centre"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "lonely"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "lawrence-of-arabia-05": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.409,
+     "medianLuminance": 0.343,
+     "p5": 0.168,
+     "p95": 0.78,
+     "contrastRange": 0.612,
+     "saturation": 0.183,
+     "warmth": 0.066,
+     "colouredShare": 0.583,
+     "vividShare": 0,
+     "hueSpread": 12.5,
+     "symmetry": 0.111,
+     "detail": 0.044
+    },
+    "hueShares": {
+     "red": 0.574,
+     "orange": 0.387,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0.039
+    },
+    "palette": [
+     {
+      "hex": "#5e4b47",
+      "share": 0.334
+     },
+     {
+      "hex": "#726059",
+      "share": 0.215
+     },
+     {
+      "hex": "#bdbdbc",
+      "share": 0.194
+     },
+     {
+      "hex": "#3c2e2e",
+      "share": 0.176
+     },
+     {
+      "hex": "#938e86",
+      "share": 0.08
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "red",
+      "orange"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "dense",
+     "staging-in-depth",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "dust"
+    ],
+    "gaze": "hidden",
+    "motion": "blur",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "chaotic",
+     "grand"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "dr-strangelove-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     226,
+     154
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 1,
+     "right": 29
+    },
+    "metrics": {
+     "meanLuminance": 0.177,
+     "medianLuminance": 0.122,
+     "p5": 0.004,
+     "p95": 0.58,
+     "contrastRange": 0.576,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.318,
+     "detail": 0.05
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#070707",
+      "share": 0.382
+     },
+     {
+      "hex": "#3b3b3b",
+      "share": 0.221
+     },
+     {
+      "hex": "#1e1e1e",
+      "share": 0.219
+     },
+     {
+      "hex": "#676767",
+      "share": 0.119
+     },
+     {
+      "hex": "#b5b5b5",
+      "share": 0.059
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "mixed",
+    "lightDirection": [
+     "top",
+     "back"
+    ],
+    "lightSource": "practical",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "dr-strangelove-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     195,
+     103
+    ],
+    "trimmed": {
+     "top": 12,
+     "bottom": 39,
+     "left": 20,
+     "right": 41
+    },
+    "metrics": {
+     "meanLuminance": 0.108,
+     "medianLuminance": 0.051,
+     "p5": 0.008,
+     "p95": 0.373,
+     "contrastRange": 0.365,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.137,
+     "detail": 0.041
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#060606",
+      "share": 0.415
+     },
+     {
+      "hex": "#0f0f0f",
+      "share": 0.213
+     },
+     {
+      "hex": "#212121",
+      "share": 0.176
+     },
+     {
+      "hex": "#444444",
+      "share": 0.135
+     },
+     {
+      "hex": "#737373",
+      "share": 0.061
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "vehicle",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "dr-strangelove-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     154
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.158,
+     "medianLuminance": 0.118,
+     "p5": 0.024,
+     "p95": 0.42,
+     "contrastRange": 0.396,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.075,
+     "detail": 0.036
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0a0a0a",
+      "share": 0.281
+     },
+     {
+      "hex": "#191919",
+      "share": 0.272
+     },
+     {
+      "hex": "#2f2f2f",
+      "share": 0.209
+     },
+     {
+      "hex": "#4a4a4a",
+      "share": 0.152
+     },
+     {
+      "hex": "#6f6f6f",
+      "share": 0.086
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "mixed",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "12-angry-men-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     153
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.245,
+     "medianLuminance": 0.141,
+     "p5": 0.012,
+     "p95": 0.784,
+     "contrastRange": 0.773,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.089,
+     "detail": 0.076
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0a0a0a",
+      "share": 0.383
+     },
+     {
+      "hex": "#222222",
+      "share": 0.201
+     },
+     {
+      "hex": "#424242",
+      "share": 0.161
+     },
+     {
+      "hex": "#bebebe",
+      "share": 0.143
+     },
+     {
+      "hex": "#7c7c7c",
+      "share": 0.112
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "practical",
+    "shotScale": "medium",
+    "angle": "high",
+    "composition": [
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "oppressive"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "12-angry-men-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     153
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.386,
+     "medianLuminance": 0.357,
+     "p5": 0.063,
+     "p95": 0.749,
+     "contrastRange": 0.686,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.092,
+     "detail": 0.055
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#b6b6b6",
+      "share": 0.211
+     },
+     {
+      "hex": "#3a3a3a",
+      "share": 0.209
+     },
+     {
+      "hex": "#5d5d5d",
+      "share": 0.209
+     },
+     {
+      "hex": "#171717",
+      "share": 0.194
+     },
+     {
+      "hex": "#878787",
+      "share": 0.177
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "close-up",
+    "angle": "eye-level",
+    "composition": [
+     "centred"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "rear-window-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.336,
+     "medianLuminance": 0.325,
+     "p5": 0.016,
+     "p95": 0.729,
+     "contrastRange": 0.713,
+     "saturation": 0.349,
+     "warmth": 0.11,
+     "colouredShare": 0.487,
+     "vividShare": 0.06,
+     "hueSpread": 46.4,
+     "symmetry": 0.363,
+     "detail": 0.17
+    },
+    "hueShares": {
+     "red": 0.008,
+     "orange": 0.785,
+     "yellow": 0.099,
+     "green": 0.021,
+     "teal": 0.002,
+     "blue": 0.085,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#100c07",
+      "share": 0.275
+     },
+     {
+      "hex": "#928779",
+      "share": 0.203
+     },
+     {
+      "hex": "#6f5d45",
+      "share": 0.188
+     },
+     {
+      "hex": "#3f3221",
+      "share": 0.183
+     },
+     {
+      "hex": "#bab3ad",
+      "share": 0.151
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": true,
+     "symmetry": "moderate",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "rear-window-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     204,
+     181
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 11,
+     "left": 22,
+     "right": 30
+    },
+    "metrics": {
+     "meanLuminance": 0.12,
+     "medianLuminance": 0.025,
+     "p5": 0.007,
+     "p95": 0.489,
+     "contrastRange": 0.482,
+     "saturation": 0.424,
+     "warmth": 0.118,
+     "colouredShare": 0.247,
+     "vividShare": 0.028,
+     "hueSpread": 27.4,
+     "symmetry": 0.071,
+     "detail": 0.095
+    },
+    "hueShares": {
+     "red": 0.036,
+     "orange": 0.904,
+     "yellow": 0.033,
+     "green": 0.001,
+     "teal": 0.019,
+     "blue": 0.007,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#040303",
+      "share": 0.553
+     },
+     {
+      "hex": "#3e2c1d",
+      "share": 0.134
+     },
+     {
+      "hex": "#1b120d",
+      "share": 0.124
+     },
+     {
+      "hex": "#635244",
+      "share": 0.105
+     },
+     {
+      "hex": "#918478",
+      "share": 0.084
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "frame-within-frame",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy",
+     "intimate"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "sunset-boulevard-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.227,
+     "medianLuminance": 0.145,
+     "p5": 0.024,
+     "p95": 0.655,
+     "contrastRange": 0.631,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.225,
+     "detail": 0.056
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0b0b0b",
+      "share": 0.317
+     },
+     {
+      "hex": "#202020",
+      "share": 0.256
+     },
+     {
+      "hex": "#3f3f3f",
+      "share": 0.169
+     },
+     {
+      "hex": "#a5a5a5",
+      "share": 0.136
+     },
+     {
+      "hex": "#6d6d6d",
+      "share": 0.122
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "practical",
+    "shotScale": "medium-close",
+    "angle": "low",
+    "composition": [
+     "off-centre",
+     "diagonal",
+     "staging-in-depth"
+    ],
+    "focus": "shallow",
+    "layers": "three-plus",
+    "figures": "two",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "sunset-boulevard-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.297,
+     "medianLuminance": 0.2,
+     "p5": 0.043,
+     "p95": 0.827,
+     "contrastRange": 0.784,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.02,
+     "detail": 0.031
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#2a2a2a",
+      "share": 0.351
+     },
+     {
+      "hex": "#404040",
+      "share": 0.246
+     },
+     {
+      "hex": "#111111",
+      "share": 0.18
+     },
+     {
+      "hex": "#cecece",
+      "share": 0.179
+     },
+     {
+      "hex": "#7a7a7a",
+      "share": 0.044
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "high",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "leading-lines"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "some-like-it-hot-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     153
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.176,
+     "medianLuminance": 0.118,
+     "p5": 0.035,
+     "p95": 0.533,
+     "contrastRange": 0.498,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.007,
+     "detail": 0.062
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0d0d0d",
+      "share": 0.428
+     },
+     {
+      "hex": "#212121",
+      "share": 0.193
+     },
+     {
+      "hex": "#3a3a3a",
+      "share": 0.19
+     },
+     {
+      "hex": "#5f5f5f",
+      "share": 0.132
+     },
+     {
+      "hex": "#a6a6a6",
+      "share": 0.057
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "shallow",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "some-like-it-hot-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     153
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.321,
+     "medianLuminance": 0.286,
+     "p5": 0.039,
+     "p95": 0.706,
+     "contrastRange": 0.667,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.215,
+     "detail": 0.112
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#111111",
+      "share": 0.259
+     },
+     {
+      "hex": "#303030",
+      "share": 0.21
+     },
+     {
+      "hex": "#555555",
+      "share": 0.196
+     },
+     {
+      "hex": "#818181",
+      "share": 0.176
+     },
+     {
+      "hex": "#afafaf",
+      "share": 0.159
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "dense",
+     "staging-in-depth"
+    ],
+    "focus": "shallow",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "joyful",
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "paths-of-glory-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     240,
+     153
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 16
+    },
+    "metrics": {
+     "meanLuminance": 0.089,
+     "medianLuminance": 0.051,
+     "p5": 0.031,
+     "p95": 0.267,
+     "contrastRange": 0.235,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.11,
+     "detail": 0.028
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0a0a0a",
+      "share": 0.418
+     },
+     {
+      "hex": "#101010",
+      "share": 0.285
+     },
+     {
+      "hex": "#1f1f1f",
+      "share": 0.172
+     },
+     {
+      "hex": "#393939",
+      "share": 0.09
+     },
+     {
+      "hex": "#6c6c6c",
+      "share": 0.035
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium-close",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "diagonal"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "paths-of-glory-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     153
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.548,
+     "medianLuminance": 0.675,
+     "p5": 0.086,
+     "p95": 0.784,
+     "contrastRange": 0.698,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.093,
+     "detail": 0.035
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#afafaf",
+      "share": 0.364
+     },
+     {
+      "hex": "#c3c3c3",
+      "share": 0.253
+     },
+     {
+      "hex": "#202020",
+      "share": 0.194
+     },
+     {
+      "hex": "#4c4c4c",
+      "share": 0.096
+     },
+     {
+      "hex": "#8d8d8d",
+      "share": 0.093
+     }
+    ],
+    "values": {
+     "key": "high",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "low",
+    "composition": [
+     "silhouette",
+     "diagonal",
+     "negative-space"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-apartment-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     109
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.247,
+     "medianLuminance": 0.129,
+     "p5": 0,
+     "p95": 0.933,
+     "contrastRange": 0.933,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.025,
+     "detail": 0.135
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#040404",
+      "share": 0.427
+     },
+     {
+      "hex": "#252525",
+      "share": 0.182
+     },
+     {
+      "hex": "#535353",
+      "share": 0.167
+     },
+     {
+      "hex": "#919191",
+      "share": 0.127
+     },
+     {
+      "hex": "#e8e8e8",
+      "share": 0.097
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "high",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "practical",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "staging-in-depth",
+     "dense",
+     "leading-lines"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "lonely"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-apartment-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     103
+    ],
+    "trimmed": {
+     "top": 6,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.137,
+     "medianLuminance": 0.059,
+     "p5": 0,
+     "p95": 0.561,
+     "contrastRange": 0.561,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.146,
+     "detail": 0.065
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#020202",
+      "share": 0.465
+     },
+     {
+      "hex": "#343434",
+      "share": 0.192
+     },
+     {
+      "hex": "#161616",
+      "share": 0.185
+     },
+     {
+      "hex": "#646464",
+      "share": 0.103
+     },
+     {
+      "hex": "#b7b7b7",
+      "share": 0.055
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "bridge-on-the-river-kwai-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     108
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.28,
+     "medianLuminance": 0.233,
+     "p5": 0.065,
+     "p95": 0.649,
+     "contrastRange": 0.584,
+     "saturation": 0.284,
+     "warmth": 0.074,
+     "colouredShare": 0.527,
+     "vividShare": 0.005,
+     "hueSpread": 28.4,
+     "symmetry": -0.039,
+     "detail": 0.111
+    },
+    "hueShares": {
+     "red": 0.208,
+     "orange": 0.738,
+     "yellow": 0.006,
+     "green": 0,
+     "teal": 0.004,
+     "blue": 0.043,
+     "purple": 0,
+     "magenta": 0.001
+    },
+    "palette": [
+     {
+      "hex": "#4f423b",
+      "share": 0.284
+     },
+     {
+      "hex": "#372a24",
+      "share": 0.283
+     },
+     {
+      "hex": "#1b1411",
+      "share": 0.173
+     },
+     {
+      "hex": "#a39e91",
+      "share": 0.16
+     },
+     {
+      "hex": "#716760",
+      "share": 0.099
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "red"
+     ],
+     "harmony": "analogous",
+     "accent": true,
+     "symmetry": "weak",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "austere",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "bridge-on-the-river-kwai-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     253,
+     108
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 3
+    },
+    "metrics": {
+     "meanLuminance": 0.181,
+     "medianLuminance": 0.134,
+     "p5": 0.033,
+     "p95": 0.572,
+     "contrastRange": 0.539,
+     "saturation": 0.305,
+     "warmth": -0.081,
+     "colouredShare": 0.497,
+     "vividShare": 0,
+     "hueSpread": 17.8,
+     "symmetry": 0.789,
+     "detail": 0.031
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.985,
+     "purple": 0.015,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#1c1c28",
+      "share": 0.296
+     },
+     {
+      "hex": "#0a0d14",
+      "share": 0.259
+     },
+     {
+      "hex": "#2f3340",
+      "share": 0.192
+     },
+     {
+      "hex": "#494c5a",
+      "share": 0.174
+     },
+     {
+      "hex": "#918ab8",
+      "share": 0.08
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-general-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.483,
+     "medianLuminance": 0.446,
+     "p5": 0.24,
+     "p95": 0.853,
+     "contrastRange": 0.613,
+     "saturation": 0.268,
+     "warmth": 0.131,
+     "colouredShare": 0.788,
+     "vividShare": 0,
+     "hueSpread": 4,
+     "symmetry": 0.015,
+     "detail": 0.073
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0.999,
+     "yellow": 0.001,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#6b5947",
+      "share": 0.277
+     },
+     {
+      "hex": "#837160",
+      "share": 0.272
+     },
+     {
+      "hex": "#9d8b7c",
+      "share": 0.196
+     },
+     {
+      "hex": "#ded4cd",
+      "share": 0.149
+     },
+     {
+      "hex": "#4b3c2a",
+      "share": 0.106
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": true,
+     "temperature": "warm",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "leading-lines",
+     "centred"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-general-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.297,
+     "medianLuminance": 0.239,
+     "p5": 0.171,
+     "p95": 0.637,
+     "contrastRange": 0.466,
+     "saturation": 0.398,
+     "warmth": 0.123,
+     "colouredShare": 0.926,
+     "vividShare": 0,
+     "hueSpread": 3.2,
+     "symmetry": 0.233,
+     "detail": 0.069
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0.995,
+     "yellow": 0.005,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#4a3b2a",
+      "share": 0.331
+     },
+     {
+      "hex": "#3b2f1e",
+      "share": 0.31
+     },
+     {
+      "hex": "#645441",
+      "share": 0.24
+     },
+     {
+      "hex": "#958577",
+      "share": 0.078
+     },
+     {
+      "hex": "#ede9e4",
+      "share": 0.04
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": true,
+     "temperature": "warm",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "symmetrical"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-general-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.42,
+     "medianLuminance": 0.353,
+     "p5": 0.148,
+     "p95": 0.844,
+     "contrastRange": 0.695,
+     "saturation": 0.309,
+     "warmth": 0.12,
+     "colouredShare": 0.78,
+     "vividShare": 0,
+     "hueSpread": 5.2,
+     "symmetry": 0.406,
+     "detail": 0.068
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 1,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#564637",
+      "share": 0.256
+     },
+     {
+      "hex": "#392c1f",
+      "share": 0.246
+     },
+     {
+      "hex": "#a69084",
+      "share": 0.171
+     },
+     {
+      "hex": "#7d6a5a",
+      "share": 0.169
+     },
+     {
+      "hex": "#e3d2ca",
+      "share": 0.158
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": true,
+     "temperature": "warm",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "high",
+    "composition": [
+     "staging-in-depth",
+     "dense",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke",
+     "mist"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "chaotic",
+     "grand"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-kid-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.349,
+     "medianLuminance": 0.314,
+     "p5": 0.098,
+     "p95": 0.71,
+     "contrastRange": 0.612,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.063,
+     "detail": 0.081
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#545454",
+      "share": 0.3
+     },
+     {
+      "hex": "#3a3a3a",
+      "share": 0.234
+     },
+     {
+      "hex": "#b0b0b0",
+      "share": 0.177
+     },
+     {
+      "hex": "#1d1d1d",
+      "share": 0.161
+     },
+     {
+      "hex": "#717171",
+      "share": 0.128
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "diagonal",
+     "leading-lines",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [
+     "atmosphere"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-kid-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.37,
+     "medianLuminance": 0.365,
+     "p5": 0.184,
+     "p95": 0.573,
+     "contrastRange": 0.388,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.102,
+     "detail": 0.062
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#4a4a4a",
+      "share": 0.235
+     },
+     {
+      "hex": "#5e5e5e",
+      "share": 0.225
+     },
+     {
+      "hex": "#727272",
+      "share": 0.198
+     },
+     {
+      "hex": "#8e8e8e",
+      "share": 0.174
+     },
+     {
+      "hex": "#323232",
+      "share": 0.168
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "high",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy",
+     "lonely"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "sherlock-jr-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     255,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 1,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.323,
+     "medianLuminance": 0.318,
+     "p5": 0.09,
+     "p95": 0.565,
+     "contrastRange": 0.475,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.001,
+     "detail": 0.064
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#525252",
+      "share": 0.337
+     },
+     {
+      "hex": "#3b3b3b",
+      "share": 0.191
+     },
+     {
+      "hex": "#6a6a6a",
+      "share": 0.188
+     },
+     {
+      "hex": "#1e1e1e",
+      "share": 0.152
+     },
+     {
+      "hex": "#8f8f8f",
+      "share": 0.132
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "symmetrical"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "sherlock-jr-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     255,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 1,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.284,
+     "medianLuminance": 0.278,
+     "p5": 0.102,
+     "p95": 0.616,
+     "contrastRange": 0.514,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.585,
+     "detail": 0.063
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#1d1d1d",
+      "share": 0.31
+     },
+     {
+      "hex": "#505050",
+      "share": 0.249
+     },
+     {
+      "hex": "#676767",
+      "share": 0.17
+     },
+     {
+      "hex": "#353535",
+      "share": 0.157
+     },
+     {
+      "hex": "#9b9b9b",
+      "share": 0.114
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "frame-within-frame",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-gold-rush-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.158,
+     "medianLuminance": 0.102,
+     "p5": 0.024,
+     "p95": 0.506,
+     "contrastRange": 0.482,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.291,
+     "detail": 0.041
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#1a1a1a",
+      "share": 0.323
+     },
+     {
+      "hex": "#0b0b0b",
+      "share": 0.316
+     },
+     {
+      "hex": "#343434",
+      "share": 0.187
+     },
+     {
+      "hex": "#5a5a5a",
+      "share": 0.114
+     },
+     {
+      "hex": "#939393",
+      "share": 0.061
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "centred"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "spirited-away-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.529,
+     "medianLuminance": 0.492,
+     "p5": 0.373,
+     "p95": 0.753,
+     "contrastRange": 0.38,
+     "saturation": 0.329,
+     "warmth": -0.04,
+     "colouredShare": 0.757,
+     "vividShare": 0.113,
+     "hueSpread": 72.9,
+     "symmetry": 0.163,
+     "detail": 0.042
+    },
+    "hueShares": {
+     "red": 0.205,
+     "orange": 0.232,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.477,
+     "purple": 0.055,
+     "magenta": 0.031
+    },
+    "palette": [
+     {
+      "hex": "#5e7cc2",
+      "share": 0.288
+     },
+     {
+      "hex": "#716277",
+      "share": 0.224
+     },
+     {
+      "hex": "#ddb09c",
+      "share": 0.187
+     },
+     {
+      "hex": "#9d899d",
+      "share": 0.161
+     },
+     {
+      "hex": "#ab8274",
+      "share": 0.139
+     }
+    ],
+    "values": {
+     "key": "high",
+     "contrast": "low",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue",
+      "orange",
+      "red"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "eye-level",
+    "composition": [
+     "negative-space",
+     "centred"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene",
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "spirited-away-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.571,
+     "medianLuminance": 0.579,
+     "p5": 0.156,
+     "p95": 0.874,
+     "contrastRange": 0.718,
+     "saturation": 0.341,
+     "warmth": 0.108,
+     "colouredShare": 0.708,
+     "vividShare": 0.198,
+     "hueSpread": 99.4,
+     "symmetry": 0.224,
+     "detail": 0.058
+    },
+    "hueShares": {
+     "red": 0.391,
+     "orange": 0.206,
+     "yellow": 0.014,
+     "green": 0.11,
+     "teal": 0.275,
+     "blue": 0.002,
+     "purple": 0,
+     "magenta": 0.002
+    },
+    "palette": [
+     {
+      "hex": "#969074",
+      "share": 0.313
+     },
+     {
+      "hex": "#b74d4e",
+      "share": 0.239
+     },
+     {
+      "hex": "#92cfd4",
+      "share": 0.184
+     },
+     {
+      "hex": "#cbd7d5",
+      "share": 0.178
+     },
+     {
+      "hex": "#312724",
+      "share": 0.087
+     }
+    ],
+    "values": {
+     "key": "high",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "red",
+      "teal",
+      "orange"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "diagonal",
+     "off-centre"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike",
+     "lonely"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "spirited-away-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.258,
+     "medianLuminance": 0.204,
+     "p5": 0.136,
+     "p95": 0.543,
+     "contrastRange": 0.407,
+     "saturation": 0.306,
+     "warmth": 0.123,
+     "colouredShare": 0.678,
+     "vividShare": 0.114,
+     "hueSpread": 23,
+     "symmetry": 0.046,
+     "detail": 0.06
+    },
+    "hueShares": {
+     "red": 0.243,
+     "orange": 0.432,
+     "yellow": 0.234,
+     "green": 0.043,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0.048
+    },
+    "palette": [
+     {
+      "hex": "#362f2c",
+      "share": 0.339
+     },
+     {
+      "hex": "#2a2423",
+      "share": 0.241
+     },
+     {
+      "hex": "#534233",
+      "share": 0.191
+     },
+     {
+      "hex": "#79633f",
+      "share": 0.133
+     },
+     {
+      "hex": "#ad8b52",
+      "share": 0.097
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "low",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "red",
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike",
+     "grand"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "spirited-away-04": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.317,
+     "medianLuminance": 0.225,
+     "p5": 0.111,
+     "p95": 0.72,
+     "contrastRange": 0.609,
+     "saturation": 0.303,
+     "warmth": -0.094,
+     "colouredShare": 0.548,
+     "vividShare": 0.133,
+     "hueSpread": 135,
+     "symmetry": -0.157,
+     "detail": 0.054
+    },
+    "hueShares": {
+     "red": 0.25,
+     "orange": 0.125,
+     "yellow": 0.028,
+     "green": 0.01,
+     "teal": 0.402,
+     "blue": 0.093,
+     "purple": 0,
+     "magenta": 0.092
+    },
+    "palette": [
+     {
+      "hex": "#221f1e",
+      "share": 0.264
+     },
+     {
+      "hex": "#353133",
+      "share": 0.264
+     },
+     {
+      "hex": "#70b5d0",
+      "share": 0.225
+     },
+     {
+      "hex": "#57403e",
+      "share": 0.169
+     },
+     {
+      "hex": "#6e8180",
+      "share": 0.079
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "teal",
+      "red"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "frame-within-frame",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "vehicle",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "parasite-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.347,
+     "medianLuminance": 0.317,
+     "p5": 0.024,
+     "p95": 0.712,
+     "contrastRange": 0.687,
+     "saturation": 0.417,
+     "warmth": 0.104,
+     "colouredShare": 0.695,
+     "vividShare": 0.125,
+     "hueSpread": 25.9,
+     "symmetry": 0.096,
+     "detail": 0.074
+    },
+    "hueShares": {
+     "red": 0.001,
+     "orange": 0.158,
+     "yellow": 0.092,
+     "green": 0.748,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#303e1e",
+      "share": 0.287
+     },
+     {
+      "hex": "#566935",
+      "share": 0.232
+     },
+     {
+      "hex": "#0f130c",
+      "share": 0.184
+     },
+     {
+      "hex": "#878f69",
+      "share": 0.175
+     },
+     {
+      "hex": "#c0b7a2",
+      "share": 0.122
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "green"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "foreground-framing",
+     "frame-within-frame",
+     "staging-in-depth",
+     "off-centre"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "parasite-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.253,
+     "medianLuminance": 0.162,
+     "p5": 0.028,
+     "p95": 0.835,
+     "contrastRange": 0.807,
+     "saturation": 0.192,
+     "warmth": 0.04,
+     "colouredShare": 0.069,
+     "vividShare": 0,
+     "hueSpread": 16.3,
+     "symmetry": 0.249,
+     "detail": 0.072
+    },
+    "hueShares": {
+     "red": 0.004,
+     "orange": 0.13,
+     "yellow": 0.686,
+     "green": 0.166,
+     "teal": 0.013,
+     "blue": 0.001,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0d0d0c",
+      "share": 0.351
+     },
+     {
+      "hex": "#25261c",
+      "share": 0.218
+     },
+     {
+      "hex": "#494b42",
+      "share": 0.195
+     },
+     {
+      "hex": "#7e7c71",
+      "share": 0.137
+     },
+     {
+      "hex": "#d2d1c1",
+      "share": 0.099
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "high",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "frame-within-frame",
+     "dense"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "none",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "atmospherics",
+     "focus",
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy",
+     "oppressive"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-grand-budapest-hotel-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     196
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.221,
+     "medianLuminance": 0.231,
+     "p5": 0.061,
+     "p95": 0.381,
+     "contrastRange": 0.32,
+     "saturation": 0.714,
+     "warmth": 0.509,
+     "colouredShare": 0.847,
+     "vividShare": 0.616,
+     "hueSpread": 38.8,
+     "symmetry": 0.355,
+     "detail": 0.037
+    },
+    "hueShares": {
+     "red": 0.758,
+     "orange": 0.03,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.018,
+     "purple": 0.066,
+     "magenta": 0.127
+    },
+    "palette": [
+     {
+      "hex": "#bc291a",
+      "share": 0.4
+     },
+     {
+      "hex": "#1a1322",
+      "share": 0.244
+     },
+     {
+      "hex": "#991f19",
+      "share": 0.165
+     },
+     {
+      "hex": "#4e2635",
+      "share": 0.147
+     },
+     {
+      "hex": "#ca806e",
+      "share": 0.044
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "red"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "symmetrical",
+     "centred"
+    ],
+    "focus": null,
+    "layers": "one",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-grand-budapest-hotel-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     196
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.534,
+     "medianLuminance": 0.596,
+     "p5": 0.144,
+     "p95": 0.84,
+     "contrastRange": 0.695,
+     "saturation": 0.336,
+     "warmth": 0.223,
+     "colouredShare": 0.83,
+     "vividShare": 0.025,
+     "hueSpread": 29.3,
+     "symmetry": 0.547,
+     "detail": 0.106
+    },
+    "hueShares": {
+     "red": 0.808,
+     "orange": 0.01,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.05,
+     "purple": 0.024,
+     "magenta": 0.108
+    },
+    "palette": [
+     {
+      "hex": "#e69a98",
+      "share": 0.344
+     },
+     {
+      "hex": "#c27c7e",
+      "share": 0.205
+     },
+     {
+      "hex": "#3b2932",
+      "share": 0.19
+     },
+     {
+      "hex": "#f4c8c9",
+      "share": 0.136
+     },
+     {
+      "hex": "#85565d",
+      "share": 0.125
+     }
+    ],
+    "values": {
+     "key": "high",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "red"
+     ],
+     "harmony": "single-hue",
+     "accent": true,
+     "symmetry": "strong",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "staging-in-depth",
+     "dense",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "amelie-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     144
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.283,
+     "medianLuminance": 0.268,
+     "p5": 0.019,
+     "p95": 0.613,
+     "contrastRange": 0.593,
+     "saturation": 0.888,
+     "warmth": 0.474,
+     "colouredShare": 0.807,
+     "vividShare": 0.62,
+     "hueSpread": 12.1,
+     "symmetry": -0.064,
+     "detail": 0.051
+    },
+    "hueShares": {
+     "red": 0.076,
+     "orange": 0.739,
+     "yellow": 0.184,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#200701",
+      "share": 0.294
+     },
+     {
+      "hex": "#aa6f1f",
+      "share": 0.292
+     },
+     {
+      "hex": "#6f4807",
+      "share": 0.183
+     },
+     {
+      "hex": "#4f2102",
+      "share": 0.154
+     },
+     {
+      "hex": "#e6b05d",
+      "share": 0.078
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "practical",
+    "shotScale": "medium-close",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "intimate"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "amelie-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     144
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.222,
+     "medianLuminance": 0.208,
+     "p5": 0.009,
+     "p95": 0.528,
+     "contrastRange": 0.518,
+     "saturation": 0.843,
+     "warmth": 0.357,
+     "colouredShare": 0.621,
+     "vividShare": 0.432,
+     "hueSpread": 14,
+     "symmetry": 0.156,
+     "detail": 0.041
+    },
+    "hueShares": {
+     "red": 0.001,
+     "orange": 0.532,
+     "yellow": 0.435,
+     "green": 0.032,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#070b01",
+      "share": 0.316
+     },
+     {
+      "hex": "#58450c",
+      "share": 0.215
+     },
+     {
+      "hex": "#2b2802",
+      "share": 0.185
+     },
+     {
+      "hex": "#885d20",
+      "share": 0.177
+     },
+     {
+      "hex": "#c27d3c",
+      "share": 0.106
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "close-up",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "intimate",
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "in-the-mood-for-love-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     146
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.185,
+     "medianLuminance": 0.104,
+     "p5": 0.047,
+     "p95": 0.6,
+     "contrastRange": 0.553,
+     "saturation": 0.546,
+     "warmth": 0.197,
+     "colouredShare": 0.578,
+     "vividShare": 0.119,
+     "hueSpread": 26.8,
+     "symmetry": 0.149,
+     "detail": 0.042
+    },
+    "hueShares": {
+     "red": 0.511,
+     "orange": 0.189,
+     "yellow": 0.232,
+     "green": 0.063,
+     "teal": 0.005,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#130e0e",
+      "share": 0.349
+     },
+     {
+      "hex": "#2e1510",
+      "share": 0.254
+     },
+     {
+      "hex": "#4e271b",
+      "share": 0.188
+     },
+     {
+      "hex": "#7a6343",
+      "share": 0.116
+     },
+     {
+      "hex": "#a6a473",
+      "share": 0.094
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "red",
+      "yellow",
+      "orange"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "close-up",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "intimate",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "in-the-mood-for-love-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     146
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.174,
+     "medianLuminance": 0.075,
+     "p5": 0.049,
+     "p95": 0.653,
+     "contrastRange": 0.604,
+     "saturation": 0.346,
+     "warmth": 0.103,
+     "colouredShare": 0.204,
+     "vividShare": 0.064,
+     "hueSpread": 45.7,
+     "symmetry": 0.218,
+     "detail": 0.068
+    },
+    "hueShares": {
+     "red": 0.015,
+     "orange": 0.379,
+     "yellow": 0.329,
+     "green": 0.274,
+     "teal": 0.003,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#101010",
+      "share": 0.574
+     },
+     {
+      "hex": "#211e16",
+      "share": 0.149
+     },
+     {
+      "hex": "#4d3c20",
+      "share": 0.107
+     },
+     {
+      "hex": "#97b799",
+      "share": 0.086
+     },
+     {
+      "hex": "#6f6f4e",
+      "share": 0.085
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "yellow",
+      "green"
+     ],
+     "harmony": "analogous",
+     "accent": true,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "mixed",
+    "lightDirection": [
+     "side",
+     "back"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "foreground-framing",
+     "dense"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "mad-max-fury-road-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.477,
+     "medianLuminance": 0.421,
+     "p5": 0.237,
+     "p95": 0.882,
+     "contrastRange": 0.645,
+     "saturation": 0.658,
+     "warmth": 0.404,
+     "colouredShare": 0.786,
+     "vividShare": 0.66,
+     "hueSpread": 30.3,
+     "symmetry": -0.011,
+     "detail": 0.029
+    },
+    "hueShares": {
+     "red": 0.001,
+     "orange": 0.953,
+     "yellow": 0.002,
+     "green": 0,
+     "teal": 0.043,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#97510d",
+      "share": 0.287
+     },
+     {
+      "hex": "#e8cabf",
+      "share": 0.202
+     },
+     {
+      "hex": "#6e3a0e",
+      "share": 0.197
+     },
+     {
+      "hex": "#bf7015",
+      "share": 0.181
+     },
+     {
+      "hex": "#858e88",
+      "share": 0.133
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "low",
+    "composition": [
+     "centred",
+     "leading-lines",
+     "symmetrical",
+     "negative-space"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "dust"
+    ],
+    "gaze": null,
+    "motion": "blur",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "mad-max-fury-road-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     106
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.178,
+     "medianLuminance": 0.126,
+     "p5": 0.059,
+     "p95": 0.557,
+     "contrastRange": 0.498,
+     "saturation": 0.811,
+     "warmth": -0.213,
+     "colouredShare": 0.931,
+     "vividShare": 0.492,
+     "hueSpread": 40.4,
+     "symmetry": 0.61,
+     "detail": 0.025
+    },
+    "hueShares": {
+     "red": 0.046,
+     "orange": 0.026,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.846,
+     "purple": 0.034,
+     "magenta": 0.048
+    },
+    "palette": [
+     {
+      "hex": "#01194e",
+      "share": 0.435
+     },
+     {
+      "hex": "#053576",
+      "share": 0.247
+     },
+     {
+      "hex": "#17192e",
+      "share": 0.152
+     },
+     {
+      "hex": "#5a4c63",
+      "share": 0.099
+     },
+     {
+      "hex": "#d7a194",
+      "share": 0.067
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "off-centre",
+     "negative-space"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "glare",
+     "pools"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze",
+     "lightDirection"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "chaotic",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "oldboy-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     108
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.219,
+     "medianLuminance": 0.182,
+     "p5": 0.028,
+     "p95": 0.566,
+     "contrastRange": 0.537,
+     "saturation": 0.573,
+     "warmth": 0.003,
+     "colouredShare": 0.613,
+     "vividShare": 0.107,
+     "hueSpread": 49.3,
+     "symmetry": 0.066,
+     "detail": 0.055
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0.015,
+     "yellow": 0.285,
+     "green": 0.601,
+     "teal": 0.099,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#06110b",
+      "share": 0.366
+     },
+     {
+      "hex": "#1b3424",
+      "share": 0.201
+     },
+     {
+      "hex": "#493d19",
+      "share": 0.175
+     },
+     {
+      "hex": "#3e7154",
+      "share": 0.163
+     },
+     {
+      "hex": "#66a989",
+      "share": 0.095
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [
+      "green",
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "frame-within-frame",
+     "off-centre"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "oppressive"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "oldboy-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     108
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.455,
+     "medianLuminance": 0.429,
+     "p5": 0.168,
+     "p95": 0.776,
+     "contrastRange": 0.608,
+     "saturation": 0.433,
+     "warmth": 0.203,
+     "colouredShare": 0.732,
+     "vividShare": 0.34,
+     "hueSpread": 34.5,
+     "symmetry": -0.039,
+     "detail": 0.052
+    },
+    "hueShares": {
+     "red": 0.093,
+     "orange": 0.888,
+     "yellow": 0.017,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.001,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#754626",
+      "share": 0.268
+     },
+     {
+      "hex": "#b79480",
+      "share": 0.231
+     },
+     {
+      "hex": "#8b6c55",
+      "share": 0.172
+     },
+     {
+      "hex": "#c3bdc3",
+      "share": 0.172
+     },
+     {
+      "hex": "#4b2a16",
+      "share": 0.158
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "extreme-close-up",
+    "angle": "eye-level",
+    "composition": [
+     "centred"
+    ],
+    "focus": "shallow",
+    "layers": "one",
+    "figures": "single",
+    "setting": null,
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "still",
+    "undetermined": [
+     "setting"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "psycho-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     193
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.455,
+     "medianLuminance": 0.477,
+     "p5": 0.082,
+     "p95": 0.753,
+     "contrastRange": 0.671,
+     "saturation": 0.006,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 14.5,
+     "symmetry": 0.37,
+     "detail": 0.027
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#777877",
+      "share": 0.302
+     },
+     {
+      "hex": "#9b9b9b",
+      "share": 0.195
+     },
+     {
+      "hex": "#171717",
+      "share": 0.172
+     },
+     {
+      "hex": "#bbbbbb",
+      "share": 0.168
+     },
+     {
+      "hex": "#565756",
+      "share": 0.163
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "front",
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "implied",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "psycho-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     249,
+     190
+    ],
+    "trimmed": {
+     "top": 3,
+     "bottom": 0,
+     "left": 0,
+     "right": 7
+    },
+    "metrics": {
+     "meanLuminance": 0.218,
+     "medianLuminance": 0.055,
+     "p5": 0.024,
+     "p95": 0.818,
+     "contrastRange": 0.795,
+     "saturation": 0.01,
+     "warmth": 0.001,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 93.1,
+     "symmetry": 0.063,
+     "detail": 0.042
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 1,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#080808",
+      "share": 0.543
+     },
+     {
+      "hex": "#c6c6c6",
+      "share": 0.136
+     },
+     {
+      "hex": "#202020",
+      "share": 0.114
+     },
+     {
+      "hex": "#484848",
+      "share": 0.111
+     },
+     {
+      "hex": "#808080",
+      "share": 0.096
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "high",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "extreme-close-up",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "negative-space"
+    ],
+    "focus": "shallow",
+    "layers": "one",
+    "figures": "single",
+    "setting": null,
+    "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [
+     "setting"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-great-dictator-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.324,
+     "medianLuminance": 0.298,
+     "p5": 0.075,
+     "p95": 0.667,
+     "contrastRange": 0.592,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.201,
+     "detail": 0.056
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#191919",
+      "share": 0.252
+     },
+     {
+      "hex": "#575757",
+      "share": 0.215
+     },
+     {
+      "hex": "#323232",
+      "share": 0.202
+     },
+     {
+      "hex": "#a3a3a3",
+      "share": 0.174
+     },
+     {
+      "hex": "#7a7a7a",
+      "share": 0.158
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "close-up",
+    "angle": "low",
+    "composition": [
+     "centred",
+     "symmetrical"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": null,
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "implied",
+    "undetermined": [
+     "setting"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-great-dictator-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.502,
+     "medianLuminance": 0.518,
+     "p5": 0.259,
+     "p95": 0.675,
+     "contrastRange": 0.416,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.043,
+     "detail": 0.015
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#7f7f7f",
+      "share": 0.284
+     },
+     {
+      "hex": "#a7a7a7",
+      "share": 0.213
+     },
+     {
+      "hex": "#919191",
+      "share": 0.21
+     },
+     {
+      "hex": "#666666",
+      "share": 0.193
+     },
+     {
+      "hex": "#3f3f3f",
+      "share": 0.1
+     }
+    ],
+    "values": {
+     "key": "high",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": null,
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "negative-space"
+    ],
+    "focus": null,
+    "layers": "one",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [
+     "focus",
+     "lightSource"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "lonely"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-great-dictator-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.35,
+     "medianLuminance": 0.365,
+     "p5": 0.106,
+     "p95": 0.588,
+     "contrastRange": 0.482,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.144,
+     "detail": 0.057
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#747474",
+      "share": 0.233
+     },
+     {
+      "hex": "#5a5a5a",
+      "share": 0.206
+     },
+     {
+      "hex": "#222222",
+      "share": 0.195
+     },
+     {
+      "hex": "#3b3b3b",
+      "share": 0.187
+     },
+     {
+      "hex": "#929292",
+      "share": 0.179
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "foreground-framing",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy",
+     "austere"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "mr-smith-goes-to-washington-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.272,
+     "medianLuminance": 0.271,
+     "p5": 0.027,
+     "p95": 0.565,
+     "contrastRange": 0.537,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.051,
+     "detail": 0.096
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0d0d0d",
+      "share": 0.296
+     },
+     {
+      "hex": "#6b6b6b",
+      "share": 0.232
+     },
+     {
+      "hex": "#8c8c8c",
+      "share": 0.161
+     },
+     {
+      "hex": "#4b4b4b",
+      "share": 0.158
+     },
+     {
+      "hex": "#292929",
+      "share": 0.153
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "grand"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "mr-smith-goes-to-washington-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.35,
+     "medianLuminance": 0.369,
+     "p5": 0.035,
+     "p95": 0.714,
+     "contrastRange": 0.678,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.108,
+     "detail": 0.067
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#121212",
+      "share": 0.279
+     },
+     {
+      "hex": "#858585",
+      "share": 0.25
+     },
+     {
+      "hex": "#343434",
+      "share": 0.179
+     },
+     {
+      "hex": "#b0b0b0",
+      "share": 0.17
+     },
+     {
+      "hex": "#616161",
+      "share": 0.121
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "mr-smith-goes-to-washington-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.291,
+     "medianLuminance": 0.314,
+     "p5": 0.027,
+     "p95": 0.612,
+     "contrastRange": 0.584,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.075,
+     "detail": 0.06
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0c0c0c",
+      "share": 0.306
+     },
+     {
+      "hex": "#707070",
+      "share": 0.251
+     },
+     {
+      "hex": "#4f4f4f",
+      "share": 0.179
+     },
+     {
+      "hex": "#969696",
+      "share": 0.162
+     },
+     {
+      "hex": "#282828",
+      "share": 0.102
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "mixed",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "staging-in-depth",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "on-the-waterfront-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     154
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.187,
+     "medianLuminance": 0.153,
+     "p5": 0.012,
+     "p95": 0.486,
+     "contrastRange": 0.475,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.12,
+     "detail": 0.038
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#080808",
+      "share": 0.251
+     },
+     {
+      "hex": "#1a1a1a",
+      "share": 0.226
+     },
+     {
+      "hex": "#303030",
+      "share": 0.212
+     },
+     {
+      "hex": "#4c4c4c",
+      "share": 0.184
+     },
+     {
+      "hex": "#7a7a7a",
+      "share": 0.128
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium-close",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "intimate",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "on-the-waterfront-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     154
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.289,
+     "medianLuminance": 0.306,
+     "p5": 0.024,
+     "p95": 0.569,
+     "contrastRange": 0.545,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.001,
+     "detail": 0.043
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0a0a0a",
+      "share": 0.331
+     },
+     {
+      "hex": "#808080",
+      "share": 0.235
+     },
+     {
+      "hex": "#515151",
+      "share": 0.167
+     },
+     {
+      "hex": "#909090",
+      "share": 0.154
+     },
+     {
+      "hex": "#292929",
+      "share": 0.114
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "diagonal",
+     "silhouette",
+     "negative-space"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "group",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "on-the-waterfront-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     242,
+     154
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 14,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.178,
+     "medianLuminance": 0.137,
+     "p5": 0.008,
+     "p95": 0.486,
+     "contrastRange": 0.478,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.126,
+     "detail": 0.061
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#060606",
+      "share": 0.312
+     },
+     {
+      "hex": "#1c1c1c",
+      "share": 0.219
+     },
+     {
+      "hex": "#333333",
+      "share": 0.188
+     },
+     {
+      "hex": "#535353",
+      "share": 0.174
+     },
+     {
+      "hex": "#7d7d7d",
+      "share": 0.108
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "mixed",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "frame-within-frame",
+     "staging-in-depth",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "two",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "patterned-shadow",
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "its-a-wonderful-life-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     190
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.247,
+     "medianLuminance": 0.188,
+     "p5": 0.031,
+     "p95": 0.675,
+     "contrastRange": 0.643,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.139,
+     "detail": 0.047
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#262626",
+      "share": 0.289
+     },
+     {
+      "hex": "#0e0e0e",
+      "share": 0.247
+     },
+     {
+      "hex": "#444444",
+      "share": 0.201
+     },
+     {
+      "hex": "#6b6b6b",
+      "share": 0.151
+     },
+     {
+      "hex": "#a7a7a7",
+      "share": 0.112
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium-close",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "its-a-wonderful-life-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     190
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.431,
+     "medianLuminance": 0.376,
+     "p5": 0,
+     "p95": 0.918,
+     "contrastRange": 0.918,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.269,
+     "detail": 0.113
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#050505",
+      "share": 0.315
+     },
+     {
+      "hex": "#dfdfdf",
+      "share": 0.311
+     },
+     {
+      "hex": "#383838",
+      "share": 0.147
+     },
+     {
+      "hex": "#6b6b6b",
+      "share": 0.123
+     },
+     {
+      "hex": "#a7a7a7",
+      "share": 0.105
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "high",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "joyful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "its-a-wonderful-life-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     190
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.238,
+     "medianLuminance": 0.208,
+     "p5": 0,
+     "p95": 0.561,
+     "contrastRange": 0.561,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.039,
+     "detail": 0.076
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#252525",
+      "share": 0.251
+     },
+     {
+      "hex": "#404040",
+      "share": 0.231
+     },
+     {
+      "hex": "#070707",
+      "share": 0.216
+     },
+     {
+      "hex": "#646464",
+      "share": 0.193
+     },
+     {
+      "hex": "#929292",
+      "share": 0.109
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "diagonal",
+     "staging-in-depth",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "crowd",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "joyful",
+     "chaotic"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "its-a-wonderful-life-04": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.184,
+     "medianLuminance": 0.141,
+     "p5": 0.012,
+     "p95": 0.494,
+     "contrastRange": 0.482,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.152,
+     "detail": 0.071
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#1d1d1d",
+      "share": 0.291
+     },
+     {
+      "hex": "#090909",
+      "share": 0.259
+     },
+     {
+      "hex": "#363636",
+      "share": 0.228
+     },
+     {
+      "hex": "#5b5b5b",
+      "share": 0.157
+     },
+     {
+      "hex": "#939393",
+      "share": 0.065
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "practical",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "frame-within-frame",
+     "dense"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "joyful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "north-by-northwest-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     144
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.436,
+     "medianLuminance": 0.348,
+     "p5": 0.205,
+     "p95": 0.709,
+     "contrastRange": 0.504,
+     "saturation": 0.189,
+     "warmth": 0.045,
+     "colouredShare": 0.434,
+     "vividShare": 0.019,
+     "hueSpread": 59.8,
+     "symmetry": 0.058,
+     "detail": 0.028
+    },
+    "hueShares": {
+     "red": 0.098,
+     "orange": 0.882,
+     "yellow": 0.001,
+     "green": 0,
+     "teal": 0,
+     "blue": 0.018,
+     "purple": 0.001,
+     "magenta": 0.001
+    },
+    "palette": [
+     {
+      "hex": "#abafb2",
+      "share": 0.266
+     },
+     {
+      "hex": "#54463e",
+      "share": 0.257
+     },
+     {
+      "hex": "#413632",
+      "share": 0.221
+     },
+     {
+      "hex": "#989391",
+      "share": 0.176
+     },
+     {
+      "hex": "#775d4f",
+      "share": 0.08
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": true,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "eye-level",
+    "composition": [
+     "leading-lines",
+     "centred",
+     "negative-space"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "lonely",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "north-by-northwest-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     144
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.221,
+     "medianLuminance": 0.088,
+     "p5": 0.055,
+     "p95": 0.744,
+     "contrastRange": 0.689,
+     "saturation": 0.376,
+     "warmth": -0.048,
+     "colouredShare": 0.406,
+     "vividShare": 0.053,
+     "hueSpread": 73.8,
+     "symmetry": 0.06,
+     "detail": 0.035
+    },
+    "hueShares": {
+     "red": 0.002,
+     "orange": 0.256,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0.001,
+     "blue": 0.74,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#12110e",
+      "share": 0.52
+     },
+     {
+      "hex": "#2a3a53",
+      "share": 0.171
+     },
+     {
+      "hex": "#586980",
+      "share": 0.155
+     },
+     {
+      "hex": "#ddb393",
+      "share": 0.11
+     },
+     {
+      "hex": "#1d222b",
+      "share": 0.044
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue",
+      "orange"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "eye-level",
+    "composition": [
+     "diagonal",
+     "leading-lines",
+     "silhouette"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "north-by-northwest-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     144
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.127,
+     "medianLuminance": 0.121,
+     "p5": 0.047,
+     "p95": 0.225,
+     "contrastRange": 0.178,
+     "saturation": 0.425,
+     "warmth": -0.076,
+     "colouredShare": 0.595,
+     "vividShare": 0.006,
+     "hueSpread": 15.8,
+     "symmetry": 0.169,
+     "detail": 0.026
+    },
+    "hueShares": {
+     "red": 0.002,
+     "orange": 0.012,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0.001,
+     "blue": 0.984,
+     "purple": 0.001,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#282e3a",
+      "share": 0.308
+     },
+     {
+      "hex": "#0d0e13",
+      "share": 0.266
+     },
+     {
+      "hex": "#171b27",
+      "share": 0.209
+     },
+     {
+      "hex": "#121f3c",
+      "share": 0.145
+     },
+     {
+      "hex": "#394152",
+      "share": 0.072
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "diagonal",
+     "off-centre",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "two",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "vertigo-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     255,
+     147
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 1,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.366,
+     "medianLuminance": 0.312,
+     "p5": 0.029,
+     "p95": 0.783,
+     "contrastRange": 0.755,
+     "saturation": 0.31,
+     "warmth": -0.152,
+     "colouredShare": 0.556,
+     "vividShare": 0.011,
+     "hueSpread": 55.1,
+     "symmetry": -0.046,
+     "detail": 0.052
+    },
+    "hueShares": {
+     "red": 0.058,
+     "orange": 0.074,
+     "yellow": 0.004,
+     "green": 0.047,
+     "teal": 0.057,
+     "blue": 0.752,
+     "purple": 0.002,
+     "magenta": 0.005
+    },
+    "palette": [
+     {
+      "hex": "#0b110c",
+      "share": 0.35
+     },
+     {
+      "hex": "#a7bce3",
+      "share": 0.307
+     },
+     {
+      "hex": "#343432",
+      "share": 0.137
+     },
+     {
+      "hex": "#625f64",
+      "share": 0.107
+     },
+     {
+      "hex": "#6f8aad",
+      "share": 0.099
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue"
+     ],
+     "harmony": "single-hue",
+     "accent": true,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "low",
+    "composition": [
+     "foreground-framing",
+     "leading-lines",
+     "diagonal",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "lonely",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "vertigo-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     147
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.277,
+     "medianLuminance": 0.228,
+     "p5": 0.051,
+     "p95": 0.654,
+     "contrastRange": 0.603,
+     "saturation": 0.378,
+     "warmth": 0.02,
+     "colouredShare": 0.548,
+     "vividShare": 0.037,
+     "hueSpread": 81.6,
+     "symmetry": -0.057,
+     "detail": 0.112
+    },
+    "hueShares": {
+     "red": 0.13,
+     "orange": 0.412,
+     "yellow": 0.131,
+     "green": 0.082,
+     "teal": 0.019,
+     "blue": 0.199,
+     "purple": 0.008,
+     "magenta": 0.019
+    },
+    "palette": [
+     {
+      "hex": "#372b1f",
+      "share": 0.282
+     },
+     {
+      "hex": "#1a130b",
+      "share": 0.235
+     },
+     {
+      "hex": "#554943",
+      "share": 0.205
+     },
+     {
+      "hex": "#74717c",
+      "share": 0.159
+     },
+     {
+      "hex": "#9da2bb",
+      "share": 0.12
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [
+      "orange",
+      "blue"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "dense"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "dense",
+     "frame-within-frame"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "none",
+    "setting": null,
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze",
+     "setting"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "vertigo-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     146
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 1,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.214,
+     "medianLuminance": 0.14,
+     "p5": 0.022,
+     "p95": 0.556,
+     "contrastRange": 0.534,
+     "saturation": 0.425,
+     "warmth": -0.087,
+     "colouredShare": 0.439,
+     "vividShare": 0.039,
+     "hueSpread": 83.5,
+     "symmetry": 0.433,
+     "detail": 0.053
+    },
+    "hueShares": {
+     "red": 0.001,
+     "orange": 0.172,
+     "yellow": 0.141,
+     "green": 0.053,
+     "teal": 0.123,
+     "blue": 0.51,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#070d0a",
+      "share": 0.416
+     },
+     {
+      "hex": "#6c88af",
+      "share": 0.18
+     },
+     {
+      "hex": "#212419",
+      "share": 0.151
+     },
+     {
+      "hex": "#444332",
+      "share": 0.132
+     },
+     {
+      "hex": "#5a6466",
+      "share": 0.122
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "diagonal",
+     "foreground-framing",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "double-indemnity-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     195
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.364,
+     "medianLuminance": 0.369,
+     "p5": 0.051,
+     "p95": 0.729,
+     "contrastRange": 0.678,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.197,
+     "detail": 0.056
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#141414",
+      "share": 0.277
+     },
+     {
+      "hex": "#878787",
+      "share": 0.221
+     },
+     {
+      "hex": "#636363",
+      "share": 0.175
+     },
+     {
+      "hex": "#b4b4b4",
+      "share": 0.165
+     },
+     {
+      "hex": "#3f3f3f",
+      "share": 0.162
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "top",
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "medium",
+    "angle": "low",
+    "composition": [
+     "centred",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "two",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "intimate",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "double-indemnity-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     195
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.298,
+     "medianLuminance": 0.251,
+     "p5": 0.063,
+     "p95": 0.655,
+     "contrastRange": 0.592,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": -0.043,
+     "detail": 0.071
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#2f2f2f",
+      "share": 0.266
+     },
+     {
+      "hex": "#171717",
+      "share": 0.217
+     },
+     {
+      "hex": "#4d4d4d",
+      "share": 0.213
+     },
+     {
+      "hex": "#797979",
+      "share": 0.18
+     },
+     {
+      "hex": "#a5a5a5",
+      "share": 0.124
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "frame-within-frame",
+     "staging-in-depth",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "two",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "patterned-shadow"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "double-indemnity-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     195
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.221,
+     "medianLuminance": 0.184,
+     "p5": 0.059,
+     "p95": 0.498,
+     "contrastRange": 0.439,
+     "saturation": 0,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.206,
+     "detail": 0.043
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#131313",
+      "share": 0.256
+     },
+     {
+      "hex": "#242424",
+      "share": 0.253
+     },
+     {
+      "hex": "#3c3c3c",
+      "share": 0.21
+     },
+     {
+      "hex": "#5e5e5e",
+      "share": 0.208
+     },
+     {
+      "hex": "#888888",
+      "share": 0.073
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "full",
+    "angle": "eye-level",
+    "composition": [
+     "leading-lines",
+     "staging-in-depth",
+     "foreground-framing"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "tense",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "metropolis-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.362,
+     "medianLuminance": 0.34,
+     "p5": 0.031,
+     "p95": 0.737,
+     "contrastRange": 0.706,
+     "saturation": 0.004,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.69,
+     "detail": 0.063
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#0f0f0f",
+      "share": 0.3
+     },
+     {
+      "hex": "#b4b4b4",
+      "share": 0.248
+     },
+     {
+      "hex": "#353534",
+      "share": 0.157
+     },
+     {
+      "hex": "#606160",
+      "share": 0.156
+     },
+     {
+      "hex": "#8e8e8e",
+      "share": 0.139
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "high",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "leading-lines",
+     "dense",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "oppressive"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "metropolis-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.364,
+     "medianLuminance": 0.302,
+     "p5": 0.094,
+     "p95": 0.78,
+     "contrastRange": 0.686,
+     "saturation": 0.004,
+     "warmth": 0.001,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.329,
+     "detail": 0.053
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#3c3d3c",
+      "share": 0.289
+     },
+     {
+      "hex": "#595958",
+      "share": 0.241
+     },
+     {
+      "hex": "#1e1e1e",
+      "share": 0.185
+     },
+     {
+      "hex": "#c2c2c2",
+      "share": 0.156
+     },
+     {
+      "hex": "#8b8c8b",
+      "share": 0.129
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "leading-lines",
+     "staging-in-depth",
+     "silhouette"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": null,
+    "medium": "live-action",
+    "lightPattern": [
+     "beams"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [
+     "setting"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "oppressive"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "metropolis-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     192
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.31,
+     "medianLuminance": 0.251,
+     "p5": 0.078,
+     "p95": 0.675,
+     "contrastRange": 0.596,
+     "saturation": 0.004,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.299,
+     "detail": 0.062
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#313131",
+      "share": 0.261
+     },
+     {
+      "hex": "#1c1c1c",
+      "share": 0.249
+     },
+     {
+      "hex": "#565656",
+      "share": 0.203
+     },
+     {
+      "hex": "#808180",
+      "share": 0.189
+     },
+     {
+      "hex": "#b3b4b3",
+      "share": 0.098
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "hard",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "practical",
+    "shotScale": "extreme-wide",
+    "angle": "low",
+    "composition": [
+     "centred",
+     "dense",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "beams",
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-passion-of-joan-of-arc-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     190
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.413,
+     "medianLuminance": 0.45,
+     "p5": 0.055,
+     "p95": 0.69,
+     "contrastRange": 0.635,
+     "saturation": 0.005,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.636,
+     "detail": 0.04
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#a8a8a8",
+      "share": 0.261
+     },
+     {
+      "hex": "#191919",
+      "share": 0.216
+     },
+     {
+      "hex": "#898a89",
+      "share": 0.2
+     },
+     {
+      "hex": "#686968",
+      "share": 0.185
+     },
+     {
+      "hex": "#424242",
+      "share": 0.138
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "artificial",
+    "shotScale": "close-up",
+    "angle": "high",
+    "composition": [
+     "centred",
+     "negative-space"
+    ],
+    "focus": null,
+    "layers": "one",
+    "figures": "single",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "austere",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-passion-of-joan-of-arc-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     254,
+     182
+    ],
+    "trimmed": {
+     "top": 8,
+     "bottom": 0,
+     "left": 0,
+     "right": 2
+    },
+    "metrics": {
+     "meanLuminance": 0.311,
+     "medianLuminance": 0.324,
+     "p5": 0.02,
+     "p95": 0.603,
+     "contrastRange": 0.583,
+     "saturation": 0.006,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.527,
+     "detail": 0.059
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#7d7e7d",
+      "share": 0.28
+     },
+     {
+      "hex": "#0c0c0c",
+      "share": 0.265
+     },
+     {
+      "hex": "#565756",
+      "share": 0.175
+     },
+     {
+      "hex": "#2f2f2f",
+      "share": 0.166
+     },
+     {
+      "hex": "#9b9c9b",
+      "share": 0.115
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "front"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "centred",
+     "symmetrical"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "still",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "austere",
+     "oppressive"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-passion-of-joan-of-arc-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     190
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.497,
+     "medianLuminance": 0.584,
+     "p5": 0.071,
+     "p95": 0.69,
+     "contrastRange": 0.62,
+     "saturation": 0.004,
+     "warmth": 0,
+     "colouredShare": 0,
+     "vividShare": 0,
+     "hueSpread": 0,
+     "symmetry": 0.397,
+     "detail": 0.043
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#ababab",
+      "share": 0.358
+     },
+     {
+      "hex": "#979897",
+      "share": 0.221
+     },
+     {
+      "hex": "#1c1c1c",
+      "share": 0.164
+     },
+     {
+      "hex": "#7c7d7c",
+      "share": 0.144
+     },
+     {
+      "hex": "#535453",
+      "share": 0.113
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "monochrome",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [],
+     "harmony": null,
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "foreground-framing",
+     "frame-within-frame",
+     "negative-space"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "group",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [
+     "focus"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "austere",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "howls-moving-castle-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.312,
+     "medianLuminance": 0.283,
+     "p5": 0.116,
+     "p95": 0.567,
+     "contrastRange": 0.452,
+     "saturation": 0.233,
+     "warmth": -0.042,
+     "colouredShare": 0.535,
+     "vividShare": 0.001,
+     "hueSpread": 61.5,
+     "symmetry": -0.078,
+     "detail": 0.059
+    },
+    "hueShares": {
+     "red": 0.119,
+     "orange": 0.072,
+     "yellow": 0.006,
+     "green": 0.003,
+     "teal": 0.381,
+     "blue": 0.398,
+     "purple": 0.005,
+     "magenta": 0.016
+    },
+    "palette": [
+     {
+      "hex": "#222427",
+      "share": 0.245
+     },
+     {
+      "hex": "#32393f",
+      "share": 0.238
+     },
+     {
+      "hex": "#66767d",
+      "share": 0.187
+     },
+     {
+      "hex": "#525558",
+      "share": 0.186
+     },
+     {
+      "hex": "#8e8c8d",
+      "share": 0.144
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue",
+      "teal"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "extreme-wide",
+    "angle": "low",
+    "composition": [
+     "centred",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "beams"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "grand",
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "howls-moving-castle-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.2,
+     "medianLuminance": 0.156,
+     "p5": 0.086,
+     "p95": 0.42,
+     "contrastRange": 0.334,
+     "saturation": 0.422,
+     "warmth": 0.248,
+     "colouredShare": 0.607,
+     "vividShare": 0.313,
+     "hueSpread": 40.6,
+     "symmetry": 0.259,
+     "detail": 0.059
+    },
+    "hueShares": {
+     "red": 0.496,
+     "orange": 0.317,
+     "yellow": 0.019,
+     "green": 0.009,
+     "teal": 0.005,
+     "blue": 0.075,
+     "purple": 0.008,
+     "magenta": 0.071
+    },
+    "palette": [
+     {
+      "hex": "#231d1f",
+      "share": 0.502
+     },
+     {
+      "hex": "#4c2d27",
+      "share": 0.209
+     },
+     {
+      "hex": "#85432c",
+      "share": 0.151
+     },
+     {
+      "hex": "#d54d25",
+      "share": 0.092
+     },
+     {
+      "hex": "#3c556c",
+      "share": 0.046
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "red",
+      "orange"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "mixed",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "high",
+    "composition": [
+     "off-centre",
+     "leading-lines",
+     "staging-in-depth",
+     "diagonal"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "chaotic"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "howls-moving-castle-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.591,
+     "medianLuminance": 0.602,
+     "p5": 0.305,
+     "p95": 0.865,
+     "contrastRange": 0.56,
+     "saturation": 0.389,
+     "warmth": 0.074,
+     "colouredShare": 0.807,
+     "vividShare": 0.214,
+     "hueSpread": 75,
+     "symmetry": 0.246,
+     "detail": 0.077
+    },
+    "hueShares": {
+     "red": 0.011,
+     "orange": 0.105,
+     "yellow": 0.47,
+     "green": 0.179,
+     "teal": 0.131,
+     "blue": 0.103,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#b0a866",
+      "share": 0.311
+     },
+     {
+      "hex": "#838650",
+      "share": 0.234
+     },
+     {
+      "hex": "#6aa9c8",
+      "share": 0.199
+     },
+     {
+      "hex": "#cbd8dd",
+      "share": 0.131
+     },
+     {
+      "hex": "#565139",
+      "share": 0.125
+     }
+    ],
+    "values": {
+     "key": "high",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "symmetrical",
+     "centred",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "serene",
+     "playful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "my-neighbor-totoro-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.266,
+     "medianLuminance": 0.233,
+     "p5": 0.094,
+     "p95": 0.581,
+     "contrastRange": 0.487,
+     "saturation": 0.196,
+     "warmth": -0.004,
+     "colouredShare": 0.235,
+     "vividShare": 0.001,
+     "hueSpread": 70.3,
+     "symmetry": 0.146,
+     "detail": 0.062
+    },
+    "hueShares": {
+     "red": 0.054,
+     "orange": 0.041,
+     "yellow": 0.164,
+     "green": 0.058,
+     "teal": 0.531,
+     "blue": 0.15,
+     "purple": 0,
+     "magenta": 0.002
+    },
+    "palette": [
+     {
+      "hex": "#2d3434",
+      "share": 0.267
+     },
+     {
+      "hex": "#161f22",
+      "share": 0.245
+     },
+     {
+      "hex": "#434848",
+      "share": 0.233
+     },
+     {
+      "hex": "#6a6869",
+      "share": 0.2
+     },
+     {
+      "hex": "#bcaf92",
+      "share": 0.055
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "muted",
+     "toned": false,
+     "temperature": "neutral",
+     "hue": [
+      "teal"
+     ],
+     "harmony": "contrasting",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": null,
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "dense"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "two",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "rain"
+    ],
+    "gaze": "camera",
+    "motion": "still",
+    "undetermined": [
+     "focus",
+     "lightSource"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "playful",
+     "dreamlike"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "my-neighbor-totoro-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.459,
+     "medianLuminance": 0.433,
+     "p5": 0.232,
+     "p95": 0.736,
+     "contrastRange": 0.504,
+     "saturation": 0.428,
+     "warmth": -0.127,
+     "colouredShare": 0.768,
+     "vividShare": 0.249,
+     "hueSpread": 54.5,
+     "symmetry": -0.04,
+     "detail": 0.09
+    },
+    "hueShares": {
+     "red": 0.036,
+     "orange": 0.027,
+     "yellow": 0.033,
+     "green": 0.405,
+     "teal": 0.478,
+     "blue": 0.019,
+     "purple": 0,
+     "magenta": 0.002
+    },
+    "palette": [
+     {
+      "hex": "#577258",
+      "share": 0.264
+     },
+     {
+      "hex": "#7c9376",
+      "share": 0.206
+     },
+     {
+      "hex": "#2b4d46",
+      "share": 0.195
+     },
+     {
+      "hex": "#1383a5",
+      "share": 0.189
+     },
+     {
+      "hex": "#a9b7ab",
+      "share": 0.145
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "teal",
+      "green"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "staging-in-depth",
+     "centred"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "two",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "joyful"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "my-neighbor-totoro-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.299,
+     "medianLuminance": 0.271,
+     "p5": 0.098,
+     "p95": 0.556,
+     "contrastRange": 0.458,
+     "saturation": 0.407,
+     "warmth": -0.169,
+     "colouredShare": 0.775,
+     "vividShare": 0.131,
+     "hueSpread": 26.9,
+     "symmetry": 0.048,
+     "detail": 0.043
+    },
+    "hueShares": {
+     "red": 0.01,
+     "orange": 0.021,
+     "yellow": 0.001,
+     "green": 0,
+     "teal": 0.249,
+     "blue": 0.716,
+     "purple": 0,
+     "magenta": 0.002
+    },
+    "palette": [
+     {
+      "hex": "#4d709b",
+      "share": 0.326
+     },
+     {
+      "hex": "#152126",
+      "share": 0.232
+     },
+     {
+      "hex": "#26333c",
+      "share": 0.2
+     },
+     {
+      "hex": "#3c4954",
+      "share": 0.142
+     },
+     {
+      "hex": "#908e93",
+      "share": 0.099
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue",
+      "teal"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "off-centre",
+     "diagonal",
+     "staging-in-depth"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "single",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "lonely",
+     "melancholy"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "princess-mononoke-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.37,
+     "medianLuminance": 0.263,
+     "p5": 0.141,
+     "p95": 0.825,
+     "contrastRange": 0.685,
+     "saturation": 0.441,
+     "warmth": 0.213,
+     "colouredShare": 0.883,
+     "vividShare": 0.281,
+     "hueSpread": 14,
+     "symmetry": 0.752,
+     "detail": 0.042
+    },
+    "hueShares": {
+     "red": 0.024,
+     "orange": 0.376,
+     "yellow": 0.569,
+     "green": 0.029,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0.001,
+     "magenta": 0.001
+    },
+    "palette": [
+     {
+      "hex": "#2f2924",
+      "share": 0.293
+     },
+     {
+      "hex": "#493d27",
+      "share": 0.274
+     },
+     {
+      "hex": "#d5ce80",
+      "share": 0.196
+     },
+     {
+      "hex": "#705821",
+      "share": 0.141
+     },
+     {
+      "hex": "#a2882d",
+      "share": 0.097
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "yellow",
+      "orange"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "strong",
+     "detail": "smooth"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "frame-within-frame",
+     "foreground-framing",
+     "silhouette",
+     "centred"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "beams",
+     "rim"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike",
+     "serene"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "princess-mononoke-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.228,
+     "medianLuminance": 0.198,
+     "p5": 0.13,
+     "p95": 0.402,
+     "contrastRange": 0.272,
+     "saturation": 0.389,
+     "warmth": -0.121,
+     "colouredShare": 0.937,
+     "vividShare": 0.101,
+     "hueSpread": 15,
+     "symmetry": 0.389,
+     "detail": 0.051
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0.002,
+     "teal": 0.563,
+     "blue": 0.435,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#253339",
+      "share": 0.304
+     },
+     {
+      "hex": "#1d262c",
+      "share": 0.298
+     },
+     {
+      "hex": "#2d474e",
+      "share": 0.233
+     },
+     {
+      "hex": "#2f6770",
+      "share": 0.138
+     },
+     {
+      "hex": "#89aca4",
+      "share": 0.027
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "teal",
+      "blue"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "practical",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "dense"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "focus",
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike",
+     "ominous"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "princess-mononoke-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     138
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.467,
+     "medianLuminance": 0.456,
+     "p5": 0.281,
+     "p95": 0.658,
+     "contrastRange": 0.377,
+     "saturation": 0.72,
+     "warmth": -0.502,
+     "colouredShare": 1,
+     "vividShare": 0.963,
+     "hueSpread": 7.6,
+     "symmetry": 0.268,
+     "detail": 0.054
+    },
+    "hueShares": {
+     "red": 0,
+     "orange": 0,
+     "yellow": 0,
+     "green": 0.001,
+     "teal": 0.328,
+     "blue": 0.671,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#2c7fb7",
+      "share": 0.449
+     },
+     {
+      "hex": "#4499c1",
+      "share": 0.208
+     },
+     {
+      "hex": "#235778",
+      "share": 0.185
+     },
+     {
+      "hex": "#2ca8c6",
+      "share": 0.111
+     },
+     {
+      "hex": "#61dbe9",
+      "share": 0.048
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "low",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "cool",
+     "hue": [
+      "blue",
+      "teal"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "ambient"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "wide",
+    "angle": "low",
+    "composition": [
+     "centred",
+     "negative-space"
+    ],
+    "focus": null,
+    "layers": "two",
+    "figures": "none",
+    "setting": "exterior",
+    "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "focus",
+     "gaze"
+    ],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "dreamlike",
+     "grand"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-godfather-01": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     139
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.122,
+     "medianLuminance": 0.066,
+     "p5": 0.025,
+     "p95": 0.362,
+     "contrastRange": 0.337,
+     "saturation": 0.532,
+     "warmth": 0.177,
+     "colouredShare": 0.348,
+     "vividShare": 0.068,
+     "hueSpread": 11.9,
+     "symmetry": 0.123,
+     "detail": 0.061
+    },
+    "hueShares": {
+     "red": 0.012,
+     "orange": 0.74,
+     "yellow": 0.247,
+     "green": 0.001,
+     "teal": 0,
+     "blue": 0,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#080a06",
+      "share": 0.458
+     },
+     {
+      "hex": "#3b2a16",
+      "share": 0.195
+     },
+     {
+      "hex": "#19150d",
+      "share": 0.189
+     },
+     {
+      "hex": "#60482f",
+      "share": 0.126
+     },
+     {
+      "hex": "#ad8d76",
+      "share": 0.033
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange",
+      "yellow"
+     ],
+     "harmony": "analogous",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "top"
+    ],
+    "lightSource": "practical",
+    "shotScale": "wide",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "staging-in-depth",
+     "dense",
+     "leading-lines"
+    ],
+    "focus": "deep",
+    "layers": "three-plus",
+    "figures": "crowd",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools",
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-godfather-02": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     186,
+     131
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 8,
+     "left": 12,
+     "right": 58
+    },
+    "metrics": {
+     "meanLuminance": 0.072,
+     "medianLuminance": 0.018,
+     "p5": 0.006,
+     "p95": 0.364,
+     "contrastRange": 0.358,
+     "saturation": 0.51,
+     "warmth": 0.077,
+     "colouredShare": 0.126,
+     "vividShare": 0.006,
+     "hueSpread": 34.8,
+     "symmetry": 0.164,
+     "detail": 0.059
+    },
+    "hueShares": {
+     "red": 0.039,
+     "orange": 0.828,
+     "yellow": 0.107,
+     "green": 0.02,
+     "teal": 0.005,
+     "blue": 0.002,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#020403",
+      "share": 0.638
+     },
+     {
+      "hex": "#130c07",
+      "share": 0.152
+     },
+     {
+      "hex": "#302011",
+      "share": 0.12
+     },
+     {
+      "hex": "#5a5344",
+      "share": 0.06
+     },
+     {
+      "hex": "#a3a8a1",
+      "share": 0.031
+     }
+    ],
+    "values": {
+     "key": "low",
+     "contrast": "low",
+     "saturation": "saturated",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "moderate",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "top",
+     "back"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "medium-close",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "staging-in-depth",
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "three-plus",
+    "figures": "group",
+    "setting": "interior",
+    "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "intimate"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  },
+  "the-godfather-03": {
+   "measured": {
+    "method": "tools/measure-stills.js v3",
+    "analysedSize": [
+     256,
+     139
+    ],
+    "trimmed": {
+     "top": 0,
+     "bottom": 0,
+     "left": 0,
+     "right": 0
+    },
+    "metrics": {
+     "meanLuminance": 0.297,
+     "medianLuminance": 0.327,
+     "p5": 0.052,
+     "p95": 0.525,
+     "contrastRange": 0.472,
+     "saturation": 0.365,
+     "warmth": 0.165,
+     "colouredShare": 0.673,
+     "vividShare": 0.022,
+     "hueSpread": 38.9,
+     "symmetry": 0.008,
+     "detail": 0.075
+    },
+    "hueShares": {
+     "red": 0.026,
+     "orange": 0.887,
+     "yellow": 0.007,
+     "green": 0,
+     "teal": 0.001,
+     "blue": 0.08,
+     "purple": 0,
+     "magenta": 0
+    },
+    "palette": [
+     {
+      "hex": "#7b604c",
+      "share": 0.29
+     },
+     {
+      "hex": "#141415",
+      "share": 0.257
+     },
+     {
+      "hex": "#614936",
+      "share": 0.177
+     },
+     {
+      "hex": "#a27c5d",
+      "share": 0.162
+     },
+     {
+      "hex": "#3a3d40",
+      "share": 0.115
+     }
+    ],
+    "values": {
+     "key": "mid",
+     "contrast": "medium",
+     "saturation": "moderate",
+     "toned": false,
+     "temperature": "warm",
+     "hue": [
+      "orange"
+     ],
+     "harmony": "single-hue",
+     "accent": false,
+     "symmetry": "weak",
+     "detail": "moderate"
+    }
+   },
+   "observed": {
+    "lightQuality": "soft",
+    "lightDirection": [
+     "side"
+    ],
+    "lightSource": "daylight",
+    "shotScale": "medium",
+    "angle": "eye-level",
+    "composition": [
+     "foreground-framing",
+     "off-centre"
+    ],
+    "focus": "shallow",
+    "layers": "two",
+    "figures": "two",
+    "setting": "exterior",
+    "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
+    "undetermined": [],
+    "method": "viewed",
+    "recorded": "2026-10-21"
+   },
+   "interpretation": {
+    "atmosphere": [
+     "ominous",
+     "tense"
+    ],
+    "subjective": true,
+    "recorded": "2026-10-21"
+   }
+  }
+ },
+ "updated": "2026-10-21"
+}

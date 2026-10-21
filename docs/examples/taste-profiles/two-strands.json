@@ -1,0 +1,658 @@
+{
+  "simulatedPerson": {
+    "name": "two-strands",
+    "area": "cinema",
+    "hiddenRule": "Two unrelated tastes: hard light in low-key frames (90%) and hand-drawn animation (90%); everything else 15%.",
+    "seed": 49,
+    "library": "real cinema library (89 stills)"
+  },
+  "draftInterpretation": [
+    "Across 82 stills from 35 films you liked 26 (32%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "Clearly, hand-drawn animation (drawn or painted animation): you liked 10 of 12 (83%), against 23% of the rest, across 4 films. For example: Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds; My Neighbor Totoro: Satsuki waits at the rainy bus stop at night with Mei on her back; Princess Mononoke: The Forest Spirit.",
+    "Together, low-key with hard light stands out: 8 of 9 liked, more than either alone (37% and 48%). For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Double Indemnity: The office corridor.",
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: teal with hand-drawn animation and analogous palette with hand-drawn animation.",
+    "Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged)."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 82,
+      "likes": 26,
+      "dislikes": 56,
+      "likeRate": 0.317,
+      "works": 35,
+      "notInLibrary": 0,
+      "eventCount": 91,
+      "lastEventAt": "2026-10-10T19:30:17.805Z",
+      "judgmentsDigest": "cdaf830e",
+      "vocabularyVersion": 3
+    },
+    "evidenceLevel": "established",
+    "signature": {
+      "summary": "A clear leaning towards hand-drawn animation. Notably, low-key with hard light (8 of 9 liked).",
+      "terms": [
+        "medium:animation"
+      ],
+      "statements": [
+        {
+          "text": "Liked 10 of 12 works with hand-drawn animation (83%), against 16 of 70 without it (23%).",
+          "feature": "medium:animation",
+          "strength": "well supported",
+          "subjective": false
+        }
+      ]
+    },
+    "preferred": [
+      {
+        "feature": "medium:animation",
+        "dimension": "medium",
+        "value": "animation",
+        "label": "hand-drawn animation",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.229,
+          "difference": 0.605,
+          "interval": [
+            0.552,
+            0.953
+          ],
+          "p": 0.0001,
+          "q": 0.0056,
+          "leaveOneWorkOutP": 0.002,
+          "workLevelP": 0.0107
+        },
+        "explanation": "Liked 10 of 12 works with hand-drawn animation (83%), against 16 of 70 without it (23%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "howls-moving-castle-01",
+            "howls-moving-castle-02",
+            "howls-moving-castle-03",
+            "my-neighbor-totoro-01",
+            "my-neighbor-totoro-02",
+            "princess-mononoke-01",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-03",
+            "spirited-away-04"
+          ],
+          "contradicting": [
+            "spirited-away-01",
+            "spirited-away-02"
+          ],
+          "supportingWorks": 4
+        }
+      },
+      {
+        "feature": "hue:teal",
+        "dimension": "hue",
+        "value": "teal",
+        "label": "teal",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "medium:animation",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.778,
+          "rateWhenAbsent": 0.26,
+          "difference": 0.518,
+          "interval": [
+            0.453,
+            0.937
+          ],
+          "p": 0.0038,
+          "q": 0.109,
+          "leaveOneWorkOutP": 0.0231,
+          "workLevelP": 0.0171
+        },
+        "explanation": "Liked 7 of 9 works with teal (78%), against 19 of 73 without it (26%).",
+        "notes": [
+          "goes together with hand-drawn animation in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "howls-moving-castle-01",
+            "my-neighbor-totoro-01",
+            "my-neighbor-totoro-02",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-04"
+          ],
+          "contradicting": [
+            "lawrence-of-arabia-03",
+            "spirited-away-02"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "harmony:analogous",
+        "dimension": "harmony",
+        "value": "analogous",
+        "label": "analogous palette",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "medium:animation",
+        "stats": {
+          "exposed": 18,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.611,
+          "rateWhenAbsent": 0.234,
+          "difference": 0.377,
+          "interval": [
+            0.386,
+            0.797
+          ],
+          "p": 0.004,
+          "q": 0.109,
+          "leaveOneWorkOutP": 0.0299,
+          "workLevelP": 0.0183
+        },
+        "explanation": "Liked 11 of 18 works with analogous palette (61%), against 15 of 64 without it (23%).",
+        "notes": [
+          "goes together with hand-drawn animation in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-01",
+            "howls-moving-castle-02",
+            "howls-moving-castle-03",
+            "my-neighbor-totoro-02",
+            "oldboy-01",
+            "princess-mononoke-01",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-03"
+          ],
+          "contradicting": [
+            "amelie-01",
+            "amelie-02",
+            "in-the-mood-for-love-02",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "parasite-01",
+            "the-godfather-01"
+          ],
+          "supportingWorks": 7
+        }
+      }
+    ],
+    "disliked": [
+      {
+        "feature": "medium:live-action",
+        "dimension": "medium",
+        "value": "live-action",
+        "label": "live action",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 70,
+          "likedWhenPresent": 16,
+          "rateWhenPresent": 0.229,
+          "rateWhenAbsent": 0.833,
+          "difference": -0.605,
+          "interval": [
+            0.146,
+            0.34
+          ],
+          "p": 0.0001,
+          "q": 0.0056,
+          "leaveOneWorkOutP": 0.0002,
+          "workLevelP": 0.0107
+        },
+        "explanation": "Liked 16 of 70 works with live action (23%), against 10 of 12 without it (83%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "12-angry-men-02",
+            "amelie-01",
+            "amelie-02",
+            "bridge-on-the-river-kwai-02",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "dr-strangelove-03",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-01",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-04",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "metropolis-02",
+            "metropolis-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "on-the-waterfront-02",
+            "on-the-waterfront-03",
+            "parasite-01",
+            "paths-of-glory-02",
+            "psycho-01",
+            "rear-window-01",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "some-like-it-hot-02",
+            "the-apartment-01",
+            "the-general-01",
+            "the-general-02",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-godfather-03",
+            "the-gold-rush-01",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-02",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "bridge-on-the-river-kwai-01",
+            "double-indemnity-01",
+            "double-indemnity-03",
+            "dr-strangelove-02",
+            "mad-max-fury-road-02",
+            "mr-smith-goes-to-washington-01",
+            "north-by-northwest-01",
+            "oldboy-01",
+            "paths-of-glory-01",
+            "some-like-it-hot-01",
+            "sunset-boulevard-01",
+            "sunset-boulevard-02",
+            "the-apartment-02",
+            "the-general-03",
+            "the-kid-01"
+          ],
+          "supportingWorks": 28
+        }
+      }
+    ],
+    "combinations": [
+      {
+        "features": [
+          "key:low",
+          "lightQuality:hard"
+        ],
+        "labels": [
+          "low-key",
+          "hard light"
+        ],
+        "direction": "liked",
+        "strength": "emerging",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 8,
+          "rateTogether": 0.889,
+          "rateFirstAlone": 0.367,
+          "rateSecondAlone": 0.476,
+          "p": 0.0003,
+          "pBeyondFindings": 0.0003,
+          "q": 0.0948
+        },
+        "explanation": "low-key with hard light: liked 8 of 9 (89%), against 37% for low-key overall and 48% for hard light overall.",
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "dr-strangelove-02",
+            "mad-max-fury-road-02",
+            "oldboy-01",
+            "paths-of-glory-01",
+            "sunset-boulevard-01",
+            "the-apartment-02"
+          ],
+          "contradicting": [
+            "north-by-northwest-03"
+          ]
+        }
+      }
+    ],
+    "notYetClear": [
+      {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "setting:vehicle",
+        "label": "vehicle",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "atmospherics:rain",
+        "label": "rain",
+        "exposed": 1,
+        "liked": 1
+      },
+      {
+        "feature": "shotScale:extreme-close-up",
+        "label": "extreme close-up",
+        "exposed": 1,
+        "liked": 0
+      }
+    ],
+    "spread": {
+      "overall": 0.991,
+      "reading": "broad",
+      "byDimension": {
+        "key": {
+          "label": "tonal key",
+          "ratio": 0.931,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "contrast": {
+          "label": "contrast",
+          "ratio": 1.223,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "saturation": {
+          "label": "saturation",
+          "ratio": 1.086,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "temperature": {
+          "label": "colour temperature",
+          "ratio": 1.051,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "hue": {
+          "label": "dominant hues",
+          "ratio": 1.028,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 0.755,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "symmetry": {
+          "label": "tonal symmetry",
+          "ratio": 0.962,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "detail": {
+          "label": "surface detail",
+          "ratio": 0.931,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "medium": {
+          "label": "medium",
+          "ratio": 1.6,
+          "reading": "broad",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "lightQuality": {
+          "label": "light quality",
+          "ratio": 1.003,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "lightDirection": {
+          "label": "key-light direction",
+          "ratio": 0.946,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "lightSource": {
+          "label": "apparent light source",
+          "ratio": 1.022,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "shotScale": {
+          "label": "shot scale",
+          "ratio": 0.826,
+          "reading": "mixed",
+          "valuesJudged": 9,
+          "valuesLiked": 7
+        },
+        "angle": {
+          "label": "camera angle",
+          "ratio": 1.018,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "composition": {
+          "label": "composition",
+          "ratio": 0.978,
+          "reading": "broad",
+          "valuesJudged": 11,
+          "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 1.055,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 6
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 1.035,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 5
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 0.832,
+          "reading": "mixed",
+          "valuesJudged": 5,
+          "valuesLiked": 4
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 0.89,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
+        },
+        "focus": {
+          "label": "depth of field",
+          "ratio": 0.751,
+          "reading": "mixed",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "layers": {
+          "label": "spatial layers",
+          "ratio": 0.794,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
+        },
+        "figures": {
+          "label": "figures",
+          "ratio": 1.034,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "setting": {
+          "label": "setting",
+          "ratio": 1.062,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "atmosphere": {
+          "label": "atmosphere",
+          "ratio": 0.981,
+          "reading": "broad",
+          "valuesJudged": 13,
+          "valuesLiked": 13
+        }
+      }
+    },
+    "consistency": {
+      "changedJudgments": [
+        "amelie-02",
+        "the-general-03"
+      ],
+      "worksWithMixedJudgments": [
+        "bridge-on-the-river-kwai",
+        "double-indemnity",
+        "dr-strangelove",
+        "mad-max-fury-road",
+        "mr-smith-goes-to-washington",
+        "north-by-northwest",
+        "oldboy",
+        "paths-of-glory",
+        "some-like-it-hot",
+        "spirited-away",
+        "the-apartment",
+        "the-general"
+      ]
+    },
+    "terminology": [
+      {
+        "term": "harmony:analogous",
+        "label": "analogous palette",
+        "definition": "Neighbouring hues, such as red, orange and yellow, share the frame.",
+        "dimension": "colour harmony",
+        "basis": "measured"
+      },
+      {
+        "term": "hue:teal",
+        "label": "teal",
+        "definition": "Cyans and teals.",
+        "dimension": "dominant hues",
+        "basis": "measured"
+      },
+      {
+        "term": "key:low",
+        "label": "low-key",
+        "definition": "Most of the frame is dark; light is selective and shadows dominate.",
+        "dimension": "tonal key",
+        "basis": "measured"
+      },
+      {
+        "term": "lightQuality:hard",
+        "label": "hard light",
+        "definition": "Crisp, sharp-edged shadows from a small or distant source.",
+        "dimension": "light quality",
+        "basis": "observed"
+      },
+      {
+        "term": "medium:animation",
+        "label": "hand-drawn animation",
+        "definition": "Drawn or painted animation.",
+        "dimension": "medium",
+        "basis": "observed"
+      },
+      {
+        "term": "medium:live-action",
+        "label": "live action",
+        "definition": "Photographed with a camera (including sets, models and miniatures).",
+        "dimension": "medium",
+        "basis": "observed"
+      }
+    ],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+    ]
+  }
+}

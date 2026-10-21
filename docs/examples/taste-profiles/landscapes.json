@@ -1,0 +1,2148 @@
+{
+  "simulatedPerson": {
+    "name": "landscapes",
+    "area": "cinema",
+    "hiddenRule": "Likes distant exterior shots (85%); dislikes close shots (5%); otherwise 30%.",
+    "seed": 43,
+    "library": "real cinema library (89 stills)"
+  },
+  "draftInterpretation": [
+    "Across 70 stills from 30 films you liked 32 (46%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "Clearly, distant shots (wide and extreme wide shots: the setting dominates the figures): you liked 23 of 31 (74%), against 23% of the rest, across 16 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Lawrence of Arabia: The train attack.",
+    "Possibly, wide shot (whole figures with substantial surroundings): you liked 17 of 23 (74%), against 32% of the rest, across 15 films. For example: 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod; Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The B-52 banking over snow-covered mountains; Lawrence of Arabia: The train attack.",
+    "You were less drawn to gaze out of frame (2 of 19 liked). That is a description of your judgments, not a gap to correct.",
+    "Some characteristics only appear to matter because they travel with the ones above: monochrome (accounted for by distant shots).",
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: deep focus with distant shots, face not visible with distant shots and leading lines with distant shots.",
+    "Too few examples to say anything yet about patterned shadow (2 judged), motion blur (2 judged) and vehicle (2 judged)."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 70,
+      "likes": 32,
+      "dislikes": 38,
+      "likeRate": 0.457,
+      "works": 30,
+      "notInLibrary": 0,
+      "eventCount": 74,
+      "lastEventAt": "2026-10-08T19:24:57.322Z",
+      "judgmentsDigest": "a12805eb",
+      "vocabularyVersion": 3
+    },
+    "evidenceLevel": "established",
+    "signature": {
+      "summary": "A clear leaning towards distant shots. Early signs of a leaning towards wide shot. Less drawn to gaze out of frame.",
+      "terms": [
+        "shotScale:distant",
+        "shotScale:wide",
+        "gaze:off-frame"
+      ],
+      "statements": [
+        {
+          "text": "Liked 23 of 31 works with distant shots (74%), against 9 of 39 without it (23%).",
+          "feature": "shotScale:distant",
+          "strength": "well supported",
+          "subjective": false
+        },
+        {
+          "text": "Liked 17 of 23 works with wide shot (74%), against 15 of 47 without it (32%).",
+          "feature": "shotScale:wide",
+          "strength": "emerging",
+          "subjective": false
+        },
+        {
+          "text": "Liked 2 of 19 works with gaze out of frame (11%), against 30 of 51 without it (59%).",
+          "feature": "gaze:off-frame",
+          "strength": "well supported",
+          "subjective": false
+        }
+      ]
+    },
+    "preferred": [
+      {
+        "feature": "shotScale:distant",
+        "dimension": "shotScale",
+        "value": "distant",
+        "label": "distant shots",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 31,
+          "likedWhenPresent": 23,
+          "rateWhenPresent": 0.742,
+          "rateWhenAbsent": 0.231,
+          "difference": 0.511,
+          "interval": [
+            0.568,
+            0.863
+          ],
+          "p": 0,
+          "q": 0.0032,
+          "leaveOneWorkOutP": 0.0002,
+          "workLevelP": 0.0003
+        },
+        "explanation": "Liked 23 of 31 works with distant shots (74%), against 9 of 39 without it (23%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "dr-strangelove-03",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-01",
+            "mr-smith-goes-to-washington-01",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "spirited-away-01",
+            "spirited-away-03",
+            "spirited-away-04",
+            "sunset-boulevard-02",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-02",
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "oldboy-01",
+            "on-the-waterfront-03",
+            "rear-window-02",
+            "the-general-01",
+            "the-general-03"
+          ],
+          "supportingWorks": 16
+        }
+      },
+      {
+        "feature": "shotScale:wide",
+        "dimension": "shotScale",
+        "value": "wide",
+        "label": "wide shot",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 23,
+          "likedWhenPresent": 17,
+          "rateWhenPresent": 0.739,
+          "rateWhenAbsent": 0.319,
+          "difference": 0.42,
+          "interval": [
+            0.535,
+            0.875
+          ],
+          "p": 0.0018,
+          "q": 0.0537,
+          "leaveOneWorkOutP": 0.0038,
+          "workLevelP": 0.0031
+        },
+        "explanation": "Liked 17 of 23 works with wide shot (74%), against 15 of 47 without it (32%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "dr-strangelove-03",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-02",
+            "mr-smith-goes-to-washington-01",
+            "north-by-northwest-03",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "spirited-away-03",
+            "spirited-away-04",
+            "sunset-boulevard-02",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "oldboy-01",
+            "on-the-waterfront-03",
+            "rear-window-02",
+            "the-general-01"
+          ],
+          "supportingWorks": 15
+        }
+      },
+      {
+        "feature": "focus:deep",
+        "dimension": "focus",
+        "value": "deep",
+        "label": "deep focus",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 48,
+          "likedWhenPresent": 28,
+          "rateWhenPresent": 0.583,
+          "rateWhenAbsent": 0.182,
+          "difference": 0.402,
+          "interval": [
+            0.443,
+            0.712
+          ],
+          "p": 0.002,
+          "q": 0.0537,
+          "leaveOneWorkOutP": 0.0073,
+          "workLevelP": 0.0051
+        },
+        "explanation": "Liked 28 of 48 works with deep focus (58%), against 4 of 22 without it (18%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "dr-strangelove-02",
+            "dr-strangelove-03",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-01",
+            "mr-smith-goes-to-washington-01",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "spirited-away-01",
+            "spirited-away-03",
+            "spirited-away-04",
+            "sunset-boulevard-02",
+            "the-gold-rush-01",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "12-angry-men-01",
+            "bridge-on-the-river-kwai-01",
+            "bridge-on-the-river-kwai-02",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "mr-smith-goes-to-washington-03",
+            "oldboy-01",
+            "on-the-waterfront-03",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "spirited-away-02",
+            "the-apartment-02",
+            "the-general-01",
+            "the-general-02",
+            "the-general-03",
+            "the-great-dictator-03",
+            "the-kid-02"
+          ],
+          "supportingWorks": 19
+        }
+      },
+      {
+        "feature": "gaze:hidden",
+        "dimension": "gaze",
+        "value": "hidden",
+        "label": "face not visible",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 22,
+          "likedWhenPresent": 16,
+          "rateWhenPresent": 0.727,
+          "rateWhenAbsent": 0.333,
+          "difference": 0.394,
+          "interval": [
+            0.518,
+            0.868
+          ],
+          "p": 0.0039,
+          "q": 0.054,
+          "leaveOneWorkOutP": 0.0084,
+          "workLevelP": 0.0014
+        },
+        "explanation": "Liked 16 of 22 works with face not visible (73%), against 16 of 48 without it (33%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "oldboy-01",
+            "the-general-01",
+            "the-general-03",
+            "the-great-dictator-03"
+          ],
+          "supportingWorks": 12
+        }
+      },
+      {
+        "feature": "composition:leading-lines",
+        "dimension": "composition",
+        "value": "leading-lines",
+        "label": "leading lines",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 10,
+          "likedWhenPresent": 9,
+          "rateWhenPresent": 0.9,
+          "rateWhenAbsent": 0.383,
+          "difference": 0.517,
+          "interval": [
+            0.596,
+            0.982
+          ],
+          "p": 0.004,
+          "q": 0.054,
+          "leaveOneWorkOutP": 0.0172,
+          "workLevelP": 0.0155
+        },
+        "explanation": "Liked 9 of 10 works with leading lines (90%), against 23 of 60 without it (38%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "double-indemnity-03",
+            "lawrence-of-arabia-02",
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "sunset-boulevard-02",
+            "the-kid-01",
+            "vertigo-01"
+          ],
+          "contradicting": [
+            "the-general-01"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "figures:none",
+        "dimension": "figures",
+        "value": "none",
+        "label": "no figures",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.379,
+          "difference": 0.454,
+          "interval": [
+            0.552,
+            0.953
+          ],
+          "p": 0.0086,
+          "q": 0.0884,
+          "leaveOneWorkOutP": 0.0178,
+          "workLevelP": 0.0418
+        },
+        "explanation": "Liked 10 of 12 works with no figures (83%), against 22 of 58 without it (38%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-03",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-01",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "parasite-02",
+            "spirited-away-01",
+            "spirited-away-03",
+            "sunset-boulevard-02"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-02",
+            "vertigo-02"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "temperature:cool",
+        "dimension": "temperature",
+        "value": "cool",
+        "label": "cool",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 0.889,
+          "rateWhenAbsent": 0.393,
+          "difference": 0.495,
+          "interval": [
+            0.565,
+            0.98
+          ],
+          "p": 0.0091,
+          "q": 0.0884,
+          "leaveOneWorkOutP": 0.0394,
+          "workLevelP": 0.0768
+        },
+        "explanation": "Liked 8 of 9 works with cool (89%), against 24 of 61 without it (39%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "spirited-away-01",
+            "spirited-away-04",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-02"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "lightSource:daylight",
+        "dimension": "lightSource",
+        "value": "daylight",
+        "label": "daylight",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 32,
+          "likedWhenPresent": 20,
+          "rateWhenPresent": 0.625,
+          "rateWhenAbsent": 0.316,
+          "difference": 0.309,
+          "interval": [
+            0.453,
+            0.771
+          ],
+          "p": 0.0156,
+          "q": 0.1187,
+          "leaveOneWorkOutP": 0.0285,
+          "workLevelP": 0.0184
+        },
+        "explanation": "Liked 20 of 32 works with daylight (63%), against 12 of 38 without it (32%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-03",
+            "its-a-wonderful-life-02",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "parasite-02",
+            "rear-window-01",
+            "spirited-away-01",
+            "spirited-away-04",
+            "sunset-boulevard-02",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-01",
+            "bridge-on-the-river-kwai-02",
+            "double-indemnity-02",
+            "lawrence-of-arabia-04",
+            "paths-of-glory-02",
+            "spirited-away-02",
+            "the-general-01",
+            "the-general-02",
+            "the-general-03",
+            "the-great-dictator-03",
+            "the-kid-02",
+            "vertigo-02"
+          ],
+          "supportingWorks": 14
+        }
+      },
+      {
+        "feature": "setting:exterior",
+        "dimension": "setting",
+        "value": "exterior",
+        "label": "exterior",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 34,
+          "likedWhenPresent": 21,
+          "rateWhenPresent": 0.618,
+          "rateWhenAbsent": 0.306,
+          "difference": 0.312,
+          "interval": [
+            0.45,
+            0.761
+          ],
+          "p": 0.0158,
+          "q": 0.1187,
+          "leaveOneWorkOutP": 0.0285,
+          "workLevelP": 0.0038
+        },
+        "explanation": "Liked 21 of 34 works with exterior (62%), against 11 of 36 without it (31%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "dr-strangelove-03",
+            "its-a-wonderful-life-02",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "mad-max-fury-road-02",
+            "metropolis-01",
+            "north-by-northwest-01",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "on-the-waterfront-02",
+            "rear-window-01",
+            "spirited-away-01",
+            "spirited-away-03",
+            "sunset-boulevard-02",
+            "the-grand-budapest-hotel-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-01",
+            "bridge-on-the-river-kwai-02",
+            "its-a-wonderful-life-01",
+            "lawrence-of-arabia-04",
+            "paths-of-glory-01",
+            "paths-of-glory-02",
+            "spirited-away-02",
+            "the-general-01",
+            "the-general-02",
+            "the-general-03",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-kid-02"
+          ],
+          "supportingWorks": 14
+        }
+      },
+      {
+        "feature": "saturation:muted",
+        "dimension": "saturation",
+        "value": "muted",
+        "label": "muted colour",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "gaze:off-frame",
+        "stats": {
+          "exposed": 5,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.415,
+          "difference": 0.585,
+          "interval": [
+            0.566,
+            1
+          ],
+          "p": 0.0166,
+          "q": 0.1187,
+          "leaveOneWorkOutP": 0.0799
+        },
+        "explanation": "Liked 5 of 5 works with muted colour (100%), against 27 of 65 without it (42%).",
+        "notes": [
+          "depends on one film (lawrence-of-arabia): without it the association is not clear",
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "lawrence-of-arabia-03",
+            "lawrence-of-arabia-05",
+            "north-by-northwest-01",
+            "parasite-02"
+          ],
+          "contradicting": [],
+          "supportingWorks": 4
+        }
+      },
+      {
+        "feature": "hue:blue",
+        "dimension": "hue",
+        "value": "blue",
+        "label": "blue",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 10,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 0.8,
+          "rateWhenAbsent": 0.4,
+          "difference": 0.4,
+          "interval": [
+            0.49,
+            0.943
+          ],
+          "p": 0.0358,
+          "q": 0.2018
+        },
+        "explanation": "Liked 8 of 10 works with blue (80%), against 24 of 60 without it (40%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "spirited-away-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-02",
+            "vertigo-02"
+          ],
+          "supportingWorks": 6
+        }
+      },
+      {
+        "feature": "saturation:moderate",
+        "dimension": "saturation",
+        "value": "moderate",
+        "label": "moderate colour",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 18,
+          "likedWhenPresent": 12,
+          "rateWhenPresent": 0.667,
+          "rateWhenAbsent": 0.385,
+          "difference": 0.282,
+          "interval": [
+            0.437,
+            0.837
+          ],
+          "p": 0.0549,
+          "q": 0.2566
+        },
+        "explanation": "Liked 12 of 18 works with moderate colour (67%), against 20 of 52 without it (38%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "in-the-mood-for-love-02",
+            "lawrence-of-arabia-02",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "parasite-01",
+            "rear-window-01",
+            "spirited-away-01",
+            "spirited-away-03",
+            "spirited-away-04",
+            "the-grand-budapest-hotel-02",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-01",
+            "bridge-on-the-river-kwai-02",
+            "oldboy-02",
+            "rear-window-02",
+            "spirited-away-02",
+            "vertigo-02"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "composition:dense",
+        "dimension": "composition",
+        "value": "dense",
+        "label": "dense composition",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "gaze:off-frame",
+        "stats": {
+          "exposed": 20,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.65,
+          "rateWhenAbsent": 0.38,
+          "difference": 0.27,
+          "interval": [
+            0.433,
+            0.819
+          ],
+          "p": 0.0624,
+          "q": 0.2566
+        },
+        "explanation": "Liked 13 of 20 works with dense composition (65%), against 19 of 50 without it (38%).",
+        "notes": [
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "metropolis-01",
+            "mr-smith-goes-to-washington-01",
+            "parasite-02",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "spirited-away-03",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "12-angry-men-01",
+            "bridge-on-the-river-kwai-01",
+            "its-a-wonderful-life-03",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "the-general-03",
+            "vertigo-02"
+          ],
+          "supportingWorks": 11
+        }
+      },
+      {
+        "feature": "lightDirection:ambient",
+        "dimension": "lightDirection",
+        "value": "ambient",
+        "label": "ambient light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 20,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.65,
+          "rateWhenAbsent": 0.38,
+          "difference": 0.27,
+          "interval": [
+            0.433,
+            0.819
+          ],
+          "p": 0.0624,
+          "q": 0.2566
+        },
+        "explanation": "Liked 13 of 20 works with ambient light (65%), against 19 of 50 without it (38%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "its-a-wonderful-life-04",
+            "metropolis-01",
+            "north-by-northwest-01",
+            "parasite-01",
+            "rear-window-01",
+            "sherlock-jr-02",
+            "spirited-away-01",
+            "spirited-away-03",
+            "spirited-away-04",
+            "sunset-boulevard-02",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-02",
+            "spirited-away-02",
+            "the-general-01",
+            "the-general-02",
+            "the-great-dictator-02",
+            "the-kid-02",
+            "vertigo-02"
+          ],
+          "supportingWorks": 10
+        }
+      },
+      {
+        "feature": "accent:yes",
+        "dimension": "accent",
+        "value": "yes",
+        "label": "colour accent",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 6,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.422,
+          "difference": 0.411,
+          "interval": [
+            0.436,
+            0.97
+          ],
+          "p": 0.0863,
+          "q": 0.3188
+        },
+        "explanation": "Liked 5 of 6 works with colour accent (83%), against 27 of 64 without it (42%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "in-the-mood-for-love-02",
+            "north-by-northwest-01",
+            "rear-window-01",
+            "the-grand-budapest-hotel-02",
+            "vertigo-01"
+          ],
+          "contradicting": [
+            "bridge-on-the-river-kwai-01"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "atmospherics:dust",
+        "dimension": "atmospherics",
+        "value": "dust",
+        "label": "dust",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 3,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.433,
+          "difference": 0.567,
+          "interval": [
+            0.439,
+            1
+          ],
+          "p": 0.0906,
+          "q": 0.3188
+        },
+        "explanation": "Liked 3 of 3 works with dust (100%), against 29 of 67 without it (43%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 2
+        }
+      }
+    ],
+    "disliked": [
+      {
+        "feature": "gaze:off-frame",
+        "dimension": "gaze",
+        "value": "off-frame",
+        "label": "gaze out of frame",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 19,
+          "likedWhenPresent": 2,
+          "rateWhenPresent": 0.105,
+          "rateWhenAbsent": 0.588,
+          "difference": -0.483,
+          "interval": [
+            0.029,
+            0.314
+          ],
+          "p": 0.0003,
+          "q": 0.0176,
+          "leaveOneWorkOutP": 0.0015,
+          "workLevelP": 0.0002
+        },
+        "explanation": "Liked 2 of 19 works with gaze out of frame (11%), against 30 of 51 without it (59%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-01",
+            "bridge-on-the-river-kwai-01",
+            "dr-strangelove-01",
+            "in-the-mood-for-love-01",
+            "mr-smith-goes-to-washington-02",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "paths-of-glory-02",
+            "psycho-02",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-grand-budapest-hotel-01",
+            "the-great-dictator-02"
+          ],
+          "contradicting": [
+            "amelie-02",
+            "dr-strangelove-02"
+          ],
+          "supportingWorks": 14
+        }
+      },
+      {
+        "feature": "focus:shallow",
+        "dimension": "focus",
+        "value": "shallow",
+        "label": "shallow focus",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 16,
+          "likedWhenPresent": 2,
+          "rateWhenPresent": 0.125,
+          "rateWhenAbsent": 0.556,
+          "difference": -0.431,
+          "interval": [
+            0.035,
+            0.36
+          ],
+          "p": 0.0035,
+          "q": 0.054,
+          "leaveOneWorkOutP": 0.0072,
+          "workLevelP": 0.0016
+        },
+        "explanation": "Liked 2 of 16 works with shallow focus (13%), against 30 of 54 without it (56%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-01",
+            "mr-smith-goes-to-washington-02",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "paths-of-glory-01",
+            "psycho-02",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-01",
+            "the-great-dictator-01",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "amelie-02",
+            "in-the-mood-for-love-02"
+          ],
+          "supportingWorks": 13
+        }
+      },
+      {
+        "feature": "saturation:monochrome",
+        "dimension": "saturation",
+        "value": "monochrome",
+        "label": "monochrome",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": "shotScale:distant",
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 40,
+          "likedWhenPresent": 12,
+          "rateWhenPresent": 0.3,
+          "rateWhenAbsent": 0.667,
+          "difference": -0.367,
+          "interval": [
+            0.181,
+            0.454
+          ],
+          "p": 0.0035,
+          "q": 0.054,
+          "leaveOneWorkOutP": 0.0125,
+          "workLevelP": 0.0131
+        },
+        "explanation": "Liked 12 of 40 works with monochrome (30%), against 20 of 30 without it (67%).",
+        "notes": [
+          "accounted for by distant shots and gaze out of frame together"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "12-angry-men-02",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "paths-of-glory-02",
+            "psycho-01",
+            "psycho-02",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-general-01",
+            "the-general-02",
+            "the-general-03",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-kid-02"
+          ],
+          "contradicting": [
+            "double-indemnity-03",
+            "dr-strangelove-02",
+            "dr-strangelove-03",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "metropolis-01",
+            "mr-smith-goes-to-washington-01",
+            "on-the-waterfront-02",
+            "sherlock-jr-02",
+            "sunset-boulevard-02",
+            "the-gold-rush-01",
+            "the-kid-01"
+          ],
+          "supportingWorks": 16
+        }
+      },
+      {
+        "feature": "shotScale:close-range",
+        "dimension": "shotScale",
+        "value": "close-range",
+        "label": "close shots",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "gaze:off-frame",
+        "stats": {
+          "exposed": 11,
+          "likedWhenPresent": 1,
+          "rateWhenPresent": 0.091,
+          "rateWhenAbsent": 0.525,
+          "difference": -0.435,
+          "interval": [
+            0.016,
+            0.377
+          ],
+          "p": 0.0087,
+          "q": 0.0884,
+          "leaveOneWorkOutP": 0.0172,
+          "workLevelP": 0.005
+        },
+        "explanation": "Liked 1 of 11 works with close shots (9%), against 31 of 59 without it (53%).",
+        "notes": [
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-01",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "paths-of-glory-01",
+            "psycho-02",
+            "sunset-boulevard-01",
+            "the-great-dictator-01"
+          ],
+          "contradicting": [
+            "amelie-02"
+          ],
+          "supportingWorks": 10
+        }
+      },
+      {
+        "feature": "temperature:neutral",
+        "dimension": "temperature",
+        "value": "neutral",
+        "label": "neutral",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 40,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.325,
+          "rateWhenAbsent": 0.633,
+          "difference": -0.308,
+          "interval": [
+            0.201,
+            0.48
+          ],
+          "p": 0.0153,
+          "q": 0.1187,
+          "leaveOneWorkOutP": 0.0463,
+          "workLevelP": 0.0872
+        },
+        "explanation": "Liked 13 of 40 works with neutral (33%), against 19 of 30 without it (63%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "12-angry-men-02",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "lawrence-of-arabia-04",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "oldboy-01",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "paths-of-glory-02",
+            "psycho-01",
+            "psycho-02",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-kid-02",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "dr-strangelove-02",
+            "dr-strangelove-03",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-04",
+            "metropolis-01",
+            "mr-smith-goes-to-washington-01",
+            "on-the-waterfront-02",
+            "sherlock-jr-02",
+            "sunset-boulevard-02",
+            "the-gold-rush-01",
+            "the-kid-01"
+          ],
+          "supportingWorks": 17
+        }
+      },
+      {
+        "feature": "lightSource:artificial",
+        "dimension": "lightSource",
+        "value": "artificial",
+        "label": "artificial light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 26,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.269,
+          "rateWhenAbsent": 0.568,
+          "difference": -0.299,
+          "interval": [
+            0.137,
+            0.461
+          ],
+          "p": 0.0247,
+          "q": 0.1654,
+          "leaveOneWorkOutP": 0.0713
+        },
+        "explanation": "Liked 7 of 26 works with artificial light (27%), against 25 of 44 without it (57%).",
+        "notes": [
+          "depends on one film (its-a-wonderful-life): without it the association is not clear",
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "double-indemnity-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "oldboy-01",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "paths-of-glory-01",
+            "psycho-01",
+            "psycho-02",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "the-apartment-02",
+            "the-grand-budapest-hotel-01",
+            "the-great-dictator-01"
+          ],
+          "contradicting": [
+            "amelie-02",
+            "double-indemnity-03",
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "mr-smith-goes-to-washington-01",
+            "north-by-northwest-03",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 14
+        }
+      },
+      {
+        "feature": "setting:interior",
+        "dimension": "setting",
+        "value": "interior",
+        "label": "interior",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 30,
+          "likedWhenPresent": 9,
+          "rateWhenPresent": 0.3,
+          "rateWhenAbsent": 0.575,
+          "difference": -0.275,
+          "interval": [
+            0.167,
+            0.479
+          ],
+          "p": 0.0299,
+          "q": 0.1879,
+          "leaveOneWorkOutP": 0.0818
+        },
+        "explanation": "Liked 9 of 30 works with interior (30%), against 23 of 40 without it (57%).",
+        "notes": [
+          "depends on one film (dr-strangelove): without it the association is not clear",
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "12-angry-men-02",
+            "amelie-01",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "oldboy-01",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "psycho-01",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-grand-budapest-hotel-01"
+          ],
+          "contradicting": [
+            "amelie-02",
+            "double-indemnity-03",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-04",
+            "mr-smith-goes-to-washington-01",
+            "parasite-01",
+            "parasite-02",
+            "sherlock-jr-02",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 16
+        }
+      },
+      {
+        "feature": "figures:single",
+        "dimension": "figures",
+        "value": "single",
+        "label": "single figure",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 34,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.324,
+          "rateWhenAbsent": 0.583,
+          "difference": -0.26,
+          "interval": [
+            0.191,
+            0.492
+          ],
+          "p": 0.0341,
+          "q": 0.2018
+        },
+        "explanation": "Liked 11 of 34 works with single figure (32%), against 21 of 36 without it (58%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "amelie-01",
+            "double-indemnity-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-01",
+            "lawrence-of-arabia-04",
+            "mr-smith-goes-to-washington-02",
+            "oldboy-02",
+            "on-the-waterfront-01",
+            "paths-of-glory-01",
+            "paths-of-glory-02",
+            "psycho-01",
+            "psycho-02",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "spirited-away-02",
+            "the-apartment-02",
+            "the-general-01",
+            "the-general-02",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-kid-02"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "amelie-02",
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-03",
+            "rear-window-01",
+            "the-gold-rush-01",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "supportingWorks": 18
+        }
+      },
+      {
+        "feature": "composition:off-centre",
+        "dimension": "composition",
+        "value": "off-centre",
+        "label": "off-centre subject",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 22,
+          "likedWhenPresent": 6,
+          "rateWhenPresent": 0.273,
+          "rateWhenAbsent": 0.542,
+          "difference": -0.269,
+          "interval": [
+            0.132,
+            0.482
+          ],
+          "p": 0.0425,
+          "q": 0.2273
+        },
+        "explanation": "Liked 6 of 22 works with off-centre subject (27%), against 26 of 48 without it (54%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "bridge-on-the-river-kwai-01",
+            "in-the-mood-for-love-01",
+            "its-a-wonderful-life-01",
+            "lawrence-of-arabia-04",
+            "mr-smith-goes-to-washington-02",
+            "oldboy-01",
+            "on-the-waterfront-01",
+            "paths-of-glory-01",
+            "psycho-01",
+            "psycho-02",
+            "spirited-away-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-great-dictator-03",
+            "the-kid-02"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "amelie-02",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-03",
+            "parasite-01"
+          ],
+          "supportingWorks": 15
+        }
+      },
+      {
+        "feature": "detail:moderate",
+        "dimension": "detail",
+        "value": "moderate",
+        "label": "moderate surface detail",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 38,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.342,
+          "rateWhenAbsent": 0.594,
+          "difference": -0.252,
+          "interval": [
+            0.212,
+            0.501
+          ],
+          "p": 0.0537,
+          "q": 0.2566
+        },
+        "explanation": "Liked 13 of 38 works with moderate surface detail (34%), against 19 of 32 without it (59%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-01",
+            "12-angry-men-02",
+            "amelie-01",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "dr-strangelove-01",
+            "its-a-wonderful-life-01",
+            "its-a-wonderful-life-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "oldboy-01",
+            "oldboy-02",
+            "on-the-waterfront-03",
+            "rear-window-02",
+            "sherlock-jr-01",
+            "some-like-it-hot-01",
+            "spirited-away-02",
+            "sunset-boulevard-01",
+            "the-apartment-02",
+            "the-general-01",
+            "the-general-02",
+            "the-general-03",
+            "the-great-dictator-01",
+            "the-great-dictator-03",
+            "the-kid-02"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "in-the-mood-for-love-02",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-02",
+            "metropolis-01",
+            "parasite-01",
+            "parasite-02",
+            "sherlock-jr-02",
+            "spirited-away-03",
+            "spirited-away-04",
+            "the-kid-01",
+            "vertigo-01",
+            "vertigo-03"
+          ],
+          "supportingWorks": 17
+        }
+      },
+      {
+        "feature": "gaze:camera",
+        "dimension": "gaze",
+        "value": "camera",
+        "label": "gaze at the camera",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "shotScale:distant",
+        "stats": {
+          "exposed": 5,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.492,
+          "difference": -0.492,
+          "interval": [
+            0,
+            0.434
+          ],
+          "p": 0.0581,
+          "q": 0.2566
+        },
+        "explanation": "Liked 0 of 5 works with gaze at the camera (0%), against 32 of 65 without it (49%).",
+        "notes": [
+          "goes together with distant shots in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "oldboy-02",
+            "psycho-01",
+            "spirited-away-02",
+            "the-general-02",
+            "the-great-dictator-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "shotScale:medium-close",
+        "dimension": "shotScale",
+        "value": "medium-close",
+        "label": "medium close-up",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "gaze:off-frame",
+        "stats": {
+          "exposed": 5,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.492,
+          "difference": -0.492,
+          "interval": [
+            0,
+            0.434
+          ],
+          "p": 0.0581,
+          "q": 0.2566
+        },
+        "explanation": "Liked 0 of 5 works with medium close-up (0%), against 32 of 65 without it (49%).",
+        "notes": [
+          "goes together with gaze out of frame in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "its-a-wonderful-life-01",
+            "on-the-waterfront-01",
+            "paths-of-glory-01",
+            "sunset-boulevard-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 5
+        }
+      }
+    ],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "setting:vehicle",
+        "label": "vehicle",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "shotScale:extreme-close-up",
+        "label": "extreme close-up",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 1,
+        "liked": 1
+      }
+    ],
+    "spread": {
+      "overall": 0.986,
+      "reading": "broad",
+      "byDimension": {
+        "key": {
+          "label": "tonal key",
+          "ratio": 0.969,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "contrast": {
+          "label": "contrast",
+          "ratio": 1.224,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "saturation": {
+          "label": "saturation",
+          "ratio": 1.147,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "temperature": {
+          "label": "colour temperature",
+          "ratio": 1.143,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "hue": {
+          "label": "dominant hues",
+          "ratio": 1.009,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 1,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "symmetry": {
+          "label": "tonal symmetry",
+          "ratio": 1.098,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "detail": {
+          "label": "surface detail",
+          "ratio": 1.055,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "medium": {
+          "label": "medium",
+          "ratio": 1.42,
+          "reading": "broad",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "lightQuality": {
+          "label": "light quality",
+          "ratio": 1,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "lightDirection": {
+          "label": "key-light direction",
+          "ratio": 0.952,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "lightSource": {
+          "label": "apparent light source",
+          "ratio": 0.879,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "shotScale": {
+          "label": "shot scale",
+          "ratio": 0.764,
+          "reading": "mixed",
+          "valuesJudged": 9,
+          "valuesLiked": 7
+        },
+        "angle": {
+          "label": "camera angle",
+          "ratio": 1.074,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "composition": {
+          "label": "composition",
+          "ratio": 1.007,
+          "reading": "broad",
+          "valuesJudged": 11,
+          "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 0.886,
+          "reading": "mixed",
+          "valuesJudged": 6,
+          "valuesLiked": 5
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 1.09,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 0.611,
+          "reading": "mixed",
+          "valuesJudged": 5,
+          "valuesLiked": 4
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 1.112,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "focus": {
+          "label": "depth of field",
+          "ratio": 0.436,
+          "reading": "focused",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "layers": {
+          "label": "spatial layers",
+          "ratio": 0.76,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
+        },
+        "figures": {
+          "label": "figures",
+          "ratio": 1.035,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "setting": {
+          "label": "setting",
+          "ratio": 1.001,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "atmosphere": {
+          "label": "atmosphere",
+          "ratio": 0.993,
+          "reading": "broad",
+          "valuesJudged": 13,
+          "valuesLiked": 13
+        }
+      }
+    },
+    "consistency": {
+      "changedJudgments": [
+        "the-general-01",
+        "vertigo-02"
+      ],
+      "worksWithMixedJudgments": [
+        "amelie",
+        "double-indemnity",
+        "dr-strangelove",
+        "in-the-mood-for-love",
+        "its-a-wonderful-life",
+        "lawrence-of-arabia",
+        "mr-smith-goes-to-washington",
+        "on-the-waterfront",
+        "rear-window",
+        "sherlock-jr",
+        "spirited-away",
+        "sunset-boulevard",
+        "the-grand-budapest-hotel",
+        "the-kid",
+        "vertigo"
+      ]
+    },
+    "terminology": [
+      {
+        "term": "accent:yes",
+        "label": "colour accent",
+        "definition": "A small vivid area (between half a percent and 8% of the frame) stands out against a muted or dark image.",
+        "dimension": "colour accent",
+        "basis": "measured"
+      },
+      {
+        "term": "atmospherics:dust",
+        "label": "dust",
+        "definition": "Blowing dust or sand.",
+        "dimension": "atmospherics",
+        "basis": "observed"
+      },
+      {
+        "term": "composition:dense",
+        "label": "dense composition",
+        "definition": "The frame is filled with many figures or objects.",
+        "dimension": "composition",
+        "basis": "observed"
+      },
+      {
+        "term": "composition:leading-lines",
+        "label": "leading lines",
+        "definition": "Lines in the set or landscape draw the eye towards a point.",
+        "dimension": "composition",
+        "basis": "observed"
+      },
+      {
+        "term": "composition:off-centre",
+        "label": "off-centre subject",
+        "definition": "The main subject is placed clearly to one side.",
+        "dimension": "composition",
+        "basis": "observed"
+      },
+      {
+        "term": "detail:moderate",
+        "label": "moderate surface detail",
+        "definition": "A mix of even areas and textured ones.",
+        "dimension": "surface detail",
+        "basis": "measured"
+      },
+      {
+        "term": "figures:none",
+        "label": "no figures",
+        "definition": "No people are visible.",
+        "dimension": "figures",
+        "basis": "observed"
+      },
+      {
+        "term": "figures:single",
+        "label": "single figure",
+        "definition": "One person.",
+        "dimension": "figures",
+        "basis": "observed"
+      },
+      {
+        "term": "focus:deep",
+        "label": "deep focus",
+        "definition": "Near and far planes are both sharp.",
+        "dimension": "depth of field",
+        "basis": "observed"
+      },
+      {
+        "term": "focus:shallow",
+        "label": "shallow focus",
+        "definition": "Only one plane is sharp; the rest is soft.",
+        "dimension": "depth of field",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:camera",
+        "label": "gaze at the camera",
+        "definition": "The main figure looks into or very near the lens.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:hidden",
+        "label": "face not visible",
+        "definition": "The main figure's face is turned away, hidden or too small to read.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "gaze:off-frame",
+        "label": "gaze out of frame",
+        "definition": "The main figure looks at something outside the frame.",
+        "dimension": "gaze",
+        "basis": "observed"
+      },
+      {
+        "term": "hue:blue",
+        "label": "blue",
+        "definition": "Blues.",
+        "dimension": "dominant hues",
+        "basis": "measured"
+      },
+      {
+        "term": "lightDirection:ambient",
+        "label": "ambient light",
+        "definition": "No single directional source; light is even or diffuse.",
+        "dimension": "key-light direction",
+        "basis": "observed"
+      },
+      {
+        "term": "lightSource:artificial",
+        "label": "artificial light",
+        "definition": "Electric light from sources outside the frame.",
+        "dimension": "apparent light source",
+        "basis": "observed"
+      },
+      {
+        "term": "lightSource:daylight",
+        "label": "daylight",
+        "definition": "Sun or sky light.",
+        "dimension": "apparent light source",
+        "basis": "observed"
+      },
+      {
+        "term": "saturation:moderate",
+        "label": "moderate colour",
+        "definition": "Natural colour intensity.",
+        "dimension": "saturation",
+        "basis": "measured"
+      },
+      {
+        "term": "saturation:monochrome",
+        "label": "monochrome",
+        "definition": "Black and white, or a toned print (sepia, blue) with a single tint and no colour variety.",
+        "dimension": "saturation",
+        "basis": "measured"
+      },
+      {
+        "term": "saturation:muted",
+        "label": "muted colour",
+        "definition": "Desaturated colour; greys and earth tones dominate.",
+        "dimension": "saturation",
+        "basis": "measured"
+      },
+      {
+        "term": "setting:exterior",
+        "label": "exterior",
+        "definition": "Outdoors.",
+        "dimension": "setting",
+        "basis": "observed"
+      },
+      {
+        "term": "setting:interior",
+        "label": "interior",
+        "definition": "Indoors.",
+        "dimension": "setting",
+        "basis": "observed"
+      },
+      {
+        "term": "shotScale:close-range",
+        "label": "close shots",
+        "definition": "Any shot from medium close-up to extreme close-up: the frame is mostly face, body or object.",
+        "dimension": "shot scale",
+        "basis": "observed"
+      },
+      {
+        "term": "shotScale:distant",
+        "label": "distant shots",
+        "definition": "Wide and extreme wide shots: the setting dominates the figures.",
+        "dimension": "shot scale",
+        "basis": "observed"
+      },
+      {
+        "term": "shotScale:medium-close",
+        "label": "medium close-up",
+        "definition": "Head and shoulders.",
+        "dimension": "shot scale",
+        "basis": "observed"
+      },
+      {
+        "term": "shotScale:wide",
+        "label": "wide shot",
+        "definition": "Whole figures with substantial surroundings.",
+        "dimension": "shot scale",
+        "basis": "observed"
+      },
+      {
+        "term": "temperature:cool",
+        "label": "cool",
+        "definition": "The image leans towards blue, teal or green.",
+        "dimension": "colour temperature",
+        "basis": "measured"
+      },
+      {
+        "term": "temperature:neutral",
+        "label": "neutral",
+        "definition": "No strong lean towards warm or cool, or an untoned black-and-white image.",
+        "dimension": "colour temperature",
+        "basis": "measured"
+      }
+    ],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "simulatedPerson": {
+    "name": "real-literature-today",
+    "area": "literature",
+    "hiddenRule": "Has judged the five live passages; likes the three narrated in the first person in the past tense.",
+    "seed": 53
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "literature",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 5,
+      "likes": 3,
+      "status": "insufficient"
+    },
+    "summary": "5 passages judged so far; nothing is interpreted until there are at least 8.",
+    "sections": [
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "What can be said so far",
+        "strength": null,
+        "text": "5 passages judged so far; nothing is interpreted until there are at least 8.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 0,
+    "examples": 0,
+    "failures": []
+  }
+}

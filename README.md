@@ -10,7 +10,9 @@ Implemented from the Pallas design handoff (`design_handoff_pallas/`, kept as re
 - `styles.css` — page styles; `ds/` holds the Cultural Capital design-system tokens they build on.
 - `app.js` — hash routing and the Film screen: the television, like (channel-change swipe) and dislike (static, line, dot), the film quick view.
 - `js/book.js` — the Literature screen: the photographic paperback, page turns, dog-ear (like) and tear-out (dislike), the torn stack, keyboard.
-- `js/drawer.js` — the quick-view drawer and the shelf; `js/votes.js` — votes keyed by still and excerpt id in `localStorage['pallas.votes']`.
+- `js/drawer.js` — the quick-view drawer and the shelf.
+- `js/store.js` — persistent progress: an append-only event log in `localStorage['pallas.v1']` (likes, dislikes, skips, undo, sessions, each area's position), with `Pallas.votes` as the view the screens use. Earlier `pallas.votes` data is migrated once. Browser storage does not sync between devices and is lost if site data is cleared.
+- `tests/store.test.js` — run with `node --test tests/store.test.js`.
 - `library/stills.json` — the cinematography library: films keyed by slug, one record per still with source, rights and cinematographic notes. Display copies in `library/stills/<film>/`, downloads in `library/originals/`. `library/PROPOSAL.md` records the research and rights decisions.
 - `library/excerpts.json` — literature entries (stand-ins from the handoff; replace with real content, keeping ids stable) and the paperback spine presets.
 - `assets/` — the production assets from the handoff (television, book, paper and tear masks).

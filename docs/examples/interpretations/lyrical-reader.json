@@ -1,0 +1,82 @@
+{
+  "simulatedPerson": {
+    "name": "lyrical-reader",
+    "area": "literature",
+    "hiddenRule": "Likes lyrical or experimental prose (90%); rich figuration elsewhere 35%; otherwise 8%.",
+    "seed": 52
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "literature",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 50,
+      "likes": 24,
+      "status": "ok"
+    },
+    "summary": "Across 50 passages from 30 books, the clearest pattern is in what you pass over: restraint.",
+    "sections": [
+      {
+        "id": "aversion-restraint",
+        "kind": "aversion",
+        "title": "Restraint",
+        "strength": "well supported",
+        "text": "The passages you passed over consistently share restrained prose (2 of 15 liked) and short sentences (0 of 9 liked). Plain words and few figures of speech leave feeling unstated; the reader infers what the prose declines to say, so small details carry a great deal. For instance synthetic-05 (restrained), synthetic-17 (restrained) and synthetic-21 (restrained). Yet you did like synthetic-01 (restrained) (restrained prose, but not short sentences) and synthetic-13 (restrained) (restrained prose, but not short sentences). Part of this rests on subjective readings of mood.",
+        "claims": [
+          {
+            "statement": "The passages you passed over consistently share restrained prose (2 of 15 liked) and short sentences (0 of 9 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "register:restrained",
+                  "liked": 2,
+                  "exposed": 15
+                },
+                {
+                  "feature": "sentenceLength:short",
+                  "liked": 0,
+                  "exposed": 9
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "synthetic-01",
+                "synthetic-13"
+              ],
+              "disliked": [
+                "synthetic-05",
+                "synthetic-17",
+                "synthetic-21"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same passages: restrained prose with short sentences. All of this compares your own likes with your own dislikes among 50 passages; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 1,
+    "examples": 5,
+    "failures": []
+  }
+}

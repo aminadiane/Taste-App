@@ -4,11 +4,12 @@ window.Pallas = window.Pallas || {};
 (() => {
   'use strict';
   const $ = (id) => document.getElementById(id);
-  const V = Pallas.votes, D = Pallas.drawer, h = D.h;
+  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store, h = D.h;
   const pad = (n) => String(n).padStart(2, '0');
   const EASE = 'cubic-bezier(.45,.05,.2,1)';
   const STK = [[0, 0, -6], [12, -8, 4], [-6, 6, -1.5], [6, -3, 7]];
-  const EXCERPTS_URL = 'library/excerpts.json';
+  const LIBRARY_URL = 'library/literature.json';
+  const EXCERPTS_URL = 'library/excerpts.json';   // handoff stand-ins, used until library passages are ready
 
   let ENTRIES = [], SPINES = [], NB = 0;
   const S = { bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
@@ -35,9 +36,9 @@ window.Pallas = window.Pallas || {};
     if (kind === 'title') {
       inner = '<div class="pg__title"><div class="pg__title-name">Pallas</div><div class="pg__title-rule"></div><div class="pg__title-sub">Build your taste in literature</div></div><div class="pg__title-imprint">Cultural Capital</div>';
     } else if (kind === 'excerpt' && entry) {
-      inner = `<div class="pg__ex"><div class="pg__num">${esc(entry.num)}</div><div class="pg__body">${(entry.excerpt || []).map((t, i) => `<p style="text-indent:${i ? '1.3em' : '0'}">${esc(t)}</p>`).join('')}</div></div><div class="pg__folio pg__folio--ex">${esc(folio)}</div>`;
+      inner = `<div class="pg__ex"><div class="pg__num">${esc(entry.num)}</div><div class="pg__body"${entry.fs ? ` style="font-size:${entry.fs}px"` : ''}>${(entry.excerpt || []).map((t, i) => `<p style="text-indent:${i ? '1.3em' : '0'}">${esc(t)}</p>`).join('')}</div></div><div class="pg__folio pg__folio--ex">${esc(folio)}</div>`;
     } else if (kind === 'info' && entry) {
-      inner = `<div class="pg__info"><div class="pg__info-title">${esc(entry.title)}</div><div class="pg__info-byline">${esc(entry.byline)}</div><div class="pg__info-rule"></div><div class="pg__info-sections">` +
+      inner = `<div class="pg__info"><div class="pg__info-title">${esc(entry.title)}</div><div class="pg__info-byline">${esc(entry.byline)}</div><div class="pg__info-rule"></div><div class="pg__info-sections"${entry.infoFs ? ` style="--fit:${entry.infoFs}"` : ''}>` +
         `<div class="pg__sec"><div class="pg__sec-h">the author</div><p>${esc(entry.author)}</p></div>` +
         `<div class="pg__sec"><div class="pg__sec-h">the work</div><p>${esc(entry.work)}</p></div>` +
         `<div class="pg__sec"><div class="pg__sec-h">techniques</div>${(entry.techniques || []).map((t) => `<p class="pg__tech"><em>${esc(t.name)}.</em> ${esc(t.text)}</p>`).join('')}</div>` +
@@ -59,10 +60,17 @@ window.Pallas = window.Pallas || {};
   const listL = (kind) => V.list('l', kind).map(idxOf).filter((i) => i >= 0).sort((a, b) => a - b);
 
   /* ---------- small async helpers ---------- */
-  const set = (patch) => { Object.assign(S, patch); render(); return Promise.resolve(); };
+  const set = (patch) => {
+    Object.assign(S, patch);
+    if ('bIdx' in patch && S.bOpen && NB) store.setCursor('literature', ENTRIES[S.bIdx].id);   // closing resets bIdx; that is not a move
+    render();
+    return Promise.resolve();
+  };
+  const entryIds = () => ENTRIES.map((e) => e.id);
   const wait = (ms) => new Promise((res) => timers.push(setTimeout(res, ms)));
   const frame = () => new Promise((res) => requestAnimationFrame(() => requestAnimationFrame(res)));
   const canAct = () => S.bOpen && S.bLeftShown && !S.bBusy;
+  const workOf = (i) => ENTRIES[i].book || ENTRIES[i].id;   // the book a passage comes from (stand-ins: the passage itself)
 
   /* ---------- the turning leaf: two hinged segments over the right page ---------- */
   function buildLeaf(front, back) {
@@ -124,10 +132,11 @@ window.Pallas = window.Pallas || {};
   /* ---------- actions ---------- */
   async function openBook() {
     if (S.bOpen || S.bBusy) return;
-    await set({ bBusy: true, bOpen: true, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', 0) }, bRight: { kind: 'info', idx: 0 } });
+    const start = store.resumeIndex('literature', entryIds());   // the next passage not yet evaluated, from where the reader left off
+    await set({ bBusy: true, bOpen: true, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', start) }, bRight: { kind: 'info', idx: start } });
     await wait(380);
     await animateLeaf();
-    await set({ bLeaf: null, bLeftShown: true, bLeftIdx: 0, bIdx: 0, bBusy: false });
+    await set({ bLeaf: null, bLeftShown: true, bLeftIdx: start, bIdx: start, bBusy: false });
   }
   async function closeBook() {
     if (!S.bOpen || S.bBusy) return;
@@ -141,8 +150,9 @@ window.Pallas = window.Pallas || {};
     setTear(0, 0);
     await set({ bBusy: false, bIdx: 0, bLeftIdx: 0, bTearing: false, bTorn: false });
   }
-  async function turn() {
-    const cur = S.bIdx, next = (cur + 1) % NB;
+  // After a vote the book turns to the next passage not yet evaluated; Next / Previous browse in order.
+  async function turn(afterVote) {
+    const cur = S.bIdx, next = afterVote ? store.nextOpen('literature', entryIds(), (cur + 1) % NB) : (cur + 1) % NB;
     await set({ bLeaf: { front: page('info', cur), back: page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
     await animateLeaf();
     setTear(0, 0);
@@ -162,15 +172,15 @@ window.Pallas = window.Pallas || {};
   }
   async function dogEar() {
     if (!canAct()) return;
-    V.set('l', ENTRIES[S.bIdx].id, 'like');
+    V.set('l', ENTRIES[S.bIdx].id, 'like', workOf(S.bIdx));
     await set({ bBusy: true, bFlapHover: false, bFlapAnim: 'fold', bFolded: true });
     await wait(1250);
-    await turn();
+    await turn(true);
     set({ bBusy: false });
   }
   async function tearOut() {
     if (!canAct()) return;
-    V.set('l', ENTRIES[S.bIdx].id, 'dislike');
+    V.set('l', ENTRIES[S.bIdx].id, 'dislike', workOf(S.bIdx));
     await set({ bBusy: true, bFlapHover: false, bTearing: true, bDragging: false });
     if (ty < 200) await tearTo(250, 2.2, 420);
     await wait(140);
@@ -185,9 +195,33 @@ window.Pallas = window.Pallas || {};
     await set({ bTorn: true, bDragging: false });
     a.cancel();
     await wait(380);
-    await turn();
+    await turn(true);
     set({ bBusy: false });
   }
+  /* ---------- skip and undo: data handling only. Controls wait for approved designs; connect them to
+     Pallas.literature.skip() and .undo(). Skip turns the page like Next, recording that the passage was passed over
+     (it returns in a later session). Undo reverses the latest dog-ear, tear-out or skip and opens that passage again;
+     no undo transition is designed yet, so it cuts straight to the spread. Both are refused while a sequence runs. */
+  async function skipPassage() {
+    if (!canAct() || !NB) return null;
+    const e = store.skip('literature', ENTRIES[S.bIdx].id, workOf(S.bIdx));
+    await set({ bBusy: true, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bPageHover: false });
+    await turn(true);
+    set({ bBusy: false });
+    return e;
+  }
+  async function undoLast() {
+    if ((S.bOpen && !canAct()) || !NB) return null;
+    const e = store.undo('literature');
+    if (!e) return null;
+    const i = idxOf(e.item);
+    if (S.bOpen && i >= 0) { setTear(0, 0); await set({ bLeaf: null, bIdx: i, bLeftIdx: i, bRight: { kind: 'info', idx: i }, bFolded: false, bTorn: false, bTearing: false }); }
+    else render();
+    if (D.isOpen() && active) D.render();
+    return e;
+  }
+  Pallas.literature = { skip: skipPassage, undo: undoLast, canUndo: () => !!store.lastUndoable('literature'), get busy() { return S.bOpen && !canAct(); } };
+
   function pageDown(e) {
     if (!canAct()) return;
     const sx = e.clientX, sc = scale || 1;
@@ -377,12 +411,57 @@ window.Pallas = window.Pallas || {};
   addEventListener('resize', render);
   addEventListener('pallas:route', (e) => { active = e.detail.isLit; if (active) render(); });
 
+  // Ready passages from the literature library become the book's entries; until at least one is ready, the
+  // handoff stand-ins in excerpts.json keep the book working. Entry ids are passage ids, so votes stay stable.
+  function fromLibrary(lib) {
+    const ready = (lib.passages || []).filter((p) => p.status === 'ready' && Array.isArray(p.text) && p.text.length && lib.books[p.book]);
+    return ready.map((p, i) => {
+      const b = lib.books[p.book], m = (p.metadata && p.metadata.observed) || {};
+      return { id: p.id, book: p.book, num: String(i + 1), title: b.title, byline: `${b.author} — ${b.year}`,
+        excerpt: p.text, author: (p.notes && p.notes.author) || '', work: (p.notes && p.notes.work) || '', techniques: m.techniques || [] };
+    });
+  }
+  // A passage longer than the page was designed for keeps the approved layout: its type steps down just enough
+  // to end above the folio. Every page lives in the same 330×520 space, so one measurement serves every view.
+  async function fitExcerpts() {
+    try { await document.fonts.ready; } catch { /* measure with whatever font is loaded */ }
+    const box = document.createElement('div');
+    box.style.cssText = 'position:fixed;left:-4000px;top:0;visibility:hidden;pointer-events:none';
+    document.body.appendChild(box);
+    const over = (el, folio) => el.lastElementChild.getBoundingClientRect().bottom > folio.getBoundingClientRect().top - 8;
+    for (const entry of ENTRIES) {
+      delete entry.fs; delete entry.infoFs;
+      box.innerHTML = pageHTML('excerpt', 'left', entry, '00');
+      const body = box.querySelector('.pg__body'), folio = box.querySelector('.pg__folio');
+      if (body && folio && body.lastElementChild) {
+        let fs = parseFloat(getComputedStyle(body).fontSize);
+        while (over(body, folio) && fs > 10) { fs -= 0.25; body.style.fontSize = fs + 'px'; }
+        if (body.style.fontSize) entry.fs = fs;
+      }
+      // the facing info page: notes scale together, as a fraction of their designed sizes
+      box.innerHTML = pageHTML('info', 'right', entry, '00');
+      const secs = box.querySelector('.pg__info-sections'), f2 = box.querySelector('.pg__folio');
+      if (secs && f2 && secs.lastElementChild) {
+        let k = 1;
+        while (over(secs, f2) && k > 0.7) { k = Math.round((k - 0.02) * 100) / 100; secs.style.setProperty('--fit', k); }
+        if (k < 1) entry.infoFs = k;
+      }
+    }
+    box.remove();
+  }
   (async () => {
     try {
-      const res = await fetch(EXCERPTS_URL, { cache: 'no-cache' });
-      const data = await res.json();
-      ENTRIES = data.entries || []; SPINES = data.spines || []; NB = ENTRIES.length;
-    } catch { /* no content: the book stays closed with nothing to show */ }
+      const lib = await (await fetch(LIBRARY_URL, { cache: 'no-cache' })).json();
+      ENTRIES = fromLibrary(lib); SPINES = lib.spines || [];
+    } catch { /* no library: fall back below */ }
+    if (!ENTRIES.length) {
+      try {
+        const data = await (await fetch(EXCERPTS_URL, { cache: 'no-cache' })).json();
+        ENTRIES = data.entries || []; SPINES = data.spines || SPINES;
+      } catch { /* no content: the book stays closed with nothing to show */ }
+    }
+    NB = ENTRIES.length;
+    await fitExcerpts();
     setTear(0, 0);
     render();
   })();

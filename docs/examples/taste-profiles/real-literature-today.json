@@ -1,0 +1,155 @@
+{
+  "simulatedPerson": {
+    "name": "real-literature-today",
+    "area": "literature",
+    "hiddenRule": "Has judged the five live passages; likes the three narrated in the first person in the past tense.",
+    "seed": 53,
+    "library": "real literature library (5 live passages)"
+  },
+  "draftInterpretation": [
+    "Not enough judgments yet to describe a taste: 5 so far, 8 needed before any pattern is reported."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "literature",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 5,
+      "likes": 3,
+      "dislikes": 2,
+      "likeRate": 0.6,
+      "works": 5,
+      "notInLibrary": 0,
+      "eventCount": 5,
+      "lastEventAt": "2026-10-01T19:01:46.121Z",
+      "judgmentsDigest": "f9252e5f",
+      "vocabularyVersion": 1
+    },
+    "evidenceLevel": "insufficient",
+    "signature": {
+      "summary": "Not enough judgments yet to describe a taste: 5 so far, 8 needed before any pattern is reported.",
+      "terms": [],
+      "statements": []
+    },
+    "preferred": [],
+    "disliked": [],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "form:novel",
+        "label": "novel",
+        "exposed": 5,
+        "liked": 3
+      },
+      {
+        "feature": "figuration:sparse",
+        "label": "sparse figuration",
+        "exposed": 4,
+        "liked": 2
+      },
+      {
+        "feature": "person:first",
+        "label": "first-person narration",
+        "exposed": 4,
+        "liked": 3
+      },
+      {
+        "feature": "dialogue:none",
+        "label": "no dialogue",
+        "exposed": 3,
+        "liked": 2
+      },
+      {
+        "feature": "diction:plain",
+        "label": "plain diction",
+        "exposed": 3,
+        "liked": 2
+      },
+      {
+        "feature": "register:restrained",
+        "label": "restrained prose",
+        "exposed": 3,
+        "liked": 1
+      },
+      {
+        "feature": "sentenceLength:long",
+        "label": "long sentences",
+        "exposed": 3,
+        "liked": 3
+      },
+      {
+        "feature": "syntax:paratactic",
+        "label": "parataxis",
+        "exposed": 3,
+        "liked": 1
+      },
+      {
+        "feature": "device:direct-address",
+        "label": "direct address",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "focus:action",
+        "label": "physical action",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "pace:scene",
+        "label": "scene",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "pace:summary",
+        "label": "summary",
+        "exposed": 2,
+        "liked": 1
+      }
+    ],
+    "spread": {
+      "overall": null,
+      "reading": null,
+      "byDimension": {}
+    },
+    "consistency": {
+      "changedJudgments": [],
+      "worksWithMixedJudgments": []
+    },
+    "terminology": [],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments."
+    ]
+  }
+}

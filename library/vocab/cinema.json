@@ -1,0 +1,770 @@
+{
+  "version": 3,
+  "updated": "2026-10-21",
+  "notes": "Controlled vocabulary for cinematography metadata. Every value used in library/cinema-metadata.json must appear here. 'basis' says how a dimension is filled: 'measured' values are computed from the image pixels by tools/measure-stills.js and can be regenerated at any time; 'observed' values are read from the image by a viewer and describe only what is visible; 'interpretation' values are subjective and are never mixed into the other two. 'multi' dimensions take a list. Terms can be added freely; never rename a published term, add a new one and migrate instead. Definitions double as the glossary shown with Taste Profile findings. 'groups' in a dimension define broader terms derived from its values (e.g. close shots = medium close-up, close-up or extreme close-up); the engine adds them automatically, so rare values can still be detected together.",
+  "dimensions": {
+    "key": {
+      "basis": "measured",
+      "label": "tonal key",
+      "definition": "Where most of the image's tones sit between black and white.",
+      "values": {
+        "low": {
+          "label": "low-key",
+          "definition": "Most of the frame is dark; light is selective and shadows dominate."
+        },
+        "mid": {
+          "label": "mid-key",
+          "definition": "Tones are spread around the middle greys; neither shadow nor light dominates."
+        },
+        "high": {
+          "label": "high-key",
+          "definition": "Most of the frame is bright; shadows are few and light."
+        }
+      }
+    },
+    "contrast": {
+      "basis": "measured",
+      "label": "contrast",
+      "definition": "The spread between the darkest and brightest significant tones.",
+      "values": {
+        "low": {
+          "label": "low contrast",
+          "definition": "A narrow tonal range; soft, compressed blacks and whites."
+        },
+        "medium": {
+          "label": "medium contrast",
+          "definition": "A moderate tonal range."
+        },
+        "high": {
+          "label": "high contrast",
+          "definition": "A wide tonal range from deep blacks to bright highlights."
+        }
+      }
+    },
+    "saturation": {
+      "basis": "measured",
+      "label": "saturation",
+      "definition": "How intense the colours are.",
+      "values": {
+        "monochrome": {
+          "label": "monochrome",
+          "definition": "Black and white, or a toned print (sepia, blue) with a single tint and no colour variety."
+        },
+        "muted": {
+          "label": "muted colour",
+          "definition": "Desaturated colour; greys and earth tones dominate."
+        },
+        "moderate": {
+          "label": "moderate colour",
+          "definition": "Natural colour intensity."
+        },
+        "saturated": {
+          "label": "saturated colour",
+          "definition": "Intense, vivid colour."
+        }
+      }
+    },
+    "toned": {
+      "basis": "measured",
+      "label": "toned print",
+      "definition": "A monochrome image carrying a single tint, such as sepia.",
+      "values": {
+        "yes": {
+          "label": "toned print",
+          "definition": "A black-and-white image printed or tinted in one colour, such as sepia."
+        }
+      }
+    },
+    "temperature": {
+      "basis": "measured",
+      "label": "colour temperature",
+      "definition": "Whether the overall colour leans towards orange (warm) or blue (cool).",
+      "values": {
+        "warm": {
+          "label": "warm",
+          "definition": "The image leans towards amber, orange or red."
+        },
+        "neutral": {
+          "label": "neutral",
+          "definition": "No strong lean towards warm or cool, or an untoned black-and-white image."
+        },
+        "cool": {
+          "label": "cool",
+          "definition": "The image leans towards blue, teal or green."
+        }
+      }
+    },
+    "hue": {
+      "basis": "measured",
+      "multi": true,
+      "label": "dominant hues",
+      "definition": "The hue families that cover a significant share of the coloured pixels.",
+      "values": {
+        "red": {
+          "label": "red",
+          "definition": "Reds and crimsons."
+        },
+        "orange": {
+          "label": "orange",
+          "definition": "Oranges, ambers and skin tones."
+        },
+        "yellow": {
+          "label": "yellow",
+          "definition": "Yellows and golds."
+        },
+        "green": {
+          "label": "green",
+          "definition": "Greens and olives."
+        },
+        "teal": {
+          "label": "teal",
+          "definition": "Cyans and teals."
+        },
+        "blue": {
+          "label": "blue",
+          "definition": "Blues."
+        },
+        "purple": {
+          "label": "purple",
+          "definition": "Violets and purples."
+        },
+        "magenta": {
+          "label": "magenta",
+          "definition": "Magentas and pinks."
+        }
+      }
+    },
+    "harmony": {
+      "basis": "measured",
+      "label": "colour harmony",
+      "definition": "How the colours present relate on the colour wheel. Not recorded for monochrome images.",
+      "values": {
+        "single-hue": {
+          "label": "single-hue palette",
+          "definition": "One hue family dominates the coloured areas (three quarters or more)."
+        },
+        "analogous": {
+          "label": "analogous palette",
+          "definition": "Neighbouring hues, such as red, orange and yellow, share the frame."
+        },
+        "contrasting": {
+          "label": "contrasting palette",
+          "definition": "Hues from opposite sides of the wheel, such as orange against blue, share the frame."
+        }
+      }
+    },
+    "accent": {
+      "basis": "measured",
+      "label": "colour accent",
+      "definition": "A small area of vivid colour in an otherwise dark or muted frame.",
+      "values": {
+        "yes": {
+          "label": "colour accent",
+          "definition": "A small vivid area (between half a percent and 8% of the frame) stands out against a muted or dark image."
+        }
+      }
+    },
+    "symmetry": {
+      "basis": "measured",
+      "label": "tonal symmetry",
+      "definition": "How closely the brightness of the left half mirrors the right half. Measured from tone only, not from shapes or arrangement: a dark, even frame can score high. Arranged symmetry is the observed composition term 'symmetrical composition'.",
+      "values": {
+        "strong": {
+          "label": "strong tonal symmetry",
+          "definition": "The brightness of the two halves nearly mirrors."
+        },
+        "moderate": {
+          "label": "partial tonal symmetry",
+          "definition": "The halves are broadly balanced in brightness but not mirrored."
+        },
+        "weak": {
+          "label": "tonal asymmetry",
+          "definition": "The halves differ clearly in brightness and mass."
+        }
+      }
+    },
+    "detail": {
+      "basis": "measured",
+      "label": "surface detail",
+      "definition": "How much fine edge detail and texture the image carries, measured as average local gradient.",
+      "values": {
+        "smooth": {
+          "label": "smooth surfaces",
+          "definition": "Large even areas with few edges."
+        },
+        "moderate": {
+          "label": "moderate surface detail",
+          "definition": "A mix of even areas and textured ones."
+        },
+        "dense": {
+          "label": "dense surface detail",
+          "definition": "Busy surfaces, many edges and fine texture across the frame."
+        }
+      }
+    },
+    "medium": {
+      "basis": "observed",
+      "label": "medium",
+      "definition": "How the image was made, as visible in the frame.",
+      "values": {
+        "live-action": {
+          "label": "live action",
+          "definition": "Photographed with a camera (including sets, models and miniatures)."
+        },
+        "animation": {
+          "label": "hand-drawn animation",
+          "definition": "Drawn or painted animation."
+        }
+      }
+    },
+    "lightQuality": {
+      "basis": "observed",
+      "label": "light quality",
+      "definition": "Whether shadows have sharp or gradual edges.",
+      "values": {
+        "hard": {
+          "label": "hard light",
+          "definition": "Crisp, sharp-edged shadows from a small or distant source."
+        },
+        "soft": {
+          "label": "soft light",
+          "definition": "Gradual shadow edges from a large or diffused source."
+        },
+        "mixed": {
+          "label": "mixed light",
+          "definition": "Both hard and soft light are clearly present."
+        }
+      }
+    },
+    "lightDirection": {
+      "basis": "observed",
+      "multi": true,
+      "label": "key-light direction",
+      "definition": "The apparent direction of the main light on the subject.",
+      "values": {
+        "front": {
+          "label": "frontal light",
+          "definition": "Light from near the camera, flattening form."
+        },
+        "side": {
+          "label": "side light",
+          "definition": "Light from one side, modelling form with shadow."
+        },
+        "back": {
+          "label": "backlight",
+          "definition": "Light from behind the subject, rimming or silhouetting it."
+        },
+        "top": {
+          "label": "top light",
+          "definition": "Light from above, shadowing eyes and lower forms."
+        },
+        "under": {
+          "label": "underlight",
+          "definition": "Light from below the subject."
+        },
+        "ambient": {
+          "label": "ambient light",
+          "definition": "No single directional source; light is even or diffuse."
+        }
+      }
+    },
+    "lightSource": {
+      "basis": "observed",
+      "label": "apparent light source",
+      "definition": "What appears to light the scene, judged from the image only. 'practical' requires the source to be visible in the frame. Left undetermined when the image does not show it.",
+      "values": {
+        "daylight": {
+          "label": "daylight",
+          "definition": "Sun or sky light."
+        },
+        "practical": {
+          "label": "practical light",
+          "definition": "Visible lamps, fire, candles, screens or signs within the frame."
+        },
+        "artificial": {
+          "label": "artificial light",
+          "definition": "Electric light from sources outside the frame."
+        },
+        "mixed": {
+          "label": "mixed sources",
+          "definition": "Daylight and artificial or practical light together."
+        }
+      }
+    },
+    "shotScale": {
+      "basis": "observed",
+      "label": "shot scale",
+      "definition": "How much of the subject and its surroundings the frame includes.",
+      "values": {
+        "extreme-wide": {
+          "label": "extreme wide shot",
+          "definition": "Figures are tiny or absent; the setting dominates."
+        },
+        "wide": {
+          "label": "wide shot",
+          "definition": "Whole figures with substantial surroundings."
+        },
+        "full": {
+          "label": "full shot",
+          "definition": "A figure from head to feet filling most of the frame height."
+        },
+        "medium": {
+          "label": "medium shot",
+          "definition": "Figures from about the waist up."
+        },
+        "medium-close": {
+          "label": "medium close-up",
+          "definition": "Head and shoulders."
+        },
+        "close-up": {
+          "label": "close-up",
+          "definition": "A face or object fills most of the frame."
+        },
+        "extreme-close-up": {
+          "label": "extreme close-up",
+          "definition": "A detail such as eyes or a hand fills the frame."
+        }
+      },
+      "groups": {
+        "close-range": {
+          "label": "close shots",
+          "definition": "Any shot from medium close-up to extreme close-up: the frame is mostly face, body or object.",
+          "members": [
+            "medium-close",
+            "close-up",
+            "extreme-close-up"
+          ]
+        },
+        "distant": {
+          "label": "distant shots",
+          "definition": "Wide and extreme wide shots: the setting dominates the figures.",
+          "members": [
+            "wide",
+            "extreme-wide"
+          ]
+        }
+      }
+    },
+    "angle": {
+      "basis": "observed",
+      "label": "camera angle",
+      "definition": "The apparent camera height and tilt relative to the subject.",
+      "values": {
+        "eye-level": {
+          "label": "eye level",
+          "definition": "The camera is at about the subject's eye height."
+        },
+        "high": {
+          "label": "high angle",
+          "definition": "The camera looks down on the subject."
+        },
+        "low": {
+          "label": "low angle",
+          "definition": "The camera looks up at the subject."
+        },
+        "overhead": {
+          "label": "overhead",
+          "definition": "The camera looks straight down."
+        },
+        "canted": {
+          "label": "canted angle",
+          "definition": "The horizon is tilted (Dutch angle)."
+        }
+      },
+      "groups": {
+        "off-level": {
+          "label": "high or low camera",
+          "definition": "Any angle other than eye level: high, low, overhead or canted.",
+          "members": [
+            "high",
+            "low",
+            "overhead",
+            "canted"
+          ]
+        }
+      }
+    },
+    "composition": {
+      "basis": "observed",
+      "multi": true,
+      "label": "composition",
+      "definition": "Visible devices that organise the frame.",
+      "values": {
+        "centred": {
+          "label": "centred subject",
+          "definition": "The main subject sits on the vertical centre line."
+        },
+        "off-centre": {
+          "label": "off-centre subject",
+          "definition": "The main subject is placed clearly to one side."
+        },
+        "symmetrical": {
+          "label": "symmetrical composition",
+          "definition": "The frame is arranged to mirror around its centre."
+        },
+        "leading-lines": {
+          "label": "leading lines",
+          "definition": "Lines in the set or landscape draw the eye towards a point."
+        },
+        "frame-within-frame": {
+          "label": "frame within a frame",
+          "definition": "A doorway, window or other shape frames the subject inside the image."
+        },
+        "negative-space": {
+          "label": "negative space",
+          "definition": "Large empty areas surround the subject."
+        },
+        "diagonal": {
+          "label": "diagonal composition",
+          "definition": "Strong diagonal lines or placements organise the frame."
+        },
+        "staging-in-depth": {
+          "label": "staging in depth",
+          "definition": "Figures or objects are placed at clearly different distances from the camera."
+        },
+        "foreground-framing": {
+          "label": "foreground framing",
+          "definition": "Out-of-focus or dark objects in the foreground edge the frame."
+        },
+        "dense": {
+          "label": "dense composition",
+          "definition": "The frame is filled with many figures or objects."
+        },
+        "silhouette": {
+          "label": "silhouette",
+          "definition": "Subjects appear as dark shapes against a brighter background."
+        }
+      }
+    },
+    "lightPattern": {
+      "basis": "observed",
+      "multi": true,
+      "label": "light pattern",
+      "definition": "Visible shapes the light makes in the frame.",
+      "values": {
+        "patterned-shadow": {
+          "label": "patterned shadow",
+          "definition": "Shadows cast through blinds, bars, lattices or leaves stripe or dapple the scene."
+        },
+        "pools": {
+          "label": "pools of light",
+          "definition": "Isolated areas of light surrounded by darkness."
+        },
+        "rim": {
+          "label": "rim light",
+          "definition": "A bright edge of light outlines a figure or object against a darker background."
+        },
+        "beams": {
+          "label": "visible beams",
+          "definition": "Shafts or beams of light are visible in the air."
+        },
+        "glare": {
+          "label": "glare",
+          "definition": "A light source shines towards the lens: flare, bloom or a blazing lamp."
+        },
+        "even": {
+          "label": "even light",
+          "definition": "None of these: the light falls without distinct shapes."
+        }
+      },
+      "groups": {
+        "shaped": {
+          "label": "shaped light",
+          "definition": "Light that makes visible shapes: pools, beams, rim light, glare or patterned shadow.",
+          "members": [
+            "patterned-shadow",
+            "pools",
+            "rim",
+            "beams",
+            "glare"
+          ]
+        }
+      }
+    },
+    "atmospherics": {
+      "basis": "observed",
+      "multi": true,
+      "label": "atmospherics",
+      "definition": "What is visible in the air between camera and subject.",
+      "values": {
+        "clear": {
+          "label": "clear air",
+          "definition": "Nothing visible in the air."
+        },
+        "mist": {
+          "label": "mist or haze",
+          "definition": "Fog, mist or haze softens distance."
+        },
+        "smoke": {
+          "label": "smoke",
+          "definition": "Smoke or steam drifts in the frame."
+        },
+        "rain": {
+          "label": "rain",
+          "definition": "Falling rain or snow."
+        },
+        "dust": {
+          "label": "dust",
+          "definition": "Blowing dust or sand."
+        }
+      },
+      "groups": {
+        "veiled": {
+          "label": "veiled air",
+          "definition": "Something in the air between camera and subject: mist, smoke, rain or dust.",
+          "members": [
+            "mist",
+            "smoke",
+            "rain",
+            "dust"
+          ]
+        }
+      }
+    },
+    "gaze": {
+      "basis": "observed",
+      "label": "gaze",
+      "definition": "Where the main figure is looking.",
+      "values": {
+        "camera": {
+          "label": "gaze at the camera",
+          "definition": "The main figure looks into or very near the lens."
+        },
+        "within": {
+          "label": "gaze within the frame",
+          "definition": "The main figure looks at someone or something visible in the frame."
+        },
+        "off-frame": {
+          "label": "gaze out of frame",
+          "definition": "The main figure looks at something outside the frame."
+        },
+        "averted": {
+          "label": "averted or downcast gaze",
+          "definition": "The main figure looks down or away, inward."
+        },
+        "hidden": {
+          "label": "face not visible",
+          "definition": "The main figure's face is turned away, hidden or too small to read."
+        }
+      }
+    },
+    "motion": {
+      "basis": "observed",
+      "label": "motion",
+      "definition": "Whether the frame shows movement.",
+      "values": {
+        "still": {
+          "label": "stillness",
+          "definition": "Figures and objects are at rest."
+        },
+        "implied": {
+          "label": "implied motion",
+          "definition": "A figure or object is caught mid-movement."
+        },
+        "blur": {
+          "label": "motion blur",
+          "definition": "Movement is visible as blur."
+        }
+      }
+    },
+    "focus": {
+      "basis": "observed",
+      "label": "depth of field",
+      "definition": "How much of the scene, front to back, appears sharp. Recorded only when the frame contains planes at clearly different distances; otherwise left undetermined (the flatness of a scene is described by spatial layers instead).",
+      "values": {
+        "shallow": {
+          "label": "shallow focus",
+          "definition": "Only one plane is sharp; the rest is soft."
+        },
+        "deep": {
+          "label": "deep focus",
+          "definition": "Near and far planes are both sharp."
+        }
+      }
+    },
+    "layers": {
+      "basis": "observed",
+      "label": "spatial layers",
+      "definition": "How many distinct planes of depth the frame shows.",
+      "values": {
+        "one": {
+          "label": "single plane",
+          "definition": "Subject and background read as one plane."
+        },
+        "two": {
+          "label": "two planes",
+          "definition": "A subject plane and a distinct background."
+        },
+        "three-plus": {
+          "label": "three or more planes",
+          "definition": "Foreground, middle ground and background are all distinct."
+        }
+      }
+    },
+    "figures": {
+      "basis": "observed",
+      "label": "figures",
+      "definition": "How many people, or human-like characters in animation, the frame shows.",
+      "values": {
+        "none": {
+          "label": "no figures",
+          "definition": "No people are visible."
+        },
+        "single": {
+          "label": "single figure",
+          "definition": "One person."
+        },
+        "two": {
+          "label": "two figures",
+          "definition": "Two people."
+        },
+        "group": {
+          "label": "small group",
+          "definition": "Three to about eight people."
+        },
+        "crowd": {
+          "label": "crowd",
+          "definition": "Many people."
+        }
+      }
+    },
+    "setting": {
+      "basis": "observed",
+      "label": "setting",
+      "definition": "Whether the scene is indoors or outdoors.",
+      "values": {
+        "interior": {
+          "label": "interior",
+          "definition": "Indoors."
+        },
+        "exterior": {
+          "label": "exterior",
+          "definition": "Outdoors."
+        },
+        "vehicle": {
+          "label": "vehicle",
+          "definition": "Inside a car, train, spacecraft or other vehicle."
+        }
+      }
+    },
+    "atmosphere": {
+      "basis": "interpretation",
+      "multi": true,
+      "label": "atmosphere",
+      "definition": "A subjective reading of the mood the image creates. Recorded separately and never treated as an observed fact.",
+      "values": {
+        "serene": {
+          "label": "serene",
+          "definition": "Calm and still."
+        },
+        "tense": {
+          "label": "tense",
+          "definition": "Anxious or charged."
+        },
+        "melancholy": {
+          "label": "melancholy",
+          "definition": "Sad, wistful or mournful."
+        },
+        "ominous": {
+          "label": "ominous",
+          "definition": "Threatening or foreboding."
+        },
+        "intimate": {
+          "label": "intimate",
+          "definition": "Close and private."
+        },
+        "lonely": {
+          "label": "lonely",
+          "definition": "Isolated."
+        },
+        "dreamlike": {
+          "label": "dreamlike",
+          "definition": "Unreal or heightened."
+        },
+        "joyful": {
+          "label": "joyful",
+          "definition": "Bright and happy."
+        },
+        "austere": {
+          "label": "austere",
+          "definition": "Severe and spare."
+        },
+        "chaotic": {
+          "label": "chaotic",
+          "definition": "Disordered and energetic."
+        },
+        "grand": {
+          "label": "grand",
+          "definition": "Epic in scale."
+        },
+        "playful": {
+          "label": "playful",
+          "definition": "Light and whimsical."
+        },
+        "oppressive": {
+          "label": "oppressive",
+          "definition": "Heavy and confining."
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "notes": "Cut-points for measured dimensions, applied by tools/measure-stills.js. Luminance and saturation are 0–1 on sRGB values. Changing a threshold and re-running the tool regenerates every measured value; nothing else changes.",
+    "key": {
+      "metric": "mean luminance",
+      "lowBelow": 0.25,
+      "highAbove": 0.5
+    },
+    "contrast": {
+      "metric": "p95 - p5 of luminance",
+      "lowBelow": 0.45,
+      "highAbove": 0.78
+    },
+    "saturation": {
+      "metric": "mean HSV saturation of pixels brighter than 0.08",
+      "monochromeBelow": 0.07,
+      "mutedBelow": 0.22,
+      "saturatedAbove": 0.45
+    },
+    "temperature": {
+      "metric": "mean (R - B) of mid-tone pixels",
+      "warmAbove": 0.035,
+      "coolBelow": -0.035
+    },
+    "hue": {
+      "metric": "share of saturated pixels (S > 0.2, V > 0.15) in each hue family",
+      "minShare": 0.18
+    },
+    "symmetry": {
+      "metric": "1 - mean |L(x) - L(mirror x)| / mean |L(x) - L(x shifted half a frame)|, on a 64-px-wide luminance map; 1 = mirrored, about 0 = no more alike than unrelated areas",
+      "strongAbove": 0.45,
+      "weakBelow": 0.12
+    },
+    "toned": {
+      "metric": "circular standard deviation of hue (degrees) over coloured pixels; a toned print is monochrome with a single tint, and keeps its temperature",
+      "hueSpreadBelow": 6,
+      "saturationBelow": 0.4
+    },
+    "detail": {
+      "metric": "mean Sobel gradient magnitude on a 256-px luminance map",
+      "smoothBelow": 0.045,
+      "denseAbove": 0.095
+    },
+    "harmony": {
+      "metric": "hue-family shares among coloured pixels",
+      "significant": 0.12,
+      "singleAbove": 0.75,
+      "contrastDistance": 3
+    },
+    "accent": {
+      "metric": "share of vivid pixels (S > 0.55, V > 0.3) with mean saturation below a limit",
+      "vividMin": 0.005,
+      "vividMax": 0.08,
+      "saturationBelow": 0.35
+    }
+  },
+  "retired": {
+    "focus:flat": "2026-10-21: mixed depth of field with the depth of the scene; those stills are now 'undetermined' for focus, and spatial layers carry the flatness.",
+    "atmosphere:nostalgic": "2026-10-21: depended on knowing a film's period rather than on the image."
+  }
+}

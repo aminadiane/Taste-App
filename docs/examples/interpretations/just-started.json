@@ -1,0 +1,43 @@
+{
+  "simulatedPerson": {
+    "name": "just-started",
+    "area": "cinema",
+    "hiddenRule": "Same taste as Chiaroscuro, but has judged only 11 stills.",
+    "seed": 47
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 11,
+      "likes": 4,
+      "status": "ok"
+    },
+    "summary": "Across 11 stills no characteristic separates your likes from your dislikes clearly; with this few judged, only a very strong preference could show yet.",
+    "sections": [
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "What can be said so far",
+        "strength": null,
+        "text": "Across 11 stills no characteristic separates your likes from your dislikes clearly; with this few judged, only a very strong preference could show yet.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 0,
+    "examples": 0,
+    "failures": []
+  }
+}

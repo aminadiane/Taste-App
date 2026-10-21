@@ -1,0 +1,211 @@
+{
+  "simulatedPerson": {
+    "name": "veiled-light",
+    "area": "cinema",
+    "hiddenRule": "Likes frames with smoke, mist, dust or rain, or with shaped light such as beams, pools or glare (85%); otherwise 20%.",
+    "seed": 48
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 85,
+      "likes": 41,
+      "status": "ok"
+    },
+    "summary": "Across 85 stills from 35 films, the clearest threads are chiaroscuro and visible atmosphere, in two separate strands; you were less drawn to soft, even light.",
+    "sections": [
+      {
+        "id": "theme-chiaroscuro",
+        "kind": "theme",
+        "title": "Chiaroscuro",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share hard light (15 of 19 liked), and more loosely low-key (21 of 32 liked). Hard, directional light in a mostly dark frame sculpts form: faces and objects emerge from shadow, and the darkness becomes part of the composition rather than an absence of light. You can see it in Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: Major Kong settles his Stetson on in the B-52 cockpit, Mad Max: Fury Road: Night on the salt flats and Oldboy: Dae-su's beaten opponents on the floor by the open lift. By contrast, you did not like Amélie: Amélie leans in close (low-key, but not hard light) or It's a Wonderful Life: George and Mary at the gate of the old house at night (low-key, but not hard light).",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share hard light (15 of 19 liked), and more loosely low-key (21 of 32 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "key:low",
+                  "liked": 21,
+                  "exposed": 32
+                },
+                {
+                  "feature": "lightQuality:hard",
+                  "liked": 15,
+                  "exposed": 19
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "dr-strangelove-02",
+                "mad-max-fury-road-02",
+                "oldboy-01"
+              ],
+              "disliked": [
+                "amelie-02",
+                "its-a-wonderful-life-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "theme-veiled-air",
+        "kind": "theme",
+        "title": "Visible atmosphere",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share veiled air (17 of 19 liked). Smoke, mist or dust in the air catches light and softens distance, so the space between camera and subject becomes visible volume. You can see it in The Bridge on the River Kwai: The bridge over the river at dawn, Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb: The War Room and Howl's Moving Castle: Howl's castle stalks across the moor under storm clouds.",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share veiled air (17 of 19 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "atmospherics:veiled",
+                  "liked": 17,
+                  "exposed": 19
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "bridge-on-the-river-kwai-02",
+                "dr-strangelove-01",
+                "howls-moving-castle-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "strands",
+        "kind": "strands",
+        "title": "Two separate strands",
+        "strength": "emerging",
+        "text": "Your likes follow two lines that rarely meet: shaped light (22 liked, for example 12 Angry Men: The jurors around the table and Amélie: Amélie in the café) and mist or haze (7 liked, for example The Bridge on the River Kwai: The bridge over the river at dawn and Metropolis: The city of Metropolis). Only 1 liked still has both, so these read as two tastes rather than one.",
+        "claims": [
+          {
+            "statement": "shaped light and mist or haze overlap in 1 of 28 liked stills.",
+            "check": {
+              "type": "overlap",
+              "a": [
+                "12-angry-men-01",
+                "amelie-01",
+                "double-indemnity-02",
+                "dr-strangelove-01",
+                "dr-strangelove-02",
+                "howls-moving-castle-01",
+                "howls-moving-castle-02",
+                "in-the-mood-for-love-02",
+                "lawrence-of-arabia-03",
+                "mad-max-fury-road-02",
+                "metropolis-02",
+                "metropolis-03",
+                "on-the-waterfront-03",
+                "paths-of-glory-01",
+                "princess-mononoke-01",
+                "princess-mononoke-02",
+                "psycho-02",
+                "spirited-away-03",
+                "sunset-boulevard-01",
+                "the-apartment-02",
+                "the-godfather-01",
+                "the-godfather-02"
+              ],
+              "b": [
+                "bridge-on-the-river-kwai-02",
+                "metropolis-01",
+                "princess-mononoke-01",
+                "sunset-boulevard-02",
+                "the-general-01",
+                "the-general-03",
+                "vertigo-03"
+              ],
+              "both": 1,
+              "union": 28
+            },
+            "evidence": {
+              "liked": [
+                "12-angry-men-01",
+                "amelie-01",
+                "bridge-on-the-river-kwai-02",
+                "metropolis-01"
+              ],
+              "disliked": []
+            }
+          }
+        ]
+      },
+      {
+        "id": "aversion-soft-naturalism",
+        "kind": "aversion",
+        "title": "Soft, even light",
+        "strength": "well supported",
+        "text": "The stills you passed over consistently share soft light (22 of 61 liked) and even light (19 of 60 liked). Diffuse light with gentle shadows lets the whole scene read evenly. Nothing is singled out by the lighting, so attention goes to arrangement, place and gesture. For instance 12 Angry Men: Juror 3, Amélie: Amélie leans in close and Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains. Yet you did like 12 Angry Men: The jurors around the table (soft light, but not even light) and Amélie: Amélie in the café (soft light, but not even light).",
+        "claims": [
+          {
+            "statement": "The stills you passed over consistently share soft light (22 of 61 liked) and even light (19 of 60 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "lightQuality:soft",
+                  "liked": 22,
+                  "exposed": 61
+                },
+                {
+                  "feature": "lightPattern:even",
+                  "liked": 19,
+                  "exposed": 60
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "12-angry-men-01",
+                "amelie-01"
+              ],
+              "disliked": [
+                "12-angry-men-02",
+                "amelie-02",
+                "howls-moving-castle-03"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Mist or haze is an early sign that more judgments could confirm or dissolve. Some characteristics cannot yet be told apart because they occur in nearly the same stills: gaze at the camera with even light, playful with even light and frontal light with even light. There are too few examples to say anything about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged). All of this compares your own likes with your own dislikes among 85 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 4,
+    "examples": 17,
+    "failures": []
+  }
+}

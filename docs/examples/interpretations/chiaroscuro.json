@@ -1,0 +1,126 @@
+{
+  "simulatedPerson": {
+    "name": "chiaroscuro",
+    "area": "cinema",
+    "hiddenRule": "Likes hard light in low-key frames (90%); low key or hard light alone sometimes (50%); anything else rarely (12%).",
+    "seed": 41
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 75,
+      "likes": 30,
+      "status": "ok"
+    },
+    "summary": "Across 75 stills from 32 films, the clearest thread is chiaroscuro; you were less drawn to soft, even light.",
+    "sections": [
+      {
+        "id": "theme-chiaroscuro",
+        "kind": "theme",
+        "title": "Chiaroscuro",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share low-key (20 of 25 liked) and side light (16 of 22 liked), and more loosely hard light (14 of 21 liked). Hard, directional light in a mostly dark frame sculpts form: faces and objects emerge from shadow, and the darkness becomes part of the composition rather than an absence of light. You can see it in 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod, Double Indemnity: The office corridor and Psycho: An extreme close-up of an eye. By contrast, you did not like Amélie: Amélie in the café (side light, but not the others) or The Bridge on the River Kwai: Colonel Nicholson under the midday sun (hard light, but not the others).",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share low-key (20 of 25 liked) and side light (16 of 22 liked), and more loosely hard light (14 of 21 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "key:low",
+                  "liked": 20,
+                  "exposed": 25
+                },
+                {
+                  "feature": "lightQuality:hard",
+                  "liked": 14,
+                  "exposed": 21
+                },
+                {
+                  "feature": "lightDirection:side",
+                  "liked": 16,
+                  "exposed": 22
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "2001-a-space-odyssey-01",
+                "double-indemnity-03",
+                "psycho-02"
+              ],
+              "disliked": [
+                "amelie-01",
+                "bridge-on-the-river-kwai-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "aversion-soft-naturalism",
+        "kind": "aversion",
+        "title": "Soft, even light",
+        "strength": "well supported",
+        "text": "The stills you passed over consistently share soft light (12 of 49 liked) and ambient light (0 of 23 liked). Diffuse light with gentle shadows lets the whole scene read evenly. Nothing is singled out by the lighting, so attention goes to arrangement, place and gesture. For instance The Bridge on the River Kwai: The bridge over the river at dawn, Howl's Moving Castle: Old Sophie rides on the back of a hay cart through a green valley toward snowy mountains and Metropolis: The city of Metropolis. Yet you did like 12 Angry Men: Juror 3 (soft light, but not ambient light) and Amélie: Amélie leans in close (soft light, but not ambient light).",
+        "claims": [
+          {
+            "statement": "The stills you passed over consistently share soft light (12 of 49 liked) and ambient light (0 of 23 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "lightQuality:soft",
+                  "liked": 12,
+                  "exposed": 49
+                },
+                {
+                  "feature": "lightDirection:ambient",
+                  "liked": 0,
+                  "exposed": 23
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "12-angry-men-02",
+                "amelie-02"
+              ],
+              "disliked": [
+                "bridge-on-the-river-kwai-02",
+                "howls-moving-castle-03",
+                "metropolis-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same stills: soft light with ambient light. There are too few examples to say anything about patterned shadow (2 judged), motion blur (2 judged) and extreme close-up (2 judged). All of this compares your own likes with your own dislikes among 75 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 2,
+    "examples": 10,
+    "failures": []
+  }
+}

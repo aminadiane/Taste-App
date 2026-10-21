@@ -1,0 +1,75 @@
+/* pallas taste engine — browser facade. Connects the pure modules to Pallas.store and the library files.
+   Nothing here is visible: no screen calls it yet. Use from code or the console:
+     await Pallas.taste.profile('cinema')        → a profile computed now, not saved
+     await Pallas.taste.snapshot('literature')   → computed and saved to the store's profile history
+   Recalculating never changes the event log, so an improved engine can regenerate every profile. */
+(function (root) {
+  'use strict';
+  const P = root.Pallas = root.Pallas || {};
+  const T = P.taste = P.taste || {};
+  const SOURCES = {
+    cinema: { files: ['library/stills.json', 'library/cinema-metadata.json', 'library/vocab/cinema.json'], build: (s, m, v) => T.features.cinema(s, m, v) },
+    literature: { files: ['library/literature.json', 'library/vocab/literature.json'], build: (l, v) => T.features.literature(l, v) },
+  };
+  const cache = {};
+
+  async function library(area) {
+    const src = SOURCES[area];
+    if (!src) throw new Error('unknown area ' + area);
+    if (!cache[area]) cache[area] = Promise.all(src.files.map((f) => fetch(f, { cache: 'no-cache' }).then((r) => { if (!r.ok) throw new Error(f + ' ' + r.status); return r.json(); }))).then((docs) => src.build(...docs));
+    return cache[area];
+  }
+
+  // The judgments the engine reads: latest like / dislike per item, skips and undone votes excluded.
+  function judgments(area) {
+    const all = P.store.judgments(area), out = {};
+    for (const [k, v] of Object.entries(all)) if (v === 'like' || v === 'dislike') out[k] = v;
+    return out;
+  }
+
+  async function profile(area, options) {
+    const lib = await library(area), j = judgments(area), history = P.store.history(area);
+    const result = T.analyse({ judgments: j, library: lib, history, options });
+    return T.profiles.build(result, { judgments: j, history, generatedAt: new Date().toISOString() });
+  }
+
+  // Saves the profile with the interpretation of the same judgments beside it (tagged with its generator version),
+  // so the Journal can show how the reading of a taste changed. The statistics and the prose stay in separate fields.
+  async function snapshot(area, options) {
+    const p = await profile(area, options);
+    let reading = null;
+    try { reading = await interpretation(area); } catch { /* interpretation is optional; the profile stands alone */ }
+    return P.store.addProfile({ ...p, reading });
+  }
+
+  // A new snapshot from the same events, for when the engine or the metadata has improved. Earlier snapshots stay.
+  async function regenerate(area, options) {
+    const prev = P.store.latestProfile(area), p = await profile(area, options);
+    let reading = null;
+    try { reading = await interpretation(area); } catch { /* optional */ }
+    return P.store.addProfile({ ...p, reading, regeneratedFrom: prev ? { id: prev.id, engine: prev.engine, generatedAt: prev.generatedAt } : null });
+  }
+
+  // How the latest snapshot differs from the one before it, or null.
+  function lastChange(area) {
+    const list = P.store.profiles(area);
+    return list.length > 1 ? T.profiles.compare(list[list.length - 2], list[list.length - 1]) : null;
+  }
+
+  // Whether the latest saved profile is out of date (newer engine, changed vocabulary, new judgments).
+  async function staleness(area) {
+    const lib = await library(area);
+    return T.profiles.staleness(P.store.latestProfile(area), { engineVersion: T.analysis.VERSION, vocabularyVersion: lib.vocabularyVersion, judgments: judgments(area) });
+  }
+
+  // A readable interpretation of the current judgments (js/taste/interpret.js), kept separate from the profile.
+  let knowledge = null;
+  async function interpretation(area, titleOf) {
+    if (!knowledge) knowledge = await fetch('library/vocab/qualities.json', { cache: 'no-cache' }).then((r) => r.json()).catch(() => null);
+    const lib = await library(area), j = judgments(area);
+    const result = T.analyse({ judgments: j, library: lib, history: P.store.history(area) });
+    return T.interpret.interpret({ result, library: lib, judgments: j, knowledge, titleOf });
+  }
+
+  Object.assign(T, { library, judgments, profile, snapshot, regenerate, lastChange, staleness, interpretation });
+})(typeof self !== 'undefined' ? self : this);

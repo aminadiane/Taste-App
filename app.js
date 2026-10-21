@@ -11,7 +11,7 @@ window.Pallas = window.Pallas || {};
   const home = $('home'), cinema = $('cinema'), lit = $('literature');
   const picture = $('picture'), stillsEl = $('stills'), noise = $('noise'), dot = $('dot'), osd = $('osd'), counter = $('counter');
   const pad = (n) => String(n).padStart(2, '0');
-  const V = Pallas.votes, D = Pallas.drawer;
+  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store;
 
   /* ---------- the library ---------- */
   let library = { films: {}, stills: [] };
@@ -25,7 +25,7 @@ window.Pallas = window.Pallas || {};
       wrap.className = 'tv__still';
       const img = document.createElement('img');
       img.className = 'tv__still-img';
-      img.src = LIBRARY_BASE + s.file;
+      img.dataset.src = LIBRARY_BASE + s.file;   // loaded on demand (see loadAround) instead of all 89 at start
       img.alt = s.scene || '';
       img.draggable = false;
       const band = document.createElement('div');
@@ -45,8 +45,38 @@ window.Pallas = window.Pallas || {};
       if (Array.isArray(data.stills)) library = { films: data.films || {}, stills: data.stills };
     } catch { /* no library: the screen stays dark */ }
     buildStills();
+    if (N) { state.idx = store.resumeIndex('cinema', stillIds()); store.setCursor('cinema', stillIds()[state.idx]); }   // resume where the visitor left off
     render();
+    if (document.readyState === 'complete') loadRestWhenIdle(); else addEventListener('load', loadRestWhenIdle, { once: true });
   }
+  const stillIds = () => library.stills.map((s) => s.id);
+
+  // Lazy loading: the current still, its neighbours and the next one the screen will show are requested at once, so the
+  // like swipe and the dislike power-on never reveal an empty frame; every other still loads when the browser is idle.
+  function load(i) {
+    const img = stillEls[i] && stillEls[i].firstElementChild;
+    if (img && !img.getAttribute('src') && img.dataset.src) img.setAttribute('src', img.dataset.src);
+  }
+  function loadAround() {
+    if (!N) return;
+    const i = state.idx;
+    [i, (i + 1) % N, (i - 1 + N) % N, nextIdx(), state.prevIdx].forEach((k) => k != null && load(k));
+  }
+  let backgroundStarted = false;
+  function loadRestWhenIdle() {
+    if (backgroundStarted || !N) return;
+    backgroundStarted = true;
+    const idle = window.requestIdleCallback || ((fn) => setTimeout(() => fn({ timeRemaining: () => 8 }), 200));
+    let k = 0;
+    const step = (dl) => {
+      let n = 0;
+      while (k < N && n < 3 && dl.timeRemaining() > 2) { load(k++); n++; }
+      if (k < N) idle(step);
+    };
+    idle(step);
+  }
+  // After a vote: the next still not yet evaluated, in library order.
+  const nextIdx = () => store.nextOpen('cinema', stillIds(), (state.idx + 1) % N);
 
   const filmOf = (still) => library.films[still.film] || {};
 
@@ -124,18 +154,23 @@ window.Pallas = window.Pallas || {};
     $('cq-like').textContent = `liked (${V.list('c', 'like').length})`;
     $('cq-dislike').textContent = `disliked (${V.list('c', 'dislike').length})`;
 
+    loadAround();
     void picture.offsetWidth;   // commit transition-less phases before the next one starts
   }
 
-  const set = (patch) => { Object.assign(state, patch); render(); };
+  const set = (patch) => {
+    Object.assign(state, patch);
+    if ('idx' in patch && N) store.setCursor('cinema', library.stills[state.idx].id);   // position survives refresh and restart
+    render();
+  };
 
   function react(kind) {
     if (state.phase !== 'idle' || !N) return;
-    V.set('c', library.stills[state.idx].id, kind);
+    V.set('c', library.stills[state.idx].id, kind, library.stills[state.idx].film);
     if (kind === 'like') {
       // channel change: the next still slides up from below, a black band between them, no static
       set({ osd: 'liked', phase: 'hold' });
-      later(900, () => set({ prevIdx: state.idx, idx: (state.idx + 1) % N, phase: 'swipePrep', osd: '' }));
+      later(900, () => set({ prevIdx: state.idx, idx: nextIdx(), phase: 'swipePrep', osd: '' }));
       later(940, () => set({ phase: 'swipe' }));
       later(1400, () => set({ phase: 'idle', prevIdx: null }));
     } else {
@@ -173,7 +208,7 @@ window.Pallas = window.Pallas || {};
       dot.style.opacity = 0;
     });
     later(2400, () => {
-      set({ idx: (state.idx + 1) % N, phase: 'on' });   // advance while hidden
+      set({ idx: nextIdx(), phase: 'on' });   // advance while hidden
       // The end state is written inline first; the animations (no fill) play over it and leave nothing behind when they end.
       picture.style.opacity = 1;
       picture.style.filter = 'none';
@@ -183,6 +218,28 @@ window.Pallas = window.Pallas || {};
     });
     later(3000, () => set({ phase: 'idle' }));
   }
+  /* ---------- skip and undo: data handling only. Controls wait for approved designs; connect them to
+     Pallas.cinema.skip() and .undo(). Skip records that the still was passed over (it returns in a later session) and
+     shows the next open still; undo reverses the latest like, dislike or skip and returns to that still. No transition
+     is designed for either yet, so both cut directly. Both are refused while a sequence runs. */
+  function skip() {
+    if (state.phase !== 'idle' || !N) return null;
+    const s = library.stills[state.idx];
+    const e = store.skip('cinema', s.id, s.film);
+    set({ idx: nextIdx() });
+    return e;
+  }
+  function undo() {
+    if (state.phase !== 'idle' || !N) return null;
+    const e = store.undo('cinema');
+    if (!e) return null;
+    const i = stillIds().indexOf(e.item);
+    if (i >= 0) set({ idx: i }); else render();
+    if (D.isOpen() && !cinema.hidden) D.render();
+    return e;
+  }
+  Pallas.cinema = { skip, undo, canUndo: () => !!store.lastUndoable('cinema'), get busy() { return state.phase !== 'idle'; } };
+
   $('like').addEventListener('click', () => react('like'));
   $('dislike').addEventListener('click', () => react('dislike'));
 

@@ -1,0 +1,82 @@
+{
+  "simulatedPerson": {
+    "name": "stillness",
+    "area": "cinema",
+    "hiddenRule": "Likes still frames with empty space or a single figure (85%); dislikes implied motion and dense frames (10%); otherwise 35%.",
+    "seed": 50
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 82,
+      "likes": 30,
+      "status": "ok"
+    },
+    "summary": "Across 82 stills from 35 films, the clearest thread is stillness.",
+    "sections": [
+      {
+        "id": "theme-stillness",
+        "kind": "theme",
+        "title": "Stillness",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share single figure (22 of 37 liked), and more loosely stillness (25 of 50 liked). Stillness, spare composition and restrained colour slow the image down; small details and the relation between a figure and empty space take on weight. You can see it in 12 Angry Men: Juror 3, Amélie: Amélie in the café and Double Indemnity: Phyllis Dietrichson at the top of the stairs. By contrast, you did not like 12 Angry Men: The jurors around the table (stillness, but not single figure) or 2001: A Space Odyssey: Frank Poole adrift in space beside the EVA pod (single figure, but not stillness).",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share single figure (22 of 37 liked), and more loosely stillness (25 of 50 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "motion:still",
+                  "liked": 25,
+                  "exposed": 50
+                },
+                {
+                  "feature": "figures:single",
+                  "liked": 22,
+                  "exposed": 37
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "12-angry-men-02",
+                "amelie-01",
+                "double-indemnity-01"
+              ],
+              "disliked": [
+                "12-angry-men-01",
+                "2001-a-space-odyssey-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same stills: close-up with single figure and intimate with single figure. There are too few examples to say anything about dust (2 judged), rim light (2 judged) and extreme close-up (2 judged). All of this compares your own likes with your own dislikes among 82 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 1,
+    "examples": 5,
+    "failures": []
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "notes": "Provisional vocabulary features for the ChatGPT Work batch of 2026-10-20, keyed by Work's passage_id. Mapped by Claude only from Work's written craft descriptions (narrative perspective, sentence structure, pacing, techniques, tone), not from the passage text, which is not yet available. Dimensions the descriptions do not state are left out rather than guessed. Check every record against the text when it is imported, then remove 'provisional'.",
+  "mappedFrom": "library/import/research/pallas-literature-research.csv",
+  "features": {
+    "pallas-nyt-002-the-warmth-of-other-suns": { "observed": { "form": "nonfiction", "person": "third", "sentenceLength": "varied", "pace": "scene", "device": ["list"] }, "interpretation": { "tone": ["uneasy", "intimate"] } },
+    "pallas-nyt-004-the-known-world": { "observed": { "form": "novel", "person": "third", "sentenceLength": "long", "syntax": "hypotactic", "device": ["prolepsis", "personification", "irony"] }, "interpretation": { "tone": ["reflective"] } },
+    "pallas-nyt-007-the-underground-railroad": { "observed": { "form": "novel", "person": "third", "sentenceLength": "varied", "pace": "summary", "device": ["analepsis", "repetition"] }, "interpretation": {} },
+    "pallas-nyt-013-the-road": { "observed": { "form": "novel", "person": "third", "sentenceLength": "varied", "syntax": "paratactic", "pace": "scene", "device": ["simile", "polysyndeton"] }, "interpretation": { "tone": ["tense", "tender"] } },
+    "pallas-nyt-014-outline": { "observed": { "form": "novel", "person": "first", "narration": "retrospective", "syntax": "hypotactic", "pace": "summary", "device": ["understatement", "irony"] }, "interpretation": { "tone": ["comic"] } },
+    "pallas-nyt-015-pachinko": { "observed": { "form": "novel", "person": "third", "pace": "summary" }, "interpretation": { "tone": ["calm"] } },
+    "pallas-nyt-017-the-sellout": { "observed": { "form": "novel", "person": "first", "narration": "retrospective", "sentenceLength": "varied", "syntax": "cumulative", "pace": "digressive", "device": ["list", "repetition", "pastiche"] }, "interpretation": { "tone": ["comic"] } },
+    "pallas-nyt-018-lincoln-in-the-bardo": { "observed": { "form": "novel", "person": "first", "syntax": "fragmented", "pace": "scene", "device": ["repetition"] }, "interpretation": { "tone": ["tender", "melancholy"] } },
+    "pallas-nyt-022-behind-the-beautiful-forevers": { "observed": { "form": "nonfiction", "person": "third", "device": ["montage", "irony"] }, "interpretation": {} },
+    "pallas-nyt-023-hateship-friendship-courtship-loveship-marriage": { "observed": { "form": "short-story", "person": "third", "sentenceLength": "varied", "pace": "scene", "device": ["free-indirect", "list", "irony"] }, "interpretation": { "tone": ["uneasy"] } },
+    "pallas-nyt-027-americanah": { "observed": { "form": "novel", "person": "third", "focus": "description", "device": ["anaphora", "irony"] }, "interpretation": {} },
+    "pallas-nyt-028-cloud-atlas": { "observed": { "form": "novel", "person": "first", "narration": "epistolary", "syntax": "hypotactic", "diction": "formal", "device": ["pastiche", "irony"] }, "interpretation": { "tone": ["unsettling"] } },
+    "pallas-nyt-034-citizen-an-american-lyric": { "observed": { "form": "poetry", "person": "second", "sentenceLength": "short", "device": ["direct-address", "repetition", "irony"] }, "interpretation": { "tone": ["tense"] } },
+    "pallas-nyt-037-the-years": { "observed": { "form": "nonfiction", "person": "first", "syntax": "fragmented", "focus": "reflection", "pace": "digressive", "device": ["list", "montage"] }, "interpretation": { "tone": ["melancholy"] } },
+    "pallas-nyt-039-a-visit-from-the-goon-squad": { "observed": { "form": "novel", "person": "third", "focus": "interior", "pace": "scene", "device": ["free-indirect", "irony"] }, "interpretation": {} },
+    "pallas-nyt-049-the-vegetarian": { "observed": { "form": "novel", "person": "first", "pace": "scene", "device": ["repetition", "simile"] }, "interpretation": { "tone": ["unsettling"] } },
+    "pallas-nyt-072-secondhand-time": { "observed": { "form": "testimony", "person": "first", "narration": "testimony", "syntax": "fragmented", "pace": "digressive", "device": ["direct-address", "repetition", "montage"] }, "interpretation": { "tone": ["melancholy"] } },
+    "pallas-nyt-078-septology": { "observed": { "form": "novel", "person": "first", "tense": "present", "narration": "immediate", "sentenceLength": "long", "syntax": "paratactic", "focus": "interior", "pace": "scene", "device": ["repetition", "self-correction", "ekphrasis"] }, "interpretation": { "tone": ["reflective"] } },
+    "pallas-nyt-082-hurricane-season": { "observed": { "form": "novel", "person": "third", "sentenceLength": "long", "syntax": "cumulative", "device": ["anaphora", "delayed-disclosure"] }, "interpretation": { "tone": ["tense"] } },
+    "pallas-nyt-093-station-eleven": { "observed": { "form": "novel", "person": "third", "pace": "scene", "device": ["list"] }, "interpretation": { "tone": ["tense"] } }
+  }
+}

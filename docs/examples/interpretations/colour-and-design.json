@@ -1,0 +1,113 @@
+{
+  "simulatedPerson": {
+    "name": "colour-and-design",
+    "area": "cinema",
+    "hiddenRule": "Likes saturated colour or symmetrical composition in colour images (85%); dislikes black and white (10%); otherwise 35%.",
+    "seed": 42
+  },
+  "interpretation": {
+    "schema": "pallas.interpretation/1",
+    "generator": {
+      "name": "pallas-templates",
+      "version": "1.0.0",
+      "knowledge": 1
+    },
+    "area": "cinema",
+    "basedOn": {
+      "engine": {
+        "name": "pallas-taste",
+        "version": "1.1.0"
+      },
+      "judged": 78,
+      "likes": 26,
+      "status": "ok"
+    },
+    "summary": "Across 78 stills from 35 films, the clearest thread is designed colour; you were less drawn to tonal black and white.",
+    "sections": [
+      {
+        "id": "theme-colour-design",
+        "kind": "theme",
+        "title": "Designed colour",
+        "strength": "well supported",
+        "text": "The stills you liked consistently share saturated colour (9 of 10 liked) and single-hue palette (10 of 14 liked). Strong colour used as structure, such as a single dominant hue, a deliberate contrast or one vivid accent, lets colour carry mood and direct the eye rather than merely record the scene. You can see it in Mad Max: Fury Road: Night on the salt flats, The Godfather: A supplicant bows to kiss Vito Corleone's hand in the darkened study and The Grand Budapest Hotel: Gustave H. sits between two lift attendants in the red lift. By contrast, you did not like North by Northwest: The empty prairie highway where Thornhill waits for the crop-duster (single-hue palette, but not saturated colour) or Rear Window: The Greenwich Village courtyard (single-hue palette, but not saturated colour).",
+        "claims": [
+          {
+            "statement": "The stills you liked consistently share saturated colour (9 of 10 liked) and single-hue palette (10 of 14 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "liked",
+              "features": [
+                {
+                  "feature": "saturation:saturated",
+                  "liked": 9,
+                  "exposed": 10
+                },
+                {
+                  "feature": "harmony:single-hue",
+                  "liked": 10,
+                  "exposed": 14
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [
+                "mad-max-fury-road-02",
+                "the-godfather-02",
+                "the-grand-budapest-hotel-01"
+              ],
+              "disliked": [
+                "north-by-northwest-01",
+                "rear-window-01"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "aversion-tonal",
+        "kind": "aversion",
+        "title": "Tonal black and white",
+        "strength": "well supported",
+        "text": "The stills you passed over consistently share monochrome (3 of 38 liked). Without colour the image is built from tone alone: the range from black to white, and the texture within it, does the work that colour would. For instance 12 Angry Men: Juror 3, Double Indemnity: Phyllis Dietrichson at the top of the stairs and It's a Wonderful Life: Mary runs across the Bedford Falls main street past the parked cars and awnings.",
+        "claims": [
+          {
+            "statement": "The stills you passed over consistently share monochrome (3 of 38 liked).",
+            "check": {
+              "type": "rates",
+              "direction": "disliked",
+              "features": [
+                {
+                  "feature": "saturation:monochrome",
+                  "liked": 3,
+                  "exposed": 38
+                }
+              ]
+            },
+            "evidence": {
+              "liked": [],
+              "disliked": [
+                "12-angry-men-02",
+                "double-indemnity-01",
+                "its-a-wonderful-life-02"
+              ]
+            }
+          }
+        ]
+      },
+      {
+        "id": "uncertainty",
+        "kind": "uncertainty",
+        "title": "How sure this is",
+        "strength": null,
+        "text": "Some characteristics cannot yet be told apart because they occur in nearly the same stills: neutral with monochrome and low-key with saturated colour. There are too few examples to say anything about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged). All of this compares your own likes with your own dislikes among 78 stills; it is not a comparison with anyone else.",
+        "claims": []
+      }
+    ]
+  },
+  "verification": {
+    "ok": true,
+    "claims": 2,
+    "examples": 8,
+    "failures": []
+  }
+}

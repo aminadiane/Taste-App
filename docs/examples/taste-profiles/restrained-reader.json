@@ -1,0 +1,1194 @@
+{
+  "simulatedPerson": {
+    "name": "restrained-reader",
+    "area": "literature",
+    "hiddenRule": "Likes restrained prose (90%); sparse figuration elsewhere 40%; otherwise 10%.",
+    "seed": 51,
+    "library": "synthetic test corpus (60 passages)"
+  },
+  "draftInterpretation": [
+    "Across 50 passages from 28 books you liked 16 (32%). What follows compares the passages you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "Clearly, restrained prose (understated and economical; feeling held back): you liked 13 of 14 (93%), against 8% of the rest, across 13 books. For example: synthetic-01 (restrained); synthetic-05 (restrained); synthetic-09 (restrained). This rests on a subjective reading of mood or tone.",
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: sparse figuration with restrained prose, withheld identity with restrained prose and close detail with restrained prose."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "literature",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 50,
+      "likes": 16,
+      "dislikes": 34,
+      "likeRate": 0.32,
+      "works": 28,
+      "notInLibrary": 0,
+      "eventCount": 59,
+      "lastEventAt": "2026-10-06T19:18:48.096Z",
+      "judgmentsDigest": "73f6fea9",
+      "vocabularyVersion": 1
+    },
+    "evidenceLevel": "established",
+    "signature": {
+      "summary": "A clear leaning towards restrained prose.",
+      "terms": [
+        "register:restrained"
+      ],
+      "statements": [
+        {
+          "text": "Liked 13 of 14 works with restrained prose (93%), against 3 of 36 without it (8%).",
+          "feature": "register:restrained",
+          "strength": "well supported",
+          "subjective": true
+        }
+      ]
+    },
+    "preferred": [
+      {
+        "feature": "register:restrained",
+        "dimension": "register",
+        "value": "restrained",
+        "label": "restrained prose",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [
+          "syntax:paratactic"
+        ],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.929,
+          "rateWhenAbsent": 0.083,
+          "difference": 0.845,
+          "interval": [
+            0.685,
+            0.987
+          ],
+          "p": 0,
+          "q": 0,
+          "leaveOneWorkOutP": 0,
+          "workLevelP": 0
+        },
+        "explanation": "Liked 13 of 14 works with restrained prose (93%), against 3 of 36 without it (8%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "synthetic-01",
+            "synthetic-05",
+            "synthetic-09",
+            "synthetic-13",
+            "synthetic-17",
+            "synthetic-21",
+            "synthetic-29",
+            "synthetic-37",
+            "synthetic-41",
+            "synthetic-45",
+            "synthetic-49",
+            "synthetic-53",
+            "synthetic-57"
+          ],
+          "contradicting": [
+            "synthetic-33"
+          ],
+          "supportingWorks": 13
+        }
+      },
+      {
+        "feature": "figuration:sparse",
+        "dimension": "figuration",
+        "value": "sparse",
+        "label": "sparse figuration",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 8,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.19,
+          "difference": 0.81,
+          "interval": [
+            0.676,
+            1
+          ],
+          "p": 0,
+          "q": 0.0006,
+          "leaveOneWorkOutP": 0.0001,
+          "workLevelP": 0
+        },
+        "explanation": "Liked 8 of 8 works with sparse figuration (100%), against 8 of 42 without it (19%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-01",
+            "synthetic-05",
+            "synthetic-09",
+            "synthetic-21",
+            "synthetic-37",
+            "synthetic-41",
+            "synthetic-49",
+            "synthetic-57"
+          ],
+          "contradicting": [],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "device:withheld-identity",
+        "dimension": "device",
+        "value": "withheld-identity",
+        "label": "withheld identity",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 7,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 1,
+          "rateWhenAbsent": 0.209,
+          "difference": 0.791,
+          "interval": [
+            0.646,
+            1
+          ],
+          "p": 0.0001,
+          "q": 0.0015,
+          "leaveOneWorkOutP": 0.0004,
+          "workLevelP": 0
+        },
+        "explanation": "Liked 7 of 7 works with withheld identity (100%), against 9 of 43 without it (21%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-05",
+            "synthetic-13",
+            "synthetic-17",
+            "synthetic-21",
+            "synthetic-41",
+            "synthetic-45",
+            "synthetic-57"
+          ],
+          "contradicting": [],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "device:close-detail",
+        "dimension": "device",
+        "value": "close-detail",
+        "label": "close detail",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 8,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.875,
+          "rateWhenAbsent": 0.214,
+          "difference": 0.661,
+          "interval": [
+            0.529,
+            0.978
+          ],
+          "p": 0.0007,
+          "q": 0.0055,
+          "leaveOneWorkOutP": 0.0023,
+          "workLevelP": 0.0002
+        },
+        "explanation": "Liked 7 of 8 works with close detail (88%), against 9 of 42 without it (21%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-01",
+            "synthetic-09",
+            "synthetic-17",
+            "synthetic-29",
+            "synthetic-45",
+            "synthetic-49",
+            "synthetic-53"
+          ],
+          "contradicting": [
+            "synthetic-33"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "device:self-correction",
+        "dimension": "device",
+        "value": "self-correction",
+        "label": "self-correction",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 8,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.875,
+          "rateWhenAbsent": 0.214,
+          "difference": 0.661,
+          "interval": [
+            0.529,
+            0.978
+          ],
+          "p": 0.0007,
+          "q": 0.0055,
+          "leaveOneWorkOutP": 0.0023,
+          "workLevelP": 0.0002
+        },
+        "explanation": "Liked 7 of 8 works with self-correction (88%), against 9 of 42 without it (21%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-05",
+            "synthetic-09",
+            "synthetic-13",
+            "synthetic-29",
+            "synthetic-37",
+            "synthetic-41",
+            "synthetic-53"
+          ],
+          "contradicting": [
+            "synthetic-33"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "sentenceLength:short",
+        "dimension": "sentenceLength",
+        "value": "short",
+        "label": "short sentences",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 8,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.875,
+          "rateWhenAbsent": 0.214,
+          "difference": 0.661,
+          "interval": [
+            0.529,
+            0.978
+          ],
+          "p": 0.0007,
+          "q": 0.0055,
+          "leaveOneWorkOutP": 0.0023,
+          "workLevelP": 0.0002
+        },
+        "explanation": "Liked 7 of 8 works with short sentences (88%), against 9 of 42 without it (21%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-05",
+            "synthetic-17",
+            "synthetic-21",
+            "synthetic-37",
+            "synthetic-45",
+            "synthetic-49",
+            "synthetic-53"
+          ],
+          "contradicting": [
+            "synthetic-33"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "diction:colloquial",
+        "dimension": "diction",
+        "value": "colloquial",
+        "label": "colloquial diction",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 0.667,
+          "rateWhenAbsent": 0.211,
+          "difference": 0.456,
+          "interval": [
+            0.391,
+            0.862
+          ],
+          "p": 0.01,
+          "q": 0.0427,
+          "leaveOneWorkOutP": 0.0219,
+          "workLevelP": 0.0053
+        },
+        "explanation": "Liked 8 of 12 works with colloquial diction (67%), against 8 of 38 without it (21%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-05",
+            "synthetic-09",
+            "synthetic-17",
+            "synthetic-21",
+            "synthetic-29",
+            "synthetic-37",
+            "synthetic-49",
+            "synthetic-53"
+          ],
+          "contradicting": [
+            "synthetic-07",
+            "synthetic-27",
+            "synthetic-31",
+            "synthetic-51"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "tone:tender",
+        "dimension": "tone",
+        "value": "tender",
+        "label": "tender",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 6,
+          "likedWhenPresent": 4,
+          "rateWhenPresent": 0.667,
+          "rateWhenAbsent": 0.273,
+          "difference": 0.394,
+          "interval": [
+            0.3,
+            0.903
+          ],
+          "p": 0.0741,
+          "q": 0.2223
+        },
+        "explanation": "Liked 4 of 6 works with tender (67%), against 12 of 44 without it (27%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-13",
+            "synthetic-21",
+            "synthetic-45",
+            "synthetic-49"
+          ],
+          "contradicting": [
+            "synthetic-03",
+            "synthetic-55"
+          ],
+          "supportingWorks": 4
+        }
+      }
+    ],
+    "disliked": [
+      {
+        "feature": "sentenceLength:long",
+        "dimension": "sentenceLength",
+        "value": "long",
+        "label": "long sentences",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 30,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 0.1,
+          "rateWhenAbsent": 0.65,
+          "difference": -0.55,
+          "interval": [
+            0.035,
+            0.256
+          ],
+          "p": 0.0001,
+          "q": 0.0015,
+          "leaveOneWorkOutP": 0.0002,
+          "workLevelP": 0.0003
+        },
+        "explanation": "Liked 3 of 30 works with long sentences (10%), against 13 of 20 without it (65%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-02",
+            "synthetic-03",
+            "synthetic-04",
+            "synthetic-06",
+            "synthetic-07",
+            "synthetic-08",
+            "synthetic-10",
+            "synthetic-12",
+            "synthetic-14",
+            "synthetic-15",
+            "synthetic-16",
+            "synthetic-18",
+            "synthetic-27",
+            "synthetic-30",
+            "synthetic-31",
+            "synthetic-32",
+            "synthetic-36",
+            "synthetic-38",
+            "synthetic-39",
+            "synthetic-40",
+            "synthetic-42",
+            "synthetic-46",
+            "synthetic-48",
+            "synthetic-51",
+            "synthetic-54",
+            "synthetic-55",
+            "synthetic-56"
+          ],
+          "contradicting": [
+            "synthetic-20",
+            "synthetic-28",
+            "synthetic-44"
+          ],
+          "supportingWorks": 21
+        }
+      },
+      {
+        "feature": "register:lyrical",
+        "dimension": "register",
+        "value": "lyrical",
+        "label": "lyrical prose",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 13,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.432,
+          "difference": -0.432,
+          "interval": [
+            0,
+            0.228
+          ],
+          "p": 0.0043,
+          "q": 0.0271,
+          "leaveOneWorkOutP": 0.0093,
+          "workLevelP": 0.0009
+        },
+        "explanation": "Liked 0 of 13 works with lyrical prose (0%), against 16 of 37 without it (43%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "synthetic-02",
+            "synthetic-06",
+            "synthetic-10",
+            "synthetic-14",
+            "synthetic-18",
+            "synthetic-22",
+            "synthetic-26",
+            "synthetic-30",
+            "synthetic-38",
+            "synthetic-42",
+            "synthetic-46",
+            "synthetic-50",
+            "synthetic-54"
+          ],
+          "contradicting": [],
+          "supportingWorks": 13
+        }
+      },
+      {
+        "feature": "diction:ornate",
+        "dimension": "diction",
+        "value": "ornate",
+        "label": "ornate diction",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 24,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 0.125,
+          "rateWhenAbsent": 0.5,
+          "difference": -0.375,
+          "interval": [
+            0.043,
+            0.31
+          ],
+          "p": 0.0063,
+          "q": 0.0322,
+          "leaveOneWorkOutP": 0.0131,
+          "workLevelP": 0.0335
+        },
+        "explanation": "Liked 3 of 24 works with ornate diction (13%), against 13 of 26 without it (50%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-03",
+            "synthetic-04",
+            "synthetic-06",
+            "synthetic-08",
+            "synthetic-10",
+            "synthetic-11",
+            "synthetic-12",
+            "synthetic-14",
+            "synthetic-15",
+            "synthetic-16",
+            "synthetic-18",
+            "synthetic-26",
+            "synthetic-30",
+            "synthetic-32",
+            "synthetic-36",
+            "synthetic-38",
+            "synthetic-40",
+            "synthetic-46",
+            "synthetic-48",
+            "synthetic-55",
+            "synthetic-56"
+          ],
+          "contradicting": [
+            "synthetic-20",
+            "synthetic-28",
+            "synthetic-44"
+          ],
+          "supportingWorks": 17
+        }
+      },
+      {
+        "feature": "figuration:rich",
+        "dimension": "figuration",
+        "value": "rich",
+        "label": "rich figuration",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 24,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 0.125,
+          "rateWhenAbsent": 0.5,
+          "difference": -0.375,
+          "interval": [
+            0.043,
+            0.31
+          ],
+          "p": 0.0063,
+          "q": 0.0322,
+          "leaveOneWorkOutP": 0.0131,
+          "workLevelP": 0.0225
+        },
+        "explanation": "Liked 3 of 24 works with rich figuration (13%), against 13 of 26 without it (50%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-03",
+            "synthetic-04",
+            "synthetic-07",
+            "synthetic-08",
+            "synthetic-10",
+            "synthetic-12",
+            "synthetic-14",
+            "synthetic-15",
+            "synthetic-16",
+            "synthetic-27",
+            "synthetic-31",
+            "synthetic-32",
+            "synthetic-36",
+            "synthetic-40",
+            "synthetic-43",
+            "synthetic-48",
+            "synthetic-50",
+            "synthetic-51",
+            "synthetic-54",
+            "synthetic-55",
+            "synthetic-56"
+          ],
+          "contradicting": [
+            "synthetic-20",
+            "synthetic-28",
+            "synthetic-44"
+          ],
+          "supportingWorks": 16
+        }
+      },
+      {
+        "feature": "register:experimental",
+        "dimension": "register",
+        "value": "experimental",
+        "label": "experimental prose",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [
+          "syntax:fragmented"
+        ],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 11,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.41,
+          "difference": -0.41,
+          "interval": [
+            0,
+            0.259
+          ],
+          "p": 0.0099,
+          "q": 0.0427,
+          "leaveOneWorkOutP": 0.0201,
+          "workLevelP": 0.1134
+        },
+        "explanation": "Liked 0 of 11 works with experimental prose (0%), against 16 of 39 without it (41%).",
+        "notes": [
+          "holds across individual passages but less clearly across books (0 of 11 book groups with it liked)"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-03",
+            "synthetic-07",
+            "synthetic-11",
+            "synthetic-15",
+            "synthetic-27",
+            "synthetic-31",
+            "synthetic-39",
+            "synthetic-43",
+            "synthetic-47",
+            "synthetic-51",
+            "synthetic-55"
+          ],
+          "contradicting": [],
+          "supportingWorks": 11
+        }
+      },
+      {
+        "feature": "device:repetition",
+        "dimension": "device",
+        "value": "repetition",
+        "label": "repetition",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 19,
+          "likedWhenPresent": 2,
+          "rateWhenPresent": 0.105,
+          "rateWhenAbsent": 0.452,
+          "difference": -0.346,
+          "interval": [
+            0.029,
+            0.314
+          ],
+          "p": 0.0134,
+          "q": 0.0525,
+          "leaveOneWorkOutP": 0.0259,
+          "workLevelP": 0.0341
+        },
+        "explanation": "Liked 2 of 19 works with repetition (11%), against 14 of 31 without it (45%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-02",
+            "synthetic-04",
+            "synthetic-08",
+            "synthetic-10",
+            "synthetic-12",
+            "synthetic-16",
+            "synthetic-18",
+            "synthetic-22",
+            "synthetic-26",
+            "synthetic-30",
+            "synthetic-32",
+            "synthetic-38",
+            "synthetic-40",
+            "synthetic-46",
+            "synthetic-48",
+            "synthetic-50",
+            "synthetic-56"
+          ],
+          "contradicting": [
+            "synthetic-20",
+            "synthetic-28"
+          ],
+          "supportingWorks": 17
+        }
+      },
+      {
+        "feature": "syntax:cumulative",
+        "dimension": "syntax",
+        "value": "cumulative",
+        "label": "cumulative sentences",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.39,
+          "difference": -0.39,
+          "interval": [
+            0,
+            0.299
+          ],
+          "p": 0.0428,
+          "q": 0.1369,
+          "leaveOneWorkOutP": 0.0444,
+          "workLevelP": 0.0134
+        },
+        "explanation": "Liked 0 of 9 works with cumulative sentences (0%), against 16 of 41 without it (39%).",
+        "notes": [
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-02",
+            "synthetic-06",
+            "synthetic-10",
+            "synthetic-14",
+            "synthetic-18",
+            "synthetic-26",
+            "synthetic-38",
+            "synthetic-42",
+            "synthetic-54"
+          ],
+          "contradicting": [],
+          "supportingWorks": 9
+        }
+      },
+      {
+        "feature": "device:free-indirect",
+        "dimension": "device",
+        "value": "free-indirect",
+        "label": "free indirect discourse",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 8,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.381,
+          "difference": -0.381,
+          "interval": [
+            0,
+            0.324
+          ],
+          "p": 0.0429,
+          "q": 0.1369,
+          "leaveOneWorkOutP": 0.0819
+        },
+        "explanation": "Liked 0 of 8 works with free indirect discourse (0%), against 16 of 42 without it (38%).",
+        "notes": [
+          "depends on one book (synthetic-book-22): without it the association is not clear",
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-03",
+            "synthetic-07",
+            "synthetic-11",
+            "synthetic-15",
+            "synthetic-43",
+            "synthetic-47",
+            "synthetic-51",
+            "synthetic-55"
+          ],
+          "contradicting": [],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "tone:melancholy",
+        "dimension": "tone",
+        "value": "melancholy",
+        "label": "melancholy",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "register:restrained",
+        "stats": {
+          "exposed": 8,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.381,
+          "difference": -0.381,
+          "interval": [
+            0,
+            0.324
+          ],
+          "p": 0.0429,
+          "q": 0.1369,
+          "leaveOneWorkOutP": 0.0819
+        },
+        "explanation": "Liked 0 of 8 works with melancholy (0%), against 16 of 42 without it (38%).",
+        "notes": [
+          "depends on one book (synthetic-book-1): without it the association is not clear",
+          "goes together with restrained prose in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "synthetic-02",
+            "synthetic-04",
+            "synthetic-07",
+            "synthetic-12",
+            "synthetic-15",
+            "synthetic-18",
+            "synthetic-46",
+            "synthetic-54"
+          ],
+          "contradicting": [],
+          "supportingWorks": 8
+        }
+      }
+    ],
+    "combinations": [],
+    "notYetClear": [],
+    "spread": {
+      "overall": 0.846,
+      "reading": "mixed",
+      "byDimension": {
+        "person": {
+          "label": "narrative person",
+          "ratio": 1.006,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "tense": {
+          "label": "tense",
+          "ratio": 0.893,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "narration": {
+          "label": "narrative stance",
+          "ratio": 1.046,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "sentenceLength": {
+          "label": "sentence length",
+          "ratio": 1.107,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "syntax": {
+          "label": "syntax",
+          "ratio": 0.354,
+          "reading": "focused",
+          "valuesJudged": 4,
+          "valuesLiked": 2
+        },
+        "diction": {
+          "label": "diction",
+          "ratio": 0.83,
+          "reading": "mixed",
+          "valuesJudged": 4,
+          "valuesLiked": 3
+        },
+        "figuration": {
+          "label": "figurative density",
+          "ratio": 1.01,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "dialogue": {
+          "label": "dialogue",
+          "ratio": 0.855,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "focus": {
+          "label": "focus",
+          "ratio": 1.026,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "pace": {
+          "label": "pace",
+          "ratio": 0.999,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "device": {
+          "label": "devices",
+          "ratio": 0.718,
+          "reading": "mixed",
+          "valuesJudged": 9,
+          "valuesLiked": 5
+        },
+        "register": {
+          "label": "register",
+          "ratio": 0.349,
+          "reading": "focused",
+          "valuesJudged": 4,
+          "valuesLiked": 2
+        },
+        "tone": {
+          "label": "tone",
+          "ratio": 0.811,
+          "reading": "mixed",
+          "valuesJudged": 7,
+          "valuesLiked": 5
+        }
+      }
+    },
+    "consistency": {
+      "changedJudgments": [
+        "synthetic-20",
+        "synthetic-28"
+      ],
+      "worksWithMixedJudgments": [
+        "synthetic-book-1",
+        "synthetic-book-11",
+        "synthetic-book-14",
+        "synthetic-book-15",
+        "synthetic-book-19",
+        "synthetic-book-21",
+        "synthetic-book-22",
+        "synthetic-book-23",
+        "synthetic-book-25",
+        "synthetic-book-27",
+        "synthetic-book-3",
+        "synthetic-book-5",
+        "synthetic-book-7",
+        "synthetic-book-9"
+      ]
+    },
+    "terminology": [
+      {
+        "term": "device:close-detail",
+        "label": "close detail",
+        "definition": "A small, exact physical detail is singled out.",
+        "dimension": "devices",
+        "basis": "observed"
+      },
+      {
+        "term": "device:free-indirect",
+        "label": "free indirect discourse",
+        "definition": "Third-person narration takes on a character's thoughts and idiom.",
+        "dimension": "devices",
+        "basis": "observed"
+      },
+      {
+        "term": "device:repetition",
+        "label": "repetition",
+        "definition": "Words or structures repeated for effect.",
+        "dimension": "devices",
+        "basis": "observed"
+      },
+      {
+        "term": "device:self-correction",
+        "label": "self-correction",
+        "definition": "The narrator qualifies or revises their own statements.",
+        "dimension": "devices",
+        "basis": "observed"
+      },
+      {
+        "term": "device:withheld-identity",
+        "label": "withheld identity",
+        "definition": "A central figure is not named or explained.",
+        "dimension": "devices",
+        "basis": "observed"
+      },
+      {
+        "term": "diction:colloquial",
+        "label": "colloquial diction",
+        "definition": "Spoken, informal phrasing and idiom.",
+        "dimension": "diction",
+        "basis": "observed"
+      },
+      {
+        "term": "diction:ornate",
+        "label": "ornate diction",
+        "definition": "Rich, rare or highly decorative vocabulary.",
+        "dimension": "diction",
+        "basis": "observed"
+      },
+      {
+        "term": "figuration:rich",
+        "label": "rich figuration",
+        "definition": "Dense metaphor, simile or sensory imagery throughout.",
+        "dimension": "figurative density",
+        "basis": "observed"
+      },
+      {
+        "term": "figuration:sparse",
+        "label": "sparse figuration",
+        "definition": "Little or no metaphor; mostly literal statement.",
+        "dimension": "figurative density",
+        "basis": "observed"
+      },
+      {
+        "term": "register:experimental",
+        "label": "experimental prose",
+        "definition": "Conventional form is broken or rearranged.",
+        "dimension": "register",
+        "basis": "interpretation"
+      },
+      {
+        "term": "register:lyrical",
+        "label": "lyrical prose",
+        "definition": "Cadenced and musical; feeling carried by sound and rhythm.",
+        "dimension": "register",
+        "basis": "interpretation"
+      },
+      {
+        "term": "register:restrained",
+        "label": "restrained prose",
+        "definition": "Understated and economical; feeling held back.",
+        "dimension": "register",
+        "basis": "interpretation"
+      },
+      {
+        "term": "sentenceLength:long",
+        "label": "long sentences",
+        "definition": "Most sentences run long, with many clauses.",
+        "dimension": "sentence length",
+        "basis": "observed"
+      },
+      {
+        "term": "sentenceLength:short",
+        "label": "short sentences",
+        "definition": "Most sentences are brief.",
+        "dimension": "sentence length",
+        "basis": "observed"
+      },
+      {
+        "term": "syntax:cumulative",
+        "label": "cumulative sentences",
+        "definition": "A main clause comes first and modifying phrases accumulate after it.",
+        "dimension": "syntax",
+        "basis": "observed"
+      },
+      {
+        "term": "syntax:fragmented",
+        "label": "fragmented syntax",
+        "definition": "Sentence fragments and broken syntax are used deliberately.",
+        "dimension": "syntax",
+        "basis": "observed"
+      },
+      {
+        "term": "syntax:paratactic",
+        "label": "parataxis",
+        "definition": "Clauses are set side by side, joined by \"and\", commas or semicolons, with little subordination.",
+        "dimension": "syntax",
+        "basis": "observed"
+      },
+      {
+        "term": "tone:melancholy",
+        "label": "melancholy",
+        "definition": "Sad or wistful.",
+        "dimension": "tone",
+        "basis": "interpretation"
+      },
+      {
+        "term": "tone:tender",
+        "label": "tender",
+        "definition": "Affectionate and gentle.",
+        "dimension": "tone",
+        "basis": "interpretation"
+      }
+    ],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments.",
+      "Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations."
+    ]
+  }
+}

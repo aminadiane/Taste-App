@@ -1,0 +1,2458 @@
+{
+  "version": 2,
+  "updated": "2026-10-21",
+  "notes": "Literature library. Books keyed by slug; any number of passages per book. A passage appears in the paperback only when status is \"ready\". Passage ids are stable: votes are keyed by them. Each passage is chosen from a verified official or authorised excerpt (source.url, verified date); locator gives its first and last words so the text can be entered exactly. Text is entered by the owner from that source; metadata was written from a reading of the passage itself. Ranks: NYT 100 Best Books of the 21st Century (2024).",
+  "schema": {
+    "book": [
+      "title",
+      "author",
+      "year",
+      "translator",
+      "publisher",
+      "nytRank"
+    ],
+    "passage": {
+      "id": "<book-slug>-NN, never renamed",
+      "book": "book slug",
+      "status": "needs-text | ready",
+      "text": "array of paragraphs, verbatim from the source",
+      "source": {
+        "name": "",
+        "url": "",
+        "kind": "publisher excerpt | authorised excerpt",
+        "verified": "YYYY-MM-DD",
+        "edition": "",
+        "isbn": "",
+        "pages": ""
+      },
+      "attribution": "",
+      "notes": {
+        "author": "the author (info page)",
+        "work": "the work and where the passage sits (info page)"
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "",
+          "person": "",
+          "tense": "",
+          "proseStyle": "",
+          "rhythm": "",
+          "pacing": "",
+          "imagery": "",
+          "techniques": [
+            {
+              "name": "",
+              "text": ""
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": ""
+        }
+      },
+      "locator": {
+        "start": "first words",
+        "end": "last words",
+        "where": "chapter / page in the source"
+      }
+    }
+  },
+  "books": {
+    "my-brilliant-friend": {
+      "title": "My Brilliant Friend",
+      "author": "Elena Ferrante",
+      "year": 2012,
+      "translator": "Ann Goldstein",
+      "publisher": "Europa Editions",
+      "nytRank": 1,
+      "isbn": "9781609450786",
+      "edition": "Europa Editions, 2012"
+    },
+    "wolf-hall": {
+      "title": "Wolf Hall",
+      "author": "Hilary Mantel",
+      "year": 2009,
+      "translator": null,
+      "publisher": "Henry Holt",
+      "nytRank": 3,
+      "isbn": "9780805080681",
+      "edition": "Henry Holt and Co., 2009"
+    },
+    "austerlitz": {
+      "title": "Austerlitz",
+      "author": "W. G. Sebald",
+      "year": 2001,
+      "translator": "Anthea Bell",
+      "publisher": "Random House",
+      "nytRank": 8,
+      "isbn": "9780307365828",
+      "edition": "Random House / Knopf Canada ebook"
+    },
+    "never-let-me-go": {
+      "title": "Never Let Me Go",
+      "author": "Kazuo Ishiguro",
+      "year": 2005,
+      "translator": null,
+      "publisher": "Alfred A. Knopf",
+      "nytRank": 9,
+      "isbn": "1400043395",
+      "edition": "Alfred A. Knopf, 2005"
+    },
+    "gilead": {
+      "title": "Gilead",
+      "author": "Marilynne Robinson",
+      "year": 2004,
+      "translator": null,
+      "publisher": "Farrar, Straus and Giroux",
+      "nytRank": 10,
+      "isbn": "9780374602109",
+      "edition": "Farrar, Straus and Giroux, Oprah's Book Club edition, 2020"
+    },
+    "the-warmth-of-other-suns": {
+      "title": "The Warmth of Other Suns",
+      "author": "Isabel Wilkerson",
+      "year": 2010,
+      "firstEnglishYear": 2010,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Narrative history / literary nonfiction",
+      "publisher": null,
+      "nytRank": 2,
+      "isbn": "9780679763888",
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.penguinrandomhouseretail.com/book/?isbn=9780679763888"
+        ]
+      }
+    },
+    "the-known-world": {
+      "title": "The Known World",
+      "author": "Edward P. Jones",
+      "year": 2003,
+      "firstEnglishYear": 2003,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Historical novel",
+      "publisher": null,
+      "nytRank": 4,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.bookbrowse.com/excerpts/index.cfm/book_number/1279/The-Known-World"
+        ]
+      }
+    },
+    "the-underground-railroad": {
+      "title": "The Underground Railroad",
+      "author": "Colson Whitehead",
+      "year": 2016,
+      "firstEnglishYear": 2016,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Historical / speculative novel",
+      "publisher": null,
+      "nytRank": 7,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3444/page_number/1/the-underground-railroad"
+        ]
+      }
+    },
+    "the-road": {
+      "title": "The Road",
+      "author": "Cormac McCarthy",
+      "year": 2006,
+      "firstEnglishYear": 2006,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Post-apocalyptic novel",
+      "publisher": null,
+      "nytRank": 13,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://librarycatalog.dover.nh.gov/bib/8037"
+        ]
+      }
+    },
+    "outline": {
+      "title": "Outline",
+      "author": "Rachel Cusk",
+      "year": 2014,
+      "firstEnglishYear": 2014,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Literary novel",
+      "publisher": null,
+      "nytRank": 14,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://books.google.com/books/about/Outline.html?id=ClIaBAAAQBAJ"
+        ]
+      }
+    },
+    "pachinko": {
+      "title": "Pachinko",
+      "author": "Min Jin Lee",
+      "year": 2017,
+      "firstEnglishYear": 2017,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Historical family-saga novel",
+      "publisher": null,
+      "nytRank": 15,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3524/pachinko"
+        ]
+      }
+    },
+    "the-sellout": {
+      "title": "The Sellout",
+      "author": "Paul Beatty",
+      "year": 2015,
+      "firstEnglishYear": 2015,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Satirical novel",
+      "publisher": null,
+      "nytRank": 17,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://us.macmillan.com/books/9780374712242/thesellout/"
+        ]
+      }
+    },
+    "lincoln-in-the-bardo": {
+      "title": "Lincoln in the Bardo",
+      "author": "George Saunders",
+      "year": 2017,
+      "firstEnglishYear": 2017,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Historical / speculative novel",
+      "publisher": null,
+      "nytRank": 18,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3523/lincoln-in-the-bardo"
+        ]
+      }
+    },
+    "behind-the-beautiful-forevers": {
+      "title": "Behind the Beautiful Forevers",
+      "author": "Katherine Boo",
+      "year": 2012,
+      "firstEnglishYear": 2012,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Literary reportage / narrative nonfiction",
+      "publisher": null,
+      "nytRank": 22,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://pen.org/behind-the-beautiful-forevers/"
+        ]
+      }
+    },
+    "hateship-friendship-courtship-loveship-marriage": {
+      "title": "Hateship, Friendship, Courtship, Loveship, Marriage",
+      "author": "Alice Munro",
+      "year": 2001,
+      "firstEnglishYear": 2001,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Short-story collection",
+      "publisher": null,
+      "nytRank": 23,
+      "isbn": "9780375727436",
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://penguinrandomhousehighereducation.com/book/?isbn=9780375727436"
+        ]
+      }
+    },
+    "americanah": {
+      "title": "Americanah",
+      "author": "Chimamanda Ngozi Adichie",
+      "year": 2013,
+      "firstEnglishYear": 2013,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Literary / diasporic novel",
+      "publisher": null,
+      "nytRank": 27,
+      "isbn": "9780307962126",
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://penguinrandomhouselibrary.com/book/?isbn=9780307962126"
+        ]
+      }
+    },
+    "cloud-atlas": {
+      "title": "Cloud Atlas",
+      "author": "David Mitchell",
+      "year": 2004,
+      "firstEnglishYear": 2004,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Literary / speculative novel",
+      "publisher": null,
+      "nytRank": 28,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.penguinrandomhouse.com/books/115430/cloud-atlas-20th-anniversary-edition-by-david-mitchell/9780375507250/"
+        ]
+      }
+    },
+    "citizen-an-american-lyric": {
+      "title": "Citizen: An American Lyric",
+      "author": "Claudia Rankine",
+      "year": 2014,
+      "firstEnglishYear": 2014,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Poetry / hybrid lyric",
+      "publisher": null,
+      "nytRank": 34,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://pen.org/you-and-your-partner/"
+        ]
+      }
+    },
+    "the-years": {
+      "title": "The Years",
+      "author": "Annie Ernaux",
+      "year": 2008,
+      "firstEnglishYear": 2017,
+      "translator": "Alison L. Strayer",
+      "originalLanguage": "French",
+      "genre": "Collective autobiography / memoir",
+      "publisher": null,
+      "nytRank": 37,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://sevenstories.com/books/4032-the-years"
+        ]
+      }
+    },
+    "a-visit-from-the-goon-squad": {
+      "title": "A Visit from the Goon Squad",
+      "author": "Jennifer Egan",
+      "year": 2010,
+      "firstEnglishYear": 2010,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Novel in linked stories",
+      "publisher": null,
+      "nytRank": 39,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://www.bookbrowse.com/excerpts/index.cfm/book_number/2442/a-visit-from-the-goon-squad"
+        ]
+      }
+    },
+    "the-vegetarian": {
+      "title": "The Vegetarian",
+      "author": "Han Kang",
+      "year": 2007,
+      "firstEnglishYear": 2015,
+      "translator": "Deborah Smith",
+      "originalLanguage": "Korean",
+      "genre": "Literary / psychological novel",
+      "publisher": null,
+      "nytRank": 49,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://english.northwestern.edu/documents/undergraduate/literature/nyt-best-100-books-21c-two-pager.pdf",
+        "sources": [
+          "https://lithub.com/the-vegetarian/"
+        ]
+      }
+    },
+    "secondhand-time": {
+      "title": "Secondhand Time",
+      "author": "Svetlana Alexievich",
+      "year": 2013,
+      "firstEnglishYear": 2016,
+      "translator": "Bela Shayevich",
+      "originalLanguage": "Russian",
+      "genre": "Oral history / documentary literature",
+      "publisher": null,
+      "nytRank": 72,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://libraryaware.com/962/Posts/View/9f62894f-8951-4bcd-b6fe-8d81106fbfdd",
+        "sources": [
+          "https://www.penguinrandomhouse.com/books/541184/secondhand-time-by-svetlana-alexievich/",
+          "https://fitzcarraldoeditions.com/books/second-hand-time/"
+        ]
+      }
+    },
+    "septology": {
+      "title": "Septology",
+      "author": "Jon Fosse",
+      "year": 2019,
+      "yearNote": "2019–2021",
+      "firstEnglishYear": 2019,
+      "translator": "Damion Searls",
+      "originalLanguage": "Norwegian (Nynorsk)",
+      "genre": "Literary novel in seven parts",
+      "publisher": null,
+      "nytRank": 78,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://libraryaware.com/962/Posts/View/9f62894f-8951-4bcd-b6fe-8d81106fbfdd",
+        "sources": [
+          "https://www.nobelprize.org/prizes/literature/2023/bio-bibliography/",
+          "https://en.wikipedia.org/wiki/Septology"
+        ]
+      }
+    },
+    "hurricane-season": {
+      "title": "Hurricane Season",
+      "author": "Fernanda Melchor",
+      "year": 2017,
+      "firstEnglishYear": 2020,
+      "translator": "Sophie Hughes",
+      "originalLanguage": "Spanish",
+      "genre": "Literary / crime novel",
+      "publisher": null,
+      "nytRank": 82,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://libraryaware.com/962/Posts/View/9f62894f-8951-4bcd-b6fe-8d81106fbfdd",
+        "sources": [
+          "https://en.wikipedia.org/wiki/Hurricane_Season_(novel)"
+        ]
+      }
+    },
+    "station-eleven": {
+      "title": "Station Eleven",
+      "author": "Emily St. John Mandel",
+      "year": 2014,
+      "firstEnglishYear": 2014,
+      "translator": null,
+      "originalLanguage": "English",
+      "genre": "Literary / post-apocalyptic novel",
+      "publisher": null,
+      "nytRank": 93,
+      "isbn": null,
+      "research": {
+        "by": "ChatGPT Work",
+        "rankSource": "https://libraryaware.com/962/Posts/View/9f62894f-8951-4bcd-b6fe-8d81106fbfdd",
+        "sources": [
+          "https://www.emilymandel.com/station-eleven-excerpt"
+        ]
+      }
+    }
+  },
+  "passages": [
+    {
+      "id": "my-brilliant-friend-01",
+      "book": "my-brilliant-friend",
+      "status": "ready",
+      "text": [
+        "I remember the violet light of the courtyard, the smells of a warm spring evening. The mothers were making dinner, it was time to go home, but we delayed, challenging each other, without ever saying a word, testing our courage. For some time, in school and outside of it, that was what we had been doing. Lila would thrust her hand and then her whole arm into the black mouth of a manhole, and I, in turn, immediately did the same, my heart pounding, hoping that the cockroaches wouldn’t run over my skin, that the rats wouldn’t bite me."
+      ],
+      "source": {
+        "name": "Diane Rehm Show, Readers' Review: My Brilliant Friend (Scribd excerpt embedded on the page)",
+        "url": "https://dianerehm.org/shows/2015-11-25/readers-review-my-brilliant-friend-by-elena-ferrante/",
+        "kind": "authorised excerpt",
+        "verified": "2026-10-21",
+        "edition": "Europa Editions, 2012",
+        "isbn": "9781609450786",
+        "pages": "27"
+      },
+      "attribution": "Excerpt from My Brilliant Friend by Elena Ferrante. Translation by Ann Goldstein. Copyright © 2012 by Edizioni E/O. First publication 2012 by Europa Editions. Used with permission.",
+      "notes": {
+        "author": "Elena Ferrante is the pseudonym of an Italian novelist who has never appeared in public. My Brilliant Friend is the first of the four Neapolitan novels, translated by Ann Goldstein.",
+        "work": "The narrator, Elena, now in her sixties, recalls her childhood friendship with Lila in a poor neighbourhood of Naples in the 1950s. This passage comes from the first page."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "retrospective first person; the adult narrator recalls herself as a child",
+          "person": "first",
+          "tense": "past, with habitual past (\"would thrust\")",
+          "proseStyle": "plain, concrete diction in long cumulative sentences joined by commas",
+          "rhythm": "long sentences that accumulate clauses; a repeated pattern of Lila acting and the narrator copying",
+          "pacing": "moves from one remembered evening back to a habit of many days",
+          "imagery": "the violet light of the courtyard, the black mouth of a manhole, cockroaches and rats",
+          "techniques": [
+            {
+              "name": "Mirroring",
+              "text": "each dare Lila performs is followed by the narrator doing the same, which sets up their relationship in the structure of the sentences."
+            },
+            {
+              "name": "Retrospective frame",
+              "text": "\"I remember\" places a distant adult voice over the child's fear."
+            },
+            {
+              "name": "Unspoken contest",
+              "text": "the girls challenge each other \"without ever saying a word\", so the rivalry is shown only through what they do."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "tense and intimate; fear held at a remembered distance",
+          "features": {
+            "register": "restrained",
+            "tone": [
+              "tense",
+              "intimate"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "past",
+          "narration": "retrospective",
+          "sentenceLength": "long",
+          "syntax": "cumulative",
+          "diction": "plain",
+          "figuration": "moderate",
+          "dialogue": "none",
+          "focus": "action",
+          "pace": "summary",
+          "device": [
+            "mirroring",
+            "retrospective-frame"
+          ],
+          "form": "novel"
+        }
+      },
+      "locator": {
+        "start": "I remember the violet light",
+        "end": "that the rats wouldn't bite me.",
+        "where": "Childhood, The Story of Don Achille, chapter 1, first page"
+      }
+    },
+    {
+      "id": "the-warmth-of-other-suns-01",
+      "book": "the-warmth-of-other-suns",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-002-the-warmth-of-other-suns",
+      "source": {
+        "name": "Penguin Random House Retail",
+        "url": "https://www.penguinrandomhouseretail.com/book/?isbn=9780679763888",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Warmth of Other Suns by Isabel Wilkerson. Source: Penguin Random House Retail. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Analyze this reconstructed nonfiction scene as reported narrative; its interior access is not proof of verbatim historical thoughts."
+      },
+      "locator": {
+        "start": "the night clouds were closing",
+        "end": "out of the bottomland.",
+        "where": "Leaving; subsection 1; Chickasaw County, Mississippi, Late October 1937",
+        "boundaries": "Under Excerpt, skip epigraphs. Select subsection 1 prose from its first sentence through the last paragraph before subsection 2, Wildwood, Florida. Include the prayer and dialogue.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Third-person reconstructed historical scene, close to Ida Mae and her family.",
+          "proseStyle": "Concrete domestic realism within historical narration.",
+          "rhythm": "Accumulating lists alternate with short statements and spoken vernacular.",
+          "pacing": "Preparations slow the departure into successive small actions.",
+          "imagery": "Night clouds, quilts, bare feet, truck, train.",
+          "techniques": [
+            {
+              "name": "Scenic reconstruction",
+              "text": ""
+            },
+            {
+              "name": "Enumeration",
+              "text": ""
+            },
+            {
+              "name": "Shifting proximity",
+              "text": ""
+            },
+            {
+              "name": "Dialogue",
+              "text": ""
+            }
+          ],
+          "craft": "Ordinary packing and a child's resistance to shoes give the migration physical scale. The mother's prayer turns departure into a shared family ritual."
+        },
+        "interpretation": {
+          "tone": "Apprehensive, intimate, quietly resolute",
+          "features": {
+            "tone": [
+              "uneasy",
+              "intimate"
+            ]
+          }
+        },
+        "features": {
+          "form": "nonfiction",
+          "person": "third",
+          "sentenceLength": "varied",
+          "pace": "scene",
+          "device": [
+            "list"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "wolf-hall-01",
+      "book": "wolf-hall",
+      "status": "ready",
+      "text": [
+        "“So now get up.”",
+        "Felled, dazed, silent, he has fallen; knocked full length on the cobbles of the yard. His head turns sideways; his eyes are turned toward the gate, as if someone might arrive to help him out. One blow, properly placed, could kill him now.",
+        "Blood from the gash on his head—which was his father’s first effort—is trickling across his face. Add to this, his left eye is blinded; but if he squints sideways, with his right eye he can see that the stitching of his father’s boot is unraveling."
+      ],
+      "source": {
+        "name": "Macmillan, Wolf Hall book page (Read Excerpt)",
+        "url": "https://us.macmillan.com/books/9780805080681/wolfhall/",
+        "kind": "publisher excerpt",
+        "verified": "2026-10-21",
+        "edition": "Henry Holt and Co., 2009",
+        "isbn": "9780805080681",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Wolf Hall by Hilary Mantel. Copyright © 2009 by Hilary Mantel. Published by Henry Holt and Company.",
+      "notes": {
+        "author": "Hilary Mantel (1952–2022) was an English novelist. Wolf Hall and its sequel Bring Up the Bodies both won the Booker Prize.",
+        "work": "The first novel of a trilogy about Thomas Cromwell at the court of Henry VIII. It opens in 1500 with the young Cromwell beaten by his father, Walter."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "close third person, held to the boy's senses; he is not yet named",
+          "person": "third (\"he\")",
+          "tense": "present",
+          "proseStyle": "short clauses and semicolons; exact physical detail; plain modern English",
+          "rhythm": "staccato opening (\"Felled, dazed, silent\"), then longer sentences of observation",
+          "pacing": "slowed to seconds; one moment on the cobbles is examined in detail",
+          "imagery": "blood across the face, the cobbles of the yard, the unravelling stitching of the father's boot seen with one eye",
+          "techniques": [
+            {
+              "name": "In medias res",
+              "text": "the chapter opens on a shouted command and a body already on the ground."
+            },
+            {
+              "name": "Withheld identity",
+              "text": "the boy is only \"he\"; the reader is placed inside him before knowing who he is."
+            },
+            {
+              "name": "Close detail",
+              "text": "the injured eye notices the stitching of the boot coming loose, a small exact detail amid the violence."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "brutal and unflinching, observed without self-pity",
+          "features": {
+            "register": "restrained",
+            "tone": [
+              "brutal",
+              "tense"
+            ]
+          }
+        },
+        "features": {
+          "person": "third",
+          "tense": "present",
+          "narration": "immediate",
+          "sentenceLength": "varied",
+          "syntax": "paratactic",
+          "diction": "plain",
+          "figuration": "sparse",
+          "dialogue": "marked",
+          "focus": "action",
+          "pace": "scene",
+          "device": [
+            "in-medias-res",
+            "withheld-identity",
+            "close-detail"
+          ],
+          "form": "novel"
+        }
+      },
+      "locator": {
+        "start": "“So now get up.”",
+        "end": "is unraveling.",
+        "where": "Part One, I, Across the Narrow Sea, Putney, 1500, opening"
+      }
+    },
+    {
+      "id": "the-known-world-01",
+      "book": "the-known-world",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-004-the-known-world",
+      "source": {
+        "name": "BookBrowse; HarperCollins permission credit",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/1279/The-Known-World",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Known World by Edward P. Jones. Source: BookBrowse; HarperCollins permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": null
+      },
+      "locator": {
+        "start": "The evening his master died",
+        "end": "covered with dew.",
+        "where": "Chapter One: Liaison. The Warmth of Family. Stormy Weather.",
+        "boundaries": "Select the first three prose paragraphs after the chapter heading, ending with the future recollection of sleeping outdoors. Stop before the paragraph beginning The ground was almost soaked on excerpt page 2.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Omniscient third person, initially close to Moses.",
+          "proseStyle": "Materially precise realism with an expansive temporal reach.",
+          "rhythm": "Long subordinated sentences combine bodily action and explanatory qualification.",
+          "pacing": "Slow bodily observation, then compression and a leap into future memory.",
+          "imagery": "Soil tasted, sunset strip, rain on a naked body.",
+          "techniques": [
+            {
+              "name": "Prolepsis",
+              "text": ""
+            },
+            {
+              "name": "Sensory focalization",
+              "text": ""
+            },
+            {
+              "name": "Personification",
+              "text": ""
+            },
+            {
+              "name": "Historical irony",
+              "text": ""
+            }
+          ],
+          "craft": "The soil-tasting ritual makes attachment to land tactile. A forward glance to old age complicates the apparent immediacy of the scene."
+        },
+        "interpretation": {
+          "tone": "Exhausted, solitary, contemplative",
+          "features": {
+            "tone": [
+              "reflective"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "sentenceLength": "long",
+          "syntax": "hypotactic",
+          "device": [
+            "prolepsis",
+            "personification",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "the-underground-railroad-01",
+      "book": "the-underground-railroad",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-007-the-underground-railroad",
+      "source": {
+        "name": "BookBrowse; publisher copyright notice",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3444/page_number/1/the-underground-railroad",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Underground Railroad by Colson Whitehead. Source: BookBrowse; publisher copyright notice. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "BookBrowse search snippet omitted sentences visible on the opened page; boundaries follow the opened page."
+      },
+      "locator": {
+        "start": "THE first time Caesar approached",
+        "end": "in exponential misery.",
+        "where": "Opening excerpt; Ajarry backstory; chapter name not displayed",
+        "boundaries": "Start at the first prose sentence. Continue through the paragraph describing the sailors preventing Ajarry's suicide attempts, ending with the repeated chaining phrase. Stop before the paragraph about the auction in Ouidah.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Omniscient third person linking Cora's decision to Ajarry's captivity.",
+          "proseStyle": "Compressed historical narration with stark physical detail.",
+          "rhythm": "Declaratives and sentence fragments interrupt longer explanatory sentences.",
+          "pacing": "Moves quickly across capture, sale, and the Atlantic voyage.",
+          "imagery": "Dungeon darkness, cowrie shells, ship hold, bone-white skin.",
+          "techniques": [
+            {
+              "name": "Analepsis",
+              "text": ""
+            },
+            {
+              "name": "Repetition",
+              "text": ""
+            },
+            {
+              "name": "Economic diction",
+              "text": ""
+            },
+            {
+              "name": "Juxtaposition",
+              "text": ""
+            }
+          ],
+          "craft": "The opening refusal becomes a route into inherited experience. Trading vocabulary and abrupt bodily images connect abstraction to the violence of enslavement."
+        },
+        "interpretation": {
+          "tone": "Grave, controlled, harrowing",
+          "features": {}
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "sentenceLength": "varied",
+          "pace": "summary",
+          "device": [
+            "analepsis",
+            "repetition"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "austerlitz-01",
+      "book": "austerlitz",
+      "status": "ready",
+      "text": [
+        "In the second half of the 1960s I traveled repeatedly from England to Belgium, partly for study purposes, partly for other reasons which were never entirely clear to me, staying sometimes for just one or two days, sometimes for several weeks. On one of these Belgian excursions which, as it seemed to me, always took me further and further abroad, I came on a glorious early summer's day to the city of Antwerp, known to me previously only by name."
+      ],
+      "source": {
+        "name": "Penguin Random House Canada, Austerlitz excerpt",
+        "url": "https://www.penguinrandomhouse.ca/books/163503/austerlitz-by-w-g-sebald-translated-by-anthea-bell/9780307365828/excerpt",
+        "kind": "publisher excerpt",
+        "verified": "2026-10-21",
+        "edition": "translated by Anthea Bell",
+        "isbn": "9780307365828",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Austerlitz by W. G. Sebald, translated by Anthea Bell. Published by Penguin Random House.",
+      "notes": {
+        "author": "W. G. Sebald (1944–2001) was a German writer who lived in England; his books mix fiction, travel, memoir and photographs. Austerlitz was his last novel.",
+        "work": "An unnamed narrator recounts his meetings, over decades, with Jacques Austerlitz, who slowly recovers his lost childhood. This is the novel's opening, in Antwerp."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "retrospective first person; an unnamed narrator recalling his own uncertain movements",
+          "person": "first",
+          "tense": "past",
+          "proseStyle": "long, formal sentences with many subordinate clauses; measured, slightly old-fashioned diction",
+          "rhythm": "extended periodic sentences that defer their main point",
+          "pacing": "unhurried and digressive; travel described as drift",
+          "imagery": "few images; a glorious early summer's day and a city \"known to me previously only by name\"",
+          "techniques": [
+            {
+              "name": "Admitted uncertainty",
+              "text": "the narrator travels \"for other reasons which were never entirely clear to me\", so his account begins in doubt."
+            },
+            {
+              "name": "Cumulative sentence",
+              "text": "clauses pile up within each sentence and defer its point, so the journey reads as drift."
+            },
+            {
+              "name": "Hedged perception",
+              "text": "\"as it seemed to me\" qualifies even the direction of his travels."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "melancholy and uneasy",
+          "features": {
+            "register": "lyrical",
+            "tone": [
+              "melancholy",
+              "uneasy"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "past",
+          "narration": "retrospective",
+          "sentenceLength": "long",
+          "syntax": "hypotactic",
+          "diction": "formal",
+          "figuration": "sparse",
+          "dialogue": "none",
+          "focus": "reflection",
+          "pace": "digressive",
+          "device": [
+            "hedging"
+          ],
+          "form": "novel"
+        }
+      },
+      "locator": {
+        "start": "In the second half of the 1960s",
+        "end": "known to me previously only by name.",
+        "where": "Chapter 1, opening"
+      }
+    },
+    {
+      "id": "never-let-me-go-01",
+      "book": "never-let-me-go",
+      "status": "ready",
+      "text": [
+        "My name is Kathy H. I'm thirty-one years old, and I've been a carer now for over eleven years. That sounds long enough, I know, but actually they want me to go on for another eight months, until the end of this year. That'll make it almost exactly twelve years. Now I know my being a carer so long isn't necessarily because they think I'm fantastic at what I do. There are some really good carers who've been told to stop after just two or three years. And I can think of one carer at least who went on for all of fourteen years despite being a complete waste of space."
+      ],
+      "source": {
+        "name": "KCRW, Excerpt from Never Let Me Go",
+        "url": "https://www.kcrw.com/pages/excerpt-from-never-let-me-go",
+        "kind": "authorised excerpt",
+        "verified": "2026-10-21",
+        "edition": "Alfred A. Knopf, 2005",
+        "isbn": "1400043395",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Never Let Me Go by Kazuo Ishiguro. Copyright © 2005 by Kazuo Ishiguro. Published by Alfred A. Knopf. Excerpt supplied by Dial-A-Book.",
+      "notes": {
+        "author": "Kazuo Ishiguro, born in Nagasaki in 1954 and raised in England, received the Nobel Prize in Literature in 2017.",
+        "work": "Kathy H. looks back on her years at Hailsham, an English boarding school, and on her friends Ruth and Tommy. This is the novel's opening."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "first person, conversational, addressed to a listener",
+          "person": "first",
+          "tense": "present for her situation, past for her record",
+          "proseStyle": "plain, colloquial diction (\"a complete waste of space\"); short sentences",
+          "rhythm": "short declarative sentences with frequent self-corrections",
+          "pacing": "a calm self-introduction that gives facts without explaining them",
+          "imagery": "few images; the passage works through institutional terms rather than pictures",
+          "techniques": [
+            {
+              "name": "Unexplained terminology",
+              "text": "\"carer\", and being \"told to stop\" after a set number of years, are stated as ordinary facts, so the reader must infer the world."
+            },
+            {
+              "name": "Self-correction",
+              "text": "Kathy qualifies her own claims (\"That sounds long enough, I know, but actually\"), building an anxious, modest voice."
+            },
+            {
+              "name": "Direct address",
+              "text": "she speaks as if to someone who already knows her world."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "calm, polite and quietly unsettling",
+          "features": {
+            "register": "restrained",
+            "tone": [
+              "calm",
+              "unsettling"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "mixed",
+          "narration": "retrospective",
+          "sentenceLength": "short",
+          "syntax": "paratactic",
+          "diction": "colloquial",
+          "figuration": "sparse",
+          "dialogue": "none",
+          "focus": "interior",
+          "pace": "summary",
+          "device": [
+            "direct-address",
+            "self-correction",
+            "unexplained-terms"
+          ],
+          "form": "novel"
+        }
+      },
+      "locator": {
+        "start": "My name is Kathy H.",
+        "end": "a complete waste of space.",
+        "where": "Chapter One, opening"
+      }
+    },
+    {
+      "id": "gilead-01",
+      "book": "gilead",
+      "status": "ready",
+      "text": [
+        "I told you last night that I might be gone sometime, and you said, Where, and I said, To be with the Good Lord, and you said, Why, and I said, Because I’m old, and you said, I don’t think you’re old. And you put your hand in my hand and you said, You aren’t very old, as if that settled it. I told you you might have a very different life from mine, and from the life you’ve had with me, and that would be a wonderful thing, there are many ways to live a good life. And you said, Mama already told me that. And then you said, Don’t laugh! because you thought I was laughing at you."
+      ],
+      "source": {
+        "name": "Macmillan, Gilead (Oprah's Book Club) book page (Read Excerpt)",
+        "url": "https://us.macmillan.com/books/9780374602109/gileadoprahsbookclub/",
+        "kind": "publisher excerpt",
+        "verified": "2026-10-21",
+        "edition": "Farrar, Straus and Giroux, 2020",
+        "isbn": "9780374602109",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Gilead by Marilynne Robinson. Copyright © 2004 by Marilynne Robinson. Published by Farrar, Straus and Giroux.",
+      "notes": {
+        "author": "Marilynne Robinson, born in 1943, is an American novelist and essayist. Gilead won the Pulitzer Prize for Fiction in 2005.",
+        "work": "John Ames, an elderly pastor in Gilead, Iowa, writes a long letter to his young son, to be read when the boy is grown. This is its opening."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "first person, epistolary; a father writing to his young son",
+          "person": "first, addressing \"you\"",
+          "tense": "past for last night's conversation, inside a present-tense letter",
+          "proseStyle": "plain words in one long sentence of reported speech without quotation marks",
+          "rhythm": "a chain of \"and you said … and I said\" clauses that move like conversation",
+          "pacing": "slow; one small exchange is given in full",
+          "imagery": "the child's hand in the old man's hand",
+          "techniques": [
+            {
+              "name": "Epistolary address",
+              "text": "the narrator speaks to \"you\", a son who will read the letter only as a grown man."
+            },
+            {
+              "name": "Polysyndeton",
+              "text": "repeated \"and\" joins the turns of the conversation into one unbroken sentence."
+            },
+            {
+              "name": "Unmarked dialogue",
+              "text": "speech is reported without quotation marks, so voices sit inside the writer's memory."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "tender and reflective, aware of death without fear",
+          "features": {
+            "register": "lyrical",
+            "tone": [
+              "tender",
+              "reflective"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "past",
+          "narration": "epistolary",
+          "sentenceLength": "long",
+          "syntax": "paratactic",
+          "diction": "plain",
+          "figuration": "sparse",
+          "dialogue": "unmarked",
+          "focus": "interior",
+          "pace": "scene",
+          "device": [
+            "polysyndeton",
+            "unmarked-speech",
+            "direct-address"
+          ],
+          "form": "novel"
+        }
+      },
+      "locator": {
+        "start": "I told you last night that I might be gone sometime",
+        "end": "because you thought I was laughing at you.",
+        "where": "opening"
+      }
+    },
+    {
+      "id": "the-road-01",
+      "book": "the-road",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-013-the-road",
+      "source": {
+        "name": "Bookreporter; Vintage excerpt credit",
+        "url": "https://www.bookreporter.com/reviews/the-road/excerpt",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Road by Cormac McCarthy. Source: Bookreporter; Vintage excerpt credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Page carries a later excerpt copyright date; 2006 is the book's first-publication year, not that page date."
+      },
+      "locator": {
+        "start": "When he woke in the",
+        "end": "soundlessly into the dark.",
+        "where": "Unnumbered opening; waking and cave dream",
+        "boundaries": "Select the opening four prose paragraphs: the waking father, the cave dream, the creature's body, and its retreat. Stop before the first gray light paragraph.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Third person closely aligned with the father.",
+          "proseStyle": "Spare, biblical and dreamlike.",
+          "rhythm": "Fragments alternate with long chains joined by and; sparse punctuation.",
+          "pacing": "Nearly motionless observation, then a brief movement into darkness.",
+          "imagery": "Cold woods, flowstone, blind eyes, translucent flesh.",
+          "techniques": [
+            {
+              "name": "Simile",
+              "text": ""
+            },
+            {
+              "name": "Polysyndeton",
+              "text": ""
+            },
+            {
+              "name": "Sensory deprivation",
+              "text": ""
+            },
+            {
+              "name": "Dream framing",
+              "text": ""
+            }
+          ],
+          "craft": "The hand checking the child's breathing anchors the dream's fantastic anatomy in physical care. Broken clauses prolong the uncertainty of what can be seen."
+        },
+        "interpretation": {
+          "tone": "Fearful, tender, desolate",
+          "features": {
+            "tone": [
+              "tense",
+              "tender"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "sentenceLength": "varied",
+          "syntax": "paratactic",
+          "pace": "scene",
+          "device": [
+            "simile",
+            "polysyndeton"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "outline-01",
+      "book": "outline",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-014-outline",
+      "source": {
+        "name": "BookBrowse; Farrar, Straus and Giroux permission credit",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3167/outline",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Outline by Rachel Cusk. Source: BookBrowse; Farrar, Straus and Giroux permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Short micro-passage. Original UK publication 2014; BookBrowse's 2015 date is the US edition. Broader claims about the novel's structure are not based on this paragraph."
+      },
+      "locator": {
+        "start": "Before the flight I was",
+        "end": "arrived at that subject.",
+        "where": "Opening; lunch before the flight",
+        "boundaries": "Select only the first prose paragraph after Excerpt / Outline: all three sentences about lunch with a billionaire. Stop before the flight scene continues.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "First-person retrospective observer, reserved and dry.",
+          "proseStyle": "Understated social observation.",
+          "rhythm": "Three balanced sentences with qualifying clauses and a delayed ironic conclusion.",
+          "pacing": "An entire lunch is compressed into a brief report.",
+          "imagery": "An open-necked shirt; otherwise little scenic ornament.",
+          "techniques": [
+            {
+              "name": "Understatement",
+              "text": ""
+            },
+            {
+              "name": "Irony",
+              "text": ""
+            },
+            {
+              "name": "Reported speech",
+              "text": ""
+            },
+            {
+              "name": "Selective omission",
+              "text": ""
+            }
+          ],
+          "craft": "The contrast between the proposed literary conversation and the businessman's actual topic creates irony without explicit denunciation."
+        },
+        "interpretation": {
+          "tone": "Cool, skeptical, wry",
+          "features": {
+            "tone": [
+              "comic"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "first",
+          "narration": "retrospective",
+          "syntax": "hypotactic",
+          "pace": "summary",
+          "device": [
+            "understatement",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "pachinko-01",
+      "book": "pachinko",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-015-pachinko",
+      "source": {
+        "name": "BookBrowse; Grand Central Publishing permission credit",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3524/pachinko",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Pachinko by Min Jin Lee. Source: BookBrowse; Grand Central Publishing permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Original language is English despite Korean setting and Korean names."
+      },
+      "locator": {
+        "start": "History has failed us, but",
+        "end": "called on his mother.",
+        "where": "Chapter 1; Yeongdo, Busan, Korea",
+        "boundaries": "Select all prose on excerpt page 1 after the location heading, from the opening aphorism through the matchmaker's visit in spring 1911. Stop before navigation to page 2.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Omniscient third person with a communal, evaluative voice.",
+          "proseStyle": "Plainspoken chronicle and social realism.",
+          "rhythm": "An opening aphorism leads into measured exposition and qualifying contrasts.",
+          "pacing": "Summarizes decades before arriving at the matchmaker's visit.",
+          "imagery": "Boardinghouse rooms, clay tiles, ledgers, Hoonie's hands and body.",
+          "techniques": [
+            {
+              "name": "Historical compression",
+              "text": ""
+            },
+            {
+              "name": "Characterization by labor",
+              "text": ""
+            },
+            {
+              "name": "Aphorism",
+              "text": ""
+            }
+          ],
+          "craft": "Family survival is explained through space, work, and money. Corrective clauses separate Hoonie's bodily differences from other people's judgments."
+        },
+        "interpretation": {
+          "tone": "Sober, compassionate, pragmatic",
+          "features": {
+            "tone": [
+              "calm"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "pace": "summary"
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "the-sellout-01",
+      "book": "the-sellout",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-017-the-sellout",
+      "source": {
+        "name": "Macmillan / Farrar, Straus and Giroux",
+        "url": "https://us.macmillan.com/books/9780374712242/thesellout/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Sellout by Paul Beatty. Source: Macmillan / Farrar, Straus and Giroux. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Analyze chapter One rather than assuming the source starts with the novel's prologue."
+      },
+      "locator": {
+        "start": "I suppose that’s exactly the",
+        "end": "be able to live down.",
+        "where": "One; childhood and the Farms",
+        "boundaries": "Open Read Excerpt. Select chapter One from its first prose sentence through the paragraph about being both control and experimental group, ending in the narrator's judgment of his upbringing. Stop before the discussion of the Little Albert experiment.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "First-person retrospective narrator, irreverent and self-implicating.",
+          "proseStyle": "Hyperbolic satire mixing academic terminology and colloquial insult.",
+          "rhythm": "Long comic accumulations punctuated by short parallel negations.",
+          "pacing": "Rapid digressions move from family to neighborhood and back.",
+          "imagery": "Laboratory coat, farm birds, padlocks, suburban streets.",
+          "techniques": [
+            {
+              "name": "Parody",
+              "text": ""
+            },
+            {
+              "name": "Bathos",
+              "text": ""
+            },
+            {
+              "name": "Catalogues",
+              "text": ""
+            },
+            {
+              "name": "Register shifts",
+              "text": ""
+            },
+            {
+              "name": "Parallelism",
+              "text": ""
+            }
+          ],
+          "craft": "Behaviorist vocabulary recasts parental care as experimentation. Escalating neighborhood details enlarge the personal grievance into a social satire."
+        },
+        "interpretation": {
+          "tone": "Caustic, comic, wounded",
+          "features": {
+            "tone": [
+              "comic"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "first",
+          "narration": "retrospective",
+          "sentenceLength": "varied",
+          "syntax": "cumulative",
+          "pace": "digressive",
+          "device": [
+            "list",
+            "repetition",
+            "pastiche"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "lincoln-in-the-bardo-01",
+      "book": "lincoln-in-the-bardo",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-018-lincoln-in-the-bardo",
+      "source": {
+        "name": "BookBrowse; Random House permission credit",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/3523/lincoln-in-the-bardo",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Lincoln in the Bardo by George Saunders. Source: BookBrowse; Random House permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "BookBrowse explicitly notes that it approximates the book's unusual layout. Check against a licensed edition before final typesetting."
+      },
+      "locator": {
+        "start": "Mouth at the worm's ear,",
+        "end": "That is a promise.",
+        "where": "XXI",
+        "boundaries": "Select the entire section XXI shown on the excerpt page. Include its final speaker attribution, willie Lincoln, while ending the narrative prose at the promise. Preserve spacing, fragments, ampersands, and attribution placement.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Willie's first-person ghost voice moves into his father's inner experience.",
+          "proseStyle": "Fragmented dramatic monologue with intimate spoken grief.",
+          "rhythm": "Unfinished clauses, gaps, repetitions, and a longer argumentative interior passage.",
+          "pacing": "Pauses and repetitions prolong a single embrace.",
+          "imagery": "Beard, coffee taste, clothing, forelock, bodily weight.",
+          "techniques": [
+            {
+              "name": "Voice blending",
+              "text": ""
+            },
+            {
+              "name": "Embodied focalization",
+              "text": ""
+            },
+            {
+              "name": "Self-justification",
+              "text": ""
+            },
+            {
+              "name": "Repetition",
+              "text": ""
+            }
+          ],
+          "craft": "Willie's effort to reach his father becomes a shift in consciousness. The father's repeated rationalizations reveal the pressure of grief on thought."
+        },
+        "interpretation": {
+          "tone": "Grieving, tender, searching",
+          "features": {
+            "tone": [
+              "tender",
+              "melancholy"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "first",
+          "syntax": "fragmented",
+          "pace": "scene",
+          "device": [
+            "repetition"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "behind-the-beautiful-forevers-01",
+      "book": "behind-the-beautiful-forevers",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-022-behind-the-beautiful-forevers",
+      "source": {
+        "name": "PEN America; Random House permission credit",
+        "url": "https://pen.org/behind-the-beautiful-forevers/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Behind the Beautiful Forevers by Katherine Boo. Source: PEN America; Random House permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Use Boo's prose; the Macmillan result with the same title is David Hare's play adaptation and was excluded."
+      },
+      "locator": {
+        "start": "Let it keep, the moment",
+        "end": "hitching up his knobby spine.",
+        "where": "ANNAWADI; rewind into January 2008",
+        "boundaries": "Skip the epigraph. Under ANNAWADI select the first eight prose paragraphs, through Abdul beginning to sort trash. Stop before the paragraph explaining his approach to neighbors.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Third-person reportage with a guiding narrator, then proximity to Abdul.",
+          "proseStyle": "Scenic, socially observant and materially detailed.",
+          "rhythm": "Imperatives introduce flowing exposition and compact dialogue.",
+          "pacing": "Reverses a dramatic incident, then slows into a morning labor montage.",
+          "imagery": "Flames, silver sewage water, parrots, marigolds, waste.",
+          "techniques": [
+            {
+              "name": "Rewind framing",
+              "text": ""
+            },
+            {
+              "name": "Juxtaposition",
+              "text": ""
+            },
+            {
+              "name": "Montage",
+              "text": ""
+            },
+            {
+              "name": "Sensory detail",
+              "text": ""
+            }
+          ],
+          "craft": "The narrated reversal announces temporal control. The morning's simultaneous tasks link individual labor to a broader economic setting."
+        },
+        "interpretation": {
+          "tone": "Alert, restrained, darkly ironic",
+          "features": {}
+        },
+        "features": {
+          "form": "nonfiction",
+          "person": "third",
+          "device": [
+            "montage",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "hateship-friendship-courtship-loveship-marriage-01",
+      "book": "hateship-friendship-courtship-loveship-marriage",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-023-hateship-friendship-courtship-loveship-marriage",
+      "source": {
+        "name": "Penguin Random House Higher Education",
+        "url": "https://penguinrandomhousehighereducation.com/book/?isbn=9780375727436",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Hateship, Friendship, Courtship, Loveship, Marriage by Alice Munro. Source: Penguin Random House Higher Education. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Collection publication year is 2001; source is a later paperback. The selected passage is from the title story."
+      },
+      "locator": {
+        "start": "Years ago, before the trains",
+        "end": "He turned all business.",
+        "where": "Title story; opening railway-station exchange",
+        "boundaries": "Under Excerpt select from the title story's first sentence through the standalone sentence in the closing locator. Stop before the agent explains the need for a truck.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Third person sliding into the station agent's appraisals.",
+          "proseStyle": "Realist, conversational, sharply observant.",
+          "rhythm": "Descriptive sentences alternate with clipped dialogue and a furniture list.",
+          "pacing": "A practical transaction unfolds almost in real time.",
+          "imagery": "Freckled forehead, teeth, hair, household furniture.",
+          "techniques": [
+            {
+              "name": "Free indirect discourse",
+              "text": ""
+            },
+            {
+              "name": "Characterization through objects",
+              "text": ""
+            },
+            {
+              "name": "Irony",
+              "text": ""
+            }
+          ],
+          "craft": "The furniture inventory conveys purposeful change while the agent's appraisals expose assumptions about gender and appearance."
+        },
+        "interpretation": {
+          "tone": "Dry, socially uneasy, guarded",
+          "features": {
+            "tone": [
+              "uneasy"
+            ]
+          }
+        },
+        "features": {
+          "form": "short-story",
+          "person": "third",
+          "sentenceLength": "varied",
+          "pace": "scene",
+          "device": [
+            "free-indirect",
+            "list",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "americanah-01",
+      "book": "americanah",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-027-americanah",
+      "source": {
+        "name": "Penguin Random House Library Marketing",
+        "url": "https://penguinrandomhouselibrary.com/book/?isbn=9780307962126",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Americanah by Chimamanda Ngozi Adichie. Source: Penguin Random House Library Marketing. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": null
+      },
+      "locator": {
+        "start": "Princeton, in the summer, smelled",
+        "end": "her handbag had melted.",
+        "where": "Opening; Princeton and the journey to braid hair",
+        "boundaries": "Use the Excerpt section, not the duplicate excerpt teaser above it. Select the first four prose paragraphs through the melted chocolate bar. Stop before the description of other passengers.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Close third person with Ifemelu's evaluative, observant consciousness.",
+          "proseStyle": "Sensory realism and social satire.",
+          "rhythm": "An expansive opening sentence and repeated clauses lead to a blunt practical reversal.",
+          "pacing": "Leisurely urban observation narrows to an immediate inconvenience.",
+          "imagery": "City smells, Gothic buildings, summer heat, melted chocolate.",
+          "techniques": [
+            {
+              "name": "Anaphora",
+              "text": ""
+            },
+            {
+              "name": "Olfactory contrast",
+              "text": ""
+            },
+            {
+              "name": "Irony",
+              "text": ""
+            },
+            {
+              "name": "Focalization",
+              "text": ""
+            }
+          ],
+          "craft": "Smell makes classed spaces tangible. Repetition establishes ease before the hair-braiding problem reveals a limit to that apparent belonging."
+        },
+        "interpretation": {
+          "tone": "Appreciative, skeptical, quietly estranged",
+          "features": {}
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "focus": "description",
+          "device": [
+            "anaphora",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "cloud-atlas-01",
+      "book": "cloud-atlas",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-028-cloud-atlas",
+      "source": {
+        "name": "BookBrowse; publisher permission notice",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/2784/cloud-atlas",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Cloud Atlas by David Mitchell. Source: BookBrowse; publisher permission notice. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Source does not print the larger section title; narrative identity is confirmed by Ewing being addressed in the passage."
+      },
+      "locator": {
+        "start": "Beyond the Indian hamlet, upon",
+        "end": "sympathy with the doctor's plight.",
+        "where": "Opening journal entry; Thursday, 7th November; Adam Ewing narrative",
+        "boundaries": "Select prose after the Thursday date heading through Ewing's sentence expressing sympathy for Goose. Include the date as a section heading. Stop before Goose thanks him and resumes explaining the teeth.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "First-person journal by Adam Ewing, formal and deferential.",
+          "proseStyle": "Historical pastiche with comic travelogue detail.",
+          "rhythm": "Elaborate descriptive syntax, ampersands and rhetorical questions contrast with short replies.",
+          "pacing": "A leisurely discovery becomes an animated exchange.",
+          "imagery": "Rotting kelp, cindery sand, collected teeth, clothing.",
+          "techniques": [
+            {
+              "name": "Pastiche",
+              "text": ""
+            },
+            {
+              "name": "Dialogue",
+              "text": ""
+            },
+            {
+              "name": "Irony",
+              "text": ""
+            },
+            {
+              "name": "Euphemism",
+              "text": ""
+            },
+            {
+              "name": "Grotesque detail",
+              "text": ""
+            }
+          ],
+          "craft": "Period spelling and syntax establish the diarist's habits. Goose's commercial account of teeth unsettles the apparent civility of their meeting."
+        },
+        "interpretation": {
+          "tone": "Curious, urbane, faintly sinister",
+          "features": {
+            "tone": [
+              "unsettling"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "first",
+          "narration": "epistolary",
+          "syntax": "hypotactic",
+          "diction": "formal",
+          "device": [
+            "pastiche",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "citizen-an-american-lyric-01",
+      "book": "citizen-an-american-lyric",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-034-citizen-an-american-lyric",
+      "source": {
+        "name": "PEN America; Graywolf Press attribution",
+        "url": "https://pen.org/you-and-your-partner/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Citizen: An American Lyric by Claudia Rankine. Source: PEN America; Graywolf Press attribution. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": null
+      },
+      "locator": {
+        "start": "You and your partner go",
+        "end": "Yes, of course.",
+        "where": "You and Your Partner…; unnumbered prose vignette",
+        "boundaries": "Select the four prose paragraphs after the introduction and before the attribution. End at the final repeated assent, including both repetitions. The website's vignette title is not asserted as an original chapter title.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Second-person address places the reader inside a racialized encounter.",
+          "proseStyle": "Plainspoken prose lyric.",
+          "rhythm": "Short declaratives, reported speech, and terminal repetition.",
+          "pacing": "Ordinary errands accelerate through a police call, then pause on a correction.",
+          "imagery": "Phone, window, doorstep and arriving or departed police cars.",
+          "techniques": [
+            {
+              "name": "Second-person address",
+              "text": ""
+            },
+            {
+              "name": "Dramatic irony",
+              "text": ""
+            },
+            {
+              "name": "Repetition",
+              "text": ""
+            },
+            {
+              "name": "Implicating viewpoint",
+              "text": ""
+            }
+          ],
+          "craft": "Small exchanges reveal how surveillance escalates. The final correction redirects attention from the neighbor's suspicion to the addressed person's accommodation of it."
+        },
+        "interpretation": {
+          "tone": "Tense, exposed, chastened",
+          "features": {
+            "tone": [
+              "tense"
+            ]
+          }
+        },
+        "features": {
+          "form": "poetry",
+          "person": "second",
+          "sentenceLength": "short",
+          "device": [
+            "direct-address",
+            "repetition",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "the-years-01",
+      "book": "the-years",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-037-the-years",
+      "source": {
+        "name": "Fitzcarraldo Editions",
+        "url": "https://fitzcarraldoeditions.com/books/the-years/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Years by Annie Ernaux, translated by Alison L. Strayer. Source: Fitzcarraldo Editions. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "2008 French original; 2017 first English edition; this UK publisher's edition is 2018. Analysis concerns Strayer's English wording."
+      },
+      "locator": {
+        "start": "All the images will disappear:",
+        "end": "dreams with history.",
+        "where": "Unnumbered opening image catalogue",
+        "boundaries": "Open Read preview. Select the opening declaration, the entire image catalogue, and the two concluding memory paragraphs through the closing locator. Stop before the editorial ellipsis.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Impersonal, collective autobiographical voice using we and you.",
+          "proseStyle": "Documentary montage with reflective lyricism.",
+          "rhythm": "Noun-phrase fragments accumulate before complete meditative sentences return.",
+          "pacing": "Associative jumps replace chronological progression.",
+          "imagery": "Advertisements, cinema faces, bodies, photographs, remembered places.",
+          "techniques": [
+            {
+              "name": "Catalogue",
+              "text": ""
+            },
+            {
+              "name": "Montage",
+              "text": ""
+            },
+            {
+              "name": "Cultural allusion",
+              "text": ""
+            },
+            {
+              "name": "Temporal juxtaposition",
+              "text": ""
+            }
+          ],
+          "craft": "Public images and private memories share the same grammatical footing. The return to full sentences turns the catalogue into reflection on transmission and disappearance."
+        },
+        "interpretation": {
+          "tone": "Elegiac, lucid, bodily, inclusive",
+          "features": {
+            "tone": [
+              "melancholy"
+            ]
+          }
+        },
+        "features": {
+          "form": "nonfiction",
+          "person": "first",
+          "syntax": "fragmented",
+          "focus": "reflection",
+          "pace": "digressive",
+          "device": [
+            "list",
+            "montage"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "a-visit-from-the-goon-squad-01",
+      "book": "a-visit-from-the-goon-squad",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-039-a-visit-from-the-goon-squad",
+      "source": {
+        "name": "BookBrowse; Knopf permission credit",
+        "url": "https://www.bookbrowse.com/excerpts/index.cfm/book_number/2442/a-visit-from-the-goon-squad",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from A Visit from the Goon Squad by Jennifer Egan. Source: BookBrowse; Knopf permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Only the first two paragraphs are selected. A typographical corruption appears later in the BookBrowse sample and is outside this selection."
+      },
+      "locator": {
+        "start": "It began the usual way,",
+        "end": "woman a lesson.",
+        "where": "Chapter 1: Found Objects",
+        "boundaries": "Select the first two prose paragraphs after Found Objects, ending with Sasha's wish to punish the careless woman. Stop before the next paragraph about a deeper feeling.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Close third person opening into Sasha's unmarked internal speech.",
+          "proseStyle": "Contemporary psychological realism.",
+          "rhythm": "Detailed scene-setting gives way to a long indignant interior question and a brief judgment.",
+          "pacing": "Pauses before the possible theft to examine its justification.",
+          "imagery": "Yellow eye shadow, green leather wallet, enclosed bathroom.",
+          "techniques": [
+            {
+              "name": "Free indirect discourse",
+              "text": ""
+            },
+            {
+              "name": "Rationalization",
+              "text": ""
+            },
+            {
+              "name": "Color detail",
+              "text": ""
+            },
+            {
+              "name": "Situational irony",
+              "text": ""
+            }
+          ],
+          "craft": "The scene shifts from noticing an object to arguing for taking it. Sasha's moral vocabulary exposes the self-protective logic of her impulse."
+        },
+        "interpretation": {
+          "tone": "Compulsive, defensive, sardonic",
+          "features": {}
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "focus": "interior",
+          "pace": "scene",
+          "device": [
+            "free-indirect",
+            "irony"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "the-vegetarian-01",
+      "book": "the-vegetarian",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-049-the-vegetarian",
+      "source": {
+        "name": "Literary Hub; Hogarth permission credit",
+        "url": "https://lithub.com/the-vegetarian/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from The Vegetarian by Han Kang, translated by Deborah Smith. Source: Literary Hub; Hogarth permission credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Copyright credit verifies Korean original and Smith translation. First English edition 2015; US Hogarth edition 2016. Opening anchor omits enclosing quotation marks."
+      },
+      "locator": {
+        "start": "What are you doing standing",
+        "end": "Her voice was surprisingly clear.",
+        "where": "First part; pre-dawn refrigerator scene; source has no chapter heading",
+        "boundaries": "Select from the opening spoken question through the short sentence after Yeong-hye says she had a dream. Stop before her husband's next response. Preserve dialogue punctuation.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "First-person husband narrator with limited, uneasy access to his wife.",
+          "proseStyle": "Domestic realism shaded by uncanny imagery.",
+          "rhythm": "Repeated questions and brief replies interrupt longer anxious explanations.",
+          "pacing": "A few seconds expand through observation and speculation.",
+          "imagery": "Black kitchen, white nightdress, bare feet, refrigerator light.",
+          "techniques": [
+            {
+              "name": "Restricted focalization",
+              "text": ""
+            },
+            {
+              "name": "Repetition",
+              "text": ""
+            },
+            {
+              "name": "Ghost simile",
+              "text": ""
+            },
+            {
+              "name": "Withheld explanation",
+              "text": ""
+            }
+          ],
+          "craft": "The narrator's questions demand explanation while the wife's stillness resists it. Light and clothing make a familiar room feel unfamiliar."
+        },
+        "interpretation": {
+          "tone": "Chilling, puzzled, controlling",
+          "features": {
+            "tone": [
+              "unsettling"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "first",
+          "pace": "scene",
+          "device": [
+            "repetition",
+            "simile"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "secondhand-time-01",
+      "book": "secondhand-time",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-072-secondhand-time",
+      "source": {
+        "name": "Fitzcarraldo Editions",
+        "url": "https://fitzcarraldoeditions.com/2016/05/second-hand-time/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Secondhand Time by Svetlana Alexievich, translated by Bela Shayevich. Source: Fitzcarraldo Editions. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "UK title uses Second-hand Time. Publisher's book page verifies Shayevich credit. Distinguish edited testimony from an invented fictional monologue."
+      },
+      "locator": {
+        "start": "Strangers, what do you want,",
+        "end": "we cry then, too…",
+        "where": "On Brothers and Sisters, Victims and Executioners… and the Electorate; Marina Tikhonovna Isaichik on Alexander Porfirievich Sharpilo",
+        "boundaries": "Select the entire quoted testimony below the three-line speaker heading, through the final ellipsis. Include the heading and the bracketed gesture. Exclude the blog introduction and footer.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "First-person neighbor testimony directly addressing an interviewer.",
+          "proseStyle": "Oral, digressive, aphoristic documentary speech.",
+          "rhythm": "Questions, fragments, ellipses and repeated phrases retain a spoken cadence.",
+          "pacing": "Loops between one death, political promises and remembered daily life.",
+          "imagery": "Garden, television, icon, dog, ripening grain.",
+          "techniques": [
+            {
+              "name": "Direct address",
+              "text": ""
+            },
+            {
+              "name": "Repetition",
+              "text": ""
+            },
+            {
+              "name": "Oral montage",
+              "text": ""
+            },
+            {
+              "name": "Recorded gesture",
+              "text": ""
+            }
+          ],
+          "craft": "Repetition links waiting for political improvement to an individual life passing. Grain and bread give material form to the speaker's values."
+        },
+        "interpretation": {
+          "tone": "Grieving, distrustful, disappointed, intermittently tender",
+          "features": {
+            "tone": [
+              "melancholy"
+            ]
+          }
+        },
+        "features": {
+          "form": "testimony",
+          "person": "first",
+          "narration": "testimony",
+          "syntax": "fragmented",
+          "pace": "digressive",
+          "device": [
+            "direct-address",
+            "repetition",
+            "montage"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "septology-01",
+      "book": "septology",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-078-septology",
+      "source": {
+        "name": "Fitzcarraldo Editions",
+        "url": "https://fitzcarraldoeditions.com/books/septology/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Septology by Jon Fosse, translated by Damion Searls. Source: Fitzcarraldo Editions. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "Three original volumes 2019–2021; sampled English omnibus published 2022. Analysis is limited to the selected opening, not a claim that it represents all seven parts."
+      },
+      "locator": {
+        "start": "And I see myself",
+        "end": "and not sell it?",
+        "where": "I; opening painting meditation",
+        "boundaries": "Open Read preview. Begin at the first prose words after I. End at the first question mark, following the narrator's thought of keeping the crossed-lines painting. This is a deliberate cut within one long printed paragraph; do not continue to the next question.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "First-person present-tense interior monologue by painter Asle.",
+          "proseStyle": "Recursive, meditative and materially exact.",
+          "rhythm": "Long comma-linked clauses, conjunctions and repeated thinking tags.",
+          "pacing": "Minimal external action; attention circles the painting.",
+          "imagery": "Purple and brown paint, drips, stretchers, shoulder bag.",
+          "techniques": [
+            {
+              "name": "Repetition",
+              "text": ""
+            },
+            {
+              "name": "Self-correction",
+              "text": ""
+            },
+            {
+              "name": "Ekphrasis",
+              "text": ""
+            },
+            {
+              "name": "Recursive thought",
+              "text": ""
+            }
+          ],
+          "craft": "Repeated reconsideration makes perception feel unfinished. Ordinary storage details hold abstract judgments about art close to the painter's daily practice."
+        },
+        "interpretation": {
+          "tone": "Hesitant, absorbed, contemplative",
+          "features": {
+            "tone": [
+              "reflective"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "first",
+          "tense": "present",
+          "narration": "immediate",
+          "sentenceLength": "long",
+          "syntax": "paratactic",
+          "focus": "interior",
+          "pace": "scene",
+          "device": [
+            "repetition",
+            "self-correction",
+            "ekphrasis"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "hurricane-season-01",
+      "book": "hurricane-season",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-082-hurricane-season",
+      "source": {
+        "name": "Fitzcarraldo Editions",
+        "url": "https://fitzcarraldoeditions.com/books/hurricane-season/",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Hurricane Season by Fernanda Melchor, translated by Sophie Hughes. Source: Fitzcarraldo Editions. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": "2017 Spanish original; 2020 English translation. Analysis refers to Hughes's rendered syntax."
+      },
+      "locator": {
+        "start": "They reached the canal along",
+        "end": "black snakes, smiling.",
+        "where": "I",
+        "boundaries": "Open Read preview. Select all three prose paragraphs of section I. Stop immediately before the heading II.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Third-person narration following a group of boys.",
+          "proseStyle": "Visceral, accumulating, oral-inflected narration.",
+          "rhythm": "Repeated group phrases and long linked clauses build toward a final reveal.",
+          "pacing": "Approach is stretched by sensory detail, then resolves abruptly.",
+          "imagery": "Slingshots, glare, mud, blow flies, foam, floating corpse.",
+          "techniques": [
+            {
+              "name": "Anaphora",
+              "text": ""
+            },
+            {
+              "name": "Delayed disclosure",
+              "text": ""
+            },
+            {
+              "name": "Sensory escalation",
+              "text": ""
+            },
+            {
+              "name": "Collective focalization",
+              "text": ""
+            }
+          ],
+          "craft": "Children's mock battle gives movement an initial logic. Repeated collective phrasing and the growing stench channel that energy toward a disturbing discovery."
+        },
+        "interpretation": {
+          "tone": "Menacing, feverish, horrified",
+          "features": {
+            "tone": [
+              "tense"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "sentenceLength": "long",
+          "syntax": "cumulative",
+          "device": [
+            "anaphora",
+            "delayed-disclosure"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    },
+    {
+      "id": "station-eleven-01",
+      "book": "station-eleven",
+      "status": "needs-text",
+      "researchId": "pallas-nyt-093-station-eleven",
+      "source": {
+        "name": "Emily St. John Mandel official website; publisher copyright credit",
+        "url": "https://www.emilymandel.com/station-eleven-excerpt",
+        "kind": "readable excerpt (verified by research)",
+        "verified": "2026-10-20",
+        "status": "VERIFIED_READABLE_EXCERPT",
+        "reproduction": "RETRIEVAL_REQUIRED; full copyrighted passage not reproduced"
+      },
+      "attribution": "Excerpt from Station Eleven by Emily St. John Mandel. Source: Emily St. John Mandel official website; publisher copyright credit. Copy the full credit line from the source when the text is entered.",
+      "notes": {
+        "author": null,
+        "work": null,
+        "research": null
+      },
+      "locator": {
+        "start": "Jeevan’s understanding of disaster preparedness",
+        "end": "a bouquet of daffodils.",
+        "where": "Grocery-store preparedness scene; chapter number not stated on source",
+        "boundaries": "Select the complete excerpt on the author's page, starting at Jeevan's action-movie comparison and ending with the daffodils. Stop before the copyright attribution.",
+        "startWithin": 400,
+        "endWithin": 120
+      },
+      "metadata": {
+        "scope": "Selected passage only; English text as published at cited URL",
+        "observed": {
+          "narrativeVoice": "Close third person, centered on Jeevan's uncertainty.",
+          "proseStyle": "Concrete procedural realism with touches of dry humor.",
+          "rhythm": "Item lists, telephone dialogue, time checks and questioning clauses.",
+          "pacing": "Repeated trips and the closing-time deadline accelerate the shopping.",
+          "imagery": "Water cases, snow, heavy carts, canned food, flowers.",
+          "techniques": [
+            {
+              "name": "Enumeration",
+              "text": ""
+            },
+            {
+              "name": "Countdown",
+              "text": ""
+            },
+            {
+              "name": "Dialogue",
+              "text": ""
+            },
+            {
+              "name": "Incongruous final detail",
+              "text": ""
+            }
+          ],
+          "craft": "Ordinary shopping becomes an emergency through repetition and a shrinking time window. The flowers retain a small personal gesture amid practical stockpiling."
+        },
+        "interpretation": {
+          "tone": "Anxious, urgent, intermittently tender",
+          "features": {
+            "tone": [
+              "tense"
+            ]
+          }
+        },
+        "features": {
+          "form": "novel",
+          "person": "third",
+          "pace": "scene",
+          "device": [
+            "list"
+          ]
+        },
+        "featuresStatus": "provisional: mapped from the research descriptions, not yet checked against the text",
+        "analysedBy": "ChatGPT Work (descriptions), Claude (vocabulary mapping)"
+      }
+    }
+  ],
+  "spines": [
+    {
+      "bg": "#2f5a4a",
+      "fg": "#f3ecdc",
+      "w": 26,
+      "h": 296
+    },
+    {
+      "bg": "#e2d4b2",
+      "fg": "#1d1915",
+      "w": 20,
+      "h": 282
+    },
+    {
+      "bg": "#6B1420",
+      "fg": "#f3ecdc",
+      "w": 31,
+      "h": 304
+    },
+    {
+      "bg": "#c98a2b",
+      "fg": "#1d1915",
+      "w": 23,
+      "h": 290
+    },
+    {
+      "bg": "#4A3E9E",
+      "fg": "#f3ecdc",
+      "w": 28,
+      "h": 300
+    }
+  ]
+}

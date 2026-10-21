@@ -1,0 +1,1576 @@
+{
+  "simulatedPerson": {
+    "name": "colour-and-design",
+    "area": "cinema",
+    "hiddenRule": "Likes saturated colour or symmetrical composition in colour images (85%); dislikes black and white (10%); otherwise 35%.",
+    "seed": 42,
+    "library": "real cinema library (89 stills)"
+  },
+  "draftInterpretation": [
+    "Across 78 stills from 35 films you liked 26 (33%). What follows compares the stills you liked with the ones you did not; it describes your choices in this collection, not a fixed type.",
+    "Clearly, saturated colour (intense, vivid colour): you liked 9 of 10 (90%), against 25% of the rest, across 7 films. For example: Amélie: Amélie in the café; In the Mood for Love: Mrs Chan sips from a green teacup in the red restaurant booth; Mad Max: Fury Road: Night on the salt flats.",
+    "These cannot yet be told apart from the characteristics above, because they occur in nearly the same works: single-hue palette with monochrome, orange with monochrome and warm with monochrome.",
+    "Too few examples to say anything yet about patterned shadow (2 judged), rim light (2 judged) and motion blur (2 judged)."
+  ],
+  "profile": {
+    "schema": "pallas.taste-profile/1",
+    "kind": "taste-profile",
+    "area": "cinema",
+    "generatedAt": "2026-10-21T00:00:00.000Z",
+    "engine": {
+      "name": "pallas-taste",
+      "version": "1.1.0"
+    },
+    "options": {
+      "minJudgments": 8,
+      "minExposure": 3,
+      "minAbsent": 2,
+      "tentativeP": 0.1,
+      "tentativeDiff": 0.25,
+      "tentativeQ": 0.5,
+      "emergingQ": 0.2,
+      "wellQ": 0.05,
+      "wellExposure": 6,
+      "wellWorks": 2,
+      "pairMinItems": 4,
+      "pairQ": 0.1,
+      "pairMinLift": 0.2,
+      "pairInteractionP": 0.05,
+      "leaveOneOutP": 0.05,
+      "workWellP": 0.05,
+      "workEmergingP": 0.2,
+      "explainedP": 0.1,
+      "focusedBelow": 0.6,
+      "broadAbove": 0.9
+    },
+    "basedOn": {
+      "judged": 78,
+      "likes": 26,
+      "dislikes": 52,
+      "likeRate": 0.333,
+      "works": 35,
+      "notInLibrary": 0,
+      "eventCount": 90,
+      "lastEventAt": "2026-10-10T19:29:18.768Z",
+      "judgmentsDigest": "e1958fc8",
+      "vocabularyVersion": 3
+    },
+    "evidenceLevel": "established",
+    "signature": {
+      "summary": "A clear leaning towards saturated colour.",
+      "terms": [
+        "saturation:saturated"
+      ],
+      "statements": [
+        {
+          "text": "Liked 9 of 10 works with saturated colour (90%), against 17 of 68 without it (25%).",
+          "feature": "saturation:saturated",
+          "strength": "well supported",
+          "subjective": false
+        }
+      ]
+    },
+    "preferred": [
+      {
+        "feature": "saturation:saturated",
+        "dimension": "saturation",
+        "value": "saturated",
+        "label": "saturated colour",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 10,
+          "likedWhenPresent": 9,
+          "rateWhenPresent": 0.9,
+          "rateWhenAbsent": 0.25,
+          "difference": 0.65,
+          "interval": [
+            0.596,
+            0.982
+          ],
+          "p": 0.0001,
+          "q": 0.0048,
+          "leaveOneWorkOutP": 0.001,
+          "workLevelP": 0.0013
+        },
+        "explanation": "Liked 9 of 10 works with saturated colour (90%), against 17 of 68 without it (25%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "in-the-mood-for-love-01",
+            "mad-max-fury-road-02",
+            "oldboy-01",
+            "princess-mononoke-03",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-grand-budapest-hotel-01"
+          ],
+          "contradicting": [
+            "mad-max-fury-road-01"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "harmony:single-hue",
+        "dimension": "harmony",
+        "value": "single-hue",
+        "label": "single-hue palette",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.714,
+          "rateWhenAbsent": 0.25,
+          "difference": 0.464,
+          "interval": [
+            0.454,
+            0.883
+          ],
+          "p": 0.0016,
+          "q": 0.0424,
+          "leaveOneWorkOutP": 0.0149,
+          "workLevelP": 0.042
+        },
+        "explanation": "Liked 10 of 14 works with single-hue palette (71%), against 16 of 64 without it (25%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "lawrence-of-arabia-01",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "rear-window-02",
+            "the-godfather-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "mad-max-fury-road-01",
+            "north-by-northwest-01",
+            "rear-window-01",
+            "vertigo-01"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "hue:orange",
+        "dimension": "hue",
+        "value": "orange",
+        "label": "orange",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 22,
+          "likedWhenPresent": 13,
+          "rateWhenPresent": 0.591,
+          "rateWhenAbsent": 0.232,
+          "difference": 0.359,
+          "interval": [
+            0.387,
+            0.767
+          ],
+          "p": 0.0037,
+          "q": 0.0784,
+          "leaveOneWorkOutP": 0.0226,
+          "workLevelP": 0.1468
+        },
+        "explanation": "Liked 13 of 22 works with orange (59%), against 13 of 56 without it (23%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "north-by-northwest-02",
+            "oldboy-02",
+            "rear-window-02",
+            "spirited-away-03",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-godfather-03"
+          ],
+          "contradicting": [
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "north-by-northwest-01",
+            "princess-mononoke-01",
+            "rear-window-01",
+            "spirited-away-01",
+            "spirited-away-02",
+            "vertigo-02"
+          ],
+          "supportingWorks": 9
+        }
+      },
+      {
+        "feature": "temperature:warm",
+        "dimension": "temperature",
+        "value": "warm",
+        "label": "warm",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 25,
+          "likedWhenPresent": 14,
+          "rateWhenPresent": 0.56,
+          "rateWhenAbsent": 0.226,
+          "difference": 0.334,
+          "interval": [
+            0.371,
+            0.733
+          ],
+          "p": 0.005,
+          "q": 0.0802,
+          "leaveOneWorkOutP": 0.028,
+          "workLevelP": 0.084
+        },
+        "explanation": "Liked 14 of 25 works with warm (56%), against 12 of 53 without it (23%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "oldboy-02",
+            "rear-window-02",
+            "spirited-away-03",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "north-by-northwest-01",
+            "parasite-01",
+            "parasite-02",
+            "princess-mononoke-01",
+            "rear-window-01",
+            "spirited-away-02",
+            "the-general-01",
+            "the-general-03"
+          ],
+          "supportingWorks": 9
+        }
+      },
+      {
+        "feature": "hue:yellow",
+        "dimension": "hue",
+        "value": "yellow",
+        "label": "yellow",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.778,
+          "rateWhenAbsent": 0.275,
+          "difference": 0.502,
+          "interval": [
+            0.453,
+            0.937
+          ],
+          "p": 0.0052,
+          "q": 0.0802,
+          "leaveOneWorkOutP": 0.0291,
+          "workLevelP": 0.0289
+        },
+        "explanation": "Liked 7 of 9 works with yellow (78%), against 19 of 69 without it (28%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "oldboy-01",
+            "spirited-away-03",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "parasite-02",
+            "princess-mononoke-01"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "key:low",
+        "dimension": "key",
+        "value": "low",
+        "label": "low-key",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:saturated",
+        "stats": {
+          "exposed": 26,
+          "likedWhenPresent": 14,
+          "rateWhenPresent": 0.538,
+          "rateWhenAbsent": 0.231,
+          "difference": 0.308,
+          "interval": [
+            0.355,
+            0.712
+          ],
+          "p": 0.0104,
+          "q": 0.1238,
+          "leaveOneWorkOutP": 0.0333,
+          "workLevelP": 0.032
+        },
+        "explanation": "Liked 14 of 26 works with low-key (54%), against 12 of 52 without it (23%).",
+        "notes": [
+          "goes together with saturated colour in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-02",
+            "dr-strangelove-02",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "oldboy-01",
+            "princess-mononoke-02",
+            "rear-window-02",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-grand-budapest-hotel-01"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "double-indemnity-03",
+            "its-a-wonderful-life-03",
+            "its-a-wonderful-life-04",
+            "on-the-waterfront-01",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "psycho-02",
+            "some-like-it-hot-01",
+            "the-apartment-01",
+            "the-apartment-02",
+            "the-gold-rush-01"
+          ],
+          "supportingWorks": 11
+        }
+      },
+      {
+        "feature": "lightPattern:glare",
+        "dimension": "lightPattern",
+        "value": "glare",
+        "label": "glare",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "emerging",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 6,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 0.833,
+          "rateWhenAbsent": 0.292,
+          "difference": 0.542,
+          "interval": [
+            0.436,
+            0.97
+          ],
+          "p": 0.0142,
+          "q": 0.1521,
+          "leaveOneWorkOutP": 0.0378,
+          "workLevelP": 0.0236
+        },
+        "explanation": "Liked 5 of 6 works with glare (83%), against 21 of 72 without it (29%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "howls-moving-castle-02",
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "psycho-02"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "contrast:low",
+        "dimension": "contrast",
+        "value": "low",
+        "label": "low contrast",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 16,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.625,
+          "rateWhenAbsent": 0.258,
+          "difference": 0.367,
+          "interval": [
+            0.386,
+            0.815
+          ],
+          "p": 0.0082,
+          "q": 0.11,
+          "leaveOneWorkOutP": 0.0528
+        },
+        "explanation": "Liked 10 of 16 works with low contrast (63%), against 16 of 62 without it (26%).",
+        "notes": [
+          "depends on one film (princess-mononoke): without it the association is not clear"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-02",
+            "howls-moving-castle-02",
+            "lawrence-of-arabia-01",
+            "north-by-northwest-03",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-03",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-grand-budapest-hotel-01"
+          ],
+          "contradicting": [
+            "double-indemnity-03",
+            "lawrence-of-arabia-04",
+            "paths-of-glory-01",
+            "spirited-away-01",
+            "the-great-dictator-02",
+            "the-kid-02"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "harmony:analogous",
+        "dimension": "harmony",
+        "value": "analogous",
+        "label": "analogous palette",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 20,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.55,
+          "rateWhenAbsent": 0.259,
+          "difference": 0.291,
+          "interval": [
+            0.342,
+            0.742
+          ],
+          "p": 0.0269,
+          "q": 0.2215
+        },
+        "explanation": "Liked 11 of 20 works with analogous palette (55%), against 15 of 58 without it (26%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "in-the-mood-for-love-02",
+            "oldboy-01",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-03",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "2001-a-space-odyssey-01",
+            "howls-moving-castle-01",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "parasite-01",
+            "parasite-02",
+            "princess-mononoke-01"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "saturation:moderate",
+        "dimension": "saturation",
+        "value": "moderate",
+        "label": "moderate colour",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 23,
+          "likedWhenPresent": 12,
+          "rateWhenPresent": 0.522,
+          "rateWhenAbsent": 0.255,
+          "difference": 0.267,
+          "interval": [
+            0.33,
+            0.708
+          ],
+          "p": 0.0344,
+          "q": 0.2528
+        },
+        "explanation": "Liked 12 of 23 works with moderate colour (52%), against 14 of 55 without it (25%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-02",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "oldboy-02",
+            "princess-mononoke-02",
+            "rear-window-02",
+            "spirited-away-03",
+            "spirited-away-04",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "howls-moving-castle-01",
+            "lawrence-of-arabia-02",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "parasite-01",
+            "princess-mononoke-01",
+            "rear-window-01",
+            "spirited-away-01",
+            "spirited-away-02",
+            "vertigo-01",
+            "vertigo-02"
+          ],
+          "supportingWorks": 10
+        }
+      },
+      {
+        "feature": "hue:red",
+        "dimension": "hue",
+        "value": "red",
+        "label": "red",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 11,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.636,
+          "rateWhenAbsent": 0.284,
+          "difference": 0.353,
+          "interval": [
+            0.354,
+            0.848
+          ],
+          "p": 0.0357,
+          "q": 0.2528
+        },
+        "explanation": "Liked 7 of 11 works with red (64%), against 19 of 67 without it (28%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "bridge-on-the-river-kwai-01",
+            "howls-moving-castle-02",
+            "in-the-mood-for-love-01",
+            "spirited-away-03",
+            "spirited-away-04",
+            "the-grand-budapest-hotel-01",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-05",
+            "spirited-away-01",
+            "spirited-away-02"
+          ],
+          "supportingWorks": 5
+        }
+      },
+      {
+        "feature": "atmosphere:intimate",
+        "dimension": "atmosphere",
+        "value": "intimate",
+        "label": "intimate",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 7,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 0.714,
+          "rateWhenAbsent": 0.296,
+          "difference": 0.419,
+          "interval": [
+            0.359,
+            0.918
+          ],
+          "p": 0.0378,
+          "q": 0.2528
+        },
+        "explanation": "Liked 5 of 7 works with intimate (71%), against 21 of 71 without it (30%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "amelie-02",
+            "in-the-mood-for-love-01",
+            "rear-window-02",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "double-indemnity-01",
+            "on-the-waterfront-01"
+          ],
+          "supportingWorks": 4
+        }
+      },
+      {
+        "feature": "atmosphere:ominous",
+        "dimension": "atmosphere",
+        "value": "ominous",
+        "label": "ominous",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:saturated",
+        "stats": {
+          "exposed": 19,
+          "likedWhenPresent": 10,
+          "rateWhenPresent": 0.526,
+          "rateWhenAbsent": 0.271,
+          "difference": 0.255,
+          "interval": [
+            0.317,
+            0.727
+          ],
+          "p": 0.0524,
+          "q": 0.3301
+        },
+        "explanation": "Liked 10 of 19 works with ominous (53%), against 16 of 59 without it (27%).",
+        "notes": [
+          "goes together with saturated colour in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "howls-moving-castle-02",
+            "mad-max-fury-road-02",
+            "north-by-northwest-03",
+            "oldboy-01",
+            "princess-mononoke-02",
+            "psycho-01",
+            "the-godfather-01",
+            "the-godfather-02",
+            "the-godfather-03",
+            "the-grand-budapest-hotel-02"
+          ],
+          "contradicting": [
+            "double-indemnity-01",
+            "double-indemnity-03",
+            "metropolis-03",
+            "on-the-waterfront-02",
+            "paths-of-glory-01",
+            "psycho-02",
+            "sunset-boulevard-02",
+            "the-great-dictator-02",
+            "the-passion-of-joan-of-arc-03"
+          ],
+          "supportingWorks": 8
+        }
+      },
+      {
+        "feature": "lightPattern:pools",
+        "dimension": "lightPattern",
+        "value": "pools",
+        "label": "pools of light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:saturated",
+        "stats": {
+          "exposed": 14,
+          "likedWhenPresent": 8,
+          "rateWhenPresent": 0.571,
+          "rateWhenAbsent": 0.281,
+          "difference": 0.29,
+          "interval": [
+            0.326,
+            0.786
+          ],
+          "p": 0.0584,
+          "q": 0.3439
+        },
+        "explanation": "Liked 8 of 14 works with pools of light (57%), against 18 of 64 without it (28%).",
+        "notes": [
+          "goes together with saturated colour in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "dr-strangelove-02",
+            "in-the-mood-for-love-02",
+            "mad-max-fury-road-02",
+            "princess-mononoke-02",
+            "rear-window-02",
+            "spirited-away-03",
+            "the-godfather-01",
+            "the-godfather-02"
+          ],
+          "contradicting": [
+            "metropolis-03",
+            "mr-smith-goes-to-washington-03",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "sherlock-jr-02",
+            "the-apartment-02"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "lightSource:practical",
+        "dimension": "lightSource",
+        "value": "practical",
+        "label": "practical light",
+        "basis": "observed",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.583,
+          "rateWhenAbsent": 0.288,
+          "difference": 0.295,
+          "interval": [
+            0.32,
+            0.807
+          ],
+          "p": 0.0918,
+          "q": 0.427
+        },
+        "explanation": "Liked 7 of 12 works with practical light (58%), against 19 of 66 without it (29%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "amelie-01",
+            "howls-moving-castle-02",
+            "mad-max-fury-road-02",
+            "princess-mononoke-02",
+            "rear-window-02",
+            "spirited-away-03",
+            "the-godfather-01"
+          ],
+          "contradicting": [
+            "its-a-wonderful-life-04",
+            "metropolis-03",
+            "on-the-waterfront-03",
+            "sherlock-jr-02",
+            "the-apartment-01"
+          ],
+          "supportingWorks": 7
+        }
+      },
+      {
+        "feature": "temperature:cool",
+        "dimension": "temperature",
+        "value": "cool",
+        "label": "cool",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 12,
+          "likedWhenPresent": 7,
+          "rateWhenPresent": 0.583,
+          "rateWhenAbsent": 0.288,
+          "difference": 0.295,
+          "interval": [
+            0.32,
+            0.807
+          ],
+          "p": 0.0918,
+          "q": 0.427
+        },
+        "explanation": "Liked 7 of 12 works with cool (58%), against 19 of 66 without it (29%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "lawrence-of-arabia-03",
+            "mad-max-fury-road-02",
+            "north-by-northwest-02",
+            "north-by-northwest-03",
+            "princess-mononoke-02",
+            "princess-mononoke-03",
+            "spirited-away-04"
+          ],
+          "contradicting": [
+            "howls-moving-castle-01",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "spirited-away-01",
+            "vertigo-01"
+          ],
+          "supportingWorks": 5
+        }
+      }
+    ],
+    "disliked": [
+      {
+        "feature": "saturation:monochrome",
+        "dimension": "saturation",
+        "value": "monochrome",
+        "label": "monochrome",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": null,
+        "stats": {
+          "exposed": 38,
+          "likedWhenPresent": 3,
+          "rateWhenPresent": 0.079,
+          "rateWhenAbsent": 0.575,
+          "difference": -0.496,
+          "interval": [
+            0.027,
+            0.208
+          ],
+          "p": 0,
+          "q": 0.0003,
+          "leaveOneWorkOutP": 0,
+          "workLevelP": 0.0006
+        },
+        "explanation": "Liked 3 of 38 works with monochrome (8%), against 23 of 40 without it (57%).",
+        "notes": [],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "double-indemnity-03",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-03",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-04",
+            "metropolis-01",
+            "metropolis-02",
+            "metropolis-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "on-the-waterfront-01",
+            "on-the-waterfront-02",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "psycho-02",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-02",
+            "the-apartment-01",
+            "the-apartment-02",
+            "the-general-01",
+            "the-general-03",
+            "the-gold-rush-01",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-03"
+          ],
+          "contradicting": [
+            "dr-strangelove-02",
+            "mr-smith-goes-to-washington-01",
+            "psycho-01"
+          ],
+          "supportingWorks": 18
+        }
+      },
+      {
+        "feature": "temperature:neutral",
+        "dimension": "temperature",
+        "value": "neutral",
+        "label": "neutral",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "well supported",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:monochrome",
+        "stats": {
+          "exposed": 41,
+          "likedWhenPresent": 5,
+          "rateWhenPresent": 0.122,
+          "rateWhenAbsent": 0.568,
+          "difference": -0.446,
+          "interval": [
+            0.053,
+            0.255
+          ],
+          "p": 0,
+          "q": 0.0019,
+          "leaveOneWorkOutP": 0.0001,
+          "workLevelP": 0.0048
+        },
+        "explanation": "Liked 5 of 41 works with neutral (12%), against 21 of 37 without it (57%).",
+        "notes": [
+          "goes together with monochrome in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "2001-a-space-odyssey-01",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "double-indemnity-03",
+            "its-a-wonderful-life-02",
+            "its-a-wonderful-life-03",
+            "its-a-wonderful-life-04",
+            "lawrence-of-arabia-04",
+            "metropolis-01",
+            "metropolis-02",
+            "metropolis-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "my-neighbor-totoro-01",
+            "on-the-waterfront-01",
+            "on-the-waterfront-02",
+            "on-the-waterfront-03",
+            "paths-of-glory-01",
+            "psycho-02",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "some-like-it-hot-01",
+            "some-like-it-hot-02",
+            "sunset-boulevard-02",
+            "the-apartment-01",
+            "the-apartment-02",
+            "the-gold-rush-01",
+            "the-great-dictator-01",
+            "the-great-dictator-02",
+            "the-great-dictator-03",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "dr-strangelove-02",
+            "lawrence-of-arabia-01",
+            "mr-smith-goes-to-washington-01",
+            "oldboy-01",
+            "psycho-01"
+          ],
+          "supportingWorks": 20
+        }
+      },
+      {
+        "feature": "key:mid",
+        "dimension": "key",
+        "value": "mid",
+        "label": "mid-key",
+        "basis": "measured",
+        "subjective": false,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:saturated",
+        "stats": {
+          "exposed": 48,
+          "likedWhenPresent": 11,
+          "rateWhenPresent": 0.229,
+          "rateWhenAbsent": 0.5,
+          "difference": -0.271,
+          "interval": [
+            0.133,
+            0.365
+          ],
+          "p": 0.0252,
+          "q": 0.2215
+        },
+        "explanation": "Liked 11 of 48 works with mid-key (23%), against 15 of 30 without it (50%).",
+        "notes": [
+          "goes together with saturated colour in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "12-angry-men-02",
+            "double-indemnity-01",
+            "double-indemnity-02",
+            "howls-moving-castle-01",
+            "its-a-wonderful-life-02",
+            "lawrence-of-arabia-02",
+            "lawrence-of-arabia-04",
+            "lawrence-of-arabia-05",
+            "mad-max-fury-road-01",
+            "metropolis-01",
+            "metropolis-02",
+            "metropolis-03",
+            "mr-smith-goes-to-washington-02",
+            "mr-smith-goes-to-washington-03",
+            "my-neighbor-totoro-01",
+            "my-neighbor-totoro-02",
+            "my-neighbor-totoro-03",
+            "north-by-northwest-01",
+            "on-the-waterfront-02",
+            "parasite-01",
+            "parasite-02",
+            "princess-mononoke-01",
+            "rear-window-01",
+            "sherlock-jr-01",
+            "sherlock-jr-02",
+            "some-like-it-hot-02",
+            "sunset-boulevard-02",
+            "the-general-01",
+            "the-general-03",
+            "the-great-dictator-01",
+            "the-great-dictator-03",
+            "the-kid-01",
+            "the-kid-02",
+            "the-passion-of-joan-of-arc-01",
+            "the-passion-of-joan-of-arc-03",
+            "vertigo-01",
+            "vertigo-02"
+          ],
+          "contradicting": [
+            "amelie-01",
+            "bridge-on-the-river-kwai-01",
+            "lawrence-of-arabia-01",
+            "lawrence-of-arabia-03",
+            "mr-smith-goes-to-washington-01",
+            "oldboy-02",
+            "princess-mononoke-03",
+            "psycho-01",
+            "spirited-away-03",
+            "spirited-away-04",
+            "the-godfather-03"
+          ],
+          "supportingWorks": 22
+        }
+      },
+      {
+        "feature": "atmosphere:lonely",
+        "dimension": "atmosphere",
+        "value": "lonely",
+        "label": "lonely",
+        "basis": "interpretation",
+        "subjective": true,
+        "aliases": [],
+        "strength": "tentative",
+        "explainedBy": null,
+        "inseparableFrom": "saturation:saturated",
+        "stats": {
+          "exposed": 9,
+          "likedWhenPresent": 0,
+          "rateWhenPresent": 0,
+          "rateWhenAbsent": 0.377,
+          "difference": -0.377,
+          "interval": [
+            0,
+            0.299
+          ],
+          "p": 0.0254,
+          "q": 0.2215
+        },
+        "explanation": "Liked 0 of 9 works with lonely (0%), against 26 of 69 without it (38%).",
+        "notes": [
+          "goes together with saturated colour in these judgments; the two cannot be separated yet"
+        ],
+        "evidence": {
+          "supporting": [
+            "2001-a-space-odyssey-01",
+            "lawrence-of-arabia-04",
+            "my-neighbor-totoro-03",
+            "north-by-northwest-01",
+            "spirited-away-02",
+            "the-apartment-01",
+            "the-great-dictator-02",
+            "the-kid-02",
+            "vertigo-01"
+          ],
+          "contradicting": [],
+          "supportingWorks": 9
+        }
+      }
+    ],
+    "combinations": [],
+    "notYetClear": [
+      {
+        "feature": "lightPattern:patterned-shadow",
+        "label": "patterned shadow",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "lightPattern:rim",
+        "label": "rim light",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "motion:blur",
+        "label": "motion blur",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "setting:vehicle",
+        "label": "vehicle",
+        "exposed": 2,
+        "liked": 2
+      },
+      {
+        "feature": "shotScale:extreme-close-up",
+        "label": "extreme close-up",
+        "exposed": 2,
+        "liked": 1
+      },
+      {
+        "feature": "toned:yes",
+        "label": "toned print",
+        "exposed": 2,
+        "liked": 0
+      },
+      {
+        "feature": "atmospherics:rain",
+        "label": "rain",
+        "exposed": 1,
+        "liked": 0
+      }
+    ],
+    "spread": {
+      "overall": 1.001,
+      "reading": "broad",
+      "byDimension": {
+        "key": {
+          "label": "tonal key",
+          "ratio": 1.006,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "contrast": {
+          "label": "contrast",
+          "ratio": 0.877,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
+        },
+        "saturation": {
+          "label": "saturation",
+          "ratio": 0.984,
+          "reading": "broad",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "temperature": {
+          "label": "colour temperature",
+          "ratio": 1.013,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "hue": {
+          "label": "dominant hues",
+          "ratio": 0.987,
+          "reading": "broad",
+          "valuesJudged": 6,
+          "valuesLiked": 6
+        },
+        "harmony": {
+          "label": "colour harmony",
+          "ratio": 0.929,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "symmetry": {
+          "label": "tonal symmetry",
+          "ratio": 1.01,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "detail": {
+          "label": "surface detail",
+          "ratio": 1.037,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "medium": {
+          "label": "medium",
+          "ratio": 1.14,
+          "reading": "broad",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "lightQuality": {
+          "label": "light quality",
+          "ratio": 1.118,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "lightDirection": {
+          "label": "key-light direction",
+          "ratio": 1.017,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "lightSource": {
+          "label": "apparent light source",
+          "ratio": 1.074,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "shotScale": {
+          "label": "shot scale",
+          "ratio": 1.006,
+          "reading": "broad",
+          "valuesJudged": 9,
+          "valuesLiked": 9
+        },
+        "angle": {
+          "label": "camera angle",
+          "ratio": 0.87,
+          "reading": "mixed",
+          "valuesJudged": 4,
+          "valuesLiked": 4
+        },
+        "composition": {
+          "label": "composition",
+          "ratio": 0.982,
+          "reading": "broad",
+          "valuesJudged": 11,
+          "valuesLiked": 11
+        },
+        "lightPattern": {
+          "label": "light pattern",
+          "ratio": 1.022,
+          "reading": "broad",
+          "valuesJudged": 7,
+          "valuesLiked": 5
+        },
+        "atmospherics": {
+          "label": "atmospherics",
+          "ratio": 0.782,
+          "reading": "mixed",
+          "valuesJudged": 6,
+          "valuesLiked": 4
+        },
+        "gaze": {
+          "label": "gaze",
+          "ratio": 1.076,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "motion": {
+          "label": "motion",
+          "ratio": 0.805,
+          "reading": "mixed",
+          "valuesJudged": 3,
+          "valuesLiked": 2
+        },
+        "focus": {
+          "label": "depth of field",
+          "ratio": 1.167,
+          "reading": "broad",
+          "valuesJudged": 2,
+          "valuesLiked": 2
+        },
+        "layers": {
+          "label": "spatial layers",
+          "ratio": 1.036,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "figures": {
+          "label": "figures",
+          "ratio": 1.02,
+          "reading": "broad",
+          "valuesJudged": 5,
+          "valuesLiked": 5
+        },
+        "setting": {
+          "label": "setting",
+          "ratio": 1.156,
+          "reading": "broad",
+          "valuesJudged": 3,
+          "valuesLiked": 3
+        },
+        "atmosphere": {
+          "label": "atmosphere",
+          "ratio": 0.902,
+          "reading": "broad",
+          "valuesJudged": 13,
+          "valuesLiked": 11
+        }
+      }
+    },
+    "consistency": {
+      "changedJudgments": [
+        "mr-smith-goes-to-washington-01"
+      ],
+      "worksWithMixedJudgments": [
+        "howls-moving-castle",
+        "lawrence-of-arabia",
+        "mad-max-fury-road",
+        "mr-smith-goes-to-washington",
+        "north-by-northwest",
+        "princess-mononoke",
+        "psycho",
+        "rear-window",
+        "spirited-away"
+      ]
+    },
+    "terminology": [
+      {
+        "term": "atmosphere:intimate",
+        "label": "intimate",
+        "definition": "Close and private.",
+        "dimension": "atmosphere",
+        "basis": "interpretation"
+      },
+      {
+        "term": "atmosphere:lonely",
+        "label": "lonely",
+        "definition": "Isolated.",
+        "dimension": "atmosphere",
+        "basis": "interpretation"
+      },
+      {
+        "term": "atmosphere:ominous",
+        "label": "ominous",
+        "definition": "Threatening or foreboding.",
+        "dimension": "atmosphere",
+        "basis": "interpretation"
+      },
+      {
+        "term": "contrast:low",
+        "label": "low contrast",
+        "definition": "A narrow tonal range; soft, compressed blacks and whites.",
+        "dimension": "contrast",
+        "basis": "measured"
+      },
+      {
+        "term": "harmony:analogous",
+        "label": "analogous palette",
+        "definition": "Neighbouring hues, such as red, orange and yellow, share the frame.",
+        "dimension": "colour harmony",
+        "basis": "measured"
+      },
+      {
+        "term": "harmony:single-hue",
+        "label": "single-hue palette",
+        "definition": "One hue family dominates the coloured areas (three quarters or more).",
+        "dimension": "colour harmony",
+        "basis": "measured"
+      },
+      {
+        "term": "hue:orange",
+        "label": "orange",
+        "definition": "Oranges, ambers and skin tones.",
+        "dimension": "dominant hues",
+        "basis": "measured"
+      },
+      {
+        "term": "hue:red",
+        "label": "red",
+        "definition": "Reds and crimsons.",
+        "dimension": "dominant hues",
+        "basis": "measured"
+      },
+      {
+        "term": "hue:yellow",
+        "label": "yellow",
+        "definition": "Yellows and golds.",
+        "dimension": "dominant hues",
+        "basis": "measured"
+      },
+      {
+        "term": "key:low",
+        "label": "low-key",
+        "definition": "Most of the frame is dark; light is selective and shadows dominate.",
+        "dimension": "tonal key",
+        "basis": "measured"
+      },
+      {
+        "term": "key:mid",
+        "label": "mid-key",
+        "definition": "Tones are spread around the middle greys; neither shadow nor light dominates.",
+        "dimension": "tonal key",
+        "basis": "measured"
+      },
+      {
+        "term": "lightPattern:glare",
+        "label": "glare",
+        "definition": "A light source shines towards the lens: flare, bloom or a blazing lamp.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightPattern:pools",
+        "label": "pools of light",
+        "definition": "Isolated areas of light surrounded by darkness.",
+        "dimension": "light pattern",
+        "basis": "observed"
+      },
+      {
+        "term": "lightSource:practical",
+        "label": "practical light",
+        "definition": "Visible lamps, fire, candles, screens or signs within the frame.",
+        "dimension": "apparent light source",
+        "basis": "observed"
+      },
+      {
+        "term": "saturation:moderate",
+        "label": "moderate colour",
+        "definition": "Natural colour intensity.",
+        "dimension": "saturation",
+        "basis": "measured"
+      },
+      {
+        "term": "saturation:monochrome",
+        "label": "monochrome",
+        "definition": "Black and white, or a toned print (sepia, blue) with a single tint and no colour variety.",
+        "dimension": "saturation",
+        "basis": "measured"
+      },
+      {
+        "term": "saturation:saturated",
+        "label": "saturated colour",
+        "definition": "Intense, vivid colour.",
+        "dimension": "saturation",
+        "basis": "measured"
+      },
+      {
+        "term": "temperature:cool",
+        "label": "cool",
+        "definition": "The image leans towards blue, teal or green.",
+        "dimension": "colour temperature",
+        "basis": "measured"
+      },
+      {
+        "term": "temperature:neutral",
+        "label": "neutral",
+        "definition": "No strong lean towards warm or cool, or an untoned black-and-white image.",
+        "dimension": "colour temperature",
+        "basis": "measured"
+      },
+      {
+        "term": "temperature:warm",
+        "label": "warm",
+        "definition": "The image leans towards amber, orange or red.",
+        "dimension": "colour temperature",
+        "basis": "measured"
+      }
+    ],
+    "interpretations": [],
+    "limitations": [
+      "Associations describe this person's judgments of this library only; they are not a comparison with other people.",
+      "Characteristics that always appear together in the works judged cannot be separated and are reported together.",
+      "Strength labels come from exact tests corrected for the number of characteristics tested; tentative findings may disappear with more judgments.",
+      "Findings marked subjective rest on atmosphere or tone readings, which are interpretations rather than observations."
+    ]
+  }
+}
