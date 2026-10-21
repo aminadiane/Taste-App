@@ -1,35 +1,145 @@
 # Pallas — passage import
-# Paste each excerpt under its heading, exactly as published, from the first words to the last words shown.
+# Paste each excerpt under its heading, exactly as published, within the boundaries described.
 # Separate paragraphs with a blank line. Leave a block empty to skip it. Lines starting with # are ignored.
 # Then run:  node tools/import-passages.js
 
-=== my-brilliant-friend-01 | My Brilliant Friend — Elena Ferrante ===
-# starts: My friendship with Lila began
-# ends:   that the rats wouldn't bite me.
-# source: https://dianerehm.org/shows/2015-11-25/readers-review-my-brilliant-friend-by-elena-ferrante/
+=== the-warmth-of-other-suns-01 | The Warmth of Other Suns — Isabel Wilkerson ===
+# opening anchor (near the start): the night clouds were closing
+# closing anchor (near the end):   out of the bottomland.
+# section: Leaving; subsection 1; Chickasaw County, Mississippi, Late October 1937
+# boundaries: Under Excerpt, skip epigraphs. Select subsection 1 prose from its first sentence through the last paragraph before subsection 2, Wildwood, Florida. Include the prayer and dialogue.
+# source: https://www.penguinrandomhouseretail.com/book/?isbn=9780679763888
 
+=== the-known-world-01 | The Known World — Edward P. Jones ===
+# opening anchor (near the start): The evening his master died
+# closing anchor (near the end):   covered with dew.
+# section: Chapter One: Liaison. The Warmth of Family. Stormy Weather.
+# boundaries: Select the first three prose paragraphs after the chapter heading, ending with the future recollection of sleeping outdoors. Stop before the paragraph beginning The ground was almost soaked on excerpt page 2.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/1279/The-Known-World
 
-=== wolf-hall-01 | Wolf Hall — Hilary Mantel ===
-# starts: “So now get up.”
-# ends:   and opened another cut.
-# source: https://us.macmillan.com/books/9780805080681/wolfhall/
+=== the-underground-railroad-01 | The Underground Railroad — Colson Whitehead ===
+# opening anchor (near the start): THE first time Caesar approached
+# closing anchor (near the end):   in exponential misery.
+# section: Opening excerpt; Ajarry backstory; chapter name not displayed
+# boundaries: Start at the first prose sentence. Continue through the paragraph describing the sailors preventing Ajarry's suicide attempts, ending with the repeated chaining phrase. Stop before the paragraph about the auction in Ouidah.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/3444/page_number/1/the-underground-railroad
 
+=== the-road-01 | The Road — Cormac McCarthy ===
+# opening anchor (near the start): When he woke in the
+# closing anchor (near the end):   soundlessly into the dark.
+# section: Unnumbered opening; waking and cave dream
+# boundaries: Select the opening four prose paragraphs: the waking father, the cave dream, the creature's body, and its retreat. Stop before the first gray light paragraph.
+# source: https://www.bookreporter.com/reviews/the-road/excerpt
 
-=== austerlitz-01 | Austerlitz — W. G. Sebald ===
-# starts: In the second half of the 1960s
-# ends:   for the whole of my visit to Belgium on that occasion.
-# source: https://www.penguinrandomhouse.ca/books/163503/austerlitz-by-w-g-sebald-translated-by-anthea-bell/9780307365828/excerpt
+=== outline-01 | Outline — Rachel Cusk ===
+# opening anchor (near the start): Before the flight I was
+# closing anchor (near the end):   arrived at that subject.
+# section: Opening; lunch before the flight
+# boundaries: Select only the first prose paragraph after Excerpt / Outline: all three sentences about lunch with a billionaire. Stop before the flight scene continues.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/3167/outline
 
+=== pachinko-01 | Pachinko — Min Jin Lee ===
+# opening anchor (near the start): History has failed us, but
+# closing anchor (near the end):   called on his mother.
+# section: Chapter 1; Yeongdo, Busan, Korea
+# boundaries: Select all prose on excerpt page 1 after the location heading, from the opening aphorism through the matchmaker's visit in spring 1911. Stop before navigation to page 2.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/3524/pachinko
 
-=== never-let-me-go-01 | Never Let Me Go — Kazuo Ishiguro ===
-# starts: My name is Kathy H.
-# ends:   even before fourth donation.
-# source: https://www.kcrw.com/pages/excerpt-from-never-let-me-go
+=== the-sellout-01 | The Sellout — Paul Beatty ===
+# opening anchor (near the start): I suppose that’s exactly the
+# closing anchor (near the end):   be able to live down.
+# section: One; childhood and the Farms
+# boundaries: Open Read Excerpt. Select chapter One from its first prose sentence through the paragraph about being both control and experimental group, ending in the narrator's judgment of his upbringing. Stop before the discussion of the Little Albert experiment.
+# source: https://us.macmillan.com/books/9780374712242/thesellout/
 
+=== lincoln-in-the-bardo-01 | Lincoln in the Bardo — George Saunders ===
+# opening anchor (near the start): Mouth at the worm's ear,
+# closing anchor (near the end):   That is a promise.
+# section: XXI
+# boundaries: Select the entire section XXI shown on the excerpt page. Include its final speaker attribution, willie Lincoln, while ending the narrative prose at the promise. Preserve spacing, fragments, ampersands, and attribution placement.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/3523/lincoln-in-the-bardo
 
-=== gilead-01 | Gilead — Marilynne Robinson ===
-# starts: I told you last night that I might be gone sometime
-# ends:   because you thought I was laughing at you.
-# source: https://us.macmillan.com/books/9780374602109/gileadoprahsbookclub/
+=== behind-the-beautiful-forevers-01 | Behind the Beautiful Forevers — Katherine Boo ===
+# opening anchor (near the start): Let it keep, the moment
+# closing anchor (near the end):   hitching up his knobby spine.
+# section: ANNAWADI; rewind into January 2008
+# boundaries: Skip the epigraph. Under ANNAWADI select the first eight prose paragraphs, through Abdul beginning to sort trash. Stop before the paragraph explaining his approach to neighbors.
+# source: https://pen.org/behind-the-beautiful-forevers/
 
+=== hateship-friendship-courtship-loveship-marriage-01 | Hateship, Friendship, Courtship, Loveship, Marriage — Alice Munro ===
+# opening anchor (near the start): Years ago, before the trains
+# closing anchor (near the end):   He turned all business.
+# section: Title story; opening railway-station exchange
+# boundaries: Under Excerpt select from the title story's first sentence through the standalone sentence in the closing locator. Stop before the agent explains the need for a truck.
+# source: https://penguinrandomhousehighereducation.com/book/?isbn=9780375727436
+
+=== americanah-01 | Americanah — Chimamanda Ngozi Adichie ===
+# opening anchor (near the start): Princeton, in the summer, smelled
+# closing anchor (near the end):   her handbag had melted.
+# section: Opening; Princeton and the journey to braid hair
+# boundaries: Use the Excerpt section, not the duplicate excerpt teaser above it. Select the first four prose paragraphs through the melted chocolate bar. Stop before the description of other passengers.
+# source: https://penguinrandomhouselibrary.com/book/?isbn=9780307962126
+
+=== cloud-atlas-01 | Cloud Atlas — David Mitchell ===
+# opening anchor (near the start): Beyond the Indian hamlet, upon
+# closing anchor (near the end):   sympathy with the doctor's plight.
+# section: Opening journal entry; Thursday, 7th November; Adam Ewing narrative
+# boundaries: Select prose after the Thursday date heading through Ewing's sentence expressing sympathy for Goose. Include the date as a section heading. Stop before Goose thanks him and resumes explaining the teeth.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/2784/cloud-atlas
+
+=== citizen-an-american-lyric-01 | Citizen: An American Lyric — Claudia Rankine ===
+# opening anchor (near the start): You and your partner go
+# closing anchor (near the end):   Yes, of course.
+# section: You and Your Partner…; unnumbered prose vignette
+# boundaries: Select the four prose paragraphs after the introduction and before the attribution. End at the final repeated assent, including both repetitions. The website's vignette title is not asserted as an original chapter title.
+# source: https://pen.org/you-and-your-partner/
+
+=== the-years-01 | The Years — Annie Ernaux, tr. Alison L. Strayer ===
+# opening anchor (near the start): All the images will disappear:
+# closing anchor (near the end):   dreams with history.
+# section: Unnumbered opening image catalogue
+# boundaries: Open Read preview. Select the opening declaration, the entire image catalogue, and the two concluding memory paragraphs through the closing locator. Stop before the editorial ellipsis.
+# source: https://fitzcarraldoeditions.com/books/the-years/
+
+=== a-visit-from-the-goon-squad-01 | A Visit from the Goon Squad — Jennifer Egan ===
+# opening anchor (near the start): It began the usual way,
+# closing anchor (near the end):   woman a lesson.
+# section: Chapter 1: Found Objects
+# boundaries: Select the first two prose paragraphs after Found Objects, ending with Sasha's wish to punish the careless woman. Stop before the next paragraph about a deeper feeling.
+# source: https://www.bookbrowse.com/excerpts/index.cfm/book_number/2442/a-visit-from-the-goon-squad
+
+=== the-vegetarian-01 | The Vegetarian — Han Kang, tr. Deborah Smith ===
+# opening anchor (near the start): What are you doing standing
+# closing anchor (near the end):   Her voice was surprisingly clear.
+# section: First part; pre-dawn refrigerator scene; source has no chapter heading
+# boundaries: Select from the opening spoken question through the short sentence after Yeong-hye says she had a dream. Stop before her husband's next response. Preserve dialogue punctuation.
+# source: https://lithub.com/the-vegetarian/
+
+=== secondhand-time-01 | Secondhand Time — Svetlana Alexievich, tr. Bela Shayevich ===
+# opening anchor (near the start): Strangers, what do you want,
+# closing anchor (near the end):   we cry then, too…
+# section: On Brothers and Sisters, Victims and Executioners… and the Electorate; Marina Tikhonovna Isaichik on Alexander Porfirievich Sharpilo
+# boundaries: Select the entire quoted testimony below the three-line speaker heading, through the final ellipsis. Include the heading and the bracketed gesture. Exclude the blog introduction and footer.
+# source: https://fitzcarraldoeditions.com/2016/05/second-hand-time/
+
+=== septology-01 | Septology — Jon Fosse, tr. Damion Searls ===
+# opening anchor (near the start): And I see myself
+# closing anchor (near the end):   and not sell it?
+# section: I; opening painting meditation
+# boundaries: Open Read preview. Begin at the first prose words after I. End at the first question mark, following the narrator's thought of keeping the crossed-lines painting. This is a deliberate cut within one long printed paragraph; do not continue to the next question.
+# source: https://fitzcarraldoeditions.com/books/septology/
+
+=== hurricane-season-01 | Hurricane Season — Fernanda Melchor, tr. Sophie Hughes ===
+# opening anchor (near the start): They reached the canal along
+# closing anchor (near the end):   black snakes, smiling.
+# section: I
+# boundaries: Open Read preview. Select all three prose paragraphs of section I. Stop immediately before the heading II.
+# source: https://fitzcarraldoeditions.com/books/hurricane-season/
+
+=== station-eleven-01 | Station Eleven — Emily St. John Mandel ===
+# opening anchor (near the start): Jeevan’s understanding of disaster preparedness
+# closing anchor (near the end):   a bouquet of daffodils.
+# section: Grocery-store preparedness scene; chapter number not stated on source
+# boundaries: Select the complete excerpt on the author's page, starting at Jeevan's action-movie comparison and ending with the daffodils. Stop before the copyright attribution.
+# source: https://www.emilymandel.com/station-eleven-excerpt
 
