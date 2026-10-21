@@ -9,7 +9,7 @@
 })(typeof self !== 'undefined' ? self : this, function (S) {
   'use strict';
 
-  const VERSION = '1.0.0';
+  const VERSION = '1.1.0';
 
   // Every threshold the engine uses. Callers may override any of them; results record the values used.
   const DEFAULTS = {
@@ -26,6 +26,9 @@
     pairMinItems: 4,          // a combination must cover at least this many judged works
     pairQ: 0.1,               // combinations are reported only below this q (they are many tests)
     pairMinLift: 0.2,         // and must differ from each single characteristic's like rate by at least this
+    leaveOneOutP: 0.05,       // emerging or better must keep p below this with any single film or book left out
+    workWellP: 0.05,          // well supported must also hold at the level of works (see workLevel below) with p below this
+    workEmergingP: 0.2,       // … and emerging with p below this
     explainedP: 0.1,          // a finding is 'explained by' a stronger one if, holding that one constant, its CMH p is above this
     focusedBelow: 0.6,        // spread: liked-set entropy / judged-set entropy below this = focused
     broadAbove: 0.9,          //                                                above this = broad
@@ -70,6 +73,21 @@
       return { supporting: w(sup), contradicting: w(con), supportingWorks: new Set(sup.map((id) => items[id].work)).size };
     };
 
+    // Work-level 2×2 table for a characteristic (see the grading step).
+    const byWorkIds = {};
+    for (const id of judged) (byWorkIds[items[id].work] = byWorkIds[items[id].work] || []).push(id);
+    function workLevel(ids) {
+      const inF = new Set(ids); let a = 0, b = 0, c = 0, d = 0;
+      for (const list of Object.values(byWorkIds)) for (const present of [true, false]) {
+        const grp = list.filter((id) => inF.has(id) === present);
+        if (!grp.length) continue;
+        const k = grp.filter((id) => liked.has(id)).length * 2 - grp.length;
+        if (k === 0) continue;
+        if (present) k > 0 ? a++ : b++; else k > 0 ? c++ : d++;
+      }
+      return { p: a + b && c + d ? S.fisherExact(a, b, c, d) : 1, withUnits: a + b, withLiked: a };
+    }
+
     // Single characteristics.
     const tested = [], insufficient = [];
     for (const g of groups.values()) {
@@ -87,9 +105,32 @@
       if (t.p < O.tentativeP && Math.abs(t.diff) >= O.tentativeDiff && q < O.tentativeQ) level = 0;
       if (q < O.emergingQ) level = 1;
       if (q < O.wellQ && t.nf >= O.wellExposure && ev.supportingWorks >= O.wellWorks) level = 2;
-      const notes = [];
-      if (level > 0 && ev.supportingWorks < O.wellWorks) { level = 0; notes.push(`all supporting examples come from one ${library.area === 'cinema' ? 'film' : 'book'}`); }
-      const stats = { exposed: t.nf, likedWhenPresent: t.kf, rateWhenPresent: r(t.rateIn), rateWhenAbsent: r(t.rateOut), difference: r(t.diff), interval: S.wilson(t.kf, t.nf).map((x) => r(x)), p: r(t.p, 4), q: r(q, 4) };
+      const notes = [], unit = library.area === 'cinema' ? 'film' : 'book';
+      if (level > 0 && ev.supportingWorks < O.wellWorks) { level = 0; notes.push(`all supporting examples come from one ${unit}`); }
+      // Leave-one-work-out: several stills from one film share their look, so a finding must not rest on any single
+      // film (or book). Remove each supporting work's judged items in turn and re-test; the weakest result decides.
+      if (level > 0) {
+        let worst = 0, by = null;
+        for (const w of new Set(ev.supporting.map((e) => e.work))) {
+          const keep = judged.filter((id) => items[id].work !== w), inF = new Set(t.g.ids);
+          const a = keep.filter((id) => inF.has(id) && liked.has(id)).length, b = keep.filter((id) => inF.has(id) && !liked.has(id)).length;
+          const c = keep.filter((id) => !inF.has(id) && liked.has(id)).length, d = keep.filter((id) => !inF.has(id) && !liked.has(id)).length;
+          const pw = a + b && c + d ? S.fisherExact(a, b, c, d) : 1;
+          if (pw > worst) { worst = pw; by = w; }
+        }
+        t.looP = worst;
+        if (worst >= O.leaveOneOutP) { level = Math.min(level, 0); notes.push(`depends on one ${unit} (${by}): without it the association is not clear`); }
+      }
+      // Work level: stills from one film are not independent. Within each work, its judged items with the characteristic
+      // form one unit and those without form another; each unit counts as liked or disliked by majority (ties dropped).
+      // The association must hold across these units, so a liked film's similar stills count once, not three times.
+      if (level > 0) {
+        const u = workLevel(t.g.ids);
+        t.workP = u.p;
+        if (level === 2 && u.p >= O.workWellP) { level = 1; notes.push(`holds across individual ${unit === 'film' ? 'stills' : 'passages'} but less clearly across ${unit}s (${u.withLiked} of ${u.withUnits} ${unit} groups with it liked)`); }
+        if (level === 1 && u.p >= O.workEmergingP) { level = 0; if (!notes.length) notes.push(`not clear across ${unit}s`); }
+      }
+      const stats = { exposed: t.nf, likedWhenPresent: t.kf, rateWhenPresent: r(t.rateIn), rateWhenAbsent: r(t.rateOut), difference: r(t.diff), interval: S.wilson(t.kf, t.nf).map((x) => r(x)), p: r(t.p, 4), q: r(q, 4), ...(t.looP != null ? { leaveOneWorkOutP: r(t.looP, 4) } : {}), ...(t.workP != null ? { workLevelP: r(t.workP, 4) } : {}) };
       const row = { ...describe(t.g.feature), aliases: t.g.aliases.map(describe), direction: dir > 0 ? 'liked' : 'disliked', stats };
       if (level < 0) { unremarkable.push(row); return; }
       const lbl = (terms[t.g.feature] || {}).label || t.g.feature;
@@ -113,14 +154,33 @@
       }
       return out;
     };
+    // Joint strata: the works split by every combination of the two given findings (up to four groups).
+    const strata2 = (B, A1, A2) => {
+      const s1 = new Set(A1.ids), s2 = new Set(A2.ids), inB = new Set(B.ids), out = [];
+      for (const x of [true, false]) for (const y of [true, false]) {
+        const grp = judged.filter((id) => s1.has(id) === x && s2.has(id) === y);
+        out.push([grp.filter((id) => inB.has(id) && liked.has(id)).length, grp.filter((id) => inB.has(id) && !liked.has(id)).length,
+          grp.filter((id) => !inB.has(id) && liked.has(id)).length, grp.filter((id) => !inB.has(id) && !liked.has(id)).length]);
+      }
+      return out;
+    };
     findings.forEach((B, i) => {
-      for (const A of findings.slice(0, i)) {
-        if (A.explainedBy || A.dimension === B.dimension) continue;
+      const stronger = findings.slice(0, i).filter((A) => !A.explainedBy && A.dimension !== B.dimension);
+      for (const A of stronger) {
         const t = S.cmh(strata(B, A));
         if (t.p > O.explainedP) {
           B.explainedBy = { feature: A.feature, label: A.label, p: r(t.p, 4) };
           B.notes.push(`accounted for by ${A.label}: among works with and without it, ${B.label} makes no clear difference`);
-          break;
+          return;
+        }
+      }
+      // Two stronger findings together can account for a third that neither explains alone (e.g. a rule on low key AND warm colour).
+      for (let x = 0; x < stronger.length; x++) for (let y = x + 1; y < stronger.length; y++) {
+        const t = S.cmh(strata2(B, stronger[x], stronger[y]));
+        if (t.p > O.explainedP) {
+          B.explainedBy = { feature: stronger[x].feature, label: `${stronger[x].label} and ${stronger[y].label}`, also: stronger[y].feature, p: r(t.p, 4) };
+          B.notes.push(`accounted for by ${stronger[x].label} and ${stronger[y].label} together`);
+          return;
         }
       }
     });

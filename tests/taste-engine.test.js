@@ -75,7 +75,10 @@ test('the engine never modifies its inputs', () => {
 test('warm, low-key cinematography: low key and warm colour are found, and their combination', () => {
   const { result, profile } = profileOf('warm-low-key');
   const liked = feats(result.findings.filter((f) => f.direction === 'liked' && f.strength === 'well supported'));
-  assert.ok(liked.includes('key:low'), liked); assert.ok(liked.includes('temperature:warm'), liked);
+  assert.ok(liked.includes('key:low'), liked);
+  // Warmth holds across stills; across films it is marginal for this seed, so the work-level check grades it emerging.
+  const warm = result.findings.find((f) => f.feature === 'temperature:warm');
+  assert.ok(warm && warm.direction === 'liked' && ['well supported', 'emerging'].includes(warm.strength));
   assert.ok(result.combinations.some((c) => c.features.map((f) => f.feature).sort().join() === 'key:low,temperature:warm' && c.direction === 'liked'));
   assert.equal(profile.evidenceLevel, 'established');
   assert.match(profile.signature.summary, /low-key/); assert.match(profile.signature.summary, /warm/);
@@ -212,4 +215,39 @@ test('thresholds can be changed without code changes, and results record the thr
   const strict = A.analyse({ judgments: r.judgments, library: r.library, options: { wellQ: 0.001 } });
   assert.equal(strict.options.wellQ, 0.001);
   assert.ok(strict.findings.filter((f) => f.strength === 'well supported').length < A.analyse({ judgments: r.judgments, library: r.library }).findings.filter((f) => f.strength === 'well supported').length);
+});
+
+/* ---------- added with engine 1.1.0 (stress-test findings) ---------- */
+test('liking whole films is not mistaken for an aesthetic preference that rests on one film', () => {
+  const lib = U.cinemaLibrary();
+  // Likes every still of two films and nothing else.
+  const j = Object.fromEntries(Object.keys(lib.items).sort().map((id) => [id, ['metropolis', 'the-godfather'].includes(lib.items[id].work) ? 'like' : 'dislike']));
+  const res = A.analyse({ judgments: j, library: lib });
+  for (const f of res.findings) if (f.direction === 'liked' && !f.explainedBy) assert.notEqual(f.strength, 'well supported', f.feature);
+});
+
+test('every emerging or well-supported finding reports leave-one-work-out and work-level statistics', () => {
+  const { result } = profileOf('bright-symmetrical');
+  for (const f of result.findings.filter((x) => x.strength !== 'tentative')) {
+    assert.ok(f.stats.leaveOneWorkOutP < 0.05, f.feature);
+    assert.ok(f.stats.workLevelP < (f.strength === 'well supported' ? 0.05 : 0.2), f.feature);
+  }
+});
+
+test('grouped terms let a preference spread across rare values be found', () => {
+  const lib = U.cinemaLibrary();
+  assert.ok(lib.items['amelie-02'].features.includes('shotScale:close-range'));
+  const j = U.judge(lib, (fs) => (fs.has('shotScale:close-range') ? 0.95 : 0.25), 5);
+  const res = A.analyse({ judgments: j, library: lib });
+  assert.ok(res.findings.some((f) => (f.feature === 'shotScale:close-range' || f.aliases.some((a) => a.feature === 'shotScale:close-range')) && f.direction === 'liked'));
+});
+
+test('tentative findings never reach the signature', () => {
+  const lib = U.cinemaLibrary();
+  for (let seed = 200; seed < 230; seed++) {
+    const j = U.judge(lib, () => 0.5, seed);
+    const res = A.analyse({ judgments: j, library: lib }), p = P.build(res, { judgments: j });
+    const tentative = new Set(res.findings.filter((f) => f.strength === 'tentative').map((f) => f.feature));
+    for (const t of p.signature.terms) assert.ok(!tentative.has(t), `${seed}: ${t}`);
+  }
 });

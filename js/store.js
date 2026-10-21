@@ -83,15 +83,17 @@ window.Pallas = window.Pallas || {};
   }
 
   /* ---------- derived state ---------- */
-  // Latest effective event per item in an area, or undefined.
+  // Current state per item in an area: its latest effective like or dislike; a skip only when the item has never
+  // been liked or disliked (a later skip of an evaluated work, possible once the library loops, never hides the vote).
   function current(a) {
     const undone = new Set(doc.events.filter((e) => e.kind === 'undo').map((e) => e.undoes));
-    const map = new Map();
+    const votes = new Map(), skips = new Map();
     for (const e of doc.events) {
       if (e.area !== a || !JUDGMENTS.has(e.kind) || undone.has(e.id)) continue;
-      map.set(e.item, e);
+      (e.kind === 'skip' ? skips : votes).set(e.item, e);
     }
-    return map;
+    for (const [item, e] of skips) if (!votes.has(item)) votes.set(item, e);
+    return votes;
   }
 
   function openSession(a) {

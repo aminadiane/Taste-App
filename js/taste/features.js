@@ -16,8 +16,17 @@
       for (const [val, v] of Object.entries(d.values || {})) {
         terms[`${dim}:${val}`] = { dimension: dim, value: val, label: v.label, definition: v.definition, basis: d.basis, dimensionLabel: d.label };
       }
+      for (const [g, v] of Object.entries(d.groups || {})) {
+        terms[`${dim}:${g}`] = { dimension: dim, value: g, label: v.label, definition: v.definition, basis: d.basis, dimensionLabel: d.label, group: v.members.map((m) => `${dim}:${m}`) };
+      }
     }
     return terms;
+  }
+  // Broader group terms (vocabulary 'groups') are added to any item that has one of their members.
+  function withGroups(features, terms) {
+    const set = new Set(features);
+    for (const [k, t] of Object.entries(terms)) if (t.group && t.group.some((m) => set.has(m))) set.add(k);
+    return [...set].sort();
   }
 
   // Adds dimension values to a feature list, skipping empty and unknown values (unknown terms are reported).
@@ -40,7 +49,7 @@
       for (const [dim, v] of Object.entries((m.measured && m.measured.values) || {})) push(f, terms, dim, v, unknown);
       for (const [dim, v] of Object.entries(m.observed || {})) if (!['method', 'recorded', 'audited', 'undetermined'].includes(dim)) push(f, terms, dim, v, unknown);
       if (m.interpretation) push(f, terms, 'atmosphere', m.interpretation.atmosphere, unknown);
-      items[s.id] = { work: s.film, features: [...new Set(f)].sort() };
+      items[s.id] = { work: s.film, features: withGroups(f, terms) };
     }
     return { area: 'cinema', items, terms, unknown: [...unknown].sort() };
   }
@@ -54,7 +63,7 @@
       const f = [];
       for (const [dim, v] of Object.entries(md.features)) push(f, terms, dim, v, unknown);
       for (const [dim, v] of Object.entries((md.interpretation && md.interpretation.features) || {})) push(f, terms, dim, v, unknown);
-      items[p.id] = { work: p.book, features: [...new Set(f)].sort() };
+      items[p.id] = { work: p.book, features: withGroups(f, terms) };
     }
     return { area: 'literature', items, terms, unknown: [...unknown].sort() };
   }

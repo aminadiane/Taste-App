@@ -248,3 +248,19 @@ test('resetting an area also clears the profiles and reflections derived from it
   assert.equal(P.store.profiles('cinema').length, 0); assert.equal(P.store.profiles('literature').length, 1);
   assert.equal(P.store.reflections({ area: 'literature' }).length, 1); assert.equal(P.store.reflections().length, 1);
 });
+
+test('skipping a work that was already judged never hides its judgment', () => {
+  const ls = storage();
+  let P = boot(ls);
+  P.votes.set('c', 's1', 'like');
+  P.store.skip('cinema', 's1');                // possible once every work is evaluated and the library loops
+  assert.equal(P.votes.get('c', 's1'), 'like');
+  assert.deepEqual(P.votes.all('c'), { s1: 'like' });
+  assert.equal(P.store.judgment('cinema', 's1'), 'like');
+  P = boot(ls);
+  assert.equal(P.votes.get('c', 's1'), 'like');
+  P.store.skip('cinema', 's2');
+  assert.equal(P.store.judgment('cinema', 's2'), 'skip', 'a work only skipped still reads as skipped');
+  P.store.undo('cinema'); P.store.undo('cinema');   // undo the two skips, newest first
+  assert.equal(P.votes.get('c', 's1'), 'like'); assert.equal(P.store.judgment('cinema', 's2'), undefined);
+});

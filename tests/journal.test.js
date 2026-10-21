@@ -79,3 +79,10 @@ test('reflections are grouped by area and the journal is reproducible', () => {
   assert.equal(a.schema, 'pallas.journal/1');
   assert.ok(a.owner.anonId);
 });
+
+test('a skip after a judgment leaves the work evaluated in the journal', () => {
+  const s = store(), lib = U.cinemaLibrary(), [a] = Object.keys(lib.items).sort();
+  s.judge('cinema', a, 'dislike', lib.items[a].work); s.skip('cinema', a, lib.items[a].work);
+  const j = J.build({ doc: s.exportData(), libraries: { cinema: lib } }).areas.cinema;
+  assert.equal(j.works[0].judgment, 'dislike'); assert.equal(j.skipped.length, 0);
+});

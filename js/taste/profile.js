@@ -57,11 +57,15 @@
       const spread = result.spread.reading === 'broad' ? ` Likes are spread as widely as everything judged.` : '';
       return { summary: `No characteristic stands out yet across ${n} judged ${noun}s.${spread}`, terms: [], statements: [] };
     }
-    const { liked, disliked } = pickSignature(result.findings);
-    const hedge = (fs) => (fs.every((f) => f.strength === 'tentative') ? 'Early signs of a leaning towards ' : fs.some((f) => f.strength === 'well supported') ? 'A clear leaning towards ' : 'A developing leaning towards ');
+    // Only emerging and well-supported findings reach the signature (stress tests: tentative findings are common by chance).
+    // Well supported → "A clear leaning towards"; emerging → "Early signs of a leaning towards".
+    const { liked, disliked } = pickSignature(result.findings.filter((f) => f.strength !== 'tentative'));
     const parts = [];
-    if (liked.length) parts.push(hedge(liked) + list(liked.map((f) => f.label)) + '.');
-    if (disliked.length) parts.push('Less drawn to ' + list(disliked.map((f) => f.label)) + '.');
+    const clear = liked.filter((f) => f.strength === 'well supported'), early = liked.filter((f) => f.strength === 'emerging');
+    if (clear.length) parts.push('A clear leaning towards ' + list(clear.map((f) => f.label)) + '.');
+    if (early.length) parts.push((clear.length ? 'Early signs of a leaning towards ' : 'Early signs of a leaning towards ') + list(early.map((f) => f.label)) + '.');
+    if (disliked.length) parts.push((disliked.every((f) => f.strength === 'emerging') ? 'Possibly less drawn to ' : 'Less drawn to ') + list(disliked.map((f) => f.label)) + '.');
+    if (!parts.length) return { summary: `Some characteristics may matter, but nothing is clear yet across ${n} judged ${noun}s.`, terms: [], statements: [] };
     const combos = (result.combinations || []).filter((c) => c.strength !== 'tentative').slice(0, 1);
     if (combos.length) parts.push(`Notably, ${combos[0].features[0].label} with ${combos[0].features[1].label} (${combos[0].stats.likedWhenPresent} of ${combos[0].stats.exposed} liked).`);
     const statements = [...liked, ...disliked].map((f) => ({ text: f.explanation, feature: f.feature, strength: f.strength, subjective: f.basis === 'interpretation' }));

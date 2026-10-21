@@ -30,9 +30,11 @@
     for (const [item, list] of byItem) {
       const last = list[list.length - 1], votes = list.filter((e) => e.kind !== 'skip');
       for (let i = 1; i < votes.length; i++) if (votes[i].kind !== votes[i - 1].kind) changes.push({ item, work: (items[item] || {}).work || last.work, from: votes[i - 1].kind, to: votes[i].kind, at: votes[i].t });
-      if (last.kind === 'skip') { skipped.push({ item, at: last.t, session: last.session }); continue; }
+      // A work is evaluated once it has a like or dislike; skips before or after do not change that.
+      if (!votes.length) { skipped.push({ item, at: last.t, session: last.session }); continue; }
+      const lastVote = votes[votes.length - 1];
       works.push({
-        item, work: (items[item] || {}).work || last.work, judgment: last.kind, firstAt: list[0].t, lastAt: last.t,
+        item, work: (items[item] || {}).work || last.work, judgment: lastVote.kind, firstAt: list[0].t, lastAt: lastVote.t,
         timesJudged: votes.length, changed: votes.some((e, i) => i && e.kind !== votes[i - 1].kind),
         history: list.map((e) => ({ t: e.t, kind: e.kind, session: e.session })), inLibrary: !!items[item],
       });
@@ -59,7 +61,7 @@
     for (const [item, list] of byItem) {
       const it = items[item];
       if (!it) continue;
-      const last = list[list.length - 1].kind;
+      const vs = list.filter((e) => e.kind !== 'skip'), last = vs.length ? vs[vs.length - 1].kind : 'skip';
       for (const f of it.features) {
         const t = terms[f];
         if (!t || !dims.has(t.dimension)) continue;

@@ -1,7 +1,7 @@
 {
   "version": 2,
   "updated": "2026-10-21",
-  "notes": "Controlled vocabulary for cinematography metadata. Every value used in library/cinema-metadata.json must appear here. 'basis' says how a dimension is filled: 'measured' values are computed from the image pixels by tools/measure-stills.js and can be regenerated at any time; 'observed' values are read from the image by a viewer and describe only what is visible; 'interpretation' values are subjective and are never mixed into the other two. 'multi' dimensions take a list. Terms can be added freely; never rename a published term, add a new one and migrate instead. Definitions double as the glossary shown with Taste Profile findings.",
+  "notes": "Controlled vocabulary for cinematography metadata. Every value used in library/cinema-metadata.json must appear here. 'basis' says how a dimension is filled: 'measured' values are computed from the image pixels by tools/measure-stills.js and can be regenerated at any time; 'observed' values are read from the image by a viewer and describe only what is visible; 'interpretation' values are subjective and are never mixed into the other two. 'multi' dimensions take a list. Terms can be added freely; never rename a published term, add a new one and migrate instead. Definitions double as the glossary shown with Taste Profile findings. 'groups' in a dimension define broader terms derived from its values (e.g. close shots = medium close-up, close-up or extreme close-up); the engine adds them automatically, so rare values can still be detected together.",
   "dimensions": {
     "key": {
       "basis": "measured",
@@ -294,6 +294,25 @@
           "label": "extreme close-up",
           "definition": "A detail such as eyes or a hand fills the frame."
         }
+      },
+      "groups": {
+        "close-range": {
+          "label": "close shots",
+          "definition": "Any shot from medium close-up to extreme close-up: the frame is mostly face, body or object.",
+          "members": [
+            "medium-close",
+            "close-up",
+            "extreme-close-up"
+          ]
+        },
+        "distant": {
+          "label": "distant shots",
+          "definition": "Wide and extreme wide shots: the setting dominates the figures.",
+          "members": [
+            "wide",
+            "extreme-wide"
+          ]
+        }
       }
     },
     "angle": {
@@ -320,6 +339,18 @@
         "canted": {
           "label": "canted angle",
           "definition": "The horizon is tilted (Dutch angle)."
+        }
+      },
+      "groups": {
+        "off-level": {
+          "label": "high or low camera",
+          "definition": "Any angle other than eye level: high, low, overhead or canted.",
+          "members": [
+            "high",
+            "low",
+            "overhead",
+            "canted"
+          ]
         }
       }
     },
