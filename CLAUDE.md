@@ -46,16 +46,28 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 - `styles.css` — all page styles. `ds/` — Cultural Capital design tokens (do not edit values).
 - `app.js` — router and the Film screen (TV, like/dislike sequences, film quick view).
 - `js/book.js` — the Literature screen (660×520 book space, one scale transform, CSS 3D, WAAPI page turns, dog-ear, tear).
-- `js/drawer.js` — the Drawer and shared shelf helpers. `js/votes.js` — current persistence.
+- `js/drawer.js` — the Drawer and shared shelf helpers. `js/store.js` — persistence (see below).
+- `js/taste/` — the taste-analysis engine: `stats.js`, `features.js`, `analyse.js`, `profile.js`, and `index.js` (the browser facade, `Pallas.taste`). Pure and deterministic; see `docs/taste-engine.md`. No visible interface.
+- `js/journal.js` — assembles Taste Journal data from the store (`Pallas.journal`). No visible interface. See `docs/journal-data.md`.
+- Skip and undo handlers without controls: `Pallas.cinema` and `Pallas.literature` (`skip`, `undo`, `canUndo`, `busy`).
 - `library/stills.json` — cinema library (films keyed by slug, one record per still). Display images in `library/stills/<slug>/NN.jpg`, untouched downloads in `library/originals/`.
-- `library/excerpts.json` — literature entries (currently five stand-ins) and paperback spine presets.
+- `library/cinema-metadata.json` — per-still metadata in three blocks: `measured` (from pixels, `node tools/measure-stills.js`), `observed` (from viewing, applied from `library/import/cinema-observed.txt` by `tools/apply-observations.js`) and `interpretation` (subjective). Validate with `node tools/validate-cinema.js`.
+- `library/vocab/cinema.json`, `library/vocab/literature.json` — controlled vocabularies: every term, its definition, its basis (measured / observed / interpretation) and measurement thresholds. Never rename a published term.
+- `library/literature.json` — books and passages, with sources, locators, notes, metadata, and vocabulary `features`. Validate with `node tools/validate-literature.js`. Batch import: `node tools/import-passages.js`.
+- `library/excerpts.json` — the handoff stand-ins, used only if no passage is ready, plus the paperback spine presets.
 - `library/PROPOSAL.md` — research and sourcing notes for the cinema library. `library/review.html` — internal review tool.
 - `assets/` — production photographs, textures and masks from the handoff.
 - **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live.
 
 ### Persistence
 
-`js/store.js` (`Pallas.store`) keeps an append-only event log in `localStorage['pallas.v1']`: likes, dislikes, skips and undo as events with timestamps and session ids, each area's cursor and last activity, plus reserved slots for profiles, encountered techniques and reflections. An item's judgment is its latest event that has not been undone. `Pallas.votes` is the read/write view the screens and drawer use. Never delete or rewrite events except through the explicit reset / delete functions. Browser storage does not sync between devices and is lost if site data is cleared; `owner.accountId` is reserved for future accounts. Tests: `node --test tests/store.test.js`.
+`js/store.js` (`Pallas.store`) keeps an append-only event log in `localStorage['pallas.v1']`: likes, dislikes, skips and undo as events with timestamps and session ids, each area's cursor and last activity, plus reserved slots for profiles, encountered techniques and reflections. An item's judgment is its latest event that has not been undone. `Pallas.votes` is the read/write view the screens and drawer use. Never delete or rewrite events except through the explicit reset / delete functions. Browser storage does not sync between devices and is lost if site data is cleared; `owner.accountId` is reserved for future accounts. Profiles (snapshots, never overwritten) and reflections live in the same document.
+
+### Checks
+
+- `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, and the journal.
+- `node tools/check-site.js`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, and the validators pass.
+- `node tools/example-profiles.js`: regenerates the example Taste Profiles in `docs/examples/taste-profiles/`.
 
 ### Local preview
 
@@ -82,6 +94,7 @@ then open `http://127.0.0.1:8799/` (the built-in browser pane works). The pane t
 - Literature: target is the NYT 100 Best Books of the 21st Century; each passage records its source URL and attribution. Prefer official publisher or authorised excerpts.
 - Each still and passage is analysed individually; never copy a general description of the film or book.
 - No paid API usage (vision models, LLMs) without the owner's approval.
+- Taste findings come only from the engine's statistics. Any later AI-written interpretation goes in a profile's `interpretations` slot, cites the findings, and never replaces them.
 
 ## Working rules
 

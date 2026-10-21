@@ -38,6 +38,8 @@ Living document. Update it at the end of every session: move items between secti
 - [x] Cinema library to 89 stills / 35 films.
 - [x] GitHub and Vercel deployment.
 - [x] `CLAUDE.md` and `ROADMAP.md`.
+- [x] Five NYT passages live in the book (2026-10-21).
+- [x] Cinema metadata for all 89 stills; taste engine; simulated-user tests; skip and undo data handling; Taste Profile and Journal data foundations (2026-10-21, `feature/pallas-overnight`, not merged).
 
 ## In progress
 
@@ -125,25 +127,27 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - Tested: store tests (skip, undo, re-vote, persistence across reloads) and in the pane: cinema skip and undo, undo after a like (refused while the like sequence ran), book skip with page turn, undo after a tear-out (passage restored, torn stack emptied). The pane's saved progress was backed up and restored.
 - *Remaining:* designs for the controls and their transitions (Claude Design), then wire them to the functions above.
 
-### 5. Taste-analysis engine
+### 5. Taste-analysis engine — built and tested 2026-10-21
 
-- Shared, area-agnostic module reading the event log and structured metadata.
-- Per attribute value: exposure count, likes, dislikes, like rate against the user's overall like rate, with a confidence interval that narrows with exposure (Beta–Binomial or Wilson). No arbitrary weights.
-- Combinations and tensions only above a minimum evidence threshold.
-- Every finding lists supporting and contradicting items, counts and a strength label (tentative / emerging / well supported) derived from the statistics.
-- *Accept when:* tests on synthetic logs reproduce known patterns, produce no finding below threshold, and are deterministic.
+- `js/taste/` (stats, features, analyse, profile, index): one engine for both areas, deterministic, no LLM, no paid service. Method, assumptions and limitations: `docs/taste-engine.md`.
+- Per characteristic: Fisher's exact test against the person's own likes and dislikes, Benjamini–Hochberg correction, Wilson interval. Strength labels (tentative, emerging, well supported) come from those numbers only. Well supported needs evidence from at least two films or books.
+- Characteristics that always co-occur are reported together. Confounded findings are marked `explainedBy` the stronger one (Cochran–Mantel–Haenszel). Combinations must beat each part. Spread reads focused, mixed or broad. Reversed judgments are listed.
+- Inputs are never modified. Every result records the engine version and thresholds, so profiles can be recalculated from the event log at any time.
+- *Tests:* `tests/taste-engine.test.js` checks reference values for every statistic, agreement with direct counts, determinism, six simulated users, and false-discovery control (2 of 30 random users get a well-supported finding, the expected rate).
+- *Remaining:* real-user calibration once there is real data. Literature findings wait on more passages, since five cannot support any.
 
-### 6. Personalized Taste Profiles
+### 6. Personalized Taste Profiles — data foundation built 2026-10-21; screen waits on design
 
-- Taste signature, recurring liked and disliked characteristics, notable patterns, supporting examples, relevant techniques and concepts; snapshots stored in `profiles`.
-- Designed in Claude Design first; no dashboard layouts.
-- *Accept when:* every statement links to its evidence and strength, and the presentation matches an approved design.
+- Profile snapshot format `pallas.taste-profile/1` (`docs/taste-profile-format.md`): signature, preferred and disliked characteristics with evidence and statistics, combinations, confidence (`evidenceLevel` and per-finding strength), glossary terminology, limitations, an empty `interpretations` slot for later AI commentary, and `regeneratedFrom`.
+- Store: `profiles(area)`, `latestProfile`, `deleteProfile`. Browser: `Pallas.taste.profile / snapshot / regenerate / lastChange`.
+- **For review:** `docs/examples/taste-profiles/README.md` (regenerate with `node tools/example-profiles.js`).
+- *Remaining:* the results screen (Claude Design), and owner review of the example wording.
 
-### 7. Taste development and Journal
+### 7. Taste development and Journal — data foundation built 2026-10-21; screen waits on design
 
-- Optional, neutral explanations of techniques, artists, movements and context; exposure to unfamiliar work; never suggests reversing a dislike. Encountered techniques recorded in `encountered`.
-- Journal: liked and disliked works, profile history, techniques encountered, personal reflections. Designed first.
-- User control: view saved activity, export, reset a category, delete all.
+- `js/journal.js` builds `pallas.journal/1` from the store export and the libraries. It covers evaluated works with history, skips, reversed preferences, activity by month and session, techniques encountered, profile history and changes, and reflections. Reference: `docs/journal-data.md`.
+- Store: reflections with edit history and delete; `resetArea` also clears that area's profiles and reflections; `encountered()` is reserved for explicit learning content.
+- *Remaining:* Journal and educational-content designs; deciding which dimensions count as techniques (`TECHNIQUE_DIMENSIONS`).
 
 ### 8. Future expansion
 
@@ -166,11 +170,30 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 | # | Issue | Status |
 |---|---|---|
 | 1 | Both screens restart at item 1 and re-present evaluated works | Fixed on `feature/persistence` |
-| 2 | No skip or undo | Priority 4 |
+| 2 | No skip or undo controls (data handling done) | Waiting on designs |
 | 3 | All stills load eagerly on the film screen | Deferred |
 | 4 | Only tested in Chromium | Deferred |
 | 5 | Literature content is stand-in until list passages are supplied | Fixed on `feature/literature`: five NYT passages live |
 | 6 | No reduced-motion support, no designed touch behaviour | Deferred |
+
+## Overnight session 2026-10-21 (`feature/pallas-overnight`)
+
+All work is committed on the branch. Nothing is merged to `main`, pushed or deployed. Checks: `node --test tests/*.test.js` (48 tests) and `node tools/check-site.js` (references, syntax, data, validators). A browser pass found the approved screens unchanged, with no console errors; the pane's saved progress was backed up and restored around each test.
+
+**Continue tomorrow:**
+1. Review `docs/examples/taste-profiles/README.md` and a sample of `library/import/cinema-observed.txt` against the stills.
+2. Answer the questions below.
+3. Merge `feature/pallas-overnight` when satisfied. The branch already contains `feature/literature`.
+
+### Questions for Review
+
+1. **Observed cinema metadata.** Claude recorded every still from a 560-pixel copy in one pass. Should the owner spot-check a sample, or should a second pass be made by another method?
+2. **Atmosphere terms.** The engine counts them, marked subjective. Should profiles use interpretive terms at all, or only measured and observed ones?
+3. **Wording of signatures.** The templates are "A clear / developing leaning towards …", "Early signs of …" and "Less drawn to …". Do they fit the voice, and do they avoid any hint that a dislike is a mistake?
+4. **Thresholds.** The engine needs 8 judgments before anything is reported and 30 before a profile is "established". Strength labels use the conventional *q* < 0.05. Keep these?
+5. **Techniques for the Journal.** Which dimensions count as craft techniques (`TECHNIQUE_DIMENSIONS` in `js/journal.js`)?
+6. **Skip and undo controls.** These need designs, including whether skipping a still or undoing should have a transition (currently a direct cut).
+7. **Literature register terms** (restrained, lyrical, experimental, ornamental) are interpretations recorded by Claude for the five passages. Keep the four terms?
 
 ## Decisions pending
 
