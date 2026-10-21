@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "updated": "2026-10-21",
+  "notes": "Literature library. Books keyed by slug; any number of passages per book. A passage appears in the paperback only when status is \"ready\" (text present and metadata written from that text). Passage ids are stable: votes are keyed by them. Text is supplied by the owner from the cited source; metadata is written only from the supplied text. Ranks: NYT 100 Best Books of the 21st Century (2024).",
+  "schema": {
+    "book": ["title", "author", "year", "translator", "publisher", "nytRank"],
+    "passage": {
+      "id": "<book-slug>-NN, never renamed",
+      "book": "book slug",
+      "status": "needs-text | ready",
+      "text": "array of paragraphs, verbatim from the source",
+      "source": { "name": "", "url": "", "edition": "", "pages": "" },
+      "attribution": "",
+      "notes": { "author": "the author (info page)", "work": "the work and where the passage sits (info page)" },
+      "metadata": {
+        "observed": { "narrativeVoice": "", "person": "", "tense": "", "proseStyle": "", "rhythm": "", "pacing": "", "imagery": "", "techniques": [{ "name": "", "text": "" }] },
+        "interpretation": { "tone": "" }
+      }
+    }
+  },
+  "books": {
+    "my-brilliant-friend": { "title": "My Brilliant Friend", "author": "Elena Ferrante", "year": 2012, "translator": "Ann Goldstein", "publisher": "Europa Editions", "nytRank": 1 },
+    "wolf-hall": { "title": "Wolf Hall", "author": "Hilary Mantel", "year": 2009, "translator": null, "publisher": "Henry Holt", "nytRank": 3 },
+    "austerlitz": { "title": "Austerlitz", "author": "W. G. Sebald", "year": 2001, "translator": "Anthea Bell", "publisher": "Random House", "nytRank": 8 },
+    "never-let-me-go": { "title": "Never Let Me Go", "author": "Kazuo Ishiguro", "year": 2005, "translator": null, "publisher": "Alfred A. Knopf", "nytRank": 9 },
+    "gilead": { "title": "Gilead", "author": "Marilynne Robinson", "year": 2004, "translator": null, "publisher": "Farrar, Straus and Giroux", "nytRank": 10 }
+  },
+  "passages": [
+    { "id": "my-brilliant-friend-01", "book": "my-brilliant-friend", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
+    { "id": "wolf-hall-01", "book": "wolf-hall", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
+    { "id": "austerlitz-01", "book": "austerlitz", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
+    { "id": "never-let-me-go-01", "book": "never-let-me-go", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
+    { "id": "gilead-01", "book": "gilead", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } }
+  ],
+  "spines": [
+    { "bg": "#2f5a4a", "fg": "#f3ecdc", "w": 26, "h": 296 },
+    { "bg": "#e2d4b2", "fg": "#1d1915", "w": 20, "h": 282 },
+    { "bg": "#6B1420", "fg": "#f3ecdc", "w": 31, "h": 304 },
+    { "bg": "#c98a2b", "fg": "#1d1915", "w": 23, "h": 290 },
+    { "bg": "#4A3E9E", "fg": "#f3ecdc", "w": 28, "h": 300 }
+  ]
+}

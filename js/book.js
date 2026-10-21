@@ -8,7 +8,8 @@ window.Pallas = window.Pallas || {};
   const pad = (n) => String(n).padStart(2, '0');
   const EASE = 'cubic-bezier(.45,.05,.2,1)';
   const STK = [[0, 0, -6], [12, -8, 4], [-6, 6, -1.5], [6, -3, 7]];
-  const EXCERPTS_URL = 'library/excerpts.json';
+  const LIBRARY_URL = 'library/literature.json';
+  const EXCERPTS_URL = 'library/excerpts.json';   // handoff stand-ins, used until library passages are ready
 
   let ENTRIES = [], SPINES = [], NB = 0;
   const S = { bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
@@ -385,12 +386,28 @@ window.Pallas = window.Pallas || {};
   addEventListener('resize', render);
   addEventListener('pallas:route', (e) => { active = e.detail.isLit; if (active) render(); });
 
+  // Ready passages from the literature library become the book's entries; until at least one is ready, the
+  // handoff stand-ins in excerpts.json keep the book working. Entry ids are passage ids, so votes stay stable.
+  function fromLibrary(lib) {
+    const ready = (lib.passages || []).filter((p) => p.status === 'ready' && Array.isArray(p.text) && p.text.length && lib.books[p.book]);
+    return ready.map((p, i) => {
+      const b = lib.books[p.book], m = (p.metadata && p.metadata.observed) || {};
+      return { id: p.id, book: p.book, num: String(i + 1), title: b.title, byline: `${b.author} — ${b.year}`,
+        excerpt: p.text, author: (p.notes && p.notes.author) || '', work: (p.notes && p.notes.work) || '', techniques: m.techniques || [] };
+    });
+  }
   (async () => {
     try {
-      const res = await fetch(EXCERPTS_URL, { cache: 'no-cache' });
-      const data = await res.json();
-      ENTRIES = data.entries || []; SPINES = data.spines || []; NB = ENTRIES.length;
-    } catch { /* no content: the book stays closed with nothing to show */ }
+      const lib = await (await fetch(LIBRARY_URL, { cache: 'no-cache' })).json();
+      ENTRIES = fromLibrary(lib); SPINES = lib.spines || [];
+    } catch { /* no library: fall back below */ }
+    if (!ENTRIES.length) {
+      try {
+        const data = await (await fetch(EXCERPTS_URL, { cache: 'no-cache' })).json();
+        ENTRIES = data.entries || []; SPINES = data.spines || SPINES;
+      } catch { /* no content: the book stays closed with nothing to show */ }
+    }
+    NB = ENTRIES.length;
     setTear(0, 0);
     render();
   })();

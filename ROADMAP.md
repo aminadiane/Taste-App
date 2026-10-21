@@ -79,12 +79,23 @@ Browser storage does not synchronise between devices and is lost if site data is
 
 ## Next
 
-### 2. Literature library
+### 2. Literature library — started 2026-10-21 on branch `feature/literature`
 
-- Schema for books and passages: book (NYT rank, title, author, year, publisher) and passages (text, source URL, attribution, word count), with literary metadata: narrative voice, person and tense, prose style, rhythm, pacing, imagery, tone and techniques, observation separated from interpretation.
-- Multiple passages per book; shelf grouping by book, as films are.
-- First ~20 authentic passages from the NYT 100 Best Books of the 21st Century, preferring official publisher or authorised excerpts.
-- *Accept when:* 20 passages from list titles load in the book with source and attribution recorded, ids are stable, and the five stand-ins are retired or marked as stand-ins.
+Built: `library/literature.json` (version 2) with books keyed by slug, any number of passages per book, source and attribution fields, and literary metadata split into `observed` (narrative voice, person, tense, prose style, rhythm, pacing, imagery, techniques) and `interpretation` (tone). `js/book.js` loads every passage marked `ready`; until at least one is ready, the handoff stand-ins in `library/excerpts.json` keep the book working. Tested in the pane for both paths, including dog-ear votes saved by passage id and resume.
+
+First batch selected, chosen to contrast in voice and form (ranks confirmed for the top ten only):
+
+| Book | NYT rank | Status |
+|---|---|---|
+| My Brilliant Friend — Elena Ferrante, tr. Ann Goldstein (2012) | 1 | needs text |
+| Wolf Hall — Hilary Mantel (2009) | 3 | needs text |
+| Austerlitz — W. G. Sebald, tr. Anthea Bell (2001) | 8 | needs text |
+| Never Let Me Go — Kazuo Ishiguro (2005) | 9 | needs text |
+| Gilead — Marilynne Robinson (2004) | 10 | needs text |
+
+**Blocked on text:** all list titles are in copyright, so Claude does not transcribe them. The owner supplies each passage verbatim from an official or authorised excerpt (or the edition owned), with the source URL or edition and pages. Then, per passage: record the text and source, write `observed` metadata, `interpretation.tone` and the info-page notes from that text, set `status: ready`.
+
+*Accept when:* the 5 passages above are `ready` and load in the book; then 20 passages; the stand-ins retired once list passages are live; ranks beyond the top ten checked against the NYT list.
 
 ### 3. Cinema metadata
 
@@ -142,7 +153,7 @@ Browser storage does not synchronise between devices and is lost if site data is
 | 2 | No skip or undo | Priority 4 |
 | 3 | All stills load eagerly on the film screen | Deferred |
 | 4 | Only tested in Chromium | Deferred |
-| 5 | Literature content is stand-in | Priority 2 |
+| 5 | Literature content is stand-in until list passages are supplied | Priority 2 |
 | 6 | No reduced-motion support, no designed touch behaviour | Deferred |
 
 ## Decisions pending
