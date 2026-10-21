@@ -1,0 +1,28 @@
+{
+  "name": "pallas-app",
+  "version": "1.0.0",
+  "description": "Cultural Capital presents *pallas* — an exploration of what moves you, and why. Previously *taste*.",
+  "main": "app.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "node tests/store.test.js",
+    "serve": "node .claude/serve.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aminadiane/Taste-App.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aminadiane/Taste-App/issues"
+  },
+  "homepage": "https://github.com/aminadiane/Taste-App#readme",
+  "dependencies": {
+    "@vercel/analytics": "^2.0.1"
+  }
+}
