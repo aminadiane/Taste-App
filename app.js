@@ -25,7 +25,7 @@ window.Pallas = window.Pallas || {};
       wrap.className = 'tv__still';
       const img = document.createElement('img');
       img.className = 'tv__still-img';
-      img.src = LIBRARY_BASE + s.file;
+      img.dataset.src = LIBRARY_BASE + s.file;   // loaded on demand (see loadAround) instead of all 89 at start
       img.alt = s.scene || '';
       img.draggable = false;
       const band = document.createElement('div');
@@ -47,8 +47,34 @@ window.Pallas = window.Pallas || {};
     buildStills();
     if (N) { state.idx = store.resumeIndex('cinema', stillIds()); store.setCursor('cinema', stillIds()[state.idx]); }   // resume where the visitor left off
     render();
+    if (document.readyState === 'complete') loadRestWhenIdle(); else addEventListener('load', loadRestWhenIdle, { once: true });
   }
   const stillIds = () => library.stills.map((s) => s.id);
+
+  // Lazy loading: the current still, its neighbours and the next one the screen will show are requested at once, so the
+  // like swipe and the dislike power-on never reveal an empty frame; every other still loads when the browser is idle.
+  function load(i) {
+    const img = stillEls[i] && stillEls[i].firstElementChild;
+    if (img && !img.getAttribute('src') && img.dataset.src) img.setAttribute('src', img.dataset.src);
+  }
+  function loadAround() {
+    if (!N) return;
+    const i = state.idx;
+    [i, (i + 1) % N, (i - 1 + N) % N, nextIdx(), state.prevIdx].forEach((k) => k != null && load(k));
+  }
+  let backgroundStarted = false;
+  function loadRestWhenIdle() {
+    if (backgroundStarted || !N) return;
+    backgroundStarted = true;
+    const idle = window.requestIdleCallback || ((fn) => setTimeout(() => fn({ timeRemaining: () => 8 }), 200));
+    let k = 0;
+    const step = (dl) => {
+      let n = 0;
+      while (k < N && n < 3 && dl.timeRemaining() > 2) { load(k++); n++; }
+      if (k < N) idle(step);
+    };
+    idle(step);
+  }
   // After a vote: the next still not yet evaluated, in library order.
   const nextIdx = () => store.nextOpen('cinema', stillIds(), (state.idx + 1) % N);
 
@@ -128,6 +154,7 @@ window.Pallas = window.Pallas || {};
     $('cq-like').textContent = `liked (${V.list('c', 'like').length})`;
     $('cq-dislike').textContent = `disliked (${V.list('c', 'dislike').length})`;
 
+    loadAround();
     void picture.offsetWidth;   // commit transition-less phases before the next one starts
   }
 

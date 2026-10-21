@@ -1,5 +1,5 @@
 // Pre-deploy check for the static site (there is no build step; Vercel serves the repository root as is).
-// Usage: node tools/check-site.js
+// Usage: node tools/check-site.js [--tests]
 // 1. every file index.html references exists   2. every JavaScript file parses
 // 3. the library validators pass               4. the JSON data files parse
 const fs = require('node:fs');
@@ -38,6 +38,15 @@ ok(`${stills.length} still images present`);
 
 for (const v of ['validate-literature.js', 'validate-cinema.js']) {
   try { execFileSync(process.execPath, [path.join(ROOT, 'tools', v)], { stdio: 'pipe' }); ok(v); } catch (e) { errors.push(`${v} failed: ${String(e.stdout)}`); }
+}
+
+// --tests also runs the automated test suite.
+if (process.argv.includes('--tests')) {
+  const files = fs.readdirSync(path.join(ROOT, 'tests')).filter((f) => f.endsWith('.test.js')).map((f) => path.join(ROOT, 'tests', f));
+  const r = require('node:child_process').spawnSync(process.execPath, ['--test', ...files], { encoding: 'utf8' });
+  const pass = (r.stdout.match(/^# pass (\d+)/m) || [])[1], fail = (r.stdout.match(/^# fail (\d+)/m) || [])[1];
+  if (r.status !== 0) errors.push(`tests failed (${fail} failing):\n${r.stdout.split('\n').filter((l) => /^not ok/.test(l)).join('\n')}`);
+  else ok(`${pass} tests pass`);
 }
 
 if (errors.length) { console.log('FAILED'); errors.forEach((e) => console.log('  ERROR  ' + e)); process.exit(1); }

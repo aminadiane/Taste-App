@@ -50,7 +50,7 @@
     const liked = new Set(judged.filter((id) => judgments[id] === 'like'));
     const n = judged.length, L = liked.size, Dn = n - L;
     const base = {
-      engine: { name: 'pallas-taste', version: VERSION }, area: library.area, options: O,
+      engine: { name: 'pallas-taste', version: VERSION }, area: library.area, options: O, vocabularyVersion: library.vocabularyVersion || null,
       counts: { judged: n, likes: L, dislikes: Dn, likeRate: n ? r(L / n) : null, works: new Set(judged.map((id) => items[id].work)).size, notInLibrary: notInLibrary.length },
     };
 

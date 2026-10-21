@@ -276,3 +276,16 @@ test('a taste resting on one characteristic does not produce combinations with u
   }
   assert.ok(withCombo <= 3, `${withCombo} of 30`);
 });
+
+test('a saved profile knows when it is stale: newer engine, changed vocabulary or new judgments', () => {
+  const r = U.run('warm-low-key');
+  const res = A.analyse({ judgments: r.judgments, library: r.library });
+  const p = P.build(res, { judgments: r.judgments, generatedAt: AT });
+  const now = { engineVersion: A.VERSION, vocabularyVersion: r.library.vocabularyVersion, judgments: r.judgments };
+  assert.deepEqual(P.staleness(p, now), { stale: false, reasons: [] });
+  assert.ok(P.staleness(p, { ...now, engineVersion: '9.0.0' }).stale);
+  assert.ok(P.staleness(p, { ...now, vocabularyVersion: 99 }).stale);
+  const one = Object.keys(r.judgments)[0];
+  assert.deepEqual(P.staleness(p, { ...now, judgments: { ...r.judgments, [one]: r.judgments[one] === 'like' ? 'dislike' : 'like' } }).reasons, ['judgments changed']);
+  assert.equal(P.staleness(null, now).stale, true);
+});

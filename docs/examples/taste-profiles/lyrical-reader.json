@@ -51,7 +51,8 @@
       "notInLibrary": 0,
       "eventCount": 66,
       "lastEventAt": "2026-10-06T19:20:39.115Z",
-      "judgmentsDigest": "ad6820fb"
+      "judgmentsDigest": "ad6820fb",
+      "vocabularyVersion": 1
     },
     "evidenceLevel": "established",
     "signature": {

@@ -180,7 +180,7 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - [ ] Higher-resolution book photography per the photography brief.
 - [ ] Safari and Firefox testing, especially CSS 3D and `-webkit-mask-composite`.
 - [ ] Responsive behaviour of the TV and the paperback on phones and tablets.
-- [ ] Lazy-load stills; the film screen loads all images at start.
+- [x] Lazy-load stills (2026-10-21): the current still, its neighbours and the next one load at once, and the rest load when the browser is idle. Tested in the pane: 3 requests at start instead of 89, both images of the like swipe fully loaded, all 89 loaded in the background.
 
 ## Known bugs and limitations
 
@@ -188,7 +188,7 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 |---|---|---|
 | 1 | Both screens restart at item 1 and re-present evaluated works | Fixed on `feature/persistence` |
 | 2 | No skip or undo controls (data handling done) | Waiting on designs |
-| 3 | All stills load eagerly on the film screen | Deferred |
+| 3 | All stills load eagerly on the film screen | Fixed on `feature/pallas-overnight` |
 | 4 | Only tested in Chromium | Deferred |
 | 5 | Literature content is stand-in until list passages are supplied | Fixed on `feature/literature`: five NYT passages live |
 | 6 | No reduced-motion support, no designed touch behaviour | Deferred |

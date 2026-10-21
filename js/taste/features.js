@@ -51,7 +51,7 @@
       if (m.interpretation) push(f, terms, 'atmosphere', m.interpretation.atmosphere, unknown);
       items[s.id] = { work: s.film, features: withGroups(f, terms) };
     }
-    return { area: 'cinema', items, terms, unknown: [...unknown].sort() };
+    return { area: 'cinema', items, terms, unknown: [...unknown].sort(), vocabularyVersion: vocab.version || null };
   }
 
   // Literature: literature.json + vocab/literature.json. Work = book slug.
@@ -65,7 +65,7 @@
       for (const [dim, v] of Object.entries((md.interpretation && md.interpretation.features) || {})) push(f, terms, dim, v, unknown);
       items[p.id] = { work: p.book, features: withGroups(f, terms) };
     }
-    return { area: 'literature', items, terms, unknown: [...unknown].sort() };
+    return { area: 'literature', items, terms, unknown: [...unknown].sort(), vocabularyVersion: vocab.version || null };
   }
 
   return { termTable, cinema, literature };

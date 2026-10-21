@@ -51,7 +51,8 @@
       "notInLibrary": 0,
       "eventCount": 12,
       "lastEventAt": "2026-10-01T19:03:32.996Z",
-      "judgmentsDigest": "b48accb0"
+      "judgmentsDigest": "b48accb0",
+      "vocabularyVersion": 2
     },
     "evidenceLevel": "no-pattern",
     "signature": {

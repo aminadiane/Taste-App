@@ -54,7 +54,8 @@
       "notInLibrary": 0,
       "eventCount": 74,
       "lastEventAt": "2026-10-08T19:24:57.322Z",
-      "judgmentsDigest": "a12805eb"
+      "judgmentsDigest": "a12805eb",
+      "vocabularyVersion": 2
     },
     "evidenceLevel": "established",
     "signature": {

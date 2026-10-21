@@ -50,5 +50,11 @@
     return list.length > 1 ? T.profiles.compare(list[list.length - 2], list[list.length - 1]) : null;
   }
 
-  Object.assign(T, { library, judgments, profile, snapshot, regenerate, lastChange });
+  // Whether the latest saved profile is out of date (newer engine, changed vocabulary, new judgments).
+  async function staleness(area) {
+    const lib = await library(area);
+    return T.profiles.staleness(P.store.latestProfile(area), { engineVersion: T.analysis.VERSION, vocabularyVersion: lib.vocabularyVersion, judgments: judgments(area) });
+  }
+
+  Object.assign(T, { library, judgments, profile, snapshot, regenerate, lastChange, staleness });
 })(typeof self !== 'undefined' ? self : this);

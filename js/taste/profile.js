@@ -96,7 +96,7 @@
     return {
       schema: SCHEMA, kind: 'taste-profile', area: result.area, generatedAt,
       engine: result.engine, options: result.options,
-      basedOn: { ...result.counts, eventCount: history.length, lastEventAt: lastEvent, judgmentsDigest: digest(judgments) },
+      basedOn: { ...result.counts, eventCount: history.length, lastEventAt: lastEvent, judgmentsDigest: digest(judgments), vocabularyVersion: result.vocabularyVersion || null },
       evidenceLevel: level,
       signature: sig,
       preferred: result.findings.filter((f) => f.direction === 'liked').map(trimFinding),
@@ -165,5 +165,16 @@
     return out;
   }
 
-  return { SCHEMA, build, compare, digest, narrative };
+  // Whether a saved profile should be regenerated: a newer engine, a changed vocabulary, or different judgments.
+  function staleness(saved, { engineVersion, vocabularyVersion, judgments }) {
+    if (!saved) return { stale: true, reasons: ['no saved profile'] };
+    const reasons = [];
+    if (saved.engine && saved.engine.version !== engineVersion) reasons.push(`engine ${saved.engine.version} → ${engineVersion}`);
+    const v = saved.basedOn && saved.basedOn.vocabularyVersion;
+    if (vocabularyVersion != null && v !== vocabularyVersion) reasons.push(`vocabulary ${v ?? 'unrecorded'} → ${vocabularyVersion}`);
+    if (judgments && saved.basedOn && saved.basedOn.judgmentsDigest !== digest(judgments)) reasons.push('judgments changed');
+    return { stale: reasons.length > 0, reasons };
+  }
+
+  return { SCHEMA, build, compare, digest, narrative, staleness };
 });
