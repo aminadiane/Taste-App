@@ -1,42 +1,411 @@
 {
   "version": 2,
   "updated": "2026-10-21",
-  "notes": "Literature library. Books keyed by slug; any number of passages per book. A passage appears in the paperback only when status is \"ready\" (text present and metadata written from that text). Passage ids are stable: votes are keyed by them. Text is supplied by the owner from the cited source; metadata is written only from the supplied text. Ranks: NYT 100 Best Books of the 21st Century (2024).",
+  "notes": "Literature library. Books keyed by slug; any number of passages per book. A passage appears in the paperback only when status is \"ready\". Passage ids are stable: votes are keyed by them. Each passage is chosen from a verified official or authorised excerpt (source.url, verified date); locator gives its first and last words so the text can be entered exactly. Text is entered by the owner from that source; metadata was written from a reading of the passage itself. Ranks: NYT 100 Best Books of the 21st Century (2024).",
   "schema": {
-    "book": ["title", "author", "year", "translator", "publisher", "nytRank"],
+    "book": [
+      "title",
+      "author",
+      "year",
+      "translator",
+      "publisher",
+      "nytRank"
+    ],
     "passage": {
       "id": "<book-slug>-NN, never renamed",
       "book": "book slug",
       "status": "needs-text | ready",
       "text": "array of paragraphs, verbatim from the source",
-      "source": { "name": "", "url": "", "edition": "", "pages": "" },
+      "source": {
+        "name": "",
+        "url": "",
+        "kind": "publisher excerpt | authorised excerpt",
+        "verified": "YYYY-MM-DD",
+        "edition": "",
+        "isbn": "",
+        "pages": ""
+      },
       "attribution": "",
-      "notes": { "author": "the author (info page)", "work": "the work and where the passage sits (info page)" },
+      "notes": {
+        "author": "the author (info page)",
+        "work": "the work and where the passage sits (info page)"
+      },
       "metadata": {
-        "observed": { "narrativeVoice": "", "person": "", "tense": "", "proseStyle": "", "rhythm": "", "pacing": "", "imagery": "", "techniques": [{ "name": "", "text": "" }] },
-        "interpretation": { "tone": "" }
+        "observed": {
+          "narrativeVoice": "",
+          "person": "",
+          "tense": "",
+          "proseStyle": "",
+          "rhythm": "",
+          "pacing": "",
+          "imagery": "",
+          "techniques": [
+            {
+              "name": "",
+              "text": ""
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": ""
+        }
+      },
+      "locator": {
+        "start": "first words",
+        "end": "last words",
+        "where": "chapter / page in the source"
       }
     }
   },
   "books": {
-    "my-brilliant-friend": { "title": "My Brilliant Friend", "author": "Elena Ferrante", "year": 2012, "translator": "Ann Goldstein", "publisher": "Europa Editions", "nytRank": 1 },
-    "wolf-hall": { "title": "Wolf Hall", "author": "Hilary Mantel", "year": 2009, "translator": null, "publisher": "Henry Holt", "nytRank": 3 },
-    "austerlitz": { "title": "Austerlitz", "author": "W. G. Sebald", "year": 2001, "translator": "Anthea Bell", "publisher": "Random House", "nytRank": 8 },
-    "never-let-me-go": { "title": "Never Let Me Go", "author": "Kazuo Ishiguro", "year": 2005, "translator": null, "publisher": "Alfred A. Knopf", "nytRank": 9 },
-    "gilead": { "title": "Gilead", "author": "Marilynne Robinson", "year": 2004, "translator": null, "publisher": "Farrar, Straus and Giroux", "nytRank": 10 }
+    "my-brilliant-friend": {
+      "title": "My Brilliant Friend",
+      "author": "Elena Ferrante",
+      "year": 2012,
+      "translator": "Ann Goldstein",
+      "publisher": "Europa Editions",
+      "nytRank": 1,
+      "isbn": "9781609450786",
+      "edition": "Europa Editions, 2012"
+    },
+    "wolf-hall": {
+      "title": "Wolf Hall",
+      "author": "Hilary Mantel",
+      "year": 2009,
+      "translator": null,
+      "publisher": "Henry Holt",
+      "nytRank": 3,
+      "isbn": "9780805080681",
+      "edition": "Henry Holt and Co., 2009"
+    },
+    "austerlitz": {
+      "title": "Austerlitz",
+      "author": "W. G. Sebald",
+      "year": 2001,
+      "translator": "Anthea Bell",
+      "publisher": "Random House",
+      "nytRank": 8,
+      "isbn": "9780307365828",
+      "edition": "Random House / Knopf Canada ebook"
+    },
+    "never-let-me-go": {
+      "title": "Never Let Me Go",
+      "author": "Kazuo Ishiguro",
+      "year": 2005,
+      "translator": null,
+      "publisher": "Alfred A. Knopf",
+      "nytRank": 9,
+      "isbn": "1400043395",
+      "edition": "Alfred A. Knopf, 2005"
+    },
+    "gilead": {
+      "title": "Gilead",
+      "author": "Marilynne Robinson",
+      "year": 2004,
+      "translator": null,
+      "publisher": "Farrar, Straus and Giroux",
+      "nytRank": 10,
+      "isbn": "9780374602109",
+      "edition": "Farrar, Straus and Giroux, Oprah's Book Club edition, 2020"
+    }
   },
   "passages": [
-    { "id": "my-brilliant-friend-01", "book": "my-brilliant-friend", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
-    { "id": "wolf-hall-01", "book": "wolf-hall", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
-    { "id": "austerlitz-01", "book": "austerlitz", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
-    { "id": "never-let-me-go-01", "book": "never-let-me-go", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } },
-    { "id": "gilead-01", "book": "gilead", "status": "needs-text", "text": [], "source": { "name": "", "url": "", "edition": "", "pages": "" }, "attribution": "", "notes": { "author": "", "work": "" }, "metadata": { "observed": {}, "interpretation": {} } }
+    {
+      "id": "my-brilliant-friend-01",
+      "book": "my-brilliant-friend",
+      "status": "needs-text",
+      "text": [],
+      "source": {
+        "name": "Diane Rehm Show, Readers' Review: My Brilliant Friend (Scribd excerpt embedded on the page)",
+        "url": "https://dianerehm.org/shows/2015-11-25/readers-review-my-brilliant-friend-by-elena-ferrante/",
+        "kind": "authorised excerpt",
+        "verified": "2026-10-21",
+        "edition": "Europa Editions, 2012",
+        "isbn": "9781609450786",
+        "pages": "27"
+      },
+      "attribution": "Excerpt from My Brilliant Friend by Elena Ferrante. Translation by Ann Goldstein. Copyright © 2012 by Edizioni E/O. First publication 2012 by Europa Editions. Used with permission.",
+      "notes": {
+        "author": "Elena Ferrante is the pseudonym of an Italian novelist who has never appeared in public. My Brilliant Friend is the first of the four Neapolitan novels, translated by Ann Goldstein.",
+        "work": "The narrator, Elena, now in her sixties, recalls her childhood friendship with Lila in a poor neighbourhood of Naples in the 1950s. This is the opening of the first chapter."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "retrospective first person; the adult narrator recalls herself as a child",
+          "person": "first",
+          "tense": "past, with habitual past (\"would thrust\")",
+          "proseStyle": "plain, concrete diction in long cumulative sentences joined by commas",
+          "rhythm": "long sentences that accumulate clauses; a repeated pattern of Lila acting and the narrator copying",
+          "pacing": "compresses a habit of many days into a summary before narrowing to one evening",
+          "imagery": "the dark stairs, the violet light of the courtyard, the black mouth of a manhole, cockroaches and rats",
+          "techniques": [
+            {
+              "name": "Mirroring",
+              "text": "each dare Lila performs is followed by the narrator doing the same, which sets up their relationship in the structure of the sentences."
+            },
+            {
+              "name": "Retrospective frame",
+              "text": "\"I remember\" places a distant adult voice over the child's fear."
+            },
+            {
+              "name": "Repetition",
+              "text": "\"step after step, flight after flight\" makes the climb feel long before it begins."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "tense and intimate; fear held at a remembered distance"
+        }
+      },
+      "locator": {
+        "start": "My friendship with Lila began",
+        "end": "that the rats wouldn't bite me.",
+        "where": "Childhood, The Story of Don Achille, chapter 1, opening"
+      }
+    },
+    {
+      "id": "wolf-hall-01",
+      "book": "wolf-hall",
+      "status": "needs-text",
+      "text": [],
+      "source": {
+        "name": "Macmillan, Wolf Hall book page (Read Excerpt)",
+        "url": "https://us.macmillan.com/books/9780805080681/wolfhall/",
+        "kind": "publisher excerpt",
+        "verified": "2026-10-21",
+        "edition": "Henry Holt and Co., 2009",
+        "isbn": "9780805080681",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Wolf Hall by Hilary Mantel. Copyright © 2009 by Hilary Mantel. Published by Henry Holt and Company.",
+      "notes": {
+        "author": "Hilary Mantel (1952–2022) was an English novelist. Wolf Hall and its sequel Bring Up the Bodies both won the Booker Prize.",
+        "work": "The first novel of a trilogy about Thomas Cromwell at the court of Henry VIII. It opens in 1500 with the young Cromwell beaten by his father, Walter."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "close third person, held to the boy's senses; he is not yet named",
+          "person": "third (\"he\")",
+          "tense": "present",
+          "proseStyle": "short clauses and semicolons; exact physical detail; plain modern English",
+          "rhythm": "staccato opening (\"Felled, dazed, silent\"), then longer sentences of observation",
+          "pacing": "slowed to seconds; one moment on the cobbles is examined in detail",
+          "imagery": "blood across the face, the cobbles of the yard, the unravelling stitching of the father's boot seen with one eye",
+          "techniques": [
+            {
+              "name": "In medias res",
+              "text": "the chapter opens on a shouted command and a body already on the ground."
+            },
+            {
+              "name": "Withheld identity",
+              "text": "the boy is only \"he\"; the reader is placed inside him before knowing who he is."
+            },
+            {
+              "name": "Close detail",
+              "text": "the injured eye notices the twine coming loose from the boot, a small exact detail amid the violence."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "brutal and unflinching, observed without self-pity"
+        }
+      },
+      "locator": {
+        "start": "“So now get up.”",
+        "end": "and opened another cut.",
+        "where": "Part One, I, Across the Narrow Sea, Putney, 1500, opening"
+      }
+    },
+    {
+      "id": "austerlitz-01",
+      "book": "austerlitz",
+      "status": "needs-text",
+      "text": [],
+      "source": {
+        "name": "Penguin Random House Canada, Austerlitz excerpt",
+        "url": "https://www.penguinrandomhouse.ca/books/163503/austerlitz-by-w-g-sebald-translated-by-anthea-bell/9780307365828/excerpt",
+        "kind": "publisher excerpt",
+        "verified": "2026-10-21",
+        "edition": "translated by Anthea Bell",
+        "isbn": "9780307365828",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Austerlitz by W. G. Sebald, translated by Anthea Bell. Published by Penguin Random House.",
+      "notes": {
+        "author": "W. G. Sebald (1944–2001) was a German writer who lived in England; his books mix fiction, travel, memoir and photographs. Austerlitz was his last novel.",
+        "work": "An unnamed narrator recounts his meetings, over decades, with Jacques Austerlitz, who slowly recovers his lost childhood. This is the novel's opening, in Antwerp."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "retrospective first person; an unnamed narrator recalling his own uncertain movements",
+          "person": "first",
+          "tense": "past",
+          "proseStyle": "long, formal sentences with many subordinate clauses; measured, slightly old-fashioned diction",
+          "rhythm": "extended periodic sentences that defer their main point",
+          "pacing": "unhurried and digressive; travel described as drift",
+          "imagery": "a train crossing a viaduct with pointed turrets into a dark station concourse",
+          "techniques": [
+            {
+              "name": "Admitted uncertainty",
+              "text": "the narrator travels \"for other reasons which were never entirely clear to me\", so his account begins in doubt."
+            },
+            {
+              "name": "Cumulative sentence",
+              "text": "clauses pile up over a single sentence, so the reading itself feels like the slow arrival of the train."
+            },
+            {
+              "name": "Foreshadowing through malaise",
+              "text": "the narrator feels unwell from the moment he arrives, before anything has happened."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "melancholy and uneasy"
+        }
+      },
+      "locator": {
+        "start": "In the second half of the 1960s",
+        "end": "for the whole of my visit to Belgium on that occasion.",
+        "where": "Chapter 1, opening"
+      }
+    },
+    {
+      "id": "never-let-me-go-01",
+      "book": "never-let-me-go",
+      "status": "needs-text",
+      "text": [],
+      "source": {
+        "name": "KCRW, Excerpt from Never Let Me Go",
+        "url": "https://www.kcrw.com/pages/excerpt-from-never-let-me-go",
+        "kind": "authorised excerpt",
+        "verified": "2026-10-21",
+        "edition": "Alfred A. Knopf, 2005",
+        "isbn": "1400043395",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Never Let Me Go by Kazuo Ishiguro. Copyright © 2005 by Kazuo Ishiguro. Published by Alfred A. Knopf. Excerpt supplied by Dial-A-Book.",
+      "notes": {
+        "author": "Kazuo Ishiguro, born in Nagasaki in 1954 and raised in England, received the Nobel Prize in Literature in 2017.",
+        "work": "Kathy H. looks back on her years at Hailsham, an English boarding school, and on her friends Ruth and Tommy. This is the novel's opening."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "first person, conversational, addressed to a listener",
+          "person": "first",
+          "tense": "present for her situation, past for her record",
+          "proseStyle": "plain, colloquial diction (\"a complete waste of space\"); short sentences",
+          "rhythm": "short declarative sentences with frequent self-corrections",
+          "pacing": "a calm self-introduction that gives facts without explaining them",
+          "imagery": "few images; the passage works through institutional terms rather than pictures",
+          "techniques": [
+            {
+              "name": "Unexplained terminology",
+              "text": "carer, donors, \"agitated\", fourth donation are used as ordinary words, so the reader must infer the world."
+            },
+            {
+              "name": "Self-correction",
+              "text": "Kathy qualifies her own claims (\"So I'm not trying to boast\"), building an anxious, modest voice."
+            },
+            {
+              "name": "Direct address",
+              "text": "she speaks as if to someone who already knows her world."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "calm, polite and quietly unsettling"
+        }
+      },
+      "locator": {
+        "start": "My name is Kathy H.",
+        "end": "even before fourth donation.",
+        "where": "Chapter One, opening"
+      }
+    },
+    {
+      "id": "gilead-01",
+      "book": "gilead",
+      "status": "needs-text",
+      "text": [],
+      "source": {
+        "name": "Macmillan, Gilead (Oprah's Book Club) book page (Read Excerpt)",
+        "url": "https://us.macmillan.com/books/9780374602109/gileadoprahsbookclub/",
+        "kind": "publisher excerpt",
+        "verified": "2026-10-21",
+        "edition": "Farrar, Straus and Giroux, 2020",
+        "isbn": "9780374602109",
+        "pages": ""
+      },
+      "attribution": "Excerpt from Gilead by Marilynne Robinson. Copyright © 2004 by Marilynne Robinson. Published by Farrar, Straus and Giroux.",
+      "notes": {
+        "author": "Marilynne Robinson, born in 1943, is an American novelist and essayist. Gilead won the Pulitzer Prize for Fiction in 2005.",
+        "work": "John Ames, an elderly pastor in Gilead, Iowa, writes a long letter to his young son, to be read when the boy is grown. This is its opening."
+      },
+      "metadata": {
+        "observed": {
+          "narrativeVoice": "first person, epistolary; a father writing to his young son",
+          "person": "first, addressing \"you\"",
+          "tense": "past for last night's conversation, inside a present-tense letter",
+          "proseStyle": "plain words in one long sentence of reported speech without quotation marks",
+          "rhythm": "a chain of \"and you said … and I said\" clauses that move like conversation",
+          "pacing": "slow; one small exchange is given in full",
+          "imagery": "the child's hand in the old man's hand",
+          "techniques": [
+            {
+              "name": "Epistolary address",
+              "text": "the narrator speaks to \"you\", a son who will read the letter only as a grown man."
+            },
+            {
+              "name": "Polysyndeton",
+              "text": "repeated \"and\" joins the turns of the conversation into one unbroken sentence."
+            },
+            {
+              "name": "Unmarked dialogue",
+              "text": "speech is reported without quotation marks, so voices sit inside the writer's memory."
+            }
+          ]
+        },
+        "interpretation": {
+          "tone": "tender and reflective, aware of death without fear"
+        }
+      },
+      "locator": {
+        "start": "I told you last night that I might be gone sometime",
+        "end": "because you thought I was laughing at you.",
+        "where": "opening"
+      }
+    }
   ],
   "spines": [
-    { "bg": "#2f5a4a", "fg": "#f3ecdc", "w": 26, "h": 296 },
-    { "bg": "#e2d4b2", "fg": "#1d1915", "w": 20, "h": 282 },
-    { "bg": "#6B1420", "fg": "#f3ecdc", "w": 31, "h": 304 },
-    { "bg": "#c98a2b", "fg": "#1d1915", "w": 23, "h": 290 },
-    { "bg": "#4A3E9E", "fg": "#f3ecdc", "w": 28, "h": 300 }
+    {
+      "bg": "#2f5a4a",
+      "fg": "#f3ecdc",
+      "w": 26,
+      "h": 296
+    },
+    {
+      "bg": "#e2d4b2",
+      "fg": "#1d1915",
+      "w": 20,
+      "h": 282
+    },
+    {
+      "bg": "#6B1420",
+      "fg": "#f3ecdc",
+      "w": 31,
+      "h": 304
+    },
+    {
+      "bg": "#c98a2b",
+      "fg": "#1d1915",
+      "w": 23,
+      "h": 290
+    },
+    {
+      "bg": "#4A3E9E",
+      "fg": "#f3ecdc",
+      "w": 28,
+      "h": 300
+    }
   ]
 }

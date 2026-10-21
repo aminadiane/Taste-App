@@ -83,17 +83,19 @@ Browser storage does not synchronise between devices and is lost if site data is
 
 Built: `library/literature.json` (version 2) with books keyed by slug, any number of passages per book, source and attribution fields, and literary metadata split into `observed` (narrative voice, person, tense, prose style, rhythm, pacing, imagery, techniques) and `interpretation` (tone). `js/book.js` loads every passage marked `ready`; until at least one is ready, the handoff stand-ins in `library/excerpts.json` keep the book working. Tested in the pane for both paths, including dog-ear votes saved by passage id and resume.
 
-First batch selected, chosen to contrast in voice and form (ranks confirmed for the top ten only):
+First batch: excerpts verified 2026-10-21 at their official or authorised sources (correcting the earlier note that none were found). Each record has the source URL, verified date, ISBN and edition, attribution, a locator (first and last words, chapter or page), info-page notes, and observed / interpretation metadata written from a reading of the passage.
 
-| Book | NYT rank | Status |
-|---|---|---|
-| My Brilliant Friend — Elena Ferrante, tr. Ann Goldstein (2012) | 1 | needs text |
-| Wolf Hall — Hilary Mantel (2009) | 3 | needs text |
-| Austerlitz — W. G. Sebald, tr. Anthea Bell (2001) | 8 | needs text |
-| Never Let Me Go — Kazuo Ishiguro (2005) | 9 | needs text |
-| Gilead — Marilynne Robinson (2004) | 10 | needs text |
+| Book | NYT rank | Source | Status |
+|---|---|---|---|
+| My Brilliant Friend — Elena Ferrante, tr. Ann Goldstein | 1 | Diane Rehm Show, Scribd excerpt used with Europa's permission, p. 27 | metadata done, needs text |
+| Wolf Hall — Hilary Mantel | 3 | Macmillan, Read Excerpt | metadata done, needs text |
+| Austerlitz — W. G. Sebald, tr. Anthea Bell | 8 | Penguin Random House Canada excerpt | metadata done, needs text |
+| Never Let Me Go — Kazuo Ishiguro | 9 | KCRW, excerpt supplied by Dial-A-Book | metadata done, needs text |
+| Gilead — Marilynne Robinson | 10 | Macmillan, Read Excerpt | metadata done, needs text |
 
-**Blocked on text:** all list titles are in copyright, so Claude does not transcribe them. The owner supplies each passage verbatim from an official or authorised excerpt (or the edition owned), with the source URL or edition and pages. Then, per passage: record the text and source, write `observed` metadata, `interpretation.tone` and the info-page notes from that text, set `status: ready`.
+**Remaining for each passage:** the owner enters the text verbatim from the source, from the locator's first words to its last (Claude does not transcribe copyrighted text). Then set `status: ready` and run `node tools/validate-literature.js`, which checks every field and that the text starts and ends at the locator.
+
+Scaling to 100 books: add a book record and passages with the same fields; the validator enforces the schema; the book shows every ready passage automatically.
 
 *Accept when:* the 5 passages above are `ready` and load in the book; then 20 passages; the stand-ins retired once list passages are live; ranks beyond the top ten checked against the NYT list.
 
