@@ -5,7 +5,7 @@
  "stills": {
   "2001-a-space-odyssey-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      121
@@ -25,6 +25,7 @@
      "saturation": 0.131,
      "warmth": -0.023,
      "colouredShare": 0.018,
+     "vividShare": 0,
      "hueSpread": 7,
      "symmetry": -0.15,
      "detail": 0.082
@@ -71,6 +72,8 @@
       "teal",
       "blue"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -93,6 +96,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [
      "lightSource"
     ],
@@ -111,7 +122,7 @@
   },
   "lawrence-of-arabia-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      107
@@ -131,6 +142,7 @@
      "saturation": 0.194,
      "warmth": -0.027,
      "colouredShare": 0.399,
+     "vividShare": 0.017,
      "hueSpread": 91.4,
      "symmetry": 0.087,
      "detail": 0.033
@@ -176,6 +188,8 @@
      "hue": [
       "blue"
      ],
+     "harmony": "single-hue",
+     "accent": true,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -198,7 +212,18 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke",
+     "dust"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -213,7 +238,7 @@
   },
   "lawrence-of-arabia-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      107
@@ -233,6 +258,7 @@
      "saturation": 0.265,
      "warmth": 0.117,
      "colouredShare": 0.646,
+     "vividShare": 0.001,
      "hueSpread": 22.1,
      "symmetry": 0.037,
      "detail": 0.052
@@ -279,6 +305,8 @@
       "orange",
       "red"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -302,6 +330,14 @@
     "figures": "crowd",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "dust"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -316,7 +352,7 @@
   },
   "lawrence-of-arabia-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -336,6 +372,7 @@
      "saturation": 0.146,
      "warmth": -0.045,
      "colouredShare": 0.23,
+     "vividShare": 0,
      "hueSpread": 32.6,
      "symmetry": 0.048,
      "detail": 0.032
@@ -382,6 +419,8 @@
       "teal",
       "blue"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -404,6 +443,15 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "rim",
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [
      "focus"
     ],
@@ -421,7 +469,7 @@
   },
   "lawrence-of-arabia-04": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -441,6 +489,7 @@
      "saturation": 0.101,
      "warmth": 0.036,
      "colouredShare": 0.007,
+     "vividShare": 0,
      "hueSpread": 44.3,
      "symmetry": 0.167,
      "detail": 0.024
@@ -484,6 +533,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -505,6 +556,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -519,7 +578,7 @@
   },
   "lawrence-of-arabia-05": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -539,6 +598,7 @@
      "saturation": 0.183,
      "warmth": 0.066,
      "colouredShare": 0.583,
+     "vividShare": 0,
      "hueSpread": 12.5,
      "symmetry": 0.111,
      "detail": 0.044
@@ -585,6 +645,8 @@
       "red",
       "orange"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -607,6 +669,14 @@
     "figures": "crowd",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "dust"
+    ],
+    "gaze": "hidden",
+    "motion": "blur",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -622,7 +692,7 @@
   },
   "dr-strangelove-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      226,
      154
@@ -642,6 +712,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.318,
      "detail": 0.05
@@ -685,6 +756,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -707,6 +780,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -722,7 +803,7 @@
   },
   "dr-strangelove-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      195,
      103
@@ -742,6 +823,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.137,
      "detail": 0.041
@@ -785,6 +867,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -806,6 +890,14 @@
     "figures": "single",
     "setting": "vehicle",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -820,7 +912,7 @@
   },
   "dr-strangelove-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      154
@@ -840,6 +932,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.075,
      "detail": 0.036
@@ -883,6 +976,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -903,7 +998,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -917,7 +1022,7 @@
   },
   "12-angry-men-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      153
@@ -937,6 +1042,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.089,
      "detail": 0.076
@@ -980,6 +1086,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -1001,6 +1109,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -1016,7 +1132,7 @@
   },
   "12-angry-men-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      153
@@ -1036,6 +1152,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.092,
      "detail": 0.055
@@ -1079,6 +1196,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -1099,6 +1218,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -1114,7 +1241,7 @@
   },
   "rear-window-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -1134,6 +1261,7 @@
      "saturation": 0.349,
      "warmth": 0.11,
      "colouredShare": 0.487,
+     "vividShare": 0.06,
      "hueSpread": 46.4,
      "symmetry": 0.363,
      "detail": 0.17
@@ -1179,6 +1307,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": true,
      "symmetry": "moderate",
      "detail": "dense"
     }
@@ -1201,6 +1331,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -1215,7 +1353,7 @@
   },
   "rear-window-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      204,
      181
@@ -1235,6 +1373,7 @@
      "saturation": 0.424,
      "warmth": 0.118,
      "colouredShare": 0.247,
+     "vividShare": 0.028,
      "hueSpread": 27.4,
      "symmetry": 0.071,
      "detail": 0.095
@@ -1280,6 +1419,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -1301,6 +1442,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -1316,7 +1465,7 @@
   },
   "sunset-boulevard-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -1336,6 +1485,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.225,
      "detail": 0.056
@@ -1379,6 +1529,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -1401,6 +1553,14 @@
     "figures": "two",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -1415,7 +1575,7 @@
   },
   "sunset-boulevard-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -1435,6 +1595,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.02,
      "detail": 0.031
@@ -1478,6 +1639,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -1498,7 +1661,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1513,7 +1686,7 @@
   },
   "some-like-it-hot-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      153
@@ -1533,6 +1706,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.007,
      "detail": 0.062
@@ -1576,6 +1750,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -1597,6 +1773,14 @@
     "figures": "crowd",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -1612,7 +1796,7 @@
   },
   "some-like-it-hot-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      153
@@ -1632,6 +1816,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.215,
      "detail": 0.112
@@ -1675,6 +1860,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "dense"
     }
@@ -1697,6 +1884,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -1712,7 +1907,7 @@
   },
   "paths-of-glory-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      240,
      153
@@ -1732,6 +1927,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.11,
      "detail": 0.028
@@ -1775,6 +1971,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -1796,6 +1994,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -1811,7 +2017,7 @@
   },
   "paths-of-glory-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      153
@@ -1831,6 +2037,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.093,
      "detail": 0.035
@@ -1874,6 +2081,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -1896,6 +2105,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [
      "focus"
     ],
@@ -1913,7 +2130,7 @@
   },
   "the-apartment-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      109
@@ -1933,6 +2150,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.025,
      "detail": 0.135
@@ -1976,6 +2194,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "dense"
     }
@@ -1999,6 +2219,14 @@
     "figures": "crowd",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -2014,7 +2242,7 @@
   },
   "the-apartment-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      103
@@ -2034,6 +2262,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.146,
      "detail": 0.065
@@ -2077,6 +2306,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -2097,6 +2328,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -2111,7 +2350,7 @@
   },
   "bridge-on-the-river-kwai-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      108
@@ -2131,6 +2370,7 @@
      "saturation": 0.284,
      "warmth": 0.074,
      "colouredShare": 0.527,
+     "vividShare": 0.005,
      "hueSpread": 28.4,
      "symmetry": -0.039,
      "detail": 0.111
@@ -2177,6 +2417,8 @@
       "orange",
       "red"
      ],
+     "harmony": "analogous",
+     "accent": true,
      "symmetry": "weak",
      "detail": "dense"
     }
@@ -2199,6 +2441,14 @@
     "figures": "crowd",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -2214,7 +2464,7 @@
   },
   "bridge-on-the-river-kwai-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      253,
      108
@@ -2234,6 +2484,7 @@
      "saturation": 0.305,
      "warmth": -0.081,
      "colouredShare": 0.497,
+     "vividShare": 0,
      "hueSpread": 17.8,
      "symmetry": 0.789,
      "detail": 0.031
@@ -2279,6 +2530,8 @@
      "hue": [
       "blue"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "strong",
      "detail": "smooth"
     }
@@ -2300,7 +2553,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21",
     "audited": "2026-10-21"
@@ -2316,7 +2579,7 @@
   },
   "the-general-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -2336,6 +2599,7 @@
      "saturation": 0.268,
      "warmth": 0.131,
      "colouredShare": 0.788,
+     "vividShare": 0,
      "hueSpread": 4,
      "symmetry": 0.015,
      "detail": 0.073
@@ -2379,6 +2643,8 @@
      "toned": true,
      "temperature": "warm",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -2400,6 +2666,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -2414,7 +2688,7 @@
   },
   "the-general-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -2434,6 +2708,7 @@
      "saturation": 0.398,
      "warmth": 0.123,
      "colouredShare": 0.926,
+     "vividShare": 0,
      "hueSpread": 3.2,
      "symmetry": 0.233,
      "detail": 0.069
@@ -2477,6 +2752,8 @@
      "toned": true,
      "temperature": "warm",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -2498,6 +2775,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -2514,7 +2799,7 @@
   },
   "the-general-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -2534,6 +2819,7 @@
      "saturation": 0.309,
      "warmth": 0.12,
      "colouredShare": 0.78,
+     "vividShare": 0,
      "hueSpread": 5.2,
      "symmetry": 0.406,
      "detail": 0.068
@@ -2577,6 +2863,8 @@
      "toned": true,
      "temperature": "warm",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -2599,6 +2887,15 @@
     "figures": "crowd",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke",
+     "mist"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -2614,7 +2911,7 @@
   },
   "the-kid-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -2634,6 +2931,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.063,
      "detail": 0.081
@@ -2677,6 +2975,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -2699,6 +2999,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [
      "atmosphere"
     ],
@@ -2713,7 +3021,7 @@
   },
   "the-kid-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -2733,6 +3041,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.102,
      "detail": 0.062
@@ -2776,6 +3085,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -2796,6 +3107,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -2811,7 +3130,7 @@
   },
   "sherlock-jr-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      255,
      192
@@ -2831,6 +3150,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.001,
      "detail": 0.064
@@ -2874,6 +3194,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -2895,6 +3217,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -2909,7 +3239,7 @@
   },
   "sherlock-jr-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      255,
      192
@@ -2929,6 +3259,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.585,
      "detail": 0.063
@@ -2972,6 +3303,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "strong",
      "detail": "moderate"
     }
@@ -2996,6 +3329,14 @@
     "figures": "crowd",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3010,7 +3351,7 @@
   },
   "the-gold-rush-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -3030,6 +3371,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.291,
      "detail": 0.041
@@ -3073,6 +3415,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -3093,6 +3437,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3108,7 +3460,7 @@
   },
   "spirited-away-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -3128,6 +3480,7 @@
      "saturation": 0.329,
      "warmth": -0.04,
      "colouredShare": 0.757,
+     "vividShare": 0.113,
      "hueSpread": 72.9,
      "symmetry": 0.163,
      "detail": 0.042
@@ -3175,6 +3528,8 @@
       "orange",
       "red"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -3196,7 +3551,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "animation",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3211,7 +3576,7 @@
   },
   "spirited-away-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -3231,6 +3596,7 @@
      "saturation": 0.341,
      "warmth": 0.108,
      "colouredShare": 0.708,
+     "vividShare": 0.198,
      "hueSpread": 99.4,
      "symmetry": 0.224,
      "detail": 0.058
@@ -3278,6 +3644,8 @@
       "teal",
       "orange"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -3299,6 +3667,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3314,7 +3690,7 @@
   },
   "spirited-away-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -3334,6 +3710,7 @@
      "saturation": 0.306,
      "warmth": 0.123,
      "colouredShare": 0.678,
+     "vividShare": 0.114,
      "hueSpread": 23,
      "symmetry": 0.046,
      "detail": 0.06
@@ -3381,6 +3758,8 @@
       "red",
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -3401,7 +3780,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "animation",
-    "undetermined": [],
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3416,7 +3805,7 @@
   },
   "spirited-away-04": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -3436,6 +3825,7 @@
      "saturation": 0.303,
      "warmth": -0.094,
      "colouredShare": 0.548,
+     "vividShare": 0.133,
      "hueSpread": 135,
      "symmetry": -0.157,
      "detail": 0.054
@@ -3482,6 +3872,8 @@
       "teal",
       "red"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -3505,6 +3897,14 @@
     "figures": "group",
     "setting": "vehicle",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3520,7 +3920,7 @@
   },
   "parasite-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -3540,6 +3940,7 @@
      "saturation": 0.417,
      "warmth": 0.104,
      "colouredShare": 0.695,
+     "vividShare": 0.125,
      "hueSpread": 25.9,
      "symmetry": 0.096,
      "detail": 0.074
@@ -3585,6 +3986,8 @@
      "hue": [
       "green"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -3608,6 +4011,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3622,7 +4033,7 @@
   },
   "parasite-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -3642,6 +4053,7 @@
      "saturation": 0.192,
      "warmth": 0.04,
      "colouredShare": 0.069,
+     "vividShare": 0,
      "hueSpread": 16.3,
      "symmetry": 0.249,
      "detail": 0.072
@@ -3687,6 +4099,8 @@
      "hue": [
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -3708,8 +4122,16 @@
     "figures": "none",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [],
+    "gaze": null,
+    "motion": "still",
     "undetermined": [
-     "focus"
+     "atmospherics",
+     "focus",
+     "gaze"
     ],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3725,7 +4147,7 @@
   },
   "the-grand-budapest-hotel-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      196
@@ -3745,6 +4167,7 @@
      "saturation": 0.714,
      "warmth": 0.509,
      "colouredShare": 0.847,
+     "vividShare": 0.616,
      "hueSpread": 38.8,
      "symmetry": 0.355,
      "detail": 0.037
@@ -3790,6 +4213,8 @@
      "hue": [
       "red"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -3811,6 +4236,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [
      "focus"
     ],
@@ -3827,7 +4260,7 @@
   },
   "the-grand-budapest-hotel-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      196
@@ -3847,6 +4280,7 @@
      "saturation": 0.336,
      "warmth": 0.223,
      "colouredShare": 0.83,
+     "vividShare": 0.025,
      "hueSpread": 29.3,
      "symmetry": 0.547,
      "detail": 0.106
@@ -3892,6 +4326,8 @@
      "hue": [
       "red"
      ],
+     "harmony": "single-hue",
+     "accent": true,
      "symmetry": "strong",
      "detail": "dense"
     }
@@ -3916,6 +4352,14 @@
     "figures": "crowd",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -3931,7 +4375,7 @@
   },
   "amelie-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      144
@@ -3951,6 +4395,7 @@
      "saturation": 0.888,
      "warmth": 0.474,
      "colouredShare": 0.807,
+     "vividShare": 0.62,
      "hueSpread": 12.1,
      "symmetry": -0.064,
      "detail": 0.051
@@ -3997,6 +4442,8 @@
       "orange",
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -4017,6 +4464,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -4031,7 +4486,7 @@
   },
   "amelie-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      144
@@ -4051,6 +4506,7 @@
      "saturation": 0.843,
      "warmth": 0.357,
      "colouredShare": 0.621,
+     "vividShare": 0.432,
      "hueSpread": 14,
      "symmetry": 0.156,
      "detail": 0.041
@@ -4097,6 +4553,8 @@
       "orange",
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -4118,6 +4576,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -4133,7 +4599,7 @@
   },
   "in-the-mood-for-love-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      146
@@ -4153,6 +4619,7 @@
      "saturation": 0.546,
      "warmth": 0.197,
      "colouredShare": 0.578,
+     "vividShare": 0.119,
      "hueSpread": 26.8,
      "symmetry": 0.149,
      "detail": 0.042
@@ -4200,6 +4667,8 @@
       "yellow",
       "orange"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -4220,6 +4689,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -4235,7 +4712,7 @@
   },
   "in-the-mood-for-love-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      146
@@ -4255,6 +4732,7 @@
      "saturation": 0.346,
      "warmth": 0.103,
      "colouredShare": 0.204,
+     "vividShare": 0.064,
      "hueSpread": 45.7,
      "symmetry": 0.218,
      "detail": 0.068
@@ -4302,6 +4780,8 @@
       "yellow",
       "green"
      ],
+     "harmony": "analogous",
+     "accent": true,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -4325,6 +4805,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -4340,7 +4828,7 @@
   },
   "mad-max-fury-road-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -4360,6 +4848,7 @@
      "saturation": 0.658,
      "warmth": 0.404,
      "colouredShare": 0.786,
+     "vividShare": 0.66,
      "hueSpread": 30.3,
      "symmetry": -0.011,
      "detail": 0.029
@@ -4405,6 +4894,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -4428,7 +4919,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "dust"
+    ],
+    "gaze": null,
+    "motion": "blur",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4443,7 +4944,7 @@
   },
   "mad-max-fury-road-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      106
@@ -4463,6 +4964,7 @@
      "saturation": 0.811,
      "warmth": -0.213,
      "colouredShare": 0.931,
+     "vividShare": 0.492,
      "hueSpread": 40.4,
      "symmetry": 0.61,
      "detail": 0.025
@@ -4508,6 +5010,8 @@
      "hue": [
       "blue"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "strong",
      "detail": "smooth"
     }
@@ -4527,7 +5031,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "glare",
+     "pools"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": null,
+    "motion": "implied",
     "undetermined": [
+     "gaze",
      "lightDirection"
     ],
     "method": "viewed",
@@ -4545,7 +5059,7 @@
   },
   "oldboy-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      108
@@ -4565,6 +5079,7 @@
      "saturation": 0.573,
      "warmth": 0.003,
      "colouredShare": 0.613,
+     "vividShare": 0.107,
      "hueSpread": 49.3,
      "symmetry": 0.066,
      "detail": 0.055
@@ -4611,6 +5126,8 @@
       "green",
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -4633,6 +5150,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -4648,7 +5173,7 @@
   },
   "oldboy-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      108
@@ -4668,6 +5193,7 @@
      "saturation": 0.433,
      "warmth": 0.203,
      "colouredShare": 0.732,
+     "vividShare": 0.34,
      "hueSpread": 34.5,
      "symmetry": -0.039,
      "detail": 0.052
@@ -4713,6 +5239,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -4733,6 +5261,14 @@
     "figures": "single",
     "setting": null,
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "still",
     "undetermined": [
      "setting"
     ],
@@ -4749,7 +5285,7 @@
   },
   "psycho-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      193
@@ -4769,6 +5305,7 @@
      "saturation": 0.006,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 14.5,
      "symmetry": 0.37,
      "detail": 0.027
@@ -4812,6 +5349,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -4833,6 +5372,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "implied",
     "undetermined": [
      "focus"
     ],
@@ -4851,7 +5398,7 @@
   },
   "psycho-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      249,
      190
@@ -4871,6 +5418,7 @@
      "saturation": 0.01,
      "warmth": 0.001,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 93.1,
      "symmetry": 0.063,
      "detail": 0.042
@@ -4914,6 +5462,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -4935,6 +5485,14 @@
     "figures": "single",
     "setting": null,
     "medium": "live-action",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [
      "setting"
     ],
@@ -4952,7 +5510,7 @@
   },
   "the-great-dictator-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -4972,6 +5530,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.201,
      "detail": 0.056
@@ -5015,6 +5574,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -5036,6 +5597,14 @@
     "figures": "single",
     "setting": null,
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "implied",
     "undetermined": [
      "setting"
     ],
@@ -5052,7 +5621,7 @@
   },
   "the-great-dictator-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -5072,6 +5641,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.043,
      "detail": 0.015
@@ -5115,6 +5685,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -5136,6 +5708,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [
      "focus",
      "lightSource"
@@ -5154,7 +5734,7 @@
   },
   "the-great-dictator-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -5174,6 +5754,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.144,
      "detail": 0.057
@@ -5217,6 +5798,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -5239,6 +5822,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5254,7 +5845,7 @@
   },
   "mr-smith-goes-to-washington-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -5274,6 +5865,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.051,
      "detail": 0.096
@@ -5317,6 +5909,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "dense"
     }
@@ -5339,6 +5933,14 @@
     "figures": "crowd",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5354,7 +5956,7 @@
   },
   "mr-smith-goes-to-washington-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -5374,6 +5976,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.108,
      "detail": 0.067
@@ -5417,6 +6020,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -5437,6 +6042,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5451,7 +6064,7 @@
   },
   "mr-smith-goes-to-washington-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -5471,6 +6084,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.075,
      "detail": 0.06
@@ -5514,6 +6128,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -5535,6 +6151,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5549,7 +6173,7 @@
   },
   "on-the-waterfront-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      154
@@ -5569,6 +6193,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.12,
      "detail": 0.038
@@ -5612,6 +6237,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -5632,6 +6259,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5647,7 +6282,7 @@
   },
   "on-the-waterfront-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      154
@@ -5667,6 +6302,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.001,
      "detail": 0.043
@@ -5710,6 +6346,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -5732,6 +6370,14 @@
     "figures": "group",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -5748,7 +6394,7 @@
   },
   "on-the-waterfront-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      242,
      154
@@ -5768,6 +6414,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.126,
      "detail": 0.061
@@ -5811,6 +6458,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -5833,6 +6482,15 @@
     "figures": "two",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "patterned-shadow",
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5848,7 +6506,7 @@
   },
   "its-a-wonderful-life-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      190
@@ -5868,6 +6526,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.139,
      "detail": 0.047
@@ -5911,6 +6570,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -5931,6 +6592,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -5945,7 +6614,7 @@
   },
   "its-a-wonderful-life-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      190
@@ -5965,6 +6634,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.269,
      "detail": 0.113
@@ -6008,6 +6678,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "dense"
     }
@@ -6030,6 +6702,14 @@
     "figures": "group",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6044,7 +6724,7 @@
   },
   "its-a-wonderful-life-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      190
@@ -6064,6 +6744,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.039,
      "detail": 0.076
@@ -6107,6 +6788,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -6129,6 +6812,14 @@
     "figures": "crowd",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6144,7 +6835,7 @@
   },
   "its-a-wonderful-life-04": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -6164,6 +6855,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.152,
      "detail": 0.071
@@ -6207,6 +6899,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -6229,6 +6923,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6243,7 +6945,7 @@
   },
   "north-by-northwest-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      144
@@ -6263,6 +6965,7 @@
      "saturation": 0.189,
      "warmth": 0.045,
      "colouredShare": 0.434,
+     "vividShare": 0.019,
      "hueSpread": 59.8,
      "symmetry": 0.058,
      "detail": 0.028
@@ -6308,6 +7011,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": true,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -6330,7 +7035,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6345,7 +7060,7 @@
   },
   "north-by-northwest-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      144
@@ -6365,6 +7080,7 @@
      "saturation": 0.376,
      "warmth": -0.048,
      "colouredShare": 0.406,
+     "vividShare": 0.053,
      "hueSpread": 73.8,
      "symmetry": 0.06,
      "detail": 0.035
@@ -6411,6 +7127,8 @@
       "blue",
       "orange"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -6433,7 +7151,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6447,7 +7175,7 @@
   },
   "north-by-northwest-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      144
@@ -6467,6 +7195,7 @@
      "saturation": 0.425,
      "warmth": -0.076,
      "colouredShare": 0.595,
+     "vividShare": 0.006,
      "hueSpread": 15.8,
      "symmetry": 0.169,
      "detail": 0.026
@@ -6512,6 +7241,8 @@
      "hue": [
       "blue"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -6534,6 +7265,14 @@
     "figures": "two",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6549,7 +7288,7 @@
   },
   "vertigo-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      255,
      147
@@ -6569,6 +7308,7 @@
      "saturation": 0.31,
      "warmth": -0.152,
      "colouredShare": 0.556,
+     "vividShare": 0.011,
      "hueSpread": 55.1,
      "symmetry": -0.046,
      "detail": 0.052
@@ -6614,6 +7354,8 @@
      "hue": [
       "blue"
      ],
+     "harmony": "single-hue",
+     "accent": true,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -6637,6 +7379,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6652,7 +7402,7 @@
   },
   "vertigo-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      147
@@ -6672,6 +7422,7 @@
      "saturation": 0.378,
      "warmth": 0.02,
      "colouredShare": 0.548,
+     "vividShare": 0.037,
      "hueSpread": 81.6,
      "symmetry": -0.057,
      "detail": 0.112
@@ -6718,6 +7469,8 @@
       "orange",
       "blue"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "weak",
      "detail": "dense"
     }
@@ -6739,7 +7492,16 @@
     "figures": "none",
     "setting": null,
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
     "undetermined": [
+     "gaze",
      "setting"
     ],
     "method": "viewed",
@@ -6756,7 +7518,7 @@
   },
   "vertigo-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      146
@@ -6776,6 +7538,7 @@
      "saturation": 0.425,
      "warmth": -0.087,
      "colouredShare": 0.439,
+     "vividShare": 0.039,
      "hueSpread": 83.5,
      "symmetry": 0.433,
      "detail": 0.053
@@ -6821,6 +7584,8 @@
      "hue": [
       "blue"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -6843,6 +7608,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6857,7 +7630,7 @@
   },
   "double-indemnity-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      195
@@ -6877,6 +7650,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.197,
      "detail": 0.056
@@ -6920,6 +7694,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -6942,6 +7718,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -6957,7 +7741,7 @@
   },
   "double-indemnity-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      195
@@ -6977,6 +7761,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": -0.043,
      "detail": 0.071
@@ -7020,6 +7805,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -7042,6 +7829,14 @@
     "figures": "two",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "patterned-shadow"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -7057,7 +7852,7 @@
   },
   "double-indemnity-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      195
@@ -7077,6 +7872,7 @@
      "saturation": 0,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.206,
      "detail": 0.043
@@ -7120,6 +7916,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -7142,6 +7940,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -7157,7 +7963,7 @@
   },
   "metropolis-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -7177,6 +7983,7 @@
      "saturation": 0.004,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.69,
      "detail": 0.063
@@ -7220,6 +8027,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "strong",
      "detail": "moderate"
     }
@@ -7244,7 +8053,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7259,7 +8078,7 @@
   },
   "metropolis-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -7279,6 +8098,7 @@
      "saturation": 0.004,
      "warmth": 0.001,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.329,
      "detail": 0.053
@@ -7322,6 +8142,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -7346,6 +8168,14 @@
     "figures": "group",
     "setting": null,
     "medium": "live-action",
+    "lightPattern": [
+     "beams"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [
      "setting"
     ],
@@ -7364,7 +8194,7 @@
   },
   "metropolis-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      192
@@ -7384,6 +8214,7 @@
      "saturation": 0.004,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.299,
      "detail": 0.062
@@ -7427,6 +8258,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -7449,7 +8282,18 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "live-action",
-    "undetermined": [],
+    "lightPattern": [
+     "beams",
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7464,7 +8308,7 @@
   },
   "the-passion-of-joan-of-arc-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      190
@@ -7484,6 +8328,7 @@
      "saturation": 0.005,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.636,
      "detail": 0.04
@@ -7527,6 +8372,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "strong",
      "detail": "smooth"
     }
@@ -7548,6 +8395,14 @@
     "figures": "single",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "off-frame",
+    "motion": "still",
     "undetermined": [
      "focus"
     ],
@@ -7565,7 +8420,7 @@
   },
   "the-passion-of-joan-of-arc-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      254,
      182
@@ -7585,6 +8440,7 @@
      "saturation": 0.006,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.527,
      "detail": 0.059
@@ -7628,6 +8484,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "strong",
      "detail": "moderate"
     }
@@ -7649,6 +8507,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "camera",
+    "motion": "still",
     "undetermined": [
      "focus"
     ],
@@ -7667,7 +8533,7 @@
   },
   "the-passion-of-joan-of-arc-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      190
@@ -7687,6 +8553,7 @@
      "saturation": 0.004,
      "warmth": 0,
      "colouredShare": 0,
+     "vividShare": 0,
      "hueSpread": 0,
      "symmetry": 0.397,
      "detail": 0.043
@@ -7730,6 +8597,8 @@
      "toned": false,
      "temperature": "neutral",
      "hue": [],
+     "harmony": null,
+     "accent": false,
      "symmetry": "moderate",
      "detail": "smooth"
     }
@@ -7754,6 +8623,14 @@
     "figures": "group",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [
      "focus"
     ],
@@ -7771,7 +8648,7 @@
   },
   "howls-moving-castle-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -7791,6 +8668,7 @@
      "saturation": 0.233,
      "warmth": -0.042,
      "colouredShare": 0.535,
+     "vividShare": 0.001,
      "hueSpread": 61.5,
      "symmetry": -0.078,
      "detail": 0.059
@@ -7837,6 +8715,8 @@
       "blue",
       "teal"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -7858,7 +8738,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "animation",
-    "undetermined": [],
+    "lightPattern": [
+     "beams"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": null,
+    "motion": "implied",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7873,7 +8763,7 @@
   },
   "howls-moving-castle-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -7893,6 +8783,7 @@
      "saturation": 0.422,
      "warmth": 0.248,
      "colouredShare": 0.607,
+     "vividShare": 0.313,
      "hueSpread": 40.6,
      "symmetry": 0.259,
      "detail": 0.059
@@ -7939,6 +8830,8 @@
       "red",
       "orange"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -7962,6 +8855,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "glare"
+    ],
+    "atmospherics": [
+     "smoke"
+    ],
+    "gaze": "hidden",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -7977,7 +8878,7 @@
   },
   "howls-moving-castle-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -7997,6 +8898,7 @@
      "saturation": 0.389,
      "warmth": 0.074,
      "colouredShare": 0.807,
+     "vividShare": 0.214,
      "hueSpread": 75,
      "symmetry": 0.246,
      "detail": 0.077
@@ -8042,6 +8944,8 @@
      "hue": [
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -8064,6 +8968,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -8079,7 +8991,7 @@
   },
   "my-neighbor-totoro-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -8099,6 +9011,7 @@
      "saturation": 0.196,
      "warmth": -0.004,
      "colouredShare": 0.235,
+     "vividShare": 0.001,
      "hueSpread": 70.3,
      "symmetry": 0.146,
      "detail": 0.062
@@ -8144,6 +9057,8 @@
      "hue": [
       "teal"
      ],
+     "harmony": "contrasting",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -8165,6 +9080,14 @@
     "figures": "two",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "rain"
+    ],
+    "gaze": "camera",
+    "motion": "still",
     "undetermined": [
      "focus",
      "lightSource"
@@ -8184,7 +9107,7 @@
   },
   "my-neighbor-totoro-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -8204,6 +9127,7 @@
      "saturation": 0.428,
      "warmth": -0.127,
      "colouredShare": 0.768,
+     "vividShare": 0.249,
      "hueSpread": 54.5,
      "symmetry": -0.04,
      "detail": 0.09
@@ -8250,6 +9174,8 @@
       "teal",
       "green"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -8272,6 +9198,14 @@
     "figures": "two",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "hidden",
+    "motion": "implied",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -8286,7 +9220,7 @@
   },
   "my-neighbor-totoro-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -8306,6 +9240,7 @@
      "saturation": 0.407,
      "warmth": -0.169,
      "colouredShare": 0.775,
+     "vividShare": 0.131,
      "hueSpread": 26.9,
      "symmetry": 0.048,
      "detail": 0.043
@@ -8352,6 +9287,8 @@
       "blue",
       "teal"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "weak",
      "detail": "smooth"
     }
@@ -8374,6 +9311,14 @@
     "figures": "single",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -8389,7 +9334,7 @@
   },
   "princess-mononoke-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -8409,6 +9354,7 @@
      "saturation": 0.441,
      "warmth": 0.213,
      "colouredShare": 0.883,
+     "vividShare": 0.281,
      "hueSpread": 14,
      "symmetry": 0.752,
      "detail": 0.042
@@ -8455,6 +9401,8 @@
       "yellow",
       "orange"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "strong",
      "detail": "smooth"
     }
@@ -8478,7 +9426,18 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "animation",
-    "undetermined": [],
+    "lightPattern": [
+     "beams",
+     "rim"
+    ],
+    "atmospherics": [
+     "mist"
+    ],
+    "gaze": null,
+    "motion": "still",
+    "undetermined": [
+     "gaze"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -8493,7 +9452,7 @@
   },
   "princess-mononoke-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -8513,6 +9472,7 @@
      "saturation": 0.389,
      "warmth": -0.121,
      "colouredShare": 0.937,
+     "vividShare": 0.101,
      "hueSpread": 15,
      "symmetry": 0.389,
      "detail": 0.051
@@ -8559,6 +9519,8 @@
       "teal",
       "blue"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -8579,8 +9541,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "still",
     "undetermined": [
-     "focus"
+     "focus",
+     "gaze"
     ],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -8596,7 +9567,7 @@
   },
   "princess-mononoke-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      138
@@ -8616,6 +9587,7 @@
      "saturation": 0.72,
      "warmth": -0.502,
      "colouredShare": 1,
+     "vividShare": 0.963,
      "hueSpread": 7.6,
      "symmetry": 0.268,
      "detail": 0.054
@@ -8662,6 +9634,8 @@
       "blue",
       "teal"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -8683,8 +9657,17 @@
     "figures": "none",
     "setting": "exterior",
     "medium": "animation",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": null,
+    "motion": "implied",
     "undetermined": [
-     "focus"
+     "focus",
+     "gaze"
     ],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -8700,7 +9683,7 @@
   },
   "the-godfather-01": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      139
@@ -8720,6 +9703,7 @@
      "saturation": 0.532,
      "warmth": 0.177,
      "colouredShare": 0.348,
+     "vividShare": 0.068,
      "hueSpread": 11.9,
      "symmetry": 0.123,
      "detail": 0.061
@@ -8766,6 +9750,8 @@
       "orange",
       "yellow"
      ],
+     "harmony": "analogous",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -8789,6 +9775,15 @@
     "figures": "crowd",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools",
+     "glare"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "within",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
@@ -8804,7 +9799,7 @@
   },
   "the-godfather-02": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      186,
      131
@@ -8824,6 +9819,7 @@
      "saturation": 0.51,
      "warmth": 0.077,
      "colouredShare": 0.126,
+     "vividShare": 0.006,
      "hueSpread": 34.8,
      "symmetry": 0.164,
      "detail": 0.059
@@ -8869,6 +9865,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "moderate",
      "detail": "moderate"
     }
@@ -8892,6 +9890,14 @@
     "figures": "group",
     "setting": "interior",
     "medium": "live-action",
+    "lightPattern": [
+     "pools"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21",
@@ -8908,7 +9914,7 @@
   },
   "the-godfather-03": {
    "measured": {
-    "method": "tools/measure-stills.js v2",
+    "method": "tools/measure-stills.js v3",
     "analysedSize": [
      256,
      139
@@ -8928,6 +9934,7 @@
      "saturation": 0.365,
      "warmth": 0.165,
      "colouredShare": 0.673,
+     "vividShare": 0.022,
      "hueSpread": 38.9,
      "symmetry": 0.008,
      "detail": 0.075
@@ -8973,6 +9980,8 @@
      "hue": [
       "orange"
      ],
+     "harmony": "single-hue",
+     "accent": false,
      "symmetry": "weak",
      "detail": "moderate"
     }
@@ -8994,6 +10003,14 @@
     "figures": "two",
     "setting": "exterior",
     "medium": "live-action",
+    "lightPattern": [
+     "even"
+    ],
+    "atmospherics": [
+     "clear"
+    ],
+    "gaze": "averted",
+    "motion": "still",
     "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"

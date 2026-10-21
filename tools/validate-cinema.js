@@ -20,7 +20,7 @@ for (const id of ids) {
   if (!m) { errors.push(`${id}: no metadata record`); continue; }
   if (!m.measured) errors.push(`${id}: not measured (run node tools/measure-stills.js)`);
   else for (const [k, v] of Object.entries(m.measured.values)) {
-    if (k === 'toned') { if (typeof v !== 'boolean') errors.push(`${id}: toned must be true or false`); continue; }
+    if (typeof v === 'boolean') { if (!vocab[k] || !vocab[k].values.yes) errors.push(`${id}: ${k} is a yes/no value but has no 'yes' term`); continue; }
     check(id, k, v, 'measured');
   }
   if (!m.observed) warn.push(`${id}: no observations yet`);

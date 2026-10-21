@@ -82,11 +82,22 @@ function palette(px, n, k = 5) {
   return C.map((c, i) => ({ hex: hex(...c), share: r3(share[i] / n) })).filter((c) => c.share >= 0.02).sort((a, b) => b.share - a.share);
 }
 
+// Colour harmony from the hue families present (families in wheel order; distance counted round the wheel).
+const WHEEL = HUES.map(([k]) => k);
+function harmonyOf(shares) {
+  const sig = Object.entries(shares).filter(([, v]) => v >= T.harmony.significant).sort((a, b) => b[1] - a[1]);
+  if (!sig.length) return null;
+  if (sig[0][1] >= T.harmony.singleAbove) return 'single-hue';
+  const dist = (a, b) => { const d = Math.abs(WHEEL.indexOf(a) - WHEEL.indexOf(b)); return Math.min(d, WHEEL.length - d); };
+  for (let i = 0; i < sig.length; i++) for (let j = i + 1; j < sig.length; j++) if (dist(sig[i][0], sig[j][0]) >= T.harmony.contrastDistance) return 'contrasting';
+  return 'analogous';
+}
+
 function measure(file) {
   const img = trim(bitmap(file));
   const { w, h, px } = img, n = w * h;
   const lum = new Float32Array(n);
-  let sumL = 0, satSum = 0, satN = 0, warm = 0, warmN = 0, colN = 0, hx = 0, hy = 0, hn = 0;
+  let sumL = 0, satSum = 0, satN = 0, warm = 0, warmN = 0, colN = 0, hx = 0, hy = 0, hn = 0, vivid = 0;
   const hueCount = Object.fromEntries(HUES.map(([k]) => [k, 0]));
   for (let p = 0; p < n; p++) {
     const r = px[p * 3], g = px[p * 3 + 1], b = px[p * 3 + 2];
@@ -95,6 +106,7 @@ function measure(file) {
     if (v > 0.08) { satSum += s; satN++; }
     if (l > 0.15 && l < 0.85) { warm += r - b; warmN++; }
     if (s > 0.2 && v > 0.15) { hueCount[hueFamily(hd)]++; colN++; }
+    if (s > 0.55 && v > 0.3) vivid++;
     if (v > 0.12 && v * s > 0.04) { hx += Math.cos((hd * Math.PI) / 180); hy += Math.sin((hd * Math.PI) / 180); hn++; }
   }
   const sorted = Float32Array.from(lum).sort();
@@ -127,7 +139,7 @@ function measure(file) {
   }
   const detail = grad / ((w - 2) * (h - 2));
 
-  const metrics = { meanLuminance: r3(mean), medianLuminance: r3(median), p5: r3(p5), p95: r3(p95), contrastRange: r3(p95 - p5), saturation: r3(sat), warmth: r3(temp), colouredShare: r3(colN / n), hueSpread: Math.round(hueSpread * 10) / 10, symmetry: r3(symmetry), detail: r3(detail) };
+  const metrics = { meanLuminance: r3(mean), medianLuminance: r3(median), p5: r3(p5), p95: r3(p95), contrastRange: r3(p95 - p5), saturation: r3(sat), warmth: r3(temp), colouredShare: r3(colN / n), vividShare: r3(vivid / n), hueSpread: Math.round(hueSpread * 10) / 10, symmetry: r3(symmetry), detail: r3(detail) };
   const hueShares = Object.fromEntries(Object.entries(hueCount).map(([k, v]) => [k, colN ? r3(v / colN) : 0]));
   const toned = hueSpread < T.toned.hueSpreadBelow && sat < T.toned.saturationBelow && colN / n > 0.2;
   const monochrome = toned || sat < T.saturation.monochromeBelow || colN / n < 0.01;
@@ -138,10 +150,12 @@ function measure(file) {
     toned,
     temperature: monochrome && !toned ? 'neutral' : temp > T.temperature.warmAbove ? 'warm' : temp < T.temperature.coolBelow ? 'cool' : 'neutral',
     hue: monochrome ? [] : Object.entries(hueShares).filter(([, v]) => v >= T.hue.minShare).sort((a, b) => b[1] - a[1]).map(([k]) => k),
+    harmony: monochrome ? null : harmonyOf(hueShares),
+    accent: !monochrome && vivid / n >= T.accent.vividMin && vivid / n <= T.accent.vividMax && sat < T.accent.saturationBelow,
     symmetry: symmetry > T.symmetry.strongAbove ? 'strong' : symmetry < T.symmetry.weakBelow ? 'weak' : 'moderate',
     detail: detail < T.detail.smoothBelow ? 'smooth' : detail > T.detail.denseAbove ? 'dense' : 'moderate',
   };
-  return { method: 'tools/measure-stills.js v2', analysedSize: [w, h], trimmed: img.trimmed, metrics, hueShares, palette: palette(px, n), values };
+  return { method: 'tools/measure-stills.js v3', analysedSize: [w, h], trimmed: img.trimmed, metrics, hueShares, palette: palette(px, n), values };
 }
 
 const existing = fs.existsSync(OUT) ? JSON.parse(fs.readFileSync(OUT, 'utf8')) : null;

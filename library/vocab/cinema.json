@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "updated": "2026-10-21",
   "notes": "Controlled vocabulary for cinematography metadata. Every value used in library/cinema-metadata.json must appear here. 'basis' says how a dimension is filled: 'measured' values are computed from the image pixels by tools/measure-stills.js and can be regenerated at any time; 'observed' values are read from the image by a viewer and describe only what is visible; 'interpretation' values are subjective and are never mixed into the other two. 'multi' dimensions take a list. Terms can be added freely; never rename a published term, add a new one and migrate instead. Definitions double as the glossary shown with Taste Profile findings. 'groups' in a dimension define broader terms derived from its values (e.g. close shots = medium close-up, close-up or extreme close-up); the engine adds them automatically, so rare values can still be detected together.",
   "dimensions": {
@@ -131,6 +131,36 @@
         "magenta": {
           "label": "magenta",
           "definition": "Magentas and pinks."
+        }
+      }
+    },
+    "harmony": {
+      "basis": "measured",
+      "label": "colour harmony",
+      "definition": "How the colours present relate on the colour wheel. Not recorded for monochrome images.",
+      "values": {
+        "single-hue": {
+          "label": "single-hue palette",
+          "definition": "One hue family dominates the coloured areas (three quarters or more)."
+        },
+        "analogous": {
+          "label": "analogous palette",
+          "definition": "Neighbouring hues, such as red, orange and yellow, share the frame."
+        },
+        "contrasting": {
+          "label": "contrasting palette",
+          "definition": "Hues from opposite sides of the wheel, such as orange against blue, share the frame."
+        }
+      }
+    },
+    "accent": {
+      "basis": "measured",
+      "label": "colour accent",
+      "definition": "A small area of vivid colour in an otherwise dark or muted frame.",
+      "values": {
+        "yes": {
+          "label": "colour accent",
+          "definition": "A small vivid area (between half a percent and 8% of the frame) stands out against a muted or dark image."
         }
       }
     },
@@ -406,6 +436,137 @@
         }
       }
     },
+    "lightPattern": {
+      "basis": "observed",
+      "multi": true,
+      "label": "light pattern",
+      "definition": "Visible shapes the light makes in the frame.",
+      "values": {
+        "patterned-shadow": {
+          "label": "patterned shadow",
+          "definition": "Shadows cast through blinds, bars, lattices or leaves stripe or dapple the scene."
+        },
+        "pools": {
+          "label": "pools of light",
+          "definition": "Isolated areas of light surrounded by darkness."
+        },
+        "rim": {
+          "label": "rim light",
+          "definition": "A bright edge of light outlines a figure or object against a darker background."
+        },
+        "beams": {
+          "label": "visible beams",
+          "definition": "Shafts or beams of light are visible in the air."
+        },
+        "glare": {
+          "label": "glare",
+          "definition": "A light source shines towards the lens: flare, bloom or a blazing lamp."
+        },
+        "even": {
+          "label": "even light",
+          "definition": "None of these: the light falls without distinct shapes."
+        }
+      },
+      "groups": {
+        "shaped": {
+          "label": "shaped light",
+          "definition": "Light that makes visible shapes: pools, beams, rim light, glare or patterned shadow.",
+          "members": [
+            "patterned-shadow",
+            "pools",
+            "rim",
+            "beams",
+            "glare"
+          ]
+        }
+      }
+    },
+    "atmospherics": {
+      "basis": "observed",
+      "multi": true,
+      "label": "atmospherics",
+      "definition": "What is visible in the air between camera and subject.",
+      "values": {
+        "clear": {
+          "label": "clear air",
+          "definition": "Nothing visible in the air."
+        },
+        "mist": {
+          "label": "mist or haze",
+          "definition": "Fog, mist or haze softens distance."
+        },
+        "smoke": {
+          "label": "smoke",
+          "definition": "Smoke or steam drifts in the frame."
+        },
+        "rain": {
+          "label": "rain",
+          "definition": "Falling rain or snow."
+        },
+        "dust": {
+          "label": "dust",
+          "definition": "Blowing dust or sand."
+        }
+      },
+      "groups": {
+        "veiled": {
+          "label": "veiled air",
+          "definition": "Something in the air between camera and subject: mist, smoke, rain or dust.",
+          "members": [
+            "mist",
+            "smoke",
+            "rain",
+            "dust"
+          ]
+        }
+      }
+    },
+    "gaze": {
+      "basis": "observed",
+      "label": "gaze",
+      "definition": "Where the main figure is looking.",
+      "values": {
+        "camera": {
+          "label": "gaze at the camera",
+          "definition": "The main figure looks into or very near the lens."
+        },
+        "within": {
+          "label": "gaze within the frame",
+          "definition": "The main figure looks at someone or something visible in the frame."
+        },
+        "off-frame": {
+          "label": "gaze out of frame",
+          "definition": "The main figure looks at something outside the frame."
+        },
+        "averted": {
+          "label": "averted or downcast gaze",
+          "definition": "The main figure looks down or away, inward."
+        },
+        "hidden": {
+          "label": "face not visible",
+          "definition": "The main figure's face is turned away, hidden or too small to read."
+        }
+      }
+    },
+    "motion": {
+      "basis": "observed",
+      "label": "motion",
+      "definition": "Whether the frame shows movement.",
+      "values": {
+        "still": {
+          "label": "stillness",
+          "definition": "Figures and objects are at rest."
+        },
+        "implied": {
+          "label": "implied motion",
+          "definition": "A figure or object is caught mid-movement."
+        },
+        "blur": {
+          "label": "motion blur",
+          "definition": "Movement is visible as blur."
+        }
+      }
+    },
     "focus": {
       "basis": "observed",
       "label": "depth of field",
@@ -588,6 +749,18 @@
       "metric": "mean Sobel gradient magnitude on a 256-px luminance map",
       "smoothBelow": 0.045,
       "denseAbove": 0.095
+    },
+    "harmony": {
+      "metric": "hue-family shares among coloured pixels",
+      "significant": 0.12,
+      "singleAbove": 0.75,
+      "contrastDistance": 3
+    },
+    "accent": {
+      "metric": "share of vivid pixels (S > 0.55, V > 0.3) with mean saturation below a limit",
+      "vividMin": 0.005,
+      "vividMax": 0.08,
+      "saturationBelow": 0.35
     }
   },
   "retired": {

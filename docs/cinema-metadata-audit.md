@@ -56,3 +56,20 @@ The engine already treats them correctly: a term present almost everywhere canno
 ## Not changed
 
 Measured values are computed from pixels and were re-run after the vocabulary change; their thresholds are unchanged. Free-text notes in `stills.json` are unchanged. Nothing was inferred from titles, directors or reputations. The observation that 13 stills are animated was made from the images when they were first viewed.
+
+## Second pass — 2026-10-21 (vocabulary version 3)
+
+Every one of the 89 stills was viewed again to record four new observed dimensions, and the existing values were checked against the image at the same time. No existing value needed correction in this pass. The 16 corrections from the first audit hold.
+
+The vocabulary could say *that* a frame is low-key or warm, but not much about what light and air are doing in it, which is often what a viewer responds to. Version 3 adds:
+
+| Dimension | Basis | Values (stills) |
+|---|---|---|
+| light pattern | observed | even 64, pools of light 14, glare 9, beams 4, rim 2, patterned shadow 2; group *shaped light* |
+| atmospherics | observed | clear 67, smoke 10, mist 8, dust 4, rain 1; group *veiled air* |
+| gaze | observed | face not visible 25, out of frame 20, averted 13, at the camera 7, within the frame 6; undetermined when no figure is shown |
+| motion | observed | still 53, implied 34, blur 2 |
+| colour harmony | measured | analogous 21, single-hue 15, contrasting 7; not recorded for monochrome |
+| colour accent | measured | 7 stills with a small vivid area in a muted or dark frame |
+
+Thresholds for the measured terms are in the vocabulary. Rare values are covered by the two groups so that preferences across them can still be detected.
