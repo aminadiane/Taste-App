@@ -156,7 +156,30 @@
           ]
         },
         "interpretation": {
-          "tone": "tense and intimate; fear held at a remembered distance"
+          "tone": "tense and intimate; fear held at a remembered distance",
+          "features": {
+            "register": "restrained",
+            "tone": [
+              "tense",
+              "intimate"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "past",
+          "narration": "retrospective",
+          "sentenceLength": "long",
+          "syntax": "cumulative",
+          "diction": "plain",
+          "figuration": "moderate",
+          "dialogue": "none",
+          "focus": "action",
+          "pace": "summary",
+          "device": [
+            "mirroring",
+            "retrospective-frame"
+          ]
         }
       },
       "locator": {
@@ -213,7 +236,31 @@
           ]
         },
         "interpretation": {
-          "tone": "brutal and unflinching, observed without self-pity"
+          "tone": "brutal and unflinching, observed without self-pity",
+          "features": {
+            "register": "restrained",
+            "tone": [
+              "brutal",
+              "tense"
+            ]
+          }
+        },
+        "features": {
+          "person": "third",
+          "tense": "present",
+          "narration": "immediate",
+          "sentenceLength": "varied",
+          "syntax": "paratactic",
+          "diction": "plain",
+          "figuration": "sparse",
+          "dialogue": "marked",
+          "focus": "action",
+          "pace": "scene",
+          "device": [
+            "in-medias-res",
+            "withheld-identity",
+            "close-detail"
+          ]
         }
       },
       "locator": {
@@ -268,7 +315,29 @@
           ]
         },
         "interpretation": {
-          "tone": "melancholy and uneasy"
+          "tone": "melancholy and uneasy",
+          "features": {
+            "register": "lyrical",
+            "tone": [
+              "melancholy",
+              "uneasy"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "past",
+          "narration": "retrospective",
+          "sentenceLength": "long",
+          "syntax": "hypotactic",
+          "diction": "formal",
+          "figuration": "sparse",
+          "dialogue": "none",
+          "focus": "reflection",
+          "pace": "digressive",
+          "device": [
+            "hedging"
+          ]
         }
       },
       "locator": {
@@ -323,7 +392,31 @@
           ]
         },
         "interpretation": {
-          "tone": "calm, polite and quietly unsettling"
+          "tone": "calm, polite and quietly unsettling",
+          "features": {
+            "register": "restrained",
+            "tone": [
+              "calm",
+              "unsettling"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "mixed",
+          "narration": "retrospective",
+          "sentenceLength": "short",
+          "syntax": "paratactic",
+          "diction": "colloquial",
+          "figuration": "sparse",
+          "dialogue": "none",
+          "focus": "interior",
+          "pace": "summary",
+          "device": [
+            "direct-address",
+            "self-correction",
+            "unexplained-terms"
+          ]
         }
       },
       "locator": {
@@ -378,7 +471,31 @@
           ]
         },
         "interpretation": {
-          "tone": "tender and reflective, aware of death without fear"
+          "tone": "tender and reflective, aware of death without fear",
+          "features": {
+            "register": "lyrical",
+            "tone": [
+              "tender",
+              "reflective"
+            ]
+          }
+        },
+        "features": {
+          "person": "first",
+          "tense": "past",
+          "narration": "epistolary",
+          "sentenceLength": "long",
+          "syntax": "paratactic",
+          "diction": "plain",
+          "figuration": "sparse",
+          "dialogue": "unmarked",
+          "focus": "interior",
+          "pace": "scene",
+          "device": [
+            "polysyndeton",
+            "unmarked-speech",
+            "direct-address"
+          ]
         }
       },
       "locator": {

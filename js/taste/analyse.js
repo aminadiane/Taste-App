@@ -1,0 +1,200 @@
+/* pallas taste engine — analysis. A pure, deterministic function of (judgments, feature library, options).
+   It never writes anything: callers store results as snapshots, so improving the algorithm only means re-running it.
+   See docs/taste-engine.md for the method, assumptions and limitations. */
+(function (root, factory) {
+  const isNode = typeof module === 'object' && module.exports;
+  const api = factory(isNode ? require('./stats.js') : root.Pallas.taste.stats);
+  if (isNode) module.exports = api;
+  else { root.Pallas.taste.analyse = api.analyse; root.Pallas.taste.analysis = api; }
+})(typeof self !== 'undefined' ? self : this, function (S) {
+  'use strict';
+
+  const VERSION = '1.0.0';
+
+  // Every threshold the engine uses. Callers may override any of them; results record the values used.
+  const DEFAULTS = {
+    minJudgments: 8,          // fewer judged works than this: no associations are reported at all
+    minExposure: 3,           // a characteristic must appear in at least this many judged works to be tested
+    minAbsent: 2,             // … and be absent from at least this many, so there is something to compare with
+    tentativeP: 0.1,          // tentative: uncorrected p below this, a difference of at least tentativeDiff,
+    tentativeDiff: 0.25,      //   and a q below tentativeQ (so it is not simply one of many chance results)
+    tentativeQ: 0.5,
+    emergingQ: 0.2,           // emerging: false-discovery-rate-adjusted q below this
+    wellQ: 0.05,              // well supported: false-discovery-rate-adjusted q below this …
+    wellExposure: 6,          // … with at least this many exposures …
+    wellWorks: 2,             // … drawn from at least this many different works
+    pairMinItems: 4,          // a combination must cover at least this many judged works
+    pairQ: 0.1,               // combinations are reported only below this q (they are many tests)
+    pairMinLift: 0.2,         // and must differ from each single characteristic's like rate by at least this
+    explainedP: 0.1,          // a finding is 'explained by' a stronger one if, holding that one constant, its CMH p is above this
+    focusedBelow: 0.6,        // spread: liked-set entropy / judged-set entropy below this = focused
+    broadAbove: 0.9,          //                                                above this = broad
+  };
+  const LEVELS = ['tentative', 'emerging', 'well supported'];
+
+  const pct = (x) => Math.round(x * 100) + '%';
+  const r = S.round;
+
+  /* judgments: { [itemId]: 'like' | 'dislike' }  (skips and undone votes are not judgments; see store.judgments)
+     library:   output of Pallas.taste.features.cinema() / .literature()
+     history:   optional event list (store.history(area)) for the consistency summary */
+  function analyse({ judgments, library, history = [], options = {} }) {
+    const O = { ...DEFAULTS, ...options };
+    const items = library.items, terms = library.terms;
+    const judged = Object.keys(judgments).filter((id) => items[id] && (judgments[id] === 'like' || judgments[id] === 'dislike')).sort();
+    const notInLibrary = Object.keys(judgments).filter((id) => !items[id]).sort();
+    const liked = new Set(judged.filter((id) => judgments[id] === 'like'));
+    const n = judged.length, L = liked.size, Dn = n - L;
+    const base = {
+      engine: { name: 'pallas-taste', version: VERSION }, area: library.area, options: O,
+      counts: { judged: n, likes: L, dislikes: Dn, likeRate: n ? r(L / n) : null, works: new Set(judged.map((id) => items[id].work)).size, notInLibrary: notInLibrary.length },
+    };
+
+    // Exposure of every characteristic among judged works.
+    const exposure = new Map();
+    for (const id of judged) for (const f of items[id].features) { if (!exposure.has(f)) exposure.set(f, []); exposure.get(f).push(id); }
+
+    // Characteristics present in exactly the same judged works cannot be told apart: report them together.
+    const groups = new Map();
+    for (const [f, ids] of [...exposure].sort((a, b) => (a[0] < b[0] ? -1 : 1))) {
+      const key = ids.join('|');
+      if (!groups.has(key)) groups.set(key, { feature: f, aliases: [], ids });
+      else groups.get(key).aliases.push(f);
+    }
+
+    const status = n < O.minJudgments ? 'insufficient' : !L || !Dn ? 'one-sided' : 'ok';
+    const describe = (f) => ({ feature: f, ...(terms[f] || { label: f, basis: 'unknown' }) });
+    const evidence = (ids, dir) => {
+      const sup = ids.filter((id) => liked.has(id) === (dir > 0)), con = ids.filter((id) => liked.has(id) !== (dir > 0));
+      const w = (list) => list.map((id) => ({ item: id, work: items[id].work }));
+      return { supporting: w(sup), contradicting: w(con), supportingWorks: new Set(sup.map((id) => items[id].work)).size };
+    };
+
+    // Single characteristics.
+    const tested = [], insufficient = [];
+    for (const g of groups.values()) {
+      const nf = g.ids.length, kf = g.ids.filter((id) => liked.has(id)).length;
+      if (status !== 'ok' || nf < O.minExposure || n - nf < O.minAbsent) { insufficient.push({ ...describe(g.feature), aliases: g.aliases, exposed: nf, liked: kf }); continue; }
+      const p = S.fisherExact(kf, nf - kf, L - kf, Dn - (nf - kf));
+      const rateIn = kf / nf, rateOut = (L - kf) / (n - nf);
+      tested.push({ g, nf, kf, p, rateIn, rateOut, diff: rateIn - rateOut });
+    }
+    const qs = S.benjaminiHochberg(tested.map((t) => t.p));
+    const findings = [], unremarkable = [];
+    tested.forEach((t, i) => {
+      const q = qs[i], dir = t.diff >= 0 ? 1 : -1, ev = evidence(t.g.ids, dir);
+      let level = -1;
+      if (t.p < O.tentativeP && Math.abs(t.diff) >= O.tentativeDiff && q < O.tentativeQ) level = 0;
+      if (q < O.emergingQ) level = 1;
+      if (q < O.wellQ && t.nf >= O.wellExposure && ev.supportingWorks >= O.wellWorks) level = 2;
+      const notes = [];
+      if (level > 0 && ev.supportingWorks < O.wellWorks) { level = 0; notes.push(`all supporting examples come from one ${library.area === 'cinema' ? 'film' : 'book'}`); }
+      const stats = { exposed: t.nf, likedWhenPresent: t.kf, rateWhenPresent: r(t.rateIn), rateWhenAbsent: r(t.rateOut), difference: r(t.diff), interval: S.wilson(t.kf, t.nf).map((x) => r(x)), p: r(t.p, 4), q: r(q, 4) };
+      const row = { ...describe(t.g.feature), aliases: t.g.aliases.map(describe), direction: dir > 0 ? 'liked' : 'disliked', stats };
+      if (level < 0) { unremarkable.push(row); return; }
+      const lbl = (terms[t.g.feature] || {}).label || t.g.feature;
+      findings.push({
+        ...row, strength: LEVELS[level], evidence: ev, notes, ids: t.g.ids,
+        explanation: `Liked ${t.kf} of ${t.nf} works with ${lbl} (${pct(t.rateIn)}), against ${L - t.kf} of ${n - t.nf} without it (${pct(t.rateOut)}).`,
+      });
+    });
+    const order = (a, b) => LEVELS.indexOf(b.strength) - LEVELS.indexOf(a.strength) || a.stats.p - b.stats.p || Math.abs(b.stats.difference) - Math.abs(a.stats.difference) || (a.feature < b.feature ? -1 : 1);
+    findings.sort(order);
+
+    // Confounding: characteristics travel together (dark frames are often warm). For each finding, hold every stronger
+    // finding from another dimension constant in turn; if the association then disappears, it is explained by that one.
+    const strata = (B, A) => {
+      const inA = new Set(A.ids), out = [];
+      for (const present of [true, false]) {
+        const grp = judged.filter((id) => inA.has(id) === present), inB = new Set(B.ids);
+        const a = grp.filter((id) => inB.has(id) && liked.has(id)).length, b = grp.filter((id) => inB.has(id) && !liked.has(id)).length;
+        const c = grp.filter((id) => !inB.has(id) && liked.has(id)).length, d = grp.filter((id) => !inB.has(id) && !liked.has(id)).length;
+        out.push([a, b, c, d]);
+      }
+      return out;
+    };
+    findings.forEach((B, i) => {
+      for (const A of findings.slice(0, i)) {
+        if (A.explainedBy || A.dimension === B.dimension) continue;
+        const t = S.cmh(strata(B, A));
+        if (t.p > O.explainedP) {
+          B.explainedBy = { feature: A.feature, label: A.label, p: r(t.p, 4) };
+          B.notes.push(`accounted for by ${A.label}: among works with and without it, ${B.label} makes no clear difference`);
+          break;
+        }
+      }
+    });
+    findings.forEach((f) => delete f.ids);
+
+    // Combinations of two characteristics from different dimensions whose joint like rate stands apart from each alone.
+    const combos = [];
+    if (status === 'ok') {
+      const single = tested.map((t) => t).filter((t) => t.nf >= O.minExposure);
+      const cands = [];
+      for (let i = 0; i < single.length; i++) for (let j = i + 1; j < single.length; j++) {
+        const A = single[i], B = single[j], fa = A.g.feature, fb = B.g.feature;
+        if (terms[fa] && terms[fb] && terms[fa].dimension === terms[fb].dimension) continue;
+        const setB = new Set(B.g.ids), both = A.g.ids.filter((id) => setB.has(id));
+        if (both.length < O.pairMinItems || both.length === A.nf || both.length === B.nf || n - both.length < O.minAbsent) continue;
+        const k = both.filter((id) => liked.has(id)).length;
+        const p = S.fisherExact(k, both.length - k, L - k, Dn - (both.length - k));
+        cands.push({ A, B, both, k, p, rate: k / both.length });
+      }
+      const pq = S.benjaminiHochberg(cands.map((c) => c.p));
+      cands.forEach((c, i) => {
+        const dirA = c.rate - c.A.rateIn, dirB = c.rate - c.B.rateIn;
+        if (pq[i] >= O.pairQ || Math.sign(dirA) !== Math.sign(dirB) || Math.min(Math.abs(dirA), Math.abs(dirB)) < O.pairMinLift) return;
+        const dir = c.rate >= L / n ? 1 : -1, ev = evidence(c.both, dir);
+        const strong = pq[i] < O.wellQ && c.both.length >= O.wellExposure && ev.supportingWorks >= O.wellWorks;
+        const la = (terms[c.A.g.feature] || {}).label, lb = (terms[c.B.g.feature] || {}).label;
+        combos.push({
+          features: [describe(c.A.g.feature), describe(c.B.g.feature)], direction: dir > 0 ? 'liked' : 'disliked',
+          strength: strong ? 'well supported' : ev.supportingWorks >= O.wellWorks ? 'emerging' : 'tentative',
+          stats: { exposed: c.both.length, likedWhenPresent: c.k, rateTogether: r(c.rate), rateFirstAlone: r(c.A.rateIn), rateSecondAlone: r(c.B.rateIn), p: r(c.p, 4), q: r(pq[i], 4) },
+          evidence: ev,
+          explanation: `${la} with ${lb}: liked ${c.k} of ${c.both.length} (${pct(c.rate)}), against ${pct(c.A.rateIn)} for ${la} overall and ${pct(c.B.rateIn)} for ${lb} overall.`,
+        });
+      });
+      combos.sort((a, b) => a.stats.q - b.stats.q || (a.features[0].feature + a.features[1].feature < b.features[0].feature + b.features[1].feature ? -1 : 1));
+    }
+
+    // Spread: are likes concentrated in a few values of each dimension, or spread as widely as everything judged?
+    const spread = {};
+    if (L >= 5) {
+      const dims = {};
+      for (const f of Object.keys(terms)) { const d = terms[f].dimension; (dims[d] = dims[d] || []).push(f); }
+      for (const [d, fs] of Object.entries(dims)) {
+        const count = (ids) => { const c = {}; for (const id of ids) for (const f of items[id].features) if (terms[f] && terms[f].dimension === d) c[f] = (c[f] || 0) + 1; return c; };
+        const all = count(judged), lk = count([...liked]);
+        const cats = Object.keys(all).length;
+        if (cats < 2) continue;
+        const hAll = S.normalisedEntropy(all, cats), hLike = S.normalisedEntropy(lk, cats);
+        const ratio = hAll ? hLike / hAll : 1;
+        spread[d] = { label: (terms[fs[0]] || {}).dimensionLabel || d, ratio: r(ratio), reading: ratio < O.focusedBelow ? 'focused' : ratio > O.broadAbove ? 'broad' : 'mixed', valuesJudged: cats, valuesLiked: Object.keys(lk).length };
+      }
+    }
+    const ratios = Object.values(spread).map((s) => s.ratio);
+    const overallSpread = ratios.length ? r(ratios.reduce((a, b) => a + b, 0) / ratios.length) : null;
+
+    // Consistency: works whose judgment the user changed (re-votes; undone events excluded).
+    const undone = new Set(history.filter((e) => e.kind === 'undo').map((e) => e.undoes));
+    const seq = {};
+    for (const e of history) if ((e.kind === 'like' || e.kind === 'dislike') && !undone.has(e.id)) (seq[e.item] = seq[e.item] || []).push(e.kind);
+    const changed = Object.entries(seq).filter(([, k]) => k.some((x, i) => i && x !== k[i - 1])).map(([id]) => id).sort();
+    const byWork = {};
+    for (const id of judged) { const w = items[id].work; byWork[w] = byWork[w] || { like: 0, dislike: 0 }; byWork[w][judgments[id]]++; }
+    const splitWorks = Object.entries(byWork).filter(([, c]) => c.like && c.dislike).map(([w]) => w).sort();
+
+    return {
+      ...base, status,
+      findings, combinations: combos,
+      unremarkable: unremarkable.sort((a, b) => b.stats.exposed - a.stats.exposed || (a.feature < b.feature ? -1 : 1)),
+      insufficient: insufficient.sort((a, b) => b.exposed - a.exposed || (a.feature < b.feature ? -1 : 1)),
+      spread: { overall: overallSpread, reading: overallSpread == null ? null : overallSpread < O.focusedBelow ? 'focused' : overallSpread > O.broadAbove ? 'broad' : 'mixed', byDimension: spread },
+      consistency: { changedJudgments: changed, worksWithMixedJudgments: splitWorks },
+      testsRun: { single: tested.length },
+    };
+  }
+
+  return { VERSION, DEFAULTS, LEVELS, analyse };
+});
