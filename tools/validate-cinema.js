@@ -24,7 +24,10 @@ for (const id of ids) {
     check(id, k, v, 'measured');
   }
   if (!m.observed) warn.push(`${id}: no observations yet`);
-  else for (const [k, v] of Object.entries(m.observed)) if (!['method', 'recorded'].includes(k)) check(id, k, v, 'observed');
+  else for (const [k, v] of Object.entries(m.observed)) {
+    if (k === 'undetermined') { for (const u of v) if (!vocab[u] || (m.observed[u] != null && !(Array.isArray(m.observed[u]) && !m.observed[u].length))) errors.push(`${id}: ${u} is marked undetermined but has a value`); continue; }
+    if (!['method', 'recorded', 'audited'].includes(k)) check(id, k, v, 'observed');
+  }
   if (m.interpretation) {
     if (m.interpretation.subjective !== true) errors.push(`${id}: interpretation must be marked subjective`);
     check(id, 'atmosphere', m.interpretation.atmosphere, 'interpretation');

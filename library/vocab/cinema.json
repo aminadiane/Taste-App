@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "updated": "2026-10-21",
   "notes": "Controlled vocabulary for cinematography metadata. Every value used in library/cinema-metadata.json must appear here. 'basis' says how a dimension is filled: 'measured' values are computed from the image pixels by tools/measure-stills.js and can be regenerated at any time; 'observed' values are read from the image by a viewer and describe only what is visible; 'interpretation' values are subjective and are never mixed into the other two. 'multi' dimensions take a list. Terms can be added freely; never rename a published term, add a new one and migrate instead. Definitions double as the glossary shown with Taste Profile findings.",
   "dimensions": {
@@ -136,20 +136,20 @@
     },
     "symmetry": {
       "basis": "measured",
-      "label": "bilateral symmetry",
-      "definition": "How closely the left half of the frame mirrors the right half in tone.",
+      "label": "tonal symmetry",
+      "definition": "How closely the brightness of the left half mirrors the right half. Measured from tone only, not from shapes or arrangement: a dark, even frame can score high. Arranged symmetry is the observed composition term 'symmetrical composition'.",
       "values": {
         "strong": {
-          "label": "strongly symmetrical",
-          "definition": "The two halves of the frame nearly mirror each other."
+          "label": "strong tonal symmetry",
+          "definition": "The brightness of the two halves nearly mirrors."
         },
         "moderate": {
-          "label": "partly symmetrical",
-          "definition": "The halves are broadly balanced but not mirrored."
+          "label": "partial tonal symmetry",
+          "definition": "The halves are broadly balanced in brightness but not mirrored."
         },
         "weak": {
-          "label": "asymmetrical",
-          "definition": "The halves differ clearly in tone and mass."
+          "label": "tonal asymmetry",
+          "definition": "The halves differ clearly in brightness and mass."
         }
       }
     },
@@ -169,6 +169,21 @@
         "dense": {
           "label": "dense detail",
           "definition": "Busy surfaces, many edges and fine texture across the frame."
+        }
+      }
+    },
+    "medium": {
+      "basis": "observed",
+      "label": "medium",
+      "definition": "How the image was made, as visible in the frame.",
+      "values": {
+        "live-action": {
+          "label": "live action",
+          "definition": "Photographed with a camera (including sets, models and miniatures)."
+        },
+        "animation": {
+          "label": "hand-drawn animation",
+          "definition": "Drawn or painted animation."
         }
       }
     },
@@ -226,7 +241,7 @@
     "lightSource": {
       "basis": "observed",
       "label": "apparent light source",
-      "definition": "What appears to light the scene, judged from the image only.",
+      "definition": "What appears to light the scene, judged from the image only. 'practical' requires the source to be visible in the frame. Left undetermined when the image does not show it.",
       "values": {
         "daylight": {
           "label": "daylight",
@@ -363,7 +378,7 @@
     "focus": {
       "basis": "observed",
       "label": "depth of field",
-      "definition": "How much of the scene, front to back, appears sharp.",
+      "definition": "How much of the scene, front to back, appears sharp. Recorded only when the frame contains planes at clearly different distances; otherwise left undetermined (the flatness of a scene is described by spatial layers instead).",
       "values": {
         "shallow": {
           "label": "shallow focus",
@@ -372,10 +387,6 @@
         "deep": {
           "label": "deep focus",
           "definition": "Near and far planes are both sharp."
-        },
-        "flat": {
-          "label": "flat space",
-          "definition": "The scene has little depth to begin with, such as a wall or sky behind the subject."
         }
       }
     },
@@ -401,7 +412,7 @@
     "figures": {
       "basis": "observed",
       "label": "figures",
-      "definition": "How many people the frame shows.",
+      "definition": "How many people, or human-like characters in animation, the frame shows.",
       "values": {
         "none": {
           "label": "no figures",
@@ -490,10 +501,6 @@
           "label": "chaotic",
           "definition": "Disordered and energetic."
         },
-        "nostalgic": {
-          "label": "nostalgic",
-          "definition": "Evoking a remembered past."
-        },
         "grand": {
           "label": "grand",
           "definition": "Epic in scale."
@@ -551,5 +558,9 @@
       "smoothBelow": 0.045,
       "denseAbove": 0.095
     }
+  },
+  "retired": {
+    "focus:flat": "2026-10-21: mixed depth of field with the depth of the scene; those stills are now 'undetermined' for focus, and spatial layers carry the flatness.",
+    "atmosphere:nostalgic": "2026-10-21: depended on knowing a film's period rather than on the image."
   }
 }

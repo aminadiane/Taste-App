@@ -80,7 +80,7 @@
     "lightDirection": [
      "side"
     ],
-    "lightSource": "daylight",
+    "lightSource": null,
     "shotScale": "wide",
     "angle": "eye-level",
     "composition": [
@@ -92,8 +92,13 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "lightSource"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -192,6 +197,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -294,6 +301,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -390,10 +399,14 @@
      "off-centre",
      "negative-space"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -491,6 +504,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -591,6 +606,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -689,6 +706,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -786,6 +805,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "vehicle",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -881,6 +902,8 @@
     "layers": "two",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -977,6 +1000,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1073,8 +1098,11 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -1172,12 +1200,13 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "nostalgic",
      "serene"
     ],
     "subjective": true,
@@ -1271,6 +1300,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1369,13 +1400,14 @@
     "layers": "three-plus",
     "figures": "two",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "dreamlike",
-     "nostalgic"
+     "dreamlike"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -1465,6 +1497,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1562,8 +1596,11 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -1659,6 +1696,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1756,6 +1795,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1850,10 +1891,14 @@
      "diagonal",
      "negative-space"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -1953,8 +1998,11 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -2048,6 +2096,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -2148,6 +2198,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -2247,8 +2299,11 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -2344,12 +2399,13 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "nostalgic",
      "serene"
     ],
     "subjective": true,
@@ -2441,8 +2497,11 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -2539,6 +2598,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -2637,13 +2698,15 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "atmosphere"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
-    "atmosphere": [
-     "nostalgic"
-    ],
+    "atmosphere": [],
     "subjective": true,
     "recorded": "2026-10-21"
    }
@@ -2732,6 +2795,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -2829,6 +2894,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -2928,13 +2995,14 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "dreamlike",
-     "nostalgic"
+     "dreamlike"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -3024,6 +3092,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3125,6 +3195,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3226,6 +3298,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3326,6 +3400,8 @@
     "layers": "two",
     "figures": "none",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3428,6 +3504,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "vehicle",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3529,6 +3607,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3623,10 +3703,14 @@
      "frame-within-frame",
      "dense"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "none",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3722,10 +3806,14 @@
      "symmetrical",
      "centred"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "one",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3827,6 +3915,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -3926,13 +4016,14 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "intimate",
-     "nostalgic"
+     "intimate"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -4026,6 +4117,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4126,6 +4219,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4217,7 +4312,7 @@
      "side",
      "back"
     ],
-    "lightSource": "practical",
+    "lightSource": "artificial",
     "shotScale": "medium",
     "angle": "eye-level",
     "composition": [
@@ -4229,13 +4324,15 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "melancholy",
-     "nostalgic"
+     "melancholy"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -4330,6 +4427,8 @@
     "layers": "two",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4415,9 +4514,7 @@
    },
    "observed": {
     "lightQuality": "hard",
-    "lightDirection": [
-     "back"
-    ],
+    "lightDirection": [],
     "lightSource": "practical",
     "shotScale": "wide",
     "angle": "low",
@@ -4429,8 +4526,13 @@
     "layers": "two",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "lightDirection"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -4530,6 +4632,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4628,6 +4732,10 @@
     "layers": "one",
     "figures": "single",
     "setting": null,
+    "medium": "live-action",
+    "undetermined": [
+     "setting"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4720,12 +4828,17 @@
     "composition": [
      "off-centre"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -4821,6 +4934,10 @@
     "layers": "one",
     "figures": "single",
     "setting": null,
+    "medium": "live-action",
+    "undetermined": [
+     "setting"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -4918,6 +5035,10 @@
     "layers": "two",
     "figures": "single",
     "setting": null,
+    "medium": "live-action",
+    "undetermined": [
+     "setting"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5010,10 +5131,15 @@
      "centred",
      "negative-space"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "one",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus",
+     "lightSource"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5112,6 +5238,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5210,6 +5338,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5306,6 +5436,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5402,6 +5534,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5497,6 +5631,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5595,8 +5731,11 @@
     "layers": "two",
     "figures": "group",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -5693,6 +5832,8 @@
     "layers": "three-plus",
     "figures": "two",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -5789,13 +5930,14 @@
     "layers": "two",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "playful",
-     "nostalgic"
+     "playful"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -5887,12 +6029,13 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "nostalgic",
      "joyful"
     ],
     "subjective": true,
@@ -5985,6 +6128,8 @@
     "layers": "two",
     "figures": "crowd",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6083,12 +6228,13 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "nostalgic",
      "joyful"
     ],
     "subjective": true,
@@ -6183,6 +6329,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6284,13 +6432,14 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "serene",
-     "nostalgic"
+     "serene"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -6384,6 +6533,8 @@
     "layers": "three-plus",
     "figures": "two",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6485,6 +6636,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6584,9 +6737,14 @@
     "focus": "shallow",
     "layers": "two",
     "figures": "none",
-    "setting": "exterior",
+    "setting": null,
+    "medium": "live-action",
+    "undetermined": [
+     "setting"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -6684,6 +6842,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6781,6 +6941,8 @@
     "layers": "two",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -6879,8 +7041,11 @@
     "layers": "three-plus",
     "figures": "two",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -6976,6 +7141,8 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7076,6 +7243,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7175,9 +7344,14 @@
     "focus": "deep",
     "layers": "three-plus",
     "figures": "group",
-    "setting": "interior",
+    "setting": null,
+    "medium": "live-action",
+    "undetermined": [
+     "setting"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -7274,6 +7448,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7367,10 +7543,14 @@
      "centred",
      "negative-space"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "one",
     "figures": "single",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7464,12 +7644,17 @@
      "centred",
      "symmetrical"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -7564,10 +7749,14 @@
      "frame-within-frame",
      "negative-space"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "group",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7668,6 +7857,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7770,6 +7961,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7870,6 +8063,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -7958,19 +8153,25 @@
     "lightDirection": [
      "ambient"
     ],
-    "lightSource": "practical",
+    "lightSource": null,
     "shotScale": "wide",
     "angle": "eye-level",
     "composition": [
      "off-centre",
      "dense"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "two",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [
+     "focus",
+     "lightSource"
+    ],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -8070,13 +8271,14 @@
     "layers": "three-plus",
     "figures": "two",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
-     "joyful",
-     "nostalgic"
+     "joyful"
     ],
     "subjective": true,
     "recorded": "2026-10-21"
@@ -8171,6 +8373,8 @@
     "layers": "three-plus",
     "figures": "single",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -8273,6 +8477,8 @@
     "layers": "three-plus",
     "figures": "none",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -8368,10 +8574,14 @@
     "composition": [
      "dense"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "none",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -8468,10 +8678,14 @@
      "centred",
      "negative-space"
     ],
-    "focus": "flat",
+    "focus": null,
     "layers": "two",
     "figures": "none",
     "setting": "exterior",
+    "medium": "animation",
+    "undetermined": [
+     "focus"
+    ],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -8574,6 +8788,8 @@
     "layers": "three-plus",
     "figures": "crowd",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },
@@ -8675,8 +8891,11 @@
     "layers": "three-plus",
     "figures": "group",
     "setting": "interior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
-    "recorded": "2026-10-21"
+    "recorded": "2026-10-21",
+    "audited": "2026-10-21"
    },
    "interpretation": {
     "atmosphere": [
@@ -8774,6 +8993,8 @@
     "layers": "two",
     "figures": "two",
     "setting": "exterior",
+    "medium": "live-action",
+    "undetermined": [],
     "method": "viewed",
     "recorded": "2026-10-21"
    },

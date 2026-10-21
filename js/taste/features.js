@@ -38,7 +38,7 @@
       if (!m) continue;
       const f = [];
       for (const [dim, v] of Object.entries((m.measured && m.measured.values) || {})) push(f, terms, dim, v, unknown);
-      for (const [dim, v] of Object.entries(m.observed || {})) if (dim !== 'method' && dim !== 'recorded') push(f, terms, dim, v, unknown);
+      for (const [dim, v] of Object.entries(m.observed || {})) if (!['method', 'recorded', 'audited', 'undetermined'].includes(dim)) push(f, terms, dim, v, unknown);
       if (m.interpretation) push(f, terms, 'atmosphere', m.interpretation.atmosphere, unknown);
       items[s.id] = { work: s.film, features: [...new Set(f)].sort() };
     }

@@ -25,3 +25,21 @@ test('every still has every single-valued observed dimension filled or explicitl
   const dims = Object.keys(vocab).filter((k) => vocab[k].basis === 'observed');
   for (const [id, m] of Object.entries(meta)) for (const d of dims) assert.ok(d in m.observed, `${id}: ${d} missing`);
 });
+
+test('every metadata value maps to a vocabulary term, and undetermined values are never counted', () => {
+  const F = require('../js/taste/features.js');
+  const lib = F.cinema(require('../library/stills.json'), require('../library/cinema-metadata.json'), require('../library/vocab/cinema.json'));
+  assert.deepEqual(lib.unknown, []);
+  for (const [id, m] of Object.entries(meta)) for (const dim of m.observed.undetermined || []) {
+    assert.ok(!lib.items[id].features.some((f) => f.startsWith(dim + ':')), `${id}: undetermined ${dim} counted`);
+  }
+});
+
+test('retired terms are no longer used', () => {
+  const retired = Object.keys(require('../library/vocab/cinema.json').retired || {});
+  for (const [id, m] of Object.entries(meta)) for (const t of retired) {
+    const [dim, val] = t.split(':');
+    const v = (m.observed || {})[dim] ?? (m.interpretation || {})[dim];
+    assert.ok(![].concat(v ?? []).includes(val), `${id} still uses ${t}`);
+  }
+});

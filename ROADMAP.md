@@ -124,6 +124,15 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - **Interpretation:** atmosphere terms, marked `subjective: true`, stored apart from observation.
 - Output: `library/cinema-metadata.json`, keyed by still id; the free-text notes in `stills.json` are unchanged.
 - *Accept when:* ~~all 89 stills validate, observed fields use only vocabulary terms, no interpretive term in observed, validator reports zero errors~~ done: `node tools/validate-cinema.js` reports 89 observed, 0 errors; `tests/cinema-metadata.test.js`.
+- **Audit 2026-10-21** (`docs/cinema-metadata-audit.md`): 16 stills re-examined at full resolution, with 10 unchanged and 6 fields corrected (light source or setting read from context rather than the image). Vocabulary version 2:
+  - `focus: flat` is retired. Twelve stills are now undetermined for focus.
+  - Measured symmetry is relabelled *tonal* symmetry.
+  - `atmosphere: nostalgic` is retired, because it depended on period.
+  - "Practical light" now requires a visible source.
+  - A new observed `medium` dimension records live action or animation (13 animated stills).
+  - Undetermined values are listed per still in `observed.undetermined`.
+  - Extra dimensions go in `library/import/cinema-observed-extra.txt`.
+  - Broad terms such as medium contrast (66 of 89) are documented. Changing the contrast cut-points is a question for the owner.
 - Limitations: tonal symmetry measures mirrored brightness, not mirrored shapes, so dark, even frames can score high; the composition term "symmetrical" is the viewer's judgment. Observations were made from a 560-pixel copy, by Claude, in one pass; the owner may want to review a sample.
 
 ### 4. Skip and undo — data handling built 2026-10-21; controls wait on designs
