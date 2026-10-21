@@ -11,7 +11,7 @@ window.Pallas = window.Pallas || {};
   const home = $('home'), cinema = $('cinema'), lit = $('literature');
   const picture = $('picture'), stillsEl = $('stills'), noise = $('noise'), dot = $('dot'), osd = $('osd'), counter = $('counter');
   const pad = (n) => String(n).padStart(2, '0');
-  const V = Pallas.votes, D = Pallas.drawer;
+  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store;
 
   /* ---------- the library ---------- */
   let library = { films: {}, stills: [] };
@@ -45,8 +45,12 @@ window.Pallas = window.Pallas || {};
       if (Array.isArray(data.stills)) library = { films: data.films || {}, stills: data.stills };
     } catch { /* no library: the screen stays dark */ }
     buildStills();
+    if (N) { state.idx = store.resumeIndex('cinema', stillIds()); store.setCursor('cinema', stillIds()[state.idx]); }   // resume where the visitor left off
     render();
   }
+  const stillIds = () => library.stills.map((s) => s.id);
+  // After a vote: the next still not yet evaluated, in library order.
+  const nextIdx = () => store.nextOpen('cinema', stillIds(), (state.idx + 1) % N);
 
   const filmOf = (still) => library.films[still.film] || {};
 
@@ -127,15 +131,19 @@ window.Pallas = window.Pallas || {};
     void picture.offsetWidth;   // commit transition-less phases before the next one starts
   }
 
-  const set = (patch) => { Object.assign(state, patch); render(); };
+  const set = (patch) => {
+    Object.assign(state, patch);
+    if ('idx' in patch && N) store.setCursor('cinema', library.stills[state.idx].id);   // position survives refresh and restart
+    render();
+  };
 
   function react(kind) {
     if (state.phase !== 'idle' || !N) return;
-    V.set('c', library.stills[state.idx].id, kind);
+    V.set('c', library.stills[state.idx].id, kind, library.stills[state.idx].film);
     if (kind === 'like') {
       // channel change: the next still slides up from below, a black band between them, no static
       set({ osd: 'liked', phase: 'hold' });
-      later(900, () => set({ prevIdx: state.idx, idx: (state.idx + 1) % N, phase: 'swipePrep', osd: '' }));
+      later(900, () => set({ prevIdx: state.idx, idx: nextIdx(), phase: 'swipePrep', osd: '' }));
       later(940, () => set({ phase: 'swipe' }));
       later(1400, () => set({ phase: 'idle', prevIdx: null }));
     } else {
@@ -173,7 +181,7 @@ window.Pallas = window.Pallas || {};
       dot.style.opacity = 0;
     });
     later(2400, () => {
-      set({ idx: (state.idx + 1) % N, phase: 'on' });   // advance while hidden
+      set({ idx: nextIdx(), phase: 'on' });   // advance while hidden
       // The end state is written inline first; the animations (no fill) play over it and leave nothing behind when they end.
       picture.style.opacity = 1;
       picture.style.filter = 'none';

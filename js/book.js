@@ -4,7 +4,7 @@ window.Pallas = window.Pallas || {};
 (() => {
   'use strict';
   const $ = (id) => document.getElementById(id);
-  const V = Pallas.votes, D = Pallas.drawer, h = D.h;
+  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store, h = D.h;
   const pad = (n) => String(n).padStart(2, '0');
   const EASE = 'cubic-bezier(.45,.05,.2,1)';
   const STK = [[0, 0, -6], [12, -8, 4], [-6, 6, -1.5], [6, -3, 7]];
@@ -59,7 +59,13 @@ window.Pallas = window.Pallas || {};
   const listL = (kind) => V.list('l', kind).map(idxOf).filter((i) => i >= 0).sort((a, b) => a - b);
 
   /* ---------- small async helpers ---------- */
-  const set = (patch) => { Object.assign(S, patch); render(); return Promise.resolve(); };
+  const set = (patch) => {
+    Object.assign(S, patch);
+    if ('bIdx' in patch && S.bOpen && NB) store.setCursor('literature', ENTRIES[S.bIdx].id);   // closing resets bIdx; that is not a move
+    render();
+    return Promise.resolve();
+  };
+  const entryIds = () => ENTRIES.map((e) => e.id);
   const wait = (ms) => new Promise((res) => timers.push(setTimeout(res, ms)));
   const frame = () => new Promise((res) => requestAnimationFrame(() => requestAnimationFrame(res)));
   const canAct = () => S.bOpen && S.bLeftShown && !S.bBusy;
@@ -124,10 +130,11 @@ window.Pallas = window.Pallas || {};
   /* ---------- actions ---------- */
   async function openBook() {
     if (S.bOpen || S.bBusy) return;
-    await set({ bBusy: true, bOpen: true, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', 0) }, bRight: { kind: 'info', idx: 0 } });
+    const start = store.resumeIndex('literature', entryIds());   // the next passage not yet evaluated, from where the reader left off
+    await set({ bBusy: true, bOpen: true, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', start) }, bRight: { kind: 'info', idx: start } });
     await wait(380);
     await animateLeaf();
-    await set({ bLeaf: null, bLeftShown: true, bLeftIdx: 0, bIdx: 0, bBusy: false });
+    await set({ bLeaf: null, bLeftShown: true, bLeftIdx: start, bIdx: start, bBusy: false });
   }
   async function closeBook() {
     if (!S.bOpen || S.bBusy) return;
@@ -141,8 +148,9 @@ window.Pallas = window.Pallas || {};
     setTear(0, 0);
     await set({ bBusy: false, bIdx: 0, bLeftIdx: 0, bTearing: false, bTorn: false });
   }
-  async function turn() {
-    const cur = S.bIdx, next = (cur + 1) % NB;
+  // After a vote the book turns to the next passage not yet evaluated; Next / Previous browse in order.
+  async function turn(afterVote) {
+    const cur = S.bIdx, next = afterVote ? store.nextOpen('literature', entryIds(), (cur + 1) % NB) : (cur + 1) % NB;
     await set({ bLeaf: { front: page('info', cur), back: page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
     await animateLeaf();
     setTear(0, 0);
@@ -162,15 +170,15 @@ window.Pallas = window.Pallas || {};
   }
   async function dogEar() {
     if (!canAct()) return;
-    V.set('l', ENTRIES[S.bIdx].id, 'like');
+    V.set('l', ENTRIES[S.bIdx].id, 'like', ENTRIES[S.bIdx].id);
     await set({ bBusy: true, bFlapHover: false, bFlapAnim: 'fold', bFolded: true });
     await wait(1250);
-    await turn();
+    await turn(true);
     set({ bBusy: false });
   }
   async function tearOut() {
     if (!canAct()) return;
-    V.set('l', ENTRIES[S.bIdx].id, 'dislike');
+    V.set('l', ENTRIES[S.bIdx].id, 'dislike', ENTRIES[S.bIdx].id);
     await set({ bBusy: true, bFlapHover: false, bTearing: true, bDragging: false });
     if (ty < 200) await tearTo(250, 2.2, 420);
     await wait(140);
@@ -185,7 +193,7 @@ window.Pallas = window.Pallas || {};
     await set({ bTorn: true, bDragging: false });
     a.cancel();
     await wait(380);
-    await turn();
+    await turn(true);
     set({ bBusy: false });
   }
   function pageDown(e) {

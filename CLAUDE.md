@@ -53,9 +53,9 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 - `assets/` — production photographs, textures and masks from the handoff.
 - **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live.
 
-### Persistence today
+### Persistence
 
-`localStorage['pallas.votes'] = { c: { <stillId>: 'like'|'dislike' }, l: { <excerptId>: 'like'|'dislike' } }`. Keyed by stable ids; a re-vote overwrites. Nothing else is saved (no position, skip, undo, timestamps or sessions). Browser storage does not sync between devices and is lost if site data is cleared.
+`js/store.js` (`Pallas.store`) keeps an append-only event log in `localStorage['pallas.v1']`: likes, dislikes, skips and undo as events with timestamps and session ids, each area's cursor and last activity, plus reserved slots for profiles, encountered techniques and reflections. An item's judgment is its latest event that has not been undone. `Pallas.votes` is the read/write view the screens and drawer use. Never delete or rewrite events except through the explicit reset / delete functions. Browser storage does not sync between devices and is lost if site data is cleared; `owner.accountId` is reserved for future accounts. Tests: `node --test tests/store.test.js`.
 
 ### Local preview
 

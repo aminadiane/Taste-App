@@ -41,7 +41,7 @@ Living document. Update it at the end of every session: move items between secti
 
 ## In progress
 
-### 1. Persistent progress and resume — started 2026-10-20 on branch `feature/persistence`
+### 1. Persistent progress and resume — built 2026-10-20 on branch `feature/persistence`, awaiting merge to `main`
 
 **Approach:** one versioned, append-only event log in `localStorage['pallas.v1']`, behind a single module `js/store.js` (`Pallas.store`). No dependencies; synchronous; survives refresh and restart; holds tens of thousands of events. IndexedDB only if reflections or saved profiles outgrow it. The existing `Pallas.votes` interface stays as a thin view over the store, so the approved screens and drawer keep working unchanged.
 
@@ -64,16 +64,16 @@ The current judgment of an item is its latest event that has not been undone. `p
 Browser storage does not synchronise between devices and is lost if site data is cleared; accounts (priority 8) address that.
 
 *Acceptance criteria:*
-- [ ] Every like and dislike is saved immediately; no Save button.
-- [ ] **Refresh:** counts, shelves and drawer contents survive a refresh, and each screen resumes where it left off.
-- [ ] **Restart:** the same holds after quitting and reopening the browser on the same device.
-- [ ] **Independence:** cinema actions never change literature state or position, and vice versa.
-- [ ] **No repeats:** after a vote, the next work shown is one not yet evaluated; evaluated works return only when everything has been evaluated or the user explicitly revisits (Previous / Next in the book).
-- [ ] **History is preserved:** a new discovery session does not delete earlier events; re-votes are new events.
-- [ ] Migration from `pallas.votes` preserves every existing vote.
-- [ ] Storage failures (private mode, quota) fall back to memory without errors.
-- [ ] Store API supports skip, undo, new session, export, reset one area and delete everything, with tests (UI for these waits on designs).
-- [ ] Automated tests in `tests/` pass with `node --test`.
+- [x] Every like and dislike is saved immediately; no Save button.
+- [x] **Refresh:** counts, shelves and drawer contents survive a refresh, and each screen resumes where it left off (tested in the pane on both screens).
+- [x] **Restart:** the same holds after quitting and reopening the browser on the same device (localStorage persists across restarts; covered by the reload test; worth one manual check in your own browser).
+- [x] **Independence:** cinema actions never change literature state or position, and vice versa.
+- [x] **No repeats:** after a vote, the next work shown is one not yet evaluated; evaluated works return only when everything has been evaluated or the user explicitly revisits (Previous / Next in the book).
+- [x] **History is preserved:** a new discovery session does not delete earlier events; re-votes are new events.
+- [x] Migration from `pallas.votes` preserves every existing vote.
+- [x] Storage failures (private mode, quota) fall back to memory without errors.
+- [x] Store API supports skip, undo, new session, export, reset one area and delete everything, with tests (UI for these waits on designs).
+- [x] Automated tests pass: `node --test tests/store.test.js` (13 tests).
 
 *Waiting on design (Claude Design):* the returning-user prompt (continue / start a new session), and the state shown when every work has been evaluated. Until then the screens resume silently, and when everything is evaluated they continue in library order.
 
@@ -138,7 +138,7 @@ Browser storage does not synchronise between devices and is lost if site data is
 
 | # | Issue | Status |
 |---|---|---|
-| 1 | Both screens restart at item 1 and re-present evaluated works | Fixing in priority 1 |
+| 1 | Both screens restart at item 1 and re-present evaluated works | Fixed on `feature/persistence` |
 | 2 | No skip or undo | Priority 4 |
 | 3 | All stills load eagerly on the film screen | Deferred |
 | 4 | Only tested in Chromium | Deferred |
