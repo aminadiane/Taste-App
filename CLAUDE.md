@@ -51,9 +51,12 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 - `js/journal.js` — assembles Taste Journal data from the store (`Pallas.journal`). No visible interface. See `docs/journal-data.md`.
 - Skip and undo handlers without controls: `Pallas.cinema` and `Pallas.literature` (`skip`, `undo`, `canUndo`, `busy`).
 - `library/stills.json` — cinema library (films keyed by slug, one record per still). Display images in `library/stills/<slug>/NN.jpg`, untouched downloads in `library/originals/`.
+- `docs/cinema-metadata-audit.md` — what the metadata audit found and corrected; retired terms are listed in the vocabulary's `retired` block.
 - `library/cinema-metadata.json` — per-still metadata in three blocks: `measured` (from pixels, `node tools/measure-stills.js`), `observed` (from viewing, applied from `library/import/cinema-observed.txt` by `tools/apply-observations.js`) and `interpretation` (subjective). Validate with `node tools/validate-cinema.js`.
 - `library/vocab/cinema.json`, `library/vocab/literature.json` — controlled vocabularies: every term, its definition, its basis (measured / observed / interpretation) and measurement thresholds. Never rename a published term.
-- `library/literature.json` — books and passages, with sources, locators, notes, metadata, and vocabulary `features`. Validate with `node tools/validate-literature.js`. Batch import: `node tools/import-passages.js`.
+- `library/literature.json` — books and passages, with sources, locators, notes, metadata, and vocabulary `features`. Validate with `node tools/validate-literature.js` (`--verbose` lists what each pending passage needs).
+  - Research batches: `node tools/import-research.js <csv> [features.json]` adds pending records and never imports placeholders. Batches are kept in `library/import/research/`.
+  - Passage text: `node tools/make-import-template.js`, paste, then `node tools/import-passages.js`. A passage goes live only when its info page is complete.
 - `library/excerpts.json` — the handoff stand-ins, used only if no passage is ready, plus the paperback spine presets.
 - `library/PROPOSAL.md` — research and sourcing notes for the cinema library. `library/review.html` — internal review tool.
 - `assets/` — production photographs, textures and masks from the handoff.
@@ -66,7 +69,8 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 ### Checks
 
 - `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, and the journal.
-- `node tools/check-site.js`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, and the validators pass.
+- `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass.
+- `node tools/stress-engine.js --seeds 100`: the engine stress test (`docs/engine-stress-report.md`). Re-run it after any change to `js/taste/analyse.js`, and change thresholds only when its results support it.
 - `node tools/example-profiles.js`: regenerates the example Taste Profiles in `docs/examples/taste-profiles/`.
 
 ### Local preview

@@ -144,13 +144,20 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - Tested: store tests (skip, undo, re-vote, persistence across reloads) and in the pane: cinema skip and undo, undo after a like (refused while the like sequence ran), book skip with page turn, undo after a tear-out (passage restored, torn stack emptied). The pane's saved progress was backed up and restored.
 - *Remaining:* designs for the controls and their transitions (Claude Design), then wire them to the functions above.
 
-### 5. Taste-analysis engine — built and tested 2026-10-21
+### 5. Taste-analysis engine — built and tested 2026-10-21; version 1.1.0 after stress testing
 
 - `js/taste/` (stats, features, analyse, profile, index): one engine for both areas, deterministic, no LLM, no paid service. Method, assumptions and limitations: `docs/taste-engine.md`.
 - Per characteristic: Fisher's exact test against the person's own likes and dislikes, Benjamini–Hochberg correction, Wilson interval. Strength labels (tentative, emerging, well supported) come from those numbers only. Well supported needs evidence from at least two films or books.
 - Characteristics that always co-occur are reported together. Confounded findings are marked `explainedBy` the stronger one (Cochran–Mantel–Haenszel). Combinations must beat each part. Spread reads focused, mixed or broad. Reversed judgments are listed.
 - Inputs are never modified. Every result records the engine version and thresholds, so profiles can be recalculated from the event log at any time.
 - *Tests:* `tests/taste-engine.test.js` checks reference values for every statistic, agreement with direct counts, determinism, six simulated users, and false-discovery control (2 of 30 random users get a well-supported finding, the expected rate).
+- **1.1.0 (stress-tested, `docs/engine-stress-report.md`):** `node tools/stress-engine.js` runs 16 scenarios × 100 simulated users. Changes made only where the numbers showed a weakness:
+  - work-level and leave-one-film-out checks, so repeated stills from one film count once
+  - a two-way confounding test that separates *explained by* from *goes together with*
+  - combinations that must hold beyond the single findings and show an interaction (spurious combinations fell from up to 68% of users to 0–2%)
+  - grouped terms (close shots, distant shots, off-level camera), lifting recovery of a rare preference from 3% to 78%
+  - signatures built only from emerging and well-supported findings, with hedged wording
+  - profiles record the vocabulary version, and `Pallas.taste.staleness(area)` says when to regenerate
 - *Remaining:* real-user calibration once there is real data. Literature findings wait on more passages, since five cannot support any.
 
 ### 6. Personalized Taste Profiles — data foundation built 2026-10-21; screen waits on design
@@ -211,6 +218,28 @@ All work is committed on the branch. Nothing is merged to `main`, pushed or depl
 5. **Techniques for the Journal.** Which dimensions count as craft techniques (`TECHNIQUE_DIMENSIONS` in `js/journal.js`)?
 6. **Skip and undo controls.** These need designs, including whether skipping a still or undoing should have a transition (currently a direct cut).
 7. **Literature register terms** (restrained, lyrical, experimental, ornamental) are interpretations recorded by Claude for the five passages. Keep the four terms?
+
+## Overnight session, phase 2 (2026-10-21, `feature/pallas-overnight`)
+
+All work is committed and pushed to the branch behind draft PR #1. Nothing is merged or deployed. Checks: `node tools/check-site.js --tests` (references, syntax, data, both validators, 64 tests).
+
+| Milestone | Status |
+|---|---|
+| 1. Twenty researched books | Done. 25 literature records: 5 live, 20 pending text (Work's file held placeholders only). Importer, template generator, duplicate guards and tests are in place. |
+| 2. Cinema metadata audit | Done. 16 stills re-examined, 6 fields corrected, vocabulary version 2 (two retired terms, clearer definitions, `medium` added, undetermined values recorded). `docs/cinema-metadata-audit.md` |
+| 3. Engine stress test | Done. `tools/stress-engine.js`, `docs/engine-stress-report.md` |
+| 4. Engine improvements | Done. Engine 1.1.0; also fixed a store and Journal bug where a skip could hide a vote. |
+| 5. Example profiles | Done. Ten simulated people with hidden rules and draft interpretations: `docs/examples/taste-profiles/README.md` |
+| 6. Readiness | Lazy-loaded stills, profile staleness check, and a site check that runs the tests. |
+
+**Review first tomorrow:** `docs/examples/taste-profiles/README.md`, then `docs/engine-stress-report.md`.
+
+**Questions added in phase 2:**
+8. **Wording of the draft interpretation** (`profile.narrative`). It opens "Clearly, …" or "Possibly, …", then gives counts and examples, and adds "That is a description of your judgments, not a gap to correct" after dislikes. Does it fit Pallas's voice?
+9. **Contrast cut-points.** Medium contrast covers 66 of 89 stills. Should the measured cut-points change? That would change what the terms mean.
+10. **Combinations are now conservative.** A real two-characteristic taste is reported less often (28% in one test) in exchange for almost no spurious ones. Keep this balance?
+11. **Info-page notes for the 20 pending passages** (author, work, technique notes). Should Claude draft them from the research for your approval, or will you supply them?
+12. **Permission to display the 20 new passages.** Work's report says reuse permission was not established for any of them, so a decision is needed before their text is entered.
 
 ## Decisions pending
 
