@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/base.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/styles.css">
+  <script src="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Ultra&amp;family=Shrikhand&amp;family=Didact+Gothic&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;display=swap">
+  <style>
+    html,body{background:#fff}
+    a{color:var(--ink)}
+    a:hover{color:var(--ink);opacity:1}
+  </style>
+</helmet>
+
+<sc-if value="{{ isHome }}" hint-placeholder-val="{{ true }}">
+<main data-screen-label="01 Home" style="min-height:100vh;background:var(--white);display:grid;place-items:center;padding:var(--space-9) var(--edge);">
+  <div style="display:flex;flex-direction:column;align-items:center;text-align:center;transform:translateY(-3vh);">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:4px;color:var(--ref-cobalt);">
+      <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:clamp(12px,.95vw,14px);font-weight:500;line-height:1.3;letter-spacing:.06em;">CULTURAL CAPITAL</p>
+      <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:clamp(10px,.8vw,12px);font-weight:500;line-height:1.3;letter-spacing:.01em;color:var(--ink);">presents</p>
+    </div>
+    <h1 style="margin:clamp(14px,1.6vw,24px) 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 125;font-size:clamp(112px,21vw,330px);font-weight:600;line-height:.8;letter-spacing:-.05em;color:var(--ink);padding-right:.05em;">pallas</h1>
+    <p style="margin:clamp(28px,3.2vw,48px) 0 0;font-family:var(--font-sans);font-size:clamp(17px,1.5vw,22px);font-weight:400;line-height:1.4;letter-spacing:-.005em;color:var(--ink);text-wrap:balance;">an exploration of what moves you, and why</p>
+    <nav style="margin-top:clamp(72px,10vh,128px);display:flex;flex-direction:column;align-items:center;gap:clamp(14px,1.4vw,20px);">
+      <p style="margin:0;font-family:var(--font-sans);font-size:clamp(14px,1.05vw,16px);font-weight:400;line-height:1.3;letter-spacing:.005em;color:var(--graphite);">develop your taste in</p>
+      <div style="display:flex;align-items:baseline;justify-content:center;flex-wrap:wrap;gap:clamp(32px,4.4vw,72px);">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#cinema" dc-props="{{ linkProps }}" hint-size="auto,48px">film</x-import>
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ linkProps }}" hint-size="auto,48px">literature</x-import>
+      </div>
+    </nav>
+  </div>
+</main>
+</sc-if>
+
+<sc-if value="{{ isCinema }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="02 Cinema" style="position:relative;min-height:100vh;background:var(--white);display:grid;place-items:center;padding:72px var(--edge) 88px;overflow:hidden;">
+
+  <div style="position:fixed;top:var(--edge);left:var(--edge);z-index:5;">
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ backProps }}" hint-size="60px,24px">pallas</x-import>
+  </div>
+
+  <div style="position:relative;width:min(92vw,calc((100vh - 160px) * 1.107),880px);aspect-ratio:1550 / 1400;container-type:inline-size;">
+
+    <img src="assets/tv.jpg" alt="Silver CRT television" draggable="false" style="position:absolute;inset:0;width:100%;height:100%;user-select:none;">
+
+    <div style="position:absolute;left:4%;width:90%;top:92.6%;height:6.5%;border-radius:50%;background:rgba(0,0,0,.16);filter:blur(2.2cqw);mix-blend-mode:multiply;pointer-events:none;"></div>
+    <div style="position:absolute;left:30.5%;width:32%;top:95.2%;height:1.6%;border-radius:50%;background:rgba(0,0,0,.42);filter:blur(.45cqw);mix-blend-mode:multiply;pointer-events:none;"></div>
+
+    <div style="position:absolute;left:11.36%;top:14.14%;width:75.16%;height:60%;border-radius:1.1% / 1.5%;overflow:hidden;background:#171a19;">
+
+      <div ref="{{ picRef }}" style="position:absolute;inset:0;transform:{{ pic.transform }};filter:{{ pic.filter }};opacity:{{ pic.opacity }};transition:{{ pic.transition }};">
+        <sc-for list="{{ stills }}" as="s" hint-placeholder-count="1">
+          <div style="position:absolute;inset:0;opacity:{{ s.opacity }};pointer-events:{{ s.events }};transform:{{ s.t }};transition:{{ s.tr }};">
+            <image-slot id="{{ s.id }}" shape="rect" placeholder="{{ s.placeholder }}" style="width:100%;height:100%;"></image-slot>
+            <div style="position:absolute;left:0;right:0;top:-7%;height:7%;background:linear-gradient(180deg,#050505,#000 40%,#151515);opacity:{{ s.band }};pointer-events:none;"></div>
+          </div>
+        </sc-for>
+        <canvas ref="{{ noiseRef }}" width="200" height="146" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:{{ noise.opacity }};transition:{{ noise.transition }};"></canvas>
+      </div>
+
+      <div style="position:absolute;left:50%;top:50%;width:1.2cqw;height:1.2cqw;transform:translate(-50%,-50%);border-radius:50%;background:#fff;box-shadow:0 0 1.4cqw .6cqw rgba(220,240,255,.85),0 0 4cqw 1.4cqw rgba(200,225,255,.4);pointer-events:none;opacity:{{ dot.opacity }};transition:{{ dot.transition }};"></div>
+
+      <div style="position:absolute;inset:0;pointer-events:none;box-shadow:inset 0 0 8cqw rgba(0,0,0,.5),inset 0 0 1.4cqw rgba(0,0,0,.55);"></div>
+      <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(160deg,rgba(255,255,255,.12) 0%,rgba(255,255,255,.035) 36%,transparent 37%);"></div>
+
+      <sc-if value="{{ tvArc.on }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ onArcStep }}" style="position:absolute;inset:0;cursor:pointer;"></div>
+      </sc-if>
+      <sc-if value="{{ osdOn }}" hint-placeholder-val="{{ false }}">
+        <div style="position:absolute;top:7%;left:7%;pointer-events:none;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:4.4cqw;font-weight:500;line-height:1;letter-spacing:.01em;color:{{ osdColor.fg }};text-shadow:0 0 .8cqw {{ osdColor.glow }},.25cqw .25cqw 0 rgba(0,0,0,.7);">{{ osdText }}</div>
+      </sc-if>
+    </div>
+
+    <div style="position:absolute;left:45.03%;top:78.21%;width:8.9%;height:2.5%;display:grid;place-items:center;pointer-events:none;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:.9cqw;font-weight:600;line-height:1;letter-spacing:-.01em;white-space:nowrap;color:var(--ref-cobalt);text-shadow:0 .08cqw 0 rgba(255,255,255,.8);">cultural capital</div>
+
+    <div style="position:absolute;right:57.03%;top:82.68%;height:1.86%;display:flex;align-items:center;padding-right:.9cqw;pointer-events:none;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:1.25cqw;font-weight:500;line-height:1;color:#d2d3d4;">dislike</div>
+    <button aria-label="dislike" onClick="{{ onDislike }}" style="position:absolute;left:42.97%;top:82.68%;width:5.68%;height:1.86%;padding:0;border:0;cursor:pointer;background:url(assets/tv-cap.png) center / 100% 100% no-repeat;transition:transform 80ms,filter 80ms;" style-active="transform:translateY(.12cqw);filter:brightness(.88);"></button>
+
+    <button aria-label="like" onClick="{{ onLike }}" style="position:absolute;left:50.19%;top:82.68%;width:5.68%;height:1.86%;padding:0;border:0;cursor:pointer;background:url(assets/tv-cap.png) center / 100% 100% no-repeat;transition:transform 80ms,filter 80ms;" style-active="transform:translateY(.12cqw);filter:brightness(.88);"></button>
+    <div style="position:absolute;left:56.5%;top:82.68%;height:1.86%;display:flex;align-items:center;pointer-events:none;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:1.25cqw;font-weight:500;line-height:1;color:#d2d3d4;">like</div>
+  </div>
+
+
+  <div style="position:fixed;left:var(--edge);bottom:var(--edge);z-index:5;display:flex;align-items:baseline;gap:10px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#cinema" dc-props="{{ cq.shelf }}" hint-size="40px,18px">shelf</x-import>
+    <span>—</span>
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#cinema" dc-props="{{ cq.like }}" hint-size="56px,18px">{{ cq.likeLabel }}</x-import>
+    <span>—</span>
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#cinema" dc-props="{{ cq.dislike }}" hint-size="70px,18px">{{ cq.dislikeLabel }}</x-import>
+    <sc-if value="{{ tvArc.on }}" hint-placeholder-val="{{ false }}">
+      <span style="width:14px;"></span>
+      <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#cinema" dc-props="{{ cq.exit }}" hint-size="30px,18px">back to tv</x-import>
+    </sc-if>
+  </div>
+</main>
+</sc-if>
+
+
+<sc-if value="{{ isLit }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="03 Literature" style="position:relative;min-height:100vh;background:var(--white);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:48px;padding:72px var(--edge) 88px;overflow:hidden;user-select:none;-webkit-user-select:none;">
+
+  <div style="position:fixed;top:var(--edge);left:var(--edge);z-index:5;">
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ backProps }}" hint-size="60px,24px">pallas</x-import>
+  </div>
+
+  <div style="position:relative;flex:none;width:{{ stage.w }};height:{{ stage.h }};">
+    <div style="position:absolute;left:0;top:0;width:660px;height:520px;transform:{{ stage.scale }};transform-origin:0 0;perspective:2400px;">
+      <div ref="{{ refs.book }}" style="position:absolute;inset:0;transform-style:preserve-3d;transform-origin:495px 260px;transform:{{ bk.book }};transition:transform 1150ms cubic-bezier(.45,.05,.2,1);--ty:0px;--sk:0deg;">
+
+        <div style="position:absolute;top:0;height:520px;left:{{ bk.baseLeft }};width:{{ bk.baseW }};transform:translateZ(-34px);border-radius:3px;box-shadow:16px 24px 38px -6px rgba(0,0,0,.20),4px 6px 12px rgba(0,0,0,.13),1px 1px 2px rgba(0,0,0,.16);opacity:{{ bk.shadowOp }};transition:left 950ms cubic-bezier(.45,.05,.2,1) 200ms,width 950ms cubic-bezier(.45,.05,.2,1) 200ms,opacity 600ms ease 500ms;"></div>
+
+        <div style="position:absolute;left:-65.2px;top:-40.6px;width:796px;height:596px;transform:translateZ(-1px);background:url(assets/book-spread.jpg) 0 0 / 100% 100% no-repeat;pointer-events:none;opacity:{{ bk.spreadOp }};transition:{{ bk.spreadT }};"></div>
+
+        <div style="position:absolute;left:296px;top:0;width:34px;height:520px;transform-origin:100% 50%;transform:rotateY(-90deg);border-radius:2px;overflow:hidden;isolation:isolate;background:url(assets/book-spine.jpg) 0 0 / 100% 100% no-repeat;">
+          <div style="position:absolute;left:0;right:0;top:28px;bottom:24px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+            <div style="writing-mode:vertical-rl;font-family:'Ultra',serif;font-size:15px;line-height:1;letter-spacing:-.01em;color:#0e0c10;white-space:nowrap;mix-blend-mode:multiply;opacity:.92;">Pallas</div>
+            <div style="writing-mode:vertical-rl;font-family:'Newsreader',serif;font-size:8.5px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;color:#efe4cc;white-space:nowrap;opacity:.88;">Cultural Capital</div>
+          </div>
+          <div style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.18),rgba(255,255,255,.06) 40%,rgba(0,0,0,.14));"></div>
+        </div>
+
+        <div onClick="{{ onFold }}" onMouseEnter="{{ onFlapIn }}" onMouseLeave="{{ onFlapOut }}" style="position:absolute;left:330px;top:0;width:330px;height:520px;border-radius:0 3px 3px 0;box-shadow:{{ bk.rightEdges }};cursor:{{ bk.rightCursor }};">
+          <div style="position:absolute;inset:0;border-radius:0 3px 3px 0;overflow:hidden;">
+            <div style="position:absolute;inset:0;background:url(assets/page-right.jpg) 0 0 / 100% 100% no-repeat;filter:brightness(.97);"></div>
+            <div style="position:absolute;inset:0;clip-path:{{ rp.clip }};transition:{{ rp.clipT }};">
+              <dc-import name="BookPage" kind="{{ R.kind }}" side="right" entry="{{ R.entry }}" folio="{{ R.folio }}" hint-size="330px,520px"></dc-import>
+            </div>
+            <div ref="{{ refs.rShadow }}" style="position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(90deg,rgba(30,20,5,.34),rgba(30,20,5,.10) 30%,transparent 70%);"></div>
+          </div>
+          <sc-if value="{{ rp.flapOn }}" hint-placeholder-val="{{ false }}">
+            <div style="position:absolute;right:0;top:0;width:{{ flap.size }};height:{{ flap.size }};transform-style:preserve-3d;transform-origin:50% 50%;transform:{{ flap.transform }};transition:{{ flap.transition }};pointer-events:none;">
+              <div style="position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;clip-path:polygon(0 0,100% 0,100% 100%);border-top-right-radius:3px;">
+                <div style="position:absolute;right:0;top:0;width:330px;height:520px;">
+                  <dc-import name="BookPage" kind="{{ R.kind }}" side="right" entry="{{ R.entry }}" folio="{{ R.folio }}" hint-size="330px,520px"></dc-import>
+                </div>
+                <div style="position:absolute;inset:0;background:linear-gradient(225deg,rgba(255,255,255,0) 30%,rgba(60,40,10,.10) 50%);opacity:{{ flap.frontShade }};transition:opacity 420ms;"></div>
+              </div>
+              <div style="position:absolute;inset:0;backface-visibility:hidden;transform:rotate3d(1,1,0,180deg);filter:{{ flap.shadow }};transition:filter 520ms cubic-bezier(.2,.7,.1,1);">
+                <div style="position:absolute;inset:0;clip-path:polygon(0 0,0 100%,100% 100%);background-color:#e6d3ac;background-image:linear-gradient(225deg,transparent 50%,rgba(255,250,235,.6) 50.4%,rgba(255,250,235,.16) 55%,rgba(255,255,255,0) 64%,rgba(60,40,10,.16) 100%),url(assets/paper-photo.jpg);background-size:auto,330px 330px;"></div>
+              </div>
+            </div>
+          </sc-if>
+        </div>
+
+        <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform:translateZ(.5px);border-radius:3px 0 0 3px;visibility:{{ bk.leftVis }};">
+          <div style="position:absolute;inset:0;border-radius:3px 0 0 3px;overflow:hidden;">
+            <dc-import name="BookPage" kind="blank" side="left" hint-size="330px,520px"></dc-import>
+          </div>
+          <sc-if value="{{ earsOn }}" hint-placeholder-val="{{ false }}">
+            <div onClick="{{ onEars }}" style="position:absolute;left:-8px;top:0;width:30px;height:44px;cursor:pointer;">
+              <sc-for list="{{ ears }}" as="m" hint-placeholder-count="1">
+                <div style="position:absolute;left:2px;top:{{ m.top }};width:6px;height:8px;clip-path:polygon(0 0,100% 0,100% 100%);background:linear-gradient(225deg,#efe8d6 0 45%,#c4b594 55%);"></div>
+              </sc-for>
+            </div>
+          </sc-if>
+        </div>
+
+        <sc-if value="{{ bk.closed }}" hint-placeholder-val="{{ true }}">
+          <div style="position:absolute;left:660px;top:3px;width:34px;height:514px;transform-origin:0 50%;transform:translateZ(2px) rotateY(90deg);background:url(assets/book-fore.jpg) 0 0 / 100% 100%;box-shadow:inset 3px 0 4px rgba(0,0,0,.18);"></div>
+        </sc-if>
+
+        <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform:translateZ(1px);pointer-events:none;visibility:{{ bk.leftVis }};filter:drop-shadow(-.6px 0 .9px rgba(40,25,5,.3));">
+          <div style="position:absolute;inset:0;mask-image:url(assets/tear-stub.png),linear-gradient(#000 var(--ty),transparent var(--ty));-webkit-mask-image:url(assets/tear-stub.png),linear-gradient(#000 var(--ty),transparent var(--ty));mask-size:100% 100%;-webkit-mask-size:100% 100%;mask-composite:intersect;-webkit-mask-composite:source-in;">
+            <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ L.entry }}" folio="{{ L.folio }}" hint-size="330px,520px"></dc-import>
+            <div style="position:absolute;inset:0;background:url(assets/tear-core-stub.png) 0 0 / 100% 100%;"></div>
+          </div>
+        </div>
+
+        <div ref="{{ refs.torn }}" onPointerDown="{{ onPageDown }}" onMouseEnter="{{ onPageIn }}" onMouseLeave="{{ onPageOut }}" style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:100% 100%;transform-style:preserve-3d;transform:translateZ(1px);visibility:{{ lp.vis }};cursor:{{ lp.cursor }};touch-action:none;">
+          <div style="position:absolute;inset:0;transform-origin:0 var(--ty);transform:skewX(var(--sk));filter:drop-shadow(.9px .3px 1.3px rgba(40,25,5,.34));">
+            <div style="position:absolute;inset:0;border-radius:3px 0 0 3px;overflow:hidden;mask-image:url(assets/tear-piece.png),linear-gradient(#000 var(--ty),transparent var(--ty));-webkit-mask-image:url(assets/tear-piece.png),linear-gradient(#000 var(--ty),transparent var(--ty));mask-size:100% 100%;-webkit-mask-size:100% 100%;mask-composite:intersect;-webkit-mask-composite:source-in;">
+              <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ L.entry }}" folio="{{ L.folio }}" hint-size="330px,520px"></dc-import>
+              <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div>
+            </div>
+          </div>
+          <div style="position:absolute;inset:0;border-radius:3px 0 0 3px;overflow:hidden;mask-image:linear-gradient(transparent var(--ty),#000 var(--ty));-webkit-mask-image:linear-gradient(transparent var(--ty),#000 var(--ty));">
+            <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ L.entry }}" folio="{{ L.folio }}" hint-size="330px,520px"></dc-import>
+          </div>
+          <div ref="{{ refs.lShadow }}" style="position:absolute;inset:0;pointer-events:none;opacity:0;background:linear-gradient(270deg,rgba(30,20,5,.34),rgba(30,20,5,.10) 30%,transparent 70%);"></div>
+        </div>
+
+        <div onClick="{{ onOpen }}" onMouseEnter="{{ onCoverIn }}" onMouseLeave="{{ onCoverOut }}" style="position:absolute;left:330px;top:0;width:330px;height:520px;transform-origin:0 50%;transform-style:preserve-3d;transform:{{ bk.cover }};transition:{{ bk.coverT }};cursor:{{ bk.coverCursor }};visibility:{{ bk.coverVis }};">
+          <div style="position:absolute;inset:0;backface-visibility:hidden;border-radius:2px 5px 5px 2px;overflow:hidden;isolation:isolate;">
+            <div style="position:absolute;inset:0;background:url(assets/book-cover.jpg) 0 0 / 100% 100% no-repeat;"></div>
+            <div style="position:absolute;inset:0;mask-image:url(assets/ink-wear.png);-webkit-mask-image:url(assets/ink-wear.png);mask-size:100% 100%;-webkit-mask-size:100% 100%;filter:blur(.25px);">
+            <sc-if value="{{ cv.a }}" hint-placeholder-val="{{ true }}">
+              <div style="position:absolute;right:20px;bottom:24px;font-family:'Newsreader',serif;font-size:9px;font-weight:600;line-height:1;letter-spacing:.2em;text-transform:uppercase;color:#f4ebd6;white-space:nowrap;text-align:right;">A Cultural Capital Publication</div>
+              <div style="position:absolute;left:62px;right:18px;top:122px;display:flex;flex-direction:column;align-items:flex-start;">
+                <div style="font-family:'Ultra',serif;font-size:66px;line-height:.86;letter-spacing:-.035em;color:{{ titleInk.color }};margin-left:-3px;mix-blend-mode:{{ titleInk.blend }};opacity:.94;">Pallas</div>
+                <div style="width:132px;height:1.5px;margin:30px 0 22px;background:#efe4cc;opacity:.9;"></div>
+                <div style="font-family:'Ultra',serif;font-size:24px;line-height:1.12;letter-spacing:-.01em;color:#f1e7d0;opacity:.95;text-wrap:balance;">Build your taste<br>in literature</div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ cv.c }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;left:0;right:0;top:96px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+                <div style="font-family:'Didact Gothic',sans-serif;font-size:9px;line-height:1;letter-spacing:.32em;text-transform:lowercase;color:#f1e7d0;opacity:.92;">a cultural capital publication</div>
+                <div style="margin-top:26px;font-family:'Shrikhand',serif;font-size:74px;line-height:.9;letter-spacing:-.02em;color:{{ seventies.title }};padding:0 6px;">pallas</div>
+                <div style="margin-top:18px;font-family:'Didact Gothic',sans-serif;font-size:15px;line-height:1.25;letter-spacing:.04em;text-transform:lowercase;color:#f1e7d0;opacity:.95;">build your taste<br>in literature</div>
+              </div>
+              <div style="position:absolute;left:0;right:0;bottom:86px;display:flex;flex-direction:column;gap:5px;">
+                <div style="height:11px;background:{{ seventies.s1 }};opacity:.94;"></div>
+                <div style="height:11px;background:{{ seventies.s2 }};opacity:.94;"></div>
+                <div style="height:11px;background:{{ seventies.s3 }};opacity:.94;"></div>
+              </div>
+              <div style="position:absolute;inset:0;background:url(assets/book-cover.jpg) 0 0 / 100% 100% no-repeat;mix-blend-mode:luminosity;opacity:.22;pointer-events:none;"></div>
+            </sc-if>
+            <sc-if value="{{ cv.b }}" hint-placeholder-val="{{ false }}">
+              <div style="position:absolute;left:36px;right:22px;top:120px;display:flex;flex-direction:column;align-items:flex-start;">
+                <div style="font-family:'Newsreader',serif;font-size:7.5px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:#f6f1e8;">Cultural Capital presents</div>
+                <div style="margin-top:28px;font-family:'Ultra',serif;font-size:80px;line-height:.86;letter-spacing:-.035em;color:#0e0c10;margin-left:-3px;">Pallas</div>
+                <div style="margin-top:24px;font-family:'Ultra',serif;font-size:17px;line-height:1.18;letter-spacing:-.01em;color:#f6f1e8;">Build your taste<br>in literature</div>
+              </div>
+            </sc-if>
+            </div>
+            <div style="position:absolute;inset:0;background:linear-gradient(118deg,rgba(255,255,255,.06),rgba(255,255,255,0) 34%,rgba(0,0,0,0) 62%,rgba(0,0,0,.06));"></div>
+          </div>
+          <div style="position:absolute;inset:0;backface-visibility:hidden;transform:rotateY(180deg);border-radius:5px 2px 2px 5px;overflow:hidden;visibility:{{ bk.insideVis }};">
+            <dc-import name="BookPage" kind="inside" side="left" hint-size="330px,520px"></dc-import>
+          </div>
+        </div>
+
+        <sc-if value="{{ hasLeaf }}" hint-placeholder-val="{{ false }}">
+          <div ref="{{ refs.leaf }}" style="position:absolute;left:330px;top:0;width:330px;height:520px;transform-origin:0 50%;transform-style:preserve-3d;transform:translateZ(2px) rotateY(0deg);pointer-events:none;">
+            <div style="position:absolute;left:0;top:0;width:132px;height:520px;transform-style:preserve-3d;">
+              <div style="position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;">
+                <div style="position:absolute;left:0;top:0;width:330px;height:520px;">
+                  <dc-import name="BookPage" kind="{{ LF.kind }}" side="right" entry="{{ LF.entry }}" folio="{{ LF.folio }}" hint-size="330px,520px"></dc-import>
+                </div>
+                <div ref="{{ refs.f1 }}" style="position:absolute;inset:0;background:#2a2014;opacity:0;"></div>
+              </div>
+              <div style="position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;transform:rotateY(180deg);">
+                <div style="position:absolute;left:-198px;top:0;width:330px;height:520px;">
+                  <dc-import name="BookPage" kind="{{ LB.kind }}" side="left" entry="{{ LB.entry }}" folio="{{ LB.folio }}" hint-size="330px,520px"></dc-import>
+                </div>
+                <div ref="{{ refs.b1 }}" style="position:absolute;inset:0;background:#2a2014;opacity:.3;"></div>
+              </div>
+            </div>
+            <div ref="{{ refs.seg2 }}" style="position:absolute;left:132px;top:0;width:198px;height:520px;transform-origin:0 50%;transform-style:preserve-3d;">
+              <div style="position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;border-radius:0 3px 3px 0;">
+                <div style="position:absolute;left:-132px;top:0;width:330px;height:520px;">
+                  <dc-import name="BookPage" kind="{{ LF.kind }}" side="right" entry="{{ LF.entry }}" folio="{{ LF.folio }}" hint-size="330px,520px"></dc-import>
+                </div>
+                <div ref="{{ refs.f2 }}" style="position:absolute;inset:0;background:#2a2014;opacity:0;"></div>
+              </div>
+              <div style="position:absolute;inset:0;overflow:hidden;backface-visibility:hidden;transform:rotateY(180deg);border-radius:3px 0 0 3px;">
+                <div style="position:absolute;left:0;top:0;width:330px;height:520px;">
+                  <dc-import name="BookPage" kind="{{ LB.kind }}" side="left" entry="{{ LB.entry }}" folio="{{ LB.folio }}" hint-size="330px,520px"></dc-import>
+                </div>
+                <div ref="{{ refs.b2 }}" style="position:absolute;inset:0;background:#2a2014;opacity:.3;"></div>
+              </div>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+
+      <sc-if value="{{ stackOn }}" hint-placeholder-val="{{ false }}">
+        <div onClick="{{ onStack }}" style="position:absolute;left:700px;top:330px;width:150px;height:196px;cursor:pointer;">
+          <sc-for list="{{ stack }}" as="t" hint-placeholder-count="1">
+            <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:{{ t.t }};filter:drop-shadow(0 3px 3px rgba(0,0,0,.16)) drop-shadow(0 16px 26px rgba(0,0,0,.08));">
+              <div style="position:absolute;inset:0;mask-image:url(assets/tear-piece.png);-webkit-mask-image:url(assets/tear-piece.png);mask-size:100% 100%;-webkit-mask-size:100% 100%;">
+                <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ t.entry }}" folio="{{ t.folio }}" hint-size="330px,520px"></dc-import>
+                <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div>
+              </div>
+            </div>
+          </sc-for>
+        </div>
+      </sc-if>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;width:{{ stage.bw }};margin-right:{{ stage.mr }};min-height:20px;">
+    <div style="display:flex;justify-content:flex-start;">
+      <sc-if value="{{ bk.isOpen }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ act.prev }}" hint-size="60px,14px">Previous</x-import>
+      </sc-if>
+    </div>
+    <div style="display:flex;justify-content:center;gap:40px;">
+      <sc-if value="{{ bk.closed }}" hint-placeholder-val="{{ true }}">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ act.open }}" hint-size="40px,18px">open</x-import>
+      </sc-if>
+      <sc-if value="{{ bk.isOpen }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ act.tear }}" hint-size="60px,18px">tear out</x-import>
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ act.fold }}" hint-size="60px,18px">dog-ear</x-import>
+      </sc-if>
+    </div>
+    <div style="display:flex;justify-content:flex-end;">
+      <sc-if value="{{ bk.isOpen }}" hint-placeholder-val="{{ false }}">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ act.next }}" hint-size="40px,14px">Next</x-import>
+      </sc-if>
+    </div>
+  </div>
+
+  <sc-if value="{{ bk.isOpen }}" hint-placeholder-val="{{ false }}">
+    <div style="position:fixed;top:var(--edge);right:var(--edge);z-index:5;">
+      <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ act.close }}" hint-size="40px,14px">Close</x-import>
+    </div>
+  </sc-if>
+
+
+  <div style="position:fixed;left:var(--edge);bottom:var(--edge);z-index:5;display:flex;align-items:baseline;gap:10px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ lq.shelf }}" hint-size="40px,18px">shelf</x-import>
+    <span>—</span>
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ lq.like }}" hint-size="80px,18px">{{ lq.likeLabel }}</x-import>
+    <span>—</span>
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#literature" dc-props="{{ lq.dislike }}" hint-size="70px,18px">{{ lq.dislikeLabel }}</x-import>
+  </div>
+</main>
+</sc-if>
+
+<div style="position:absolute;left:0;top:0;width:0;height:0;">
+  <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.Drawer" dc-props="{{ qv.props }}" hint-size="0px,0px">
+    <div style="display:flex;flex-direction:column;gap:36px;padding:8px 0 64px;">
+      <div style="display:flex;align-items:baseline;gap:24px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ qv.tabS }}" hint-size="60px,18px">{{ qv.tabSLabel }}</x-import>
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ qv.tabA }}" hint-size="60px,18px">{{ qv.tabALabel }}</x-import>
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ qv.tabB }}" hint-size="60px,18px">{{ qv.tabBLabel }}</x-import>
+      </div>
+      <sc-if value="{{ qv.empty }}" hint-placeholder-val="{{ false }}">
+        <p style="margin:0;font-family:var(--font-sans);font-size:14px;line-height:1.4;color:var(--stone);">none yet</p>
+      </sc-if>
+      <sc-if value="{{ qv.shelfOn }}" hint-placeholder-val="{{ false }}">
+        <div style="display:flex;flex-direction:column;margin:0 calc(var(--edge) * -1);">
+          <div ref="{{ qv.shelfRef }}" onPointerDown="{{ qv.shelfDown }}" style="display:flex;align-items:flex-end;gap:1px;padding:28px calc(var(--edge) + 6px) 0;overflow-x:auto;overflow-y:hidden;scroll-behavior:auto;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;touch-action:pan-x;">
+            <sc-for list="{{ qv.dvds }}" as="sp" hint-placeholder-count="4">
+              <button aria-label="{{ sp.aria }}" onClick="{{ sp.pick }}" style="position:relative;flex:none;display:block;padding:0;border:0;cursor:pointer;width:23px;height:300px;border-radius:2px 2px 1px 1px;overflow:hidden;background:{{ sp.bg }};transform:{{ sp.lift }};transition:transform 320ms cubic-bezier(.2,.7,.1,1);box-shadow:0 1px 1.5px rgba(0,0,0,.32),inset 0 0 0 .5px rgba(0,0,0,.3);" style-hover="transform:translateY(-10px);">
+                <div style="position:absolute;left:0;right:0;top:0;height:8px;background:linear-gradient(180deg,#2a2a2a,#0e0e0e);box-shadow:0 1px 0 rgba(255,255,255,.12);"></div>
+                <div style="position:absolute;left:0;right:0;bottom:0;height:8px;background:linear-gradient(0deg,#2a2a2a,#0e0e0e);box-shadow:0 -1px 0 rgba(255,255,255,.12);"></div>
+                <div style="position:absolute;left:0;right:0;top:16px;bottom:14px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+                  <span style="writing-mode:vertical-rl;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:11px;font-weight:600;line-height:1;letter-spacing:-.01em;white-space:nowrap;color:{{ sp.fg }};">{{ sp.title }}</span>
+                  <span style="writing-mode:vertical-rl;font-family:var(--font-sans);font-size:8.5px;font-weight:500;line-height:1;white-space:nowrap;color:{{ sp.fg }};opacity:.78;">{{ sp.year }}</span>
+                </div>
+                <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(0,0,0,.22) 0,rgba(255,255,255,.06) 12%,rgba(255,255,255,.34) 24%,rgba(255,255,255,.04) 38%,rgba(255,255,255,0) 70%,rgba(0,0,0,.26) 100%);"></div>
+              </button>
+            </sc-for>
+            <sc-for list="{{ qv.books }}" as="sp" hint-placeholder-count="0">
+              <button aria-label="{{ sp.aria }}" onClick="{{ sp.pick }}" style="position:relative;flex:none;display:block;padding:0;border:0;cursor:pointer;width:{{ sp.w }};height:{{ sp.h }};border-radius:1.5px 1.5px 1px 1px;overflow:hidden;background:{{ sp.bg }};transform:{{ sp.lift }};transition:transform 320ms cubic-bezier(.2,.7,.1,1);box-shadow:0 1px 1.5px rgba(0,0,0,.3),inset 0 0 0 .5px rgba(0,0,0,.22);" style-hover="transform:translateY(-10px);">
+                <div style="position:absolute;left:0;right:0;top:14px;bottom:12px;display:flex;flex-direction:column;align-items:center;justify-content:space-between;">
+                  <span style="writing-mode:vertical-rl;font-family:'Gloock',serif;font-size:12.5px;line-height:1;white-space:nowrap;color:{{ sp.fg }};">{{ sp.title }}</span>
+                  <span style="writing-mode:vertical-rl;font-family:'Newsreader',serif;font-style:italic;font-size:9.5px;line-height:1;white-space:nowrap;color:{{ sp.fg }};opacity:.85;">{{ sp.author }}</span>
+                </div>
+                <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/paper.png) 0 0 / 160px 160px;opacity:.35;mix-blend-mode:multiply;"></div>
+                <div style="position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(255,250,240,.45),rgba(255,250,240,0) 3%,rgba(255,250,240,0) 97%,rgba(255,250,240,.4)),linear-gradient(90deg,rgba(0,0,0,.24),rgba(255,255,255,.1) 30%,rgba(255,255,255,.04) 60%,rgba(0,0,0,.22));"></div>
+                <div style="position:absolute;left:26%;top:0;bottom:0;width:1px;background:rgba(255,253,245,.18);"></div>
+              </button>
+            </sc-for>
+          </div>
+          <div style="height:12px;background:linear-gradient(180deg,#f4f4f2 0,#e6e6e2 55%,#d4d4cf 100%);box-shadow:inset 0 1px 0 rgba(0,0,0,.08),0 1px 0 #c4c4bf,0 18px 24px -12px rgba(0,0,0,.26);"></div>
+          <div style="height:5px;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,0));"></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ qv.isCinema }}" hint-placeholder-val="{{ false }}">
+        <sc-for list="{{ qv.stills }}" as="s" hint-placeholder-count="2">
+          <figure style="margin:0 calc(var(--edge) * -1);display:flex;flex-direction:column;gap:10px;">
+            <div style="aspect-ratio:1165 / 840;background:#171a19;">
+              <image-slot id="{{ s.id }}" shape="rect" placeholder="{{ s.placeholder }}" style="width:100%;height:100%;"></image-slot>
+            </div>
+            <figcaption style="padding:0 var(--edge);font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">{{ s.label }}</figcaption>
+          </figure>
+        </sc-for>
+      </sc-if>
+      <sc-if value="{{ qv.isLit }}" hint-placeholder-val="{{ false }}">
+        <sc-for list="{{ qv.pages }}" as="p" hint-placeholder-count="2">
+          <figure style="margin:0;display:flex;flex-direction:column;align-items:center;gap:16px;">
+            <div style="position:relative;width:{{ p.w }};height:{{ p.h }};transform:{{ p.rot }};filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 8px 14px rgba(0,0,0,.07));">
+              <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:{{ p.scale }};">
+                <div style="position:absolute;inset:0;mask-image:{{ p.mask }};-webkit-mask-image:{{ p.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ p.clip }};">
+                  <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ p.entry }}" folio="{{ p.folio }}" hint-size="330px,520px"></dc-import>
+                  <sc-if value="{{ p.torn }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div>
+                  </sc-if>
+                </div>
+                <sc-if value="{{ p.folded }}" hint-placeholder-val="{{ false }}">
+                  <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));">
+                    <div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+            <figcaption style="font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);text-align:center;">{{ p.label }}</figcaption>
+          </figure>
+        </sc-for>
+      </sc-if>
+    </div>
+  </x-import>
+</div></x-dc>
+<script type="text/x-dc" data-dc-script>
+const N = 6;
+const FILMS = [
+  { title: 'Vertigo', year: 1958, director: 'Alfred Hitchcock', bg: '#e9e4d6', fg: '#141210' },
+  { title: 'The Godfather', year: 1972, director: 'Francis Ford Coppola', bg: '#121212', fg: '#efe9dc' },
+  { title: 'Casablanca', year: 1942, director: 'Michael Curtiz', bg: '#f2f0ea', fg: '#6B1420' },
+  { title: 'Taxi Driver', year: 1976, director: 'Martin Scorsese', bg: '#D3222A', fg: '#fbf6ec' },
+  { title: 'Spirited Away', year: 2001, director: 'Hayao Miyazaki', bg: '#2E5BD6', fg: '#fbf6ec' },
+  { title: 'Chinatown', year: 1974, director: 'Roman Polanski', bg: '#1d1a17', fg: '#d9b98a' },
+];
+const BOOKSPINE = [
+  { bg: '#2f5a4a', fg: '#f3ecdc', w: 26, h: 296 },
+  { bg: '#e2d4b2', fg: '#1d1915', w: 20, h: 282 },
+  { bg: '#6B1420', fg: '#f3ecdc', w: 31, h: 304 },
+  { bg: '#c98a2b', fg: '#1d1915', w: 23, h: 290 },
+  { bg: '#4A3E9E', fg: '#f3ecdc', w: 28, h: 300 },
+];
+const ENTRIES = [
+  {
+    num: '1', title: 'The Great Gatsby', byline: 'F. Scott Fitzgerald — 1925',
+    excerpt: [
+      'Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that’s no matter—tomorrow we will run faster, stretch out our arms farther. . . . And one fine morning——',
+      'So we beat on, boats against the current, borne back ceaselessly into the past.',
+    ],
+    author: 'F. Scott Fitzgerald (1896–1940) was an American novelist and short-story writer who named and chronicled the Jazz Age.',
+    work: 'The novel follows the self-made millionaire Jay Gatsby and his pursuit of Daisy Buchanan, as told by her cousin Nick Carraway. These are its final lines.',
+    techniques: [
+      { name: 'Retrospective narration', text: 'Nick tells the story after it has ended, so loss colours every scene. Here he widens from Gatsby to “us”.' },
+      { name: 'Symbol', text: 'The green light at the end of Daisy’s dock stands for a future that recedes as it is pursued.' },
+    ],
+  },
+  {
+    num: '2', title: 'Mrs Dalloway', byline: 'Virginia Woolf — 1925',
+    excerpt: [
+      'Mrs Dalloway said she would buy the flowers herself.',
+      'For Lucy had her work cut out for her. The doors would be taken off their hinges; Rumpelmayer’s men were coming. And then, thought Clarissa Dalloway, what a morning—fresh as if issued to children on a beach.',
+      'What a lark! What a plunge! For so it had always seemed to her, when, with a little squeak of the hinges, which she could hear now, she had burst open the French windows and plunged at Bourton into the open air.',
+    ],
+    author: 'Virginia Woolf (1882–1941) was an English novelist and essayist, and a central figure of literary modernism and the Bloomsbury Group.',
+    work: 'The novel takes place over a single June day in London in 1923, as Clarissa Dalloway prepares for a party she is giving that evening. This is its opening.',
+    techniques: [
+      { name: 'Free indirect discourse', text: 'The narration moves into Clarissa’s thoughts mid-sentence, without quotation marks.' },
+      { name: 'Time shift', text: 'The squeak of a hinge in the present carries her back to Bourton at eighteen within one sentence.' },
+    ],
+  },
+  {
+    num: '3', title: 'The Dead', byline: 'James Joyce — 1914',
+    excerpt: [
+      'Yes, the newspapers were right: snow was general all over Ireland. It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves. . . .',
+      'His soul swooned slowly as he heard the snow falling faintly through the universe and faintly falling, like the descent of their last end, upon all the living and the dead.',
+    ],
+    author: 'James Joyce (1882–1941) was an Irish writer whose work moved from the realism of Dubliners to the experiments of Ulysses and Finnegans Wake.',
+    work: 'The last story in Dubliners. After a Christmas party, Gabriel Conroy learns of his wife’s first love and watches the snow. These are its closing lines.',
+    techniques: [
+      { name: 'Chiasmus', text: '“Falling faintly” returns as “faintly falling”, so the sentence repeats and settles the way the snow does.' },
+      { name: 'Epiphany', text: 'Joyce’s term for a sudden moment of insight. Gabriel’s arrives through an image, not a statement.' },
+    ],
+  },
+  {
+    num: '4', title: 'The Awakening', byline: 'Kate Chopin — 1899',
+    excerpt: [
+      'The voice of the sea is seductive; never ceasing, whispering, clamoring, murmuring, inviting the soul to wander for a spell in abysses of solitude; to lose itself in mazes of inward contemplation.',
+      'The voice of the sea speaks to the soul. The touch of the sea is sensuous, enfolding the body in its soft, close embrace.',
+    ],
+    author: 'Kate Chopin (1850–1904) was an American writer whose stories of Louisiana life often centred on the inner lives of women.',
+    work: 'Edna Pontellier, a wife and mother on holiday at Grand Isle, begins to want a life of her own. The novel was poorly received in 1899 and rediscovered decades later.',
+    techniques: [
+      { name: 'Anaphora', text: '“The voice of the sea” opens two sentences, giving the passage the rhythm of waves.' },
+      { name: 'Personification', text: 'The sea whispers, invites and embraces, becoming a presence that speaks to Edna directly.' },
+    ],
+  },
+  {
+    num: '5', title: 'The Sun Also Rises', byline: 'Ernest Hemingway — 1926',
+    excerpt: [
+      '“Oh, Jake,” Brett said, “we could have had such a damned good time together.”',
+      'Ahead was a mounted policeman in khaki directing traffic. He raised his baton. The car slowed suddenly pressing Brett against me.',
+      '“Yes,” I said. “Isn’t it pretty to think so?”',
+    ],
+    author: 'Ernest Hemingway (1899–1961) was an American novelist known for spare, understated prose. He received the Nobel Prize in Literature in 1954.',
+    work: 'A group of expatriates travels from Paris to the fiesta in Pamplona. Jake Barnes loves Brett Ashley, but a war wound keeps them apart. These are its last lines.',
+    techniques: [
+      { name: 'Omission', text: 'Hemingway’s “iceberg” method leaves the strongest feeling unstated, for the reader to supply.' },
+      { name: 'Irony', text: 'Jake’s last line agrees with Brett while quietly refusing her fantasy.' },
+    ],
+  },
+];
+const NB = ENTRIES.length;
+const PEEK = { x: -5, y: -2, ry: 12, rz: -3.2 };
+PEEK.t = `translateZ(1px) translate(${PEEK.x}px,${PEEK.y}px) rotateY(${PEEK.ry}deg) rotateZ(${PEEK.rz}deg)`;
+const pad = n => String(n).padStart(2, '0');
+class Component extends DCLogic {
+  state = {
+    hash: '', idx: 0, phase: 'idle', osd: '', vw: 1280, vh: 800,
+    bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null,
+    bBusy: false, bCoverHover: false, bFlapHover: false, bFlapAnim: 'none', bFolded: false,
+    bTearing: false, bTorn: false, bTear: null, bLift: 0, bDragging: false,
+    cVotes: {}, lVotes: {}, qvOpen: false, qvTab: 'like', qvSel: null, tvArc: null,
+  };
+  vote(area, i, kind) {
+    this.setState(s => ({ [area]: { ...s[area], [i]: kind } }), () => {
+      try { localStorage.setItem('taste.votes', JSON.stringify({ c: this.state.cVotes, l: this.state.lVotes })); } catch (e) {}
+    });
+  }
+  list(area, kind) { const v = this.state[area]; return Object.keys(v).filter(k => v[k] === kind).map(Number).sort((a, b) => a - b); }
+  openQV(tab, area) {
+    if (false) {
+      const a = this.state.tvArc;
+      if (!a || a.kind !== tab) this.arcGo({ kind: tab, pos: 0 });
+      return;
+    }
+    this.setState({ qvOpen: true, qvTab: tab });
+  }
+  arcGo(next) {
+    if (this.state.phase !== 'idle') return;
+    this.startNoise();
+    this.setState({ phase: 'tearOut' });
+    this.later(160, () => this.setState({ phase: 'static' }));
+    this.later(520, () => this.setState({ tvArc: next, phase: 'rollIn' }));
+    this.later(560, () => this.setState({ phase: 'settle' }));
+    this.later(1060, () => { this.noiseOn = false; this.setState({ phase: 'idle' }); });
+  }
+  arcStep() {
+    const a = this.state.tvArc;
+    if (!a) return;
+    const n = this.list('cVotes', a.kind).length;
+    if (n > 1) this.arcGo({ ...a, pos: (a.pos + 1) % n });
+  }
+  timers = [];
+  r = {};
+  refCbs = {};
+  ref(k) { return this.refCbs[k] || (this.refCbs[k] = el => { this.r[k] = el; }); }
+  set(patch) { return new Promise(res => this.setState(patch, res)); }
+  wait(ms) { return new Promise(res => this.timers.push(setTimeout(res, ms))); }
+  frame() { return new Promise(res => requestAnimationFrame(() => requestAnimationFrame(res))); }
+  page(kind, idx) { return { kind, entry: ENTRIES[idx], folio: kind === 'excerpt' ? 2 * idx + 2 : kind === 'info' ? 2 * idx + 3 : '' }; }
+  canAct() { const s = this.state; return s.bOpen && s.bLeftShown && !s.bBusy; }
+  async animateLeaf(back) {
+    await this.frame();
+    const r = this.r, D = 1100, o = { duration: D, fill: 'forwards', direction: back ? 'reverse' : 'normal' };
+    if (!r.leaf) return;
+    const overlays = [
+      r.rShadow && r.rShadow.animate([{ opacity: 0 }, { opacity: 1, offset: .25 }, { opacity: 0, offset: .6 }, { opacity: 0 }], o),
+      r.lShadow && this.state.bLeftShown && r.lShadow.animate([{ opacity: 0 }, { opacity: 0, offset: .5 }, { opacity: .85, offset: .86 }, { opacity: 0 }], o),
+    ].filter(Boolean);
+    const anims = [
+      r.leaf.animate([{ transform: 'translateZ(2px) rotateY(0deg)' }, { transform: 'translateZ(2px) rotateY(-180deg)' }], { ...o, easing: 'cubic-bezier(.42,.06,.22,1)' }),
+      r.seg2.animate([{ transform: 'rotateY(0deg)' }, { transform: 'rotateY(-16deg)', offset: .2 }, { transform: 'rotateY(20deg)', offset: .62 }, { transform: 'rotateY(0deg)' }], { ...o, easing: 'ease-in-out' }),
+      ...['f1', 'f2'].map(k => r[k].animate([{ opacity: 0 }, { opacity: .14, offset: .45 }, { opacity: .3 }], o)),
+      ...['b1', 'b2'].map(k => r[k].animate([{ opacity: .3 }, { opacity: .1, offset: .55 }, { opacity: 0 }], o)),
+      ...overlays,
+    ];
+    await Promise.all(anims.map(a => a.finished));
+    overlays.forEach(a => a.cancel());
+  }
+  shelfDown(e) {
+    const el = this.r.shelf;
+    if (!el || e.pointerType === 'touch') return;
+    cancelAnimationFrame(this.shelfRaf);
+    const x0 = e.clientX, s0 = el.scrollLeft;
+    let lastX = x0, lastT = performance.now(), v = 0, moved = false;
+    const move = ev => {
+      const now = performance.now(), dx = ev.clientX - x0;
+      if (Math.abs(dx) > 4) moved = true;
+      el.scrollLeft = s0 - dx;
+      v = (ev.clientX - lastX) / Math.max(1, now - lastT); lastX = ev.clientX; lastT = now;
+    };
+    const up = () => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up);
+      el.style.cursor = 'grab';
+      if (moved) {
+        const stop = ce => { ce.stopPropagation(); ce.preventDefault(); el.removeEventListener('click', stop, true); };
+        el.addEventListener('click', stop, true);
+        setTimeout(() => el.removeEventListener('click', stop, true), 0);
+      }
+      let vel = -v * 16, t = performance.now();
+      const glide = now => {
+        const dt = Math.min(32, now - t); t = now;
+        el.scrollLeft += vel * dt / 16;
+        vel *= Math.pow(.94, dt / 16);
+        if (Math.abs(vel) > .2 && el.scrollLeft > 0 && el.scrollLeft < el.scrollWidth - el.clientWidth) this.shelfRaf = requestAnimationFrame(glide);
+      };
+      this.shelfRaf = requestAnimationFrame(glide);
+    };
+    el.style.cursor = 'grabbing';
+    addEventListener('pointermove', move); addEventListener('pointerup', up);
+  }
+  async closeBook() {
+    const s = this.state;
+    if (!s.bOpen || s.bBusy) return;
+    const cur = s.bIdx;
+    await this.set({ bBusy: true, bFlapHover: false, bFolded: false, bFlapAnim: 'none', bLift: 0, bPageHover: false, bLeaf: { front: this.page('title', 0), back: this.page('excerpt', cur) }, bLeftShown: false });
+    await this.animateLeaf(true);
+    await this.set({ bLeaf: null, bRight: { kind: 'title', idx: 0 } });
+    await this.wait(120);
+    await this.set({ bOpen: false });
+    await this.wait(1200);
+    await this.set({ bBusy: false, bIdx: 0, bLeftIdx: 0, bTearing: false, bTorn: false, bTear: null });
+  }
+  async browse(dir) {
+    if (!this.canAct()) return;
+    const cur = this.state.bIdx, next = (cur + dir + NB) % NB;
+    const reset = { bFolded: false, bFlapHover: false, bFlapAnim: 'none', bLift: 0, bPageHover: false };
+    await this.set({ bBusy: true, ...reset });
+    if (dir > 0) await this.turn();
+    else {
+      await this.set({ bLeaf: { front: this.page('info', next), back: this.page('excerpt', cur) }, bLeftIdx: next, bRight: { kind: 'info', idx: next } });
+      await this.animateLeaf(true);
+      await this.set({ bLeaf: null, bIdx: next });
+    }
+    this.setState({ bBusy: false });
+  }
+  async openBook() {
+    const s = this.state;
+    if (s.bOpen || s.bBusy) return;
+    await this.set({ bBusy: true, bOpen: true, bCoverHover: false, bLeaf: { front: this.page('title', 0), back: this.page('excerpt', 0) }, bRight: { kind: 'info', idx: 0 } });
+    await this.wait(380);
+    await this.animateLeaf();
+    await this.set({ bLeaf: null, bLeftShown: true, bLeftIdx: 0, bIdx: 0, bBusy: false });
+  }
+  async turn() {
+    const cur = this.state.bIdx, next = (cur + 1) % NB;
+    await this.set({ bLeaf: { front: this.page('info', cur), back: this.page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
+    await this.animateLeaf();
+    this.setTear(0, 0);
+    await this.set({ bLeaf: null, bLeftIdx: next, bIdx: next, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bTearing: false, bTorn: false, bLift: 0, bPageHover: false });
+  }
+  setTear(ty, sk) {
+    this.ty = ty; this.sk = sk;
+    const el = this.r.book;
+    if (el) { el.style.setProperty('--ty', ty.toFixed(2) + 'px'); el.style.setProperty('--sk', sk.toFixed(3) + 'deg'); }
+  }
+  tearTo(ty, sk, ms, easeFn) {
+    cancelAnimationFrame(this.tearRaf);
+    const t0 = performance.now(), fy = this.ty || 0, fs = this.sk || 0;
+    const ease = easeFn || (t => 1 - Math.pow(1 - t, 3));
+    return new Promise(res => {
+      const step = now => {
+        const t = Math.min(1, (now - t0) / ms), e = ease(t);
+        this.setTear(fy + (ty - fy) * e, fs + (sk - fs) * e);
+        if (t < 1) this.tearRaf = requestAnimationFrame(step); else res();
+      };
+      this.tearRaf = requestAnimationFrame(step);
+    });
+  }
+  async dogEar() {
+    if (!this.canAct()) return;
+    this.vote('lVotes', this.state.bIdx, 'like');
+    await this.set({ bBusy: true, bFlapHover: false, bFlapAnim: 'fold', bFolded: true });
+    await this.wait(1250);
+    await this.turn();
+    this.setState({ bBusy: false });
+  }
+  genTear() { return { on: true }; }
+  async tearOut() {
+    if (!this.canAct()) return;
+    this.vote('lVotes', this.state.bIdx, 'dislike');
+    await this.set({ bBusy: true, bFlapHover: false, bTearing: true, bDragging: false });
+    if ((this.ty || 0) < 200) await this.tearTo(250, 2.2, 420);
+    await this.wait(140);
+    await this.tearTo(520, 3.4, 520, t => t < .5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2);
+    const el = this.r.torn;
+    const T = (x, y, ry, rz) => `translateZ(1px) translate(${x}px,${y}px) rotateY(${ry}deg) rotateZ(${rz}deg)`;
+    const a = el.animate([
+      { transform: T(0, 0, 0, 0), opacity: 1, offset: 0, easing: 'cubic-bezier(.3,.6,.4,1)' },
+      { transform: T(-6, -3, 14, -3), opacity: 1, offset: .25, easing: 'cubic-bezier(.55,0,.85,.45)' },
+      { transform: T(-640, 380, 36, -38), opacity: 0, offset: 1 },
+    ], { duration: 1150, fill: 'forwards' });
+    await a.finished;
+    await this.set({ bTorn: true, bLift: 0, bDragging: false });
+    a.cancel();
+    await this.wait(380);
+    await this.turn();
+    this.setState({ bBusy: false });
+  }
+  pageDown(e) {
+    if (!this.canAct()) return;
+    const sx = e.clientX, sc = this.scale || 1;
+    let dx = 0, moved = false;
+    this.setState({ bDragging: true });
+    const move = ev => {
+      dx = (ev.clientX - sx) / sc;
+      if (Math.abs(dx) > 6) moved = true;
+      if (moved) { cancelAnimationFrame(this.tearRaf); const p = Math.max(0, Math.min(1, -dx / 160)); this.setTear(250 + 230 * p, 2.2 + 1 * p); }
+    };
+    const up = () => {
+      removeEventListener('pointermove', move);
+      removeEventListener('pointerup', up);
+      if (!moved || dx < -60) this.tearOut();
+      else { this.setState({ bDragging: false }); this.tearTo(this.state.bPageHover ? 250 : 0, this.state.bPageHover ? 2.2 : 0, 320); }
+    };
+    addEventListener('pointermove', move);
+    addEventListener('pointerup', up);
+  }
+  componentDidMount() {
+    this.onHash = () => this.setState({ hash: location.hash });
+    this.onResize = () => this.setState({ vw: innerWidth, vh: innerHeight });
+    try { const v = JSON.parse(localStorage.getItem('taste.votes') || '{}'); this.setState({ cVotes: v.c || {}, lVotes: v.l || {} }); } catch (e) {}
+    this.onKey = e => { if (this.state.qvOpen || !this.state.bOpen) return; if (e.key === 'ArrowRight') this.browse(1); else if (e.key === 'ArrowLeft') this.browse(-1); else if (e.key === 'Escape') this.closeBook(); };
+    addEventListener('hashchange', this.onHash);
+    addEventListener('resize', this.onResize);
+    addEventListener('keydown', this.onKey);
+    this.onHash(); this.onResize();
+  }
+  componentWillUnmount() {
+    removeEventListener('hashchange', this.onHash);
+    removeEventListener('resize', this.onResize);
+    removeEventListener('keydown', this.onKey);
+    this.timers.forEach(clearTimeout);
+    this.noiseOn = false;
+  }
+  later(ms, fn) { this.timers.push(setTimeout(fn, ms)); }
+  advance(phase, extra) { this.setState(s => ({ idx: (s.idx + 1) % N, phase, ...(extra || {}) })); }
+  drawNoise() {
+    const cv = this.noise;
+    if (!cv || !this.noiseOn) return;
+    const ctx = cv.getContext('2d'), w = cv.width, h = cv.height;
+    const im = ctx.createImageData(w, h), d = im.data;
+    const band = Math.random() * h, band2 = Math.random() * h;
+    for (let y = 0; y < h; y++) {
+      const boost = Math.abs(y - band) < 6 ? 70 : Math.abs(y - band2) < 3 ? -60 : 0;
+      for (let x = 0; x < w; x++) {
+        const v = Math.max(0, Math.min(255, Math.random() * 215 + boost)) | 0, i = (y * w + x) * 4;
+        d[i] = v; d[i + 1] = v; d[i + 2] = v; d[i + 3] = 255;
+      }
+    }
+    ctx.putImageData(im, 0, 0);
+    requestAnimationFrame(() => this.drawNoise());
+  }
+  startNoise() { if (!this.noiseOn) { this.noiseOn = true; this.drawNoise(); } }
+  react(kind) {
+    if (this.state.phase !== 'idle' || this.state.tvArc) return;
+    this.vote('cVotes', this.state.idx, kind);
+    if (kind === 'like') {
+      this.setState({ osd: 'liked', phase: 'hold' });
+      this.later(900, () => { this.setState(s => ({ prevIdx: s.idx, idx: (s.idx + 1) % N, phase: 'swipePrep', osd: '' })); });
+      this.later(940, () => this.setState({ phase: 'swipe' }));
+      this.later(1400, () => { this.setState({ phase: 'idle', prevIdx: null }); });
+    } else {
+      this.setState({ osd: 'disliked', phase: 'hold' });
+      this.later(900, () => { this.startNoise(); this.setState({ phase: 'static', osd: '' }); });
+      this.later(1450, () => {
+        const el = this.picEl;
+        if (el) this.collapseAnim = el.animate([
+          { transform: 'scale(1,1)', filter: 'brightness(1)', easing: 'cubic-bezier(.6,0,.9,.3)' },
+          { transform: 'scale(1,.006)', filter: 'brightness(2.6)', offset: .5, easing: 'cubic-bezier(.6,0,.9,.3)' },
+          { transform: 'scale(0,.006)', filter: 'brightness(2.6)' },
+        ], { duration: 340, fill: 'forwards' });
+        this.setState({ phase: 'off1' });
+      });
+      this.later(1620, () => this.setState({ phase: 'off2' }));
+      this.later(1790, () => { this.noiseOn = false; if (this.collapseAnim) { this.collapseAnim.cancel(); this.collapseAnim = null; } this.setState({ phase: 'black' }); });
+      this.later(2400, () => this.advance('on'));
+      this.later(3000, () => this.setState({ phase: 'idle' }));
+    }
+  }
+  picStyle(p) {
+    const ease = 'cubic-bezier(.2,.7,.1,1)';
+    switch (p) {
+      case 'tearOut': return { transform: 'translateY(-38%) skewX(-9deg) scaleY(1.12)', filter: 'brightness(1.7) contrast(.7) blur(1px)', opacity: 0.85, transition: 'transform 160ms ease-in, filter 160ms ease-in, opacity 160ms' };
+      case 'static': return { transform: 'none', filter: 'none', opacity: 1, transition: 'none' };
+      case 'rollIn': return { transform: 'translateY(60%) skewX(6deg)', filter: 'brightness(1.6) blur(1px)', opacity: 1, transition: 'none' };
+      case 'settle': return { transform: 'none', filter: 'none', opacity: 1, transition: `transform 460ms ${ease}, filter 520ms ${ease}` };
+      case 'off1': return { transform: 'none', filter: 'none', opacity: 1, transition: 'none' };
+      case 'off2': return { transform: 'none', filter: 'none', opacity: 1, transition: 'none' };
+      case 'black': return { transform: 'none', filter: 'brightness(1.8)', opacity: 0, transition: 'none' };
+      case 'on': return { transform: 'none', filter: 'none', opacity: 1, transition: `opacity 520ms ${ease}, filter 700ms ${ease}` };
+      default: return { transform: 'none', filter: 'none', opacity: 1, transition: `transform 420ms ${ease}, filter 420ms ${ease}` };
+    }
+  }
+  renderVals() {
+    const { hash, idx, phase, osd } = this.state;
+    const isCinema = hash === '#cinema';
+    const isLit = hash === '#literature';
+    const noiseOpacity = ['static', 'off1', 'off2'].includes(phase) ? 0.95 : phase === 'swipe' ? 0 : phase === 'tearOut' ? 0.55 : phase === 'rollIn' ? 0.6 : 0;
+    const S = this.state;
+    const tornAll = this.list('lVotes', 'dislike');
+    const narrow = S.vw < 1100;
+    const extra = tornAll.length && narrow ? 190 : 0;
+    const sc = Math.max(.42, Math.min(1.3, (S.vw - 48) / (narrow ? 700 + extra : 1000), (S.vh - 230) / 540));
+    this.scale = sc;
+    const ease = 'cubic-bezier(.45,.05,.2,1)';
+    const actStyle = (dim, hot) => ({ fontSize: 13, fontWeight: 500, fontVariationSettings: "'wdth' 112", letterSpacing: 0, textTransform: 'none', lineHeight: 1.3, opacity: dim ? .35 : 1, color: hot || 'inherit', transform: hot ? 'translateY(-2px)' : 'none', transition: 'opacity 240ms, color 260ms, transform 260ms cubic-bezier(.2,.7,.1,1)' });
+    const act = (fn, dim, hot) => ({ tone: 'inherit', style: actStyle(dim, hot), onClick: e => { e.preventDefault(); fn(); } });
+    const navStyle = dim => ({ fontSize: 10, fontWeight: 500, letterSpacing: '.12em', textTransform: 'uppercase', lineHeight: 1.3, color: 'var(--stone)', opacity: dim ? .4 : 1, transition: 'opacity 240ms' });
+    const nav = (fn, dim) => ({ tone: 'inherit', style: navStyle(dim), onClick: e => { e.preventDefault(); fn(); } });
+    const peeking = S.bPageHover && !S.bDragging && !S.bTearing;
+    const tearActive = S.bTearing || S.bDragging || S.bPageHover;
+    const cover = 'publication';
+    const leaf = S.bLeaf;
+    const pg = p => p ? { kind: p.kind, entry: p.entry, folio: p.folio } : { kind: 'blank', entry: null, folio: '' };
+    const arc = S.tvArc;
+    const arcList = arc ? this.list('cVotes', arc.kind) : [];
+    const shownIdx = arc ? (arcList.length ? arcList[arc.pos % arcList.length] : -1) : idx;
+    const arcWord = arc ? (arc.kind === 'like' ? 'liked' : 'disliked') : '';
+    const arcText = arc ? (arcList.length ? `${arcWord} ${pad(arc.pos % arcList.length + 1)} / ${pad(arcList.length)}` : `no ${arcWord} stills`) : '';
+    const shownOsd = arc ? arcText : osd;
+    const cLike = this.list('cVotes', 'like'), cDis = this.list('cVotes', 'dislike');
+    const lLike = this.list('lVotes', 'like'), lDis = this.list('lVotes', 'dislike');
+    const qLink = (fn, active) => ({ tone: 'inherit', active, style: { fontSize: 13, fontWeight: 500, fontVariationSettings: "'wdth' 112", letterSpacing: 0, textTransform: 'none', lineHeight: 1.3, color: active ? 'var(--ink)' : 'var(--graphite)' }, onClick: e => { e.preventDefault(); fn(); } });
+    const qW = Math.max(440, Math.round(S.vw * .5));
+    const tab = S.qvTab;
+    const pageS = Math.max(.6, Math.min(1.2, (Math.min(qW, S.vw) - 80) / 330));
+    const votes = isLit ? S.lVotes : S.cVotes;
+    const kd = i => votes[i];
+    const responded = Object.keys(votes).map(Number).sort((a, b) => {
+      const ta = (isLit ? ENTRIES[a].title : FILMS[a].title).replace(/^(the|a|an) /i, ''), tb = (isLit ? ENTRIES[b].title : FILMS[b].title).replace(/^(the|a|an) /i, '');
+      return ta.localeCompare(tb);
+    });
+    const sel = responded.includes(S.qvSel) ? S.qvSel : responded[0];
+    const qItems = tab === 'shelf' ? (sel === undefined ? [] : [sel]) : isLit ? (tab === 'like' ? lLike : lDis) : (tab === 'like' ? cLike : cDis);
+    const spine = (i, extra) => ({ ...extra, aria: extra.title, lift: tab === 'shelf' && i === sel ? 'translateY(-16px)' : 'none', pick: () => this.setState({ qvSel: i }) });
+    const torn = lDis.slice(-4);
+    const STK = [[0, 0, -6], [12, -8, 4], [-6, 6, -1.5], [6, -3, 7]];
+    return {
+      tvArc: { on: !!arc },
+      onArcStep: () => this.arcStep(),
+      cq: {
+        shelf: qLink(() => this.openQV('shelf', 'c'), false),
+        like: qLink(() => this.openQV('like', 'c'), !!arc && arc.kind === 'like'),
+        dislike: qLink(() => this.openQV('dislike', 'c'), !!arc && arc.kind === 'dislike'),
+        exit: qLink(() => this.arcGo(null), false),
+        likeLabel: `liked (${cLike.length})`,
+        dislikeLabel: `disliked (${cDis.length})`,
+      },
+      lq: {
+        shelf: qLink(() => this.openQV('shelf', 'l'), false),
+        like: qLink(() => this.openQV('like', 'l'), false),
+        dislike: qLink(() => this.openQV('dislike', 'l'), false),
+        likeLabel: `dog-eared (${lLike.length})`,
+        dislikeLabel: `torn out (${lDis.length})`,
+      },
+      qv: {
+        props: { open: S.qvOpen, onClose: () => this.setState({ qvOpen: false }), title: '', width: qW, style: { visibility: S.qvOpen ? 'visible' : 'hidden', transition: `transform var(--dur-base) var(--ease-out), visibility 0s linear ${S.qvOpen ? '0s' : 'var(--dur-base)'}` } },
+        shelfRef: this.ref('shelf'),
+        shelfDown: e => this.shelfDown(e),
+        tabS: qLink(() => this.setState({ qvTab: 'shelf' }), tab === 'shelf'),
+        tabSLabel: `shelf (${responded.length})`,
+        shelfOn: tab === 'shelf' && responded.length > 0,
+        dvds: tab === 'shelf' && !isLit ? responded.map(i => spine(i, { title: FILMS[i].title, year: String(FILMS[i].year), bg: FILMS[i].bg, fg: FILMS[i].fg })) : [],
+        books: tab === 'shelf' && isLit ? responded.map(i => { const b = BOOKSPINE[i % BOOKSPINE.length]; return spine(i, { title: ENTRIES[i].title, author: ENTRIES[i].byline.split(' — ')[0], bg: b.bg, fg: b.fg, w: b.w + 'px', h: b.h + 'px' }); }) : [],
+        tabA: qLink(() => this.setState({ qvTab: 'like' }), tab === 'like'),
+        tabB: qLink(() => this.setState({ qvTab: 'dislike' }), tab === 'dislike'),
+        tabALabel: isLit ? `dog-eared (${lLike.length})` : `liked (${cLike.length})`,
+        tabBLabel: isLit ? `torn out (${lDis.length})` : `disliked (${cDis.length})`,
+        empty: qItems.length === 0,
+        isCinema: !isLit,
+        isLit,
+        stills: isLit ? [] : qItems.map(i => ({ id: 'still-' + pad(i + 1), placeholder: 'drop still ' + pad(i + 1), label: FILMS[i].title + ' — ' + FILMS[i].director + ', ' + FILMS[i].year + ' — ' + (kd(i) === 'like' ? 'liked' : 'disliked') })),
+        pages: !isLit ? [] : qItems.map((i, k) => ({
+          entry: ENTRIES[i], folio: 2 * i + 2,
+          torn: kd(i) === 'dislike', folded: kd(i) === 'like',
+          mask: kd(i) === 'dislike' ? 'url(assets/tear-piece.png)' : 'none',
+          clip: kd(i) === 'like' ? 'polygon(52px 0,100% 0,100% 100%,0 100%,0 52px)' : 'none',
+          w: 330 * pageS + 'px', h: 520 * pageS + 'px', scale: `scale(${pageS})`,
+          rot: `rotate(${k % 2 ? .7 : -.5}deg)`,
+          label: ENTRIES[i].title + ' — ' + (kd(i) === 'like' ? 'dog-eared' : 'torn out'),
+        })),
+      },
+      stackOn: torn.length > 0,
+      stack: torn.map((i, k) => ({ entry: ENTRIES[i], folio: 2 * i + 2, t: `translate(${STK[k][0]}px,${STK[k][1]}px) rotate(${STK[k][2]}deg) scale(.34)` })),
+      onStack: () => this.openQV('dislike', 'l'),
+      earsOn: lLike.length > 0 && S.bLeftShown,
+      ears: lLike.slice(-4).map((_, k) => ({ top: 2 + k * 9 + 'px' })),
+      onEars: () => this.openQV('like', 'l'),
+      isLit,
+      cv: { a: true, b: false, c: false },
+      seventies: { title: '#0e0c10', s1: '#f0782a', s2: '#f29bb3', s3: '#f1e7d0' },
+      titleInk: { color: '#0e0c10', blend: 'multiply' },
+      stage: { w: (660 + extra) * sc + 'px', bw: 660 * sc + 'px', mr: extra * sc + 'px', h: 520 * sc + 'px', scale: `scale(${sc})` },
+      refs: { book: this.ref('book'), leaf: this.ref('leaf'), seg2: this.ref('seg2'), f1: this.ref('f1'), f2: this.ref('f2'), b1: this.ref('b1'), b2: this.ref('b2'), rShadow: this.ref('rShadow'), lShadow: this.ref('lShadow'), torn: this.ref('torn') },
+      bk: {
+        book: S.bOpen ? 'translateX(0px) rotateY(0deg)' : 'translateX(-165px) rotateY(22deg)',
+        baseLeft: S.bOpen ? '0px' : '330px',
+        baseW: S.bOpen ? '660px' : '330px',
+        cover: S.bOpen ? 'rotateY(-180deg) translateZ(3px)' : S.bCoverHover ? 'rotateY(-14deg) translateZ(3px)' : 'rotateY(0deg) translateZ(3px)',
+        coverT: S.bOpen ? `transform 1150ms ${ease}` : 'transform 420ms cubic-bezier(.2,.7,.1,1)',
+        coverCursor: S.bOpen ? 'default' : 'pointer',
+        rightEdges: 'none',
+        shadowOp: S.bOpen ? 0 : 1,
+        spreadOp: S.bOpen ? 1 : 0,
+        spreadT: S.bOpen ? 'opacity 500ms ease 650ms' : 'opacity 200ms ease',
+        leftVis: S.bLeftShown ? 'visible' : 'hidden',
+        coverVis: S.bLeftShown ? 'hidden' : 'visible',
+        insideVis: S.bOpen && !S.bLeftShown ? 'visible' : 'hidden',
+        rightCursor: this.canAct() ? 'pointer' : 'default',
+        tearing: S.bTearing,
+        closed: !S.bOpen,
+        isOpen: S.bOpen,
+      },
+      R: pg(this.page(S.bRight.kind, S.bRight.idx)),
+      L: pg(this.page('excerpt', S.bLeftIdx)),
+      hasLeaf: !!leaf,
+      LF: pg(leaf && leaf.front),
+      LB: pg(leaf && leaf.back),
+      lp: {
+        vis: S.bLeftShown && !S.bTorn ? 'visible' : 'hidden',
+        cursor: S.bDragging ? 'grabbing' : 'grab',
+      },
+      rp: (() => {
+        const on = S.bLeftShown && (S.bFlapHover || S.bFolded || S.bFlapAnim !== 'none');
+        const sz = S.bFolded ? 118 : 236;
+        const T = S.bFlapAnim === 'fold' ? '780ms cubic-bezier(.3,.1,.15,1)' : '560ms cubic-bezier(.2,.7,.1,1)';
+        return { flapOn: S.bLeftShown, clip: on ? `polygon(0px 0px,${330 - sz}px 0px,330px ${sz}px,330px 520px,0px 520px)` : 'polygon(0px 0px,330px 0px,330px 0px,330px 520px,0px 520px)', clipT: S.bFlapAnim === 'none' ? 'none' : `clip-path ${T}`, sz, T };
+      })(),
+      flap: (() => {
+        const sz = S.bFolded ? 118 : 236;
+        const T = S.bFlapAnim === 'fold' ? '780ms cubic-bezier(.3,.1,.15,1)' : '560ms cubic-bezier(.2,.7,.1,1)';
+        return {
+          size: sz + 'px',
+          transform: S.bFolded ? 'rotate3d(1,1,0,-180deg)' : S.bFlapHover ? 'rotate3d(1,1,0,-158deg)' : 'rotate3d(1,1,0,0deg)',
+          transition: S.bFlapAnim === 'none' ? 'none' : `transform ${T}, width ${T}, height ${T}`,
+          shadow: S.bFolded ? 'drop-shadow(-2px 3px 2.4px rgba(60,40,10,.36))' : 'drop-shadow(-7px 10px 9px rgba(50,30,5,.34)) drop-shadow(-1px 2px 1.5px rgba(50,30,5,.25))',
+          frontShade: S.bFlapHover ? 1 : 0,
+        };
+      })(),
+      onOpen: () => this.openBook(),
+      onCoverIn: () => { if (!S.bOpen) this.setState({ bCoverHover: true }); },
+      onCoverOut: () => this.setState({ bCoverHover: false }),
+      onFold: () => this.dogEar(),
+      onFlapIn: () => { if (this.canAct()) this.setState({ bFlapHover: true, bFlapAnim: 'hover' }); },
+      onFlapOut: () => { if (!this.state.bFolded) this.setState({ bFlapHover: false, bFlapAnim: 'hover' }); },
+      onPageIn: () => { if (this.canAct()) { this.setState({ bPageHover: true }); this.tearTo(250, 2.2, 560); } },
+      onPageOut: () => { if (!this.state.bDragging && !this.state.bTearing) { this.setState({ bPageHover: false }); this.tearTo(0, 0, 380); } },
+      onPageDown: e => this.pageDown(e),
+      act: {
+        open: act(() => this.openBook(), false),
+        close: nav(() => this.closeBook(), S.bBusy),
+        prev: nav(() => this.browse(-1), S.bBusy || !S.bLeftShown),
+        next: nav(() => this.browse(1), S.bBusy || !S.bLeftShown),
+        tear: act(() => this.tearOut(), S.bBusy || !S.bLeftShown, tearActive && !S.bBusy ? 'var(--ref-cola)' : null),
+        fold: act(() => this.dogEar(), S.bBusy || !S.bLeftShown, S.bFlapHover && !S.bBusy ? 'var(--ref-cobalt)' : null),
+      },
+      bookCounter: 'excerpt ' + pad(S.bIdx + 1) + ' / ' + pad(NB),
+      isHome: !isCinema && !isLit,
+      isCinema,
+      linkProps: { style: { fontSize: 'clamp(30px,3.4vw,48px)', fontWeight: 500, fontVariationSettings: "'wdth' 112", letterSpacing: '-.025em', textTransform: 'none', lineHeight: 1.1, paddingBottom: 6 } },
+      backProps: { style: { fontSize: 18, fontWeight: 600, fontVariationSettings: "'wdth' 125", letterSpacing: '-.04em', textTransform: 'none', lineHeight: 1.1 } },
+      pic: this.picStyle(phase),
+      noise: { opacity: noiseOpacity, transition: phase === 'settle' ? 'opacity 380ms ease-out' : 'opacity 90ms' },
+      noiseRef: el => { this.noise = el; },
+      picRef: this.picRefCb || (this.picRefCb = el => { this.picEl = el; }),
+      dot: { opacity: phase === 'off2' ? 1 : 0, transition: phase === 'black' ? 'opacity 560ms ease-out' : 'opacity 90ms' },
+      osdOn: !!shownOsd,
+      osdText: shownOsd,
+      osdColor: /^(no )?disliked/.test(shownOsd || '') ? { fg: '#ffd4cf', glow: 'rgba(255,70,55,.8)' } : { fg: '#d6ffd2', glow: 'rgba(140,255,150,.75)' },
+      stills: Array.from({ length: N }, (_, i) => ({
+        id: 'still-' + String(i + 1).padStart(2, '0'),
+        placeholder: 'drop still ' + String(i + 1).padStart(2, '0'),
+        opacity: i === shownIdx || (S.prevIdx === i && (phase === 'swipePrep' || phase === 'swipe')) ? 1 : 0,
+        t: phase === 'swipePrep' ? (i === shownIdx ? 'translateY(107%)' : 'none') : phase === 'swipe' ? (i === shownIdx ? 'none' : 'translateY(-107%)') : 'none',
+        tr: phase === 'swipe' ? 'transform 420ms cubic-bezier(.55,.05,.25,1)' : 'none',
+        band: (phase === 'swipePrep' || phase === 'swipe') && i === shownIdx ? 1 : 0,
+        events: i === shownIdx ? 'auto' : 'none',
+      })),
+      onLike: () => this.react('like'),
+      onDislike: () => this.react('dislike'),
+      counter: 'still ' + String(idx + 1).padStart(2, '0') + ' / ' + String(N).padStart(2, '0'),
+    };
+  }
+}
+</script>
+</body>
+</html>

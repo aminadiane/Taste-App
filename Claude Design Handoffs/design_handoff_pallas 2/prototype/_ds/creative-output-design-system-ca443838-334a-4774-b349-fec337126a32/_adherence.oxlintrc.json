@@ -1,0 +1,381 @@
+{
+  "plugins": [
+    "react",
+    "import"
+  ],
+  "rules": {
+    "react/forbid-elements": [
+      "warn",
+      {
+        "forbid": []
+      }
+    ],
+    "no-restricted-imports": [
+      "warn",
+      {
+        "patterns": [
+          {
+            "group": [
+              "components/core/**",
+              "components/forms/**",
+              "components/media/**",
+              "components/navigation/**",
+              "components/overlay/**",
+              "ui_kits/website/**"
+            ],
+            "message": "Import design-system components from 'index.js', not component internals."
+          }
+        ]
+      }
+    ],
+    "no-restricted-syntax": [
+      "warn",
+      {
+        "selector": "Literal[value=/#[0-9a-fA-F]{3,8}\\b/]",
+        "message": "Raw hex color — use a design-system color token via var()."
+      },
+      {
+        "selector": "Literal[value=/\\b\\d+px\\b/]",
+        "message": "Raw px value — use a design-system spacing token via var()."
+      },
+      {
+        "selector": "Literal[value=/font-family\\s*:\\s*(?!['\\\"]?(?:Archivo|Jost))/i]",
+        "message": "Font not provided by the design system. Available: Archivo, Jost."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|variant|size|full|disabled|type|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<Button> doesn't accept that prop. Declared props: children, variant, size, full, disabled, type, onClick, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='variant'] > Literal[value!=/^(?:solid|outline|inverse|text)$/]",
+        "message": "<Button> variant must be one of 'solid' | 'outline' | 'inverse' | 'text'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:md|sm)$/]",
+        "message": "<Button> size must be one of 'md' | 'sm'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Button'] > JSXAttribute[name.name='type'] > Literal[value!=/^(?:button|submit)$/]",
+        "message": "<Button> type must be one of 'button' | 'submit'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Drawer'] > JSXAttribute > JSXIdentifier[name!=/^(?:open|onClose|title|children|footer|side|width|style|key|ref|className|style|children)$/]",
+        "message": "<Drawer> doesn't accept that prop. Declared props: open, onClose, title, children, footer, side, width, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Drawer'] > JSXAttribute[name.name='side'] > Literal[value!=/^(?:right|left)$/]",
+        "message": "<Drawer> side must be one of 'right' | 'left'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Figure'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|alt|hoverSrc|video|poster|ratio|height|fit|position|bg|labels|labelTone|placeholder|onClick|children|style|key|ref|className|style|children)$/]",
+        "message": "<Figure> doesn't accept that prop. Declared props: src, alt, hoverSrc, video, poster, ratio, height, fit, position, bg, labels, labelTone, placeholder, onClick, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Figure'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:cover|contain)$/]",
+        "message": "<Figure> fit must be one of 'cover' | 'contain'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Figure'] > JSXAttribute[name.name='labelTone'] > Literal[value!=/^(?:primary|inverse)$/]",
+        "message": "<Figure> labelTone must be one of 'primary' | 'inverse'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Footer'] > JSXAttribute > JSXIdentifier[name!=/^(?:brand|links|note|onSubscribe|style|key|ref|className|style|children)$/]",
+        "message": "<Footer> doesn't accept that prop. Declared props: brand, links, note, onSubscribe, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HeaderItem'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|href|active|onClick|key|ref|className|style|children)$/]",
+        "message": "<HeaderItem> doesn't accept that prop. Declared props: label, href, active, onClick."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HeroMotion'] > JSXAttribute > JSXIdentifier[name!=/^(?:video|poster|images|interval|height|labels|labelTone|children|style|key|ref|className|style|children)$/]",
+        "message": "<HeroMotion> doesn't accept that prop. Declared props: video, poster, images, interval, height, labels, labelTone, children, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='HeroMotion'] > JSXAttribute[name.name='labelTone'] > Literal[value!=/^(?:primary|inverse)$/]",
+        "message": "<HeroMotion> labelTone must be one of 'primary' | 'inverse'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Input'] > JSXAttribute > JSXIdentifier[name!=/^(?:label|placeholder|value|defaultValue|onChange|type|action|onAction|error|done|style|key|ref|className|style|children)$/]",
+        "message": "<Input> doesn't accept that prop. Declared props: label, placeholder, value, defaultValue, onChange, type, action, onAction, error, done, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|as|size|tone|tracking|expanded|weight|caps|style|key|ref|className|style|children)$/]",
+        "message": "<Label> doesn't accept that prop. Declared props: children, as, size, tone, tracking, expanded, weight, caps, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute[name.name='size'] > Literal[value!=/^(?:2xs|xs|sm|md)$/]",
+        "message": "<Label> size must be one of '2xs' | 'xs' | 'sm' | 'md'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:primary|secondary|inverse|inherit)$/]",
+        "message": "<Label> tone must be one of 'primary' | 'secondary' | 'inverse' | 'inherit'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute[name.name='tracking'] > Literal[value!=/^(?:label|wide|none)$/]",
+        "message": "<Label> tracking must be one of 'label' | 'wide' | 'none'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Label'] > JSXAttribute[name.name='weight'] > Literal[value!=/^(?:regular|medium|bold)$/]",
+        "message": "<Label> weight must be one of 'regular' | 'medium' | 'bold'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Option'] > JSXAttribute > JSXIdentifier[name!=/^(?:value|label|disabled|swatch|key|ref|className|style|children)$/]",
+        "message": "<Option> doesn't accept that prop. Declared props: value, label, disabled, swatch."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pair'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|split|align|min|style|key|ref|className|style|children)$/]",
+        "message": "<Pair> doesn't accept that prop. Declared props: children, split, align, min, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pair'] > JSXAttribute[name.name='split'] > Literal[value!=/^(?:1:1|2:1|1:2|3:2|2:3)$/]",
+        "message": "<Pair> split must be one of '1:1' | '2:1' | '1:2' | '3:2' | '2:3'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='Pair'] > JSXAttribute[name.name='align'] > Literal[value!=/^(?:stretch|start|center|end)$/]",
+        "message": "<Pair> align must be one of 'stretch' | 'start' | 'center' | 'end'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProductTile'] > JSXAttribute > JSXIdentifier[name!=/^(?:src|hoverSrc|name|price|note|ratio|fit|bg|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<ProductTile> doesn't accept that prop. Declared props: src, hoverSrc, name, price, note, ratio, fit, bg, onClick, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProductTile'] > JSXAttribute[name.name='fit'] > Literal[value!=/^(?:cover|contain)$/]",
+        "message": "<ProductTile> fit must be one of 'cover' | 'contain'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='ProductTile'] > JSXAttribute[name.name='bg'] > Literal[value!=/^(?:white|paper|fog)$/]",
+        "message": "<ProductTile> bg must be one of 'white' | 'paper' | 'fog'."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextLink'] > JSXAttribute > JSXIdentifier[name!=/^(?:children|href|active|tone|onClick|style|key|ref|className|style|children)$/]",
+        "message": "<TextLink> doesn't accept that prop. Declared props: children, href, active, tone, onClick, style."
+      },
+      {
+        "selector": "JSXOpeningElement[name.name='TextLink'] > JSXAttribute[name.name='tone'] > Literal[value!=/^(?:primary|secondary|inverse|inherit)$/]",
+        "message": "<TextLink> tone must be one of 'primary' | 'secondary' | 'inverse' | 'inherit'."
+      }
+    ]
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/index.js"
+      ],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ],
+  "x-omelette": {
+    "components": {
+      "Button": {
+        "replaces": []
+      },
+      "Drawer": {
+        "replaces": []
+      },
+      "Figure": {
+        "replaces": []
+      },
+      "Footer": {
+        "replaces": []
+      },
+      "HeaderItem": {
+        "replaces": []
+      },
+      "HeroMotion": {
+        "replaces": []
+      },
+      "Input": {
+        "replaces": []
+      },
+      "Label": {
+        "replaces": []
+      },
+      "Option": {
+        "replaces": []
+      },
+      "Pair": {
+        "replaces": []
+      },
+      "ProductTile": {
+        "replaces": []
+      },
+      "TextLink": {
+        "replaces": []
+      }
+    },
+    "tokens": [
+      "--body-font",
+      "--border-hairline",
+      "--border-strong",
+      "--dur-base",
+      "--dur-fast",
+      "--dur-hero",
+      "--dur-slow",
+      "--ease-inout",
+      "--ease-out",
+      "--edge",
+      "--focus-ring",
+      "--fog",
+      "--font-geometric",
+      "--font-grotesk",
+      "--font-sans",
+      "--frame",
+      "--graphite",
+      "--gutter",
+      "--gutter-bleed",
+      "--gutter-inset",
+      "--hairline",
+      "--header-h",
+      "--hover-dim",
+      "--ink",
+      "--label-font",
+      "--leading-body",
+      "--leading-label",
+      "--leading-tight",
+      "--measure",
+      "--overlay-scrim",
+      "--overlay-scrim-dark",
+      "--paper",
+      "--radius-0",
+      "--radius-pill",
+      "--ratio-portrait",
+      "--ratio-screen",
+      "--ratio-square",
+      "--ratio-tall",
+      "--ref-cobalt",
+      "--ref-cola",
+      "--ref-oxblood",
+      "--ref-tan",
+      "--ref-violet",
+      "--rule",
+      "--space-1",
+      "--space-2",
+      "--space-3",
+      "--space-4",
+      "--space-5",
+      "--space-6",
+      "--space-7",
+      "--space-8",
+      "--space-9",
+      "--state-error",
+      "--stone",
+      "--surface-inverse",
+      "--surface-media",
+      "--surface-page",
+      "--surface-quiet",
+      "--text-2xs",
+      "--text-body",
+      "--text-display",
+      "--text-inverse",
+      "--text-lg",
+      "--text-md",
+      "--text-primary",
+      "--text-secondary",
+      "--text-sm",
+      "--text-xl",
+      "--text-xs",
+      "--tracking-body",
+      "--tracking-display",
+      "--tracking-label",
+      "--tracking-wide",
+      "--weight-bold",
+      "--weight-light",
+      "--weight-medium",
+      "--weight-regular",
+      "--white",
+      "--width-condensed",
+      "--width-expanded",
+      "--width-normal"
+    ],
+    "tokenKinds": {
+      "--white": "color",
+      "--paper": "color",
+      "--fog": "color",
+      "--rule": "color",
+      "--stone": "color",
+      "--graphite": "color",
+      "--ink": "color",
+      "--ref-oxblood": "color",
+      "--ref-cola": "color",
+      "--ref-cobalt": "color",
+      "--ref-violet": "color",
+      "--ref-tan": "color",
+      "--surface-page": "color",
+      "--surface-quiet": "color",
+      "--surface-media": "color",
+      "--surface-inverse": "color",
+      "--text-primary": "font",
+      "--text-secondary": "font",
+      "--text-body": "font",
+      "--text-inverse": "font",
+      "--border-hairline": "color",
+      "--border-strong": "color",
+      "--overlay-scrim": "color",
+      "--overlay-scrim-dark": "color",
+      "--focus-ring": "color",
+      "--state-error": "color",
+      "--font-grotesk": "font",
+      "--font-geometric": "font",
+      "--font-sans": "font",
+      "--width-normal": "font",
+      "--width-expanded": "font",
+      "--width-condensed": "font",
+      "--weight-light": "font",
+      "--weight-regular": "font",
+      "--weight-medium": "font",
+      "--weight-bold": "font",
+      "--text-2xs": "font",
+      "--text-xs": "font",
+      "--text-sm": "font",
+      "--text-md": "font",
+      "--text-lg": "font",
+      "--text-xl": "font",
+      "--text-display": "font",
+      "--leading-tight": "font",
+      "--leading-label": "font",
+      "--leading-body": "font",
+      "--tracking-label": "font",
+      "--tracking-wide": "font",
+      "--tracking-body": "font",
+      "--tracking-display": "font",
+      "--label-font": "font",
+      "--body-font": "font",
+      "--space-1": "spacing",
+      "--space-2": "spacing",
+      "--space-3": "spacing",
+      "--space-4": "spacing",
+      "--space-5": "spacing",
+      "--space-6": "spacing",
+      "--space-7": "spacing",
+      "--space-8": "spacing",
+      "--space-9": "spacing",
+      "--edge": "spacing",
+      "--header-h": "spacing",
+      "--measure": "spacing",
+      "--gutter-inset": "spacing",
+      "--gutter-bleed": "spacing",
+      "--gutter": "color",
+      "--frame": "spacing",
+      "--ratio-portrait": "other",
+      "--ratio-tall": "other",
+      "--ratio-square": "other",
+      "--ratio-screen": "other",
+      "--radius-0": "radius",
+      "--radius-pill": "radius",
+      "--hairline": "spacing",
+      "--ease-out": "other",
+      "--ease-inout": "other",
+      "--dur-fast": "other",
+      "--dur-base": "other",
+      "--dur-slow": "other",
+      "--dur-hero": "other",
+      "--hover-dim": "other"
+    },
+    "fontFamilies": [
+      "Archivo",
+      "Jost"
+    ]
+  }
+}

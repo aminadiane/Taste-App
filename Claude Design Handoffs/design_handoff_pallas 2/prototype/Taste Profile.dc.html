@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <meta name="design_doc_mode" content="canvas">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/motion.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/base.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/styles.css">
+  <script src="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/_ds_bundle.js"></script>
+  <script src="./image-slot.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;display=swap">
+  <style>
+    html,body{background:#F4F4F2;margin:0}
+    a{color:var(--ink)}
+    a:hover{color:var(--ink);opacity:1}
+  </style>
+</helmet>
+
+<sc-if value="{{ empty }}" hint-placeholder-val="{{ false }}">
+<div data-screen-label="Taste profile — empty" style="position:fixed;inset:0;z-index:50;background:var(--white);display:grid;place-items:center;padding:var(--edge);">
+  <div style="position:absolute;top:var(--edge);left:var(--edge);">
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="Taste v2.dc.html" dc-props="{{ back }}" hint-size="60px,24px">pallas</x-import>
+  </div>
+  <p style="margin:0;max-width:16ch;text-align:center;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:clamp(26px,3.4vw,48px);font-weight:500;line-height:1.15;letter-spacing:-.025em;color:var(--ink);text-wrap:balance;"><x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="Taste v2.dc.html" dc-props="{{ emptyLink }}" hint-size="200px,40px">exercise judgement</x-import> to build your taste</p>
+</div>
+</sc-if>
+
+<sc-if value="{{ isPhone }}" hint-placeholder-val="{{ false }}">
+<main data-screen-label="Taste profile — mobile" style="min-height:100vh;background:var(--white);padding-bottom:64px;user-select:none;">
+  <div style="display:flex;justify-content:space-between;align-items:baseline;padding:20px;">
+    <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="Taste v2.dc.html" dc-props="{{ back }}" hint-size="60px,24px">pallas</x-import>
+    <div style="display:flex;align-items:baseline;gap:10px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;color:var(--graphite);">
+      <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ B.swFilm }}" hint-size="30px,18px">film</x-import>
+      <span>—</span>
+      <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ B.swLit }}" hint-size="60px,18px">literature</x-import>
+    </div>
+  </div>
+  <div style="padding:40px 20px 0;">
+    <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 125;font-size:36px;font-weight:600;line-height:.95;letter-spacing:-.04em;color:var(--ink);">your taste in {{ B.medium }}</p>
+    <p style="margin:14px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">{{ B.basis }}</p>
+  </div>
+  <div style="margin-top:40px;padding:0 20px;display:flex;flex-direction:column;gap:18px;">
+    <sc-for list="{{ B.findings }}" as="f" hint-placeholder-count="3">
+      <button onClick="{{ f.pick }}" style="display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:6px;min-height:44px;padding:0;border:0;background:none;text-align:left;cursor:pointer;opacity:{{ f.op }};transition:opacity 320ms cubic-bezier(.2,.7,.1,1);">
+        <span style="font-family:'Newsreader',serif;font-style:italic;font-size:16px;line-height:1.6;color:var(--stone);">{{ f.numeral }}</span>
+        <span style="display:flex;flex-direction:column;gap:3px;">
+          <span style="font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ f.dirColor }};">{{ f.dir }}</span>
+          <span style="font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:24px;font-weight:500;line-height:1.1;letter-spacing:-.025em;color:var(--ink);text-wrap:balance;">{{ f.title }}</span>
+        </span>
+      </button>
+    </sc-for>
+  </div>
+  <div style="margin:32px 20px 0;padding:20px 0 0 36px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:14px;">
+    <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);font-variant-numeric:tabular-nums;">{{ B.d.strength }} — {{ B.d.evidence }}</p>
+    <dl style="margin:0;display:flex;flex-direction:column;gap:12px;">
+      <sc-for list="{{ B.d.terms }}" as="t" hint-placeholder-count="2">
+        <div>
+          <dt style="font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.25;color:var(--ink);">{{ t.t }}</dt>
+          <dd style="margin:3px 0 0;font-family:'Newsreader',serif;font-size:16px;line-height:1.42;color:var(--graphite);text-wrap:pretty;">{{ t.d }}</dd>
+        </div>
+      </sc-for>
+    </dl>
+    <sc-if value="{{ B.d.hasRel }}" hint-placeholder-val="{{ false }}">
+      <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);">{{ B.d.rel }}</p>
+    </sc-if>
+  </div>
+  <div style="margin-top:44px;display:flex;flex-direction:column;gap:28px;">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <p style="margin:0;padding:0 20px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ M.lSup.color }};">{{ M.lSup.text }}</p>
+        <div style="display:flex;gap:20px;overflow-x:auto;padding:4px 20px 18px;scrollbar-width:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
+          <sc-for list="{{ M.sup }}" as="o" hint-placeholder-count="2">
+            <div onClick="{{ o.pick }}" style="flex:none;scroll-snap-align:start;width:{{ o.w }};opacity:{{ o.op }};cursor:zoom-in;">
+              <sc-if value="{{ o.isStill }}" hint-placeholder-val="{{ true }}">
+                <div style="padding:7px 7px 8px;background:#fbfbf9;box-shadow:0 1px 1px rgba(0,0,0,.14),0 3px 6px -2px rgba(0,0,0,.10),0 12px 22px -10px rgba(0,0,0,.22);">
+                  <div style="aspect-ratio:1165 / 840;background:#171a19;pointer-events:none;"><image-slot id="{{ o.slot }}" shape="rect" placeholder="{{ o.placeholder }}" style="width:100%;height:100%;"></image-slot></div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ o.isPage }}" hint-placeholder-val="{{ false }}">
+                <div style="position:relative;width:{{ o.pw }};height:{{ o.ph }};filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 10px 16px rgba(0,0,0,.09));">
+                  <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:{{ o.ps }};">
+                    <div style="position:absolute;inset:0;mask-image:{{ o.pg.mask }};-webkit-mask-image:{{ o.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ o.pg.clip }};">
+                      <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ o.pg.entry }}" folio="{{ o.pg.folio }}" hint-size="330px,520px"></dc-import>
+                      <sc-if value="{{ o.pg.torn }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div></sc-if>
+                    </div>
+                    <sc-if value="{{ o.pg.folded }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));"><div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div></div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+              <p style="margin:10px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:var(--graphite);">{{ o.caption }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <p style="margin:0;padding:0 20px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ M.lAg.color }};">{{ M.lAg.text }}</p>
+        <div style="display:flex;gap:20px;overflow-x:auto;padding:4px 20px 18px;scrollbar-width:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
+          <sc-for list="{{ M.ag }}" as="o" hint-placeholder-count="2">
+            <div onClick="{{ o.pick }}" style="flex:none;scroll-snap-align:start;width:{{ o.w }};opacity:{{ o.op }};cursor:zoom-in;">
+              <sc-if value="{{ o.isStill }}" hint-placeholder-val="{{ true }}">
+                <div style="padding:7px 7px 8px;background:#fbfbf9;box-shadow:0 1px 1px rgba(0,0,0,.14),0 3px 6px -2px rgba(0,0,0,.10),0 12px 22px -10px rgba(0,0,0,.22);">
+                  <div style="aspect-ratio:1165 / 840;background:#171a19;pointer-events:none;"><image-slot id="{{ o.slot }}" shape="rect" placeholder="{{ o.placeholder }}" style="width:100%;height:100%;"></image-slot></div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ o.isPage }}" hint-placeholder-val="{{ false }}">
+                <div style="position:relative;width:{{ o.pw }};height:{{ o.ph }};filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 10px 16px rgba(0,0,0,.09));">
+                  <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:{{ o.ps }};">
+                    <div style="position:absolute;inset:0;mask-image:{{ o.pg.mask }};-webkit-mask-image:{{ o.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ o.pg.clip }};">
+                      <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ o.pg.entry }}" folio="{{ o.pg.folio }}" hint-size="330px,520px"></dc-import>
+                      <sc-if value="{{ o.pg.torn }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div></sc-if>
+                    </div>
+                    <sc-if value="{{ o.pg.folded }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));"><div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div></div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+              <p style="margin:10px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:var(--graphite);">{{ o.caption }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <p style="margin:0;padding:0 20px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ M.lOth.color }};">{{ M.lOth.text }}</p>
+        <div style="display:flex;gap:20px;overflow-x:auto;padding:4px 20px 18px;scrollbar-width:none;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;">
+          <sc-for list="{{ M.oth }}" as="o" hint-placeholder-count="2">
+            <div onClick="{{ o.pick }}" style="flex:none;scroll-snap-align:start;width:{{ o.w }};opacity:{{ o.op }};cursor:zoom-in;">
+              <sc-if value="{{ o.isStill }}" hint-placeholder-val="{{ true }}">
+                <div style="padding:7px 7px 8px;background:#fbfbf9;box-shadow:0 1px 1px rgba(0,0,0,.14),0 3px 6px -2px rgba(0,0,0,.10),0 12px 22px -10px rgba(0,0,0,.22);">
+                  <div style="aspect-ratio:1165 / 840;background:#171a19;pointer-events:none;"><image-slot id="{{ o.slot }}" shape="rect" placeholder="{{ o.placeholder }}" style="width:100%;height:100%;"></image-slot></div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ o.isPage }}" hint-placeholder-val="{{ false }}">
+                <div style="position:relative;width:{{ o.pw }};height:{{ o.ph }};filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 10px 16px rgba(0,0,0,.09));">
+                  <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:{{ o.ps }};">
+                    <div style="position:absolute;inset:0;mask-image:{{ o.pg.mask }};-webkit-mask-image:{{ o.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ o.pg.clip }};">
+                      <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ o.pg.entry }}" folio="{{ o.pg.folio }}" hint-size="330px,520px"></dc-import>
+                      <sc-if value="{{ o.pg.torn }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div></sc-if>
+                    </div>
+                    <sc-if value="{{ o.pg.folded }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));"><div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div></div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+              <p style="margin:10px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:var(--graphite);">{{ o.caption }}</p>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+  </div>
+  <sc-if value="{{ B.examOn }}" hint-placeholder-val="{{ false }}">
+    <div onClick="{{ B.closeExam }}" style="position:fixed;inset:0;z-index:20;background:rgba(255,255,255,.94);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;padding:20px;">
+      <div style="position:absolute;top:20px;right:20px;">
+        <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#" dc-props="{{ B.closeLink }}" hint-size="40px,14px">Close</x-import>
+      </div>
+      <sc-if value="{{ B.ex.isStill }}" hint-placeholder-val="{{ false }}">
+        <div style="width:100%;padding:8px 8px 9px;background:#fbfbf9;box-shadow:0 1px 1px rgba(0,0,0,.14),0 20px 40px -16px rgba(0,0,0,.28);">
+          <div style="aspect-ratio:1165 / 840;background:#171a19;"><image-slot id="{{ B.ex.slot }}" shape="rect" placeholder="{{ B.ex.placeholder }}" style="width:100%;height:100%;"></image-slot></div>
+        </div>
+      </sc-if>
+      <sc-if value="{{ B.ex.isPage }}" hint-placeholder-val="{{ false }}">
+        <div style="position:relative;width:{{ M.exW }};height:{{ M.exH }};filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 10px 16px rgba(0,0,0,.09));">
+                  <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:{{ M.exS }};">
+                    <div style="position:absolute;inset:0;mask-image:{{ B.ex.pg.mask }};-webkit-mask-image:{{ B.ex.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ B.ex.pg.clip }};">
+                      <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ B.ex.pg.entry }}" folio="{{ B.ex.pg.folio }}" hint-size="330px,520px"></dc-import>
+                      <sc-if value="{{ B.ex.pg.torn }}" hint-placeholder-val="{{ false }}"><div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div></sc-if>
+                    </div>
+                    <sc-if value="{{ B.ex.pg.folded }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));"><div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div></div>
+                    </sc-if>
+                  </div>
+                </div>
+      </sc-if>
+      <div style="display:flex;flex-direction:column;align-items:center;gap:6px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);text-align:center;">
+        <p style="margin:0;color:var(--ink);">{{ B.ex.caption }}</p>
+        <sc-for list="{{ B.ex.roles }}" as="r" hint-placeholder-count="1"><p style="margin:0;">{{ r.text }}</p></sc-for>
+      </div>
+    </div>
+  </sc-if>
+</main>
+</sc-if>
+
+<sc-if value="{{ notPhone }}" hint-placeholder-val="{{ true }}">
+<section style="padding:80px;display:flex;flex-direction:column;gap:40px;">
+  <div style="display:flex;flex-direction:column;gap:8px;max-width:900px;font-family:var(--font-sans);">
+    <p style="margin:0;font-size:13px;font-weight:500;font-variation-settings:'wdth' 112;color:var(--graphite);">turn 1 — taste profile, two approaches</p>
+    <p style="margin:0;font-size:13px;line-height:1.5;color:var(--graphite);text-wrap:pretty;">The findings are samples written against the current stand-in works, to be replaced with your engine's output. Each concept switches between film and literature at the top right. <a href="#1a">1a</a> opens on literature and <a href="#1b">1b</a> on film.</p>
+  </div>
+
+  <div style="display:flex;flex-wrap:wrap;gap:80px;align-items:flex-start;">
+
+    <div id="1a" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--font-sans);font-size:13px;line-height:1.4;color:var(--graphite);">
+        <span style="flex:none;padding:3px 7px;background:var(--ink);color:var(--white);font-weight:600;font-variation-settings:'wdth' 112;">1a</span>
+        <span style="max-width:1200px;"><strong style="font-weight:600;color:var(--ink);">the reading.</strong> Findings are set as a critical essay, with the passages and stills in the margin as evidence. Any page can be opened.</span>
+      </div>
+
+      <div data-screen-label="1a Taste profile — the reading" style="position:relative;width:1440px;background:var(--white);">
+        <div style="display:flex;justify-content:space-between;align-items:baseline;padding:28px;">
+          <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="Taste v2.dc.html" dc-props="{{ back }}" hint-size="60px,24px">pallas</x-import>
+          <div style="display:flex;align-items:baseline;gap:10px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;color:var(--graphite);">
+            <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#1a" dc-props="{{ A.swFilm }}" hint-size="30px,18px">film</x-import>
+            <span>—</span>
+            <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#1a" dc-props="{{ A.swLit }}" hint-size="60px,18px">literature</x-import>
+          </div>
+        </div>
+
+        <header style="display:grid;grid-template-columns:120px minmax(0,1fr);column-gap:48px;padding:112px 28px 88px;">
+          <div></div>
+          <div style="display:flex;flex-direction:column;">
+            <p style="margin:0;font-family:var(--font-sans);font-size:14px;font-weight:400;line-height:1.3;color:var(--graphite);">a reading of</p>
+            <h1 style="margin:14px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 125;font-size:112px;font-weight:600;line-height:.9;letter-spacing:-.045em;color:var(--ink);">your taste in {{ A.medium }}</h1>
+            <p style="margin:36px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">{{ A.basis }}</p>
+          </div>
+        </header>
+
+        <sc-for list="{{ A.findings }}" as="f" hint-placeholder-count="3">
+          <article style="display:grid;grid-template-columns:120px minmax(0,600px) minmax(0,1fr);column-gap:48px;align-items:start;padding:72px 28px 88px;border-top:1px solid var(--rule);">
+            <div style="font-family:'Newsreader',serif;font-style:italic;font-size:30px;line-height:1;color:var(--stone);">{{ f.numeral }}</div>
+            <div style="display:flex;flex-direction:column;gap:28px;">
+              <div style="display:flex;align-items:baseline;gap:10px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;">
+                <span style="color:{{ f.dirColor }};">{{ f.dir }}</span>
+                <span style="color:var(--graphite);">—</span>
+                <span style="color:var(--graphite);">{{ f.strength }}</span>
+              </div>
+              <h2 style="margin:0;font-family:'Newsreader',serif;font-size:56px;font-weight:400;line-height:1.02;letter-spacing:-.018em;color:var(--ink);text-wrap:balance;">{{ f.title }}</h2>
+              <dl style="margin:0;display:flex;flex-direction:column;gap:16px;">
+                <sc-for list="{{ f.terms }}" as="t" hint-placeholder-count="2">
+                  <div>
+                    <dt style="font-family:'Newsreader',serif;font-style:italic;font-size:21px;line-height:1.25;color:var(--ink);">{{ t.t }}</dt>
+                    <dd style="margin:4px 0 0;font-family:'Newsreader',serif;font-size:17px;line-height:1.45;color:var(--graphite);text-wrap:pretty;">{{ t.d }}</dd>
+                  </div>
+                </sc-for>
+              </dl>
+              <div style="display:flex;flex-direction:column;gap:6px;padding-top:4px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);font-variant-numeric:tabular-nums;">
+                <p style="margin:0;">{{ f.evidence }}</p>
+                <sc-if value="{{ f.hasRel }}" hint-placeholder-val="{{ false }}">
+                  <p style="margin:0;">{{ f.rel }}</p>
+                </sc-if>
+              </div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:48px;padding-top:4px;">
+              <sc-for list="{{ f.items }}" as="e" hint-placeholder-count="2">
+                <figure style="margin:0;display:flex;flex-direction:column;gap:14px;">
+                  <span style="font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ e.roleColor }};">{{ e.role }}</span>
+                  <sc-if value="{{ e.isQuote }}" hint-placeholder-val="{{ true }}">
+                    <blockquote style="margin:0;font-family:'Newsreader',serif;font-size:25px;line-height:1.38;letter-spacing:-.005em;color:var(--ink);text-wrap:pretty;">{{ e.quote }}</blockquote>
+                  </sc-if>
+                  <sc-if value="{{ e.isStill }}" hint-placeholder-val="{{ false }}">
+                    <div style="aspect-ratio:1165 / 840;background:#171a19;">
+                      <image-slot id="{{ e.slot }}" shape="rect" placeholder="{{ e.placeholder }}" style="width:100%;height:100%;"></image-slot>
+                    </div>
+                  </sc-if>
+                  <div style="display:flex;justify-content:space-between;align-items:baseline;gap:24px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:var(--graphite);">
+                    <figcaption>{{ e.caption }}</figcaption>
+                    <sc-if value="{{ e.isQuote }}" hint-placeholder-val="{{ true }}">
+                      <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#1a" dc-props="{{ e.toggle }}" hint-size="80px,16px">{{ e.toggleLabel }}</x-import>
+                    </sc-if>
+                  </div>
+                  <sc-if value="{{ e.open }}" hint-placeholder-val="{{ false }}">
+                    <div style="padding:20px 0 8px;">
+                      <div style="position:relative;width:264px;height:416px;transform:rotate(-.6deg);filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 10px 18px rgba(0,0,0,.08));">
+                        <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:scale(.8);">
+                          <div style="position:absolute;inset:0;mask-image:{{ e.pg.mask }};-webkit-mask-image:{{ e.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ e.pg.clip }};">
+                            <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ e.pg.entry }}" folio="{{ e.pg.folio }}" hint-size="330px,520px"></dc-import>
+                            <sc-if value="{{ e.pg.torn }}" hint-placeholder-val="{{ false }}">
+                              <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div>
+                            </sc-if>
+                          </div>
+                          <sc-if value="{{ e.pg.folded }}" hint-placeholder-val="{{ false }}">
+                            <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));">
+                              <div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div>
+                            </div>
+                          </sc-if>
+                        </div>
+                      </div>
+                    </div>
+                  </sc-if>
+                </figure>
+              </sc-for>
+            </div>
+          </article>
+        </sc-for>
+        <div style="height:96px;border-top:1px solid var(--rule);"></div>
+      </div>
+    </div>
+
+    <div id="1b" style="display:flex;flex-direction:column;gap:16px;">
+      <div style="display:flex;align-items:baseline;gap:14px;font-family:var(--font-sans);font-size:13px;line-height:1.4;color:var(--graphite);">
+        <span style="flex:none;padding:3px 7px;background:var(--ink);color:var(--white);font-weight:600;font-variation-settings:'wdth' 112;">1b</span>
+        <span style="max-width:1200px;"><strong style="font-weight:600;color:var(--ink);">the sorting table.</strong> The works lie on white. Choosing a finding gathers the works that support it and sets apart those that contradict it. Click any work to examine it.</span>
+      </div>
+
+      <div data-screen-label="1b Taste profile — the sorting table" style="position:relative;width:1440px;height:960px;background:var(--white);overflow:hidden;user-select:none;">
+        <div style="position:absolute;left:0;right:0;top:0;z-index:3;display:flex;justify-content:space-between;align-items:baseline;padding:28px;">
+          <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="Taste v2.dc.html" dc-props="{{ back }}" hint-size="60px,24px">pallas</x-import>
+          <div style="display:flex;align-items:baseline;gap:10px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;color:var(--graphite);">
+            <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#1b" dc-props="{{ B.swFilm }}" hint-size="30px,18px">film</x-import>
+            <span>—</span>
+            <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#1b" dc-props="{{ B.swLit }}" hint-size="60px,18px">literature</x-import>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:28px;top:112px;width:404px;display:flex;flex-direction:column;">
+          <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 125;font-size:40px;font-weight:600;line-height:.95;letter-spacing:-.04em;color:var(--ink);">your taste in {{ B.medium }}</p>
+          <p style="margin:16px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.3;color:var(--graphite);font-variant-numeric:tabular-nums;">{{ B.basis }}</p>
+          <div style="margin-top:56px;display:flex;flex-direction:column;gap:22px;">
+            <sc-for list="{{ B.findings }}" as="f" hint-placeholder-count="3">
+              <button onClick="{{ f.pick }}" style="display:grid;grid-template-columns:34px minmax(0,1fr);column-gap:8px;padding:0;border:0;background:none;text-align:left;cursor:pointer;opacity:{{ f.op }};transition:opacity 320ms cubic-bezier(.2,.7,.1,1);" style-hover="opacity:1;">
+                <span style="font-family:'Newsreader',serif;font-style:italic;font-size:17px;line-height:1.6;color:var(--stone);">{{ f.numeral }}</span>
+                <span style="display:flex;flex-direction:column;gap:4px;">
+                  <span style="font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ f.dirColor }};">{{ f.dir }}</span>
+                  <span style="font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:28px;font-weight:500;line-height:1.08;letter-spacing:-.025em;color:var(--ink);text-wrap:balance;">{{ f.title }}</span>
+                </span>
+              </button>
+            </sc-for>
+          </div>
+          <div style="margin-top:44px;padding:22px 0 0 42px;border-top:1px solid var(--rule);display:flex;flex-direction:column;gap:16px;">
+            <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);font-variant-numeric:tabular-nums;">{{ B.d.strength }} — {{ B.d.evidence }}</p>
+            <dl style="margin:0;display:flex;flex-direction:column;gap:12px;">
+              <sc-for list="{{ B.d.terms }}" as="t" hint-placeholder-count="2">
+                <div>
+                  <dt style="font-family:'Newsreader',serif;font-style:italic;font-size:18px;line-height:1.25;color:var(--ink);">{{ t.t }}</dt>
+                  <dd style="margin:3px 0 0;font-family:'Newsreader',serif;font-size:15px;line-height:1.42;color:var(--graphite);text-wrap:pretty;">{{ t.d }}</dd>
+                </div>
+              </sc-for>
+            </dl>
+            <sc-if value="{{ B.d.hasRel }}" hint-placeholder-val="{{ false }}">
+              <p style="margin:0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);">{{ B.d.rel }}</p>
+            </sc-if>
+          </div>
+        </div>
+
+        <div style="position:absolute;left:480px;top:0;right:0;bottom:0;">
+          <sc-for list="{{ B.labels }}" as="l" hint-placeholder-count="3">
+            <div style="position:absolute;left:24px;top:0;transform:translateY({{ l.y }});transition:transform 700ms cubic-bezier(.2,.7,.1,1);font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:{{ l.color }};">{{ l.text }}</div>
+          </sc-for>
+          <sc-for list="{{ B.objs }}" as="o" hint-placeholder-count="5">
+            <div onClick="{{ o.pick }}" style="position:absolute;left:0;top:0;width:{{ o.w }};transform-origin:0 0;transform:{{ o.t }};opacity:{{ o.op }};z-index:{{ o.z }};transition:transform 700ms cubic-bezier(.2,.7,.1,1),opacity 500ms cubic-bezier(.2,.7,.1,1);cursor:zoom-in;">
+              <sc-if value="{{ o.isStill }}" hint-placeholder-val="{{ true }}">
+                <div style="padding:8px 8px 9px;background:#fbfbf9;box-shadow:0 1px 1px rgba(0,0,0,.14),0 3px 6px -2px rgba(0,0,0,.10),0 14px 26px -10px rgba(0,0,0,.22);">
+                  <div style="aspect-ratio:1165 / 840;background:#171a19;pointer-events:none;">
+                    <image-slot id="{{ o.slot }}" shape="rect" placeholder="{{ o.placeholder }}" style="width:100%;height:100%;"></image-slot>
+                  </div>
+                </div>
+              </sc-if>
+              <sc-if value="{{ o.isPage }}" hint-placeholder-val="{{ false }}">
+                <div style="position:relative;width:165px;height:260px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 10px 16px rgba(0,0,0,.09));">
+                  <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:scale(.5);">
+                    <div style="position:absolute;inset:0;mask-image:{{ o.pg.mask }};-webkit-mask-image:{{ o.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ o.pg.clip }};">
+                      <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ o.pg.entry }}" folio="{{ o.pg.folio }}" hint-size="330px,520px"></dc-import>
+                      <sc-if value="{{ o.pg.torn }}" hint-placeholder-val="{{ false }}">
+                        <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div>
+                      </sc-if>
+                    </div>
+                    <sc-if value="{{ o.pg.folded }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));">
+                        <div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div>
+                      </div>
+                    </sc-if>
+                  </div>
+                </div>
+              </sc-if>
+              <p style="margin:12px 0 0;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:12px;font-weight:500;line-height:1.3;color:var(--graphite);opacity:{{ o.capOp }};transition:opacity 400ms;">{{ o.caption }}</p>
+            </div>
+          </sc-for>
+        </div>
+
+        <sc-if value="{{ B.examOn }}" hint-placeholder-val="{{ false }}">
+          <div onClick="{{ B.closeExam }}" style="position:absolute;inset:0;z-index:20;background:rgba(255,255,255,.86);backdrop-filter:blur(2px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;cursor:zoom-out;">
+            <div style="position:absolute;top:28px;right:28px;">
+              <x-import component-from-global-scope="CreativeOutputDesignSystem_ca4438.TextLink" href="#1b" dc-props="{{ B.closeLink }}" hint-size="40px,14px">Close</x-import>
+            </div>
+            <sc-if value="{{ B.ex.isStill }}" hint-placeholder-val="{{ false }}">
+              <div style="width:760px;padding:12px 12px 13px;background:#fbfbf9;box-shadow:0 1px 1px rgba(0,0,0,.14),0 6px 12px -4px rgba(0,0,0,.10),0 30px 60px -20px rgba(0,0,0,.28);">
+                <div style="aspect-ratio:1165 / 840;background:#171a19;">
+                  <image-slot id="{{ B.ex.slot }}" shape="rect" placeholder="{{ B.ex.placeholder }}" style="width:100%;height:100%;"></image-slot>
+                </div>
+              </div>
+            </sc-if>
+            <sc-if value="{{ B.ex.isPage }}" hint-placeholder-val="{{ false }}">
+              <div style="position:relative;width:363px;height:572px;filter:drop-shadow(0 1px 1px rgba(0,0,0,.14)) drop-shadow(0 22px 34px rgba(0,0,0,.12));">
+                <div style="position:absolute;left:0;top:0;width:330px;height:520px;transform-origin:0 0;transform:scale(1.1);">
+                  <div style="position:absolute;inset:0;mask-image:{{ B.ex.pg.mask }};-webkit-mask-image:{{ B.ex.pg.mask }};mask-size:100% 100%;-webkit-mask-size:100% 100%;clip-path:{{ B.ex.pg.clip }};">
+                    <dc-import name="BookPage" kind="excerpt" side="left" entry="{{ B.ex.pg.entry }}" folio="{{ B.ex.pg.folio }}" hint-size="330px,520px"></dc-import>
+                    <sc-if value="{{ B.ex.pg.torn }}" hint-placeholder-val="{{ false }}">
+                      <div style="position:absolute;inset:0;pointer-events:none;background:url(assets/tear-core.png) 0 0 / 100% 100%;"></div>
+                    </sc-if>
+                  </div>
+                  <sc-if value="{{ B.ex.pg.folded }}" hint-placeholder-val="{{ false }}">
+                    <div style="position:absolute;left:0;top:0;width:52px;height:52px;filter:drop-shadow(1.5px 2px 1.6px rgba(60,40,10,.3));">
+                      <div style="position:absolute;inset:0;clip-path:polygon(100% 0,0 100%,100% 100%);background-color:#ebe3cf;background-image:linear-gradient(315deg,rgba(60,40,10,.05),rgba(255,255,255,0) 45%,rgba(255,255,255,.5) 50%),url(assets/paper.png);background-size:auto,256px 256px;"></div>
+                    </div>
+                  </sc-if>
+                </div>
+              </div>
+            </sc-if>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:8px;font-family:var(--font-sans);font-variation-settings:'wdth' 112;font-size:13px;font-weight:500;line-height:1.4;color:var(--graphite);text-align:center;">
+              <p style="margin:0;color:var(--ink);">{{ B.ex.caption }}</p>
+              <sc-for list="{{ B.ex.roles }}" as="r" hint-placeholder-count="1">
+                <p style="margin:0;">{{ r.text }}</p>
+              </sc-for>
+            </div>
+          </div>
+        </sc-if>
+      </div>
+    </div>
+
+  </div>
+</section>
+</sc-if>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;previewEmpty&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Preview&quot;}}">
+const ROMAN = ['i.', 'ii.', 'iii.', 'iv.', 'v.'];
+const LIT = [
+  { id: 'gatsby', title: 'The Great Gatsby', by: 'F. Scott Fitzgerald', year: 1925, vote: 'like', folio: 2, entry: { num: '1', excerpt: [
+    'Gatsby believed in the green light, the orgastic future that year by year recedes before us. It eluded us then, but that’s no matter—tomorrow we will run faster, stretch out our arms farther. . . . And one fine morning——',
+    'So we beat on, boats against the current, borne back ceaselessly into the past.'] } },
+  { id: 'dalloway', title: 'Mrs Dalloway', by: 'Virginia Woolf', year: 1925, vote: 'dislike', folio: 4, entry: { num: '2', excerpt: [
+    'Mrs Dalloway said she would buy the flowers herself.',
+    'For Lucy had her work cut out for her. The doors would be taken off their hinges; Rumpelmayer’s men were coming. And then, thought Clarissa Dalloway, what a morning—fresh as if issued to children on a beach.',
+    'What a lark! What a plunge! For so it had always seemed to her, when, with a little squeak of the hinges, which she could hear now, she had burst open the French windows and plunged at Bourton into the open air.'] } },
+  { id: 'dead', title: 'The Dead', by: 'James Joyce', year: 1914, vote: 'like', folio: 6, entry: { num: '3', excerpt: [
+    'Yes, the newspapers were right: snow was general all over Ireland. It was falling on every part of the dark central plain, on the treeless hills, falling softly upon the Bog of Allen and, farther westward, softly falling into the dark mutinous Shannon waves. . . .',
+    'His soul swooned slowly as he heard the snow falling faintly through the universe and faintly falling, like the descent of their last end, upon all the living and the dead.'] } },
+  { id: 'awakening', title: 'The Awakening', by: 'Kate Chopin', year: 1899, vote: 'like', folio: 8, entry: { num: '4', excerpt: [
+    'The voice of the sea is seductive; never ceasing, whispering, clamoring, murmuring, inviting the soul to wander for a spell in abysses of solitude; to lose itself in mazes of inward contemplation.',
+    'The voice of the sea speaks to the soul. The touch of the sea is sensuous, enfolding the body in its soft, close embrace.'] } },
+  { id: 'sun', title: 'The Sun Also Rises', by: 'Ernest Hemingway', year: 1926, vote: 'like', folio: 10, entry: { num: '5', excerpt: [
+    '“Oh, Jake,” Brett said, “we could have had such a damned good time together.”',
+    'Ahead was a mounted policeman in khaki directing traffic. He raised his baton. The car slowed suddenly pressing Brett against me.',
+    '“Yes,” I said. “Isn’t it pretty to think so?”'] } },
+];
+const FILM = [
+  { id: 'vertigo', title: 'Vertigo', by: 'Alfred Hitchcock', year: 1958, vote: 'like', slot: 'still-01' },
+  { id: 'casablanca', title: 'Casablanca', by: 'Michael Curtiz', year: 1942, vote: 'dislike', slot: 'still-03' },
+  { id: 'taxi', title: 'Taxi Driver', by: 'Martin Scorsese', year: 1976, vote: 'like', slot: 'still-04' },
+  { id: 'spirited', title: 'Spirited Away', by: 'Hayao Miyazaki', year: 2001, vote: 'dislike', slot: 'still-05' },
+  { id: 'chinatown', title: 'Chinatown', by: 'Roman Polanski', year: 1974, vote: 'like', slot: 'still-06' },
+];
+const FINDINGS = {
+  lit: [
+    { dir: 'toward', title: 'endings that hold something back', strength: 'consistent', evidence: '3 of the 4 passages you dog-eared — none you tore out',
+      terms: [{ t: 'omission', d: 'The strongest feeling is left unstated, for the reader to supply.' }, { t: 'retrospective narration', d: 'The story is told after it has ended, so loss colours every scene.' }],
+      support: ['sun', 'gatsby', 'dead'], against: [],
+      quotes: { sun: '“Yes,” I said. “Isn’t it pretty to think so?”', gatsby: 'So we beat on, boats against the current, borne back ceaselessly into the past.', dead: 'His soul swooned slowly as he heard the snow falling faintly through the universe and faintly falling, like the descent of their last end, upon all the living and the dead.' } },
+    { dir: 'toward', title: 'sentences that repeat and settle', strength: 'emerging', evidence: '2 of the 4 passages you dog-eared',
+      terms: [{ t: 'chiasmus', d: 'Words repeated in reverse order, as in “falling faintly … faintly falling”.' }, { t: 'anaphora', d: 'The same phrase opens successive sentences.' }],
+      support: ['dead', 'awakening'], against: [],
+      quotes: { dead: '… the snow falling faintly through the universe and faintly falling …', awakening: 'The voice of the sea is seductive; never ceasing, whispering, clamoring, murmuring … The voice of the sea speaks to the soul.' } },
+    { dir: 'away', title: 'thought rendered mid-sentence', strength: 'too early to say', evidence: '1 passage, torn out',
+      terms: [{ t: 'free indirect discourse', d: 'The narration moves into a character’s thoughts without quotation marks.' }, { t: 'time shift', d: 'A present sensation carries the narration back years within one sentence.' }],
+      support: ['dalloway'], against: [],
+      quotes: { dalloway: 'And then, thought Clarissa Dalloway, what a morning—fresh as if issued to children on a beach.' } },
+  ],
+  film: [
+    { dir: 'toward', title: 'low-key, hard light', strength: 'mixed', evidence: '2 of the 3 stills you liked — 1 still you disliked shares it',
+      terms: [{ t: 'low-key lighting', d: 'Most of the frame is left in shadow, lit from one hard source.' }, { t: 'chiaroscuro', d: 'Strong contrast of light and dark used to model faces and space.' }],
+      support: ['chinatown', 'taxi'], against: ['casablanca'] },
+    { dir: 'toward', title: 'colour as signal', strength: 'emerging', evidence: '2 of the 3 stills you liked',
+      terms: [{ t: 'expressive colour', d: 'Colour chosen for feeling rather than realism.' }, { t: 'colour motif', d: 'One colour returns to mark a character or an idea.' }],
+      support: ['vertigo', 'taxi'], against: [] },
+    { dir: 'away', title: 'dense, detailed frames', strength: 'too early to say', evidence: '1 still, disliked',
+      terms: [{ t: 'mise-en-scène', d: 'Everything placed within the frame: sets, objects, figures, light.' }, { t: 'deep staging', d: 'Action arranged at several distances from the camera at once.' }],
+      support: ['spirited'], against: [] },
+  ],
+};
+const ROT = [-1.4, .9, -.5, 1.3, -.9];
+class Component extends DCLogic {
+  componentDidMount() {
+    this.onR = () => this.setState({ vw: innerWidth, vh: innerHeight }); addEventListener('resize', this.onR); this.onR();
+    try { const v = JSON.parse(localStorage.getItem('taste.votes') || '{}'); this.setState({ nVotes: Object.keys(v.c || {}).length + Object.keys(v.l || {}).length }); } catch (e) { this.setState({ nVotes: 0 }); }
+  }
+  componentWillUnmount() { removeEventListener('resize', this.onR); }
+  state = { vw: typeof innerWidth === 'number' ? innerWidth : 1440, vh: typeof innerHeight === 'number' ? innerHeight : 900, aMed: 'lit', bMed: new URLSearchParams(location.search).get('m') === 'lit' ? 'lit' : 'film', bSel: 0, aOpen: {}, bExam: null };
+  works(med) { return med === 'lit' ? LIT : FILM; }
+  byId(med, id) { return this.works(med).find(w => w.id === id); }
+  voteWord(med, v) { return med === 'lit' ? (v === 'like' ? 'dog-eared' : 'torn out') : (v === 'like' ? 'liked' : 'disliked'); }
+  caption(med, w) { return med === 'lit' ? `${w.title}, ${w.by} — ${this.voteWord(med, w.vote)}` : `${w.title} — ${w.by}, ${w.year} — ${this.voteWord(med, w.vote)}`; }
+  basis(med) {
+    const W = this.works(med), up = W.filter(w => w.vote === 'like').length, dn = W.length - up;
+    return med === 'lit' ? `drawn from ${W.length} passages — ${up} dog-eared, ${dn} torn out` : `drawn from ${W.length} stills — ${up} liked, ${dn} disliked`;
+  }
+  rel(med, k) {
+    const F = FINDINGS[med], f = F[k], mine = [...f.support, ...f.against];
+    const parts = [];
+    F.forEach((g, j) => {
+      if (j === k) return;
+      const shared = mine.filter(id => g.support.includes(id) || g.against.includes(id));
+      if (shared.length) parts.push(`shares ${shared.map(id => this.byId(med, id).title).join(', ')} with ${ROMAN[j]}`);
+    });
+    return parts.join(' — ');
+  }
+  pg(w) {
+    return { entry: w.entry, folio: w.folio, torn: w.vote === 'dislike', folded: w.vote === 'like',
+      mask: w.vote === 'dislike' ? 'url(assets/tear-piece.png)' : 'none',
+      clip: w.vote === 'like' ? 'polygon(52px 0,100% 0,100% 100%,0 100%,0 52px)' : 'none' };
+  }
+  link(active, fn) {
+    return { tone: 'inherit', active, style: { fontSize: 13, fontWeight: 500, fontVariationSettings: "'wdth' 112", letterSpacing: 0, textTransform: 'none', lineHeight: 1.3, color: active ? 'var(--ink)' : 'var(--graphite)' }, onClick: e => { e.preventDefault(); fn(); } };
+  }
+  dirOf(f) { return f.dir === 'toward' ? { dir: 'drawn to', dirColor: 'var(--ref-cobalt)' } : { dir: 'away from', dirColor: 'var(--ref-cola)' }; }
+  buildA() {
+    const med = this.state.aMed, F = FINDINGS[med];
+    return {
+      medium: med === 'lit' ? 'literature' : 'film',
+      basis: this.basis(med),
+      swFilm: this.link(med === 'film', () => this.setState({ aMed: 'film' })),
+      swLit: this.link(med === 'lit', () => this.setState({ aMed: 'lit' })),
+      findings: F.map((f, k) => {
+        const rel = this.rel(med, k);
+        const item = (id, role) => {
+          const w = this.byId(med, id), key = `${med}-${k}-${id}`, open = !!this.state.aOpen[key];
+          return {
+            role: role === 'for' ? 'supports' : 'contradicts',
+            roleColor: role === 'for' ? 'var(--graphite)' : 'var(--ink)',
+            isQuote: med === 'lit', isStill: med === 'film',
+            quote: med === 'lit' ? (f.quotes || {})[id] || '' : '',
+            slot: w.slot || '', placeholder: w.slot ? 'drop ' + w.title.toLowerCase() + ' still' : '',
+            caption: this.caption(med, w),
+            open: med === 'lit' && open,
+            toggleLabel: open ? 'close the page' : 'open the page',
+            toggle: this.link(false, () => this.setState(s => ({ aOpen: { ...s.aOpen, [key]: !s.aOpen[key] } }))),
+            pg: med === 'lit' ? this.pg(w) : { entry: null, folio: '', torn: false, folded: false, mask: 'none', clip: 'none' },
+          };
+        };
+        return { numeral: ROMAN[k], ...this.dirOf(f), strength: f.strength, title: f.title, terms: f.terms, evidence: f.evidence, hasRel: !!rel, rel,
+          items: [...f.support.map(id => item(id, 'for')), ...f.against.map(id => item(id, 'against'))] };
+      }),
+    };
+  }
+  buildB() {
+    const S = this.state, med = S.bMed, F = FINDINGS[med], W = this.works(med);
+    const sel = Math.min(S.bSel, F.length - 1), f = F[sel];
+    const lit = med === 'lit', w = lit ? 165 : 240, h = lit ? 260 : 177, gap = lit ? 36 : 32, capH = lit ? 48 : 30;
+    const forY = 112, agY = forY + h + capH + 76, othS = .58, othY = 960 - (h + capH) * othS - 40;
+    let fi = 0, ai = 0, oi = 0;
+    const objs = W.map((wk, i) => {
+      let x, y, s = 1, op = 1, z = 2, capOp = 1;
+      if (f.support.includes(wk.id)) { x = 24 + fi++ * (w + gap); y = forY; }
+      else if (f.against.includes(wk.id)) { x = 24 + ai++ * (w + gap); y = agY; }
+      else { x = 24 + oi++ * (w * othS + 28); y = othY; s = othS; op = .34; z = 1; capOp = 0; }
+      return {
+        w: w + 'px', t: `translate(${x}px,${y}px) rotate(${ROT[i % ROT.length]}deg) scale(${s})`, op, z, capOp,
+        isStill: !lit, isPage: lit, slot: wk.slot || '', placeholder: wk.slot ? 'drop ' + wk.title.toLowerCase() + ' still' : '',
+        pg: lit ? this.pg(wk) : { entry: null, folio: '', torn: false, folded: false, mask: 'none', clip: 'none' },
+        caption: this.caption(med, wk),
+        pick: e => { e.stopPropagation(); this.setState({ bExam: wk.id }); },
+      };
+    });
+    const unrelated = W.length - f.support.length - f.against.length;
+    const labels = [
+      { text: 'supports', y: forY - 32 + 'px', color: 'var(--graphite)' },
+      { text: f.against.length ? 'contradicts' : 'contradicts — none so far', y: (f.against.length ? agY : forY + h + capH + 56) - 32 + 'px', color: 'var(--ink)' },
+      { text: unrelated ? 'not part of this finding' : '', y: othY - 28 + 'px', color: 'var(--stone)' },
+    ];
+    const ex = S.bExam && W.find(x => x.id === S.bExam);
+    const rel = this.rel(med, sel);
+    return {
+      medium: lit ? 'literature' : 'film',
+      basis: this.basis(med),
+      swFilm: this.link(med === 'film', () => this.setState({ bMed: 'film', bSel: 0, bExam: null })),
+      swLit: this.link(med === 'lit', () => this.setState({ bMed: 'lit', bSel: 0, bExam: null })),
+      findings: F.map((ff, k) => ({ numeral: ROMAN[k], ...this.dirOf(ff), title: ff.title, op: k === sel ? 1 : .36, pick: () => this.setState({ bSel: k }) })),
+      d: { strength: f.strength, evidence: f.evidence, terms: f.terms, hasRel: !!rel, rel },
+      labels, objs,
+      examOn: !!ex,
+      closeExam: () => this.setState({ bExam: null }),
+      closeLink: { tone: 'inherit', style: { fontSize: 10, fontWeight: 500, letterSpacing: '.12em', textTransform: 'uppercase', color: 'var(--stone)' }, onClick: e => { e.preventDefault(); this.setState({ bExam: null }); } },
+      ex: ex ? {
+        isStill: !lit, isPage: lit, slot: ex.slot || '', placeholder: ex.slot ? 'drop ' + ex.title.toLowerCase() + ' still' : '',
+        pg: lit ? this.pg(ex) : { entry: null, folio: '', torn: false, folded: false, mask: 'none', clip: 'none' },
+        caption: this.caption(med, ex),
+        roles: F.map((g, k) => g.support.includes(ex.id) ? { text: `supports ${ROMAN[k]} ${g.title}` } : g.against.includes(ex.id) ? { text: `contradicts ${ROMAN[k]} ${g.title}` } : null).filter(Boolean),
+      } : { isStill: false, isPage: false, slot: '', placeholder: '', pg: { entry: null, folio: '', torn: false, folded: false, mask: 'none', clip: 'none' }, caption: '', roles: [] },
+    };
+  }
+  buildM(B) {
+    const S = this.state, med = S.bMed, lit = med === 'lit', F = FINDINGS[med], f = F[Math.min(S.bSel, F.length - 1)], W = this.works(med);
+    const vw = S.vw, stillW = Math.min(300, vw - 80), pS = .56;
+    const item = (wk, small) => ({
+      w: lit ? Math.round(330 * pS * (small ? .7 : 1)) + 'px' : Math.round(stillW * (small ? .62 : 1)) + 'px', op: small ? .5 : 1,
+      isStill: !lit, isPage: lit, slot: wk.slot || '', placeholder: wk.slot ? 'drop ' + wk.title.toLowerCase() + ' still' : '',
+      pg: lit ? this.pg(wk) : { entry: null, folio: '', torn: false, folded: false, mask: 'none', clip: 'none' },
+      ps: 'scale(' + (pS * (small ? .7 : 1)) + ')', pw: Math.round(330 * pS * (small ? .7 : 1)) + 'px', ph: Math.round(520 * pS * (small ? .7 : 1)) + 'px',
+      caption: this.caption(med, wk), pick: e => { e.stopPropagation(); this.setState({ bExam: wk.id }); },
+    });
+    const sup = W.filter(w => f.support.includes(w.id)).map(w => item(w)), ag = W.filter(w => f.against.includes(w.id)).map(w => item(w));
+    const oth = W.filter(w => !f.support.includes(w.id) && !f.against.includes(w.id)).map(w => item(w, true));
+    const exS = Math.min(1.1, (vw - 40) / 330, (S.vh - 220) / 520);
+    return { sup, ag, oth,
+      lSup: { text: 'supports', color: 'var(--graphite)' },
+      lAg: { text: ag.length ? 'contradicts' : 'contradicts — none so far', color: 'var(--ink)' },
+      lOth: { text: oth.length ? 'not part of this finding' : '', color: 'var(--stone)' },
+      exS: 'scale(' + exS + ')', exW: Math.round(330 * exS) + 'px', exH: Math.round(520 * exS) + 'px' };
+  }
+  renderVals() {
+    const isPhone = this.state.vw < 640, B = this.buildB();
+    return {
+      empty: !!this.props.previewEmpty || this.state.nVotes === 0,
+      emptyLink: { tone: 'inherit', style: { fontSize: 'inherit', fontWeight: 600, fontVariationSettings: "'wdth' 112", letterSpacing: 'inherit', textTransform: 'none', lineHeight: 'inherit', color: 'var(--ref-cobalt)', textDecoration: 'underline', textDecorationThickness: '2px', textUnderlineOffset: '.14em' } },
+      isPhone, notPhone: !isPhone, M: this.buildM(B),
+      back: { style: { fontSize: 18, fontWeight: 600, fontVariationSettings: "'wdth' 125", letterSpacing: '-.04em', textTransform: 'none', lineHeight: 1.1 } },
+      A: this.buildA(),
+      B,
+    };
+  }
+}
+</script>
+</body>
+</html>
