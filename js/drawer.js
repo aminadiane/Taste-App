@@ -20,14 +20,22 @@ window.Pallas = window.Pallas || {};
   // Small DOM helper used by both screens' drawer content.
   function h(tag, cls, text) { const e = document.createElement(tag); if (cls) e.className = cls; if (text != null) e.textContent = text; return e; }
 
-  // Tabs row: [{ label, active, onClick }]
-  function tabs(items) {
+  // Tabs row: [{ label, active, onClick }], plus an optional link at the right end ({ label, href }: the taste profile).
+  function tabs(items, link) {
     const row = h('div', 'qv__tabs');
     for (const it of items) {
       const a = h('a', 'qlink' + (it.active ? ' is-active' : ''), it.label);
       a.href = '#';
       a.addEventListener('click', (e) => { e.preventDefault(); it.onClick(); });
       row.appendChild(a);
+    }
+    if (link) {
+      const span = h('span', 'qv__tabs-end');
+      const a = h('a', 'qv__profile', link.label);
+      a.href = link.href;
+      a.addEventListener('click', close);   // the drawer closes as the route changes
+      span.appendChild(a);
+      row.appendChild(span);
     }
     return row;
   }

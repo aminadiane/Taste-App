@@ -4,29 +4,28 @@ window.Pallas = window.Pallas || {};
 (() => {
   'use strict';
   const $ = (id) => document.getElementById(id);
-  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store, h = D.h;
-  const pad = (n) => String(n).padStart(2, '0');
+  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store, SH = Pallas.shelf, h = D.h;
   const EASE = 'cubic-bezier(.45,.05,.2,1)';
-  const STK = [[0, 0, -6], [12, -8, 4], [-6, 6, -1.5], [6, -3, 7]];
+  const EASE2 = 'cubic-bezier(.2,.7,.1,1)';
   const LIBRARY_URL = 'library/literature.json';
   const EXCERPTS_URL = 'library/excerpts.json';   // handoff stand-ins, used until library passages are ready
 
   let ENTRIES = [], SPINES = [], NB = 0;
-  const S = { bFocus: 0, bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
-    bCoverHover: false, bFlapHover: false, bFlapAnim: 'none', bFolded: false, bTearing: false, bTorn: false, bDragging: false, bPageHover: false };
-  let ty = 0, sk = 0, scale = 1, tearRaf = 0, timers = [], active = false, leafFor = null, stackKey = '';
+  const S = { bSide: 'left', bScrub: null, bFlapDrag: null, bOpen: false, bIdx: 0, bLeftIdx: 0, bRight: { kind: 'title', idx: 0 }, bLeftShown: false, bLeaf: null, bBusy: false,
+    bCoverHover: false, bFlapHover: false, bFlapAnim: 'none', bFolded: false, bTearing: false, bTorn: false, bDragging: false, bPageHover: false, hintPhase: null };
+  let ty = 0, sk = 0, scale = 1, tearRaf = 0, timers = [], active = false, leafFor = null;
   // Touch: a finger has no hover, and a tap must never register a preference by accident. The last pointer type decides
   // how the pages respond (mouse behaviour is unchanged): see pageDown and rightTap below.
-  let lastPointer = 'mouse', armTimer = 0, tearTimer = 0, rendered = false;
-  /* Phones in portrait: one page at a time (docs/proposals/mobile-book.md, approved 2026-10-21). The book is unchanged;
-     a camera (translate + scale on the stage) frames the passage page (focus 0) or the info page (focus 1). A horizontal
-     swipe or a tap on the strip of the other page at the screen edge moves between them; on the passage page a
-     downward pull tears the page out, since sideways swipes now move the view. Tablets, landscape and desktop keep the
-     full spread exactly as before. */
-  const FOCUS_MARGIN = 20;   // px of the other page left visible at the screen edge, which is also its tap target
-  const focusMode = () => innerWidth < 600 && innerHeight > innerWidth;
+  let lastPointer = 'mouse', armTimer = 0, tearTimer = 0, rendered = false, hintPlayed = false;
+  /* Phones (viewport narrower than 640px, handoff update 2): the open book shows one page at a time. The book is
+     unchanged; the stage is clipped and translated to frame the passage page (side `left`) or the notes page (side
+     `right`). A scrub bar under the book, a tap on the page's outer edge, and the buttons move between pages. Swiping
+     left tears the passage out and swiping right dog-ears the notes page (both approved 2026-10-27); a downward pull on
+     the passage page also tears it, as approved on 2026-10-21. Taps on the pages do not vote on phones. */
+  const EDGE_TAP = 24;   // book px at the page's outer edge where a tap moves to the other page
+  const phone = () => innerWidth < 640;
+  const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
   let camKey = null, suppressClick = false;
-  function setFocus(f) { if (!focusMode() || !S.bOpen || S.bFocus === f) return; set({ bFocus: f }); }
   addEventListener('pointerdown', (e) => { lastPointer = e.pointerType || 'mouse'; }, true);
   const touchy = () => lastPointer === 'touch' || lastPointer === 'pen';
   const qv = { tab: 'like', sel: null };
@@ -37,9 +36,10 @@ window.Pallas = window.Pallas || {};
     flap: $('flap'), flapPage: $('flap-page'), flapShade: $('flap-shade'), flapBack: $('flap-back'),
     left: $('bk-left'), leftPage: $('left-page'), ears: $('ears'), fore: $('bk-fore'),
     stub: $('bk-stub'), stubPage: $('stub-page'), torn: $('bk-torn'), piecePage: $('piece-page'), belowPage: $('below-page'), lshadow: $('l-shadow'),
-    cover: $('bk-cover'), insideWrap: $('cover-back'), insidePage: $('inside-page'), leaf: $('leaf'), stack: $('stack'),
+    cover: $('bk-cover'), insideWrap: $('cover-back'), insidePage: $('inside-page'), leaf: $('leaf'),
     controls: $('lit-controls'), prev: $('bk-prev'), next: $('bk-next'), open: $('bk-open'), tear: $('bk-tear'), fold: $('bk-fold'),
-    closeWrap: $('lit-close'), closeLink: $('bk-close'), counter: $('lit-counter'), lqShelf: $('lq-shelf'), lqLike: $('lq-like'), lqDislike: $('lq-dislike'),
+    closeWrap: $('lit-close'), closeLink: $('bk-close'),
+    phoneBox: $('lit-phone'), scrub: $('scrub'), scrubThumb: $('scrub-thumb'), phTear: $('ph-tear'), phFold: $('ph-fold'), phPrev: $('ph-prev'), phNext: $('ph-next'), hintL: $('hint-l'), hintR: $('hint-r'),
   };
 
   /* ---------- BookPage (330×520): title / excerpt / info / blank / inside ---------- */
@@ -85,6 +85,7 @@ window.Pallas = window.Pallas || {};
   const frame = () => new Promise((res) => requestAnimationFrame(() => requestAnimationFrame(res)));
   const canAct = () => S.bOpen && S.bLeftShown && !S.bBusy;
   const workOf = (i) => ENTRIES[i].book || ENTRIES[i].id;   // the book a passage comes from (stand-ins: the passage itself)
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
 
   /* ---------- the turning leaf: two hinged segments over the right page ---------- */
   function buildLeaf(front, back) {
@@ -147,15 +148,16 @@ window.Pallas = window.Pallas || {};
   async function openBook() {
     if (S.bOpen || S.bBusy) return;
     const start = store.resumeIndex('literature', entryIds());   // the next passage not yet evaluated, from where the reader left off
-    await set({ bBusy: true, bOpen: true, bFocus: 0, bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', start) }, bRight: { kind: 'info', idx: start } });
+    await set({ bBusy: true, bOpen: true, bSide: 'left', bCoverHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', start) }, bRight: { kind: 'info', idx: start } });
     await wait(380);
     await animateLeaf();
     await set({ bLeaf: null, bLeftShown: true, bLeftIdx: start, bIdx: start, bBusy: false });
+    if (phone()) playSwipeHint();
   }
   async function closeBook() {
     if (!S.bOpen || S.bBusy) return;
     const cur = S.bIdx;
-    await set({ bBusy: true, bFocus: 0, bFlapHover: false, bFolded: false, bFlapAnim: 'none', bPageHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', cur) }, bLeftShown: false });
+    await set({ bBusy: true, bSide: 'left', bFlapHover: false, bFolded: false, bFlapAnim: 'none', bFlapDrag: null, bPageHover: false, bLeaf: { front: page('title', 0), back: page('excerpt', cur) }, bLeftShown: false });
     await animateLeaf(true);
     await set({ bLeaf: null, bRight: { kind: 'title', idx: 0 } });
     await wait(120);
@@ -167,30 +169,28 @@ window.Pallas = window.Pallas || {};
   // After a vote the book turns to the next passage not yet evaluated; Next / Previous browse in order.
   async function turn(afterVote) {
     const cur = S.bIdx, next = afterVote ? store.nextOpen('literature', entryIds(), (cur + 1) % NB) : (cur + 1) % NB;
-    await set({ bFocus: 0, bLeaf: { front: page('info', cur), back: page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
+    await set({ bSide: 'left', bLeaf: { front: page('info', cur), back: page('excerpt', next) }, bRight: { kind: 'info', idx: next } });
     await animateLeaf();
     setTear(0, 0);
-    await set({ bLeaf: null, bLeftIdx: next, bIdx: next, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bTearing: false, bTorn: false, bPageHover: false });
+    await set({ bLeaf: null, bLeftIdx: next, bIdx: next, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bFlapDrag: null, bTearing: false, bTorn: false, bPageHover: false });
   }
   async function browse(dir) {
     if (!canAct()) return;
     const cur = S.bIdx, next = (cur + dir + NB) % NB;
-    await set({ bBusy: true, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bPageHover: false });
+    await set({ bBusy: true, bFolded: false, bFlapHover: false, bFlapAnim: 'none', bFlapDrag: null, bPageHover: false });
     if (dir > 0) await turn();
     else {
-      await set({ bFocus: 0, bLeaf: { front: page('info', next), back: page('excerpt', cur) }, bLeftIdx: next, bRight: { kind: 'info', idx: next } });
+      await set({ bSide: 'left', bLeaf: { front: page('info', next), back: page('excerpt', cur) }, bLeftIdx: next, bRight: { kind: 'info', idx: next } });
       await animateLeaf(true);
       await set({ bLeaf: null, bIdx: next });
     }
     set({ bBusy: false });
   }
-  // On phones the view first slides to the page being acted on, so the fold or the tear is seen.
-  const showPage = async (f) => { if (focusMode() && S.bFocus !== f) { await set({ bFocus: f }); await wait(500); } };
   async function dogEar() {
     if (!canAct()) return;
     V.set('l', ENTRIES[S.bIdx].id, 'like', workOf(S.bIdx));
-    await set({ bBusy: true }); await showPage(1);
-    await set({ bBusy: true, bFlapHover: false, bFlapAnim: 'fold', bFolded: true });
+    SH.respond('l', workOf(S.bIdx), 'like');
+    await set({ bBusy: true, bFlapHover: false, bFlapDrag: null, bFlapAnim: 'fold', bFolded: true });
     await wait(1250);
     await turn(true);
     set({ bBusy: false });
@@ -198,7 +198,7 @@ window.Pallas = window.Pallas || {};
   async function tearOut() {
     if (!canAct()) return;
     V.set('l', ENTRIES[S.bIdx].id, 'dislike', workOf(S.bIdx));
-    await set({ bBusy: true }); await showPage(0);
+    SH.respond('l', workOf(S.bIdx), 'dislike');
     await set({ bBusy: true, bFlapHover: false, bTearing: true, bDragging: false });
     if (ty < 200) await tearTo(250, 2.2, 420);
     await wait(140);
@@ -215,6 +215,15 @@ window.Pallas = window.Pallas || {};
     await wait(380);
     await turn(true);
     set({ bBusy: false });
+  }
+  // The buttons on phones first slide to the page being acted on, so the fold or the tear is seen.
+  function tearFromButton() {
+    if (!canAct()) return;
+    if (phone() && S.bSide !== 'left') { set({ bSide: 'left' }); setTimeout(tearOut, 540); } else tearOut();
+  }
+  function foldFromButton() {
+    if (!canAct()) return;
+    if (phone() && S.bSide !== 'right') { set({ bSide: 'right' }); setTimeout(dogEar, 540); } else dogEar();
   }
   /* ---------- skip and undo: data handling only. Controls wait for approved designs; connect them to
      Pallas.literature.skip() and .undo(). Skip turns the page like Next, recording that the passage was passed over
@@ -233,60 +242,87 @@ window.Pallas = window.Pallas || {};
     const e = store.undo('literature');
     if (!e) return null;
     const i = idxOf(e.item);
-    if (S.bOpen && i >= 0) { setTear(0, 0); await set({ bLeaf: null, bIdx: i, bLeftIdx: i, bRight: { kind: 'info', idx: i }, bFolded: false, bTorn: false, bTearing: false }); }
+    if (S.bOpen && i >= 0) { setTear(0, 0); await set({ bSide: 'left', bLeaf: null, bIdx: i, bLeftIdx: i, bRight: { kind: 'info', idx: i }, bFolded: false, bTorn: false, bTearing: false }); }
     else render();
     if (D.isOpen() && active) D.render();
+    SH.render();
     return e;
   }
   Pallas.literature = { skip: skipPassage, undo: undoLast, canUndo: () => !!store.lastUndoable('literature'), get busy() { return S.bOpen && !canAct(); } };
 
-  // Phones in portrait (focusMode): the passage page. A sideways swipe moves the view; a tap on the visible strip while
-  // the info page is in view returns to the passage; a downward pull tears the page out (the tear runs top to bottom).
-  function phonePageDown(e) {
+  /* ---------- phones: swipes on either page, the scrub bar, the edge tap ---------- */
+  function phoneSwipe(e) {
     if (!canAct()) return;
     const sx = e.clientX, sy = e.clientY, sc = scale || 1;
-    let rx = 0, ry = 0, axis = null;
-    set({ bDragging: true });
+    let dx = 0, dy = 0, axis = null, slideAt = 0;
+    const startSide = S.bSide;
     const move = (ev) => {
-      rx = ev.clientX - sx; ry = ev.clientY - sy;
-      if (!axis && Math.hypot(rx, ry) > 10) axis = Math.abs(rx) > Math.abs(ry) ? 'x' : 'y';
-      if (axis === 'y' && S.bFocus === 0 && ry > 0) { cancelAnimationFrame(tearRaf); const p = Math.min(1, ry / sc / 200); setTear(250 + 230 * p, 2.2 + 1 * p); }
+      dx = (ev.clientX - sx) / sc; dy = (ev.clientY - sy) / sc;
+      if (!axis && Math.hypot(dx, dy) > 10) {   // the axis locks after 10px
+        axis = Math.abs(dx) > Math.abs(dy) ? (dx < 0 ? 'x' : 'r') : (dy > 0 && startSide === 'left' ? 'y' : 'none');
+        if (axis === 'x') set({ bDragging: true, bSide: 'left' });                       // tear out: from the notes page, slide to the passage first
+        if (axis === 'y') set({ bDragging: true });                                       // the downward pull (approved 2026-10-21)
+        if (axis === 'r') { slideAt = startSide === 'right' ? -1e9 : performance.now(); set({ bSide: 'right', bFlapAnim: 'hover', bFlapDrag: 0 }); }   // dog-ear
+      }
+      if (axis === 'r') set({ bFlapDrag: clamp(dx / 140, 0, 1) });
+      if (axis === 'x') { cancelAnimationFrame(tearRaf); const p = clamp(-dx / 160, 0, 1); setTear(250 * Math.min(1, p * 3) + 230 * p, 2.2 * Math.min(1, p * 3) + p); }
+      if (axis === 'y') { cancelAnimationFrame(tearRaf); const p = Math.min(1, dy / 200); setTear(250 + 230 * p, 2.2 + p); }
     };
     const up = (ev) => {
       removeEventListener('pointermove', move); removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
       const cancelled = ev && ev.type === 'pointercancel';
-      set({ bDragging: false });
-      if (cancelled) { tearTo(0, 0, 320); return; }
-      if (S.bFocus === 1) { if (!axis || (axis === 'x' && rx > 40)) setFocus(0); return; }
-      if (axis === 'x') { if (rx < -40) setFocus(1); return; }
-      if (axis === 'y' && ry / sc > 120) return tearOut();
-      if (!axis) {   // a tap previews the tear, as on other touch screens
-        set({ bPageHover: true }); tearTo(250, 2.2, 560);
-        clearTimeout(tearTimer);
-        tearTimer = setTimeout(() => { if (!S.bDragging && !S.bTearing) { set({ bPageHover: false }); tearTo(0, 0, 380); } }, 2200);
+      if (cancelled) {
+        if (axis === 'r') { set({ bFlapDrag: null, bFlapHover: false }); if (startSide !== 'right') set({ bSide: 'left' }); }
+        else { set({ bDragging: false }); tearTo(0, 0, 320); }
         return;
       }
-      tearTo(0, 0, 320);
+      if (axis === 'x' && dx < -60) tearOut();
+      else if (axis === 'y' && dy > 120) tearOut();
+      else if (axis === 'r' && dx > 70) { set({ bFlapDrag: null, bFlapHover: true }); setTimeout(dogEar, Math.max(0, 560 - (performance.now() - slideAt))); }
+      else if (axis === 'r') { set({ bFlapDrag: null, bFlapHover: false }); if (startSide !== 'right') setTimeout(() => set({ bSide: 'left' }), 260); }
+      else if (axis === 'x' || axis === 'y') { set({ bDragging: false }); tearTo(0, 0, 320); }
+      else if (!axis) {
+        // a tap: only the page's outer edge does anything, and it moves to the other page
+        const r = el.stage.getBoundingClientRect(), px = (ev.clientX - r.left) / sc;   // x within the framed page, in book px
+        if (startSide === 'left' && px > 330 - EDGE_TAP) set({ bSide: 'right' });
+        else if (startSide === 'right' && px < EDGE_TAP) set({ bSide: 'left' });
+      }
     };
     addEventListener('pointermove', move); addEventListener('pointerup', up); addEventListener('pointercancel', up);
   }
-  // The info page on phones: a swipe to the right returns to the passage page.
-  function phoneRightDown(e) {
-    if (!focusMode() || !S.bOpen) return;
-    const sx = e.clientX, sy = e.clientY;
-    const up = (ev) => {
-      removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
-      const rx = ev.clientX - sx, ry = ev.clientY - sy;
-      if (ev.type !== 'pointercancel' && Math.abs(rx) > 40 && Math.abs(rx) > Math.abs(ry)) {
-        suppressClick = true; setTimeout(() => { suppressClick = false; }, 450);
-        if (rx > 0) setFocus(0);
-      }
+  function scrubDown(e) {
+    if (S.bBusy || !S.bLeftShown) return;
+    const r = el.scrub.getBoundingClientRect();
+    const at = (x) => clamp((x - r.left) / r.width * 2 - .5, 0, 1);
+    set({ bScrub: at(e.clientX) });
+    const move = (ev) => set({ bScrub: at(ev.clientX) });
+    const up = () => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
+      const p = S.bScrub == null ? 0 : S.bScrub;
+      set({ bScrub: null, bSide: p > .5 ? 'right' : 'left' });   // snaps to the nearer side
     };
-    addEventListener('pointerup', up); addEventListener('pointercancel', up);
+    addEventListener('pointermove', move); addEventListener('pointerup', up); addEventListener('pointercancel', up);
+  }
+  // One-time hint after the first passage appears: the page nudges left while `or swipe left` holds, then right; then
+  // both captions fade and collapse. Seen once per user (store preference); not played under reduced motion.
+  async function playSwipeHint() {
+    if (hintPlayed) return;
+    hintPlayed = true;
+    if (store.pref('hint.swipe') || reduced()) { set({ hintPhase: 'done' }); return; }
+    store.setPref('hint.swipe', true);
+    await wait(500);
+    if (!S.bOpen || !phone()) { set({ hintPhase: 'done' }); return; }
+    set({ hintPhase: 'left' });
+    await el.stage.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(-26px) rotate(-1.2deg)', offset: .45, easing: EASE }, { transform: 'translateX(0)' }], { duration: 900, easing: EASE }).finished.catch(() => {});
+    await wait(250);
+    set({ hintPhase: 'right' });
+    await el.stage.animate([{ transform: 'translateX(0)' }, { transform: 'translateX(26px) rotate(1.2deg)', offset: .45, easing: EASE }, { transform: 'translateX(0)' }], { duration: 900, easing: EASE }).finished.catch(() => {});
+    await wait(700);
+    set({ hintPhase: 'done' });
   }
 
   function pageDown(e) {
-    if (focusMode()) return phonePageDown(e);
+    if (phone()) return phoneSwipe(e);
     if (!canAct()) return;
     const sx = e.clientX, sy = e.clientY, sc = scale || 1;
     let dx = 0, dy = 0, moved = false;
@@ -316,8 +352,7 @@ window.Pallas = window.Pallas || {};
   // The right page: a mouse click dog-ears it, as approved. A first tap with a finger lifts the corner (the preview a
   // mouse gets on hover); a second tap within a few seconds folds it. A tap anywhere else lowers the corner again.
   function rightTap() {
-    if (suppressClick) return;                                         // the end of a swipe, not a tap
-    if (focusMode() && S.bOpen && S.bFocus === 0) return setFocus(1);  // the strip at the screen edge: go to the info page
+    if (suppressClick || phone()) return;                               // phones: swipes vote, taps do not
     if (!touchy()) return dogEar();
     if (!canAct()) return;
     if (S.bFlapHover && armTimer) { clearTimeout(armTimer); armTimer = 0; return dogEar(); }
@@ -336,43 +371,43 @@ window.Pallas = window.Pallas || {};
     if (!NB) return;
     const vw = innerWidth, vh = innerHeight;
     const tornAll = listL('dislike'), lLike = listL('like');
-    const narrow = vw < 1100;
-    const phone = focusMode();
-    const extra = !phone && tornAll.length && narrow ? 190 : 0;
-    // Phones in landscape have little height: the corner bars and controls then need about 110 px rather than 230.
-    const chrome = vh < 520 && vw > vh ? 110 : 230;
-    if (phone) {
-      // the page fills the width, unless the height (corner bars, controls: about 190 px) is the limit
-      const sOpen = Math.min(1.3, (vw - 2 * FOCUS_MARGIN) / 330, (vh - 190) / 520);
-      const sClosed = Math.min(sOpen * .82, (vw * .64) / 330);
-      const isOpen = S.bOpen;
-      scale = isOpen ? sOpen : sClosed;
-      // book space → stage: open, the focused page's left edge sits at the stage's left; closed, the cover is centred
-      const tx = isOpen ? -330 * sOpen * S.bFocus : 165 * sOpen - 330 * sClosed;
-      const ty0 = isOpen ? 0 : (520 * sOpen - 520 * sClosed) / 2;
-      const key = (isOpen ? 'open' : 'closed') + S.bFocus;
-      const opening = camKey !== null && camKey.startsWith('open') !== isOpen;
-      el.inner.style.transition = camKey !== null && camKey !== key ? `transform ${opening ? 1150 : 480}ms ${EASE}` : 'none';
+    const isPhone = phone();
+    const open = S.bOpen;
+    const railW = SH.railWidth();
+    if (isPhone) {
+      // one page at a time: the stage is as wide as a page and clipped; the camera slides between cover, passage and notes
+      const sc = Math.min(1.6, (vw - 16) / 330, (vh - 230) / 520);
+      scale = sc;
+      const side = open ? S.bSide : 'cover';
+      const scrubP = S.bScrub != null ? S.bScrub : side === 'right' ? 1 : 0;
+      const shift = side === 'cover' ? 165 : 330 * scrubP;
+      const key = 'phone' + side;
+      el.inner.style.transition = S.bScrub != null ? 'none' : camKey !== null ? `transform 520ms ${EASE2}` : 'none';
       camKey = key;
-      el.stage.style.width = 330 * sOpen + 'px';
-      el.stage.style.height = 520 * sOpen + 'px';
-      el.inner.style.transform = `translate(${tx}px,${ty0}px) scale(${scale})`;
-      el.controls.style.width = Math.max(330 * sOpen, vw - 32) + 'px';   // the controls use the screen width, not the page's
-      el.controls.style.marginRight = '0px';
+      el.stage.classList.add('is-phone');
+      el.stage.style.width = 330 * sc + 'px';
+      el.stage.style.height = 520 * sc + 'px';
+      el.inner.style.transform = `translateX(${-shift * sc}px) scale(${sc})`;
+      el.controls.style.width = el.phoneBox.style.width = 330 * sc + 'px';
+      el.controls.style.marginRight = '';
+      el.scrubThumb.style.left = (scrubP * 50) + '%';
+      el.scrubThumb.style.transition = S.bScrub != null ? 'none' : `left 520ms ${EASE2}`;
+      el.scrub.setAttribute('aria-valuenow', String(Math.round(scrubP * 100)));
     } else {
       camKey = null;
       el.inner.style.transition = '';
-      // The floor keeps the book from shrinking without limit; on the smallest phones it may go below .42 so that the
-      // spread (and the torn stack beside it) is never wider than the screen.
-      scale = Math.max(vw < 420 ? .3 : .42, Math.min(1.3, (vw - 48) / (narrow ? 700 + extra : 1000), (vh - chrome) / 540));
-      el.stage.style.width = (660 + extra) * scale + 'px';
+      el.stage.classList.remove('is-phone');
+      // Phones in landscape have little height: the corner bars and controls then need about 110 px rather than 230.
+      const chrome = vh < 520 && vw > vh ? 110 : 230;
+      const narrow = vw - railW < 1100;
+      scale = Math.max(.42, Math.min(1.3, (vw - railW - 48) / (narrow ? 700 : 1000), (vh - chrome) / 540));
+      el.stage.style.width = 660 * scale + 'px';
       el.stage.style.height = 520 * scale + 'px';
       el.inner.style.transform = `scale(${scale})`;
       el.controls.style.width = 660 * scale + 'px';
-      el.controls.style.marginRight = extra * scale + 'px';
+      el.controls.style.marginRight = '';
     }
 
-    const open = S.bOpen;
     // The first render places the book without animating it, so it does not slide into place when the page loads.
     if (!rendered) { el.book.style.transition = 'none'; el.base.style.transition = 'none'; }
     el.book.style.transform = open ? 'translateX(0px) rotateY(0deg)' : 'translateX(-165px) rotateY(22deg)';
@@ -382,22 +417,26 @@ window.Pallas = window.Pallas || {};
     if (!rendered) { void el.book.offsetWidth; el.book.style.transition = ''; el.base.style.transition = ''; rendered = true; }
     el.spread.style.opacity = open ? 1 : 0;
     el.spread.style.transition = open ? 'opacity 500ms ease 650ms' : 'opacity 200ms ease';
+    // While the book is closed the page hit areas under the cover take no clicks, so the cover opens on a click anywhere.
+    el.right.style.pointerEvents = el.torn.style.pointerEvents = open ? '' : 'none';
+    el.right.style.touchAction = el.torn.style.touchAction = isPhone ? 'none' : '';
 
     // right page and its dog-ear flap
     el.right.style.cursor = canAct() ? 'pointer' : 'default';
     const rp = page(S.bRight.kind, S.bRight.idx);
     mount(el.rpage, rp.kind, 'right', rp.entry, rp.folio);
-    const flapOn = S.bLeftShown && (S.bFlapHover || S.bFolded || S.bFlapAnim !== 'none');
+    const drag = S.bFlapDrag;
+    const flapOn = S.bLeftShown && (drag != null || S.bFlapHover || S.bFolded || S.bFlapAnim !== 'none');
     const sz = S.bFolded ? 118 : 236;
     const T = S.bFlapAnim === 'fold' ? '780ms cubic-bezier(.3,.1,.15,1)' : '560ms cubic-bezier(.2,.7,.1,1)';
     el.rclip.style.clipPath = flapOn ? `polygon(0px 0px,${330 - sz}px 0px,330px ${sz}px,330px 520px,0px 520px)` : 'polygon(0px 0px,330px 0px,330px 0px,330px 520px,0px 520px)';
     el.rclip.style.transition = S.bFlapAnim === 'none' ? 'none' : `clip-path ${T}`;
     el.flap.hidden = !S.bLeftShown;
     el.flap.style.width = el.flap.style.height = sz + 'px';
-    el.flap.style.transform = S.bFolded ? 'rotate3d(1,1,0,-180deg)' : S.bFlapHover ? 'rotate3d(1,1,0,-158deg)' : 'rotate3d(1,1,0,0deg)';
-    el.flap.style.transition = S.bFlapAnim === 'none' ? 'none' : `transform ${T}, width ${T}, height ${T}`;
+    el.flap.style.transform = S.bFolded ? 'rotate3d(1,1,0,-180deg)' : drag != null ? `rotate3d(1,1,0,${(-158 * drag).toFixed(1)}deg)` : S.bFlapHover ? 'rotate3d(1,1,0,-158deg)' : 'rotate3d(1,1,0,0deg)';
+    el.flap.style.transition = drag != null ? 'transform 90ms linear' : S.bFlapAnim === 'none' ? 'none' : `transform ${T}, width ${T}, height ${T}`;
     mount(el.flapPage, rp.kind, 'right', rp.entry, rp.folio);
-    el.flapShade.style.opacity = S.bFlapHover ? 1 : 0;
+    el.flapShade.style.opacity = drag != null ? drag : S.bFlapHover ? 1 : 0;
     el.flapBack.style.filter = S.bFolded ? 'drop-shadow(-2px 3px 2.4px rgba(60,40,10,.36))' : 'drop-shadow(-7px 10px 9px rgba(50,30,5,.34)) drop-shadow(-1px 2px 1.5px rgba(50,30,5,.25))';
 
     // left page, dog-ear markers, fore-edge
@@ -429,29 +468,25 @@ window.Pallas = window.Pallas || {};
     if (S.bLeaf) { if (leafFor !== S.bLeaf) { leafFor = S.bLeaf; buildLeaf(S.bLeaf.front, S.bLeaf.back); } }
     else if (leafFor) { leafFor = null; el.leaf.getAnimations({ subtree: true }).forEach((a) => a.cancel()); el.leaf.hidden = true; el.leaf.innerHTML = ''; }   // the prototype rebuilt the leaf each turn; drop finished fill-forward animations
 
-    // the torn stack beside the book: the last four torn pages
-    const torn = tornAll.slice(-4);
-    el.stack.hidden = !torn.length || phone;   // on phones in portrait the torn pages stay in the drawer ("torn out")
-    const key = torn.join(',');
-    if (key !== stackKey) {
-      stackKey = key;
-      el.stack.innerHTML = torn.map((i, k) => `<div class="stack__page" style="transform:translate(${STK[k][0]}px,${STK[k][1]}px) rotate(${STK[k][2]}deg) scale(.34)"><div class="stack__mask">${pageHTML('excerpt', 'left', ENTRIES[i], 2 * i + 2)}<div class="stack__core"></div></div></div>`).join('');
-    }
-
     // controls and corner bars
     const dim = S.bBusy || !S.bLeftShown;
+    const phoneOpen = isPhone && open;
+    el.phoneBox.hidden = !phoneOpen;
+    el.controls.hidden = phoneOpen;
     el.prev.hidden = el.next.hidden = el.tear.hidden = el.fold.hidden = !open;
     el.open.hidden = open;
-    el.prev.style.opacity = el.next.style.opacity = dim ? .4 : 1;
+    el.prev.style.opacity = el.next.style.opacity = el.phPrev.style.opacity = el.phNext.style.opacity = dim ? .4 : 1;
     el.closeLink.style.opacity = S.bBusy ? .4 : 1;
     const tearActive = S.bTearing || S.bDragging || S.bPageHover;
     styleAct(el.tear, dim, tearActive && !S.bBusy ? 'var(--ref-cola)' : null);
     styleAct(el.fold, dim, S.bFlapHover && !S.bBusy ? 'var(--ref-cobalt)' : null);
+    styleAct(el.phTear, dim, tearActive && !S.bBusy ? 'var(--ref-cola)' : null);
+    styleAct(el.phFold, dim, S.bFlapHover && !S.bBusy ? 'var(--ref-cobalt)' : null);
+    const hp = S.hintPhase;
+    const hint = hp === 'done' ? { l: 0, r: 0, h: '0px' } : hp === 'left' ? { l: 1, r: .3, h: '20px' } : hp === 'right' ? { l: .3, r: 1, h: '20px' } : { l: 1, r: 1, h: '20px' };
+    el.hintL.style.opacity = hint.l; el.hintR.style.opacity = hint.r;
+    el.hintL.style.maxHeight = el.hintR.style.maxHeight = hint.h;
     el.closeWrap.hidden = !open;
-    el.counter.hidden = !open;
-    el.counter.textContent = 'excerpt ' + pad(S.bIdx + 1) + ' / ' + pad(NB);
-    el.lqLike.textContent = `dog-eared (${lLike.length})`;
-    el.lqDislike.textContent = `torn out (${tornAll.length})`;
   }
 
   /* ---------- quick view: paperback shelf, dog-eared and torn-out pages laid flat ---------- */
@@ -467,7 +502,7 @@ window.Pallas = window.Pallas || {};
       { label: `shelf (${responded.length})`, active: tab === 'shelf', onClick: () => { qv.tab = 'shelf'; D.render(); } },
       { label: `dog-eared (${lLike.length})`, active: tab === 'like', onClick: () => { qv.tab = 'like'; D.render(); } },
       { label: `torn out (${lDis.length})`, active: tab === 'dislike', onClick: () => { qv.tab = 'dislike'; D.render(); } },
-    ]));
+    ], Object.keys(votes).length ? { label: 'your taste in literature', href: '#taste?m=lit' } : null));
     let items;
     if (tab === 'shelf') {
       if (!responded.length) { wrap.appendChild(h('p', 'qv__empty', 'none yet')); return wrap; }
@@ -494,42 +529,68 @@ window.Pallas = window.Pallas || {};
       const box = h('div', 'qv__page-box');
       box.style.cssText = `width:${330 * ps}px;height:${520 * ps}px;transform:rotate(${k % 2 ? .7 : -.5}deg)`;
       const inner = h('div', 'qv__page-in'); inner.style.transform = `scale(${ps})`;
-      const mask = h('div', 'qv__page-mask');
-      if (torn) mask.classList.add('is-torn');
-      if (folded) mask.classList.add('is-folded');
-      mask.innerHTML = pageHTML('excerpt', 'left', ENTRIES[i], 2 * i + 2) + (torn ? '<div class="qv__page-core"></div>' : '');
-      inner.appendChild(mask);
-      if (folded) { const f = h('div', 'qv__fold'); f.innerHTML = '<div class="qv__fold-tri"></div>'; inner.appendChild(f); }
+      inner.appendChild(flatPage(i, torn, folded));
       box.appendChild(inner); fig.appendChild(box);
       fig.appendChild(h('figcaption', 'qv__cap qv__cap--center', `${ENTRIES[i].title} — ${folded ? 'dog-eared' : 'torn out'}`));
       wrap.appendChild(fig);
     });
     return wrap;
   }
+  // A passage page laid flat, torn or dog-eared as it was judged (shared with the taste profile screen).
+  function flatPage(i, torn, folded) {
+    const frag = document.createDocumentFragment();
+    const mask = h('div', 'qv__page-mask');
+    if (torn) mask.classList.add('is-torn');
+    if (folded) mask.classList.add('is-folded');
+    mask.innerHTML = pageHTML('excerpt', 'left', ENTRIES[i], 2 * i + 2) + (torn ? '<div class="qv__page-core"></div>' : '');
+    frag.appendChild(mask);
+    if (folded) { const f = h('div', 'qv__fold'); f.innerHTML = '<div class="qv__fold-tri"></div>'; frag.appendChild(f); }
+    return frag;
+  }
   const openQV = (tab) => { qv.tab = tab; D.show(litDrawer); };
+
+  // The shelf lists books responded to (one passage per book today; a book counts as dog-eared if any passage was).
+  const shelfProvider = {
+    items: () => {
+      const byBook = {};
+      for (const [id, k] of Object.entries(V.all('l'))) {
+        const i = idxOf(id); if (i < 0) continue;
+        const w = workOf(i), b = byBook[w] || (byBook[w] = { i, liked: false });
+        if (k === 'like') b.liked = true;
+      }
+      return Object.keys(byBook).map((w) => {
+        const i = byBook[w].i, e = ENTRIES[i], b = SPINES[i % SPINES.length] || { bg: '#2f5a4a', fg: '#f3ecdc', w: 26, h: 296 };
+        return { id: w, kind: 'book', title: e.title, meta: e.byline.split(' — ')[0].split(' ').pop(), bg: b.bg, fg: b.fg, w: b.w, h: b.h, vote: byBook[w].liked ? 'like' : 'dislike', entry: i };
+      });
+    },
+    open: (id) => { if (id) { const it = shelfProvider.items().find((x) => x.id === id); if (it) qv.sel = it.entry; } openQV('shelf'); },
+    source: () => el.stage,
+    noun: ['book', 'books'], likeWord: 'dog-eared', dislikeWord: 'torn out',
+  };
 
   /* ---------- wiring ---------- */
   el.cover.addEventListener('click', openBook);
   el.cover.addEventListener('mouseenter', () => { if (!S.bOpen) set({ bCoverHover: true }); });
   el.cover.addEventListener('mouseleave', () => set({ bCoverHover: false }));
   el.right.addEventListener('click', rightTap);
-  el.right.addEventListener('pointerdown', phoneRightDown);
+  el.right.addEventListener('pointerdown', (e) => { if (phone()) phoneSwipe(e); });
   // Browsers without overflow:clip can still scroll an overflow:hidden box (for example while the view slides); undo it.
   const litScreen = el.stage.closest('.lit');
   litScreen.addEventListener('scroll', () => { if (litScreen.scrollLeft) litScreen.scrollLeft = 0; });
   // Hover previews are for a mouse; touch browsers also fire emulated mouse events after a tap, which would leave them stuck.
-  el.right.addEventListener('mouseenter', () => { if (!touchy() && canAct()) set({ bFlapHover: true, bFlapAnim: 'hover' }); });
-  el.right.addEventListener('mouseleave', () => { if (!touchy() && !S.bFolded) set({ bFlapHover: false, bFlapAnim: 'hover' }); });
+  el.right.addEventListener('mouseenter', () => { if (!touchy() && !phone() && canAct()) set({ bFlapHover: true, bFlapAnim: 'hover' }); });
+  el.right.addEventListener('mouseleave', () => { if (!touchy() && !S.bFolded && S.bFlapDrag == null) set({ bFlapHover: false, bFlapAnim: 'hover' }); });
   el.torn.addEventListener('pointerdown', pageDown);
-  el.torn.addEventListener('mouseenter', () => { if (!touchy() && canAct()) { set({ bPageHover: true }); tearTo(250, 2.2, 560); } });
+  el.torn.addEventListener('mouseenter', () => { if (!touchy() && !phone() && canAct()) { set({ bPageHover: true }); tearTo(250, 2.2, 560); } });
   el.torn.addEventListener('mouseleave', () => { if (!touchy() && !S.bDragging && !S.bTearing) { set({ bPageHover: false }); tearTo(0, 0, 380); } });
   addEventListener('pointerdown', (e) => { if (armTimer && touchy() && !el.right.contains(e.target)) { clearTimeout(armTimer); disarmRight(); } });
   el.ears.addEventListener('click', () => openQV('like'));
-  el.stack.addEventListener('click', () => openQV('dislike'));
+  el.scrub.addEventListener('pointerdown', scrubDown);
   const link = (a, fn) => a.addEventListener('click', (e) => { e.preventDefault(); fn(); });
   link(el.open, openBook); link(el.tear, tearOut); link(el.fold, dogEar);
   link(el.prev, () => browse(-1)); link(el.next, () => browse(1)); link(el.closeLink, closeBook);
-  link(el.lqShelf, () => openQV('shelf')); link(el.lqLike, () => openQV('like')); link(el.lqDislike, () => openQV('dislike'));
+  link(el.phTear, tearFromButton); link(el.phFold, foldFromButton);
+  link(el.phPrev, () => browse(-1)); link(el.phNext, () => browse(1));
   addEventListener('keydown', (e) => {
     if (!active || D.isOpen() || !S.bOpen) return;
     if (e.key === 'ArrowRight') browse(1); else if (e.key === 'ArrowLeft') browse(-1); else if (e.key === 'Escape') closeBook();
@@ -575,6 +636,9 @@ window.Pallas = window.Pallas || {};
     }
     box.remove();
   }
+  let readyResolve;
+  const ready = new Promise((res) => { readyResolve = res; });
+  Pallas.book = { ready, entries: () => ENTRIES, indexOf: idxOf, flatPage, workOf };
   (async () => {
     try {
       const lib = await (await fetch(LIBRARY_URL, { cache: 'no-cache' })).json();
@@ -590,5 +654,7 @@ window.Pallas = window.Pallas || {};
     await fitExcerpts();
     setTear(0, 0);
     render();
+    SH.register('l', shelfProvider);
+    readyResolve(ENTRIES);
   })();
 })();

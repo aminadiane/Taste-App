@@ -26,7 +26,7 @@ Living document. Update it at the end of every session: move items between secti
 | Votes | Like / dislike per still and per passage in `localStorage['pallas.votes']`, by stable id. |
 | Cinema library | 89 stills across 35 films, each with source, attribution, palette, palette notes, lighting, composition, framing, camera and tags (free text). |
 | Literature content | 5 stand-in passages from the handoff (Gatsby, Mrs Dalloway, The Dead, The Awakening, The Sun Also Rises); none from the NYT list; one passage per book. |
-| Not built | Resume position, skip, undo, timestamps, sessions, analysis engine, Taste Profiles, Journal, educational content, export / reset / delete, accounts, reduced motion, designed touch behaviour, automated tests. |
+| Not built | Resume position, skip, undo, timestamps, sessions, analysis engine, Taste Profiles, Journal, educational content, export / reset / delete, accounts, reduced motion, designed touch behaviour, automated tests. (Most of this was built later; see the sections below and "Handoff update 2".) |
 
 ## Completed
 
@@ -40,6 +40,7 @@ Living document. Update it at the end of every session: move items between secti
 - [x] `CLAUDE.md` and `ROADMAP.md`.
 - [x] Five NYT passages live in the book (2026-10-21).
 - [x] Cinema metadata for all 89 stills; taste engine; simulated-user tests; skip and undo data handling; Taste Profile and Journal data foundations (2026-10-21, `feature/pallas-overnight`, not merged).
+- [x] Handoff update 2: home objects and your-taste bar, the shelf with fly-in, the phone remote, the phone single-page book, the Taste Profile sorting table (2026-10-27, `feature/handoff-update-2`, not merged).
 
 ## In progress
 
@@ -174,7 +175,7 @@ Scaling to 100 books: (1) add each book to `books` and its passages to `passages
 - Profile snapshot format `pallas.taste-profile/1` (`docs/taste-profile-format.md`): signature, preferred and disliked characteristics with evidence and statistics, combinations, confidence (`evidenceLevel` and per-finding strength), glossary terminology, limitations, an empty `interpretations` slot for later AI commentary, and `regeneratedFrom`.
 - Store: `profiles(area)`, `latestProfile`, `deleteProfile`. Browser: `Pallas.taste.profile / snapshot / regenerate / lastChange`.
 - **For review:** `docs/examples/taste-profiles/README.md` (regenerate with `node tools/example-profiles.js`).
-- *Remaining:* the results screen (Claude Design), and owner review of the example wording.
+- *Remaining:* ~~the results screen (Claude Design)~~ built 2026-10-27 as the Taste Profile sorting table (`js/taste-screen.js`), and owner review of the example wording.
 
 ### 7. Taste development and Journal — data foundation built 2026-10-21; screen waits on design
 
@@ -287,9 +288,36 @@ Desktop is unchanged: every new style is gated by a media or feature query a des
 16. ~~Reading on phones~~ approved 2026-10-21 (one page at a time; swipe and tap-on-edge) and built. On the passage page in this framing, tearing is now a downward pull, because sideways swipes move the view. Please confirm that gesture on a real phone.
 17. **TV button labels.** "like" and "dislike" are printed on the photographed TV at about 4 px on a phone. They match the object but can't be read. Is that acceptable, given the "liked" or "disliked" message on the screen after each press, or should phones get a separate label?
 
+## Handoff update 2 (2026-10-27, `feature/handoff-update-2`)
+
+Built from `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2.md` and `prototype/Taste v2.dc.html` / `Taste Profile.dc.html`, in the handoff's order. Nothing is merged to `main`. Checks: `node tools/check-site.js --tests` (77 tests). Verified in the pane at 1280×800 and 375×812 (Chromium with phone emulation): the rail and tab, both fly-in paths, the drawer links, the profile with 40 seeded judgments (15 findings, bands re-sorting, examine), the sparse and empty states, the remote with tilt to vote, and on the phone book the swipe-left tear, scrub bar, swipe-right dog-ear, downward pull, edge tap and button slide. Not tested: real iOS Safari or Android Chrome, Safari or Firefox on desktop.
+
+| Step | What changed |
+|---|---|
+| 1. Removals | `still 01 / 06` and `excerpt 01 / 05` counters, the torn-page stack, and the old `shelf — liked — disliked` corner links are gone. While the book is closed the page hit areas take no clicks, so the cover opens on a click anywhere. |
+| 2. Home | `cultural capital` is a cobalt link to culturalcapital.world; the your-taste bar (`your taste` / `from N responses`) links to the profile of the medium with more responses; `taste` in the lead is a bold link; the TV and the paperback photographs sit above `film` and `literature`, side by side on desktop and stacked on phones. |
+| 3. Shelf | `js/shelf.js`: the 208 px rail at 900 px and up (open on every entry, count, `all` / `liked` / `disliked` or `dog-eared` / `torn out` filters, rows of upright spines, `responses collect here`, `close shelf` and the vertical `shelf (N)` tab); the mini shelf below 900 px; the fly-in (slot opens 360 ms, copy arcs 820 ms, lands, real spine fades in 200 ms) after each screen's own sequence, skipped under reduced motion. A film with several stills is liked on the shelf if any still was liked. |
+| 4. Film on phones | The remote under the set (buttons with enlarged tap areas, labels, `cultural capital`), tilt to vote (±13°, vote at ±9°, spring back 560 ms, the TV caps glow towards the tilt), and the one-time hint, remembered per user in the store's `prefs`. |
+| 5. Literature on phones | Single-page view at `min(1.6, (vw−16)/330, (vh−230)/520)`, slides of 520 ms, the scrub bar, swipe-left tear and swipe-right dog-ear following the finger, `tear out` / `dog-ear` with `or swipe left` / `or swipe right`, `Previous` / `Next`, the one-time swipe hint. Kept by the owner's decision: the downward pull also tears, and a tap on the page's outer 24 book px moves to the other page. The phone breakpoint moved from 600 px portrait to 640 px. |
+| 6. Taste Profile | `#taste?m=film|lit`: heading, basis line from `basedOn`, findings from `preferred` (drawn to) and `disliked` (away from) with the engine's strength labels and counts (findings the engine marks `explainedBy` another are left out), glossary terms from `terminology`, `shares … with ii.` from shared works, the works re-sorting into `supports` / `contradicts` / `not part of this finding`, the examine overlay with each finding's role, the mobile strips, and the empty state. Between one and seven responses the engine's own sentence stands where the findings would be. |
+
+**Where the build departs from the handoff, and why:**
+- The remote's top is `72 + tvH + 78`, as in the prototype source; `UPDATE_2.md` says 56. The source was followed.
+- The edge tap has no visible strip in the update's framing (the page fills the width), so it is the outer 24 book px of the current page.
+- The findings list is as long as the engine's output (15 with 40 judgments in the test); the prototype showed three. Combinations are not listed.
+- The desktop table is fluid: bands wrap into rows and the page scrolls, instead of the fixed 1440×960 artboard.
+
+**Assets that need licensing or replacement before launch** (flagged by the handoff): `assets/home-tv.png` (Toshiba logo), `assets/home-book.png` (Dell *Bonjour Tristesse* with Sagan's portrait), `assets/remote-body.png`, `remote-power.png`, `remote-green.png` (from a retailer photo of the Toshiba CT-90101; permission unconfirmed; see `docs/Remote photography brief.md` in the handoff).
+
+**Questions for review (update 2):**
+18. Do the swipe and tilt thresholds feel right on a real phone (tuned with a mouse in the prototype and tested only with Chromium emulation here)?
+19. With many judgments the findings list runs long and the `shares … with` line grows with it. Cap the list, or group the findings?
+20. The remote's position: the source's 78 px gap or the document's 56 px?
+
 ## Decisions pending
 
 1. Designs for skip and undo, the returning-user prompt, and the all-evaluated state (Claude Design).
 2. Vision-model provider and cost cap for metadata batch analysis.
-3. Touch and reduced-motion fallbacks.
+3. ~~Touch and reduced-motion fallbacks~~ phones designed and built in update 2; reduced motion skips the fly-in and the hints. Real-device testing is still open.
 4. Whether and when to add accounts.
+5. Licensing or replacement of the homepage object photographs and the remote images (update 2).
