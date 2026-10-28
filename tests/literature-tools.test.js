@@ -7,12 +7,13 @@ const os = require('node:os');
 const path = require('node:path');
 const { spawnSync } = require('node:child_process');
 const ROOT = path.join(__dirname, '..');
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
 
 function sandbox() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'pallas-lib-'));
   fs.mkdirSync(path.join(dir, 'vocab')); fs.mkdirSync(path.join(dir, 'import'));
-  fs.copyFileSync(path.join(ROOT, 'library', 'literature.json'), path.join(dir, 'literature.json'));
-  fs.copyFileSync(path.join(ROOT, 'library', 'vocab', 'literature.json'), path.join(dir, 'vocab', 'literature.json'));
+  fs.copyFileSync(path.join(APP, 'library', 'literature.json'), path.join(dir, 'literature.json'));
+  fs.copyFileSync(path.join(APP, 'library', 'vocab', 'literature.json'), path.join(dir, 'vocab', 'literature.json'));
   return dir;
 }
 const run = (dir, tool, args = []) => spawnSync(process.execPath, [path.join(ROOT, 'tools', tool), ...args], { env: { ...process.env, PALLAS_LIBRARY: dir }, encoding: 'utf8' });
@@ -25,7 +26,7 @@ test('the real library validates with no errors', () => {
 
 test('re-importing the research batch adds nothing and changes nothing', () => {
   const dir = sandbox(), before = fs.readFileSync(path.join(dir, 'literature.json'), 'utf8');
-  const r = run(dir, 'import-research.js', [path.join(ROOT, 'library', 'import', 'research', 'pallas-literature-research.csv')]);
+  const r = run(dir, 'import-research.js', [path.join(APP, 'library', 'import', 'research', 'pallas-literature-research.csv')]);
   assert.match(r.stdout, /0 added, 20 skipped/);
   assert.equal(fs.readFileSync(path.join(dir, 'literature.json'), 'utf8'), before);
 });

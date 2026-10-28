@@ -5,7 +5,7 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const path = require('node:path');
-const css = fs.readFileSync(path.join(__dirname, '..', 'styles.css'), 'utf8');
+const css = fs.readFileSync(path.join(__dirname, '..', 'works', 'pallas', 'styles.css'), 'utf8');
 
 test('every rule in the mobile section is gated by a media or feature query', () => {
   const start = css.indexOf('Mobile and touch (2026-10-21)');

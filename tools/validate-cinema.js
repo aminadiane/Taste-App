@@ -2,7 +2,7 @@
 // Run: node tools/validate-cinema.js        Exit code 1 on any error.
 const fs = require('node:fs');
 const path = require('node:path');
-const LIB = path.join(__dirname, '..', 'library');
+const LIB = path.join(__dirname, '..', 'works', 'pallas', 'library');
 const read = (f) => JSON.parse(fs.readFileSync(path.join(LIB, f), 'utf8'));
 const stills = read('stills.json').stills, meta = read('cinema-metadata.json').stills, vocab = read('vocab/cinema.json').dimensions;
 const errors = [], warn = [];

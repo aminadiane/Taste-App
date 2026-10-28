@@ -1,14 +1,19 @@
 // Minimal static server for previewing the site. Root is resolved from this file, not the cwd.
-// Also backs the library review page (library/review.html): POST /library/remove and POST /library/restore.
+// The repository root is the Cultural Capital site; Pallas lives in works/pallas/ (http://127.0.0.1:PORT/works/pallas/).
+// A folder URL without its trailing slash redirects (301) to the slash form, as vercel.json's trailingSlash does.
+// Also backs the library review page (works/pallas/library/review.html):
+// POST /works/pallas/library/remove and POST /works/pallas/library/restore.
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
 const ROOT = path.resolve(__dirname, '..');
 const PORT = Number(process.env.PORT || process.argv[2] || 8765);
-const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.json': 'application/json' };
+const TYPES = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.webp': 'image/webp', '.png': 'image/png', '.jpg': 'image/jpeg', '.json': 'application/json', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.woff2': 'font/woff2', '.webmanifest': 'application/manifest+json' };
 
-const LIB = path.join(ROOT, 'library');
+const APP = path.join(ROOT, 'works', 'pallas');      // the Pallas app
+const LIB = path.join(APP, 'library');
+const LIB_URL = '/works/pallas/library/';           // where the review page's POST endpoints live
 const LIBRARY_JSON = path.join(LIB, 'stills.json');
 const REMOVED = path.join(LIB, 'removed');           // removed stills land here, never deleted
 const REMOVED_JSON = path.join(REMOVED, 'removed.json');
@@ -59,7 +64,7 @@ function restore(ids) {
 
 http.createServer((req, res) => {
   const url = new URL(req.url, 'http://x');
-  if (req.method === 'POST' && (url.pathname === '/library/remove' || url.pathname === '/library/restore')) {
+  if (req.method === 'POST' && (url.pathname === LIB_URL + 'remove' || url.pathname === LIB_URL + 'restore')) {
     let body = '';
     req.on('data', (c) => { body += c; if (body.length > 1e5) req.destroy(); });
     req.on('end', () => {
@@ -72,6 +77,13 @@ http.createServer((req, res) => {
     return;
   }
   let p = decodeURIComponent(url.pathname);
+  if (!p.endsWith('/')) {
+    const dir = path.normalize(path.join(ROOT, p));
+    if (dir.startsWith(ROOT) && fs.statSync(dir, { throwIfNoEntry: false })?.isDirectory()) {
+      res.writeHead(301, { location: url.pathname + '/' + url.search });
+      return res.end();
+    }
+  }
   if (p.endsWith('/')) p += 'index.html';
   const file = path.normalize(path.join(ROOT, p));
   if (!file.startsWith(ROOT)) { res.writeHead(403); return res.end(); }

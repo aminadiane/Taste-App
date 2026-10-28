@@ -5,9 +5,10 @@ const { test } = require('node:test');
 const assert = require('node:assert/strict');
 const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
-const S = require(path.join(ROOT, 'js', 'taste', 'stats.js'));
-const A = require(path.join(ROOT, 'js', 'taste', 'analyse.js'));
-const P = require(path.join(ROOT, 'js', 'taste', 'profile.js'));
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const S = require(path.join(APP, 'js', 'taste', 'stats.js'));
+const A = require(path.join(APP, 'js', 'taste', 'analyse.js'));
+const P = require(path.join(APP, 'js', 'taste', 'profile.js'));
 const U = require('./fixtures/simulated-users.js');
 
 const AT = '2026-10-21T00:00:00.000Z';

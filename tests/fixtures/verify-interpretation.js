@@ -1,5 +1,5 @@
 // Re-derives every claim of an interpretation from the judgments and the library. Used by tests and the examples tool.
-const { fisherExact } = require('../../js/taste/stats.js');
+const { fisherExact } = require('../../works/pallas/js/taste/stats.js');
 function verify(interp, { library, judgments }) {
   const items = library.items, failures = [];
   const judged = Object.keys(judgments).filter((id) => items[id] && (judgments[id] === 'like' || judgments[id] === 'dislike'));

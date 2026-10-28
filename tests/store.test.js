@@ -10,7 +10,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 
-const SRC = fs.readFileSync(path.join(__dirname, '..', 'js', 'store.js'), 'utf8');
+const SRC = fs.readFileSync(path.join(__dirname, '..', 'works', 'pallas', 'js', 'store.js'), 'utf8');
 
 function storage(initial = {}) {
   const m = new Map(Object.entries(initial));

@@ -31,16 +31,16 @@ const PEOPLE = [
 
 // Builds everything needed to analyse and describe one person.
 function build(pz) {
-  const path = require('node:path'), ROOT = path.join(__dirname, '..', '..');
-  const U = require('./simulated-users.js'), F = require(path.join(ROOT, 'js', 'taste', 'features.js'));
-  const stillsDoc = require(path.join(ROOT, 'library', 'stills.json'));
+  const path = require('node:path'), ROOT = path.join(__dirname, '..', '..'), APP = path.join(ROOT, 'works', 'pallas');
+  const U = require('./simulated-users.js'), F = require(path.join(APP, 'js', 'taste', 'features.js'));
+  const stillsDoc = require(path.join(APP, 'library', 'stills.json'));
   let lib, order, titleOf;
   if (pz.area === 'cinema') {
     lib = U.cinemaLibrary(); order = stillsDoc.stills.map((s) => s.id);
     titleOf = (id) => { const s = stillsDoc.stills.find((x) => x.id === id); return `${stillsDoc.films[s.film].title}: ${s.scene.replace(/\s*\([^)]*\)/g, '').split(/[,:;]/)[0].trim()}`; };
   } else if (pz.real) {
-    const doc = require(path.join(ROOT, 'library', 'literature.json'));
-    lib = F.literature(doc, require(path.join(ROOT, 'library', 'vocab', 'literature.json')));
+    const doc = require(path.join(APP, 'library', 'literature.json'));
+    lib = F.literature(doc, require(path.join(APP, 'library', 'vocab', 'literature.json')));
     order = doc.passages.filter((p) => p.status === 'ready').map((p) => p.id);
     titleOf = (id) => doc.books[doc.passages.find((p) => p.id === id).book].title;
   } else {

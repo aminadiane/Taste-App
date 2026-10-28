@@ -5,22 +5,23 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
-const A = require(path.join(ROOT, 'js', 'taste', 'analyse.js'));
-const P = require(path.join(ROOT, 'js', 'taste', 'profile.js'));
-const F = require(path.join(ROOT, 'js', 'taste', 'features.js'));
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const A = require(path.join(APP, 'js', 'taste', 'analyse.js'));
+const P = require(path.join(APP, 'js', 'taste', 'profile.js'));
+const F = require(path.join(APP, 'js', 'taste', 'features.js'));
 const U = require(path.join(ROOT, 'tests', 'fixtures', 'simulated-users.js'));
 const OUT = path.join(ROOT, 'docs', 'examples', 'taste-profiles');
 const AT = '2026-10-21T00:00:00.000Z';
 
-const stillsDoc = require(path.join(ROOT, 'library', 'stills.json'));
+const stillsDoc = require(path.join(APP, 'library', 'stills.json'));
 const cinema = U.cinemaLibrary();
 const cinemaOrder = stillsDoc.stills.map((s) => s.id);
 const stillTitle = (id) => { const s = stillsDoc.stills.find((x) => x.id === id), f = stillsDoc.films[s.film]; return `${f.title}: ${s.scene.replace(/\s*\([^)]*\)/g, '').split(/[,:;]/)[0].trim()}`; };
 const synth = U.syntheticLiterature(60, 7), lit = synth.lib;
 const litOrder = Object.keys(lit.items).sort();
 const synthTitle = (id) => { const p = synth.passages.find((x) => x.id === id); return `${id} (${p.family})`; };
-const realLitDoc = require(path.join(ROOT, 'library', 'literature.json'));
-const realLit = F.literature(realLitDoc, require(path.join(ROOT, 'library', 'vocab', 'literature.json')));
+const realLitDoc = require(path.join(APP, 'library', 'literature.json'));
+const realLit = F.literature(realLitDoc, require(path.join(APP, 'library', 'vocab', 'literature.json')));
 const realTitle = (id) => { const p = realLitDoc.passages.find((x) => x.id === id); return realLitDoc.books[p.book].title; };
 const { PEOPLE } = require(path.join(ROOT, 'tests', 'fixtures', 'personas.js'));
 

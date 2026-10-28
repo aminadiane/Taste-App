@@ -6,6 +6,8 @@ Implemented from the Pallas design handoffs (`Claude Design Handoffs/`, kept as 
 
 ## Files
 
+The repository root is the Cultural Capital site (culturalcapital.world): `/` is the About page (`index.html`), `/works/` the works index (`works/index.html`), and Pallas lives in `works/pallas/`, served at `/works/pallas/`. Paths below are inside `works/pallas/` unless they start at the root (`tests/`, `tools/`, `docs/`, `.claude/`).
+
 - `index.html` — four screens: Home, Film (`#cinema`), Literature (`#literature`), Taste Profile (`#taste?m=film|lit`), plus the quick-view drawer and the shelf rail.
 - `styles.css` — page styles; `ds/` holds the Cultural Capital design-system tokens they build on.
 - `app.js` — hash routing and the Film screen: the television, like (channel-change swipe) and dislike (static, line, dot), the film quick view.
@@ -14,14 +16,14 @@ Implemented from the Pallas design handoffs (`Claude Design Handoffs/`, kept as 
 - `js/taste-screen.js` — the Taste Profile ("the sorting table"), drawn entirely from the taste engine's findings.
 - `js/drawer.js` — the quick-view drawer and its shelf helpers.
 - `js/store.js` — persistent progress: an append-only event log in `localStorage['pallas.v1']` (likes, dislikes, skips, undo, sessions, each area's position), with `Pallas.votes` as the view the screens use. Earlier `pallas.votes` data is migrated once. Browser storage does not sync between devices and is lost if site data is cleared.
-- `tests/store.test.js` — run with `node --test tests/store.test.js`.
+- `tests/` (at the root) — run with `node --test tests/*.test.js`; `node tools/check-site.js --tests` is the pre-deploy check.
 - `library/stills.json` — the cinematography library: films keyed by slug, one record per still with source, rights and cinematographic notes. Display copies in `library/stills/<film>/`, downloads in `library/originals/`. `library/PROPOSAL.md` records the research and rights decisions.
 - `library/excerpts.json` — literature entries (stand-ins from the handoff; replace with real content, keeping ids stable) and the paperback spine presets.
 - `assets/` — the production assets from the handoff (television, book, paper and tear masks).
 
 ## Run
 
-Serve the folder and open it in a browser:
+Serve the repository and open `http://127.0.0.1:8799/works/pallas/` in a browser (the trailing slash matters: the app's paths are relative to it; `/works/pallas` redirects, locally and on Vercel through `vercel.json`):
 
 ```bash
 PORT=8799 node .claude/serve.js

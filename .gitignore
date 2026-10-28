@@ -1,4 +1,4 @@
 .DS_Store
-library/.tmp/
+works/pallas/library/.tmp/
 *.zip
-library/literature.json.bak
+works/pallas/library/literature.json.bak

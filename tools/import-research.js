@@ -8,7 +8,7 @@
 // - Writes a .bak, then runs the validator; nothing is written if any row is unusable.
 const fs = require('node:fs');
 const path = require('node:path');
-const LIB = path.join(process.env.PALLAS_LIBRARY || path.join(__dirname, '..', 'library'), 'literature.json');   // override for tests
+const LIB = path.join(process.env.PALLAS_LIBRARY || path.join(__dirname, '..', 'works', 'pallas', 'library'), 'literature.json');   // override for tests
 const [csvPath, featPath] = process.argv.slice(2);
 if (!csvPath) { console.log('usage: node tools/import-research.js <research.csv> [features.json]'); process.exit(1); }
 

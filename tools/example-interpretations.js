@@ -5,11 +5,12 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const ROOT = path.join(__dirname, '..');
-const A = require(path.join(ROOT, 'js', 'taste', 'analyse.js'));
-const I = require(path.join(ROOT, 'js', 'taste', 'interpret.js'));
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const A = require(path.join(APP, 'js', 'taste', 'analyse.js'));
+const I = require(path.join(APP, 'js', 'taste', 'interpret.js'));
 const { PEOPLE, build } = require(path.join(ROOT, 'tests', 'fixtures', 'personas.js'));
 const { verify } = require(path.join(ROOT, 'tests', 'fixtures', 'verify-interpretation.js'));
-const K = require(path.join(ROOT, 'library', 'vocab', 'qualities.json'));
+const K = require(path.join(APP, 'library', 'vocab', 'qualities.json'));
 const OUT = path.join(ROOT, 'docs', 'examples', 'interpretations');
 fs.mkdirSync(OUT, { recursive: true });
 for (const f of fs.readdirSync(OUT)) if (f.endsWith('.json')) fs.unlinkSync(path.join(OUT, f));

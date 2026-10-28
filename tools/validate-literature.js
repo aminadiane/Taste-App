@@ -2,7 +2,7 @@
 // Errors block; warnings list what a passage still needs before it can be marked ready.
 const fs = require('node:fs');
 const path = require('node:path');
-const LIBDIR = process.env.PALLAS_LIBRARY || path.join(__dirname, '..', 'library');   // override for tests
+const LIBDIR = process.env.PALLAS_LIBRARY || path.join(__dirname, '..', 'works', 'pallas', 'library');   // override for tests
 const lib = JSON.parse(fs.readFileSync(path.join(LIBDIR, 'literature.json'), 'utf8'));
 const vocab = JSON.parse(fs.readFileSync(path.join(LIBDIR, 'vocab', 'literature.json'), 'utf8')).dimensions;
 const norm = (s) => s.replace(/[‘’ʼ]/g, "'").replace(/[“”]/g, '"').replace(/[–—]/g, '-').replace(/…/g, '...').replace(/\s+/g, ' ').trim().toLowerCase();

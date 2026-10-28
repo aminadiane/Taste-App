@@ -42,6 +42,22 @@ Design source of truth: `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2
 
 ## Architecture
 
+### Site structure
+
+The repository root is the Cultural Capital site (culturalcapital.world), deployed as static files:
+
+| URL | File | What |
+|---|---|---|
+| `/` | `index.html` | Cultural Capital About page |
+| `/works/` | `works/index.html` | works index |
+| `/works/pallas/` | `works/pallas/` | Pallas |
+
+Pallas moved into `works/pallas/` on 2026-10-27. Its runtime paths are all relative to its page (no `<base>`, no root-absolute paths except Vercel's `/_vercel/insights/script.js`), so it needs the trailing slash: `vercel.json` sets `trailingSlash: true`, and `.claude/serve.js` redirects the same way. `localStorage['pallas.v1']` is per origin, so saved responses survive the move. `.vercelignore` keeps development material out of the deployment (`Claude Design Handoffs/`, `docs/`, `tests/`, `tools/`, `.claude/`, `works/pallas/library/originals/`, `works/pallas/library/import/`); no page may reference those, and `tools/check-site.js` fails if one does.
+
+### Pallas
+
+App paths below (`index.html`, `styles.css`, `app.js`, `js/`, `ds/`, `library/`, `assets/`) are inside `works/pallas/`. `tests/`, `tools/`, `docs/` and `.claude/` stay at the repository root; the tools and tests reach the app through a `works/pallas` constant.
+
 - **Static site, no build step, no framework, no package.json.** Plain HTML, CSS and JavaScript (IIFE modules on a `window.Pallas` namespace).
 - `index.html` — four screens (`#home`, `#cinema`, `#literature`, `#taste`) plus the drawer and the shelf rail. Hash routing: `''` home, `#cinema` film, `#literature` literature, `#taste?m=film|lit` the Taste Profile. The visible label is "film" while the route stays `#cinema`.
 - `styles.css` — all page styles. `ds/` — Cultural Capital design tokens (do not edit values).
@@ -64,7 +80,7 @@ Design source of truth: `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2
 - `library/excerpts.json` — the handoff stand-ins, used only if no passage is ready, plus the paperback spine presets.
 - `library/PROPOSAL.md` — research and sourcing notes for the cinema library. `library/review.html` — internal review tool.
 - `assets/` — production photographs, textures and masks from the handoff.
-- **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live.
+- **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live. The root is now the Cultural Capital site; Pallas lives in `works/pallas/` and is served at `culturalcapital.world/works/pallas/`.
 
 ### Persistence
 
@@ -73,7 +89,7 @@ Design source of truth: `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2
 ### Checks
 
 - `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, the journal, the interpretation layer, and the guard that mobile CSS never reaches desktop.
-- `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass.
+- `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass. It scans `works/pallas/index.html` and, when they exist, the root `index.html` and `works/index.html`, with their linked stylesheets; root-absolute references (`/x`) resolve against the repository root, relative ones against the page's folder, and a folder reference (`/works/pallas/`) needs that folder's `index.html`.
 - `node tools/stress-engine.js --seeds 100`: the engine stress test (`docs/engine-stress-report.md`). Re-run it after any change to `js/taste/analyse.js`, and change thresholds only when its results support it.
 - `node tools/example-profiles.js` and `node tools/example-interpretations.js`: regenerate the examples in `docs/examples/`. The simulated people are in `tests/fixtures/personas.js`.
 
@@ -85,7 +101,7 @@ The app's preview runner cannot bind a port in this folder. Run from Bash:
 PORT=8799 node .claude/serve.js
 ```
 
-then open `http://127.0.0.1:8799/` (the built-in browser pane works). If that port is already held by a stale server from another folder (it answers "not found"), use another port. The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
+then open `http://127.0.0.1:8799/works/pallas/` for Pallas (the root `/` is the Cultural Capital site; `/works/pallas` without the slash redirects) (the built-in browser pane works). If that port is already held by a stale server from another folder (it answers "not found"), use another port. The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
 
 ### Mobile
 

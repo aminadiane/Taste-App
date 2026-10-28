@@ -1,0 +1,13 @@
+# Not deployed: none of these is fetched by any page (checked by tools/check-site.js).
+# Patterns are anchored to the repository root.
+
+# Design handoffs and development material
+/Claude Design Handoffs/
+/docs/
+/tests/
+/tools/
+/.claude/
+
+# Pallas: untouched downloads (the app shows library/stills/) and import batches for the tools
+/works/pallas/library/originals/
+/works/pallas/library/import/

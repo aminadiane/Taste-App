@@ -41,6 +41,7 @@ Living document. Update it at the end of every session: move items between secti
 - [x] Five NYT passages live in the book (2026-10-21).
 - [x] Cinema metadata for all 89 stills; taste engine; simulated-user tests; skip and undo data handling; Taste Profile and Journal data foundations (2026-10-21, `feature/pallas-overnight`, not merged).
 - [x] Handoff update 2: home objects and your-taste bar, the shelf with fly-in, the phone remote, the phone single-page book, the Taste Profile sorting table (2026-10-27, `feature/handoff-update-2`, not merged).
+- [x] Pallas moved into `works/pallas/` so the repository root can hold the Cultural Capital site (2026-10-27, `main`, see "Site structure" below).
 
 ## In progress
 
@@ -314,6 +315,17 @@ Built from `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2.md` and `pro
 19. With many judgments the findings list runs long and the `shares … with` line grows with it. Cap the list, or group the findings?
 20. The remote's position: the source's 78 px gap or the document's 56 px?
 
+## Site structure: Pallas moves to `/works/pallas/` (2026-10-27, `main`)
+
+The repository becomes the Cultural Capital site: `/` will be the About page (`index.html`), `/works/` the works index (`works/index.html`), and Pallas is now served at `culturalcapital.world/works/pallas/`. Both root pages are still to be built; the root `index.html` slot is left empty, so until they land `/` has no page.
+
+- **Moved with `git mv`** (history kept): `index.html`, `styles.css`, `app.js`, `js/`, `ds/`, `library/`, `assets/` → `works/pallas/`. The app's HTML, CSS and JavaScript are unchanged: every runtime path is relative to the page, and hash routing never reads the path. `localStorage['pallas.v1']` is per origin, so saved responses survive.
+- **Trailing slash:** `vercel.json` (`trailingSlash: true`) redirects `/works/pallas` to `/works/pallas/`; `.claude/serve.js` does the same locally (301) and gained `.svg`, `.ico`, `.woff2` and `.webmanifest` types.
+- **Not deployed** (`.vercelignore`): `Claude Design Handoffs/`, `docs/`, `tests/`, `tools/`, `.claude/`, `works/pallas/library/originals/` (untouched downloads, 14 MB; nothing fetches them) and `works/pallas/library/import/`.
+- **Tooling:** every tool and test reaches the app through a `works/pallas` constant. `tools/check-site.js` also scans the root `index.html` and `works/index.html` when they exist (root-absolute references against the root, relative ones against the page's folder, linked stylesheets followed), skips `Claude Design Handoffs*` in the script walk, and fails if a page references something `.vercelignore` excludes. `library/review.html` posts to `/works/pallas/library/remove|restore`.
+- **Preview:** `PORT=8799 node .claude/serve.js`, then `http://127.0.0.1:8799/works/pallas/`.
+- **Open:** the home's `cultural capital` link still points to `https://culturalcapital.world`, which will now be the About page; the owner has not decided whether it should change.
+
 ## Decisions pending
 
 1. Designs for skip and undo, the returning-user prompt, and the all-evaluated state (Claude Design).
@@ -321,3 +333,4 @@ Built from `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2.md` and `pro
 3. ~~Touch and reduced-motion fallbacks~~ phones designed and built in update 2; reduced motion skips the fly-in and the hints. Real-device testing is still open.
 4. Whether and when to add accounts.
 5. Licensing or replacement of the homepage object photographs and the remote images (update 2).
+6. Where the home's `cultural capital` link should point now that culturalcapital.world is the About page (site structure, 2026-10-27).

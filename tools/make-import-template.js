@@ -2,7 +2,7 @@
 // Usage: node tools/make-import-template.js
 const fs = require('node:fs');
 const path = require('node:path');
-const LIB = path.join(__dirname, '..', 'library');
+const LIB = path.join(__dirname, '..', 'works', 'pallas', 'library');
 const lib = JSON.parse(fs.readFileSync(path.join(LIB, 'literature.json'), 'utf8'));
 const out = ['# Pallas — passage import', '# Paste each excerpt under its heading, exactly as published, within the boundaries described.',
   '# Separate paragraphs with a blank line. Leave a block empty to skip it. Lines starting with # are ignored.',

@@ -10,7 +10,7 @@
 // Nothing is written unless every filled block matches a passage and starts and ends at its locator.
 const fs = require('node:fs');
 const path = require('node:path');
-const LIBDIR = process.env.PALLAS_LIBRARY || path.join(__dirname, '..', 'library');   // override for tests
+const LIBDIR = process.env.PALLAS_LIBRARY || path.join(__dirname, '..', 'works', 'pallas', 'library');   // override for tests
 const LIB = path.join(LIBDIR, 'literature.json');
 const file = process.argv[2] || path.join(LIBDIR, 'import', 'passages.txt');
 

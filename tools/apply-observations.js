@@ -3,7 +3,7 @@
 // Every value is checked against library/vocab/cinema.json; nothing is written if any line has an error.
 const fs = require('node:fs');
 const path = require('node:path');
-const LIB = path.join(__dirname, '..', 'library');
+const LIB = path.join(__dirname, '..', 'works', 'pallas', 'library');
 const file = process.argv[2] || path.join(LIB, 'import', 'cinema-observed.txt');
 const vocab = JSON.parse(fs.readFileSync(path.join(LIB, 'vocab', 'cinema.json'), 'utf8')).dimensions;
 const metaPath = path.join(LIB, 'cinema-metadata.json');

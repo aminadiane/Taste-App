@@ -9,7 +9,8 @@ const path = require('node:path');
 const { execFileSync } = require('node:child_process');
 
 const ROOT = path.join(__dirname, '..');
-const LIB = path.join(ROOT, 'library');
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const LIB = path.join(APP, 'library');
 const OUT = path.join(LIB, 'cinema-metadata.json');
 const CACHE = path.join(LIB, '.tmp', 'bmp');
 const vocab = JSON.parse(fs.readFileSync(path.join(LIB, 'vocab', 'cinema.json'), 'utf8'));

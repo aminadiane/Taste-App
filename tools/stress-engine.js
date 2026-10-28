@@ -5,7 +5,8 @@
 const path = require('node:path');
 const fs = require('node:fs');
 const ROOT = path.join(__dirname, '..');
-const A = require(path.join(ROOT, 'js', 'taste', 'analyse.js'));
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const A = require(path.join(APP, 'js', 'taste', 'analyse.js'));
 const U = require(path.join(ROOT, 'tests', 'fixtures', 'simulated-users.js'));
 const arg = (k, d) => { const i = process.argv.indexOf(k); return i > 0 ? process.argv[i + 1] : d; };
 const SEEDS = Number(arg('--seeds', 100));

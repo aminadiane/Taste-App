@@ -7,9 +7,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const vm = require('node:vm');
 const ROOT = path.join(__dirname, '..');
-const J = require(path.join(ROOT, 'js', 'journal.js'));
-const A = require(path.join(ROOT, 'js', 'taste', 'analyse.js'));
-const P = require(path.join(ROOT, 'js', 'taste', 'profile.js'));
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const J = require(path.join(APP, 'js', 'journal.js'));
+const A = require(path.join(APP, 'js', 'taste', 'analyse.js'));
+const P = require(path.join(APP, 'js', 'taste', 'profile.js'));
 const U = require('./fixtures/simulated-users.js');
 
 // A real store, booted in a sandbox exactly as in the browser, so the journal is tested on genuine store output.
@@ -17,7 +18,7 @@ function store() {
   const m = new Map();
   const ctx = { localStorage: { getItem: (k) => (m.has(k) ? m.get(k) : null), setItem: (k, v) => m.set(k, String(v)), removeItem: (k) => m.delete(k) }, crypto: globalThis.crypto };
   ctx.window = ctx;
-  vm.runInNewContext(fs.readFileSync(path.join(ROOT, 'js', 'store.js'), 'utf8'), ctx);
+  vm.runInNewContext(fs.readFileSync(path.join(APP, 'js', 'store.js'), 'utf8'), ctx);
   return ctx.Pallas.store;
 }
 

@@ -2,7 +2,8 @@
 // Every choice comes from a written rule plus a seeded random number generator, so results are reproducible.
 const path = require('node:path');
 const ROOT = path.join(__dirname, '..', '..');
-const F = require(path.join(ROOT, 'js', 'taste', 'features.js'));
+const APP = path.join(ROOT, 'works', 'pallas');   // the Pallas app (served at /works/pallas/)
+const F = require(path.join(APP, 'js', 'taste', 'features.js'));
 
 // mulberry32: small, fast, deterministic PRNG.
 function rng(seed) {
@@ -11,14 +12,14 @@ function rng(seed) {
 }
 
 function cinemaLibrary() {
-  return F.cinema(require(path.join(ROOT, 'library', 'stills.json')), require(path.join(ROOT, 'library', 'cinema-metadata.json')), require(path.join(ROOT, 'library', 'vocab', 'cinema.json')));
+  return F.cinema(require(path.join(APP, 'library', 'stills.json')), require(path.join(APP, 'library', 'cinema-metadata.json')), require(path.join(APP, 'library', 'vocab', 'cinema.json')));
 }
 
 /* A synthetic literature corpus for testing only (the real library has five passages). Each passage gets a
    coherent bundle of features drawn from one of four prose families, with some variation, so tastes for
    restrained, lyrical and experimental prose can be told apart. Nothing here is shown to users. */
 function syntheticLiterature(count = 36, seed = 7) {
-  const vocab = require(path.join(ROOT, 'library', 'vocab', 'literature.json'));
+  const vocab = require(path.join(APP, 'library', 'vocab', 'literature.json'));
   const R = rng(seed), pick = (xs) => xs[Math.floor(R() * xs.length)];
   const families = {
     restrained: { register: 'restrained', diction: ['plain', 'colloquial'], figuration: ['sparse', 'sparse', 'moderate'], sentenceLength: ['short', 'short', 'varied'], syntax: ['paratactic'], device: ['close-detail', 'withheld-identity', 'self-correction'] },
