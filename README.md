@@ -6,10 +6,18 @@ Implemented from the Pallas design handoffs (`Claude Design Handoffs/`, kept as 
 
 ## Files
 
-The repository root is the Cultural Capital site (culturalcapital.world): `/` is the About page (`index.html`), `/works/` the works index (`works/index.html`), and Pallas lives in `works/pallas/`, served at `/works/pallas/`. Paths below are inside `works/pallas/` unless they start at the root (`tests/`, `tools/`, `docs/`, `.claude/`).
+The repository root is the Cultural Capital site (culturalcapital.world), implemented from its Claude Design export (`Claude Design Handoffs/design_handoff_cultural_capital_about/`, kept as reference):
+
+- `index.html` — Home (`/`): the statement typed by scroll, then the works section (`#works`, N 001, Pallas). An inline script at the top forwards old Pallas links (`/#cinema`, `/#literature`, `/#taste…`) to `/works/pallas/`.
+- `about/index.html` — About (`/about/`). `contact/index.html` — forwards to culturalcapital.studio (`/contact/`).
+- `site/` — the site's styles and scripts (`site.css`, `site.js`, `home.js`, `about.js`) and `assets/pallas-tv.png`.
+- `ds/` — the Cultural Capital design-system tokens, shared by the site and Pallas (`/ds/styles.css`).
+- `vercel.json` — trailing slashes, and the redirects `/contact/` → culturalcapital.studio and `/works/` → `/#works` (there is no works page).
+
+Pallas lives in `works/pallas/`, served at `/works/pallas/`. Paths below are inside `works/pallas/` unless they start at the root (`tests/`, `tools/`, `docs/`, `.claude/`).
 
 - `index.html` — four screens: Home, Film (`#cinema`), Literature (`#literature`), Taste Profile (`#taste?m=film|lit`), plus the quick-view drawer and the shelf rail.
-- `styles.css` — page styles; `ds/` holds the Cultural Capital design-system tokens they build on.
+- `styles.css` — page styles; the root `ds/` holds the Cultural Capital design-system tokens they build on.
 - `app.js` — hash routing and the Film screen: the television, like (channel-change swipe) and dislike (static, line, dot), the film quick view.
 - `js/book.js` — the Literature screen: the photographic paperback, page turns, dog-ear (like) and tear-out (dislike), keyboard, and the one-page-at-a-time view on phones.
 - `js/shelf.js` — the shelf: desktop rail, mobile mini shelf, and the fly-in of each response's spine.
@@ -23,7 +31,7 @@ The repository root is the Cultural Capital site (culturalcapital.world): `/` is
 
 ## Run
 
-Serve the repository and open `http://127.0.0.1:8799/works/pallas/` in a browser (the trailing slash matters: the app's paths are relative to it; `/works/pallas` redirects, locally and on Vercel through `vercel.json`):
+Serve the repository and open `http://127.0.0.1:8799/` for the site, or `http://127.0.0.1:8799/works/pallas/` for Pallas (the trailing slash matters: the app's paths are relative to it; `/works/pallas` redirects, locally and on Vercel through `vercel.json`):
 
 ```bash
 PORT=8799 node .claude/serve.js

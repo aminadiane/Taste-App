@@ -1,6 +1,7 @@
 // Pre-deploy check for the static site (there is no build step; Vercel serves the repository root as is).
-// Site structure: / is the Cultural Capital About page (index.html), /works/ the works index (works/index.html),
-// /works/pallas/ is Pallas (works/pallas/). The two root pages are optional: they are checked only if they exist.
+// Site structure: / is the Cultural Capital Home page (index.html), /about/ and /contact/ are about/index.html and
+// contact/index.html, /works/pallas/ is Pallas (works/pallas/). Every <dir>/index.html one level down is scanned
+// (works/ only through works/pallas/; there is no works page), plus works/index.html if one is ever added.
 // Usage: node tools/check-site.js [--tests]
 // 1. every file the pages (and their stylesheets) reference exists   2. every JavaScript file parses
 // 3. the library validators pass                                      4. the JSON data files parse
@@ -61,7 +62,13 @@ function checkPage(page) {
 }
 
 checkPage(path.join(APP, 'index.html'));
-for (const p of [path.join(ROOT, 'index.html'), path.join(ROOT, 'works', 'index.html')]) if (fs.existsSync(p)) checkPage(p);
+const PAGE_SKIP = ['works', 'node_modules', 'tests', 'tools', 'docs'];
+const sitePages = [path.join(ROOT, 'index.html'), path.join(ROOT, 'works', 'index.html')];
+for (const d of fs.readdirSync(ROOT, { withFileTypes: true })) {
+  if (d.isDirectory() && !d.name.startsWith('.') && !d.name.startsWith('Claude Design Handoffs') && !PAGE_SKIP.includes(d.name)) sitePages.push(path.join(ROOT, d.name, 'index.html'));
+}
+if (!fs.existsSync(path.join(ROOT, 'index.html'))) errors.push('the root index.html (the Home page) is missing');
+for (const p of sitePages) if (fs.existsSync(p)) checkPage(p);
 
 // Pallas's own stylesheet, in case it is ever no longer linked directly.
 if (!seenCss.has(path.join(APP, 'styles.css'))) ok(`${checkCss(path.join(APP, 'styles.css'))} files referenced by works/pallas/styles.css`);

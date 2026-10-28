@@ -42,6 +42,7 @@ Living document. Update it at the end of every session: move items between secti
 - [x] Cinema metadata for all 89 stills; taste engine; simulated-user tests; skip and undo data handling; Taste Profile and Journal data foundations (2026-10-21, `feature/pallas-overnight`, not merged).
 - [x] Handoff update 2: home objects and your-taste bar, the shelf with fly-in, the phone remote, the phone single-page book, the Taste Profile sorting table (2026-10-27, `feature/handoff-update-2`, not merged).
 - [x] Pallas moved into `works/pallas/` so the repository root can hold the Cultural Capital site (2026-10-27, `main`, see "Site structure" below).
+- [x] Cultural Capital site at the root: Home (`/`, with the works section), About (`/about/`), Contact (`/contact/`, forwards to culturalcapital.studio), from the Claude Design export (2026-10-27, `main`, see "Cultural Capital site" below).
 
 ## In progress
 
@@ -324,7 +325,26 @@ The repository becomes the Cultural Capital site: `/` will be the About page (`i
 - **Not deployed** (`.vercelignore`): `Claude Design Handoffs/`, `docs/`, `tests/`, `tools/`, `.claude/`, `works/pallas/library/originals/` (untouched downloads, 14 MB; nothing fetches them) and `works/pallas/library/import/`.
 - **Tooling:** every tool and test reaches the app through a `works/pallas` constant. `tools/check-site.js` also scans the root `index.html` and `works/index.html` when they exist (root-absolute references against the root, relative ones against the page's folder, linked stylesheets followed), skips `Claude Design Handoffs*` in the script walk, and fails if a page references something `.vercelignore` excludes. `library/review.html` posts to `/works/pallas/library/remove|restore`.
 - **Preview:** `PORT=8799 node .claude/serve.js`, then `http://127.0.0.1:8799/works/pallas/`.
-- **Open:** the home's `cultural capital` link still points to `https://culturalcapital.world`, which will now be the About page; the owner has not decided whether it should change.
+- ~~**Open:** the home's `cultural capital` link still points to `https://culturalcapital.world`~~ resolved the same day: it now goes to `/` in the same tab (see below).
+- **Superseded the same day** by the owner's routing: `/` is Home (not About), About is `/about/`, and there is no works index (`/works/` goes to `/#works`).
+
+## Cultural Capital site (2026-10-27, `main`)
+
+Built from the Claude Design export `Claude Design Handoffs/design_handoff_cultural_capital_about/` (`Cultural Capital Home.dc.html`, `Cultural Capital About.dc.html`) at each page's default props. Measured side by side with the design pages in the pane at 1024×768 and 375×812 (header, statement, sections, works, television, CTA, footer at the same scroll positions): every box and font size matches, apart from the added Contact link.
+
+- **Routes (owner's decisions):** `/` Home with the works section (`#works`); `/about/` About; `/contact/` forwards to `https://culturalcapital.studio` (`vercel.json` 307 for `/contact` and `/contact/`; the page also has a meta refresh, `location.replace` and a visible link); `/works` and `/works/` → `/#works` (307; there is no works page); Pallas stays at `/works/pallas/`. Old root links `/#cinema`, `/#literature`, `/#taste…` are forwarded to `/works/pallas/` with their hash (on load and on `hashchange`); `#works` stays.
+- **Navigation:** Works, About and the new Contact in the header (a second row centred under the wordmark below 720 px, as designed) and About and Contact in the footer, as the design system's TextLink; the current page's header link stays underlined. The Pallas title and "Enter Pallas" open `/works/pallas/` in a new tab.
+- **Pallas:** its `cultural capital` link now goes to `/` in the same tab (owner's default); its stylesheet link is `/ds/styles.css`. Nothing else in the app changed.
+- **Files:** `index.html`, `about/index.html`, `contact/index.html`, `site/` (`site.css`, `site.js`, `home.js`, `about.js`, `assets/pallas-tv.png`); `ds/` moved from `works/pallas/ds/` to the root (`git mv`, values unchanged). Claude Design's `support.js` and `_ds_bundle.js` (React, Babel, editor panels) are not shipped; TextLink and Label are CSS classes.
+- **Choices beyond the design:** `#works` has a scroll margin (48 px, 80 px below 720 px) so a jump from another page does not hide the N 001 rule under the sticky header. With Contact added, the footer's `culturalcapital.world — © 2026` label wraps to its own line on phones. `.claude/serve.js` follows `vercel.json`'s exact-path redirects locally.
+- **Tooling:** `tools/check-site.js` requires the root `index.html` and scans every `<folder>/index.html` one level down (`about/`, `contact/`).
+
+**For the owner to look at:**
+21. The site's design uses uppercase, widely tracked labels (`N 001`, `DIGITAL EXPERIENCE · TASTE · TECHNOLOGY`, the TextLinks), a full cobalt flood on About (the wordmarks turn white there so they stay visible), and a "we" voice. These differ from the Pallas-era interface rules in `CLAUDE.md` (lowercase UI text, colour only from works and objects) and the design system's readme (no "we"). Implemented as designed.
+22. `site/assets/pallas-tv.png` (the television on Home) has no recorded source or rights in the handoff.
+23. The About CTA points to culturalcapital.studio (which currently shows a "Coming Soon" page) while the footer reads `culturalcapital.world — © 2026`. Left as designed.
+24. The `/works/` → `/#works` redirect relies on a fragment in a Vercel redirect destination; check it on the preview deployment.
+25. The project's standing rule bans the degree sign everywhere; the Pallas docs still use it for the tilt angles (`CLAUDE.md` Mobile, this file's update 2 table).
 
 ## Decisions pending
 
@@ -333,4 +353,4 @@ The repository becomes the Cultural Capital site: `/` will be the About page (`i
 3. ~~Touch and reduced-motion fallbacks~~ phones designed and built in update 2; reduced motion skips the fly-in and the hints. Real-device testing is still open.
 4. Whether and when to add accounts.
 5. Licensing or replacement of the homepage object photographs and the remote images (update 2).
-6. Where the home's `cultural capital` link should point now that culturalcapital.world is the About page (site structure, 2026-10-27).
+6. ~~Where the home's `cultural capital` link should point~~ resolved 2026-10-27: `/`, the Cultural Capital Home, in the same tab.

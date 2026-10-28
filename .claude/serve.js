@@ -1,6 +1,7 @@
 // Minimal static server for previewing the site. Root is resolved from this file, not the cwd.
 // The repository root is the Cultural Capital site; Pallas lives in works/pallas/ (http://127.0.0.1:PORT/works/pallas/).
 // A folder URL without its trailing slash redirects (301) to the slash form, as vercel.json's trailingSlash does.
+// vercel.json's redirects are honoured too, for exact sources only (307, or 308 when permanent).
 // Also backs the library review page (works/pallas/library/review.html):
 // POST /works/pallas/library/remove and POST /works/pallas/library/restore.
 const http = require('http');
@@ -17,6 +18,8 @@ const LIB_URL = '/works/pallas/library/';           // where the review page's P
 const LIBRARY_JSON = path.join(LIB, 'stills.json');
 const REMOVED = path.join(LIB, 'removed');           // removed stills land here, never deleted
 const REMOVED_JSON = path.join(REMOVED, 'removed.json');
+
+const REDIRECTS = (() => { try { return JSON.parse(fs.readFileSync(path.join(ROOT, 'vercel.json'), 'utf8')).redirects || []; } catch { return []; } })();
 
 const send = (res, code, body) => { res.writeHead(code, { 'content-type': 'application/json', 'cache-control': 'no-store' }); res.end(JSON.stringify(body)); };
 const readJSON = (file, fallback) => { try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; } };
@@ -75,6 +78,11 @@ http.createServer((req, res) => {
       } catch (e) { send(res, 500, { error: String(e.message || e) }); }
     });
     return;
+  }
+  const redirect = REDIRECTS.find((r) => r.source === url.pathname);
+  if (redirect) {
+    res.writeHead(redirect.statusCode || (redirect.permanent === false ? 307 : 308), { location: redirect.destination });
+    return res.end();
   }
   let p = decodeURIComponent(url.pathname);
   if (!p.endsWith('/')) {

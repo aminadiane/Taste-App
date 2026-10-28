@@ -1,0 +1,132 @@
+/* Cultural Capital site — Home, About, Contact. Tokens come from /ds/ (do not edit their values).
+   Values follow the Claude Design export in Claude Design Handoffs/design_handoff_cultural_capital_about/
+   (Cultural Capital Home.dc.html, Cultural Capital About.dc.html) at their default props.
+   The design's one breakpoint is innerWidth < 720 ("narrow"); here it is the equivalent media query. */
+
+html,body{margin:0}
+html[data-page="home"],html[data-page="home"] body,
+html[data-page="contact"],html[data-page="contact"] body{background:#fff}
+html[data-page="about"],html[data-page="about"] body{background:#000}
+html[data-page="home"] a,html[data-page="contact"] a{color:var(--ink);text-decoration:none}
+html[data-page="home"] a:hover,html[data-page="contact"] a:hover{color:var(--ink)}
+html[data-page="about"] a{color:#fff;text-decoration:none}
+html[data-page="about"] a:hover{color:#fff}
+
+@keyframes cc-caret{0%,49%{opacity:1}50%,100%{opacity:0}}
+@keyframes cc-flicker{0%,100%{opacity:1}8%{opacity:.94}9%{opacity:1}52%{opacity:.97}53%{opacity:1}}
+@keyframes cc-roll{0%{transform:translateY(-30%)}100%{transform:translateY(130%)}}
+
+/* ---------- Design-system components as classes ---------- */
+
+/* TextLink: the underline grows from the left on hover; .is-active keeps it. */
+.cc-textlink{position:relative;display:inline-block;color:var(--text-primary);text-decoration:none;opacity:1;font-family:var(--font-sans);font-size:var(--text-xs);font-weight:var(--weight-medium);letter-spacing:var(--tracking-label);text-transform:uppercase;line-height:var(--leading-label);background-image:linear-gradient(currentColor,currentColor);background-repeat:no-repeat;background-position:0 100%;background-size:0% 1px;padding-bottom:2px;transition:background-size var(--dur-base) var(--ease-out)}
+.cc-textlink:hover,.cc-textlink.is-active{background-size:100% 1px;opacity:1}
+html[data-page] a.cc-textlink,html[data-page] a.cc-textlink:hover{color:var(--text-primary)}
+html[data-page] a.cc-textlink--inherit,html[data-page] a.cc-textlink--inherit:hover{color:inherit}
+
+/* Label, size 2xs, tracking wide. */
+.cc-label{font-family:var(--font-sans);font-size:var(--text-2xs);font-weight:var(--weight-medium);line-height:var(--leading-label);letter-spacing:var(--tracking-wide);text-transform:uppercase;font-variation-settings:"wdth" var(--width-normal);font-variant-numeric:tabular-nums;color:var(--text-primary);margin:0}
+.cc-label--secondary{color:var(--text-secondary)}
+.cc-label--inherit{color:inherit}
+
+/* The blinking caret of the typed lines. */
+.cc-caret{display:inline-block;width:.05em;min-width:2px;height:.92em;margin-left:.03em;margin-right:calc(-.08em - 2px);vertical-align:-.1em;background:currentColor;animation:cc-caret 1s infinite}
+
+/* ---------- Page frame ---------- */
+
+.cc-page{min-height:100vh;display:flex;flex-direction:column;font-family:var(--font-sans);background:var(--white);color:var(--ink)}
+html[data-page="about"] .cc-page{background:#000;color:#fff;transition:background-color var(--dur-slow) var(--ease-out),color var(--dur-slow) var(--ease-out)}
+
+.cc-header{position:sticky;top:0;z-index:50;background:var(--white);padding:var(--space-6) var(--edge);display:flex;flex-direction:column;gap:var(--space-4);transition:padding var(--dur-base) var(--ease-out)}
+html[data-page="about"] .cc-header{background:#000;color:#fff;transition:padding var(--dur-base) var(--ease-out),background-color var(--dur-slow) var(--ease-out),color var(--dur-slow) var(--ease-out)}
+.cc-header.is-scrolled{padding:var(--space-3) var(--edge)}
+.cc-header__row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:var(--space-5)}
+.cc-header__home{display:block;justify-self:center}
+.cc-brand{font-family:var(--font-grotesk);font-variation-settings:'wdth' 125;font-weight:600;font-size:clamp(26px,4.4vw,56px);line-height:.92;letter-spacing:-.035em;color:var(--ref-cobalt);-webkit-text-stroke:0;white-space:nowrap;transition:font-size var(--dur-base) var(--ease-out)}
+.cc-header.is-scrolled .cc-brand{font-size:20px}
+.cc-nav{display:flex;gap:var(--space-5)}
+.cc-nav--wide{justify-self:end}
+.cc-nav--narrow{display:none;justify-content:center}
+@media (max-width:719.98px){
+  .cc-nav--wide{display:none}
+  .cc-nav--narrow{display:flex}
+}
+
+.cc-footer{padding:0 var(--edge) var(--edge)}
+.cc-footer__rule{border-top:1px solid var(--rule);padding-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-end;gap:var(--space-6) var(--space-7)}
+.cc-footer__mark{font-family:var(--font-grotesk);font-variation-settings:'wdth' 125;font-weight:600;font-size:clamp(28px,4.4vw,64px);line-height:.92;letter-spacing:-.035em;color:var(--ref-cobalt);white-space:nowrap}
+.cc-footer__links{display:flex;flex-wrap:wrap;gap:var(--space-3) var(--space-6);align-items:baseline}
+
+/* ---------- Home ---------- */
+
+.home-footer{margin-top:clamp(160px,18vw,280px)}
+
+.home-intro{height:320vh;position:relative}
+.home-intro__sticky{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;padding:0 var(--edge);box-sizing:border-box}
+.home-intro__statement{margin:0;max-width:15ch;text-align:center;font-family:var(--font-sans);font-weight:400;font-variation-settings:'wdth' 100;font-size:clamp(40px,8.2vw,168px);line-height:1;letter-spacing:-.03em;transform-origin:50% 50%;will-change:transform;text-wrap:balance}
+
+.home-works{padding:0 var(--edge);scroll-margin-top:48px}
+@media (max-width:719.98px){.home-works{scroll-margin-top:80px}}
+.home-works__rule{border-top:1px solid var(--rule);padding-top:var(--space-3);display:flex;justify-content:space-between;gap:var(--space-5)}
+.home-works__body{display:flex;flex-direction:column;align-items:center;padding-top:clamp(64px,8vw,120px)}
+.home-works__title{display:block;color:var(--ink);text-decoration:none;font-family:var(--font-grotesk);font-variation-settings:'wdth' 125;font-weight:600;font-size:clamp(88px,17vw,280px);line-height:.8;letter-spacing:-.035em;transition:opacity var(--dur-base) var(--ease-out)}
+.home-works__title:hover{opacity:.72}
+.home-works__title:active{opacity:.6}
+.home-works__copy{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:clamp(24px,3vw,44px)}
+.home-works__kicker{color:var(--ref-cobalt)}
+.home-works__text{margin:var(--space-5) 0 0;max-width:44ch;font-family:var(--font-sans);font-weight:400;font-size:clamp(17px,1.45vw,21px);line-height:1.45;letter-spacing:-.005em;color:var(--ink);text-wrap:balance}
+.home-works__enter{margin-top:clamp(28px,3vw,40px)}
+.cc-textlink--enter{font-size:13px;letter-spacing:.12em;padding-bottom:5px}
+
+/* The television and its screen: VT323 on #1c2fa6, scanlines, a rolling band, a highlight. */
+.tv{position:relative;width:100%;max-width:900px;margin-top:clamp(8px,1.5vw,24px)}
+.tv__img{display:block;width:100%;height:auto;mix-blend-mode:multiply}
+.tv__screen{position:absolute;left:24.67%;top:27.47%;width:54.38%;height:41.61%;clip-path:polygon(0.9% 1.2%,3.2% 0.2%,15.0% 0.0%,35.2% 0.2%,55.3% 0.4%,75.4% 0.2%,88.9% 0.0%,97.2% 0.2%,99.3% 1.4%,100.0% 5.1%,99.6% 12.3%,99.2% 19.0%,98.5% 26.9%,97.9% 34.8%,97.2% 42.7%,96.6% 50.6%,96.0% 57.9%,95.2% 65.2%,94.2% 72.5%,93.2% 79.8%,91.9% 87.2%,90.9% 92.1%,89.7% 95.3%,87.5% 96.8%,80.1% 97.2%,70.1% 98.6%,59.3% 99.6%,48.6% 100.0%,37.9% 99.6%,27.1% 98.8%,19.1% 98.0%,11.7% 96.4%,7.7% 95.3%,6.0% 92.7%,5.2% 89.1%,4.3% 82.2%,3.4% 72.3%,2.6% 60.5%,1.7% 50.6%,1.2% 38.7%,0.7% 26.9%,0.3% 15.0%,0.0% 7.1%,0.3% 3.2%);overflow:hidden;container-type:inline-size;pointer-events:none}
+.tv__glow{position:absolute;inset:0;opacity:0;transform-origin:50% 50%;background:#1c2fa6;animation:cc-flicker 4.2s infinite;box-shadow:inset 0 0 6cqw rgba(0,0,10,.75),inset 0 0 1.5cqw rgba(0,0,0,.6)}
+.tv__text{position:absolute;inset:0;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:0 11cqw;font-family:'VT323',monospace;font-size:8.6cqw;line-height:1.08;letter-spacing:.02em;color:#fff;text-shadow:0 0 .06em rgba(255,255,255,.9),0 0 .28em rgba(150,180,255,.75),-.045em 0 rgba(255,70,90,.45),.045em 0 rgba(70,220,255,.45);filter:blur(.35px)}
+.tv__line{white-space:pre}
+.tv__cursor{display:inline-block;width:.5em;height:.78em;margin-left:.04em;vertical-align:-.06em;background:#fff;box-shadow:0 0 .2em rgba(160,190,255,.8);animation:cc-caret 1s steps(1) infinite}
+.tv__scan{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.28) 0,rgba(0,0,0,.28) 1px,transparent 1px,transparent 3px);mix-blend-mode:multiply}
+.tv__roll{position:absolute;left:0;right:0;height:22%;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.05),transparent);animation:cc-roll 7s linear infinite}
+.tv__shine{position:absolute;inset:0;background:radial-gradient(120% 90% at 30% 18%,rgba(255,255,255,.14),transparent 45%)}
+
+/* ---------- About ---------- */
+
+.about-footer .cc-footer__rule{border-top-color:var(--graphite)}
+.about-footer .cc-footer__mark{-webkit-text-stroke:1px #fff;transition:color var(--dur-slow) var(--ease-out)}
+
+.about-stage{margin-top:-120px;height:600vh;position:relative}
+.about-stage__sticky{position:sticky;top:0;height:100vh;overflow:hidden}
+.about-layer{position:absolute;inset:0;box-sizing:border-box;padding:110px var(--edge) 48px;display:flex;align-items:center;justify-content:center;pointer-events:none}
+.about-layer--cta{padding:110px var(--edge) 40px;flex-direction:column;align-items:stretch}
+/* Type at the design's default pairing: Archivo Expanded 600 for the statement, Archivo 300 for the paragraphs. */
+.about-statement{margin:0;max-width:13ch;text-align:center;font-family:var(--font-grotesk);font-weight:600;font-style:normal;font-variation-settings:'wdth' 125;font-size:calc(clamp(44px,8.2vw,168px) * .8);line-height:.94;letter-spacing:-.04em;color:#fff;transform-origin:50% 50%;will-change:transform,opacity;text-wrap:balance}
+.about-text{margin:0;font-family:var(--font-grotesk);font-weight:300;font-style:normal;font-variation-settings:'wdth' 100;line-height:1.06;letter-spacing:-.03em;transform-origin:50% 50%;will-change:transform,opacity;text-wrap:pretty}
+.about-text--2{max-width:26ch;font-size:clamp(30px,4.6vw,80px)}
+.about-text--3{max-width:28ch;font-size:calc(clamp(30px,4.6vw,80px) * .9)}
+.about-text__line{display:block;margin-bottom:.42em}
+.about-text__line:last-child{margin-bottom:0}
+.about-text--2 .about-text__line:last-child{font-weight:650}
+.about-text [data-w]{opacity:0}
+.about-text [data-k]{display:inline-block;transform-origin:50% 70%;font-weight:650;color:#fff}
+
+.about-cta{opacity:0;transform-origin:0% 50%;will-change:transform,opacity;display:flex;flex-direction:column;gap:var(--space-6)}
+.about-cta__link{position:relative;align-self:flex-start;display:inline-block;font-family:var(--font-grotesk);font-variation-settings:'wdth' 125;font-weight:600;font-size:120px;line-height:.86;letter-spacing:-.045em;text-decoration:none;white-space:nowrap;transition:color var(--dur-base) var(--ease-out)}
+html[data-page="about"] .about-cta__link{color:#fff}
+html[data-page="about"] .about-cta__link:hover{color:var(--ref-cobalt)}
+.about-cta__line-text{display:block}
+.about-cta__rule{position:absolute;left:0;right:0;bottom:-.07em;height:max(1px,.012em);background:#fff;transform-origin:0 50%;transform:scaleX(0)}
+.about-cta__label{font-family:var(--font-grotesk);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--stone)}
+
+/* The cobalt phase, once the CTA is more than half in. */
+html[data-page="about"].is-light,html[data-page="about"].is-light body{background:#2E5BD6}
+html.is-light .cc-page,html.is-light .cc-header{background-color:#2E5BD6;color:#fff;--text-secondary:rgba(255,255,255,.78)}
+html.is-light .cc-brand{color:#fff}
+html.is-light .about-footer .cc-footer__mark{color:#fff;-webkit-text-stroke:0}
+html.is-light .about-footer .cc-footer__rule{border-top-color:rgba(255,255,255,.5)}
+html.is-light .about-cta__label{color:#fff}
+html[data-page="about"].is-light .about-cta__link:hover{color:#0B0B0B}
+
+/* ---------- Contact (forwarding page) ---------- */
+
+.contact-main{flex:1;display:flex;align-items:center;justify-content:center;padding:var(--space-9) var(--edge)}

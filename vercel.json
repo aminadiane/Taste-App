@@ -1,3 +1,9 @@
 {
-  "trailingSlash": true
+  "trailingSlash": true,
+  "redirects": [
+    { "source": "/contact", "destination": "https://culturalcapital.studio", "permanent": false },
+    { "source": "/contact/", "destination": "https://culturalcapital.studio", "permanent": false },
+    { "source": "/works", "destination": "/#works", "permanent": false },
+    { "source": "/works/", "destination": "/#works", "permanent": false }
+  ]
 }

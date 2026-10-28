@@ -48,19 +48,27 @@ The repository root is the Cultural Capital site (culturalcapital.world), deploy
 
 | URL | File | What |
 |---|---|---|
-| `/` | `index.html` | Cultural Capital About page |
-| `/works/` | `works/index.html` | works index |
+| `/` | `index.html` | Cultural Capital Home: the statement, then the works section (`#works`, "N 001 — Pallas") |
+| `/about/` | `about/index.html` | Cultural Capital About |
+| `/contact/` | `contact/index.html` | forwards to `https://culturalcapital.studio` (307 in `vercel.json`; the page itself has a meta refresh, `location.replace` and a visible link) |
+| `/works`, `/works/` | none | 307 to `/#works` in `vercel.json` (there is no works page) |
 | `/works/pallas/` | `works/pallas/` | Pallas |
+
+Shared by the site pages and Pallas: `ds/` (the Cultural Capital design tokens, at the root since 2026-10-27; linked as `/ds/styles.css`; never edit values). Site code is in `site/`: `site.css` (header, footer, the design system's TextLink and Label as classes, Home and About styles), `site.js` (`window.CulturalCapital`: header shrink past 24 px, the typed-line helper, the 720 px breakpoint), `home.js` (the statement typed by scroll, the television screen), `about.js` (the 600vh scroll stage), `assets/pallas-tv.png`. The site pages are plain HTML at the root with root-absolute paths (`/site/…`, `/ds/…`).
+
+Site design source of truth: `Claude Design Handoffs/design_handoff_cultural_capital_about/home-page-culturalcapital-world/project/` (`Cultural Capital Home.dc.html`, `Cultural Capital About.dc.html`, and its `CLAUDE.md` standing rules: never the degree sign or the ordinal indicators, write "N 001"; the Cultural Capital wordmark is cobalt). Built at each page's default props; the review variants (About type, emphasis, CTA and brand-outline options) are not built. `support.js` and `_ds_bundle.js` there are Claude Design editor tooling and are never shipped. The site pages deliberately use uppercase tracked labels, a cobalt flood on About and a "we" voice; those come from the approved design, not from the Pallas interface rules above.
+
+Owner's decisions of 2026-10-27: `/` is Home (with the works section), not About; there is no works page (`/works/` goes to `/#works`); `/contact/` forwards to culturalcapital.studio; a Contact link joins Works and About in the header and footer; Pallas links open `/works/pallas/` in a new tab; old Pallas links on the root (`/#cinema`, `/#literature`, `/#taste…`) are forwarded to `/works/pallas/` with the same hash by an inline script at the top of `index.html` (`#works` is not); Pallas's `cultural capital` link now goes to `/` in the same tab.
 
 Pallas moved into `works/pallas/` on 2026-10-27. Its runtime paths are all relative to its page (no `<base>`, no root-absolute paths except Vercel's `/_vercel/insights/script.js`), so it needs the trailing slash: `vercel.json` sets `trailingSlash: true`, and `.claude/serve.js` redirects the same way. `localStorage['pallas.v1']` is per origin, so saved responses survive the move. `.vercelignore` keeps development material out of the deployment (`Claude Design Handoffs/`, `docs/`, `tests/`, `tools/`, `.claude/`, `works/pallas/library/originals/`, `works/pallas/library/import/`); no page may reference those, and `tools/check-site.js` fails if one does.
 
 ### Pallas
 
-App paths below (`index.html`, `styles.css`, `app.js`, `js/`, `ds/`, `library/`, `assets/`) are inside `works/pallas/`. `tests/`, `tools/`, `docs/` and `.claude/` stay at the repository root; the tools and tests reach the app through a `works/pallas` constant.
+App paths below (`index.html`, `styles.css`, `app.js`, `js/`, `library/`, `assets/`) are inside `works/pallas/`; `ds/` is at the root and linked as `/ds/styles.css`. `tests/`, `tools/`, `docs/` and `.claude/` stay at the repository root; the tools and tests reach the app through a `works/pallas` constant.
 
 - **Static site, no build step, no framework, no package.json.** Plain HTML, CSS and JavaScript (IIFE modules on a `window.Pallas` namespace).
 - `index.html` — four screens (`#home`, `#cinema`, `#literature`, `#taste`) plus the drawer and the shelf rail. Hash routing: `''` home, `#cinema` film, `#literature` literature, `#taste?m=film|lit` the Taste Profile. The visible label is "film" while the route stays `#cinema`.
-- `styles.css` — all page styles. `ds/` — Cultural Capital design tokens (do not edit values).
+- `styles.css` — all page styles. `/ds/` (at the repository root) — Cultural Capital design tokens (do not edit values).
 - `app.js` — router, the Home screen's your-taste bar, and the Film screen (TV, like/dislike sequences, film quick view, the phone remote with tilt to vote).
 - `js/book.js` — the Literature screen (660×520 book space, one scale transform, CSS 3D, WAAPI page turns, dog-ear, tear; the phone single-page view). `Pallas.book` exposes the entries and the flat page renderer to the profile screen.
 - `js/shelf.js` — the shelf (`Pallas.shelf`): the desktop rail at 900 px and up with its closed tab, the mobile mini shelf below, and the fly-in after each response. Each screen registers a provider listing the works it has responses for; the rail's open state is memory only and re-opens on every entry to a screen.
@@ -80,7 +88,7 @@ App paths below (`index.html`, `styles.css`, `app.js`, `js/`, `ds/`, `library/`,
 - `library/excerpts.json` — the handoff stand-ins, used only if no passage is ready, plus the paperback spine presets.
 - `library/PROPOSAL.md` — research and sourcing notes for the cinema library. `library/review.html` — internal review tool.
 - `assets/` — production photographs, textures and masks from the handoff.
-- **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live. The root is now the Cultural Capital site; Pallas lives in `works/pallas/` and is served at `culturalcapital.world/works/pallas/`.
+- **Hosting:** GitHub `aminadiane/Taste-App`, deployed by Vercel from the repository root as static files. `main` is live. The root is the Cultural Capital site (Home, About, Contact; see Site structure); Pallas lives in `works/pallas/` and is served at `culturalcapital.world/works/pallas/`.
 
 ### Persistence
 
@@ -89,7 +97,7 @@ App paths below (`index.html`, `styles.css`, `app.js`, `js/`, `ds/`, `library/`,
 ### Checks
 
 - `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, the journal, the interpretation layer, and the guard that mobile CSS never reaches desktop.
-- `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass. It scans `works/pallas/index.html` and, when they exist, the root `index.html` and `works/index.html`, with their linked stylesheets; root-absolute references (`/x`) resolve against the repository root, relative ones against the page's folder, and a folder reference (`/works/pallas/`) needs that folder's `index.html`.
+- `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass. It scans `works/pallas/index.html`, the root `index.html` (required), every `<folder>/index.html` one level down (`about/`, `contact/`; `works/` only through `works/pallas/`, plus `works/index.html` if one is ever added), with their linked stylesheets; root-absolute references (`/x`) resolve against the repository root, relative ones against the page's folder, and a folder reference (`/works/pallas/`) needs that folder's `index.html`.
 - `node tools/stress-engine.js --seeds 100`: the engine stress test (`docs/engine-stress-report.md`). Re-run it after any change to `js/taste/analyse.js`, and change thresholds only when its results support it.
 - `node tools/example-profiles.js` and `node tools/example-interpretations.js`: regenerate the examples in `docs/examples/`. The simulated people are in `tests/fixtures/personas.js`.
 
@@ -101,7 +109,7 @@ The app's preview runner cannot bind a port in this folder. Run from Bash:
 PORT=8799 node .claude/serve.js
 ```
 
-then open `http://127.0.0.1:8799/works/pallas/` for Pallas (the root `/` is the Cultural Capital site; `/works/pallas` without the slash redirects) (the built-in browser pane works). If that port is already held by a stale server from another folder (it answers "not found"), use another port. The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
+then open `http://127.0.0.1:8799/` for the Cultural Capital site and `http://127.0.0.1:8799/works/pallas/` for Pallas (`/works/pallas` without the slash redirects; the server also follows `vercel.json`'s exact-path redirects, so `/contact/` goes to culturalcapital.studio and `/works/` to `/#works`; open `/contact/index.html` to see the forwarding page itself) (the built-in browser pane works). If that port is already held by a stale server from another folder (it answers "not found"), use another port. The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
 
 ### Mobile
 
