@@ -9,6 +9,8 @@ html[data-page="contact"],html[data-page="contact"] body{background:#fff}
 html[data-page="about"],html[data-page="about"] body{background:#000}
 html[data-page="home"] a,html[data-page="contact"] a{color:var(--ink);text-decoration:none}
 html[data-page="home"] a:hover,html[data-page="contact"] a:hover{color:var(--ink)}
+/* The design system's focus ring is ink, invisible on About's black and barely visible on its cobalt: white there. */
+html[data-page="about"]{--focus-ring:#fff}
 html[data-page="about"] a{color:#fff;text-decoration:none}
 html[data-page="about"] a:hover{color:#fff}
 

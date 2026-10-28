@@ -2,7 +2,7 @@
 <html lang="en" data-page="home">
 <head>
 <meta charset="utf-8">
-<script>/* Old Pallas links (/#cinema, /#literature, /#taste...) now live at /works/pallas/. #works stays here. */(function(){function f(){var h=location.hash;if(/^#(cinema|literature|taste)/.test(h))location.replace('/works/pallas/'+h)}f();addEventListener('hashchange',f)})()</script>
+<script>/* Old Pallas links (/#cinema, /#literature, /#taste...) now live at /works/pallas/. #works stays here. */(function(){function f(){var h=location.hash;if(/^#(cinema|literature|taste)/.test(h)){document.documentElement.style.visibility='hidden';location.replace('/works/pallas/'+h)}}f();addEventListener('hashchange',f);addEventListener('pageshow',function(e){if(e.persisted)document.documentElement.style.visibility=''})})()</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Cultural Capital</title>
 <meta name="description" content="Cultural Capital — an evolving world of ideas, design, technology, and experiences. N 001: Pallas, an interactive experience about aesthetic judgment in cinema and literature.">

@@ -132,6 +132,13 @@
   }
   function refit() { renderCta(); fitCta(); update(); }
 
+  // Keyboard focus can reach "Work with us" while it is still invisible (the stage only shows it near its end):
+  // bring the stage to its end, where the design's own jump to the CTA lands, so the focused link is on screen.
+  cta.addEventListener('focus', function () {
+    if (light) return;
+    window.scrollTo(0, stage.getBoundingClientRect().bottom + window.scrollY - window.innerHeight - 4);
+  });
+
   window.addEventListener('scroll', update, { passive: true });
   window.addEventListener('resize', refit);
   refit();
