@@ -264,3 +264,14 @@ test('skipping a work that was already judged never hides its judgment', () => {
   P.store.undo('cinema'); P.store.undo('cinema');   // undo the two skips, newest first
   assert.equal(P.votes.get('c', 's1'), 'like'); assert.equal(P.store.judgment('cinema', 's2'), undefined);
 });
+
+test('interface preferences (one-time hints) persist apart from judgments', () => {
+  const ls = storage();
+  let P = boot(ls);
+  assert.equal(P.store.pref('hint.tilt'), undefined);
+  P.store.setPref('hint.tilt', true);
+  P = boot(ls);   // a later visit
+  assert.equal(P.store.pref('hint.tilt'), true);
+  assert.deepEqual(P.store.judgments('cinema'), {});
+  assert.equal(P.store.exportData().prefs['hint.tilt'], true);
+});

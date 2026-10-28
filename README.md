@@ -2,15 +2,17 @@
 
 Cultural Capital presents *pallas* — an exploration of what moves you, and why. Previously *taste*.
 
-Implemented from the Pallas design handoff (`design_handoff_pallas/`, kept as reference) as a static site: no build step, no framework.
+Implemented from the Pallas design handoffs (`Claude Design Handoffs/`, kept as reference; update 2 of 27 October 2026 supersedes the first wherever they differ) as a static site: no build step, no framework.
 
 ## Files
 
-- `index.html` — three screens: Home, Film (`#cinema`), Literature (`#literature`), plus the quick-view drawer.
+- `index.html` — four screens: Home, Film (`#cinema`), Literature (`#literature`), Taste Profile (`#taste?m=film|lit`), plus the quick-view drawer and the shelf rail.
 - `styles.css` — page styles; `ds/` holds the Cultural Capital design-system tokens they build on.
 - `app.js` — hash routing and the Film screen: the television, like (channel-change swipe) and dislike (static, line, dot), the film quick view.
-- `js/book.js` — the Literature screen: the photographic paperback, page turns, dog-ear (like) and tear-out (dislike), the torn stack, keyboard.
-- `js/drawer.js` — the quick-view drawer and the shelf.
+- `js/book.js` — the Literature screen: the photographic paperback, page turns, dog-ear (like) and tear-out (dislike), keyboard, and the one-page-at-a-time view on phones.
+- `js/shelf.js` — the shelf: desktop rail, mobile mini shelf, and the fly-in of each response's spine.
+- `js/taste-screen.js` — the Taste Profile ("the sorting table"), drawn entirely from the taste engine's findings.
+- `js/drawer.js` — the quick-view drawer and its shelf helpers.
 - `js/store.js` — persistent progress: an append-only event log in `localStorage['pallas.v1']` (likes, dislikes, skips, undo, sessions, each area's position), with `Pallas.votes` as the view the screens use. Earlier `pallas.votes` data is migrated once. Browser storage does not sync between devices and is lost if site data is cleared.
 - `tests/store.test.js` — run with `node --test tests/store.test.js`.
 - `library/stills.json` — the cinematography library: films keyed by slug, one record per still with source, rights and cinematographic notes. Display copies in `library/stills/<film>/`, downloads in `library/originals/`. `library/PROPOSAL.md` records the research and rights decisions.
@@ -26,6 +28,10 @@ PORT=8799 node .claude/serve.js
 ```
 
 The television cycles through the library in order; the book cycles through the excerpts. Votes drive the shelf, liked/disliked and dog-eared/torn-out tabs of the quick view.
+
+## Design status (27 October 2026)
+
+Handoff update 2, approved by the creative director on 27 October 2026 and built on `feature/handoff-update-2`: the home with the `cultural capital` link, the your-taste bar (from the first response, by the owner's decision) and the TV and book as object links; the shelf (desktop rail, mobile mini shelf, fly-in on each response); the film screen on phones with the remote and tilt to vote; the literature screen on phones as a single-page view with a scrub bar, swipe-left tear and swipe-right dog-ear (the earlier downward pull and edge tap kept as second ways); and the Taste Profile sorting table with its empty state. The corner counters and the torn stack were removed. The homepage object photographs and the remote images need licensing or replacement before launch.
 
 ## Design status (20 October 2026)
 

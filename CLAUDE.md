@@ -35,17 +35,20 @@ Pallas helps people **discover, understand, articulate and develop their aesthet
 | Like = channel-change swipe with the black band | Approved (band kept by decision) |
 | Dislike = static → bright line → dot → black → next still fades on (one 340 ms WAAPI collapse) | Approved 2026-10-20 |
 | Quick-view drawer (not "on the TV"), shelf of responded items A–Z, liked/disliked tabs | Approved |
-| Book cover (cv.a only), photographic book, page turns, dog-ear (like), tear-out (dislike), torn stack | Signed off 2026-10-20 |
+| Book cover (cv.a only), photographic book, page turns, dog-ear (like), tear-out (dislike) | Signed off 2026-10-20; the torn stack and both corner counters were removed by update 2 |
+| Update 2 (2026-10-27): home with the `cultural capital` link, the your-taste bar and the TV and book object links; the shelf (desktop rail, mobile mini shelf, fly-in); film on phones with the remote and tilt to vote; literature on phones as a single-page view; the Taste Profile "sorting table" (1b) and its empty state | Approved 2026-10-27; built on `feature/handoff-update-2` |
 
-Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pallas/prototype/`. Where a later approval supersedes the handoff (the dislike sequence), the approval wins and is recorded in `README.md`.
+Design source of truth: `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2.md` and its `prototype/` (`Taste v2.dc.html`, `Taste Profile.dc.html`, `BookPage.dc.html`); `UPDATE_2.md` supersedes the first handoff's `README.md` wherever they differ, and that README still covers everything it does not mention. Where a later approval supersedes a handoff (the dislike sequence; the mobile book gestures below), the approval wins and is recorded in `ROADMAP.md`. Owner's decisions of 2026-10-27: the your-taste bar shows from the first response (the handoff said five); on phones the sideways swipes vote, and the earlier approved downward pull and edge tap stay as second ways to tear and to move between pages.
 
 ## Architecture
 
 - **Static site, no build step, no framework, no package.json.** Plain HTML, CSS and JavaScript (IIFE modules on a `window.Pallas` namespace).
-- `index.html` — three screens (`#home`, `#cinema`, `#literature`) plus the drawer. Hash routing: `''` home, `#cinema` film, `#literature` literature. The visible label is "film" while the route stays `#cinema`.
+- `index.html` — four screens (`#home`, `#cinema`, `#literature`, `#taste`) plus the drawer and the shelf rail. Hash routing: `''` home, `#cinema` film, `#literature` literature, `#taste?m=film|lit` the Taste Profile. The visible label is "film" while the route stays `#cinema`.
 - `styles.css` — all page styles. `ds/` — Cultural Capital design tokens (do not edit values).
-- `app.js` — router and the Film screen (TV, like/dislike sequences, film quick view).
-- `js/book.js` — the Literature screen (660×520 book space, one scale transform, CSS 3D, WAAPI page turns, dog-ear, tear).
+- `app.js` — router, the Home screen's your-taste bar, and the Film screen (TV, like/dislike sequences, film quick view, the phone remote with tilt to vote).
+- `js/book.js` — the Literature screen (660×520 book space, one scale transform, CSS 3D, WAAPI page turns, dog-ear, tear; the phone single-page view). `Pallas.book` exposes the entries and the flat page renderer to the profile screen.
+- `js/shelf.js` — the shelf (`Pallas.shelf`): the desktop rail at 900 px and up with its closed tab, the mobile mini shelf below, and the fly-in after each response. Each screen registers a provider listing the works it has responses for; the rail's open state is memory only and re-opens on every entry to a screen.
+- `js/taste-screen.js` — the Taste Profile screen (`#taste`), fed only by `Pallas.taste.profile()`: findings drawn to / away from with the engine's strength labels and counts, glossary terms, the works re-sorting into supports / contradicts bands, the examine overlay, the empty state. With responses but no finding yet it shows the engine's own summary sentence.
 - `js/drawer.js` — the Drawer and shared shelf helpers. `js/store.js` — persistence (see below).
 - `js/taste/` — the taste-analysis engine: `stats.js`, `features.js`, `analyse.js`, `profile.js`, and `index.js` (the browser facade, `Pallas.taste`). Pure and deterministic; see `docs/taste-engine.md`. No visible interface.
 - `js/taste/interpret.js` — the interpretation layer: readable, grounded prose from findings, separate from the statistics, using craft knowledge in `library/vocab/qualities.json`. Every claim carries a check (`tests/fixtures/verify-interpretation.js`). See `docs/interpretation-layer.md`.
@@ -65,7 +68,7 @@ Design source of truth: `design_handoff_pallas/README.md` and `design_handoff_pa
 
 ### Persistence
 
-`js/store.js` (`Pallas.store`) keeps an append-only event log in `localStorage['pallas.v1']`: likes, dislikes, skips and undo as events with timestamps and session ids, each area's cursor and last activity, plus reserved slots for profiles, encountered techniques and reflections. An item's judgment is its latest event that has not been undone. `Pallas.votes` is the read/write view the screens and drawer use. Never delete or rewrite events except through the explicit reset / delete functions. Browser storage does not sync between devices and is lost if site data is cleared; `owner.accountId` is reserved for future accounts. Profiles (snapshots, never overwritten) and reflections live in the same document.
+`js/store.js` (`Pallas.store`) keeps an append-only event log in `localStorage['pallas.v1']`: likes, dislikes, skips and undo as events with timestamps and session ids, each area's cursor and last activity, plus reserved slots for profiles, encountered techniques and reflections, and a small `prefs` slot for interface preferences (which one-time hints have been seen). An item's judgment is its latest event that has not been undone. `Pallas.votes` is the read/write view the screens and drawer use. Never delete or rewrite events except through the explicit reset / delete functions. Browser storage does not sync between devices and is lost if site data is cleared; `owner.accountId` is reserved for future accounts. Profiles (snapshots, never overwritten) and reflections live in the same document.
 
 ### Checks
 
@@ -82,11 +85,11 @@ The app's preview runner cannot bind a port in this folder. Run from Bash:
 PORT=8799 node .claude/serve.js
 ```
 
-then open `http://127.0.0.1:8799/` (the built-in browser pane works). The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
+then open `http://127.0.0.1:8799/` (the built-in browser pane works). If that port is already held by a stale server from another folder (it answers "not found"), use another port. The pane throttles `requestAnimationFrame` and can freeze the document timeline, so verify animations with `document.getAnimations()` and paused `currentTime`, not with stopwatch screenshots.
 
 ### Mobile
 
-Mobile styles live at the end of `styles.css`, each inside an `@media` or `@supports` block that desktop does not match. Touch behaviour in `js/book.js` depends on the pointer type: a mouse click on a page dog-ears or tears it, as approved, while a finger needs a second tap (dog-ear) or a deliberate drag (tear). Keep both rules when changing either screen. On phones in portrait (`focusMode` in `js/book.js`: narrower than 600 px and taller than wide), the book is framed one page at a time by a camera transform on the stage. A swipe or a tap on the edge strip moves between pages, and a downward pull tears the passage page out. Everything else gets the full spread unchanged. See `docs/proposals/mobile-book.md`.
+Mobile styles live at the end of `styles.css`, each inside an `@media` or `@supports` block that desktop does not match. Breakpoints (update 2): `phone` is a viewport narrower than 640 px; the desktop shelf rail needs 900 px or more, and between the two the mini shelf is used with the desktop TV and book. Touch behaviour in `js/book.js` depends on the pointer type on tablets and desktops: a mouse click on a page dog-ears or tears it, as approved, while a finger needs a second tap (dog-ear) or a deliberate drag (tear). Keep both rules when changing either screen. On phones (`phone()` in `js/book.js`) the open book shows one page at a time, clipped and slid by a camera transform on the stage. Swiping left tears the passage out and swiping right dog-ears the notes page; the downward pull on the passage page also tears it; the scrub bar under the book, a tap on the page's outer edge, and the buttons move between pages; taps on the pages never vote. On phones the film screen shows the remote under the set: its buttons vote, and dragging it sideways past ±9° votes. Both one-time hints are remembered in the store's `prefs`. The earlier proposal is in `docs/proposals/mobile-book.md`; update 2 supersedes its framing.
 
 ## Fixed technical rules
 

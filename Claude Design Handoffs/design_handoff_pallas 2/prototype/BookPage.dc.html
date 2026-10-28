@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/styles.css">
+  <script src="_ds/creative-output-design-system-ca443838-334a-4774-b349-fec337126a32/_ds_bundle.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gloock&amp;family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&amp;display=swap">
+</helmet>
+<div lang="en" style="position:relative;width:330px;height:520px;overflow:hidden;isolation:isolate;background-color:#ead9b6;color:#2a241b;">
+  <sc-if value="{{ isLeftTex }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;inset:0;background:url(assets/page-left.jpg) 0 0 / 100% 100% no-repeat;"></div>
+  </sc-if>
+  <sc-if value="{{ isRightTex }}" hint-placeholder-val="{{ true }}">
+    <div style="position:absolute;inset:0;background:url(assets/page-right.jpg) 0 0 / 100% 100% no-repeat;"></div>
+  </sc-if>
+  <div style="position:absolute;inset:0;mix-blend-mode:multiply;">
+
+  <sc-if value="{{ isTitle }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:0;right:0;top:150px;display:flex;flex-direction:column;align-items:center;text-align:center;">
+      <div style="font-family:'Gloock',serif;font-size:44px;line-height:.98;letter-spacing:-.02em;color:#1d1b18;">Pallas</div>
+      <div style="width:36px;height:1px;margin:22px 0 18px;background:#1d1b18;"></div>
+      <div style="font-family:'Newsreader',serif;font-style:italic;font-size:15px;line-height:1.3;color:#24211d;">Build your taste in literature</div>
+    </div>
+    <div style="position:absolute;left:0;right:0;bottom:44px;text-align:center;font-family:var(--font-sans);font-variation-settings:'wdth' 125;font-size:12px;font-weight:600;letter-spacing:-.03em;color:#4d4943;letter-spacing:.14em;text-transform:uppercase;font-variation-settings:'wdth' 100;font-size:8px;font-weight:500;">Cultural Capital</div>
+  </sc-if>
+
+  <sc-if value="{{ isExcerpt }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:38px;right:34px;top:74px;">
+      <div style="text-align:center;font-family:'Gloock',serif;font-size:26px;line-height:1;color:#1d1b18;">{{ entry.num }}</div>
+      <div style="margin-top:28px;font-family:'Newsreader',serif;font-size:14.5px;line-height:1.52;font-optical-sizing:auto;text-align:justify;hyphens:auto;">
+        <sc-for list="{{ paras }}" as="p" hint-placeholder-count="2">
+          <p style="margin:0;text-indent:{{ p.indent }};text-wrap:pretty;">{{ p.text }}</p>
+        </sc-for>
+      </div>
+    </div>
+    <div style="position:absolute;left:38px;right:34px;bottom:26px;text-align:center;font-family:'Newsreader',serif;font-size:11px;color:#5a544c;">{{ folio }}</div>
+  </sc-if>
+
+  <sc-if value="{{ isInfo }}" hint-placeholder-val="{{ false }}">
+    <div style="position:absolute;left:34px;right:38px;top:42px;">
+      <div style="font-family:'Newsreader',serif;font-style:italic;font-size:23px;line-height:1.1;color:#1d1b18;text-wrap:balance;">{{ entry.title }}</div>
+      <div style="margin-top:7px;font-family:var(--font-sans);font-size:10.5px;font-weight:500;line-height:1.3;color:#4d4943;">{{ entry.byline }}</div>
+      <div style="height:1px;margin:16px 0 14px;background:#bfa983;"></div>
+      <div style="display:flex;flex-direction:column;gap:12px;font-family:'Newsreader',serif;font-size:12.5px;line-height:1.42;text-wrap:pretty;hyphens:auto;">
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="font-family:var(--font-sans);font-size:10px;font-weight:600;line-height:1.3;color:var(--ref-cobalt);">the author</div>
+          <p style="margin:0;">{{ entry.author }}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="font-family:var(--font-sans);font-size:10px;font-weight:600;line-height:1.3;color:var(--ref-cobalt);">the work</div>
+          <p style="margin:0;">{{ entry.work }}</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:3px;">
+          <div style="font-family:var(--font-sans);font-size:10px;font-weight:600;line-height:1.3;color:var(--ref-cobalt);">techniques</div>
+          <sc-for list="{{ entry.techniques }}" as="t" hint-placeholder-count="2">
+            <p style="margin:0 0 4px;"><em>{{ t.name }}.</em> {{ t.text }}</p>
+          </sc-for>
+        </div>
+      </div>
+    </div>
+    <div style="position:absolute;left:34px;right:38px;bottom:26px;text-align:center;font-family:'Newsreader',serif;font-size:11px;color:#5a544c;">{{ folioNext }}</div>
+  </sc-if>
+
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:330,&quot;height&quot;:520},&quot;kind&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;blank&quot;,&quot;title&quot;,&quot;excerpt&quot;,&quot;info&quot;,&quot;inside&quot;],&quot;default&quot;:&quot;title&quot;,&quot;tsType&quot;:&quot;'blank' | 'title' | 'excerpt' | 'info' | 'inside'&quot;},&quot;side&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;left&quot;,&quot;right&quot;],&quot;default&quot;:&quot;right&quot;,&quot;tsType&quot;:&quot;'left' | 'right'&quot;},&quot;entry&quot;:{&quot;editor&quot;:null,&quot;tsType&quot;:&quot;object&quot;},&quot;folio&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:2,&quot;tsType&quot;:&quot;number&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const kind = this.props.kind ?? 'blank';
+    const side = this.props.side ?? 'right';
+    const entry = this.props.entry || { excerpt: [], techniques: [] };
+    const folio = this.props.folio ?? '';
+    return {
+      entry,
+      isTitle: kind === 'title',
+      isExcerpt: kind === 'excerpt',
+      isInfo: kind === 'info',
+      isInside: kind === 'inside',
+      isLeftTex: side === 'left',
+      isRightTex: side !== 'left',
+      folio: String(folio),
+      folioNext: String(folio),
+      paras: (entry.excerpt || []).map((t, i) => ({ text: t, indent: i ? '1.3em' : '0' })),
+    };
+  }
+}
+</script>
+</body>
+</html>

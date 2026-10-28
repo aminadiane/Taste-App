@@ -16,16 +16,32 @@
 <main id="home" class="home">
   <div class="home__stack">
     <div class="home__kicker">
-      <p class="home__studio">CULTURAL CAPITAL</p>
+      <a class="home__studio" href="https://culturalcapital.world" target="_blank" rel="noopener">cultural capital</a>
       <p class="home__presents">presents</p>
     </div>
     <h1 class="home__title">pallas</h1>
     <p class="home__tagline">an exploration of what moves you, and why</p>
+    <a class="home__bar" id="home-bar" href="#taste" hidden>
+      <span class="home__bar-word">your taste</span>
+      <span class="home__bar-note" id="home-bar-note"></span>
+    </a>
     <nav class="home__nav" aria-label="Disciplines">
-      <p class="home__lead">develop your taste in</p>
-      <div class="home__links">
-        <a class="textlink textlink--big" href="#cinema">film</a>
-        <a class="textlink textlink--big" href="#literature">literature</a>
+      <p class="home__lead">develop your <a class="home__taste" id="home-taste" href="#taste">taste</a> in</p>
+      <div class="home__objects">
+        <div class="home__object">
+          <a class="home__photo home__photo--tv" href="#cinema" aria-label="film">
+            <span class="home__ground"></span>
+            <img src="assets/home-tv.png" alt="Silver CRT television" draggable="false">
+          </a>
+          <a class="textlink textlink--big" href="#cinema">film</a>
+        </div>
+        <div class="home__object">
+          <a class="home__photo home__photo--book" href="#literature" aria-label="literature">
+            <span class="home__ground"></span>
+            <img src="assets/home-book.png" alt="Vintage paperback" draggable="false">
+          </a>
+          <a class="textlink textlink--big" href="#literature">literature</a>
+        </div>
       </div>
     </nav>
   </div>
@@ -35,12 +51,12 @@
 <main id="cinema" class="cinema" hidden>
   <div class="corner corner--tl"><a class="textlink textlink--brand" href="#">pallas</a></div>
 
-  <div class="tv">
+  <div class="tv" id="tv">
     <img class="tv__photo" src="assets/tv.jpg" alt="Silver CRT television" draggable="false">
     <div class="tv__shadow tv__shadow--soft"></div>
     <div class="tv__shadow tv__shadow--contact"></div>
 
-    <div class="tv__screen">
+    <div class="tv__screen" id="screen">
       <div class="tv__picture" id="picture">
         <div class="tv__stills" id="stills"></div>
         <canvas class="tv__noise" id="noise" width="200" height="146" aria-hidden="true"></canvas>
@@ -54,17 +70,26 @@
     <div class="tv__badge">cultural capital</div>
 
     <div class="tv__label tv__label--dislike">dislike</div>
-    <button class="tv__button tv__button--dislike" id="dislike" type="button" aria-label="dislike"></button>
-    <button class="tv__button tv__button--like" id="like" type="button" aria-label="like"></button>
+    <button class="tv__button tv__button--dislike" id="dislike" type="button" aria-label="dislike"><span class="tv__glow tv__glow--dislike" id="glow-dislike"><span></span></span></button>
+    <button class="tv__button tv__button--like" id="like" type="button" aria-label="like"><span class="tv__glow tv__glow--like" id="glow-like"><span></span></span></button>
     <div class="tv__label tv__label--like">like</div>
   </div>
 
-  <div class="corner corner--br" id="counter"></div>
-  <div class="corner corner--bl corner--links">
-    <a class="qlink" id="cq-shelf" href="#cinema">shelf</a><span>—</span>
-    <a class="qlink" id="cq-like" href="#cinema">liked (0)</a><span>—</span>
-    <a class="qlink" id="cq-dislike" href="#cinema">disliked (0)</a>
+  <!-- phones: the remote below the set -->
+  <div class="remote" id="remote" hidden>
+    <div class="remote__tilt" id="remote-tilt">
+      <div class="remote__art" id="remote-art">
+        <img class="remote__body" src="assets/remote-body.png" alt="Silver Toshiba remote" draggable="false">
+        <button class="remote__btn remote__btn--dislike" id="remote-dislike" type="button" aria-label="dislike"></button>
+        <p class="remote__label remote__label--dislike">dislike</p>
+        <button class="remote__btn remote__btn--like" id="remote-like" type="button" aria-label="like"></button>
+        <p class="remote__label remote__label--like">like</p>
+        <p class="remote__brand">cultural capital</p>
+      </div>
+    </div>
   </div>
+
+  <div class="mini" id="cq-mini" hidden></div>
 </main>
 
 <!-- 03 Literature -->
@@ -135,7 +160,28 @@
 
         <div class="leaf" id="leaf" hidden></div>
       </div>
-      <div class="stack" id="stack" hidden></div>
+    </div>
+  </div>
+
+  <!-- phones: scrub bar and controls under the single page -->
+  <div class="lit__phone" id="lit-phone" hidden>
+    <div class="scrub" id="scrub" role="scrollbar" aria-label="passage and notes" aria-orientation="horizontal" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+      <div class="scrub__track"></div>
+      <div class="scrub__thumb" id="scrub-thumb"></div>
+    </div>
+    <div class="lit__phone-acts">
+      <div class="lit__phone-act">
+        <a class="textlink textlink--act" id="ph-tear" href="#literature">tear out</a>
+        <span class="lit__hint" id="hint-l">or swipe left</span>
+      </div>
+      <div class="lit__phone-act lit__phone-act--r">
+        <a class="textlink textlink--act" id="ph-fold" href="#literature">dog-ear</a>
+        <span class="lit__hint" id="hint-r">or swipe right</span>
+      </div>
+    </div>
+    <div class="lit__phone-nav">
+      <a class="textlink textlink--nav" id="ph-prev" href="#literature">Previous</a>
+      <a class="textlink textlink--nav" id="ph-next" href="#literature">Next</a>
     </div>
   </div>
 
@@ -150,13 +196,40 @@
   </div>
 
   <div class="corner corner--tr" id="lit-close" hidden><a class="textlink textlink--nav" id="bk-close" href="#literature">Close</a></div>
-  <div class="corner corner--br" id="lit-counter" hidden></div>
-  <div class="corner corner--bl corner--links">
-    <a class="qlink" id="lq-shelf" href="#literature">shelf</a><span>—</span>
-    <a class="qlink" id="lq-like" href="#literature">dog-eared (0)</a><span>—</span>
-    <a class="qlink" id="lq-dislike" href="#literature">torn out (0)</a>
-  </div>
+  <div class="mini mini--lit" id="lq-mini" hidden></div>
 </main>
+
+<!-- 04 Taste profile (the sorting table) -->
+<main id="taste" class="taste" hidden>
+  <div class="taste__bar">
+    <a class="textlink textlink--brand" href="#">pallas</a>
+    <div class="taste__switch" id="taste-switch" hidden>
+      <a class="qlink" id="taste-film" href="#taste?m=film">film</a><span>—</span><a class="qlink" id="taste-lit" href="#taste?m=lit">literature</a>
+    </div>
+  </div>
+  <div class="taste__empty" id="taste-empty" hidden>
+    <p><a class="taste__empty-link" href="#">exercise judgement</a> to build your taste</p>
+  </div>
+  <div class="taste__body" id="taste-body" hidden>
+    <div class="taste__col">
+      <p class="taste__h" id="taste-h"></p>
+      <p class="taste__basis" id="taste-basis"></p>
+      <div class="taste__findings" id="taste-findings"></div>
+      <div class="taste__detail" id="taste-detail" hidden></div>
+    </div>
+    <div class="taste__table" id="taste-table"></div>
+  </div>
+  <div class="taste__exam" id="taste-exam" hidden></div>
+</main>
+
+<!-- The shelf: desktop rail (900px and up) and its closed tab -->
+<aside class="rail" id="rail" aria-label="shelf" hidden>
+  <div class="rail__head"><span id="rail-count"></span><a class="qlink" id="rail-close" href="#">close shelf</a></div>
+  <div class="rail__filters" id="rail-filters"></div>
+  <div class="rail__rows" id="rail-rows"></div>
+  <div class="rail__caption" id="rail-caption"></div>
+</aside>
+<a class="rail__tab" id="rail-tab" href="#" hidden>shelf (0)</a>
 
 <!-- Quick view -->
 <div class="drawer" id="drawer" aria-hidden="true">
@@ -169,9 +242,10 @@
 
 <script src="js/store.js"></script>
 <script src="js/drawer.js"></script>
+<script src="js/shelf.js"></script>
 <script src="app.js"></script>
 <script src="js/book.js"></script>
-<!-- taste engine: no visible interface yet; see docs/taste-engine.md -->
+<!-- taste engine and the taste profile screen -->
 <script src="js/taste/stats.js" defer></script>
 <script src="js/taste/features.js" defer></script>
 <script src="js/taste/analyse.js" defer></script>
@@ -179,6 +253,7 @@
 <script src="js/taste/interpret.js" defer></script>
 <script src="js/taste/index.js" defer></script>
 <script src="js/journal.js" defer></script>
+<script src="js/taste-screen.js" defer></script>
 <!-- Vercel Web Analytics -->
 <script>
   window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };

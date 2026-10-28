@@ -1,4 +1,4 @@
-/* pallas — routing and the film screen. No build step; serve the folder and open index.html. */
+/* pallas — routing, the home screen and the film screen. No build step; serve the folder and open index.html. */
 window.Pallas = window.Pallas || {};
 (() => {
   'use strict';
@@ -8,15 +8,18 @@ window.Pallas = window.Pallas || {};
   const LIBRARY_BASE = LIBRARY_URL.slice(0, LIBRARY_URL.lastIndexOf('/') + 1);
 
   const $ = (id) => document.getElementById(id);
-  const home = $('home'), cinema = $('cinema'), lit = $('literature');
-  const picture = $('picture'), stillsEl = $('stills'), noise = $('noise'), dot = $('dot'), osd = $('osd'), counter = $('counter');
-  const pad = (n) => String(n).padStart(2, '0');
-  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store;
+  const home = $('home'), cinema = $('cinema'), lit = $('literature'), taste = $('taste');
+  const tv = $('tv'), picture = $('picture'), stillsEl = $('stills'), noise = $('noise'), dot = $('dot'), osd = $('osd');
+  const V = Pallas.votes, D = Pallas.drawer, store = Pallas.store, SH = Pallas.shelf;
+  const phone = () => innerWidth < 640;
+  const reduced = () => matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ---------- the library ---------- */
   let library = { films: {}, stills: [] };
   let stillEls = [];   // one wrapper per still, library order
   let N = 0;
+  let readyResolve;
+  const ready = new Promise((res) => { readyResolve = res; });
 
   function buildStills() {
     stillsEl.innerHTML = '';
@@ -47,6 +50,8 @@ window.Pallas = window.Pallas || {};
     buildStills();
     if (N) { state.idx = store.resumeIndex('cinema', stillIds()); store.setCursor('cinema', stillIds()[state.idx]); }   // resume where the visitor left off
     render();
+    SH.register('c', shelfProvider);
+    readyResolve(library);
     if (document.readyState === 'complete') loadRestWhenIdle(); else addEventListener('load', loadRestWhenIdle, { once: true });
   }
   const stillIds = () => library.stills.map((s) => s.id);
@@ -150,10 +155,6 @@ window.Pallas = window.Pallas || {};
       el.lastElementChild.style.opacity = swiping && current ? 1 : 0;
     });
 
-    counter.textContent = N ? 'still ' + pad(idx + 1) + ' / ' + pad(N) : '';
-    $('cq-like').textContent = `liked (${V.list('c', 'like').length})`;
-    $('cq-dislike').textContent = `disliked (${V.list('c', 'dislike').length})`;
-
     loadAround();
     void picture.offsetWidth;   // commit transition-less phases before the next one starts
   }
@@ -166,7 +167,9 @@ window.Pallas = window.Pallas || {};
 
   function react(kind) {
     if (state.phase !== 'idle' || !N) return;
-    V.set('c', library.stills[state.idx].id, kind, library.stills[state.idx].film);
+    const still = library.stills[state.idx];
+    V.set('c', still.id, kind, still.film);
+    SH.respond('c', still.film, kind);   // the film's spine flies to the shelf once the sequence below has finished
     if (kind === 'like') {
       // channel change: the next still slides up from below, a black band between them, no static
       set({ osd: 'liked', phase: 'hold' });
@@ -236,12 +239,70 @@ window.Pallas = window.Pallas || {};
     const i = stillIds().indexOf(e.item);
     if (i >= 0) set({ idx: i }); else render();
     if (D.isOpen() && !cinema.hidden) D.render();
+    SH.render();
     return e;
   }
   Pallas.cinema = { skip, undo, canUndo: () => !!store.lastUndoable('cinema'), get busy() { return state.phase !== 'idle'; } };
 
   $('like').addEventListener('click', () => react('like'));
   $('dislike').addEventListener('click', () => react('dislike'));
+
+  /* ---------- phones: the remote below the set (handoff update 2) ----------
+     Its buttons vote like the set's; dragging it sideways tilts it about a point below the screen, and releasing past
+     ±9° votes. A one-time hint tilts it both ways on the first visit. */
+  const remote = $('remote'), tiltEl = $('remote-tilt'), art = $('remote-art'), glowD = $('glow-dislike'), glowL = $('glow-like');
+  const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+  let tiltDrag = false, rMoved = false, hintCancelled = false;
+  function setTilt(deg, dragging) {
+    tiltEl.style.transform = `rotate(${deg.toFixed(2)}deg)`;
+    tiltEl.style.transition = dragging ? 'none' : `transform 560ms ${EASE}`;
+    const gtr = dragging ? 'opacity 80ms' : `opacity 420ms ${EASE}`;
+    glowD.style.opacity = clamp(-deg / 9, 0, 1).toFixed(2); glowD.style.transition = gtr;
+    glowL.style.opacity = clamp(deg / 9, 0, 1).toFixed(2); glowL.style.transition = gtr;
+  }
+  function layoutPhone() {
+    const on = phone() && !cinema.hidden;
+    remote.hidden = !on;
+    const mini = $('cq-mini');
+    if (!on) { tv.style.marginBottom = ''; mini.style.cssText = ''; return; }
+    const vw = innerWidth, vh = innerHeight;
+    const tvW = Math.min(vw * .92, (vh - 160) * 1.107, 880), tvH = tvW * 1400 / 1550;
+    const s = Math.min(.6, (vw * .36) / 246), top = Math.round(72 + tvH + 78);
+    remote.style.top = top + 'px';
+    remote.style.width = Math.round(246 * s) + 'px';
+    remote.style.height = Math.round(893 * s) + 'px';
+    art.style.transform = `scale(${s})`;
+    tv.style.marginBottom = Math.max(0, vh - 160 - tvH) + 'px';   // the set sits at the top; the remote runs off the bottom on purpose
+    // the mini shelf sits centred under the set
+    mini.style.cssText = `left:50%;bottom:auto;top:${Math.round(72 + tvH + 18)}px;transform:translateX(-50%)`;
+  }
+  tiltEl.addEventListener('pointerdown', (e) => {
+    const sx = e.clientX; let deg = 0, moved = false;
+    hintCancelled = true;
+    const move = (ev) => { const dx = ev.clientX - sx; if (Math.abs(dx) > 8) moved = true; if (!moved) return; deg = clamp(dx / 7, -13, 13); tiltDrag = true; setTilt(deg, true); };
+    const up = () => {
+      removeEventListener('pointermove', move); removeEventListener('pointerup', up); removeEventListener('pointercancel', up);
+      if (moved) { rMoved = true; setTimeout(() => { rMoved = false; }, 60); }   // a tap that followed a drag must not also press a button
+      if (deg <= -9) react('dislike'); else if (deg >= 9) react('like');
+      tiltDrag = false;
+      setTimeout(() => setTilt(0, false), deg <= -9 || deg >= 9 ? 380 : 0);
+    };
+    addEventListener('pointermove', move); addEventListener('pointerup', up); addEventListener('pointercancel', up);
+  });
+  $('remote-like').addEventListener('click', () => { if (!rMoved) react('like'); });
+  $('remote-dislike').addEventListener('click', () => { if (!rMoved) react('dislike'); });
+  const wait = (ms) => new Promise((res) => timers.push(setTimeout(res, ms)));
+  async function playTiltHint() {
+    if (store.pref('hint.tilt') || reduced()) return;
+    store.setPref('hint.tilt', true);
+    hintCancelled = false;
+    const step = async (d, ms) => { if (tiltDrag || hintCancelled) return false; setTilt(d, false); await wait(ms); return true; };
+    await wait(900);
+    if (!(await step(-10, 1100))) return;
+    if (!(await step(0, 500))) return;
+    if (!(await step(10, 1100))) return;
+    await step(0, 0);
+  }
 
   /* ---------- quick view: shelf of responded films, liked and disliked stills ---------- */
   const qv = { tab: 'like', sel: null };
@@ -272,7 +333,7 @@ window.Pallas = window.Pallas || {};
       { label: `shelf (${responded.length})`, active: tab === 'shelf', onClick: () => { qv.tab = 'shelf'; D.render(); } },
       { label: `liked (${liked.length})`, active: tab === 'like', onClick: () => { qv.tab = 'like'; D.render(); } },
       { label: `disliked (${disliked.length})`, active: tab === 'dislike', onClick: () => { qv.tab = 'dislike'; D.render(); } },
-    ]));
+    ], Object.keys(voted).length ? { label: 'your taste in film', href: '#taste?m=film' } : null));
     if (tab === 'shelf') {
       if (!responded.length) { wrap.appendChild(h('p', 'qv__empty', 'none yet')); return wrap; }
       const sel = responded.includes(qv.sel) ? qv.sel : responded[0];
@@ -296,30 +357,64 @@ window.Pallas = window.Pallas || {};
     return wrap;
   }
   const openQV = (tab) => { qv.tab = tab; D.show(filmDrawer); };
-  $('cq-shelf').addEventListener('click', (e) => { e.preventDefault(); openQV('shelf'); });
-  $('cq-like').addEventListener('click', (e) => { e.preventDefault(); openQV('like'); });
-  $('cq-dislike').addEventListener('click', (e) => { e.preventDefault(); openQV('dislike'); });
 
-  /* ---------- routing: '' home, #cinema film, #literature literature ---------- */
+  // The shelf lists films responded to. A film with several stills counts as liked if any of its stills was liked.
+  const shelfProvider = {
+    items: () => {
+      const byFilm = {};
+      for (const [id, k] of Object.entries(V.all('c'))) {
+        const s = stillById(id); if (!s) continue;
+        const f = byFilm[s.film] || (byFilm[s.film] = { liked: false });
+        if (k === 'like') f.liked = true;
+      }
+      return Object.keys(byFilm).map((slug) => {
+        const f = library.films[slug] || {}, c = spineFor(slug);
+        return { id: slug, kind: 'film', title: f.title || slug, meta: String(f.year || ''), bg: c.bg, fg: c.fg, vote: byFilm[slug].liked ? 'like' : 'dislike' };
+      });
+    },
+    open: (slug) => { if (slug) qv.sel = slug; openQV('shelf'); },
+    source: () => $('screen'),
+    noun: ['film', 'films'], likeWord: 'liked', dislikeWord: 'disliked',
+  };
+
+  /* ---------- home: the your-taste bar and the taste link ---------- */
+  function renderHome() {
+    const nc = Object.keys(V.all('c')).length, nl = Object.keys(V.all('l')).length, n = nc + nl;
+    const href = '#taste?m=' + (nl > nc ? 'lit' : 'film');
+    const bar = $('home-bar');
+    bar.hidden = n < 1;   // from the first response (owner's decision, 2026-10-27)
+    bar.href = href;
+    $('home-bar-note').textContent = `from ${n} response${n === 1 ? '' : 's'}`;
+    $('home-taste').href = href;
+  }
+
+  /* ---------- routing: '' home, #cinema film, #literature literature, #taste the taste profile ---------- */
   function route() {
-    const hash = location.hash;
-    const isCinema = hash === '#cinema', isLit = hash === '#literature';
-    home.hidden = isCinema || isLit;
+    const [path, query] = location.hash.split('?');
+    const isCinema = path === '#cinema', isLit = path === '#literature', isTaste = path === '#taste';
+    home.hidden = isCinema || isLit || isTaste;
     cinema.hidden = !isCinema;
     lit.hidden = !isLit;
+    taste.hidden = !isTaste;
     if (!isCinema) {
       clearTimers(); noiseOn = false; cancelAnims();
       state.phase = 'idle'; state.osd = ''; state.prevIdx = null;
       picture.style.visibility = ''; picture.style.opacity = ''; picture.style.filter = ''; picture.style.transform = ''; picture.style.transition = '';
       dot.style.transition = ''; dot.style.opacity = 0;
+      setTilt(0, false);
     }
     D.close();
+    if (isCinema) SH.enter('c'); else if (isLit) SH.enter('l'); else SH.leave();
     render();
-    dispatchEvent(new CustomEvent('pallas:route', { detail: { isLit } }));
+    renderHome();
+    layoutPhone();
+    dispatchEvent(new CustomEvent('pallas:route', { detail: { isLit, isCinema, isTaste, query: new URLSearchParams(query || '') } }));
     window.scrollTo(0, 0);
+    if (isCinema && phone()) playTiltHint();
   }
   addEventListener('hashchange', route);
-  Pallas.film = { get library() { return library; } };
+  addEventListener('resize', layoutPhone);
+  Pallas.film = { get library() { return library; }, ready, spineFor, base: LIBRARY_BASE };
   route();
   loadLibrary();
 })();

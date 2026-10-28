@@ -34,6 +34,7 @@ window.Pallas = window.Pallas || {};
       profiles: [],
       encountered: {},
       reflections: [],
+      prefs: {},          // small per-user interface preferences, such as one-time hints already seen
     };
   }
 
@@ -51,6 +52,7 @@ window.Pallas = window.Pallas || {};
       profiles: Array.isArray(doc.profiles) ? doc.profiles : [],
       encountered: doc.encountered && typeof doc.encountered === 'object' ? doc.encountered : {},
       reflections: Array.isArray(doc.reflections) ? doc.reflections : [],
+      prefs: doc.prefs && typeof doc.prefs === 'object' ? doc.prefs : {},
     };
   }
 
@@ -214,6 +216,10 @@ window.Pallas = window.Pallas || {};
     reflections(filter = {}) {
       return JSON.parse(JSON.stringify(doc.reflections.filter((r) => (!filter.area || r.area === area(filter.area)) && (!filter.item || r.item === filter.item) && (!filter.profileId || r.profileId === filter.profileId))));
     },
+
+    // Interface preferences (not judgments): e.g. which one-time hints have been seen.
+    pref(key) { return doc.prefs[key]; },
+    setPref(key, value) { if (doc.prefs[key] === value) return; doc.prefs[key] = value; save(); },
 
     // User control
     exportData() { return JSON.parse(JSON.stringify(doc)); },
