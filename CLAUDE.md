@@ -139,3 +139,28 @@ Mobile styles live at the end of `styles.css`, each inside an `@media` or `@supp
 - Commit the working version before substantial changes. End commit messages with the attribution line requested in the session.
 - Inspect before assuming something is missing; do not rebuild working functionality.
 - When a decision belongs to the owner (design, paid services), ask; record the outcome in `ROADMAP.md` or `README.md`.
+
+## Handoff (2026-10-30, account migration)
+
+Written for a fresh Claude Code session with no memory of earlier work. Everything above is still the rulebook; this section is the "where things stand".
+
+**What this is:** the Cultural Capital site (culturalcapital.world, deployed on Vercel from `main` of github.com/aminadiane/Taste-App), with Pallas, the film and literature taste experience, at `/works/pallas/`.
+
+**State on 2026-10-30**
+- `main` is at `502c349 Review fixes: Cultural Capital site`, with a clean working tree. Every feature branch (`feature/persistence`, `feature/literature`, `feature/pallas-overnight`, `feature/handoff-update-2`, `docs/claude-md-roadmap`) is already merged into `main`. ROADMAP's "In progress: persistence awaiting merge" heading is stale, so update it when you next touch ROADMAP.
+- Built: Home, About and Contact at the root; Pallas with the TV film screen (89 stills, metadata, lazy loading), the paperback literature screen (5 live NYT passages, 20 pending), the shelf and drawer, phone layouts (remote, tilt, single-page book), the persistent store (`localStorage['pallas.v1']`), the taste engine 1.1.0, the interpretation layer, the Journal data and the Taste Profile sorting table (update 2).
+- Tests: all 77 pass, run per file with `for f in tests/*.test.js; do node --test "$f"; done` (`node --test tests/` alone errors on the fixtures folder). `node tools/check-site.js` passes.
+
+**How to run it:** `npm run serve` (or `node .claude/serve.js 8765`), then open http://127.0.0.1:8765/ for the site and http://127.0.0.1:8765/works/pallas/ for Pallas. There's no build step, and it deploys as static files.
+
+**Where to look first:** `ROADMAP.md` (status, owner decisions, pending decisions), `README.md`, `Claude Design Handoffs/design_handoff_pallas 2/UPDATE_2.md` (Pallas design source of truth), and `Claude Design Handoffs/design_handoff_cultural_capital_about/…/project/` (site design source of truth).
+
+**What's left (from ROADMAP "Decisions pending" and "Known bugs")**
+1. Designs, from Claude Design and approved before building: skip and undo controls, the returning-user prompt (continue / new session), and the all-evaluated state. The store APIs already exist.
+2. The 20 pending literature passages need real text plus info-page notes. Ask the owner whether Claude drafts the notes or she supplies them.
+3. Choose a vision-model provider and cost cap for metadata analysis (owner decision; no paid APIs without approval).
+4. Accounts: whether and when.
+5. Licensing or replacement of the homepage object photographs and the remote images.
+6. Real-device mobile testing; only Chromium has been tested.
+
+**Migration note:** the owner moved to a new Claude account on 2026-10-30. The design system now lives on the new account as the "Cultural Capital" Design System artifact. Exports of all the Claude Design projects (including DESIGN - Taste / Pallas and Home Page - CulturalCapital.World) are in `~/Desktop/Claude Migration/Design System/`. The old Claude Design will be retired on 2026-12-14.
