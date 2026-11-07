@@ -5,10 +5,11 @@
 
 html,body{margin:0}
 html[data-page="home"],html[data-page="home"] body,
-html[data-page="contact"],html[data-page="contact"] body{background:#fff}
+html[data-page="contact"],html[data-page="contact"] body,
+html[data-page="thoughts"],html[data-page="thoughts"] body{background:#fff}
 html[data-page="about"],html[data-page="about"] body{background:#000}
-html[data-page="home"] a,html[data-page="contact"] a{color:var(--ink);text-decoration:none}
-html[data-page="home"] a:hover,html[data-page="contact"] a:hover{color:var(--ink)}
+html[data-page="home"] a,html[data-page="contact"] a,html[data-page="thoughts"] a{color:var(--ink);text-decoration:none}
+html[data-page="home"] a:hover,html[data-page="contact"] a:hover,html[data-page="thoughts"] a:hover{color:var(--ink)}
 /* The design system's focus ring is ink, invisible on About's black and barely visible on its cobalt: white there. */
 html[data-page="about"]{--focus-ring:#fff}
 html[data-page="about"] a{color:#fff;text-decoration:none}
@@ -91,6 +92,57 @@ html[data-page="about"] .cc-header{background:#000;color:#fff;transition:padding
 .tv__scan{position:absolute;inset:0;background:repeating-linear-gradient(to bottom,rgba(0,0,0,.28) 0,rgba(0,0,0,.28) 1px,transparent 1px,transparent 3px);mix-blend-mode:multiply}
 .tv__roll{position:absolute;left:0;right:0;height:22%;background:linear-gradient(to bottom,transparent,rgba(255,255,255,.05),transparent);animation:cc-roll 7s linear infinite}
 .tv__shine{position:absolute;inset:0;background:radial-gradient(120% 90% at 30% 18%,rgba(255,255,255,.14),transparent 45%)}
+
+/* ---------- Thoughts (essays) ----------
+   From the Thoughts design (home-page.html, thoughts-page.html, article-page.html in the thoughts-design handoff).
+   The pages are written by tools/build-thoughts.js from thoughts/essays/*.md. */
+
+/* Home: an essay section, built like the Pallas section; every entry after the first gets the design's gap. */
+.home-essay{padding:0 var(--edge);scroll-margin-top:48px}
+.home-essay + .home-essay,.home-essay + .home-works{margin-top:clamp(160px,18vw,280px)}
+.home-essay__body{display:flex;flex-direction:column;align-items:center;text-align:center;padding-top:clamp(64px,8vw,120px)}
+html[data-page] a.home-essay__title{display:block;max-width:16ch;color:var(--ref-cobalt);text-decoration:none;font-family:var(--font-sans);font-weight:400;font-size:clamp(48px,7.4vw,128px);line-height:.98;letter-spacing:-.035em;text-wrap:balance;transition:opacity var(--dur-base) var(--ease-out)}
+html[data-page] a.home-essay__title:hover{opacity:.72}
+html[data-page] a.home-essay__title:active{opacity:.6}
+.home-essay__copy{display:flex;flex-direction:column;align-items:center;text-align:center;margin-top:clamp(32px,4vw,56px)}
+.home-essay__links{margin-top:clamp(28px,3vw,40px);display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-4) var(--space-7)}
+@media (max-width:719.98px){.home-essay{scroll-margin-top:80px}}
+
+.thoughts-footer{margin-top:clamp(160px,18vw,280px)}
+
+/* The Thoughts page. */
+.thoughts-main{padding:0 var(--edge)}
+.thoughts-hero{display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(72px,9vw,140px) 0 clamp(56px,7vw,112px)}
+.thoughts-hero__title{margin:0;font-family:var(--font-grotesk);font-variation-settings:'wdth' 125;font-weight:600;font-size:clamp(80px,15vw,248px);line-height:.8;letter-spacing:-.035em;color:var(--ink)}
+/* The design's 80 px floor is wider than a phone; below 560 px the word scales with the viewport so it stays inside the edges. */
+@media (max-width:559.98px){.thoughts-hero__title{font-size:18vw}}
+.thoughts-hero__kicker{margin-top:clamp(24px,3vw,44px);color:var(--ref-cobalt)}
+.thoughts-list{list-style:none;margin:0 auto;padding:0;max-width:1120px;border-bottom:1px solid var(--rule);container-type:inline-size}
+.thoughts-list__item{border-top:1px solid var(--rule)}
+.thoughts-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr));gap:var(--space-4) var(--space-7);padding:clamp(28px,3vw,44px) 0;transition:opacity var(--dur-base) var(--ease-out)}
+.thoughts-row:hover{opacity:.72}
+.thoughts-row__date{display:flex;gap:var(--space-5);align-items:baseline}
+.thoughts-row__main{grid-column:span 2;display:flex;flex-direction:column;gap:var(--space-3)}
+/* One column (narrower than two 220 px columns and their gap): the title goes under the date. */
+@container (max-width:487.98px){.thoughts-row__main{grid-column:auto}}
+.thoughts-row__title{margin:0;font-family:var(--font-sans);font-weight:400;font-size:clamp(30px,3.4vw,52px);line-height:1.02;letter-spacing:-.028em;color:var(--ref-cobalt);text-wrap:balance}
+.thoughts-row__text{margin:0;max-width:52ch;font-size:clamp(16px,1.3vw,19px);line-height:1.45;color:var(--graphite)}
+
+/* The article page. */
+.essay-main{padding:0 var(--edge)}
+.essay-top{max-width:1120px;margin:0 auto;border-top:1px solid var(--rule);padding-top:var(--space-3);display:flex;justify-content:space-between;gap:var(--space-5)}
+.essay{max-width:1120px;margin:0 auto}
+.essay__head{display:flex;flex-direction:column;align-items:center;text-align:center;padding:clamp(72px,9vw,140px) 0 clamp(56px,6vw,96px)}
+.essay__kicker{color:var(--ref-cobalt)}
+.essay__title{margin:var(--space-5) 0 0;max-width:18ch;font-family:var(--font-sans);font-weight:400;font-size:clamp(44px,6.4vw,112px);line-height:1;letter-spacing:-.03em;text-wrap:balance}
+.essay__dek{margin:var(--space-6) 0 0;max-width:44ch;font-size:clamp(17px,1.45vw,21px);line-height:1.45;color:var(--graphite);text-wrap:balance}
+.essay__byline{margin-top:var(--space-6);display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:var(--space-3) var(--space-4);color:var(--ref-cobalt)}
+.essay__dot{font-size:var(--text-2xs);line-height:var(--leading-label)}
+.essay__body{max-width:66ch;margin:0 auto;font-size:clamp(18px,1.35vw,20px);line-height:1.65;color:var(--ink);display:flex;flex-direction:column;gap:1.2em}
+.essay__body p{margin:0}
+.essay__divider{width:48px;margin:1.6em auto;border:0;border-top:1px solid var(--ink)}
+.essay__pull{margin:.6em 0 1.4em;padding:0;border:0;font-size:clamp(26px,2.6vw,40px);line-height:1.15;letter-spacing:-.025em;color:var(--ref-cobalt);text-wrap:balance}
+.essay__end{max-width:66ch;margin:clamp(72px,8vw,120px) auto 0;border-top:1px solid var(--rule);padding-top:var(--space-5);display:flex;flex-wrap:wrap;justify-content:space-between;gap:var(--space-4)}
 
 /* ---------- About ---------- */
 

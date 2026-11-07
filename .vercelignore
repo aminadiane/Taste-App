@@ -11,3 +11,6 @@
 # Pallas: untouched downloads (the app shows library/stills/) and import batches for the tools
 /works/pallas/library/originals/
 /works/pallas/library/import/
+
+# Thoughts: the essay source files (the pages are built from them by tools/build-thoughts.js)
+/thoughts/essays/

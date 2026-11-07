@@ -51,6 +51,8 @@ The repository root is the Cultural Capital site (culturalcapital.world), deploy
 | `/` | `index.html` | Cultural Capital Home: the statement, then the works section (`#works`, "N 001 — Pallas") |
 | `/about/` | `about/index.html` | Cultural Capital About |
 | `/contact/` | `contact/index.html` | forwards to `https://culturalcapital.studio` (307 in `vercel.json`; the page itself has a meta refresh, `location.replace` and a visible link) |
+| `/thoughts/` | `thoughts/index.html` | Thoughts: every essay, newest first (generated) |
+| `/thoughts/<slug>/` | `thoughts/<slug>/index.html` | one essay (generated from `thoughts/essays/<slug>.md`) |
 | `/works`, `/works/` | none | 307 to `/#works` in `vercel.json` (there is no works page) |
 | `/works/pallas/` | `works/pallas/` | Pallas |
 
@@ -59,6 +61,8 @@ Shared by the site pages and Pallas: `ds/` (the Cultural Capital design tokens, 
 Site design source of truth: `Claude Design Handoffs/design_handoff_cultural_capital_about/home-page-culturalcapital-world/project/` (`Cultural Capital Home.dc.html`, `Cultural Capital About.dc.html`, and its `CLAUDE.md` standing rules: never the degree sign or the ordinal indicators, write "N 001"; the Cultural Capital wordmark is cobalt). Built at each page's default props; the review variants (About type, emphasis, CTA and brand-outline options) are not built. `support.js` and `_ds_bundle.js` there are Claude Design editor tooling and are never shipped. The site pages deliberately use uppercase tracked labels, a cobalt flood on About and a "we" voice; those come from the approved design, not from the Pallas interface rules above.
 
 Owner's decisions of 2026-10-27: `/` is Home (with the works section), not About; there is no works page (`/works/` goes to `/#works`); `/contact/` forwards to culturalcapital.studio; a Contact link joins Works and About in the header and footer; Pallas links open `/works/pallas/` in a new tab; old Pallas links on the root (`/#cinema`, `/#literature`, `/#taste…`) are forwarded to `/works/pallas/` with the same hash by an inline script at the top of `index.html` (`#works` is not); Pallas's `cultural capital` link now goes to `/` in the same tab.
+
+Thoughts (2026-11-07): each essay is one file in `thoughts/essays/` (a details block, then the owner's text, used exactly as written). `npm run build` (`tools/build-thoughts.js`) writes the Thoughts page, the article pages and the home page's essay sections between `<!-- thoughts:start -->` and `<!-- thoughts:end -->` above Pallas; never edit those generated parts by hand. The generated HTML is committed, so deployment stays static. Thoughts sits between Works and About in every header and footer.
 
 Pallas moved into `works/pallas/` on 2026-10-27. Its runtime paths are all relative to its page (no `<base>`, no root-absolute paths except Vercel's `/_vercel/insights/script.js`), so it needs the trailing slash: `vercel.json` sets `trailingSlash: true`, and `.claude/serve.js` redirects the same way. `localStorage['pallas.v1']` is per origin, so saved responses survive the move. `.vercelignore` keeps development material out of the deployment (`Claude Design Handoffs/`, `docs/`, `tests/`, `tools/`, `.claude/`, `works/pallas/library/originals/`, `works/pallas/library/import/`); no page may reference those, and `tools/check-site.js` fails if one does.
 
@@ -98,6 +102,7 @@ App paths below (`index.html`, `styles.css`, `app.js`, `js/`, `library/`, `asset
 
 - `node --test tests/*.test.js`: the store, cinema metadata, the taste engine with simulated users, the journal, the interpretation layer, and the guard that mobile CSS never reaches desktop.
 - `node tools/check-site.js --tests`: the pre-deploy check (there is no build step). It confirms every referenced file exists, every script parses, the data parses, the validators pass, and the tests pass. It scans `works/pallas/index.html`, the root `index.html` (required), every `<folder>/index.html` one level down (`about/`, `contact/`; `works/` only through `works/pallas/`, plus `works/index.html` if one is ever added), with their linked stylesheets; root-absolute references (`/x`) resolve against the repository root, relative ones against the page's folder, and a folder reference (`/works/pallas/`) needs that folder's `index.html`.
+- `node tools/build-thoughts.js --check`: the Thoughts pages match the essay files (also run by `check-site.js`, which scans the article pages too); `tests/thoughts.test.js` checks the article text word for word.
 - `node tools/stress-engine.js --seeds 100`: the engine stress test (`docs/engine-stress-report.md`). Re-run it after any change to `js/taste/analyse.js`, and change thresholds only when its results support it.
 - `node tools/example-profiles.js` and `node tools/example-interpretations.js`: regenerate the examples in `docs/examples/`. The simulated people are in `tests/fixtures/personas.js`.
 

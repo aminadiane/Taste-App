@@ -12,6 +12,7 @@ The repository root is the Cultural Capital site (culturalcapital.world), implem
 - `about/index.html` — About (`/about/`). `contact/index.html` — forwards to culturalcapital.studio (`/contact/`).
 - `site/` — the site's styles and scripts (`site.css`, `site.js`, `home.js`, `about.js`) and `assets/pallas-tv.png`.
 - `ds/` — the Cultural Capital design-system tokens, shared by the site and Pallas (`/ds/styles.css`).
+- `thoughts/` — Thoughts (`/thoughts/`): the essay files in `thoughts/essays/`, and the pages `tools/build-thoughts.js` (`npm run build`) writes from them (`thoughts/index.html`, `thoughts/<slug>/index.html`, and the essay sections of `index.html`).
 - `vercel.json` — trailing slashes, and the redirects `/contact/` → culturalcapital.studio and `/works/` → `/#works` (there is no works page).
 
 Pallas lives in `works/pallas/`, served at `/works/pallas/`. Paths below are inside `works/pallas/` unless they start at the root (`tests/`, `tools/`, `docs/`, `.claude/`).
@@ -28,6 +29,22 @@ Pallas lives in `works/pallas/`, served at `/works/pallas/`. Paths below are ins
 - `library/stills.json` — the cinematography library: films keyed by slug, one record per still with source, rights and cinematographic notes. Display copies in `library/stills/<film>/`, downloads in `library/originals/`. `library/PROPOSAL.md` records the research and rights decisions.
 - `library/excerpts.json` — literature entries (stand-ins from the handoff; replace with real content, keeping ids stable) and the paperback spine presets.
 - `assets/` — the production assets from the handoff (television, book, paper and tear masks).
+
+## Adding an essay to Thoughts
+
+Each essay is one file in `thoughts/essays/`. The file's name becomes its web address: `my-new-essay.md` is published at `/thoughts/my-new-essay/` (lowercase letters, numbers and dashes only).
+
+1. Copy an existing essay file in `thoughts/essays/` and give it a new name.
+2. Change the details between the two `---` lines at the top:
+   - `title`, `description`, `label`, `author`
+   - `date` as year-month (`2026-12` shows as DEC 2026 and puts the essay in date order, newest first)
+   - `number` (the next one, for example `N 003`)
+   - optionally `read: 9 MIN READ`; leave it out and the read time is worked out from the word count
+3. Replace the text below the details. Leave a blank line between paragraphs. A line of `---` on its own is a small divider. A line starting with `> ` is a large cobalt pull quote, shown exactly where you put it. Bold (`**`) is ignored, so the text stays plain.
+4. In Terminal, in this folder, run `npm run build`. It updates the Thoughts page, writes the article page and adds the essay to the home page above Pallas.
+5. Preview it (below), then commit and push when you're happy.
+
+To remove an essay, delete its file and run `npm run build` again.
 
 ## Run
 

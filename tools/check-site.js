@@ -1,7 +1,8 @@
 // Pre-deploy check for the static site (there is no build step; Vercel serves the repository root as is).
 // Site structure: / is the Cultural Capital Home page (index.html), /about/ and /contact/ are about/index.html and
 // contact/index.html, /works/pallas/ is Pallas (works/pallas/). Every <dir>/index.html one level down is scanned
-// (works/ only through works/pallas/; there is no works page), plus works/index.html if one is ever added.
+// (works/ only through works/pallas/; there is no works page), plus works/index.html if one is ever added,
+// and the Thoughts article pages (thoughts/<slug>/index.html).
 // Usage: node tools/check-site.js [--tests]
 // 1. every file the pages (and their stylesheets) reference exists   2. every JavaScript file parses
 // 3. the library validators pass                                      4. the JSON data files parse
@@ -68,7 +69,17 @@ for (const d of fs.readdirSync(ROOT, { withFileTypes: true })) {
   if (d.isDirectory() && !d.name.startsWith('.') && !d.name.startsWith('Claude Design Handoffs') && !PAGE_SKIP.includes(d.name)) sitePages.push(path.join(ROOT, d.name, 'index.html'));
 }
 if (!fs.existsSync(path.join(ROOT, 'index.html'))) errors.push('the root index.html (the Home page) is missing');
+// The Thoughts article pages, one folder further down (thoughts/<slug>/index.html, written by build-thoughts.js).
+const TH = path.join(ROOT, 'thoughts');
+if (fs.existsSync(TH)) for (const d of fs.readdirSync(TH, { withFileTypes: true })) if (d.isDirectory()) sitePages.push(path.join(TH, d.name, 'index.html'));
 for (const p of sitePages) if (fs.existsSync(p)) checkPage(p);
+
+// The Thoughts pages match the essay files in thoughts/essays/.
+try {
+  const r = require('./build-thoughts.js').build({ check: true });
+  if (r.outOfDate.length) errors.push('Thoughts pages are out of date, run npm run build: ' + r.outOfDate.join(', '));
+  else ok(`Thoughts pages up to date (${r.essays.length} essay${r.essays.length === 1 ? '' : 's'})`);
+} catch (e) { errors.push('Thoughts: ' + e.message); }
 
 // Pallas's own stylesheet, in case it is ever no longer linked directly.
 if (!seenCss.has(path.join(APP, 'styles.css'))) ok(`${checkCss(path.join(APP, 'styles.css'))} files referenced by works/pallas/styles.css`);

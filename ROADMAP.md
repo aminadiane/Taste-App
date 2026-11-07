@@ -346,6 +346,18 @@ Built from the Claude Design export `Claude Design Handoffs/design_handoff_cultu
 24. The `/works/` → `/#works` redirect relies on a fragment in a Vercel redirect destination; check it on the preview deployment.
 25. The project's standing rule bans the degree sign everywhere; the Pallas docs still use it for the tilt angles (`CLAUDE.md` Mobile, this file's update 2 table).
 
+## Thoughts: the essays section (2026-11-07, `feature/thoughts`)
+
+Built from the owner's `thoughts-design` handoff (`home-page.html`, `thoughts-page.html`, `article-page.html`, `style-reference/`, the article as Markdown; kept in the owner's Downloads, not in the repository). Checked in the pane at 1280×900 and 375×812.
+
+- **Pages:** `/thoughts/` (the wide "thoughts" heading, ESSAYS · RESEARCH, rows of date / cobalt title / grey description, the whole row a link) and `/thoughts/<slug>/` (All thoughts top and end, label, title, description, cobalt byline, 66ch body, 48 px dividers, cobalt pull quotes). Home gets one section per essay above Pallas (N 002, OCT 2026, cobalt title, label, description, Read essay / All thoughts).
+- **One file per essay:** `thoughts/essays/<slug>.md` (a details block, then the text; `---` divider, `>` pull quote). `npm run build` (`tools/build-thoughts.js`) writes `thoughts/index.html`, each article page and the home sections between the `<!-- thoughts:start -->` / `<!-- thoughts:end -->` markers; it removes article folders it wrote for an essay that no longer exists. The generated HTML is committed, so Vercel still serves static files with no build step. `/thoughts/essays/` is in `.vercelignore`.
+- **Navigation:** Thoughts between Works and About in every header (wide and narrow) and in the footer (Thoughts · About · Contact).
+- **Text:** used exactly as in the owner's file; `**` removed; the three pull quotes placed before "To this effect", "Consider the following" and "In a neighborhood where economic capital is scarce". `tests/thoughts.test.js` checks the page text against the essay file, the quote positions, the menus, and that the pages are up to date; `tools/check-site.js` also fails when they are not.
+- **Owner's decisions (2026-11-07):** the title is "What the Bronx Can Teach Us About the Future of AI" (the handoff files said "What a Bronx Salon…"); Contact stays in the menu after About.
+- **Choices beyond the design:** the article and Thoughts pages use the site's sticky shrinking header (the design's was static); below 560 px the "thoughts" heading is 18vw so it fits a phone (the design's 80 px floor overflowed); the Thoughts row drops to one column under 488 px; the byline has `·` separators as in the owner's brief. The read time is worked out at 238 words a minute unless the file gives `read:`.
+- **Limitation:** essays always sit above the works on Home; a future work newer than an essay is placed by hand.
+
 ## Decisions pending
 
 1. Designs for skip and undo, the returning-user prompt, and the all-evaluated state (Claude Design).
