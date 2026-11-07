@@ -54,7 +54,7 @@ test('the Bronx essay: title, byline and the three pull quotes before the right 
   assert.ok(e);
   assert.strictEqual(e.title, 'What the Bronx Can Teach Us About the Future of AI');
   assert.strictEqual(e.description, 'Why AI capital should flow through the people who already hold a community’s trust.');
-  assert.deepStrictEqual([e.author, e.date, e.read, e.number, e.label], ['AMINA DIANÉ', 'OCT 2026', '7 MIN READ', 'N 002', 'ESSAY · CULTURE & AI']);
+  assert.deepStrictEqual([e.author, e.date, e.read, e.number, e.label], ['AMINA DIANÉ', 'OCT 2026', '7 MIN READ', 'N 002', 'ESSAY · CULTURE, AI & PHILANTHROPY']);
   const expected = [
     ['AI is not merely preparing people for the future of work; it is enabling them, at this very moment, to engineer entirely new systems and economic horizons from the ground up.', 'To this effect'],
     ['Cultural capital determines who is trusted, and trust determines what gets adopted.', 'Consider the following'],

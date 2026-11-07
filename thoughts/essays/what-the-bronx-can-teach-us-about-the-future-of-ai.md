@@ -3,7 +3,7 @@ title: What the Bronx Can Teach Us About the Future of AI
 description: Why AI capital should flow through the people who already hold a community’s trust.
 date: 2026-10
 number: N 002
-label: ESSAY · CULTURE & AI
+label: ESSAY · CULTURE, AI & PHILANTHROPY
 author: AMINA DIANÉ
 ---
 
