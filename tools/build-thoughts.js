@@ -1,6 +1,6 @@
 // Builds the Thoughts section from the essay files in thoughts/essays/.
 //
-//   node tools/build-thoughts.js           (or: npm run build)   writes the pages
+//   node tools/build-thoughts.js           (or: npm run thoughts)   writes the pages
 //   node tools/build-thoughts.js --check                         fails if a page is out of date (used by check-site.js)
 //
 // Each essay is one Markdown file, thoughts/essays/<slug>.md, and is published at /thoughts/<slug>/.
@@ -281,7 +281,7 @@ if (require.main === module) {
   try {
     if (process.argv.includes('--check')) {
       const r = build({ check: true });
-      if (r.outOfDate.length) { console.log('Out of date (run: npm run build): ' + r.outOfDate.join(', ')); process.exit(1); }
+      if (r.outOfDate.length) { console.log('Out of date (run: npm run thoughts): ' + r.outOfDate.join(', ')); process.exit(1); }
       console.log(`Thoughts pages are up to date (${r.essays.length} essay${r.essays.length === 1 ? '' : 's'}).`);
     } else {
       const r = build();

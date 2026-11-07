@@ -77,7 +77,7 @@ for (const p of sitePages) if (fs.existsSync(p)) checkPage(p);
 // The Thoughts pages match the essay files in thoughts/essays/.
 try {
   const r = require('./build-thoughts.js').build({ check: true });
-  if (r.outOfDate.length) errors.push('Thoughts pages are out of date, run npm run build: ' + r.outOfDate.join(', '));
+  if (r.outOfDate.length) errors.push('Thoughts pages are out of date, run npm run thoughts: ' + r.outOfDate.join(', '));
   else ok(`Thoughts pages up to date (${r.essays.length} essay${r.essays.length === 1 ? '' : 's'})`);
 } catch (e) { errors.push('Thoughts: ' + e.message); }
 

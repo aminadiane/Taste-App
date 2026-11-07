@@ -76,7 +76,7 @@ test('the home page lists every essay above Pallas, newest first', () => {
   for (let i = 1; i < at.length; i++) assert.ok(at[i - 1] < at[i]);
 });
 
-test('the built pages are up to date with the essay files (run: npm run build)', () => {
+test('the built pages are up to date with the essay files (run: npm run thoughts)', () => {
   assert.deepStrictEqual(T.build({ check: true }).outOfDate, []);
 });
 
